@@ -23,7 +23,7 @@ return {
   },
   properties = {},
   wangsets = {},
-  tilecount = 6,
+  tilecount = 7,
   tiles = {
     {
       id = 0,
@@ -60,6 +60,12 @@ return {
       image = "../../../assets/sprites/world/objects/spr_dw_church_stairs_legendmarker.png",
       width = 20,
       height = 80
+    },
+    {
+      id = 7,
+      image = "../../../assets/sprites/world/objects/spr_dw_church_piano.png",
+      width = 45,
+      height = 33
     }
   }
 }

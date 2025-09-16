@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="16" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="6" nextobjectid="5">
+ <editorsettings>
+  <export target="painotest.lua" format="lua"/>
+ </editorsettings>
+ <tileset firstgid="1" source="../tilesets/church_objects.tsx"/>
+ <tileset firstgid="9" source="../tilesets/bg_dw_church_2_tileset.tsx"/>
+ <layer id="5" name="tiles" width="16" height="12">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,18,18,18,18,0,0,0,0,0,0,
+0,0,0,0,0,0,18,18,18,18,0,0,0,0,0,0,
+0,0,0,0,0,0,18,18,18,18,0,0,0,0,0,0,
+0,0,0,0,0,0,18,18,18,18,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup id="3" name="objects">
+  <object id="2" gid="8" x="280" y="200" width="90" height="66"/>
+  <object id="4" name="piano" x="280" y="160" width="90" height="40"/>
+ </objectgroup>
+ <objectgroup id="4" name="markers">
+  <object id="3" name="spawn" x="320" y="280">
+   <point/>
+  </object>
+ </objectgroup>
+</map>

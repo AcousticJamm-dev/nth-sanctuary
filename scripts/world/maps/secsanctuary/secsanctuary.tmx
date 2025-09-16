@@ -4,6 +4,7 @@
   <export target="data.lua" format="lua"/>
  </editorsettings>
  <properties>
+  <property name="border" value="church_b"/>
   <property name="music" value="second_church"/>
   <property name="name" value="Second Sanctuary - Main"/>
  </properties>

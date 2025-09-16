@@ -12,6 +12,7 @@ return {
   nextlayerid = 6,
   nextobjectid = 52,
   properties = {
+    ["border"] = "hell",
     ["music"] = "hellworld",
     ["name"] = "Hell Sanctum - Main"
   },

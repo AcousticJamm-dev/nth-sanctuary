@@ -4,6 +4,7 @@
   <export target="hell-1.lua" format="lua"/>
  </editorsettings>
  <properties>
+  <property name="border" value="hell"/>
   <property name="music" value="hellworld"/>
   <property name="name" value="Hell Sanctum - Main"/>
  </properties>

@@ -36,6 +36,14 @@ function ChurchPiano:init(data)
 	table.insert(self.drawunits, {sound = 0, x = 0, y = 0, offx = 3, offy = 3, rot = math.rad(0), tex = self.circlespr})
 end
 
+function ChurchPiano:onAdd(parent)
+    super.onAdd(self,parent)
+    if not Game.stage:getObjects(PianoTutorialText)[1] then
+		local tuttext = PianoTutorialText(1, self)
+		Game.world:addChild(tuttext)
+	end
+end
+
 local function scr_returnwait(x1, y1, x2, y2, spd)
 	return math.max(1, Utils.round(Utils.dist(x1, y1, x2, y2) / spd))
 end
@@ -64,6 +72,9 @@ end
 
 function ChurchPiano:onInteract(player, dir)
 	if self.con == 0 then
+		if Game.stage:getObjects(PianoTutorialText)[1] then
+			Game.stage:getObjects(PianoTutorialText)[1].target = self
+		end
 		local cutscene = self.world:startCutscene(function(cutscene)
 			cutscene:detachCamera()
 			cutscene:detachFollowers()

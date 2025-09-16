@@ -28,10 +28,10 @@ end
 
 function ProphecyText:processNode(node, dry)
 	if node.type == "character" and node.character == "L" then
-		self.state.offset_x = 1
+		self.state.offset_x = 2
 	end
 	super.processNode(self, node, dry)
-	self.state.offset_x = 0
+	self.state.offset_x = 1
 end
 
 function ProphecyText:draw()

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="30" height="24" tilewidth="40" tileheight="40" infinite="0" nextlayerid="6" nextobjectid="42">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="30" height="24" tilewidth="40" tileheight="40" infinite="0" nextlayerid="6" nextobjectid="51">
  <editorsettings>
   <export target="hell-1.lua" format="lua"/>
  </editorsettings>
@@ -64,6 +64,12 @@ This is your home now.</property>
   <object id="39" x="-40" y="400" width="40" height="120"/>
   <object id="40" x="560" y="-40" width="120" height="40"/>
   <object id="41" x="1200" y="400" width="40" height="120"/>
+  <object id="49" name="transition" x="1200" y="760" width="40" height="40">
+   <properties>
+    <property name="map" value="secrets/secret_frisk_room"/>
+    <property name="marker" value="spawn"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup id="5" name="collision">
   <object id="15" x="520" y="320" width="80" height="40"/>
@@ -79,9 +85,12 @@ This is your home now.</property>
   <object id="26" x="760" y="400" width="440" height="40"/>
   <object id="27" x="760" y="480" width="440" height="40"/>
   <object id="29" x="560" y="600" width="40" height="360"/>
-  <object id="30" x="640" y="600" width="40" height="360"/>
+  <object id="30" x="640" y="600" width="40" height="160"/>
   <object id="31" x="0" y="480" width="480" height="40"/>
   <object id="32" x="0" y="400" width="480" height="40"/>
+  <object id="45" x="640" y="800" width="40" height="160"/>
+  <object id="47" x="680" y="720" width="520" height="40"/>
+  <object id="48" x="680" y="800" width="520" height="40"/>
  </objectgroup>
  <objectgroup id="2" name="objects_overlay">
   <object id="1" name="texturescroller" x="-40" y="120">

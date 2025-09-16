@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 6,
-  nextobjectid = 42,
+  nextobjectid = 51,
   properties = {
     ["music"] = "hellworld",
     ["name"] = "Hell Sanctum - Main"
@@ -196,6 +196,22 @@ return {
           rotation = 0,
           visible = true,
           properties = {}
+        },
+        {
+          id = 49,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 1200,
+          y = 760,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "secrets/secret_frisk_room",
+            ["marker"] = "spawn"
+          }
         }
       }
     },
@@ -390,7 +406,7 @@ return {
           x = 640,
           y = 600,
           width = 40,
-          height = 360,
+          height = 160,
           rotation = 0,
           visible = true,
           properties = {}
@@ -416,6 +432,45 @@ return {
           x = 0,
           y = 400,
           width = 480,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 45,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 640,
+          y = 800,
+          width = 40,
+          height = 160,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 47,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 680,
+          y = 720,
+          width = 520,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 48,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 680,
+          y = 800,
+          width = 520,
           height = 40,
           rotation = 0,
           visible = true,

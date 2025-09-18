@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 10,
-  nextobjectid = 33,
+  nextobjectid = 34,
   properties = {
     ["border"] = "base_sanctum",
     ["music"] = "homebase",

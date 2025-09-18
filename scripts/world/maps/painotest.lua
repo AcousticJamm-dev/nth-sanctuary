@@ -111,7 +111,7 @@ return {
           x = 100,
           y = 80,
           width = 120,
-          height = 40,
+          height = 120,
           rotation = 0,
           visible = true,
           properties = {
@@ -127,7 +127,7 @@ return {
           x = 420,
           y = 80,
           width = 120,
-          height = 40,
+          height = 120,
           rotation = 0,
           visible = true,
           properties = {

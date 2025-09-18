@@ -166,6 +166,8 @@
   </object>
   <object id="36" name="prophecy" x="600" y="400" width="280" height="120">
    <properties>
+    <property name="fade" type="bool" value="true"/>
+    <property name="no_back" type="bool" value="true"/>
     <property name="offx" type="float" value="-40"/>
     <property name="offy" type="float" value="-170"/>
     <property name="spr_offx" type="float" value="18"/>

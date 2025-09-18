@@ -29,8 +29,8 @@ function ProphecyPanel:init(sprite, text, width, height)
 	self.draw_sprite = true
 	self.draw_text = true
 	self.draw_back = true
-	self.no_back = false
-	self.fade_edges = false
+	self.no_back = true
+	self.fade_edges = true
 
     self.bg_surface = nil
     self.siner = 0
@@ -97,13 +97,20 @@ function ProphecyPanel:draw()
 		Draw.draw(self.gradient20, self.width, 0, math.rad(90), self.height/20, -3, 0, 20)
 	end
 	if self.fade_edges then
-		Draw.setColor(gradcol, 0)
+		local fade_edges_canvas = Draw.pushCanvas(self.width, self.height)
+		Draw.setColor(1,1,1,1)
 		Draw.draw(self.gradient20, 0, 0, 0, self.width/20, -3, 0, 20)
 		Draw.draw(self.gradient20, 0, self.height, 0, self.width/20, 3, 0, 20)
 		Draw.draw(self.gradient20, 0, 0, math.rad(90), self.height/20, 3, 0, 20)
 		Draw.draw(self.gradient20, self.width, 0, math.rad(90), self.height/20, -3, 0, 20)
+		Draw.popCanvas()
+        local last_shader = love.graphics.getShader()
+		love.graphics.setShader(Ch4Lib.invert_alpha)
+		love.graphics.setBlendMode("multiply", "premultiplied")
+		Draw.draw(fade_edges_canvas, 0, 0, 0)
+		love.graphics.setShader(last_shader)
 	end
-	love.graphics.setBlendMode("alpha")
+	love.graphics.setBlendMode("alpha", "alphamultiply")
     love.graphics.setBlendMode("add")
 	Draw.setColor(self.panel_alpha,self.panel_alpha,self.panel_alpha)
 	Draw.draw(sprite_canvas, self.sprite_offset_x, self.sprite_offset_y, 0, 1, 1)

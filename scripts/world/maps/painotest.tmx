@@ -31,13 +31,13 @@
     <property name="solution" value="131315"/>
    </properties>
   </object>
-  <object id="9" name="pianohint" x="100" y="80" width="120" height="40">
+  <object id="9" name="pianohint" x="100" y="80" width="120" height="120">
    <properties>
     <property name="hint" value="131"/>
     <property name="staff" value="start"/>
    </properties>
   </object>
-  <object id="10" name="pianohint" x="420" y="80" width="120" height="40">
+  <object id="10" name="pianohint" x="420" y="80" width="120" height="120">
    <properties>
     <property name="hint" value="315"/>
     <property name="staff" value="end"/>

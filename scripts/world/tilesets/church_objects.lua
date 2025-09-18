@@ -4,7 +4,7 @@ return {
   tiledversion = "1.10.2",
   name = "church_objects",
   class = "",
-  tilewidth = 320,
+  tilewidth = 900,
   tileheight = 800,
   spacing = 0,
   margin = 0,
@@ -23,7 +23,7 @@ return {
   },
   properties = {},
   wangsets = {},
-  tilecount = 7,
+  tilecount = 8,
   tiles = {
     {
       id = 0,
@@ -66,6 +66,12 @@ return {
       image = "../../../assets/sprites/world/objects/spr_dw_church_piano.png",
       width = 45,
       height = 33
+    },
+    {
+      id = 8,
+      image = "../../../assets/sprites/world/parallax/spr_dw_castle_gradient.png",
+      width = 900,
+      height = 20
     }
   }
 }

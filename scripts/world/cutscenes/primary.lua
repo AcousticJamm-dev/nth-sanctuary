@@ -245,9 +245,15 @@ return {
         cutscene:text("* Uh", "shock", {auto = true})
         cutscene:setSpeaker(ral)
         cutscene:text("* Mister, [wait:10]um...", "pleased")
-                cutscene:setSpeaker(j)
-        cutscene:text("* Jamm.", "suspicious")
-                cutscene:setSpeaker(ral)
+        cutscene:setSpeaker(j)
+        if Game:getFlag("fun") == 86 then
+            cutscene:text("* Jamm. [wait:10]AcousticJamm.[wait:30][react:1]", "suspicious", {reactions = {
+                {"I am the real AcousticJamm \nplay Deoxynn please please plea", "middle", "bottommid", "shades", "jamm"},
+            }})
+        else
+            cutscene:text("* Jamm.", "suspicious")
+        end
+        cutscene:setSpeaker(ral)
         cutscene:text("* W-Well, [wait:5]Mister Jamm!...", "pleased")
         cutscene:text("* We're just trying to find our way out of this Dark World!", "pleased")
         cutscene:wait(1)

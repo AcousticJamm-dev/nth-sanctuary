@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 7,
-  nextobjectid = 11,
+  nextobjectid = 26,
   properties = {
     ["music"] = "smallpiano_room"
   },
@@ -23,7 +23,7 @@ return {
     },
     {
       name = "bg_dw_church_2_tileset",
-      firstgid = 9,
+      firstgid = 10,
       filename = "../tilesets/bg_dw_church_2_tileset.tsx"
     }
   },
@@ -49,11 +49,11 @@ return {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19,
+        0, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19,
+        0, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19,
+        0, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 18, 18, 18, 18, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 18, 18, 18, 18, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 18, 18, 18, 18, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 18, 18, 18, 18, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -79,8 +79,8 @@ return {
           name = "",
           type = "",
           shape = "rectangle",
-          x = 280,
-          y = 200,
+          x = 160,
+          y = 160,
           width = 90,
           height = 66,
           rotation = 0,
@@ -93,8 +93,56 @@ return {
           name = "piano",
           type = "",
           shape = "rectangle",
-          x = 280,
-          y = 160,
+          x = 160,
+          y = 120,
+          width = 90,
+          height = 30,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["cutscene"] = "piano.door",
+            ["solution"] = "000111333111"
+          }
+        },
+        {
+          id = 9,
+          name = "pianohint",
+          type = "",
+          shape = "rectangle",
+          x = 40,
+          y = 0,
+          width = 120,
+          height = 120,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["hint"] = "000111",
+            ["staff"] = "start"
+          }
+        },
+        {
+          id = 10,
+          name = "pianohint",
+          type = "",
+          shape = "rectangle",
+          x = 220,
+          y = 0,
+          width = 120,
+          height = 120,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["hint"] = "333111",
+            ["staff"] = "end"
+          }
+        },
+        {
+          id = 21,
+          name = "piano",
+          type = "",
+          shape = "rectangle",
+          x = 440,
+          y = 120,
           width = 90,
           height = 30,
           rotation = 0,
@@ -104,12 +152,12 @@ return {
           }
         },
         {
-          id = 9,
+          id = 22,
           name = "pianohint",
           type = "",
           shape = "rectangle",
-          x = 100,
-          y = 80,
+          x = 360,
+          y = 280,
           width = 120,
           height = 120,
           rotation = 0,
@@ -120,12 +168,12 @@ return {
           }
         },
         {
-          id = 10,
+          id = 23,
           name = "pianohint",
           type = "",
           shape = "rectangle",
-          x = 420,
-          y = 80,
+          x = 520,
+          y = 280,
           width = 120,
           height = 120,
           rotation = 0,
@@ -133,6 +181,36 @@ return {
           properties = {
             ["hint"] = "315",
             ["staff"] = "end"
+          }
+        },
+        {
+          id = 24,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 440,
+          y = 160,
+          width = 90,
+          height = 66,
+          rotation = 0,
+          gid = 8,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 25,
+          name = "npc",
+          type = "",
+          shape = "point",
+          x = 80,
+          y = 240,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["actor"] = "lobbyman",
+            ["text"] = "* Fuck you i wont leave unless i hear some MUSIC"
           }
         }
       }
@@ -156,8 +234,8 @@ return {
           name = "",
           type = "",
           shape = "rectangle",
-          x = 240,
-          y = 160,
+          x = 120,
+          y = 120,
           width = 40,
           height = 30,
           rotation = 0,
@@ -169,8 +247,8 @@ return {
           name = "",
           type = "",
           shape = "rectangle",
-          x = 370,
-          y = 160,
+          x = 250,
+          y = 120,
           width = 30,
           height = 30,
           rotation = 0,
@@ -198,8 +276,8 @@ return {
           name = "spawn",
           type = "",
           shape = "point",
-          x = 320,
-          y = 280,
+          x = 280,
+          y = 320,
           width = 0,
           height = 0,
           rotation = 0,

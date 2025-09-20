@@ -4,6 +4,8 @@ function ChurchPiano:init(data)
     super.init(self, data)
 	
     local properties = data.properties or {}
+
+	self.prop = properties["cutscene"]
 	
 	self.draw_children_above = 1
 	self.solid = true
@@ -32,6 +34,7 @@ function ChurchPiano:init(data)
 	self.arrowspr = "ui/arrow_10x10"
 	self.circlespr = "ui/circle_7x7"
 	self.drawunits = {}
+	self.cutscene = properties["cutscene"] or nil
 	local space = 28
 	table.insert(self.drawunits, {sound = 3, x = 0, y = space, offx = 5, offy = 5, rot = math.rad(0), tex = self.arrowspr})
 	table.insert(self.drawunits, {sound = 5, x = space, y = 0, offx = 5, offy = 5, rot = math.rad(-90), tex = self.arrowspr})
@@ -293,6 +296,13 @@ function ChurchPiano:update()
 						wait(10/30)
 						self.solved = true
 						self.con = 1
+						Game.world:startCutscene(function(cutscene)
+							if self.prop then
+								cutscene:gotoCutscene(self.prop)
+							else
+								Assets.playSound("bell")
+							end
+						end)
 					end)
 				end)
 			end

@@ -230,7 +230,7 @@
   <object id="38" name="targ" x="200" y="340">
    <point/>
   </object>
-  <object id="41" name="entry_up" x="600" y="40">
+  <object id="41" name="entry_fast_travel" x="600" y="40">
    <point/>
   </object>
  </objectgroup>

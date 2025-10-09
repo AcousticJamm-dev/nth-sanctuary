@@ -177,12 +177,7 @@
 </data>
  </layer>
  <objectgroup id="4" name="objects">
-  <object id="13" name="transition" x="520" y="1920" width="160" height="40">
-   <properties>
-    <property name="map" value="base_sanctum_center"/>
-    <property name="marker" value="entry_up"/>
-   </properties>
-  </object>
+  <object id="13" name="ft_transition" x="520" y="1920" width="160" height="40"/>
   <object id="22" name=" " gid="272" x="40" y="1600" width="160" height="160"/>
   <object id="23" name=" " gid="272" x="200" y="1600" width="160" height="160"/>
   <object id="24" name=" " gid="272" x="360" y="1600" width="160" height="160"/>

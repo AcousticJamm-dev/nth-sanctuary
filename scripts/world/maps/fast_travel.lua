@@ -379,7 +379,7 @@ return {
       objects = {
         {
           id = 13,
-          name = "transition",
+          name = "ft_transition",
           type = "",
           shape = "rectangle",
           x = 520,
@@ -388,10 +388,7 @@ return {
           height = 40,
           rotation = 0,
           visible = true,
-          properties = {
-            ["map"] = "base_sanctum_center",
-            ["marker"] = "entry_up"
-          }
+          properties = {}
         },
         {
           id = 22,

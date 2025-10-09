@@ -659,7 +659,7 @@ return {
         },
         {
           id = 41,
-          name = "entry_up",
+          name = "entry_fast_travel",
           type = "",
           shape = "point",
           x = 600,

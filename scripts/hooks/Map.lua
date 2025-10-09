@@ -8,4 +8,11 @@ function Map:createTileObject(data, x, y, width, height)
     end
 end
 
+function Map:onExit()
+	super.onExit(self)
+	if Game.world.map.id and Game.world.map.id ~= "fast_travel" and Game.world.map.id ~= "Map" then
+		Game:setFlag("ft_last_map", Game.world.map.id)
+	end
+end
+
 return Map

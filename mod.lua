@@ -10,6 +10,7 @@ function Mod:postInit(new_file)
         Game:setFlag("fun", love.math.random(1, 170))
         Game:setFlag("shards", 1)
         Game.world:startCutscene("primary.intro")
+		Game:setFlag("ft_last_map", "base_sanctum_center")
     end
     HookSystem.hook(Battle, "spawnEnemyTextbox", function(orig, self, enemy, ...)
         if enemy and enemy.id == "guei" then
@@ -38,11 +39,11 @@ end
 function Mod:updateLightBeams(alpha)
 	for index, value in ipairs(Game.world.stage:getObjects(TileObject)) do
 		if value.light_area then
-			value.light_amount = Utils.lerp(0.1, 1, alpha)
+			value.light_amount = MathUtils.lerp(0.1, 1, alpha)
 		end
 	end
 	for index, value in ipairs(Game.world.map:getEvents("lightbeamfx")) do
-		value.alpha = Utils.lerp(0.1, 1, alpha)
+		value.alpha = MathUtils.lerp(0.1, 1, alpha)
 	end
 end
 
@@ -71,10 +72,10 @@ end
 function Mod:preInit()
     ---@return string|number[][]
     local function parseCSV(str)
-        local lines = Utils.splitFast(str, "\n")
+        local lines = StringUtils.splitFast(str, "\n")
         local dat = {}
         for index, line in ipairs(lines) do
-            dat[index] = Utils.split(line, ";")
+            dat[index] = StringUtils.split(line, ";")
             for l_index, value in ipairs(dat[index]) do
                 dat[index][l_index] = tonumber(value) or value
             end

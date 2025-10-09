@@ -10,7 +10,7 @@ function TitanDarknessController:init(data)
     self.fumes = {}
     self:addFX(PixelateFX(2))
     for i = 1, 8 do
-        table.insert(self.fumes, {Utils.random(0, SCREEN_WIDTH*2), SCREEN_HEIGHT+90, Utils.random(20, 40), self.timer + Utils.random(-30, 30)})
+        table.insert(self.fumes, {MathUtils.random(0, SCREEN_WIDTH*2), SCREEN_HEIGHT+90, MathUtils.random(20, 40), self.timer + MathUtils.random(-30, 30)})
     end
 end
 function TitanDarknessController:update()
@@ -20,7 +20,7 @@ function TitanDarknessController:update()
     self.spawn_timer = self.spawn_timer - DTMULT
     if self.spawn_timer < 0 then
         self.spawn_timer = self.spawn_timer + self.spawn_speed
-        table.insert(self.fumes, {Utils.random(0, SCREEN_WIDTH*2), SCREEN_HEIGHT+90, Utils.random(20, 40), self.timer})
+        table.insert(self.fumes, {MathUtils.random(0, SCREEN_WIDTH*2), SCREEN_HEIGHT+90, MathUtils.random(20, 40), self.timer})
     end
 
     local to_remove = {}
@@ -30,12 +30,12 @@ function TitanDarknessController:update()
     end
 
     for _, fume in ipairs(to_remove) do
-        Utils.removeFromTable(self.fumes, fume)
+        TableUtils.removeValue(self.fumes, fume)
     end
 end
 
 function TitanDarknessController:getFumeInformation(index)
-    local x, y, radius, time = Utils.unpack(self.fumes[index])
+    local x, y, radius, time = TableUtils.unpack(self.fumes[index])
     time = self.timer - time
     x = x + math.sin(time / 4) * 4
     y = y - time * 1.9

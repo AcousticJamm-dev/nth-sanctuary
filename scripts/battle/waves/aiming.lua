@@ -13,7 +13,7 @@ function Aiming:onStart()
             local x, y = attacker:getRelativePos(attacker.width/2, attacker.height/2)
 
             -- Get the angle between the bullet position and the soul's position
-            local angle = Utils.angle(x, y, Game.battle.soul.x, Game.battle.soul.y)
+            local angle = MathUtils.angle(x, y, Game.battle.soul.x, Game.battle.soul.y)
 
             -- Spawn smallbullet angled towards the player with speed 8 (see scripts/battle/bullets/smallbullet.lua)
             self:spawnBullet("smallbullet", x, y, angle, 8)

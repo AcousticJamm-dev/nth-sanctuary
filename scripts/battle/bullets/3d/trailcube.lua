@@ -20,8 +20,6 @@ function TrailCubeBullet:init(x, y, dir, speed, trails)
 		table.insert(self.y_last, self.y)
 	end
 	for i = 1, self.trails-2 do
-		table.insert(self.x_last, self.x)
-		table.insert(self.y_last, self.y)
         local hitbox = Hitbox(self, 10, 10, 15, 15)
 		table.insert(self.trail_colliders, hitbox)
 	end
@@ -33,7 +31,7 @@ function TrailCubeBullet:init(x, y, dir, speed, trails)
 	self.remove_offscreen = false
 	self.con = 0
 	self.play_sound = false
-	self.sound_pitch = 0.9
+	self.sound_pitch = 1
 end
 
 function TrailCubeBullet:update()
@@ -41,18 +39,26 @@ function TrailCubeBullet:update()
 
     super.update(self)
 	if self.con == 0 then
-		self.physics.speed = self.physics.speed + Utils.sign(self.start_spd) * math.abs(self.start_fric) * DTMULT
-		if Utils.sign(self.start_spd) == 1 and self.physics.speed >= self.start_spd then
+		self.physics.speed = self.physics.speed + MathUtils.sign(self.start_spd) * math.abs(self.start_fric) * DTMULT
+		if MathUtils.sign(self.start_spd) == 1 and self.physics.speed >= self.start_spd then
 			self.physics.speed = self.start_spd
 			self.physics.friction = self.start_fric
 			self.con = 1
+			for i = 1, self.trails do
+				self.x_last[i] = self.x
+				self.y_last[i] = self.y
+			end
 			if self.play_sound then
 				Assets.playSound("3dprism_cubetravel", 0.8, self.sound_pitch)
 			end
-		elseif Utils.sign(self.start_spd) == -1 and self.physics.speed <= self.start_spd then
+		elseif MathUtils.sign(self.start_spd) == -1 and self.physics.speed <= self.start_spd then
 			self.physics.speed = self.start_spd
 			self.physics.friction = self.start_fric
 			self.con = 1
+			for i = 1, self.trails do
+				self.x_last[i] = self.x
+				self.y_last[i] = self.y
+			end
 			if self.play_sound then
 				Assets.playSound("3dprism_cubetravel", 0.8, self.sound_pitch)
 			end
@@ -64,7 +70,7 @@ function TrailCubeBullet:update()
 			self.y_last[i] = self.y_last[i - 1]
 		end
 		for i = self.trails-2, 2, -1 do
-			if i >= self.trails-10 then
+			if i >= self.trails-math.floor(self.trails/2) then
 				local shrink = 0.5
 				self.trail_colliders[i] = Hitbox(self, self.x_last[i]-self.x+12.5, self.y_last[i]-self.y+12.5, 10, 10)
 			else
@@ -90,11 +96,11 @@ function TrailCubeBullet:shouldSwoon(damage, target, soul)
 end
 
 function TrailCubeBullet:draw()
-	local rr, rg, rb = Utils.hsvToRgb((Game.battle.encounter.rainbow_timer / 255) % 1, 233 / 255, 200 / 255)
+	local rr, rg, rb = ColorUtils.HSVToRGB((Game.battle.encounter.rainbow_timer / 255) % 1, 233 / 255, 200 / 255)
     love.graphics.setBlendMode("add")
 	for i = self.trails, 1, -1 do
-		local ar, ag, ab = Utils.mergeColor(COLORS["white"], {rr, rg, rb}, i/self.trails)
-		love.graphics.setColor(Utils.mergeColor(COLORS["black"], unpack({ar, ag, ab}), self.alpha))
+		local ar, ag, ab = ColorUtils.mergeColor(COLORS["white"], {rr, rg, rb}, i/self.trails)
+		love.graphics.setColor(ColorUtils.mergeColor(COLORS["black"], unpack({ar, ag, ab}), self.alpha))
 		if self.con == 1 then
 			love.graphics.draw(self.sprite.texture, self.x_last[i]-self.x, self.y_last[i]-self.y, 0, 1, 1, 0, 0)
 		end

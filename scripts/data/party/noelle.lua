@@ -78,9 +78,9 @@ function character:init()
     -- X-Action color (for the color of X-Action menu items) (defaults to the main color)
     self.xact_color = {1, 1, 0.5}
 	-- highlight color A
-    self.highlight_color = Utils.hexToRgb("#ECFFBB")
+    self.highlight_color = ColorUtils.hexToRGB("#ECFFBBFF")
 		-- highlight color B
-    self.highlight_color_alt = Utils.hexToRgb("#5259C2")
+    self.highlight_color_alt = ColorUtils.hexToRGB("#5259C2FF")
 
     -- Head icon in the equip / power menu
     self.menu_icon = "party/noelle/head"
@@ -146,7 +146,7 @@ function character:drawPowerStat(index, x, y, menu)
         local icon = Assets.getTexture("ui/menu/icon/snow")
         Draw.draw(icon, x-26, y+6, 0, 2, 2)
         love.graphics.print("Coldness", x, y)
-        local coldness = Utils.clamp(47 + (self:getFlag("iceshocks_used", 0) * 7), 47, 100)
+        local coldness = MathUtils.clamp(47 + (self:getFlag("iceshocks_used", 0) * 7), 47, 100)
         love.graphics.print(coldness, x+130, y)
         return true
     elseif index == 2 then

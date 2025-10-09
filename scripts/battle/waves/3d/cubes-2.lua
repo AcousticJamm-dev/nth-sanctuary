@@ -2,7 +2,7 @@ local Basic, super = Class(Wave)
 
 function Basic:init()
     super.init(self)
-    self.time = 15
+    self.time = 15.5
 	self.count = 0
 end
 
@@ -20,45 +20,47 @@ function Basic:onStart()
 			for i = 0, 5 do
 				if slower == i then
 					self.g = self:spawnBullet("3d/trailcube", arena.left-120, arena.top+i*25+5, math.rad(180), -1, 10)
-					self.g.physics.speed = 2
-					self.g.start_spd = -2
-					self.g.start_fric = -0.1
+					self.g.physics.speed = 4
+					self.g.start_spd = -3
+					self.g.start_fric = -0.2
 					self.g.sprite:play(1/10, true)
 					self.g.sound_pitch = 1.1
 					self.g.play_sound = true
 				else
 					self.g = self:spawnBullet("3d/trailcube", arena.left-120, arena.top+i*25+5, math.rad(180), -1, 15)
-					self.g.physics.speed = 3
+					self.g.physics.speed = 5
 					self.g.start_spd = -3
-					self.g.start_fric = -0.2
+					self.g.start_fric = -0.4
+					self.g.sound_pitch = 0.9
 					self.g.play_sound = play_sound
 					play_sound = false
 				end
 				self.g.backup = true
 				self.g.alpha = 0
-				Game.battle.timer:tween(10/30, self.g, {alpha = 1}, "in-cubic")
+				Game.battle.timer:tween(8/30, self.g, {alpha = 1}, "linear")
 			end
 		else
 			for i = 0, 5 do
 				if slower == i then
 					self.g = self:spawnBullet("3d/trailcube", arena.right+120, arena.bottom-i*25-5, math.rad(180), 1, 10)
-					self.g.physics.speed = -2
-					self.g.start_spd = 2
-					self.g.start_fric = -0.1
+					self.g.physics.speed = -4
+					self.g.start_spd = 3
+					self.g.start_fric = -0.2
 					self.g.sprite:play(1/10, true)
 					self.g.sound_pitch = 1.1
 					self.g.play_sound = true
 				else
 					self.g = self:spawnBullet("3d/trailcube", arena.right+120, arena.bottom-i*25-5, math.rad(180), 1, 15)
-					self.g.physics.speed = -3
+					self.g.physics.speed = -5
 					self.g.start_spd = 3
-					self.g.start_fric = -0.2
+					self.g.start_fric = -0.4
+					self.g.sound_pitch = 0.9
 					self.g.play_sound = play_sound
 					play_sound = false
 				end
 				self.g.backup = true
 				self.g.alpha = 0
-				Game.battle.timer:tween(10/30, self.g, {alpha = 1}, "in-cubic")
+				Game.battle.timer:tween(8/30, self.g, {alpha = 1}, "linear")
 			end
 		end
 	end)

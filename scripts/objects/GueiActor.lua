@@ -103,7 +103,7 @@ function GueiActorSprite:update()
     elseif self.anim == "encounter" then
         self.animsiner = self.animsiner + (1 * DTMULT)
 		self.timer = self.timer + (1 * DTMULT)
-		local prog = Utils.clamp(self.timer / 20, 0, 1)
+		local prog = MathUtils.clamp(self.timer / 20, 0, 1)
 		
 		self.arm_back.alpha = 0
 		self.body.alpha = 0

@@ -41,9 +41,9 @@ end
 
 function OrganNoteDisplay:draw()
     super.draw(self)
-	local col_def = Utils.hexToRgb("#2DADC0")
-	local col_sel = Utils.hexToRgb("#CAFFE4")
-	self.display_alpha = Utils.lerp(self.display_alpha, self.target.engaged_alpha, 0.125 * DTMULT)
+	local col_def = ColorUtils.hexToRGB("#2DADC0FF")
+	local col_sel = ColorUtils.hexToRGB("#CAFFE4FF")
+	self.display_alpha = MathUtils.lerp(self.display_alpha, self.target.engaged_alpha, 0.125 * DTMULT)
 	self.siner = self.siner + 1 * DTMULT
 	local yy = 40
 	local bgcol = COLORS.black
@@ -122,7 +122,7 @@ function OrganNoteDisplay:draw()
 			note.alpha = 1 * self.display_alpha
 			note:setOriginExact(10, 10)
 			note.rotation = math.rad(-90 * unit.rot)
-			Game.world.timer:tween((2+Utils.round((i-1) / 2))/30, note, {alpha = 0}, 'out-quad', function()
+			Game.world.timer:tween((2+MathUtils.round((i-1) / 2))/30, note, {alpha = 0}, 'out-quad', function()
 				note:remove()
 			end)
 			Game.world:addChild(note)

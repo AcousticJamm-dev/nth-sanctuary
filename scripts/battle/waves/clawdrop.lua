@@ -39,7 +39,7 @@ function Aiming:onStart()
 			swipe_width = swipe_width + 40 - 10 * self.sameattack
 		end
 		local aim_override = 0
-		local side = Utils.pick({-1, 1})
+		local side = TabkeUtils.pick({-1, 1})
 		local xx, yy, tempangle
 		if self.sameattacker < 1 then
 			xx = Game.battle.arena.x - 40 + love.math.random(80)
@@ -48,7 +48,7 @@ function Aiming:onStart()
 				temp_angle = math.rad(254 + love.math.random(32))
 				aim_override = 0
 			else
-				temp_angle = Utils.angle(xx, yy, Game.battle.soul.x, Game.battle.soul.y)
+				temp_angle = MathUtils.angle(xx, yy, Game.battle.soul.x, Game.battle.soul.y)
 				aim_override = aim_override + 1
 			end
 		else
@@ -58,7 +58,7 @@ function Aiming:onStart()
 				temp_angle = math.rad((90 + (side * 90) - 16) + love.math.random(32))
 				aim_override = 0
 			else
-				temp_angle = Utils.angle(xx, yy, Game.battle.soul.x, Game.battle.soul.y)
+				temp_angle = MathUtils.angle(xx, yy, Game.battle.soul.x, Game.battle.soul.y)
 				aim_override = aim_override + 1
 			end
 		end

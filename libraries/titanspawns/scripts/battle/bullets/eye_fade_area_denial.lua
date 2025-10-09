@@ -13,7 +13,7 @@ end
 function eye_fade_area_denial:onAdd(parent)
     super.onAdd(self, parent)
 
-    Game.battle.timer:tween(Utils.random(0.1, 0.4), self, { scale_x = 1, scale_y = 1, alpha = 1 }, "in-quint", function()
+    Game.battle.timer:tween(MathUtils.random(0.1, 0.4), self, { scale_x = 1, scale_y = 1, alpha = 1 }, "in-quint", function()
         self:fadeOutAndRemove(0.3)
     end)
 

@@ -7,7 +7,7 @@ function Lib:init()
         error("MoreBattle is conflicting with MoreParty, remove it to advance.")
     end
     
-    Utils.hook(ActionBoxDisplay, "draw", function(orig, self)
+    HookSystem.hook(ActionBoxDisplay, "draw", function(orig, self)
         if #Game.party <= 3 then orig(self) return end
         
         local x = self.parent.realWidth
@@ -116,7 +116,7 @@ function Lib:init()
         Object.draw(self)
     end)
     
-    Utils.hook(ActionBox, "drawActionBox", function(orig, self)
+    HookSystem.hook(ActionBox, "drawActionBox", function(orig, self)
         if #Game.party <= 3 then orig(self) return end
         
         local x = self.realWidth
@@ -130,7 +130,7 @@ function Lib:init()
         Draw.setColor(1, 1, 1, 1)
     end)
     
-    Utils.hook(ActionBox, "drawSelectionMatrix", function(orig, self)
+    HookSystem.hook(ActionBox, "drawSelectionMatrix", function(orig, self)
         if #Game.party <= 3 then orig(self) return end
 
         local x = self.realWidth
@@ -157,7 +157,7 @@ function Lib:init()
         end
     end)
     
-    Utils.hook(BattleUI, "drawActionStrip", function(orig, self)
+    HookSystem.hook(BattleUI, "drawActionStrip", function(orig, self)
         orig(self)
         
         if #Game.battle.party <= (Kristal.getLibConfig("moreparty", "classic_mode") and 3 or 4) then return end
@@ -171,13 +171,13 @@ function Lib:init()
     end)
     
     if not Mod.libs["ExpandedAttackLib"] then -- Compatibility with 'ExpandedAttackLib' Library.
-        Utils.hook(AttackBox, "draw", function(orig, self)
+        HookSystem.hook(AttackBox, "draw", function(orig, self)
 
             local target_color = {self.battler.chara:getAttackBarColor()}
             local box_color = {self.battler.chara:getAttackBoxColor()}
 
             if self.flash > 0 then
-                box_color = Utils.lerp(box_color, {1, 1, 1}, self.flash)
+                box_color = TableUtils.lerp(box_color, {1, 1, 1}, self.flash)
             end
 
             love.graphics.setLineWidth(2)
@@ -201,7 +201,7 @@ function Lib:init()
         end)
     end
       
-    Utils.hook(BattleUI, "beginAttack", function(orig, self)
+    HookSystem.hook(BattleUI, "beginAttack", function(orig, self)
 
         if #Game.battle.party <= 3 then orig(self) return end
 
@@ -226,18 +226,18 @@ function Lib:init()
             table.insert(self.attack_boxes, attack_box)
 
             if i < #attack_order and last_offset ~= 0 then
-                last_offset = Utils.pick{0, 10, 15}
+                last_offset = TableUtils.pick{{0, 10, 15}}
             else
-                last_offset = Utils.pick{10, 15}
+                last_offset = TableUtils.pick{{10, 15}}
             end
         end
         self.attacking = true
     end)
     
     if not Mod.libs["ExpandedAttackLib"] then -- Compatibility with 'ExpandedAttackLib' Library.
-        Utils.hook(AttackBox, "update", function(orig, self)
+        HookSystem.hook(AttackBox, "update", function(orig, self)
             if self.removing or Game.battle.cancel_attack then
-                self.fade_rect.alpha = Utils.approach(self.fade_rect.alpha, 1, 0.08 * DTMULT)
+                self.fade_rect.alpha = MathUtils.approach(self.fade_rect.alpha, 1, 0.08 * DTMULT)
             end
 
             if not self.attacked then
@@ -266,7 +266,7 @@ function Lib:init()
             if not Game.battle.cancel_attack and (Input.pressed("confirm") or pressed_confirm) then
                 self.flash = 1
             else
-                self.flash = Utils.approach(self.flash, 0, DTMULT/5)
+                self.flash = MathUtils.approach(self.flash, 0, DTMULT/5)
             end
 
             Object.update(self)
@@ -274,7 +274,7 @@ function Lib:init()
     end
     
     if not Mod.libs["ExpandedAttackLib"] then -- Compatibility with 'ExpandedAttackLib' Library.
-        Utils.hook(AttackBox, "init", function(orig, self, battler, offset, index, x, y)
+        HookSystem.hook(AttackBox, "init", function(orig, self, battler, offset, index, x, y)
             orig(self, battler, offset, index, x, y)
             if #Game.battle.party <= 3 then return end
             
@@ -285,7 +285,7 @@ function Lib:init()
         end)
     end
    
-    Utils.hook(BattleUI, "drawState", function(orig, self)
+    HookSystem.hook(BattleUI, "drawState", function(orig, self)
         if #Game.battle.party <= 3 then orig(self) return end
         
         if Game.battle.state == "ATTACKING" or self.attacking then
@@ -437,7 +437,7 @@ function Lib:init()
         end
     end)
     
-    Utils.hook(BattleUI, "init", function(orig, self)
+    HookSystem.hook(BattleUI, "init", function(orig, self)
         if #Game.battle.party <= (Kristal.getLibConfig("moreparty", "classic_mode") and 3 or 4) then
             orig(self)
         else
@@ -543,7 +543,7 @@ function Lib:init()
         end
     end)
     
-    Utils.hook(BattleUI, "update", function(orig, self)
+    HookSystem.hook(BattleUI, "update", function(orig, self)
         orig(self)
         
         if #Game.battle.party <= (Kristal.getLibConfig("moreparty", "classic_mode") and 3 or 4) then return end
@@ -558,13 +558,13 @@ function Lib:init()
 
     end)
     
-    Utils.hook(BattleUI, "getTransitionBounds", function(orig, self)
+    HookSystem.hook(BattleUI, "getTransitionBounds", function(orig, self)
         if #Game.battle.party <= (Kristal.getLibConfig("moreparty", "classic_mode") and 3 or 4) then return orig(self) end
         
         return 480 + (Game:getConfig("oldUIPositions") and 36 or 37), 325
     end)
     
-    Utils.hook(Encounter, "getPartyPosition", function(orig, self, index)
+    HookSystem.hook(Encounter, "getPartyPosition", function(orig, self, index)
         if #Game.battle.party <= 3 then return orig(self, index) end
         
         local x, y = 0, 0
@@ -590,7 +590,7 @@ function Lib:init()
         return x, y
     end)
     
-    Utils.hook(Battle, "createPartyBattlers", function(orig, self)
+    HookSystem.hook(Battle, "createPartyBattlers", function(orig, self)
         
         for i = 1, #Game.party do
             local party_member = Game.party[i]
@@ -635,7 +635,7 @@ function Lib:init()
         end
     end)
     
-    Utils.hook(Battle, "shortActText", function(orig, self, text)
+    HookSystem.hook(Battle, "shortActText", function(orig, self, text)
         local advances = 3 -- initial override so we can run it
         local function displayShortActText()
             advances = advances + 1
@@ -659,7 +659,7 @@ function Lib:init()
         displayShortActText()
     end)
     
-    Utils.hook(DarkEquipMenu, "init", function(orig, self)
+    HookSystem.hook(DarkEquipMenu, "init", function(orig, self)
         orig(self)
         if #Game.party <= 3 then return end
       
@@ -672,7 +672,7 @@ function Lib:init()
         end
     end)
    
-    Utils.hook(DarkPowerMenu, "init", function(orig, self)
+    HookSystem.hook(DarkPowerMenu, "init", function(orig, self)
         orig(self)
         if #Game.party <= 3 then return end
       
@@ -685,7 +685,7 @@ function Lib:init()
         end
     end)
     
-    Utils.hook(DarkMenuPartySelect, "init", function(orig, self, x, y)
+    HookSystem.hook(DarkMenuPartySelect, "init", function(orig, self, x, y)
         orig(self, x, y)
         
         if not Kristal.getLibConfig("moreparty", "scroller") then return end
@@ -693,7 +693,7 @@ function Lib:init()
         self.arrow = Assets.getTexture("ui/flat_arrow_left")
     end)
    
-    Utils.hook(DarkMenuPartySelect, "draw", function(orig, self)
+    HookSystem.hook(DarkMenuPartySelect, "draw", function(orig, self)
         if #Game.party <= 4 and not Kristal.getLibConfig("moreparty", "scroller") or #Game.party <= 3 then orig(self) return end 
         
         if not Kristal.getLibConfig("moreparty", "scroller") then
@@ -752,7 +752,7 @@ function Lib:init()
         Object.draw(self)
     end)
     
-    Utils.hook(ActionBox, "draw", function(orig, self)
+    HookSystem.hook(ActionBox, "draw", function(orig, self)
         if #Game.battle.party <= 3 then orig(self) return end 
     
         self:drawSelectionMatrix()
@@ -777,7 +777,7 @@ function Lib:init()
         end
     end)
    
-    Utils.hook(OverworldActionBox, "draw", function(orig, self)
+    HookSystem.hook(OverworldActionBox, "draw", function(orig, self)
         if #Game.party <= 3 then orig(self) return end
         
         local double_row = false
@@ -934,7 +934,7 @@ function Lib:init()
         Object.draw(self)
     end)
     
-   Utils.hook(HealthBar, "draw", function(orig, self)
+   HookSystem.hook(HealthBar, "draw", function(orig, self)
         
         if #Game.party <= (Kristal.getLibConfig("moreparty", "classic_mode") and 3 or 4) then orig(self) return end
           
@@ -945,14 +945,14 @@ function Lib:init()
         Object.draw(self)
    end)
    
-    Utils.hook(HealthBar, "init", function(orig, self)
+    HookSystem.hook(HealthBar, "init", function(orig, self)
         orig(self)
         
         if #Game.party <= (Kristal.getLibConfig("moreparty", "classic_mode") and 3 or 4) then return end
         self.animation_y = -126
     end)
     
-    Utils.hook(HealthBar, "update", function(orig, self)
+    HookSystem.hook(HealthBar, "update", function(orig, self)
         if #Game.party <= (Kristal.getLibConfig("moreparty", "classic_mode") and 3 or 4) then orig(self) return end
         
         self.animation_timer = self.animation_timer + DTMULT
@@ -1005,7 +1005,7 @@ function Lib:init()
         Object.update(self)
     end)
    
-   Utils.hook(Shop, "draw", function(orig, self)
+   HookSystem.hook(Shop, "draw", function(orig, self)
    
         if #Game.party <= 4 then orig(self) return end
         
@@ -1070,7 +1070,7 @@ function Lib:init()
             else
                 Draw.draw(self.heart_sprite, 30 + 420, 230 + 80 + 10 + (self.current_selecting_choice * 30))
                 Draw.setColor(COLORS.white)
-                local lines = Utils.split(string.format(self.buy_confirmation_text, string.format(self.currency_text, self.items[self.current_selecting].options["price"] or 0)), "\n")
+                local lines = StringUtils.split(string.format(self.buy_confirmation_text, string.format(self.currency_text, self.items[self.current_selecting].options["price"] or 0)), "\n")
                 for i = 1, #lines do
                     love.graphics.print(lines[i], 60 + 400, 420 - 160 + ((i - 1) * 30))
                 end
@@ -1169,7 +1169,7 @@ function Lib:init()
    end)
    
    if not Mod.libs["better_battles"] then -- Compatibility with 'better_battles' Library.
-        Utils.hook(ActionButton, "select", function(orig, self)
+        HookSystem.hook(ActionButton, "select", function(orig, self)
             if Game.battle.encounter:onActionSelect(self.battler, self) then return end
             if Kristal.callEvent("onActionSelect", self.battler, self) then return end
             if self.type == "act" and not Kristal.getLibConfig("moreparty", "classic_mode") and #Game.battle.party > 3 and self.battler.chara:hasSpells() then
@@ -1310,7 +1310,7 @@ function Lib:init()
             end
         end)
         
-        Utils.hook(ActionButton, "hasSpecial", function(orig, self)
+        HookSystem.hook(ActionButton, "hasSpecial", function(orig, self)
             if self.type == "act" and not Kristal.getLibConfig("moreparty", "classic_mode") and #Game.battle.party > 3 and self.battler.chara:hasSpells() then
                 if self.battler then
                     local has_tired = false
@@ -1338,7 +1338,7 @@ function Lib:init()
             end
         end)
         
-        Utils.hook(ActionBox, "createButtons", function(orig, self)
+        HookSystem.hook(ActionBox, "createButtons", function(orig, self)
             for _,button in ipairs(self.buttons or {}) do
                 button:remove()
             end
@@ -1347,8 +1347,8 @@ function Lib:init()
 
             local btn_types = {"fight", "act", "magic", "item", "spare", "defend"}
 
-            if not self.battler.chara:hasAct() then Utils.removeFromTable(btn_types, "act") end
-            if not self.battler.chara:hasSpells() or self.battler.chara:hasAct() and not Kristal.getLibConfig("moreparty", "classic_mode") and #Game.battle.party > 3 and self.battler.chara:hasSpells() then Utils.removeFromTable(btn_types, "magic") end
+            if not self.battler.chara:hasAct() then TableUtils.removeValue(btn_types, "act") end
+            if not self.battler.chara:hasSpells() or self.battler.chara:hasAct() and not Kristal.getLibConfig("moreparty", "classic_mode") and #Game.battle.party > 3 and self.battler.chara:hasSpells() then TableUtils.removeValue(btn_types, "magic") end
 
             for lib_id,_ in Kristal.iterLibraries() do
                 btn_types = Kristal.libCall(lib_id, "getActionButtons", self.battler, btn_types) or btn_types
@@ -1376,13 +1376,13 @@ function Lib:init()
                 end
             end
 
-            self.selected_button = Utils.clamp(self.selected_button, 1, #self.buttons)
+            self.selected_button = MathUtils.clamp(self.selected_button, 1, #self.buttons)
         end)
     end
     
     if Mod.libs["magical-glass"] then -- Compatibility with 'magical-glass' Library.
     
-        Utils.hook(LightBattle, "shortActText", function(orig, self, text)
+        HookSystem.hook(LightBattle, "shortActText", function(orig, self, text)
             local advances = 3 -- initial override so we can run it
             local function displayShortActText()
                 advances = advances + 1
@@ -1406,14 +1406,14 @@ function Lib:init()
             displayShortActText()
         end)
         
-        Utils.hook(LightBattle, "createPartyBattlers", function(orig, self)
+        HookSystem.hook(LightBattle, "createPartyBattlers", function(orig, self)
             for i = 1, #Game.party do
                 local battler = LightPartyBattler(Game.party[i])
                 table.insert(self.party, battler)
             end
         end)
         
-        Utils.hook(LightStatusDisplay, "drawStatusStrip", function(orig, self)
+        HookSystem.hook(LightStatusDisplay, "drawStatusStrip", function(orig, self)
             if not Game.battle.multi_mode or #Game.battle.party <= 3 then
                 orig(self)
             else
@@ -1469,9 +1469,9 @@ function Lib:init()
                         love.graphics.rectangle("fill", x + 62, y + (small and 3 or 0), (small and 12 or 26) * 1.2 + 1, small and 14 or 21)
                         if current > 0 then
                             love.graphics.setColor(Game:isLight() and MG_PALETTE["player_karma_health"] or MG_PALETTE["player_karma_health_dark"])
-                            love.graphics.rectangle("fill", x + 62, y + (small and 3 or 0), math.ceil((Utils.clamp(current, 0, max) / max) * (small and 12 or 26)) * 1.2 + 1, small and 14 or 21)
+                            love.graphics.rectangle("fill", x + 62, y + (small and 3 or 0), math.ceil((MathUtils.clamp(current, 0, max) / max) * (small and 12 or 26)) * 1.2 + 1, small and 14 or 21)
                             love.graphics.setColor(Game:isLight() and MG_PALETTE["player_health"] or {battler.chara:getColor()})
-                            love.graphics.rectangle("fill", x + 62, y + (small and 3 or 0), math.ceil((Utils.clamp(current - karma, 0, max) / max) * (small and 12 or 26)) * 1.2 + 1 - (karma_mode and 1 or 0), small and 14 or 21)
+                            love.graphics.rectangle("fill", x + 62, y + (small and 3 or 0), math.ceil((MathUtils.clamp(current - karma, 0, max) / max) * (small and 12 or 26)) * 1.2 + 1 - (karma_mode and 1 or 0), small and 14 or 21)
                         end
                         
                         love.graphics.setFont(Assets.getFont("namelv", 16))
@@ -1490,7 +1490,7 @@ function Lib:init()
                             color = MG_PALETTE["player_sleeping_text"]
                         elseif Game.battle:getActionBy(battler) and Game.battle:getActionBy(battler).action == "DEFEND" then
                             color = MG_PALETTE["player_defending_text"]
-                        elseif Game.battle:getActionBy(battler) and Utils.containsValue({"ACTIONSELECT", "MENUSELECT", "ENEMYSELECT", "PARTYSELECT"}, Game.battle:getState()) and Game.battle:getActionBy(battler).action ~= "AUTOATTACK" then
+                        elseif Game.battle:getActionBy(battler) and TableUtils.contains({"ACTIONSELECT", "MENUSELECT", "ENEMYSELECT", "PARTYSELECT"}, Game.battle:getState()) and Game.battle:getActionBy(battler).action ~= "AUTOATTACK" then
                             color = MG_PALETTE["player_action_text"]
                         elseif karma > 0 then
                             color = MG_PALETTE["player_karma_text"]
@@ -1556,9 +1556,9 @@ function Lib:init()
                         love.graphics.rectangle("fill", x + 62, y - 2, (small and 12 or 26) * 1.2 + 1, 10)
                         if current > 0 then
                             love.graphics.setColor(Game:isLight() and MG_PALETTE["player_karma_health"] or MG_PALETTE["player_karma_health_dark"])
-                            love.graphics.rectangle("fill", x + 62, y - 2, math.ceil((Utils.clamp(current, 0, max) / max) * (small and 12 or 26)) * 1.2 + 1, 10)
+                            love.graphics.rectangle("fill", x + 62, y - 2, math.ceil((MathUtils.clamp(current, 0, max) / max) * (small and 12 or 26)) * 1.2 + 1, 10)
                             love.graphics.setColor(Game:isLight() and MG_PALETTE["player_health"] or {battler.chara:getColor()})
-                            love.graphics.rectangle("fill", x + 62, y - 2, math.ceil((Utils.clamp(current - karma, 0, max) / max) * (small and 12 or 26)) * 1.2 + 1 - (karma_mode and 1 or 0), 10)
+                            love.graphics.rectangle("fill", x + 62, y - 2, math.ceil((MathUtils.clamp(current - karma, 0, max) / max) * (small and 12 or 26)) * 1.2 + 1 - (karma_mode and 1 or 0), 10)
                         end
                         
                         love.graphics.setFont(Assets.getFont("namelv", 16))
@@ -1577,7 +1577,7 @@ function Lib:init()
                             color = MG_PALETTE["player_sleeping_text"]
                         elseif Game.battle:getActionBy(battler) and Game.battle:getActionBy(battler).action == "DEFEND" then
                             color = MG_PALETTE["player_defending_text"]
-                        elseif Game.battle:getActionBy(battler) and Utils.containsValue({"ACTIONSELECT", "MENUSELECT", "ENEMYSELECT", "PARTYSELECT"}, Game.battle:getState()) and Game.battle:getActionBy(battler).action ~= "AUTOATTACK" then
+                        elseif Game.battle:getActionBy(battler) and TableUtils.contains({"ACTIONSELECT", "MENUSELECT", "ENEMYSELECT", "PARTYSELECT"}, Game.battle:getState()) and Game.battle:getActionBy(battler).action ~= "AUTOATTACK" then
                             color = MG_PALETTE["player_action_text"]
                         elseif karma > 0 then
                             color = MG_PALETTE["player_karma_text"]
@@ -1608,7 +1608,7 @@ function Lib:init()
             end
         end)
         
-        Utils.hook(LightHealthBar, "init", function(orig, self)
+        HookSystem.hook(LightHealthBar, "init", function(orig, self)
              orig(self)
              if #Game.party <= 3 then return end
              
@@ -1621,7 +1621,7 @@ function Lib:init()
              end
         end)
         
-        Utils.hook(LightHealthBar, "draw", function(orig, self)
+        HookSystem.hook(LightHealthBar, "draw", function(orig, self)
             if #Game.party <= 3 then orig(self) return end
             
             Object.draw(self)
@@ -1650,7 +1650,7 @@ function Lib:init()
                     love.graphics.rectangle("fill", x + 62, y + (small and 3 or 0), (small and 12 or 26) * 1.2 + 1, small and 14 or 21)
                     if current > 0 then
                         love.graphics.setColor(MG_PALETTE["player_health"])
-                        love.graphics.rectangle("fill", x + 62, y + (small and 3 or 0), math.ceil((Utils.clamp(current, 0, max) / max) * (small and 12 or 26)) * 1.2 + 1, small and 14 or 21)
+                        love.graphics.rectangle("fill", x + 62, y + (small and 3 or 0), math.ceil((MathUtils.clamp(current, 0, max) / max) * (small and 12 or 26)) * 1.2 + 1, small and 14 or 21)
                     end
                     
                     love.graphics.setFont(Assets.getFont("namelv", 16))
@@ -1693,7 +1693,7 @@ function Lib:init()
                     love.graphics.rectangle("fill", x + 62, y - 2, (small and 12 or 26) * 1.2 + 1, 10)
                     if current > 0 then
                         love.graphics.setColor(MG_PALETTE["player_health"])
-                        love.graphics.rectangle("fill", x + 62, y - 2, math.ceil((Utils.clamp(current, 0, max) / max) * (small and 12 or 26)) * 1.2 + 1, 10)
+                        love.graphics.rectangle("fill", x + 62, y - 2, math.ceil((MathUtils.clamp(current, 0, max) / max) * (small and 12 or 26)) * 1.2 + 1, 10)
                     end
                     
                     love.graphics.setFont(Assets.getFont("namelv", 16))
@@ -1712,7 +1712,7 @@ function Lib:init()
         end)
     end
     
-    Utils.hook(ActionBox, "createButtons", function(orig, self)
+    HookSystem.hook(ActionBox, "createButtons", function(orig, self)
         orig(self)
         if #Game.battle.party > 3 and Kristal.getLibConfig("moreparty", "classic_mode") then
             for _,button in ipairs(self.buttons) do
@@ -1721,7 +1721,7 @@ function Lib:init()
         end
     end)
     
-    Utils.hook(ActionBox, "update", function(orig, self)
+    HookSystem.hook(ActionBox, "update", function(orig, self)
         orig(self)
         
         if #Game.battle.party <= 3 or Kristal.getLibConfig("moreparty", "classic_mode") then return end

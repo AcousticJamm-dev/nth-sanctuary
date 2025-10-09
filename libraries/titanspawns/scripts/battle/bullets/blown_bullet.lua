@@ -103,7 +103,7 @@ function blown_bullet:lengthdir_y(len, dir)
 end
 
 function blown_bullet:onAdd()
-    Assets.playSound("snd_dark_odd", Kristal:getVolume(), 0.35 + Utils.random(0.35))
+    Assets.playSound("snd_dark_odd", Kristal:getVolume(), 0.35 + MathUtils.random(0.35))
 end
 
 function blown_bullet:update()
@@ -140,15 +140,15 @@ function blown_bullet:update()
         end
 
         --[[for aa = 0, 4 do
-            local angle = Utils.angle(self.x, self.y, Game.battle.soul.x, Game.battle.soul.y) - 60 + (30 * aa) + Utils.random(-5, 5)
-            local speed = 1.5 + Utils.random(1.5)
+            local angle = MathUtils.angle(self.x, self.y, Game.battle.soul.x, Game.battle.soul.y) - 60 + (30 * aa) + Utils.random(-5, 5)
+            local speed = 1.5 + MathItils.random(1.5)
 
             -- spawnBullet arguments: (bullet_id, x, y, angle, speed)
             local bullet =  self.wave:spawnBullet("eye_fade_area_denial", self.x, self.y)
             bullet.physics.direction = angle
             bullet.physics.speed = speed
 
-            bullet.sprite:setScale(0.25, Utils.pick({4, -4}))
+            bullet.sprite:setScale(0.25, TableUtils.pick({4, -4}))
     end]]
 
 
@@ -199,10 +199,10 @@ function blown_bullet:update()
 
 
     if self.alpha ~= 1 then
-        self.alpha = Utils.approach(self.alpha, 1, 0.025)
+        self.alpha = MathUtils.approach(self.alpha, 1, 0.025)
 
         if self.alpha == 1 then
-            self.physics.direction = Utils.angle(self.x, self.y, Game.battle.soul.x, Game.battle.soul.y)
+            self.physics.direction = MathUtils.angle(self.x, self.y, Game.battle.soul.x, Game.battle.soul.y)
         end
     end
 
@@ -226,16 +226,16 @@ function blown_bullet:update()
         self.sprite.alpha = 0
     end]]
 
-    self.dist = Utils.dist(self.x, self.y, Game.battle.soul.x, Game.battle.soul.y)
+    self.dist = MathUtils.dist(self.x, self.y, Game.battle.soul.x, Game.battle.soul.y)
     if (self.dist < self.inaccurate_distance_calculation_variable + 8) then
-        self.light = Utils.approach(self.light, 1, self.light_rate);
-        self.speed_calc = Utils.approach(self.speed_calc, 0.7 + (1 - self.light),
+        self.light = MathUtils.approach(self.light, 1, self.light_rate);
+        self.speed_calc = MathUtils.approach(self.speed_calc, 0.7 + (1 - self.light),
             0.15 * self.speedfactor * self.speed_max_multiplier);
         self.image_size = 1
     else
-        self.speed_calc = Utils.approach(self.speed_calc, self.max_speed * self.speed_max_multiplier,
+        self.speed_calc = MathUtils.approach(self.speed_calc, self.max_speed * self.speed_max_multiplier,
             self.accel * self.speed_max_multiplier * (1 - self.light));
-        self.light = Utils.approach(self.light, 0, self.light_recover);
+        self.light = MathUtils.approach(self.light, 0, self.light_recover);
     end
 
     self.colormask.amount = self.light
@@ -245,17 +245,17 @@ function blown_bullet:update()
 
 
     if (self.tracking_val2 > 0) then
-        self.tracking_val2 = Utils.approach(self.tracking_val2, 0, 0.015)
+        self.tracking_val2 = MathUtils.approach(self.tracking_val2, 0, 0.015)
     end
 
 
 
     if self.toggle_active and self.tracking_val2 ~= 0 then
         if self.slow_track then
-            self.physics.direction = Utils.angle(self.x, self.y, Game.battle.soul.x, Game.battle.soul.y);
+            self.physics.direction = MathUtils.angle(self.x, self.y, Game.battle.soul.x, Game.battle.soul.y);
             self.physics.speed = self.speed_calc
         else
-            self.tracking_val = Utils.approach(self.tracking_val, 16, 0.025);
+            self.tracking_val = MathUtils.approach(self.tracking_val, 16, 0.025);
 
 
             local eff_speed = self.speed_calc * (1 + (math.sin(self.true_timer * 0.15) * 0.6))
@@ -272,8 +272,8 @@ function blown_bullet:update()
             end
 
             local turning_mult = 0.5 - (math.sin(self.true_timer * 0.15) * 0.5)
-            local anglediff = Utils.angleDiff(self.physics.direction, Utils.angle(self.x, self.y, hx, hy))
-            local turn = Utils.clamp(Utils.sign(anglediff) * self.tracking_val * turning_mult, -math.abs(anglediff),
+            local anglediff = MathUtils.angleDiff(self.physics.direction, MathUtils.angle(self.x, self.y, hx, hy))
+            local turn = MathUtils.clamp(MathUtils.sign(anglediff) * self.tracking_val * turning_mult, -math.abs(anglediff),
                 math.abs(anglediff))
 
             self.physics.direction = self.physics.direction - turn
@@ -283,8 +283,8 @@ function blown_bullet:update()
 
 
     if self.shakeme then
-        self.xoff = Utils.pick { -1, 0, 1 }
-        self.yoff = Utils.pick { -1, 0, 1 }
+        self.xoff = TableUtils.pick { -1, 0, 1 }
+        self.yoff = TableUtils.pick { -1, 0, 1 }
     end
 
 

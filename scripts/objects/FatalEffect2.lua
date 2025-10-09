@@ -33,8 +33,8 @@ function FatalEffect2:init(texture, x, y, after)
 
             local qx = (i * self.block_size)
             local qy = (j * self.block_size)
-            local qw = Utils.clamp(self.block_size, 0, self.width - qx)
-            local qh = Utils.clamp(self.block_size, 0, self.height - qy)
+            local qw = MathUtils.clamp(self.block_size, 0, self.width - qx)
+            local qh = MathUtils.clamp(self.block_size, 0, self.height - qy)
 
             block.quad = love.graphics.newQuad(qx, qy, qw, qh, self.width, self.height)
 
@@ -55,7 +55,7 @@ end
 
 function FatalEffect2:update()
     self.red_timer = self.red_timer + DTMULT
-    self.color = Utils.mergeColor(self.start_color, {1, 1, 1}, self.red_timer / 10)
+    self.color = ColorUtils.mergeColor(self.start_color, {1, 1, 1}, self.red_timer / 10)
 
     for i = 0, self.blocks_x do
         for j = 0, self.blocks_y do

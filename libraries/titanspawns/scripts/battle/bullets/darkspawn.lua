@@ -93,7 +93,7 @@ function DarkSpace:lengthdir_y(len, dir)
 end
 
 function DarkSpace:onAdd()
-    Assets.playSound("snd_dark_odd", Kristal:getVolume(), 0.35 + Utils.random(0.35))
+    Assets.playSound("snd_dark_odd", Kristal:getVolume(), 0.35 + MathUtils.random(0.35))
 end
 
 function DarkSpace:update()
@@ -133,10 +133,10 @@ function DarkSpace:update()
 
 
     if self.alpha ~= 1 then
-        self.alpha = Utils.approach(self.alpha, 1, 0.025)
+        self.alpha = MathUtils.approach(self.alpha, 1, 0.025)
 
         if self.alpha == 1 then
-            self.physics.direction = Utils.angle(self.x, self.y, Game.battle.soul.x, Game.battle.soul.y)
+            self.physics.direction = MathUtils.angle(self.x, self.y, Game.battle.soul.x, Game.battle.soul.y)
         end
     end
 
@@ -160,26 +160,26 @@ function DarkSpace:update()
         self.sprite.alpha = 0
     end
 
-    self.dist = Utils.dist(self.x, self.y, Game.battle.soul.x, Game.battle.soul.y)
+    self.dist = MathUtils.dist(self.x, self.y, Game.battle.soul.x, Game.battle.soul.y)
     if (self.dist < self.inaccurate_distance_calculation_variable + 8) then
-        self.light = Utils.approach(self.light, 1, self.light_rate);
-        self.speed_calc = Utils.approach(self.speed_calc, 0.7 + (1 - self.light),
+        self.light = MathUtils.approach(self.light, 1, self.light_rate);
+        self.speed_calc = MathUtils.approach(self.speed_calc, 0.7 + (1 - self.light),
             0.15 * self.speedfactor * self.speed_max_multiplier);
         self.image_size = 1
 
         if love.math.random(1, 3) == 1 then
-            local particle = Game.battle:addChild(GenericParticle(self.x + Utils.random(-12, 12), self.y + Utils.random(-12, 12)))
+            local particle = Game.battle:addChild(GenericParticle(self.x + MathUtils.random(-12, 12), self.y + MathUtils.random(-12, 12)))
             particle.layer = self.layer + 2
             particle:setColor({ 1, 1, 1 }) -- c_white
-            particle.direction = Utils.angle(Game.battle.soul.x, Game.battle.soul.y, particle.x, particle.y)
-            particle.physics.speed = 1 + Utils.random(3)
+            particle.direction = MathUtils.angle(Game.battle.soul.x, Game.battle.soul.y, particle.x, particle.y)
+            particle.physics.speed = 1 + MathUtils.random(3)
             particle.shrink_rate = 0.2
         end
         
     else
-        self.speed_calc = Utils.approach(self.speed_calc, self.max_speed * self.speed_max_multiplier,
+        self.speed_calc = MathUtils.approach(self.speed_calc, self.max_speed * self.speed_max_multiplier,
             self.accel * self.speed_max_multiplier * (1 - self.light));
-        self.light = Utils.approach(self.light, 0, self.light_recover);
+        self.light = MathUtils.approach(self.light, 0, self.light_recover);
     end
 
     self.colormask.amount = self.light
@@ -189,10 +189,10 @@ function DarkSpace:update()
 
     if self.toggle_active then
         if self.slow_track then
-            self.physics.direction = Utils.angle(self.x, self.y, Game.battle.soul.x, Game.battle.soul.y);
+            self.physics.direction = MathUtils.angle(self.x, self.y, Game.battle.soul.x, Game.battle.soul.y);
             self.physics.speed = self.speed_calc
         else
-            self.tracking_val = Utils.approach(self.tracking_val, 16, 0.025);
+            self.tracking_val = MathUtils.approach(self.tracking_val, 16, 0.025);
 
 
             local eff_speed = self.speed_calc * (1 + (math.sin(self.true_timer * 0.15) * 0.6))
@@ -209,8 +209,8 @@ function DarkSpace:update()
             end
 
             local turning_mult = 0.5 - (math.sin(self.true_timer * 0.15) * 0.5)
-            local anglediff = Utils.angleDiff(self.physics.direction, Utils.angle(self.x, self.y, hx, hy))
-            local turn = Utils.clamp(Utils.sign(anglediff) * self.tracking_val * turning_mult, -math.abs(anglediff),
+            local anglediff = MathUtils.angleDiff(self.physics.direction, MathUtils.angle(self.x, self.y, hx, hy))
+            local turn = MathUtils.clamp(MathUtils.sign(anglediff) * self.tracking_val * turning_mult, -math.abs(anglediff),
                 math.abs(anglediff))
 
             self.physics.direction = self.physics.direction - turn
@@ -220,8 +220,8 @@ function DarkSpace:update()
 
 
     if self.shakeme then
-        self.xoff = Utils.pick { -1, 0, 1 }
-        self.yoff = Utils.pick { -1, 0, 1 }
+        self.xoff = TableUtils.pick { -1, 0, 1 }
+        self.yoff = TableUtils.pick { -1, 0, 1 }
     end
 
 

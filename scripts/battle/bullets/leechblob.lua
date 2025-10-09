@@ -29,7 +29,7 @@ function LeechBlob:onAdd(parent)
 
 	self.target_x = self.attacker.x+self.attacker.width/2
 	self.target_y = self.attacker.y-self.attacker.height
-    self.physics.direction = Utils.angle(self.x, self.y, self.target_x, self.target_y) + math.rad(180)
+    self.physics.direction = MathUtils.angle(self.x, self.y, self.target_x, self.target_y) + math.rad(180)
     self.physics.speed = self.prime_speed
 
 
@@ -44,11 +44,11 @@ function LeechBlob:update()
 	self.target_x = self.attacker.x+self.attacker.width/2
 	self.target_y = self.attacker.y-self.attacker.height
     if self.active_move then
-        local accel = self.acc / Utils.dist(self.x, self.y, self.target_x + 10, self.target_y + 10);
-        self.physics.direction = Utils.angle(self.x, self.y, self.target_x, self.target_y);
-        self.physics.speed = Utils.approach(self.physics.speed, self.max_speed, accel)
+        local accel = self.acc / MathUtils.dist(self.x, self.y, self.target_x + 10, self.target_y + 10);
+        self.physics.direction = MathUtils.angle(self.x, self.y, self.target_x, self.target_y);
+        self.physics.speed = MathUtils.approach(self.physics.speed, self.max_speed, accel)
     end
-    if Utils.dist(self.x, self.y, self.target_x, self.target_y) <= 40 then
+    if MathUtils.dist(self.x, self.y, self.target_x, self.target_y) <= 40 then
 		local damage = self:getDamage()
 		if damage > 0 then
 			self.attacker:heal(damage)
@@ -58,7 +58,7 @@ function LeechBlob:update()
 		self:finishexplosion()
 		self:remove()
 	end
-    --[[if (Utils.dist(self.x, self.y, Game.battle.soul.x + 10, Game.battle.soul.y + 10) <= 20 and self.active_move) then
+    --[[if (MathUtils.dist(self.x, self.y, Game.battle.soul.x + 10, Game.battle.soul.y + 10) <= 20 and self.active_move) then
         self:remove()
     end]]
 

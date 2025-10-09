@@ -1,6 +1,6 @@
 function Mod:init()
     print("Loaded "..self.info.name.."!")
-    Utils.copyInto(MUSIC_VOLUMES, {
+    TableUtils.copyInto(MUSIC_VOLUMES, {
         second_church = 0.8
     })
 end
@@ -11,7 +11,7 @@ function Mod:postInit(new_file)
         Game:setFlag("shards", 1)
         Game.world:startCutscene("primary.intro")
     end
-    Utils.hook(Battle, "spawnEnemyTextbox", function(orig, self, enemy, ...)
+    HookSystem.hook(Battle, "spawnEnemyTextbox", function(orig, self, enemy, ...)
         if enemy and enemy.id == "guei" then
             local x, y = enemy.sprite:getRelativePos(0, enemy.sprite.height/2, self)
             if enemy.dialogue_offset then

@@ -130,9 +130,9 @@ function character:init()
     -- X-Action color (for the color of X-Action menu items) (defaults to the main color)
     self.xact_color = {0.5, 1, 0.5}
 	-- highlight color A
-    self.highlight_color = Utils.hexToRgb("#B5E61D")
+    self.highlight_color = ColorUtils.hexToRGB("#B5E61DFF")
 		-- highlight color B
-    self.highlight_color_alt = Utils.hexToRgb("#4A6ACA")
+    self.highlight_color_alt = ColorUtils.hexToRGB("#4A6ACAFF")
 
     -- Head icon in the equip / power menu
     if ralsei_style == 1 then
@@ -186,7 +186,7 @@ function character:onLevelUp(level)
 end
 
 function character:onPowerSelect(menu)
-    if Utils.random() <= 0.03 then
+    if MathUtils.random() <= 0.03 then
         menu.ralsei_dog = true
     else
         menu.ralsei_dog = false

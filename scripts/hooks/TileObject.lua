@@ -14,7 +14,7 @@ function TileObject:init(tileset, tile, x, y, w, h, rotation, flip_x, flip_y, pr
 	self.light_area = self.properties["light"] or false
 	self.light_type = self.properties["light_type"] or 1
 	self.light_alpha = self.properties["light_alpha"] or 1
-	self.light_color = Utils.parseColorProperty(self.properties["light_color"])
+	self.light_color = TiledUtils.parseColorProperty(self.properties["light_color"])
 	self.light_dust = self.properties["light_dust"] or false
 	self.light_amount = 1
 	
@@ -28,7 +28,7 @@ function TileObject:drawLightA()
 		local sx = self.width / tile_width * (self.tile_flip_x and -1 or 1)
 		local sy = self.height / tile_height * (self.tile_flip_y and -1 or 1)
 		if self.tileset.preserve_aspect_fit then
-			sx = Utils.absMin(sx, sy)
+			sx = MathUtils.absMin(sx, sy)
 			sy = sx
 		end
 		love.graphics.setColor(1,1,1,1)
@@ -53,7 +53,7 @@ function TileObject:drawLightB()
 		local sx = self.width / tile_width * (self.tile_flip_x and -1 or 1)
 		local sy = self.height / tile_height * (self.tile_flip_y and -1 or 1)
 		if self.tileset.preserve_aspect_fit then
-			sx = Utils.absMin(sx, sy)
+			sx = MathUtils.absMin(sx, sy)
 			sy = sx
 		end
 		if self.light_type == 1 then
@@ -69,7 +69,7 @@ function TileObject:draw()
     local sx = self.width / tile_width * (self.tile_flip_x and -1 or 1)
     local sy = self.height / tile_height * (self.tile_flip_y and -1 or 1)
     if self.tileset.preserve_aspect_fit then
-        sx = Utils.absMin(sx, sy)
+        sx = MathUtils.absMin(sx, sy)
         sy = sx
     end
 	if self.light_area and self.light_type == 1 then

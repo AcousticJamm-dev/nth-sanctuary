@@ -52,15 +52,15 @@ function ChurchPiano:onAdd(parent)
 		Game.world:addChild(tuttext)
 	end
     local i = 1
-    while i <= Utils.len(self.solution) do
-        local solution_num = tonumber(Utils.sub(self.solution, i, i))
+    while i <= StringUtils.len(self.solution) do
+        local solution_num = tonumber(StringUtils.sub(self.solution, i, i))
 		table.insert(self.solution_nums, solution_num)
         i = i + 1
     end
 end
 
 local function scr_returnwait(x1, y1, x2, y2, spd)
-	return math.max(1, Utils.round(Utils.dist(x1, y1, x2, y2) / spd))
+	return math.max(1, MathUtils.round(MathUtils.dist(x1, y1, x2, y2) / spd))
 end
 
 local function scr_piano_determinepitch(sound)
@@ -111,7 +111,7 @@ function ChurchPiano:onInteract(player, dir)
 			if #Game.party >= 4 then
 				party4 = cutscene:getCharacter(Game.party[4]:getActor().id)
 			end
-			local pointdist = Utils.dist(self.leader_x, self.leader_y, leader.x, leader.y)
+			local pointdist = MathUtils.dist(self.leader_x, self.leader_y, leader.x, leader.y)
 			if pointdist > 4 then
 				local walkwait = math.min(scr_returnwait(leader.x, leader.y, self.leader_x, self.leader_y, 4), 15)
 				cutscene:wait(cutscene:walkToSpeed(leader, self.leader_x, self.leader_y, walkwait, "up"))
@@ -124,7 +124,7 @@ function ChurchPiano:onInteract(player, dir)
 			if self.catafollow then
 				if party2 then
 					local p2x, p2y = self.leader_x + 30, self.leader_y + 30
-					pointdist = Utils.dist(p2x, p2y, party2.x, party2.y)
+					pointdist = MathUtils.dist(p2x, p2y, party2.x, party2.y)
 					if pointdist > 4 then
 						local walkwait = math.min(scr_returnwait(party2.x, party2.y, p2x, p2y, 4), 15)
 						cutscene:wait(cutscene:walkToSpeed(party2, p2x, p2y, walkwait, "up"))
@@ -136,7 +136,7 @@ function ChurchPiano:onInteract(player, dir)
 				end
 				if party3 then
 					local p3x, p3y = self.leader_x - 30, self.leader_y + 30
-					pointdist = Utils.dist(p3x, p3y, party3.x, party3.y)
+					pointdist = MathUtils.dist(p3x, p3y, party3.x, party3.y)
 					if pointdist > 4 then
 						local walkwait = math.min(scr_returnwait(party3.x, party3.y, p3x, p3y, 4), 15)
 						cutscene:wait(cutscene:walkToSpeed(party3, p3x, p3y, walkwait, "up"))
@@ -148,7 +148,7 @@ function ChurchPiano:onInteract(player, dir)
 				end
 				if party4 then
 					local p4x, p4y = self.leader_x, self.leader_y + 30
-					pointdist = Utils.dist(p4x, p4y, party4.x, party4.y)
+					pointdist = MathUtils.dist(p4x, p4y, party4.x, party4.y)
 					if pointdist > 4 then
 						local walkwait = math.min(scr_returnwait(party4.x, party4.y, p4x, p4y, 4), 15)
 						cutscene:wait(cutscene:walkToSpeed(party4, p4x, p4y, walkwait, "up"))
@@ -354,13 +354,13 @@ function ChurchPiano:draw()
 	if self.con == 1 and not self.dontdrawmenu then
 		alphtarg = 1
 	end
-	self.drawalpha = Utils.lerp(self.drawalpha, alphtarg, 0.1*DTMULT)
+	self.drawalpha = MathUtils.lerp(self.drawalpha, alphtarg, 0.1*DTMULT)
 	self.drawspace = 18
 	local drawx = 0 + self.width/2
 	local drawy = 0 - 80
 	love.graphics.setColor(0,0,0,self.drawalpha*0.5)
 	love.graphics.circle("fill", drawx, drawy, 44 + math.sin(self.siner / 64) * 2)
-	local litblue = Utils.hexToRgb("#698DE6")
+	local litblue = ColorUtils.hexToRGB("#698DE6FF")
 	local sinstrength = 2
 	local basealpha = 0.35
 	for i, unit in ipairs(self.drawunits) do
@@ -377,7 +377,7 @@ function ChurchPiano:draw()
 				note:setScale(2,2)
 				note:setOriginExact(unit.offx, unit.offy)
 				note.rotation = unit.rot
-                note.physics.direction = math.rad(Utils.random(360))
+                note.physics.direction = math.rad(MathUtils.random(360))
                 note.physics.speed = 5
                 note.physics.friction = 0.35
 				note.physics.direction = unit.rot + math.rad(90)

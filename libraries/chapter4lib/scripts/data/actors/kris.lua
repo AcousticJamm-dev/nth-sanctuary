@@ -3,7 +3,7 @@ local actor, super = Class("kris", true)
 
 function actor:init()
     super.init(self)
-    Utils.merge(self.offsets, {
+    TableUtils.merge(self.offsets, {
         -- TODO: Accuracy.
         ["climb/climb"] = {0, 0},
         ["climb/charge"] = {0, 3},
@@ -20,7 +20,7 @@ end
 -- TODO: This sucks.
 function actor:getOffset(sprite)
     local ox, oy = super.getOffset(self, sprite)
-    if Utils.startsWith(sprite, "climb") then
+    if StringUtils.startsWith(sprite, "climb") then
         ox, oy = ox - 5, oy + 4
     end
     return ox, oy

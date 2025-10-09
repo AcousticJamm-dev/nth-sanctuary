@@ -32,9 +32,9 @@ function RedShoot:onStart()
 
     if self.difficulty >= 2 then
         self.timer:everyInstant(7 / 3, function()
-            local tempdir = Utils.random(360);
-            local tempdist = 150 + Utils.random(50);
-            local list = Utils.pick({ { "desperate", false, 3 }, { "desperate", true, 3 } })
+            local tempdir = MathUtils.random(360);
+            local tempdist = 150 + MathUtils.random(50);
+            local list = TableUtils.pick({ { "desperate", false, 3 }, { "desperate", true, 3 } })
 
 
 
@@ -50,8 +50,8 @@ function RedShoot:onStart()
 
     -- Every 0.33 seconds...
     self.timer:everyInstant(12 / 3, function()
-        local tempdir = Utils.random(360);
-        local tempdist = 150 + Utils.random(50);
+        local tempdir = MathUtils.random(360);
+        local tempdist = 150 + MathUtils.random(50);
 
         local arena = Game.battle.arena
 
@@ -64,7 +64,7 @@ function RedShoot:onStart()
             attacker:setSprite("spr_darkshape_desperate_animated_1")
             attacker:shake(3)
             local spawn = self:spawnBullet("redshape", x, y)
-            spawn.physics.direction = Utils.angle(self.x, self.y, Game.battle.soul.x + 10, Game.battle.soul.y + 10)
+            spawn.physics.direction = MathUtils.angle(self.x, self.y, Game.battle.soul.x + 10, Game.battle.soul.y + 10)
             spawn.sprite.rotation = spawn.physics.direction
             spawn.max_speed = 9
             spawn.skip_spawn = true

@@ -39,8 +39,8 @@ function ProphecyPanel:init(sprite, text, width, height)
     self.tilespr = Assets.getTexture("backgrounds/IMAGE_DEPTH_EXTEND_MONO_SEAMLESS")
     self.tiletex = Assets.getTexture("backgrounds/IMAGE_DEPTH_EXTEND_SEAMLESS")
     self.gradient20 = Assets.getTexture("backgrounds/gradient20")
-    self.propblue = Utils.hexToRgb("#42D0FF")
-    self.liteblue = Utils.hexToRgb("#FFFFFF")
+    self.propblue = ColorUtils.hexToRGB("#42D0FFFF")
+    self.liteblue = ColorUtils.hexToRGB("#FFFFFFFF")
 	
 	self.panel_alpha = 0
 end
@@ -79,11 +79,11 @@ function ProphecyPanel:draw()
     love.graphics.setStencilTest()
 
     local back_canvas = Draw.pushCanvas(self.width, self.height)
-	local ogbg = Utils.hexToRgb("#A3F8FF")
+	local ogbg = ColorUtils.hexToRGB("#A3F8FFFF")
 	ogbg = {COLORS["black"]}
-	local linecol = Utils.mergeColor(Utils.hexToRgb("#8BE9EF"), Utils.hexToRgb("#17EDFF"), 0.5 + (math.sin(self.siner / 120) * 0.5))
+	local linecol = ColorUtils.mergeColor(ColorUtils.hexToRGB("#8BE9EFFF"), ColorUtils.hexToRGB("#17EDFFFF"), 0.5 + (math.sin(self.siner / 120) * 0.5))
 	local gradalpha = 1
-	Draw.setColor(ogbg, gradalpha*0.5)
+	Draw.setColor(ogbg, gradalpha*0.45)
 	Draw.rectangle("fill", 0, 0, 320, 240)
     love.graphics.setBlendMode("add")
 	draw_sprite_tiled_ext(self.tiletex, 0, math.ceil(-self.siner / 2), math.ceil(-self.siner / 2), 1, 1, linecol, 1)
@@ -128,10 +128,10 @@ function ProphecyPanel:draw()
 	Draw.popCanvas()
 	Draw.popCanvas()
 	for i = 1, 2 do	
-		Draw.setColor(1,1,1,self.panel_alpha * 0.5) -- The alpha isn't accurate to DR's code but fuck it
+		Draw.setColor(1,1,1,self.panel_alpha * 0.45) -- The alpha isn't accurate to DR's code but fuck it
 		Draw.draw(back_canvas, (self.sprite.x - self.x) + ysin * (2 * i), (self.sprite.y - self.y) + ysin * (2 * i), 0, 2, 2)
 	end
-	Draw.setColor(1,1,1,self.panel_alpha)
+	Draw.setColor(1,1,1,self.panel_alpha*0.7)
 	Draw.draw(back_canvas, (self.sprite.x - self.x) + xsin, (self.sprite.y - self.y) + ysin, 0, 2, 2)
     local text_canvas = Draw.pushCanvas(320, 240)
     love.graphics.stencil(function()
@@ -148,7 +148,7 @@ function ProphecyPanel:draw()
     love.graphics.setStencilTest()
 	Draw.popCanvas()
     love.graphics.setBlendMode("add")
-	Draw.setColor(self.panel_alpha,self.panel_alpha,self.panel_alpha)
+	Draw.setColor(self.panel_alpha*0.7,self.panel_alpha*0.7,self.panel_alpha*0.7)
 	Draw.draw(text_canvas, (self.text.x - self.x) + xsin + self.text_offset_x, (self.text.y - self.y) + ysin + self.text_offset_y, 0, 2, 2)
 	Draw.draw(text_canvas, (self.text.x - self.x) + xsin + self.text_offset_x, (self.text.y - self.y) + ysin + self.text_offset_y, 0, 2, 2)
     love.graphics.setBlendMode("alpha")

@@ -9,8 +9,8 @@ return {
   height = 12,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 15,
-  nextobjectid = 29,
+  nextlayerid = 16,
+  nextobjectid = 31,
   properties = {
     ["border"] = "church_a",
     ["music"] = "mus_rain_deep",

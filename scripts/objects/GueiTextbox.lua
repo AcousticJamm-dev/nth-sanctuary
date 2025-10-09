@@ -33,7 +33,7 @@ function GueiTextbox:onAddToStage(stage)
 end
 
 function GueiTextbox:update()
-    self.wait_timer = Utils.approach(self.wait_timer, 0, DT)
+    self.wait_timer = MathUtils.approach(self.wait_timer, 0, DT)
 
     if Input.pressed("confirm") or Input.down("menu") then
         self:advance()

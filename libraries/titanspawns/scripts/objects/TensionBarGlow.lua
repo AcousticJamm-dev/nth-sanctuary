@@ -11,7 +11,7 @@ end
 function TensionBarGlow:update()
     super.update(self)
 
-    self.alphamod = Utils.approach(self.alphamod, 0, 0.15 * DTMULT)
+    self.alphamod = MathUtils.approach(self.alphamod, 0, 0.15 * DTMULT)
     if self.alphamod <= 0 then
         self:remove()
     end

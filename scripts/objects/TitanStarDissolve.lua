@@ -40,7 +40,7 @@ function TitanStarDissolve:update()
 	self.remprog[3] = self.remprog[2]
 	self.remprog[2] = self.remprog[1]
 	self.remprog[1] = self.prog
-	self.prog = Utils.clamp(self.timer / self.lifetime, 0, 1)
+	self.prog = MathUtils.clamp(self.timer / self.lifetime, 0, 1)
 	if self.con == 1 then
 		self.timer = self.timer + DTMULT
 		if self.prog >= self.prate * self.pcount then
@@ -55,13 +55,13 @@ function TitanStarDissolve:update()
 			else
 				width = Utils.ease(1.5, 0, (self.prog - midpoint) / (1 - midpoint), "outExpo")
 			end
-			local tilt = Utils.random(0.5, 1) * Utils.randomSign()
+			local tilt = MathUtils.random(0.5, 1) * Utils.randomSign()
 			for i = 0, width, 40 do
 				local tw = 85
 				if tilt > 0 then
 					tw = 120
 				end
-				local dissipate_sprite = BlendSprite("effects/spr_darkshape_dissipate", self.x + Utils.lerp(132, 125, self.prog) * 2 + (tilt * (width * tw)), self.y + 370 - (self.prog * 230) + Utils.random(-10, 10) + (tilt * ts))
+				local dissipate_sprite = BlendSprite("effects/spr_darkshape_dissipate", self.x + MathUtils.lerp(132, 125, self.prog) * 2 + (tilt * (width * tw)), self.y + 370 - (self.prog * 230) + MathUtils.random(-10, 10) + (tilt * ts))
 				dissipate_sprite:setOrigin(0.5, 0.5)
 				dissipate_sprite:setScale(0.5, 0.5)
 				dissipate_sprite:setFrame(2)
@@ -97,8 +97,8 @@ function TitanStarDissolve:draw()
 		else
 			width = Utils.ease(0.85, 0, ((i/height) - midpoint) / (1 - midpoint), "outExpo")
 		end
-		local debug_line_start_x = (Utils.lerp(132, 125, i/height) * 2) - (width * 85)
-		local debug_line_end_x = (Utils.lerp(132, 125, i/height) * 2) + (width * 120)
+		local debug_line_start_x = (MathUtils.lerp(132, 125, i/height) * 2) - (width * 85)
+		local debug_line_end_x = (MathUtils.lerp(132, 125, i/height) * 2) + (width * 120)
 		local debug_line_start_y = 370 - i + (ts * width)
 		local debug_line_end_y = 370 - i + (ts * width)
 		Draw.setColor(1,0,0,1)

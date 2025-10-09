@@ -26,20 +26,15 @@ function ThreeDPrism:init()
     self.particles = {}
 	self.particle_tex = Assets.getFramesOrTexture("bullets/cube/cube")
 	self.particle_dtmult = 0
-    self.overclock = false
+    self.holdbreath = false
 end
 
 function ThreeDPrism:createSoul(x, y, color)
 	local soul = Soul(x, y, color)
-	if self.overclock then
+	if self.holdbreath then
 		soul.speed = 5
 	end
     return soul
-end
-
-function ThreeDPrism:onWavesDone()
-	super.onWavesDone(self)
-    self.overclock = false
 end
 
 function ThreeDPrism:update()
@@ -53,9 +48,9 @@ function ThreeDPrism:update()
 		self.shape_timer = self.shape_timer + DT
 		if self.shape_timer >= 0.4 then
 		    table.insert(self.particles, {
-				x = Utils.random(SCREEN_WIDTH), y = SCREEN_HEIGHT + 40,
-				speed = 8 * Utils.random(0.5, 2),
-				xmove = Utils.pick({1, 2, 3, 4}),
+				x = MathUtils.random(SCREEN_WIDTH), y = SCREEN_HEIGHT + 40,
+				speed = 8 * MathUtils.random(0.5, 2),
+				xmove = TableUtils.pick({1, 2, 3, 4}),
 				x_last = {-100,-100,-100,-100,-100,-100,-100,-100,-100,-100,
 						  -100,-100,-100,-100,-100,-100,-100,-100,-100,-100,
 						  -100,-100,-100,-100,-100,-100,-100,-100,-100,-100},
@@ -95,7 +90,7 @@ function ThreeDPrism:update()
         end
     end
     for _,particle in ipairs(particle_to_remove) do
-        Utils.removeFromTable(self.particles, particle)
+        TableUtils.removeValue(self.particles, particle)
     end
 	if self.particle_dtmult >= 1 then
 		self.particle_dtmult = 0
@@ -118,7 +113,7 @@ function ThreeDPrism:drawBackground(fade)
 
     love.graphics.setLineStyle("rough")
     love.graphics.setLineWidth(1)
-	local rr, rg, rb = Utils.hsvToRgb((self.rainbow_timer / 255) % 1, 1, 66 / 255)
+	local rr, rg, rb = ColorUtils.HSVToRGB((self.rainbow_timer / 255) % 1, 1, 66 / 255)
     for i = 2, 16 do
         Draw.setColor(rr, rg, rb, fade / 2)
         love.graphics.line(0, -210 + (i * 50) + math.floor(Game.battle.offset / 2), 640, -210 + (i * 50) + math.floor(Game.battle.offset / 2))
@@ -130,7 +125,7 @@ function ThreeDPrism:drawBackground(fade)
         love.graphics.line(0, -100 + (i * 50) - math.floor(Game.battle.offset), 640, -100 + (i * 50) - math.floor(Game.battle.offset))
         love.graphics.line(-100 + (i * 50) - math.floor(Game.battle.offset), 0, -100 + (i * 50) - math.floor(Game.battle.offset), 480)
     end
-	rr, rg, rb = Utils.hsvToRgb((self.rainbow_timer / 255) % 1, 233 / 255, 200 / 255)
+	rr, rg, rb = ColorUtils.HSVToRGB((self.rainbow_timer / 255) % 1, 233 / 255, 200 / 255)
     Draw.setColor(rr, rg, rb, 0.3 * fade)
 	self.xx = self.xx + -2
 	if self.xx > 600 then
@@ -147,7 +142,7 @@ function ThreeDPrism:drawBackground(fade)
     for _,particle in ipairs(self.particles) do
 		love.graphics.setBlendMode("add")
 		for i = 30, 1, -1 do
-			local ar, ag, ab = Utils.mergeColor(COLORS["gray"], {rr/2, rg/2, rb/2}, i/30)
+			local ar, ag, ab = ColorUtils.mergeColor(COLORS["gray"], {rr/2, rg/2, rb/2}, i/30)
 			love.graphics.setColor(ar, ag, ab, (1-(i/30) * fade)/2)
 			love.graphics.draw(self.particle_tex[(math.floor(self.rainbow_timer/4)%6)+1], particle.x_last[i], particle.y_last[i], particle.radius, 1, 1, 0, 0)
 		end

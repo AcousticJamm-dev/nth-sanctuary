@@ -23,7 +23,7 @@ function SpawnTest:onStart()
 
     if self.difficulty >= 3 then
         self.timer:everyInstant(15 / 3, function()
-            local tempdir = Utils.random(360);
+            local tempdir = MathUtils.random(360);
             local tempdist = 150 + Utils.random(50);
             local arena = Game.battle.arena
 
@@ -35,14 +35,14 @@ function SpawnTest:onStart()
 
     -- Every 0.33 seconds...
     self.timer:everyInstant(self:getEnemyRatio(), function()
-        local tempdir = Utils.random(360);
-        local tempdist = 150 + Utils.random(50);
+        local tempdir = MathUtils.random(360);
+        local tempdist = 150 + MathUtils.random(50);
         local selection = { { "mine", true, 2.25, "blown_bullet" } }
 
         if self.difficulty >= 2 then
             table.insert(selection, { "mine", true, 2.25, "blown_bullet" })
         end
-        local list = Utils.pick(selection)
+        local list = TableUtils.pick(selection)
 
         local arena = Game.battle.arena
         local spawn = self:spawnBullet(list[4], arena.x + self:lengthdir_x(tempdist, tempdir),

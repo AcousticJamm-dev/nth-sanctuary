@@ -23,7 +23,8 @@ function ThreeDPrism:init()
 
     -- List of possible wave ids, randomly picked each turn
     self.waves = {
-        "3d/cubes-2"
+        "3d/cubes-1",
+        "3d/cubes-2",
     }
 
     -- Dialogue randomly displayed in the enemy's speech bubble
@@ -53,17 +54,24 @@ function ThreeDPrism:init()
 
     self:getAct("Check").description = "Useless\nanalysis"
     -- Register act called "Smile"
-    self:registerAct("Overclock", "Speed up", nil, 2)
+    self:registerAct("HoldBreath", "Move\nfaster", nil, 2)
+    self:registerAct("Spin", "Spin\n10%\nmercy")
+	
+    self.progress = 0
 end
 
 function ThreeDPrism:onAct(battler, name)
-    if name == "Overclock" then
-		if Game.battle.encounter.overclock then
-			return "* You tried to go even faster...[wait:5]\n* But Kris didn't want to become overexerted."
+    if name == "HoldBreath" then
+		if Game.battle.encounter.holdbreath then
+			return "* Kris held their breath...\n* Nothing happened."
 		else
-			Game.battle.encounter.overclock = true
-			return "* Kris raised their adrenaline levels!\n* The SOUL moves faster for one turn."
+			Game.battle.encounter.holdbreath = true
+			return "* Kris held their breath.\n* Their heartbeat quickened.\n* The SOUL now moves faster."
 		end
+	elseif name == "Spin" then
+        self:addMercy(10)
+		Assets.playSound("pirouette")
+		return "* Kris spun around the third dimension!"
     elseif name == "Standard" then --X-Action
         -- Give the enemy 50% mercy
         self:addMercy(50)
@@ -83,6 +91,29 @@ function ThreeDPrism:onAct(battler, name)
     -- If the act is none of the above, run the base onAct function
     -- (this handles the Check act)
     return super.onAct(self, battler, name)
+end
+
+function ThreeDPrism:onTurnEnd()
+    self.progress = self.progress + 1
+end
+
+function ThreeDPrism:getNextWaves()
+    if (self.progress == 0) then
+        return { "3d/cubes-1" }
+    elseif (self.progress == 1) then
+        return { "3d/cubes-2" }
+    elseif (self.progress == 2) then
+        return { "3d/cubes-1" }
+    elseif (self.progress == 3) then
+        return { "3d/cubes-2" }
+    elseif (self.progress == 4) then
+        return { "3d/cubes-1" }
+    elseif (self.progress == 5) then
+		self.progress = 0
+        return { "3d/cubes-2" }
+    end
+
+    return super.getNextWaves(self)
 end
 
 return ThreeDPrism

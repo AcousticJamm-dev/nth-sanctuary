@@ -70,7 +70,7 @@ function Darkness:drawCharacter(chara)
 	if Game:getPartyMember(chara.party) then
 		basecol = Game:getPartyMember(chara.party).highlight_color or COLORS["gray"]
 	end
-	local color = Utils.mergeColor(COLORS["black"], basecol, self.highlightalpha)
+	local color = ColorUtils.mergeColor(COLORS["black"], basecol, self.highlightalpha)
     local shader = Kristal.Shaders["AddColor"]
     love.graphics.stencil((function()
         love.graphics.setShader(Kristal.Shaders["Mask"])

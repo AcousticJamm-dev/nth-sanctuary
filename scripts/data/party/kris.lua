@@ -127,9 +127,9 @@ function character:init()
     -- X-Action color (for the color of X-Action menu items) (defaults to the main color)
     self.xact_color = {0.5, 1, 1}
 	-- highlight color A
-    self.highlight_color = Utils.hexToRgb("#00A2E8")
+    self.highlight_color = ColorUtils.hexToRGB("#00A2E8FF")
 		-- highlight color B
-    self.highlight_color_alt = Utils.hexToRgb("#526ACD")
+    self.highlight_color_alt = ColorUtils.hexToRGB("#526ACDFF")
 
     -- Head icon in the equip / power menu
     self.menu_icon = "party/kris/head"
@@ -164,7 +164,7 @@ function character:onLevelUp(level)
 end
 
 function character:onPowerSelect(menu)
-    if Utils.random() < ((Game.chapter == 1) and 0.02 or 0.04) then
+    if MathUtils.random() < ((Game.chapter == 1) and 0.02 or 0.04) then
         menu.kris_dog = true
     else
         menu.kris_dog = false

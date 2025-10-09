@@ -25,10 +25,10 @@ function TPBlob:onAdd(parent)
     super.onAdd(self, parent)
 
 
-    Assets.playSound("noise")
+    Assets.playSound("snd_hurt1_bc", 1, 0.5) -- it's gotta be accurate....
 
 
-    self.physics.direction = Utils.angle(self.x, self.y, Game.battle.soul.x, Game.battle.soul.y) + math.rad(180)
+    self.physics.direction = MathUtils.angle(self.x, self.y, Game.battle.soul.x, Game.battle.soul.y) + math.rad(180)
     self.physics.speed = self.prime_speed
 
 
@@ -41,12 +41,12 @@ function TPBlob:update()
     --Kristal.Console:log("timer: "..tostring(self.wave.timer))
     self.physics.speed = self.physics.speed * 0.85;
     if self.active_move then
-        local accel = self.acc / Utils.dist(self.x, self.y, Game.battle.soul.x + 10, Game.battle.soul.y + 10);
-        self.physics.direction = Utils.angle(self.x, self.y, Game.battle.soul.x, Game.battle.soul.y);
-        self.physics.speed = Utils.approach(self.physics.speed, self.max_speed, accel)
+        local accel = self.acc / MathUtils.dist(self.x, self.y, Game.battle.soul.x + 10, Game.battle.soul.y + 10);
+        self.physics.direction = MathUtils.angle(self.x, self.y, Game.battle.soul.x, Game.battle.soul.y);
+        self.physics.speed = MathUtils.approach(self.physics.speed, self.max_speed, accel)
     end
 
-    --[[if (Utils.dist(self.x, self.y, Game.battle.soul.x + 10, Game.battle.soul.y + 10) <= 20 and self.active_move) then
+    --[[if (MathUtils.dist(self.x, self.y, Game.battle.soul.x + 10, Game.battle.soul.y + 10) <= 20 and self.active_move) then
         self:remove()
     end]]
 

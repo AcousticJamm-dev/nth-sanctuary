@@ -23,7 +23,7 @@ function ShardDoorDisplay:init(text)
     -- the scrolling DEPTHS images used by the panels.
     self.shard_icon = Assets.getTexture("ui/shard_door_icon")
     self.tiletex = Assets.getTexture("backgrounds/IMAGE_DEPTH_EXTEND_SEAMLESS")
-    self.shardpurple = Utils.hexToRgb("#9999ff")
+    self.shardpurple = ColorUtils.hexToRGB("#9999ffff")
 	
 	self.panel_alpha = 0
 end

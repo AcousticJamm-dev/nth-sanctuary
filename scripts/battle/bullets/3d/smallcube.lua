@@ -11,6 +11,7 @@ function CubeBullet:init(x, y, dir, speed)
     self.physics.speed = speed
     self:setScale(1)
     self.sprite:play(1/15, true)
+	self.destroy_on_hit = false
 end
 
 function CubeBullet:update()

@@ -39,8 +39,8 @@ function LeechTest:onStart()
 
     if self.difficulty >= 3 then
         self.timer:everyInstant(15 / 3, function()
-            local tempdir = Utils.random(360);
-            local tempdist = 150 + Utils.random(50);
+            local tempdir = MathUtils.random(360);
+            local tempdist = 150 + MathUtils.random(50);
             local arena = Game.battle.arena
 
             local spawn = self:spawnBullet("redshape", arena.x + self:lengthdir_x(tempdist, tempdir),
@@ -51,17 +51,17 @@ function LeechTest:onStart()
 
     -- Every 0.33 seconds...
     self.timer:everyInstant(self:getEnemyRatio(), function()
-        local tempdir = Utils.random(360);
-        local tempdist = 150 + Utils.random(50);
+        local tempdir = MathUtils.random(360);
+        local tempdist = 150 + MathUtils.random(50);
         local selection = { { "leechshape", false, 5.25, "leechshape" } }
 
         if self.difficulty >= 2 then
             --table.insert(selection, { "mine", true, 2.25, "blown_bullet" })
         end
-        local list = Utils.pick(selection)
+        local list = TableUtils.pick(selection)
 
         local arena = Game.battle.arena
-		local spawn = self:spawnBullet("leechshape", Utils.pick({arena.left - 30, arena.right + 30}), arena.y + self:lengthdir_y(tempdist, tempdir))
+		local spawn = self:spawnBullet("leechshape", TableUtils.pick({arena.left - 30, arena.right + 30}), arena.y + self:lengthdir_y(tempdist, tempdir))
 		spawn.move_mode = 1
 		spawn.max_speed = 5.25
 		spawn.slow_track = false

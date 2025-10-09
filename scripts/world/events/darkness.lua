@@ -13,7 +13,7 @@ function Darkness:postLoad()
         if self.data.properties["characters"] == "all" then
             characters = Game.stage:getObjects(Character)
         elseif self.data.properties["characters"] == "party" then
-            characters = Utils.mergeMultiple({Game.world.player}, Game.stage:getObjects(Follower))
+            characters = TableUtils.mergeMany({Game.world.player}, Game.stage:getObjects(Follower))
         else
             for _,chara in ipairs(Game.stage:getObjects(Character)) do
                 if self.data.properties["characters"]:find(chara.actor.id) then
@@ -24,7 +24,7 @@ function Darkness:postLoad()
     end
 
     local radius = self.data.properties["light_radius"] or 80
-    local color = Utils.parseColorProperty(self.data.properties["light_color"] or "#ffffffff")
+    local color = TiledUtils.parseColorProperty(self.data.properties["light_color"] or "#ffffffff")
     if self.data.properties["light_alpha"] then
         color[4] = self.data.properties["light_alpha"]
     end

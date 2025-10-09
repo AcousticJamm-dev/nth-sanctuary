@@ -13,7 +13,7 @@ function ChurchPianoHint:init(data)
 	self.midspr = Assets.getTexture("world/events/pianohint/slurmid")
 	self.arrowspr = Assets.getTexture("world/events/pianohint/arrow")
 	self.circlespr = Assets.getTexture("ui/circle_7x7")
-	self.hintcol = Utils.hexToRgb("#698DE6")
+	self.hintcol = ColorUtils.hexToRGB("#698DE6FF")
 	self.hintactive = false
 	self.hintalpha = 0
 	self.siner = 0
@@ -22,8 +22,8 @@ end
 function ChurchPianoHint:onAdd(parent)
     super.onAdd(self,parent)
     local i = 1
-    while i <= Utils.len(self.hint) do
-        local hint_num = tonumber(Utils.sub(self.hint, i, i))
+    while i <= StringUtils.len(self.hint) do
+        local hint_num = tonumber(StringUtils.sub(self.hint, i, i))
 		table.insert(self.hint_units, {note = hint_num})
         i = i + 1
     end
@@ -62,7 +62,7 @@ function ChurchPianoHint:draw()
 			local num = unit.note or 0
 			local xloc = (spwid + drawspace) * i
 			local yloc = (math.sin((self.siner + (i * 4)) / 8) * 4) + 20
-			local col = Utils.mergeColor(self.hintcol, COLORS.white, Utils.clamp(0.5 + (math.sin((self.siner - (i * 30)) / 15) * 0.25), 0, 1))
+			local col = ColorUtils.mergeColor(self.hintcol, COLORS.white, MathUtils.clamp(0.5 + (math.sin((self.siner - (i * 30)) / 15) * 0.25), 0, 1))
 			if num ~= 0 then
 				sprangle = math.rad(-(num * 45 - 180 - 45))
 			else

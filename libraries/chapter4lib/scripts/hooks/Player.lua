@@ -1,6 +1,6 @@
 ---@class Player : Player
 ---@field world World
-local Player, super = Utils.hookScript(Player)
+local Player, super = HookSystem.hookScript(Player)
 
 function Player:init(chara, x, y)
     super.init(self, chara, x, y)
@@ -55,13 +55,13 @@ end
 
 function Player:processClimbInputs()
     if self.climb_delay > 0 then
-        self.climb_delay = Utils.approach(self.climb_delay, 0, DT)
+        self.climb_delay = MathUtils.approach(self.climb_delay, 0, DT)
         if self.climb_delay <= 0 then
             if self.climb_ready_callback then
                 self:climb_ready_callback()
                 self.climb_ready_callback = nil
             end
-            self.sprite:setFrame(Utils.clampWrap(self.sprite.frame + 1, 1, #self.sprite.frames))
+            self.sprite:setFrame(MathUtils.wrap(self.sprite.frame + 1, 1, #self.sprite.frames + 1))
 
             if self.sprite.sprite_options[2] ~= "climb/climb" then
                 self:setSprite("climb/climb")
@@ -144,19 +144,19 @@ function Player:processJumpCharge()
 
             for i = 1, #self.charge_times-1 do
                 if (self.jumpchargetimer >= self.charge_times[i]) then
-                    self.sprite:setFrame(Utils.clamp(i+1, 1, #self.sprite.frames))
+                    self.sprite:setFrame(MathUtils.clamp(i+1, 1, #self.sprite.frames))
                     self.jumpchargesfx:setPitch(0.5 + (i-1)/10)
                     self.jumpchargeamount = i+1;
-                    self.color = Utils.lerp(COLORS.white, COLORS.teal, 0.2 + (math.floor(math.sin(self.jumpchargetimer / 2)) * 0.2));
+                    self.color = TableUtils.lerp(COLORS.white, COLORS.teal, 0.2 + (math.floor(math.sin(self.jumpchargetimer / 2)) * 0.2));
                 end
             end
 
 
             if (self.jumpchargetimer >= (self.charge_times[#self.charge_times] or math.huge)) then
-                self.sprite:setFrame(Utils.clamp(#self.charge_times+1, 1, #self.sprite.frames))
+                self.sprite:setFrame(MathUtils.clamp(#self.charge_times+1, 1, #self.sprite.frames))
                 self.jumpchargeamount = (#self.charge_times+1);
                 self.jumpchargesfx:setPitch(0.5 + (#self.charge_times)/10)
-                self.color = Utils.lerp(COLORS.white, COLORS.teal, 0.4 + (math.floor(math.sin(self.jumpchargetimer)) * 0.4));
+                self.color = TableUtils.lerp(COLORS.white, COLORS.teal, 0.4 + (math.floor(math.sin(self.jumpchargetimer)) * 0.4));
 
                 if ((self.jumpchargetimer % 8) == 0) then
                     self.draw_reticle = false
@@ -212,7 +212,7 @@ function Player:canClimb(dx, dy)
         x,y = x + self.x,y + self.y
         x,y = x + (dx*40),y + (dy*40)
         if self.onrotatingtower then
-            x = Utils.clampWrap(x, 0, self.world.width)
+            x = MathUtils.wrap(x, 0, self.world.width+1)
         end
         self.climb_collider.parent = self.parent
         self.climb_collider.x, self.climb_collider.y = x, y
@@ -278,7 +278,7 @@ function Player:doClimbJump(direction, distance)
                 end
                 self.sprite:play(0.1, true)
             else
-                self.sprite:setFrame(Utils.clampWrap(Utils.floor(self.sprite.frame + 1, 2), 1, #self.sprite.frames))
+                self.sprite:setFrame(MathUtils.wrap(Utils.floor(self.sprite.frame + 1, 2), 1, #self.sprite.frames+1))
             end
             self:slideTo(self.x + (dx*40*dist), self.y + (dy*40*dist), duration, "linear", function ()
                 if charged then
@@ -395,7 +395,7 @@ function Player:drawClimbReticle()
             end
         end
 
-        _alph = Utils.clamp(self.jumpchargetimer / 14, 0.1, 0.8);
+        _alph = MathUtils.clamp(self.jumpchargetimer / 14, 0.1, 0.8);
         local angle = 0;
         local xoff = 0;
         local yoff = 0;
@@ -452,7 +452,7 @@ function Player:drawClimbReticle()
                 0.85
             );
         ]]
-        -- local quad = Assets.getQuad(0, 0, 22, math.floor(Utils.clamp(self.jumpchargetimer / self.charge_times[2], 0, 1) * 62), 22, 62)
+        -- local quad = Assets.getQuad(0, 0, 22, math.floor(MathUtils.clamp(self.jumpchargetimer / self.charge_times[2], 0, 1) * 62), 22, 62)
         Draw.setColor(col)
         local frame = Utils.clampWrap(math.floor(Kristal.getTime() * 15), 1,4)
         -- Draw.draw(Assets.getFrames("ui/climb/hint")[frame], quad, xoff/2, yoff/2, -math.rad(angle))
@@ -469,7 +469,7 @@ function Player:drawClimbReticle()
                 id = "ui/climb/hint_end"
                 h = 21
             end
-            local quad = Assets.getQuad(0, 0, 22, math.floor(Utils.clamp(w - i, 0, 1) * h), 22, h)
+            local quad = Assets.getQuad(0, 0, 22, math.floor(MathUtils.clamp(w - i, 0, 1) * h), 22, h)
             Draw.draw(Assets.getFrames(id)[frame], quad)
             love.graphics.translate(0, h)
 
@@ -505,7 +505,7 @@ function Player:drawClimbReticle()
             px = px - (20 * found);
         end
 
-        Draw.setColor(Utils.lerp(COLORS.yellow, COLORS.white, 0.4 + (math.sin(self.jumpchargetimer / 3) * 0.4)));
+        Draw.setColor(TableUtils.lerp(COLORS.yellow, COLORS.white, 0.4 + (math.sin(self.jumpchargetimer / 3) * 0.4)));
         Draw.draw(Assets.getTexture("ui/climb/reticle"), px, py)
     end
     love.graphics.pop()
@@ -530,7 +530,7 @@ function Player:updateClimb()
     self.noclip = o_noclip
     if self.onrotatingtower and not self.physics.move_target then
         -- TODO: Find out why I have to put 1 here and not 0
-        self.x = Utils.clampWrap(self.x, 1, self.world.width)
+        self.x = MathUtils.wrap(self.x, 1, self.world.width)
     end
 
     Object.startCache()

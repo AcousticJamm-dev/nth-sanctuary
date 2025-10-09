@@ -67,8 +67,8 @@ function TutorialText:draw()
 		local space = 28
 		local margin = 20
 		local yloc = SCREEN_HEIGHT - (space * (#self.instruction_lines+1)) - margin
-		local reddening = Utils.clamp(self.canceltimer / self.canceltime, 0, 1)
-		local redcol = Utils.mergeColor(COLORS.white, COLORS.red, reddening)
+		local reddening = MathUtils.clamp(self.canceltimer / self.canceltime, 0, 1)
+		local redcol = ColorUtils.mergeColor(COLORS.white, COLORS.red, reddening)
 		local butmarg = -12
 		for i, lines in ipairs(self.instruction_lines) do
 			local xloc = SCREEN_WIDTH + 100 - margin - (easelerp * 100)
@@ -104,11 +104,11 @@ function TutorialText:draw()
 					local holdstr = "Hold "
 					local holdstrwidth = self.font:getWidth(holdstr)
 					love.graphics.printfOutline(holdstr, butxpos - holdstrwidth - 4, yloc + (space * i), 1)
-					local spritexpos = butxpos - 4 - 28 - 1 - holdstrwidth + Utils.round(butmarg / 2)
+					local spritexpos = butxpos - 4 - 28 - 1 - holdstrwidth + MathUtils.round(butmarg / 2)
 					local spriteypos = yloc + (space * i) + 3
 					Draw.setColor(redcol[1], redcol[2], redcol[3], self.canceltimer/8)
 					if self.instruction_active then
-						Draw.draw(self.timer_tex[1 + math.floor(Utils.clamp((28 - ((self.canceltimer / self.canceltime) * 28)), 0, 28))], spritexpos, spriteypos, 0, 2, 2)
+						Draw.draw(self.timer_tex[1 + math.floor(MathUtils.clamp((28 - ((self.canceltimer / self.canceltime) * 28)), 0, 28))], spritexpos, spriteypos, 0, 2, 2)
 					end
 				end
 				Draw.setColor(1,1,1,1)
@@ -122,21 +122,21 @@ function TutorialText:draw()
 				if lines.cancel then
 					str = "Hold "..Input.getText(lines.but).." : "..lines.line
 					strwidth = self.font:getWidth(str)
-					local spritexpos = 720 - easelerp * 100 - Utils.round(strwidth) - 28 - 8
+					local spritexpos = 720 - easelerp * 100 - MathUtils.round(strwidth) - 28 - 8
 					local spriteypos = yloc + (space * i) + 3
 					Draw.setColor(redcol[1], redcol[2], redcol[3], self.canceltimer/8)
 					if self.instruction_active then
-						Draw.draw(self.timer_tex[1 + math.floor(Utils.clamp((28 - ((self.canceltimer / self.canceltime) * 28)), 0, 28))], spritexpos, spriteypos, 0, 2, 2)
+						Draw.draw(self.timer_tex[1 + math.floor(MathUtils.clamp((28 - ((self.canceltimer / self.canceltime) * 28)), 0, 28))], spritexpos, spriteypos, 0, 2, 2)
 					end
 					Draw.setColor(redcol[1], redcol[2], redcol[3], 1)
 				end
 				love.graphics.printfOutline(str, xloc - strwidth, yloc + (space * i), 1)
 				Draw.setColor(1,1,1,1)
 				if lines.holdvaluelimit ~= nil and not lines.cancel then
-					local spritexpos = 720 - easelerp * 100 - Utils.round(strwidth) - 28 - 8
+					local spritexpos = 720 - easelerp * 100 - MathUtils.round(strwidth) - 28 - 8
 					local spriteypos = yloc + (space * i) + 3
 					Draw.setColor(1,1,1,lines.holdvalue / 8)
-					Draw.draw(self.timer_tex[1 + math.floor(Utils.clamp((28 - ((self.holdvalue / self.holdvaluelimit) * 28)), 0, 28))], spritexpos, spriteypos, 0, 2, 2)
+					Draw.draw(self.timer_tex[1 + math.floor(MathUtils.clamp((28 - ((self.holdvalue / self.holdvaluelimit) * 28)), 0, 28))], spritexpos, spriteypos, 0, 2, 2)
 				end
 				Draw.setColor(1,1,1,1)
 			end

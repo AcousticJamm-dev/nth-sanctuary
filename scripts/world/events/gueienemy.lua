@@ -35,7 +35,7 @@ function GueiChaser:init(data)
     self.chase_accel = properties["chaseaccel"]
 
     self.pace_type = properties["pacetype"]
-    self.pace_marker = Utils.parsePropertyList("marker", properties)
+    self.pace_marker = TiledUtils.parsePropertyList("marker", properties)
     self.pace_interval = properties["paceinterval"] or 24
     self.pace_return  = properties["pacereturn"] or true
     self.pace_speed = properties["pacespeed"] or 4
@@ -83,7 +83,7 @@ function GueiChaser:update()
             if path.closed then
                 self.progress = self.progress % 1
             elseif self.progress > 1 or self.progress < 0 then
-                self.progress = Utils.clamp(self.progress, 0, 1)
+                self.progress = MathUtils.clamp(self.progress, 0, 1)
                 self.reverse_progress = not self.reverse_progress
             end
 

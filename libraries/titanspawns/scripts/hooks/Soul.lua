@@ -13,7 +13,7 @@ function Soul:draw()
     if self.toggle then
     self.timer = self.timer + (1 * DTMULT)
 
-    self.radius = Utils.approach(self.radius, self.radius_goal, (math.abs(self.radius_goal - self.radius) * 0.1))
+    self.radius = MathUtils.approach(self.radius, self.radius_goal, (math.abs(self.radius_goal - self.radius) * 0.1))
 
     local i = 0.25
     while i <= 0.5 do

@@ -27,7 +27,7 @@ function ChurchLightBeamFX:updateParticles()
 	if self.part_timer >= 1 then
 		self.part_timer = 0
 		for i = 1, 6 do
-			table.insert(self.particles, {spd = 0, dir = 0, basespd = Utils.random(0.06, 0.2), swiggle = 0.1, basedir = math.rad(Utils.random(0, 360)), dwiggle = 0.5, life = love.math.random(50, 350), alpha = 0, size = Utils.random(0.7, 3), x = Utils.random(0, SCREEN_WIDTH), y = Utils.random(0, SCREEN_HEIGHT), age = 0})
+			table.insert(self.particles, {spd = 0, dir = 0, basespd = MathUtils.random(0.06, 0.2), swiggle = 0.1, basedir = math.rad(MathUtils.random(0, 360)), dwiggle = 0.5, life = love.math.random(50, 350), alpha = 0, size = MathUtils.random(0.7, 3), x = MathUtils.random(0, SCREEN_WIDTH), y = MathUtils.random(0, SCREEN_HEIGHT), age = 0})
 		end
 	end
     local to_remove = {}
@@ -60,7 +60,7 @@ function ChurchLightBeamFX:updateParticles()
 		end
 	end
     for _,part in ipairs(to_remove) do
-        Utils.removeFromTable(self.particles, part)
+        TableUtils.removeValue(self.particles, part)
     end
 end
 
@@ -94,7 +94,7 @@ function ChurchLightBeamFX:draw()
 			local sx = value.width / tile_width * (value.tile_flip_x and -1 or 1)
 			local sy = value.height / tile_height * (value.tile_flip_y and -1 or 1)
 			if value.tileset.preserve_aspect_fit then
-				sx = Utils.absMin(sx, sy)
+				sx = MathUtils.absMin(sx, sy)
 				sy = sx
 			end
 			love.graphics.setColor(1,1,1,1)

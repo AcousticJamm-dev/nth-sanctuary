@@ -8,7 +8,7 @@ function SmallBullet:init(x, y, bullets, count)
 	self.speedtarg = 6
 	self.widthmod = 1
 	self.count = count or 1
-	self.turn = 1.5 * Utils.sign((self.count % 2) - 0.5)
+	self.turn = 1.5 * MathUtils.sign((self.count % 2) - 0.5)
     self:setHitbox(nil)
     self.sprite.visible = false
 
@@ -37,7 +37,7 @@ function SmallBullet:onRemove(parent)
     super.onRemove(self, parent)
 	for _, bul in ipairs(self.subs) do
 		bul:remove()
-        Utils.removeFromTable(self.subs, bul)
+        TableUtils.removeValue(self.subs, bul)
     end
 end
 
@@ -54,16 +54,16 @@ function SmallBullet:update()
 			bul.visible = false
 		end
 		bul.angle = bul.angle + self.turn*DTMULT
-		bul.dist = Utils.approach(bul.dist, (15 + (10 * self.bullets)) * self.widthmod, ((self.widthmod * 3) / math.sqrt(bul.dist + 1))*DTMULT)
+		bul.dist = MathUtils.approach(bul.dist, (15 + (10 * self.bullets)) * self.widthmod, ((self.widthmod * 3) / math.sqrt(bul.dist + 1))*DTMULT)
 		bul.x = self.x + bul.dist * math.cos(math.rad(-bul.angle))
 		bul.y = self.y + (bul.dist * 0.66) * math.sin(math.rad(-bul.angle))
 	end
 	if self.timer >= 10 and self.con == 0 then
-		self.physics.direction = Utils.angle(self.x, self.y, Game.battle.soul.x, Game.battle.soul.y)
+		self.physics.direction = MathUtils.angle(self.x, self.y, Game.battle.soul.x, Game.battle.soul.y)
 		self.con = 1
 	elseif self.timer >= 10 and self.con == 1 then
-		self.physics.speed = Utils.approach(self.physics.speed, self.speedtarg, (self.speedtarg/60)*DTMULT)
-		self.turn = Utils.approach(self.turn, 7 * Utils.sign(self.turn), 0.1*DTMULT)
+		self.physics.speed = MathUtils.approach(self.physics.speed, self.speedtarg, (self.speedtarg/60)*DTMULT)
+		self.turn = MathUtils.approach(self.turn, 7 * MathUtils.sign(self.turn), 0.1*DTMULT)
 	end
 end
 

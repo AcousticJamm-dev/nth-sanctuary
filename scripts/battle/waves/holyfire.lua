@@ -56,14 +56,14 @@ function Basic:update()
 		self.spawn_flame = true
 	end
 	if self.btimer - 40 >= 10 * self.sameattacker and self.spawn_flame then
-		local dist = 135 + Utils.random(20)
+		local dist = 135 + MathUtils.random(20)
 		local dir
 		if self.sameattack == 1 then
-			dir = 15 + Utils.random(30) + (60 * love.math.random(2))
+			dir = 15 + MathUtils.random(30) + (60 * MathUtils.randomInt(2))
 		elseif self.sameattack == 2 then
-			dir = 15 + Utils.random(30) + (120 * self.sameattacker)
+			dir = 15 + MathUtils.random(30) + (120 * self.sameattacker)
 		else
-			dir = 15 + Utils.random(20) + (65 * self.sameattacker)
+			dir = 15 + MathUtils.random(20) + (65 * self.sameattacker)
 		end
 		self.flames_made = self.flames_made + 1
 		local bullets = 2

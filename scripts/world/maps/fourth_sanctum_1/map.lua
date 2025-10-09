@@ -7,7 +7,7 @@ end
 
 function Map:update() --Every time the game updates...
     super.update(self)
-   -- self.world.color = {Utils.hslToRgb(Kristal.getTime()/5 %1, 1, 1)}
+   -- self.world.color = {ColorUtils.HSLToRGB(Kristal.getTime()/5 %1, 1, 1)}
 end
 
 

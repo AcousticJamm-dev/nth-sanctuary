@@ -88,7 +88,7 @@ function Guei:onAct(battler, name)
                 "* Ralsei quoted a holy book!",
                 "* Ralsei told a family-friendly story about a lovable yet lonely ghost!"
             }
-            local choice = Utils.pick(s)
+            local choice = TableUtils.pick(s)
             return choice
         elseif battler.chara.id == "susie" then
             -- S-Action: start a cutscene (see scripts/battle/cutscenes/dummy.lua)
@@ -97,7 +97,7 @@ function Guei:onAct(battler, name)
             "* Susie told a story about the living dead!",
             "* Susie told a ghost story!"
             }
-            local choice = Utils.pick(s)
+            local choice = TableUtils.pick(s)
             return choice
         else
             -- Text for any other character (like Noelle)
@@ -108,7 +108,7 @@ function Guei:onAct(battler, name)
                 "* "..battler.chara:getName().." said a prayer!",
                 "* "..battler.chara:getName().." made a ghastly sound!"
             }
-            local choice = Utils.pick(s)
+            local choice = TableUtils.pick(s)
             return choice
         end
     end
@@ -157,7 +157,7 @@ function Guei:spawnSpeechBubble(...)
     if self.excerism then
         self.balloon_type = 7
     else
-        self.balloon_type = Utils.pick{1, 2, 3, 4, 5, 6}
+        self.balloon_type = TableUtils.pick{1, 2, 3, 4, 5, 6}
     end
 
     local x, y = self.sprite:getRelativePos(0, self.sprite.height/2, Game.battle)

@@ -98,7 +98,7 @@ function Dummy:spawnSpeechBubble(...)
     if self.excerism then
         self.balloon_type = 7
     else
-        self.balloon_type = Utils.pick{1, 2, 3, 4, 5, 6}
+        self.balloon_type = TableUtils.pick{1, 2, 3, 4, 5, 6}
     end
 
     local x, y = self.sprite:getRelativePos(0, self.sprite.height/2, Game.battle)

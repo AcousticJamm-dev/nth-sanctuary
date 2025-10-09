@@ -51,7 +51,7 @@ function BigChurchPiano:onAdd(parent)
 end
 
 local function scr_returnwait(x1, y1, x2, y2, spd)
-	return math.max(1, Utils.round(Utils.dist(x1, y1, x2, y2) / spd))
+	return math.max(1, MathUtils.round(MathUtils.dist(x1, y1, x2, y2) / spd))
 end
 
 local function scr_piano_determinepitch(sound)
@@ -149,7 +149,7 @@ function BigChurchPiano:onInteract(player, dir)
 			if #Game.party >= 4 then
 				party4 = cutscene:getCharacter(Game.party[4]:getActor().id)
 			end
-			local pointdist = Utils.dist(self.leader_x, self.leader_y, leader.x, leader.y)
+			local pointdist = MathUtils.dist(self.leader_x, self.leader_y, leader.x, leader.y)
 			if pointdist > 4 then
 				local walkwait = math.min(scr_returnwait(leader.x, leader.y, self.leader_x, self.leader_y, 4), 15)
 				cutscene:wait(cutscene:walkToSpeed(leader, self.leader_x, self.leader_y, walkwait, "up"))
@@ -162,7 +162,7 @@ function BigChurchPiano:onInteract(player, dir)
 			if self.catafollow then
 				if party2 then
 					local p2x, p2y = self.leader_x + 30, self.leader_y + 30
-					pointdist = Utils.dist(p2x, p2y, party2.x, party2.y)
+					pointdist = MathUtils.dist(p2x, p2y, party2.x, party2.y)
 					if pointdist > 4 then
 						local walkwait = math.min(scr_returnwait(party2.x, party2.y, p2x, p2y, 4), 15)
 						cutscene:wait(cutscene:walkToSpeed(party2, p2x, p2y, walkwait, "up"))
@@ -174,7 +174,7 @@ function BigChurchPiano:onInteract(player, dir)
 				end
 				if party3 then
 					local p3x, p3y = self.leader_x - 30, self.leader_y + 30
-					pointdist = Utils.dist(p3x, p3y, party3.x, party3.y)
+					pointdist = MathUtils.dist(p3x, p3y, party3.x, party3.y)
 					if pointdist > 4 then
 						local walkwait = math.min(scr_returnwait(party3.x, party3.y, p3x, p3y, 4), 15)
 						cutscene:wait(cutscene:walkToSpeed(party3, p3x, p3y, walkwait, "up"))
@@ -186,7 +186,7 @@ function BigChurchPiano:onInteract(player, dir)
 				end
 				if party4 then
 					local p4x, p4y = self.leader_x, self.leader_y + 30
-					pointdist = Utils.dist(p4x, p4y, party4.x, party4.y)
+					pointdist = MathUtils.dist(p4x, p4y, party4.x, party4.y)
 					if pointdist > 4 then
 						local walkwait = math.min(scr_returnwait(party4.x, party4.y, p4x, p4y, 4), 15)
 						cutscene:wait(cutscene:walkToSpeed(party4, p4x, p4y, walkwait, "up"))
@@ -301,19 +301,19 @@ function BigChurchPiano:update()
 			self.endlessplaylog = self.endlessplaylog..passkey
 			local i = 1
 			while i <= utf8.len(self.endlessplaylog) do
-				if Utils.sub(self.endlessplaylog, i, utf8.len(self.endlessplaylog)) == self.solution then
+				if StringUtils.sub(self.endlessplaylog, i, utf8.len(self.endlessplaylog)) == self.solution then
 					Assets.playSound("bell")
 					self.endlessplaylog = ""
 					break
-				elseif Utils.sub(self.endlessplaylog, i, utf8.len(self.endlessplaylog)) == "nnfc" then
+				elseif StringUtils.sub(self.endlessplaylog, i, utf8.len(self.endlessplaylog)) == "nnfc" then
 					self.endlessplaylog = ""
 					Game.world:startCutscene("events.tobykillsyou")
 					break
 				end
 				i = i + 1
 			end
-			if Utils.len(self.endlessplaylog) >= 200 then
-				self.endlessplaylog = Utils.sub(self.endlessplaylog, 1, Utils.len(self.endlessplaylog) - 1)
+			if StringUtils.len(self.endlessplaylog) >= 200 then
+				self.endlessplaylog = StringUtils.sub(self.endlessplaylog, 1, StringUtils.len(self.endlessplaylog) - 1)
 			end
 			print(self.endlessplaylog)
 		end

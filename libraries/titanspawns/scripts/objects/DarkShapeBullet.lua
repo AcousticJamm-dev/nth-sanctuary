@@ -81,15 +81,15 @@ function DarkShapeBullet:update()
 
     self:setScale(self.scale_x * (1 - self.light), self.scale_y * (1 - self.light))
 
-    self.dist = Utils.dist(self.x, self.y, Game.battle.soul.x, Game.battle.soul.y)
+    self.dist = MathUtils.dist(self.x, self.y, Game.battle.soul.x, Game.battle.soul.y)
     if (self.dist < self.inaccurate_distance_calculation_variable) then
-        self.light = Utils.approach(self.light, 1.01, self.light_rate);
-        self.physics.speed = Utils.approach(self.physics.speed, 0.7 + (1 - self.light),
+        self.light = MathUtils.approach(self.light, 1.01, self.light_rate);
+        self.physics.speed = MathUtils.approach(self.physics.speed, 0.7 + (1 - self.light),
                                          0.15 * self.speedfactor * self.speed_max_multiplier);
         self.image_size = 1
     else
-        self.physics.speed = Utils.approach(self.physics.speed, self.max_speed * self.speed_max_multiplier, self.accel * self.speed_max_multiplier * (1 - self.light));
-        self.light = Utils.approach(self.light, 0, self.light_recover);
+        self.physics.speed = MathUtils.approach(self.physics.speed, self.max_speed * self.speed_max_multiplier, self.accel * self.speed_max_multiplier * (1 - self.light));
+        self.light = MathUtils.approach(self.light, 0, self.light_recover);
     end
 
     self.colormask.amount = self.light

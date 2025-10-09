@@ -64,12 +64,12 @@ function RedShape:lengthdir_y(len, dir)
 end
 
 function RedShape:angle_lerp(arg0, arg1, arg2)
-    local _diff = Utils.angleDiff(arg1, arg0)
-    return arg0 + Utils.lerp(0, _diff, arg2)
+    local _diff = MathUtils.angleDiff(arg1, arg0)
+    return arg0 + MathUtils.lerp(0, _diff, arg2)
 end
 
 function RedShape:onAdd()
-    Assets.playSound("snd_dark_odd", Kristal:getVolume(), 0.35 + Utils.random(0.35))
+    Assets.playSound("snd_dark_odd", Kristal:getVolume(), 0.35 + MathUtils.random(0.35))
 end
 
 function RedShape:update()
@@ -81,10 +81,10 @@ function RedShape:update()
 
 
     if self.alpha ~= 1 then
-        self.alpha = Utils.approach(self.alpha, 1,  self.rate_spawn)
+        self.alpha = MathUtils.approach(self.alpha, 1,  self.rate_spawn)
 
         if self.alpha == 1 then
-            self.physics.direction = Utils.angle(self.x, self.y, Game.battle.soul.x, Game.battle.soul.y)
+            self.physics.direction = MathUtils.angle(self.x, self.y, Game.battle.soul.x, Game.battle.soul.y)
         end
     end
 
@@ -96,7 +96,7 @@ function RedShape:update()
     self.sprite.rotation = self.sprite.rotation + math.rad(2.8125);
 
     if (self.tracking_val2 > 0) then
-        self.tracking_val2 = Utils.approach(self.tracking_val2, 0, 0.00875)
+        self.tracking_val2 = MathUtils.approach(self.tracking_val2, 0, 0.00875)
     end
 
     if (self.physics.speed > 2) then
@@ -120,21 +120,21 @@ function RedShape:update()
 
 
     if self.toggle_active  then
-        self.dist = Utils.dist(self.x, self.y, Game.battle.soul.x + 10, Game.battle.soul.y + 10)
+        self.dist = MathUtils.dist(self.x, self.y, Game.battle.soul.x + 10, Game.battle.soul.y + 10)
         if (self.dist < self.inaccurate_distance_calculation_variable + 8) then
-            --self.light = Utils.approach(self.light, 1, self.light_rate);
-            self.physics.speed = Utils.approach(self.physics.speed, self.max_speed * self.speed_max_multiplier * 0.5,
+            --self.light = MathUtils.approach(self.light, 1, self.light_rate);
+            self.physics.speed = MathUtils.approach(self.physics.speed, self.max_speed * self.speed_max_multiplier * 0.5,
                 self.physics.speed * 0.25)
         else
-            self.physics.speed = Utils.approach(self.physics.speed, self.max_speed * self.speed_max_multiplier,
+            self.physics.speed = MathUtils.approach(self.physics.speed, self.max_speed * self.speed_max_multiplier,
                 self.acc * self.speed_max_multiplier * (1 - self.light))
-            --self.light = Utils.approach(self.light, 0, self.light_recover);
+            --self.light = MathUtils.approach(self.light, 0, self.light_recover);
         end
     end
 
     if (self.tracking_val2 > 0) then
         self.physics.direction = self:angle_lerp(self.physics.direction,
-            Utils.angle(self.x, self.y, Game.battle.soul.x + 10, Game.battle.soul.y + 10), self.tracking_val2 * 0.3);
+            MathUtils.angle(self.x, self.y, Game.battle.soul.x + 10, Game.battle.soul.y + 10), self.tracking_val2 * 0.3);
     end
 end
 
@@ -161,7 +161,7 @@ function RedShape:draw()
 
 
     love.graphics.setColor(1, 1, 1, 1)
-    local hdir = Utils.angle(self.x, self.y, Game.battle.soul.x + 10, Game.battle.soul.y + 10)
+    local hdir = MathUtils.angle(self.x, self.y, Game.battle.soul.x + 10, Game.battle.soul.y + 10)
     Draw.draw(self.darkshape_iris, 23 + self:lengthdir_x(2, hdir), 23 + self:lengthdir_y(2, hdir) + 1, 0, 1, 1, 0, 0)
 
     love.graphics.setColor(1, 1, 1, 1)

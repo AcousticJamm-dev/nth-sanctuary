@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 8,
-  nextobjectid = 55,
+  nextobjectid = 64,
   properties = {
     ["music"] = "fast-travel"
   },
@@ -569,7 +569,7 @@ return {
       id = 7,
       name = "objects_lightarea",
       class = "",
-      visible = false,
+      visible = true,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -648,6 +648,44 @@ return {
           properties = {
             ["alpha"] = 0.23,
             ["highlight"] = true
+          }
+        },
+        {
+          id = 62,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 680,
+          y = 2040,
+          width = 160,
+          height = 1980,
+          rotation = 0,
+          gid = 275,
+          visible = true,
+          properties = {
+            ["light"] = true,
+            ["light_alpha"] = 0.1,
+            ["light_color"] = "#ffffffff",
+            ["light_type"] = 1
+          }
+        },
+        {
+          id = 63,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 880,
+          y = 2040,
+          width = 160,
+          height = 1980,
+          rotation = 0,
+          gid = 2147483923,
+          visible = true,
+          properties = {
+            ["light"] = true,
+            ["light_alpha"] = 0.1,
+            ["light_color"] = "#ffffffff",
+            ["light_type"] = 1
           }
         }
       }

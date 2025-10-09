@@ -57,7 +57,7 @@ function TitanSpawn:update()
             if Game.battle.menu_items[3].name == "Banish" then
                 Game.battle.menu_items[3].color =
                     function()
-                        return (Utils.mergeColor(COLORS.yellow, COLORS.white, 0.5 + (math.sin(self.t_siner / 4) * 0.5)))
+                        return (ColorUtils.mergeColor(COLORS.yellow, COLORS.white, 0.5 + (math.sin(self.t_siner / 4) * 0.5)))
                     end
             end
         end

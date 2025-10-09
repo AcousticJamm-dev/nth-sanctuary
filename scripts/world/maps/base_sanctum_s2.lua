@@ -9,8 +9,8 @@ return {
   height = 26,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 11,
-  nextobjectid = 31,
+  nextlayerid = 12,
+  nextobjectid = 32,
   properties = {
     ["music"] = "homebase"
   },
@@ -576,6 +576,35 @@ return {
     {
       type = "objectgroup",
       draworder = "topdown",
+      id = 11,
+      name = "objects_fog",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 31,
+          name = "churchfog",
+          type = "",
+          shape = "point",
+          x = -70,
+          y = 170,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
       id = 9,
       name = "objects_overlay",
       class = "",
@@ -616,19 +645,6 @@ return {
           properties = {
             ["type"] = "hsv2"
           }
-        },
-        {
-          id = 20,
-          name = "churchfog",
-          type = "",
-          shape = "point",
-          x = -80,
-          y = 160,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {}
         }
       }
     }

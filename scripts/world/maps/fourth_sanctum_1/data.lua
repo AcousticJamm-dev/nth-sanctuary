@@ -9,8 +9,8 @@ return {
   height = 30,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 18,
-  nextobjectid = 71,
+  nextlayerid = 19,
+  nextobjectid = 73,
   properties = {
     ["music"] = "fourth_church",
     ["name"] = "4th Sanctuary - Entry"
@@ -764,6 +764,35 @@ return {
     {
       type = "objectgroup",
       draworder = "topdown",
+      id = 18,
+      name = "objects_fog",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 72,
+          name = "churchfog",
+          type = "",
+          shape = "point",
+          x = -110,
+          y = 180,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
       id = 2,
       name = "objects_overlay",
       class = "",
@@ -796,7 +825,7 @@ return {
           type = "",
           shape = "point",
           x = -160,
-          y = 120.001,
+          y = 120,
           width = 0,
           height = 0,
           rotation = 0,
@@ -804,19 +833,6 @@ return {
           properties = {
             ["type"] = "hsv3"
           }
-        },
-        {
-          id = 3,
-          name = "churchfog",
-          type = "",
-          shape = "point",
-          x = -120,
-          y = 200,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {}
         }
       }
     }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="40" tileheight="40" infinite="0" nextlayerid="10" nextobjectid="32">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="40" tileheight="40" infinite="0" nextlayerid="11" nextobjectid="33">
  <editorsettings>
   <export target="base_sanctum_south.lua" format="lua"/>
  </editorsettings>
@@ -208,6 +208,11 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,211,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
+ <objectgroup id="10" name="objects_fog">
+  <object id="32" name="churchfog" x="-140" y="210">
+   <point/>
+  </object>
+ </objectgroup>
  <objectgroup id="8" name="objects_overlay">
   <object id="19" name="texturescroller" x="-116" y="-14.0003">
    <properties>
@@ -219,9 +224,6 @@
    <properties>
     <property name="type" value="hsv2"/>
    </properties>
-   <point/>
-  </object>
-  <object id="21" name="churchfog" x="-156" y="226">
    <point/>
   </object>
  </objectgroup>

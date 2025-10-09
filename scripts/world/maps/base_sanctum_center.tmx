@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="30" height="24" tilewidth="40" tileheight="40" infinite="0" nextlayerid="14" nextobjectid="47">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="30" height="24" tilewidth="40" tileheight="40" infinite="0" nextlayerid="15" nextobjectid="48">
  <editorsettings>
   <export target="base_sanctum_center.lua" format="lua"/>
  </editorsettings>
@@ -296,6 +296,11 @@ THE KNIGHT IS TO NO FAULT.</property>
    </properties>
   </object>
  </objectgroup>
+ <objectgroup id="14" name="objects_fog">
+  <object id="47" name="churchfog" x="-70" y="260">
+   <point/>
+  </object>
+ </objectgroup>
  <objectgroup id="6" name="objects_overlay">
   <object id="3" name="texturescroller" x="-52" y="50.6667">
    <properties>
@@ -307,9 +312,6 @@ THE KNIGHT IS TO NO FAULT.</property>
    <properties>
     <property name="type" value="hsv2"/>
    </properties>
-   <point/>
-  </object>
-  <object id="5" name="churchfog" x="-92" y="290.667">
    <point/>
   </object>
  </objectgroup>

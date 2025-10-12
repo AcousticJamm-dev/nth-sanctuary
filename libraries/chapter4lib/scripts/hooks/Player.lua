@@ -583,7 +583,7 @@ function Player:doClimbJump(direction, distance)
 			if charged then
 				duration = (6 + distance*2)/30
 				local clipamount = 4/30
-				if distance >= 2 then
+				if charged then
 					clipamount = 2/30
 				end
 				local prevx = self.x
@@ -685,7 +685,7 @@ function Player:doClimbJump(direction, distance)
 				self.previous_bump = self.recently_bumped
 				self.recently_bumped = self.facing
 			end
-			if distance >= 2 then
+			if charged then
 				self.slip_delay = (8+(distance*3))/30
 			else
 				self.slip_delay = (8+(self.climbmomentum*4))/30

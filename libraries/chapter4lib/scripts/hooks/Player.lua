@@ -466,6 +466,7 @@ function Player:processJumpCharge()
         end
 
         if (docharge == 2) then
+			self:setSprite("climb/climb")
             Assets.playSound("txttor", 0.7, 0.4)
             Assets.playSound("txtal", 0.7, 0.4)
             Assets.playSound("dtrans_heavypassing", 0.2, 1.8)

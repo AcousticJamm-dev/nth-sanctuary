@@ -77,6 +77,8 @@ function ThreeDPrism:onAct(battler, name)
         battler:setAnimation("pirouette")
 		return "* Kris spun around three-dimensionally!"
     elseif name == "Standard" then --X-Action
+        Assets.stopAndPlaySound("pirouette", 0.7, 1.1)
+        battler:setAnimation("pirouette")
         if battler.chara.id == "ralsei" then
 			self:addMercy(3)
 			return "* Ralsei demonstrates 3D rotation!"

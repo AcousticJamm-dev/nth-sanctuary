@@ -218,7 +218,7 @@ function Player:processClimbInputs()
 			if self.fallingtimer <= 0 then
 				if self.grabon then
 					local allowed, obj = self:canClimb(0, 0)
-					if allowed and self.y >= obj.y + 30 then
+					if allowed and obj and self.y >= obj.y + 30 then
 						local grabx = self.x
 						local graby = self.y
 						self.grabx = (MathUtils.round(grabx / 40) * 40) - 20

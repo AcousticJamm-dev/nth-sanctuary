@@ -3,106 +3,119 @@ local Guei, super = Class(EnemyBattler)
 function Guei:init()
     super.init(self)
 
+    -- Enemy name
     self.name = "Guei"
+    -- Sets the actor, which handles the enemy's sprites (see scripts/data/actors/dummy.lua)
     self:setActor("guei")
-    self:setAnimation("idle")
+	self:setAnimation("idle")
 
+    
+    -- Enemy health
     self.max_health = 470
     self.health = 470
+    -- Enemy attack (determines bullet damage)
     self.attack = 13
+    -- Enemy defense (usually 0)
     self.defense = 0
-    self.money = 120
-    self.experience = 10
-    self.spare_points = 10
+    -- Enemy reward
+    self.money = 100
 
+    -- Mercy given when sparing this enemy before its spareable (20% for basic enemies)
+    --self.spare_points = 20
+    self.spareable_text = "* Guei looks satisfied in some odd way."
+
+    -- List of possible wave ids, randomly picked each turn
     self.waves = {
-        "guei/holyfire",
-        "guei/clawdrop"
+        "holyfire",
+        "clawdrop"
     }
 
-    self.dialogue = {"..."}
-    self.dialogue_offset = {0, -48}
+	self.dialogue = { "..." }
+    self.dialogue_offset = { 0, -48 }
 
-    self.check = "A strange spirit said to\nappear when the moon waxes."
+    self.excerism = false
+    self.balloon_type = 0
 
+    -- Check text (automatically has "ENEMY NAME - " at the start)
+    self.check = "A strange spirit said to appear when the moon waxes."
+
+    -- Text randomly displayed at the bottom of the screen each turn
     self.text = {
-        "* Guei turns its head like a\nbird.",
+        "* Guei turns its head like a bird.",
         "* Guei rattles its claws.",
         "* Guei wags its tail.",
         "* Guei howls hauntingly."
     }
+    -- Text displayed at the bottom of the screen when the enemy has low health
     self.low_health_text = "* Guei's flames flicker weakly."
-	self.spareable_text = "* Guei looks satisfied in some\nodd way."
 
-    self.low_health_percentage = 1/3
-
+    -- Register act called "Smile"
     self:getAct("Check").description = "Useless\nanalysis"
     self:registerAct("Exercism", "20% &\nDelayed\nTIRED")
+    -- Register party act with Ralsei called "Tell Story"
+    -- (second argument is description, usually empty)
     self:registerAct("Xercism", "60% &\nDelayed\nTIRED", {"ralsei"})
-    --self:registerAct("OldMan", "I'm\nold!") -- yeahhh you're not here yet
-
-    self.killable = true
-
-    self.excerism = false
-end
-
-function Guei:isXActionShort(battler)
-    return true
 end
 
 function Guei:onAct(battler, name)
     if name == "Exercism" then
-        self.excerism = true
+        -- Give the enemy 100% mercy
         self:addMercy(20)
-        return "* You started the exercism!\n* You encouraged Guei to exercise!"
+        -- Change this enemy's dialogue for 1 turn
+        --self.dialogue_override = "... ^^"
+        -- Act text (since it's a list, multiple textboxes)
+        self.excerism = true
+        return {
+            "* You started the exercism!\nYou encouraged Guei to exercise!"
+        }
+
     elseif name == "Xercism" then
+        -- Loop through all enemies
+        --for _, enemy in ipairs(Game.battle.enemies) do
+        --    -- Make the enemy tired
+        --    enemy:setTired(true)
+        --end
         self.excerism = true
         self:addMercy(60)
         return "* Everyone encouraged Guei to exercise!"
-    elseif name == "Standard" then
-        if battler.chara.id == "susie" then
+
+    elseif name == "Standard" then --X-Action
+        -- Give the enemy 50% mercy
+        if battler.chara.id == "ralsei" then
+            -- R-Action text
             self:addMercy(40)
-            return  "* Susie told a story about the\nliving dead!"
-        elseif battler.chara.id == "ralsei" then
+            local s = {
+                "* Ralsei quoted a holy book!",
+                "* Ralsei told a family-friendly story about a lovable yet lonely ghost!"
+            }
+            local choice = TableUtils.pick(s)
+            return choice
+        elseif battler.chara.id == "susie" then
+            -- S-Action: start a cutscene (see scripts/battle/cutscenes/dummy.lua)
             self:addMercy(40)
-            return "* Ralsei told a family-friendly\nstory about a lovable yet\nlonely ghost!"
+            local s = {
+            "* Susie told a story about the living dead!",
+            "* Susie told a ghost story!"
+            }
+            local choice = TableUtils.pick(s)
+            return choice
         else
+            -- Text for any other character (like Noelle)
             self:addMercy(40)
-            local text = {
+            local s = {
                 "* "..battler.chara:getName().." lit an incense stick!",
                 "* "..battler.chara:getName().." did something mysterious!",
                 "* "..battler.chara:getName().." said a prayer!",
                 "* "..battler.chara:getName().." made a ghastly sound!"
             }
-            return TableUtils.pick(text)
+            local choice = TableUtils.pick(s)
+            return choice
         end
     end
 
+    -- If the act is none of the above, run the base onAct function
+    -- (this handles the Check act)
     return super.onAct(self, battler, name)
-end
-
-
-function Guei:onShortAct(battler, name)
-    if name == "Standard" then
-        if battler.chara.id == "susie" then
-            self:addMercy(40)
-            return  "* Susie told a ghost story!"
-        elseif battler.chara.id == "ralsei" then
-            self:addMercy(40)
-            return "* Ralsei quoted a holy book!"
-        else
-            self:addMercy(40)
-            local text = {
-                "* "..battler.chara:getName().." lit an incense stick!",
-                "* "..battler.chara:getName().." did something mysterious!",
-                "* "..battler.chara:getName().." said a prayer!",
-                "* "..battler.chara:getName().." made a ghastly sound!"
-            }
-            return TableUtils.pick(text)
-        end
-    end
-
-    return super.onShortAct(self, battler, name)
 end
 
 function Guei:getEncounterText()
@@ -158,7 +171,6 @@ end
 
 function Guei:onTurnEnd()
     if self.excerism then
-        self.excerism = false
 		self:setTired(true)
     end
 end

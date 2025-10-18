@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="40" tileheight="40" infinite="0" nextlayerid="19" nextobjectid="73">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="40" tileheight="40" infinite="0" nextlayerid="19" nextobjectid="76">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -10,7 +10,7 @@
  <tileset firstgid="1" source="../../tilesets/bg_dw_church_tileset_new.tsx"/>
  <tileset firstgid="583" source="../../tilesets/light_areas.tsx"/>
  <tileset firstgid="589" source="../../tilesets/church_objects.tsx"/>
- <tileset firstgid="601" source="../../tilesets/tiles_moss.tsx"/>
+ <tileset firstgid="602" source="../../tilesets/tiles_moss.tsx"/>
  <layer id="10" name="bg_assets" width="30" height="30" parallaxx="0.8">
   <data encoding="csv">
 136,137,0,0,136,137,0,0,136,137,0,0,136,137,0,0,136,137,0,0,136,137,0,0,136,137,0,0,136,137,
@@ -164,7 +164,7 @@
   <object id="61" x="800" y="1120" width="80" height="80"/>
  </objectgroup>
  <objectgroup id="14" name="objects_decal">
-  <object id="29" name="moss" gid="601" x="160" y="680" width="40" height="40"/>
+  <object id="29" name="moss" gid="602" x="160" y="680" width="40" height="40"/>
  </objectgroup>
  <objectgroup id="4" name="objects_party">
   <object id="6" name="transition" x="160" y="1200" width="160" height="40">
@@ -216,12 +216,21 @@ KNOW NO END.</property>
     <property name="shard" type="bool" value="true"/>
    </properties>
   </object>
+  <object id="74" name="transition" x="1200" y="760" width="40" height="120">
+   <properties>
+    <property name="map" value="fourth_sanctum_2"/>
+    <property name="marker" value="entry"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup id="3" name="markers">
   <object id="4" name="entry" x="240" y="1160">
    <point/>
   </object>
   <object id="25" name="spawn" x="540" y="750">
+   <point/>
+  </object>
+  <object id="75" name="entry2" x="1160" y="820">
    <point/>
   </object>
  </objectgroup>

@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 19,
-  nextobjectid = 73,
+  nextobjectid = 76,
   properties = {
     ["music"] = "fourth_church",
     ["name"] = "4th Sanctuary - Entry"
@@ -34,7 +34,7 @@ return {
     },
     {
       name = "tiles_moss",
-      firstgid = 601,
+      firstgid = 602,
       filename = "../../tilesets/tiles_moss.tsx"
     }
   },
@@ -453,7 +453,7 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
-          gid = 601,
+          gid = 602,
           visible = true,
           properties = {}
         }
@@ -588,6 +588,22 @@ return {
             ["once"] = true,
             ["shard"] = true
           }
+        },
+        {
+          id = 74,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 1200,
+          y = 760,
+          width = 40,
+          height = 120,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "fourth_sanctum_2",
+            ["marker"] = "entry"
+          }
         }
       }
     },
@@ -625,6 +641,19 @@ return {
           shape = "point",
           x = 540,
           y = 750,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 75,
+          name = "entry2",
+          type = "",
+          shape = "point",
+          x = 1160,
+          y = 820,
           width = 0,
           height = 0,
           rotation = 0,

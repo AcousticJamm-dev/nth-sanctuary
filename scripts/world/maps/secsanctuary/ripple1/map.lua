@@ -8,10 +8,25 @@ function map:init(world, data)
 	self.make_rip = false
 	self.ripindex = 0
 	self.con = 0
+	self.fakefader = Rectangle(0,0,999,999)
+	self.fakefader.alpha = 0
 end
 
 function map:onEnter()
     self.world.color = COLORS.black
+	self.tiles = Game.world.map:getTileLayer("Tile Layer 2")
+	self.tiles.alpha = 0
+		for _, event in ipairs(self.events) do
+		if event.layer == self.layers["objects_parallax"] then
+			 event.parallax_x = 0.5
+			 event.parallax_y = 0.9
+			 event.alpha = 0
+		elseif event.layer == self.layers["objects_parallax2"] then
+			event.parallax_x = 0.2
+			event.parallax_y = 0.7
+			event.alpha = 0
+		end
+	end
 	Game.world.timer:after(10/30, function()
 		self.con = 1
 	end)
@@ -26,6 +41,7 @@ function map:onExit()
 end
 
 function map:update()
+	print(self.con)
 	super.update(self)
 	if self.con == 1 then
 		self.dtmult_timer = self.dtmult_timer + DTMULT
@@ -78,9 +94,21 @@ function map:update()
 				end
 			end
 			if self.frame_timer == 720 then
+				Game.stage:addChild(self.fakefader)
+				Game.world.timer:tween(1, self.fakefader, {alpha = 1})
 			end
 			if self.frame_timer == 780 then
+				Game.world.color = COLORS.white
+				self.fakefader:fadeOutAndRemove(0.5)
+				self.tiles.alpha = 1
 				self.con = 2
+				for _, event in ipairs(self.events) do
+					if event.layer == self.layers["objects_parallax"] then
+						 event.alpha = 1
+					elseif event.layer == self.layers["objects_parallax2"] then
+						event.alpha = 1
+					end
+				end
 			end
 		end
 	end
@@ -93,7 +121,8 @@ function map:onFootstep(char, num)
     local effect = RippleEffect(char, {Game.party[1]:getColor()})
     local x, y = char:getRelativePos(18/2, 72/2)
     -- TODO: I couldn't find the right numbers
-    if Input.down("cancel") then
+	if self.frame_timer < 780 then
+		    if Input.down("cancel") then
         RippleEffect:MakeRipple(x,y, 60, {74/255, 145/255, 246/255}, 192, 1, 15):applySpeedFrom(char, 0.75)
     else
         -- RippleEffect:MakeRipple(x,y, 30, nil, 192/2, 1, 8):applySpeedFrom(char, 0.75)
@@ -101,6 +130,7 @@ function map:onFootstep(char, num)
         self.world:addChild(RippleEffect(x, y, 30, 192/2, 8, {74/255, 145/255, 246/255})):applySpeedFrom(char, 0.75)
         self.world:addChild(RippleEffect(x, y, 30, 192/3, 8, {74/255, 145/255, 246/255})):applySpeedFrom(char, 0.75)
     end
+	end
 end
 
 return map

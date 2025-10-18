@@ -1,0 +1,22 @@
+---@class Map.dark_place : Map
+local map, super = Class(Map)
+
+function map:init(world, data)
+    super.init(self, world, data)
+    
+end
+
+function map:onEnter()
+	for _, event in ipairs(self.events) do
+		if event.layer == self.layers["objects_parallax"] then
+			 event.parallax_x = 0.5
+			 event.parallax_y = 0.9
+		end
+		if event.layer == self.layers["objects_parallax2"] then
+			 event.parallax_x = 0.4
+			 event.parallax_y = 0.85
+		end
+	end
+end
+
+return map

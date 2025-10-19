@@ -1,6 +1,6 @@
-local Winglade, super = Class(Encounter)
+local Guei, super = Class(Encounter)
 
-function Winglade:init()
+function Guei:init()
     super.init(self)
 
     self.text = "* Guei wisps in your way!"
@@ -12,4 +12,4 @@ function Winglade:init()
     self:addEnemy("guei", 520, 300)
 end
 
-return Winglade
+return Guei

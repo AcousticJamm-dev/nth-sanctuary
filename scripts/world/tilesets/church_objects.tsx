@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.10" tiledversion="1.10.2" name="church_objects" tilewidth="900" tileheight="800" tilecount="11" columns="0">
+<tileset version="1.10" tiledversion="1.10.2" name="church_objects" tilewidth="900" tileheight="800" tilecount="12" columns="0">
  <editorsettings>
   <export target="church_objects.lua" format="lua"/>
  </editorsettings>
@@ -36,5 +36,8 @@
  </tile>
  <tile id="11">
   <image width="80" height="80" source="../../../assets/sprites/world/objects/shard_door.png"/>
+ </tile>
+ <tile id="13">
+  <image width="160" height="360" source="../../../assets/sprites/world/events/window_glow/church_window_huge.png"/>
  </tile>
 </tileset>

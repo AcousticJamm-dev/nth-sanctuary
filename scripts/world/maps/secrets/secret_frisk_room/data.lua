@@ -54,7 +54,7 @@ return {
       opacity = 1,
       offsetx = 0,
       offsety = 0,
-      parallaxx = 0.7,
+      parallaxx = 0.4,
       parallaxy = 1,
       properties = {},
       encoding = "lua",
@@ -83,7 +83,7 @@ return {
       opacity = 1,
       offsetx = 0,
       offsety = 0,
-      parallaxx = 0.8,
+      parallaxx = 0.5,
       parallaxy = 1,
       properties = {},
       objects = {

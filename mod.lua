@@ -4,7 +4,6 @@ function Mod:init()
         second_church = 0.8
     })
 end
-
 function Mod:c4lCreateFilterFX(type, properties)
     local fxtype = (type or "hsv"):lower()
     if fxtype == "hsv" then
@@ -34,6 +33,19 @@ function Mod:c4lCreateFilterFX(type, properties)
 		hsv.sat = hsv.sat_start;
 		hsv.val = hsv.val_start;
 		hsv.wave_time = 2;
+        return hsv
+    elseif fxtype == "custom" then --FINALLY
+		local hsv = HSVShiftFX()
+		hsv.hue_start = properties["hue_start"] or 0; --NO
+		hsv.sat_start = properties["sat_start"] or 0.6; --MORE
+		hsv.val_start = properties["val_start"] or 1; --DUPLICATE
+		hsv.hue_target = properties["hue_target"] or -140; --HUE
+		hsv.sat_target = properties["sat_target"] or 1; --SHIFT
+		hsv.val_target = properties["val_target"] or 1.5; --TYPES
+		hsv.hue = hsv.hue_start;
+		hsv.sat = hsv.sat_start;
+		hsv.val = hsv.val_start;
+		hsv.wave_time = properties["speed"] or 2;
         return hsv
     elseif fxtype == "prophecyscroll" then
         return ProphecyScrollFX()

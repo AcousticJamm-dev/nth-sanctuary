@@ -19,7 +19,7 @@ function ChurchMagicGlass:init(data)
         for j = 1, self.tiles_y do
             local hitbox = Hitbox(self, (i - 1) * 80, (j - 1) * 80, 80, 80)
             table.insert(self.glass_colliders, hitbox)
-            table.insert(self.tile_alphas, 0)
+            table.insert(self.tile_alphas, self.idlealpha)
             table.insert(self.tile_idlealphas, self.idlealpha)
         end
     end

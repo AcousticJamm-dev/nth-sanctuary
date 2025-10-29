@@ -29,8 +29,7 @@ return {
     {
       name = "light_areas",
       firstgid = 602,
-      filename = "../../../tilesets/light_areas.tsx",
-      exportfilename = "../../../tilesets/light_areas.lua"
+      filename = "../../../tilesets/light_areas.tsx"
     }
   },
   layers = {
@@ -339,6 +338,38 @@ return {
     {
       type = "objectgroup",
       draworder = "topdown",
+      id = 2,
+      name = "objects_party",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 1,
+          name = "npc",
+          type = "",
+          shape = "point",
+          x = 320,
+          y = 200,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["actor"] = "ddelta",
+            ["cutscene"] = "events.prism"
+          }
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
       id = 4,
       name = "markers",
       class = "",
@@ -558,38 +589,6 @@ return {
             ["light_alpha"] = 0.1,
             ["light_color"] = "#ffffffff",
             ["light_type"] = 1
-          }
-        }
-      }
-    },
-    {
-      type = "objectgroup",
-      draworder = "topdown",
-      id = 2,
-      name = "objects_party",
-      class = "",
-      visible = true,
-      opacity = 1,
-      offsetx = 0,
-      offsety = 0,
-      parallaxx = 1,
-      parallaxy = 1,
-      properties = {},
-      objects = {
-        {
-          id = 1,
-          name = "npc",
-          type = "",
-          shape = "point",
-          x = 320,
-          y = 200,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["actor"] = "ddelta",
-            ["cutscene"] = "events.prism"
           }
         }
       }

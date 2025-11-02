@@ -151,8 +151,8 @@ function ThreeDPrism:onAct(battler, name)
 				self:addMercy(25)
 				cutscene:text("* The prism turns towards you for a moment,[wait:5] then slows down...")
 				self.challenge_acted = true
-				Game.battle.encounter.raged = false
 			end
+			Game.battle.encounter.raged = false
 			self.comment = self.last_comment or ""
 			if self.comment ~= "" then
 				self.name = "3D Prism"
@@ -160,12 +160,12 @@ function ThreeDPrism:onAct(battler, name)
 				self.name = "3D Spinning Prism"
 			end
 			self.attack = 20
-			if self.progress == 5 then
-				self.progress = 2
-			elseif self.progress == 6 then
-				self.progress = 3
+			if self.progress == 6 then
+				self.progress = 4
 			elseif self.progress == 7 then
-				self.progress = 1
+				self.progress = 2
+			elseif self.progress == 8 then
+				self.progress = 3
 			end
 			self:removeAct("BegForMercy")
 			self:registerAct("Challenge", "Still a\nterrible\nidea", "susie")

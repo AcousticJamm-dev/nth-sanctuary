@@ -120,6 +120,7 @@ return {
         susie:resetSprite()
         cutscene:attachFollowers()
 
+        kris:setFacing("down")
     end,
     lobby = function(cutscene)
         local man = cutscene:getCharacter("lobbyman")

@@ -41,5 +41,6 @@ return {
 
         choicebox()
         cutscene:wait(3)
+        kris:setFacing("down")
     end,
 }

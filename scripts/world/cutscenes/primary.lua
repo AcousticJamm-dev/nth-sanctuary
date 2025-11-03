@@ -1,5 +1,6 @@
 return {
     intro = function (cutscene)
+		Kristal.hideBorder(0)
         local susie, ralsei, kris = cutscene:getCharacter("susie"),cutscene:getCharacter("ralsei"),cutscene:getCharacter("kris")
         local function centerText(str)
             local text = DialogueText(str, 0, 16, 640, 480,
@@ -17,10 +18,16 @@ return {
 
             cutscene:wait(function () return text:isRemoved() end)
         end
-
-        cutscene:fadeOut(0, { music = true })
+        for _, save in ipairs(Game.world.map:getEvents("savepoint")) do
+            save.visible = false
+        end
+		Game.world.music:stop()
+        cutscene:fadeOut(0)
         susie.x = susie.x - 70
         ralsei.x = ralsei.x + 70
+		local kris_y = kris.y
+		local susie_y = susie.y
+		local ralsei_y = ralsei.y
         centerText(
             "Hello.[wait:10]\n\n" ..
             "Just a fair warning before proceeding.[wait:10]\n" ..
@@ -42,7 +49,17 @@ return {
             cutscene:wait(1/15)
             sum = sum + (letter.width*2) + 10
             table.insert(remove, letter)
-        end
+        end 
+		local heart = Sprite("logo_heart")
+        heart:setScale(2)
+		heart:setParallax(0)
+		heart:setOrigin(0.5, 0.5)
+		heart.layer = 1000 + 1
+		heart.noprop = true
+        Game.world:addChild(heart)
+        heart.x = 85 + 216
+        heart.y = SCREEN_HEIGHT/2 - 34
+        table.insert(remove, heart)
         cutscene:wait(1)
         local a = Text("#th Sanctuary")
         a.layer = 1000
@@ -51,28 +68,136 @@ return {
                 a.x, a.y = 130, 244
         Game.stage:addChild(a)
         Assets.playSound("bell_bounce_short")
-        cutscene:wait(2)
         for _, sprite in ipairs(remove) do
-            sprite.physics.direction = math.rad(90)
-            sprite.physics.speed = 1
-            sprite.physics.friction = -1
-            Game.world.timer:tween(1, sprite, {rotation = math.rad(math.random(-15, 15))})
+			if not sprite.noprop then
+				sprite:addFX(ProphecyScrollFX(), "prop")
+			end
         end
-        Game.world.timer:tween(1, a, {alpha = 0})
-        Assets.playSound("stardrop")
-
-        cutscene:fadeIn(1, { music = true })
-        cutscene:detachFollowers()
         cutscene:wait(2)
+        cutscene:detachFollowers()
+		local kris_layer = kris.layer
+		local susie_layer = susie.layer
+		local ralsei_layer = ralsei.layer
+        for _, trans in ipairs(Game.world.map:getEvents("transition")) do
+            trans.collider.collidable = false
+        end
+        for _, trans in ipairs(Game.world.map:getEvents("ft_transition")) do
+            trans.collider.collidable = false
+        end
+		kris.layer = a.layer + 1
+		susie.layer = a.layer + 1
+		ralsei.layer = a.layer + 1
+		kris.y = Game.world.camera.y - SCREEN_HEIGHT - 40
+		susie.y = Game.world.camera.y - SCREEN_HEIGHT - 40
+		ralsei.y = Game.world.camera.y - SCREEN_HEIGHT - 40	
+		local fakehsv = HSVShiftFX()
+		fakehsv.hue_start = 60;
+		fakehsv.sat_start = 0.4;
+		fakehsv.val_start = 1;
+		fakehsv.hue_target = 80;
+		fakehsv.sat_target = 0.4;
+		fakehsv.val_target = 1;
+		fakehsv.hue = fakehsv.hue_start;
+		fakehsv.sat = fakehsv.sat_start;
+		fakehsv.val = fakehsv.val_start;
+		fakehsv.wave_time = 1;
+		kris:addFX(fakehsv, "fakehsv")
+		susie:addFX(fakehsv, "fakehsv")
+		ralsei:addFX(fakehsv, "fakehsv")
+        kris:setSprite("ball")
+        susie:setSprite("ball")
+        ralsei:setSprite("ball")
+		cutscene:slideTo(kris, kris.x, kris_y, 14/30)
+		cutscene:slideTo(susie, susie.x, susie_y, 14/30)
+		cutscene:slideTo(ralsei, ralsei.x, ralsei_y, 14/30)
+		cutscene:wait(10/30)
+		Assets.playSound("dtrans_flip")
+        kris:setSprite("landed")
+        susie:setSprite("landed")
+        ralsei:setSprite("landed")
+		kris:shake(2)
+		susie:shake(2)
+		ralsei:shake(2)
+		local delay_sound_time
+		local complexsnd = ComplexSound(0,0,-1)
+        complexsnd:add(4, "break1", 1, 0.95, 0, -1, 0)
+        complexsnd:add(0, "glassbreak", 0.6, 0.4, 2, -1, 0)
+        complexsnd:add(3, "punchmed", 0.7, 0.95, 0, -1, 0)
+        complexsnd:play()
+		Assets.playSound("ch4_first_intro_breaking", 0.5, 0.5)
+		Assets.playSound("ch4_first_intro_breaking", 0.5, 0.44)
         for _, sprite in ipairs(remove) do
             sprite:remove()
         end
+        for i = 1,94 do
+            local letter = Sprite("logo_shatter/logo_piece_"..i)
+            letter:setScale(2)
+            letter:setParallax(0)
+            letter:setOrigin(0.5, 0.5)
+			letter.physics.direction = math.rad(MathUtils.random(360))
+			letter.physics.gravity = 0.4 + MathUtils.random(0.12)
+			letter.physics.friction = 0
+			letter.physics.speed = 4
+            letter.layer = 1000
+            Game.world:addChild(letter)
+            letter.x = 85 + 216
+            letter.y = SCREEN_HEIGHT/2 - 34
+            table.insert(remove, letter)
+        end
+		a.physics.gravity = 0.5
+        local shards_remove = {}
+        for i = 1,15 do
+            local groundshard = ProphecyGroundShard((SCREEN_WIDTH/2-199)+(i*399)/15+MathUtils.random(-30, 30), SCREEN_HEIGHT/2-34+MathUtils.random(60))
+            groundshard:setParallax(0)
+			groundshard.layer = 1000
+            groundshard.ytarg = 10000
+            Game.world:addChild(groundshard)
+            table.insert(shards_remove, groundshard)
+        end
+        cutscene:wait(1)
+        Assets.playSound("him_quick")
+        cutscene:fadeIn(1)
+        Game.world.timer:tween(1, a, {alpha = 0})
+		Kristal.showBorder(1)
+		cutscene:wait(1)
+        kris.sprite:setFrame(2)
+        susie.sprite:setFrame(2)
+        ralsei.sprite:setFrame(2)
+		cutscene:wait(3/30)
+        kris.sprite:setFrame(3)
+        susie.sprite:setFrame(3)
+        ralsei.sprite:setFrame(3)
+		cutscene:wait(2/30)
+		kris.layer = kris_layer
+		susie.layer = susie_layer
+		ralsei.layer = ralsei_layer
+		kris:resetSprite()
+		susie:resetSprite()
+		ralsei:resetSprite()
+		cutscene:wait(1/30)
+		kris:removeFX("fakehsv")
+		susie:removeFX("fakehsv")
+		ralsei:removeFX("fakehsv")
+        for _, trans in ipairs(Game.world.map:getEvents("transition")) do
+            trans.collider.collidable = true
+        end
+        for _, trans in ipairs(Game.world.map:getEvents("ft_transition")) do
+            trans.collider.collidable = true
+        end
         a:remove()
+        for _, sprite in ipairs(remove) do
+            sprite:remove()
+        end
+        cutscene:wait(0.5)
         cutscene:setSpeaker(susie)
         Assets.playSound("whip_hard")
         susie:setSprite("exasperated_right")
         susie:shake(3,nil, nil)
         cutscene:wait(1)
+        for _, shard in ipairs(shards_remove) do
+            shard:remove()
+        end
+		Game.world.music:play()
         cutscene:text("* God [wait:5]DAMN IT Kris, [wait:10]where are we this time?!", "teeth_b")
         susie:resetSprite()
         susie:walkTo(susie.x - 40, susie.y, 1)
@@ -119,7 +244,9 @@ return {
         
         susie:resetSprite()
         cutscene:attachFollowers()
-
+        for _, save in ipairs(Game.world.map:getEvents("savepoint")) do
+            save.visible = true
+        end
         kris:setFacing("down")
     end,
     lobby = function(cutscene)

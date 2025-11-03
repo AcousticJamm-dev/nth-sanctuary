@@ -33,7 +33,7 @@
     // Equipment for your party. Not specifying equipment defaults to the following.
     "equipment": {
         "kris": {
-            "weapon": "blackshard",
+            "weapon": "winglade",
             "armor": ["waferguard", "tennatie"]
         },
         "susie": {

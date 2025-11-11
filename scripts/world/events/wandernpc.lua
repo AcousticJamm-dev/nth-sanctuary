@@ -7,8 +7,8 @@ function WanderNPC:init(data)
 	self.walk_mode = 0
 	self.walk_timer = 0
 	self.walk_threshold = 20
-	self.walk_time = properties["walktime"] or 10
-	self.walk_time_rand = properties["walkrandtime"] or 10
+	self.walk_time = properties["walktime"] or 20
+	self.walk_time_rand = properties["walkrandtime"] or 20
 	self.walk_dir = "up"
 	self.walk_speed = 0
 	self.walk_true_spd = properties["walkspeed"] or 2

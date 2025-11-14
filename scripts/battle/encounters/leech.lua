@@ -28,11 +28,10 @@ function LeechSpawn:onTurnEnd()
     self.difficulty = self.difficulty + 1
 end
 
-
-function LeechSpawn:beforeStateChange(old, new) 
-    if (new == "DEFENDING" or old == "CUTSCENE")and self.purified then
-       -- self:explode()
-            Game.battle:setState("VICTORY")
+function LeechSpawn:beforeStateChange(old, new, reason)
+	if reason == "PURIFIED" then return end -- somehow prevents a stack overflow
+    if (new == "DEFENDING" or old == "CUTSCENE") and self.purified then
+        Game.battle:setState("VICTORY", "PURIFIED")
     end
 end
 

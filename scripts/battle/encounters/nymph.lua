@@ -27,10 +27,10 @@ function NymphSpawn:onTurnEnd()
     self.difficulty = self.difficulty + 1
 end
 
-function NymphSpawn:beforeStateChange(old, new) 
-    if (new == "DEFENDING" or old == "CUTSCENE")and self.purified then
-       -- self:explode()
-            Game.battle:setState("VICTORY")
+function NymphSpawn:beforeStateChange(old, new, reason)
+	if reason == "PURIFIED" then return end -- somehow prevents a stack overflow
+    if (new == "DEFENDING" or old == "CUTSCENE") and self.purified then
+        Game.battle:setState("VICTORY", "PURIFIED")
     end
 end
 

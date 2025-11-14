@@ -139,6 +139,40 @@ function Mod:onMapMusic(map, music)
 	end
 end
 
+function Mod:onShadowCrystal(item, light)
+    if light then return end
+	if Game.world:getEvent("prophecy") then
+		Game.world:startCutscene(function(cutscene)
+			cutscene:text("* You held the crystal up to your eye.")
+			cutscene:text("* For some strange reason,[wait:5] no matter how you look...")
+			cutscene:text("* The prophecy's text does not warp in the crystal's lens.")
+		end)
+		return true
+	elseif not item:getFlag("used_none", false) then
+        item:setFlag("used_none", true)
+		local extra_sanctum_maps = {
+			"base_east",
+			"base_east2",
+		}
+        Game.world:startCutscene(function(cutscene)
+			if Game.world.map.id and StringUtils.contains(Game.world.map.id, "hell") then
+				cutscene:text("* You held the crystal up to your eye.")
+				cutscene:text("* For some strange reason,[wait:5] for just a brief moment...")
+				cutscene:text("* You thought you saw the church burning down.")
+			elseif Game.world.map.id and StringUtils.contains(Game.world.map.id, "sanctum")
+			or StringUtils.contains(Game.world.map.id, "sanctuary")
+			or TableUtils.contains(extra_sanctum_maps, Game.world.map.id) then
+				cutscene:text("* You held the crystal up to your eye.")
+				cutscene:text("* For some strange reason,[wait:5] for just a brief moment...")
+				cutscene:text("* You thought you saw the lobby of the church.")
+			else
+				cutscene:text("* You looked through the glass.")
+				cutscene:text("* ...[wait:5] but nothing happened.")
+			end
+        end)
+        return true
+    end
+end
 --[==[
 function Mod:preInit()
     ---@return string|number[][]

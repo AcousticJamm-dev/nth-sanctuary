@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 12,
-  nextobjectid = 49,
+  nextobjectid = 53,
   properties = {
     ["border"] = "",
     ["music"] = "grand_bells",
@@ -314,45 +314,7 @@ return {
           }
         },
         {
-          id = 5,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 580,
-          y = 1030,
-          width = 120,
-          height = 510,
-          rotation = 0,
-          gid = 2147483932,
-          visible = true,
-          properties = {
-            ["light"] = true,
-            ["light_alpha"] = 0.05,
-            ["light_color"] = "#ffffffff",
-            ["light_type"] = 1
-          }
-        },
-        {
-          id = 22,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 400,
-          y = 1040,
-          width = 160,
-          height = 680,
-          rotation = 0,
-          gid = 2147483932,
-          visible = true,
-          properties = {
-            ["light"] = true,
-            ["light_alpha"] = 0.05,
-            ["light_color"] = "#ffffffff",
-            ["light_type"] = 1
-          }
-        },
-        {
-          id = 23,
+          id = 49,
           name = "",
           type = "",
           shape = "rectangle",
@@ -361,7 +323,7 @@ return {
           width = 160,
           height = 680,
           rotation = 0,
-          gid = 2147483932,
+          gid = 283,
           visible = true,
           properties = {
             ["light"] = true,
@@ -371,7 +333,26 @@ return {
           }
         },
         {
-          id = 24,
+          id = 50,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 400,
+          y = 1040,
+          width = 160,
+          height = 680,
+          rotation = 0,
+          gid = 283,
+          visible = true,
+          properties = {
+            ["light"] = true,
+            ["light_alpha"] = 0.05,
+            ["light_color"] = "#ffffffff",
+            ["light_type"] = 1
+          }
+        },
+        {
+          id = 51,
           name = "",
           type = "",
           shape = "rectangle",
@@ -380,7 +361,26 @@ return {
           width = 120,
           height = 510,
           rotation = 0,
-          gid = 2147483932,
+          gid = 283,
+          visible = true,
+          properties = {
+            ["light"] = true,
+            ["light_alpha"] = 0.05,
+            ["light_color"] = "#ffffffff",
+            ["light_type"] = 1
+          }
+        },
+        {
+          id = 52,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 580,
+          y = 1030,
+          width = 120,
+          height = 510,
+          rotation = 0,
+          gid = 283,
           visible = true,
           properties = {
             ["light"] = true,

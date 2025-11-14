@@ -9,8 +9,8 @@ return {
   height = 12,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 5,
-  nextobjectid = 6,
+  nextlayerid = 6,
+  nextobjectid = 18,
   properties = {},
   tilesets = {
     {
@@ -22,6 +22,11 @@ return {
       name = "bg_dw_church_2_tileset",
       firstgid = 583,
       filename = "../tilesets/bg_dw_church_2_tileset.tsx"
+    },
+    {
+      name = "light_areas",
+      firstgid = 781,
+      filename = "../tilesets/light_areas.tsx"
     }
   },
   layers = {

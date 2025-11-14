@@ -32,18 +32,10 @@ function TileObject:drawLightA()
 			sx = MathUtils.absMin(sx, sy)
 			sy = sx
 		end
-		love.graphics.setColor(1,1,1,1)
-		if self.light_type == 1 then
-			local mask_canvas = Draw.pushCanvas(self.width, self.height)
-			self.tileset:drawTile(self.tile, 0, 0, 0, 1, 1)
-			love.graphics.setBlendMode("alpha")
-			Draw.popCanvas()
-			local last_shader = love.graphics.getShader()
-			love.graphics.setShader(Ch4Lib.invert_alpha)
-			love.graphics.setBlendMode("multiply", "premultiplied")
+		if self.light_type == 1 or self.light_type == 3 or self.light_type == 5 then
+			love.graphics.setColor(1,1,1,self.light_alpha)
 			local xx, yy = self:localToScreenPos(0,0)
-			Draw.draw(mask_canvas, xx+self.width/2, yy+self.height/2, 0, sx, sy, tile_width/2, tile_height/2)
-			love.graphics.setShader(last_shader)
+			self.tileset:drawTile(self.tile, xx+self.width/2, yy+self.height/2, 0, sx, sy, tile_width/2, tile_height/2)
 		end
 	end
 end
@@ -57,7 +49,7 @@ function TileObject:drawLightB()
 			sx = MathUtils.absMin(sx, sy)
 			sy = sx
 		end
-		if self.light_type == 1 then
+		if self.light_type == 1 or self.light_type == 2 or self.light_type == 4 then
 			love.graphics.setColor(1,1,1,1)
 			local xx, yy = self:localToScreenPos(0,0)
 			self.tileset:drawTile(self.tile, xx+self.width/2, yy+self.height/2, 0, sx, sy, tile_width/2, tile_height/2)
@@ -79,7 +71,9 @@ function TileObject:draw()
 	elseif self.tint_color then
 		love.graphics.setColor(self.tint_color[1], self.tint_color[2], self.tint_color[3], 1)
 	end
-    self.tileset:drawTile(self.tile, self.width/2, self.height/2, 0, sx, sy, tile_width/2, tile_height/2)
+	if self.light_type ~= 4 and self.light_type ~= 5 then
+		self.tileset:drawTile(self.tile, self.width/2, self.height/2, 0, sx, sy, tile_width/2, tile_height/2)
+	end
 	love.graphics.setBlendMode("alpha")
 end
 

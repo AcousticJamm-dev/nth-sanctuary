@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 5,
-  nextobjectid = 54,
+  nextobjectid = 57,
   properties = {
     ["music"] = "climb"
   },
@@ -492,6 +492,45 @@ return {
             ["actor"] = "ddelta",
             ["text"] = "* i move around so cooool"
           }
+        },
+        {
+          id = 54,
+          name = "window_parallax",
+          type = "",
+          shape = "point",
+          x = 1040,
+          y = 240,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 55,
+          name = "window_parallax",
+          type = "",
+          shape = "point",
+          x = 1200,
+          y = 240,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 56,
+          name = "window_parallax",
+          type = "",
+          shape = "point",
+          x = 1360,
+          y = 240,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
         }
       }
     },

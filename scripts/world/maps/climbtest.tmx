@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="64" height="32" tilewidth="40" tileheight="40" infinite="0" nextlayerid="5" nextobjectid="54">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="64" height="32" tilewidth="40" tileheight="40" infinite="0" nextlayerid="5" nextobjectid="57">
  <editorsettings>
   <export target="climbtest.lua" format="lua"/>
  </editorsettings>
@@ -140,6 +140,15 @@
     <property name="actor" value="ddelta"/>
     <property name="text" value="* i move around so cooool"/>
    </properties>
+   <point/>
+  </object>
+  <object id="54" name="window_parallax" x="1040" y="240">
+   <point/>
+  </object>
+  <object id="55" name="window_parallax" x="1200" y="240">
+   <point/>
+  </object>
+  <object id="56" name="window_parallax" x="1360" y="240">
    <point/>
   </object>
  </objectgroup>

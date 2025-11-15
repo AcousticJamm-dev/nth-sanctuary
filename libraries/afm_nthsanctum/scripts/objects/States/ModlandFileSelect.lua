@@ -1,5 +1,20 @@
 local ModlandFileSelect, super = Class("ModlandFileSelect")
 
+function ModlandFileSelect:onKeyPressed(key, is_repeat)
+	if self.state == "SELECT" then
+        if Input.is("confirm", key) then
+            Assets.stopAndPlaySound("ui_select")
+            if self.selected_y == 5 then
+                if self.selected_x == 1 then
+                    self.menu:pushState("CREDITS")
+					return true
+                end
+            end
+        end
+    end
+	super.onKeyPressed(self,key,is_repeat)
+end
+
 function ModlandFileSelect:draw()
     local mod_name = "#TH SANCTUARY"
     Draw.setColor(PALETTE["filemenu_header"])
@@ -34,7 +49,7 @@ function ModlandFileSelect:draw()
         end
         if self.previous_chapter then
             setColor(1, 5)
-            Draw.printShadow(self:gasterize(self.menu.chapter_name.select), 108, 380 + 40)
+            Draw.printShadow(self:gasterize "Credits", 108, 380 + 40)
         end
         setColor(2, 5)
         Draw.printShadow(self:gasterize "Config", self.bottom_row_heart[2] + 28, 380 + 40)

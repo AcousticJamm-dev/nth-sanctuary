@@ -79,6 +79,7 @@
             "noStyledOptions": false,
             "style": "greatdoor",
             "hookOverlay": true,
+            "previousChapter": true, // Hacky credits button
         },
         "afm_nthsanctuary": {
             "one_file": true

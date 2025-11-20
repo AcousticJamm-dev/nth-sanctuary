@@ -15,8 +15,8 @@ function ModlandCredits:init(menu)
                 "",
                 { "Spritework", COLORS.yellow },
                 "Runius",
-                "",
-                "",
+                "Hyperboid",
+                "Azrael",
                 "",
                 "",
             },
@@ -26,10 +26,39 @@ function ModlandCredits:init(menu)
                 "nazareth",
                 "",
                 "",
-                { "Music", COLORS.silver },
+                { "Music", COLORS.yellow },
                 "DeltaPulsar",
                 "obj_lily",
                 "therealaarami",
+                "",
+                ""
+            }
+        },
+        {
+            "#th Sanctuary",
+            {
+                { "Assets", COLORS.yellow },
+                "DELTARUNE Team",
+                "Toby Fox",
+                "Temmie Chang",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            },
+            {
+                { "Special Guests", {0.5, 1, 0.7} },
+                "AcousticJamm",
+                "RetroSpecter",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
                 "",
                 ""
             }

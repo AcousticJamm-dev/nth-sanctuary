@@ -67,11 +67,11 @@ function preview:draw()
 		love.graphics.setColor(0, 0, 0, 1)
 		love.graphics.rectangle("fill", 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)
 		love.graphics.setColor(1,1,1)
-		self:drawPart(rune, 0.5, 1.0, 1, -amt, -amt)
-		self:drawPart(rune, 0.5, 1.0, 1, amt, amt)
+		self:drawPart(rune, -amt, -amt)
+		self:drawPart(rune, amt, amt)
 		love.graphics.setColor(0, 0, 0, 0.6)
 		love.graphics.rectangle("fill", 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)
-		self:drawPart(rune, 0.5, 1.0, 1, 0, 0)
+		self:drawPart(rune, 0, 0)
 		Draw.popCanvas(true)
 		love.graphics.setColor(1,1,1,self.fade)
 		Draw.draw(surf)
@@ -118,26 +118,32 @@ local function oldHexToRgb(hex, value)
     }
 end
 
-function preview:drawPart(texture, min, max, alpha, xx, yy)
+local function scr_wave(arg0, arg1, speed_seconds, phase)
+    local a4 = (arg1 - arg0) * 0.5;
+    return arg0 + a4 + (math.sin((((Kristal.getTime()) + (speed_seconds * phase)) / speed_seconds) * (2 * math.pi)) * a4);
+end
+
+function preview:drawPart(texture, xx, yy)
 	local _xx, _yy = xx or 0, yy or 0
     local _cx, _cy = 0, 0
 
 	local last_color = love.graphics.getColor()
+	
     local surf_textured = Draw.pushCanvas(640, 480);
     love.graphics.clear(COLORS.white, 0);
-    love.graphics.setColorMask(true, true, true, false);
     local pnl_tex = self.perlin
     local pnl_canvas = Draw.pushCanvas(pnl_tex:getDimensions())
-    draw_sprite_tiled_ext(pnl_tex, 0, 0, 0, 1, 1, oldHexToRgb("#42D0FF", alpha))
+    draw_sprite_tiled_ext(pnl_tex, 0, 0, 0, 1, 1, oldHexToRgb("#42D0FF", scr_wave(0, 0.4, 4, 0)))
     Draw.popCanvas(true)
+    love.graphics.setColorMask(true, true, true, false);
     local x, y = -((_cx * 2) + (self.tick * 15)) * 0.5, -((_cy * 2) + (self.tick * 15)) * 0.5
     draw_sprite_tiled_ext(self.prophecy, 0, x, y, 2, 2, oldHexToRgb("#42D0FF", 1));
     local orig_bm, orig_am = love.graphics.getBlendMode()
-    love.graphics.setBlendMode("add");
-    draw_sprite_tiled_ext(pnl_canvas, 0, x, y, 2, 2, oldHexToRgb("#42D0FF", alpha));
+    love.graphics.setBlendMode("add", "premultiplied");
+    draw_sprite_tiled_ext(pnl_canvas, 0, x, y, 2, 2, COLORS.white);
     love.graphics.setBlendMode(orig_bm, orig_am);
+    love.graphics.setColorMask(true, true, true, true);
     Draw.popCanvas()
-
 
     love.graphics.stencil(function()
         local last_shader = love.graphics.getShader()

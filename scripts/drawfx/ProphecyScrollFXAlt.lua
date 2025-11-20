@@ -39,7 +39,7 @@ local function draw_set_alpha(a)
 end
 
 function ProphecyScrollFXAlt:draw(texture)
-    self:drawPart(texture, 1 or Ch4Lib.scr_wave(0.4, 0.4, 4, 0))
+    self:drawPart(texture, Ch4Lib.scr_wave(0, 0.4, 4, 0))
 end
 
 local function oldHexToRgb(hex, value)
@@ -68,35 +68,19 @@ function ProphecyScrollFXAlt:drawPart(texture, alpha)
 
     local surf_textured = Draw.pushCanvas(640, 480);
 	love.graphics.clear(oldHexToRgb("#42D0FF", 1), 0);
-	love.graphics.setColorMask(true, true, true, false);
     local pnl_tex = Assets.getTexture("backgrounds/perlin_noise_looping")
 	local pnl_canvas = Draw.pushCanvas(pnl_tex:getDimensions())
 	draw_sprite_tiled_ext(pnl_tex, 0, 0, 0, 1, 1, oldHexToRgb("#42D0FF", alpha))
 	Draw.popCanvas(true)
-    local x, y = -((_cx * 2) + (self.tick * 15)) * 0.5, -((_cy * 2) + (self.tick * 15)) * 0.5
+	local x, y = -((_cx * 2) + ((Kristal.getTime()) * 30)) * 0.5, -((_cy * 2) + ((Kristal.getTime()) * 30)) * 0.5
 	draw_sprite_tiled_ext(Assets.getTexture("backgrounds/IMAGE_DEPTH_EXTEND_SEAMLESS"), 0, x, y, 2, 2, oldHexToRgb("#FFFFFF", 0.6));
 	local orig_bm, orig_am = love.graphics.getBlendMode()
 	love.graphics.setBlendMode("add", "premultiplied");
-	draw_sprite_tiled_ext(pnl_canvas, 0, x, y, 2, 2, oldHexToRgb("#42D0FF", alpha));
+	draw_sprite_tiled_ext(pnl_canvas, 0, x, y, 2, 2, COLORS.white)
 	love.graphics.setBlendMode(orig_bm, orig_am);
-    love.graphics.setColorMask(true, true, true, true);
-    love.graphics.setColorMask(false, false, false, true);
-
-    -- with (tile_object)
-    -- {
-    --     if (other.intro_mode)
-    --     {
-    --         local _amt = sin((other.tick / 15) * (2 * pi)) * other.scroll_speed * 6;
-    --         draw_sprite_ext(sprite_index, image_index, x - _cx - _amt, y - _cy - _amt, image_xscale, image_yscale, image_angle, image_blend, image_alpha * 0.4);
-    --         draw_sprite_ext(sprite_index, image_index, (x - _cx) + _amt, (y - _cy) + _amt, image_xscale, image_yscale, image_angle, image_blend, image_alpha * 0.4);
-    --     }
-        
-    --     draw_sprite_ext(sprite_index, image_index, x - _cx, y - _cy, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
-    -- }
-
-    love.graphics.setColorMask(true, true, true, true);
     Draw.popCanvas()
 
+	Draw.setColor(1,1,1,1)
 	if self.outline then
 		love.graphics.stencil(function()
 			local last_shader = love.graphics.getShader()

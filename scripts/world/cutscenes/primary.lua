@@ -210,6 +210,7 @@ return {
         for _, shard in ipairs(shards_remove) do
             shard:remove()
         end
+		a:remove()
 		Game.world.music:play()
         cutscene:text("* God [wait:5]DAMN IT Kris, [wait:10]where are we this time?!", "teeth_b")
         susie:resetSprite()

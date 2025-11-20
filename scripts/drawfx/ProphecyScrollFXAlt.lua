@@ -1,7 +1,7 @@
 ---@class ProphecyScrollFX: FXBase
 local ProphecyScrollFXAlt, super = Class(FXBase)
 
-function ProphecyScrollFXAlt:init(texture, priority)
+function ProphecyScrollFXAlt:init(outline, texture, priority)
     super.init(self, priority)
     ---@type love.Image
     self.texture = type(texture) == "string" and Assets.getTexture(texture) or (type(texture) == "userdata" and texture)
@@ -16,6 +16,7 @@ function ProphecyScrollFXAlt:init(texture, priority)
     self.scroll_speed = 1;
     self.tick = 0;
     self.intro_mode = false;
+	self.outline = outline or nil
 
 end
 
@@ -99,6 +100,45 @@ function ProphecyScrollFXAlt:drawPart(texture, min, max, alpha)
     Draw.popCanvas()
 
 
+	if self.outline then
+		love.graphics.stencil(function()
+			local last_shader = love.graphics.getShader()
+			local shader = Assets.getShader("limitedmask")
+			shader:send("min", min)
+			shader:send("max", max)
+			love.graphics.setShader(shader)
+			Draw.draw(texture, -self.outline, -self.outline)
+			Draw.draw(texture, self.outline, self.outline)
+			Draw.draw(texture, self.outline, -self.outline)
+			Draw.draw(texture, -self.outline, self.outline)
+			love.graphics.setShader(last_shader)
+		end, "replace", 1)
+		love.graphics.setStencilTest("greater", 0)
+		Draw.setColor(0,0,0.4,0.5)
+		love.graphics.rectangle("fill", 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)
+		Draw.setColor(0.3,0.3,0.6,0.2)
+		Draw.drawCanvas(surf_textured)
+		love.graphics.setStencilTest()
+		love.graphics.stencil(function()
+			local last_shader = love.graphics.getShader()
+			local shader = Assets.getShader("limitedmask")
+			shader:send("min", min)
+			shader:send("max", max)
+			love.graphics.setShader(shader)
+			Draw.draw(texture, -self.outline, 0)
+			Draw.draw(texture, self.outline, 0)
+			Draw.draw(texture, 0, -self.outline)
+			Draw.draw(texture, 0, self.outline)
+			love.graphics.setShader(last_shader)
+		end, "replace", 1)
+		love.graphics.setStencilTest("greater", 0)
+		Draw.setColor(0,0,0.5,1)
+		love.graphics.rectangle("fill", 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)
+		Draw.setColor(0.5,0.5,0.7,0.5)
+		Draw.drawCanvas(surf_textured)
+		love.graphics.setStencilTest()
+		Draw.setColor(1,1,1,1)
+	end
     love.graphics.stencil(function()
         local last_shader = love.graphics.getShader()
         local shader = Assets.getShader("limitedmask")

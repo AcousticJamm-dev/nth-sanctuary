@@ -76,7 +76,7 @@ return {
         a:setOrigin(0, 0)
         a:setScale(2)
                 a.x, a.y = 140, 244
-				a:addFX(ProphecyScrollFXAlt(), "prop")
+				a:addFX(ProphecyScrollFXAlt(3), "prop")
         Game.stage:addChild(a)
         Assets.playSound("bell_bounce_short")
         for _, sprite in ipairs(remove) do

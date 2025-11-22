@@ -79,15 +79,15 @@
    <properties>
     <property name="fade" type="bool" value="true"/>
     <property name="no_back" type="bool" value="true"/>
-    <property name="offx" type="float" value="10"/>
-    <property name="offy" type="float" value="-250"/>
+    <property name="offx" type="float" value="160"/>
+    <property name="offy" type="float" value="-130"/>
     <property name="panel_h" value="120"/>
     <property name="spr_offx" type="float" value="72"/>
     <property name="spr_offy" type="float" value="90"/>
     <property name="text">AND THEIR JOURNEY WILL 
 KNOW NO END.</property>
     <property name="texture" value="rune"/>
-    <property name="txt_offy" type="float" value="24"/>
+    <property name="txt_offy" type="float" value="-32"/>
    </properties>
   </object>
   <object id="5" name="roomglow" x="0" y="0">

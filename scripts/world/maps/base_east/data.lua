@@ -957,13 +957,13 @@ return {
           properties = {
             ["fade"] = true,
             ["no_back"] = true,
-            ["offx"] = 0,
-            ["offy"] = -190,
+            ["offx"] = 150,
+            ["offy"] = -100,
             ["spr_offx"] = 50,
             ["spr_offy"] = 75,
             ["text"] = "THE HEROES FIND THE DEOXYNN.\nTHE DEOXYNN, WHO LIES ON COLD GROUND.",
             ["texture"] = "jamm",
-            ["txt_offy"] = 16
+            ["txt_offy"] = -32
           }
         },
         {

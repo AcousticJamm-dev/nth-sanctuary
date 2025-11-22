@@ -1531,14 +1531,14 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["offx"] = 0,
-            ["offy"] = -260,
+            ["offx"] = 150,
+            ["offy"] = -140,
             ["panel_h"] = "120",
             ["spr_offx"] = 64,
             ["spr_offy"] = 72,
             ["text"] = "WITH NO END IN SIGHT,\nHEROES CLIMB INFINITY FLIGHT.",
             ["texture"] = "infinitystairs",
-            ["txt_offy"] = 24
+            ["txt_offy"] = -32
           }
         },
         {

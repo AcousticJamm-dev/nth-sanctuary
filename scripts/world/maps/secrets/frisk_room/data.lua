@@ -449,13 +449,13 @@ return {
           properties = {
             ["fade"] = false,
             ["no_back"] = false,
-            ["offx"] = -20,
-            ["offy"] = -200,
+            ["offx"] = 130,
+            ["offy"] = -110,
             ["spr_offx"] = 32,
             ["spr_offy"] = 78,
             ["text"] = "FRISK ROOM",
             ["texture"] = "friskroom",
-            ["txt_offy"] = 16
+            ["txt_offy"] = -20
           }
         }
       }

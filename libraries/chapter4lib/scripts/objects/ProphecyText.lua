@@ -29,10 +29,10 @@ function ProphecyText:onAddToStage(stage)
 			for i, str in ipairs(self.sprite_string) do
 				local text_xoff = math.floor(160 - (self.font:getWidth(str) / 2)) - (StringUtils.len(str) / 2)
 				text_xoff = math.floor(text_xoff)
-				local y_off = (16 / #self.sprite_string) + -1
+				local y_off = (16 / #self.sprite_string)
 				love.graphics.setFont(self.font)
 				Draw.setColor(1,1,1,1)
-				self:drawTextKernLegend(text_xoff, y_off + (i * 16), str, 1)
+				self:drawTextKernLegend(text_xoff, y_off + ((i-1) * 16), str, 1)
 			end
 			love.graphics.setShader(last_shader)
 		end

@@ -252,14 +252,14 @@ return {
           properties = {
             ["fade"] = true,
             ["no_back"] = true,
-            ["offx"] = 10,
-            ["offy"] = -250,
+            ["offx"] = 160,
+            ["offy"] = -130,
             ["panel_h"] = "120",
             ["spr_offx"] = 72,
             ["spr_offy"] = 90,
             ["text"] = "AND THEIR JOURNEY WILL \nKNOW NO END.",
             ["texture"] = "rune",
-            ["txt_offy"] = 24
+            ["txt_offy"] = -32
           }
         },
         {

@@ -716,12 +716,13 @@ return {
           properties = {
             ["fade"] = true,
             ["no_back"] = true,
-            ["offx"] = -60,
-            ["offy"] = -180,
+            ["offx"] = 90,
+            ["offy"] = -90,
             ["spr_offx"] = 63,
             ["spr_offy"] = 81,
             ["text"] = "WORLDS ENTER COLLISION.\nTHE KNIGHT IS TO NO FAULT.",
-            ["texture"] = "collide"
+            ["texture"] = "collide",
+            ["txt_offy"] = -40
           }
         },
         {

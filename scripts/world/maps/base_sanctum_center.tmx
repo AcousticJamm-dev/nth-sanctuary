@@ -245,13 +245,14 @@
    <properties>
     <property name="fade" type="bool" value="true"/>
     <property name="no_back" type="bool" value="true"/>
-    <property name="offx" type="float" value="-60"/>
-    <property name="offy" type="float" value="-180"/>
+    <property name="offx" type="float" value="90"/>
+    <property name="offy" type="float" value="-90"/>
     <property name="spr_offx" type="float" value="63"/>
     <property name="spr_offy" type="float" value="81"/>
     <property name="text">WORLDS ENTER COLLISION.
 THE KNIGHT IS TO NO FAULT.</property>
     <property name="texture" value="collide"/>
+    <property name="txt_offy" type="float" value="-40"/>
    </properties>
   </object>
   <object id="21" name="npc" x="200" y="720">

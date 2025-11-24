@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="44" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="16" nextobjectid="52">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="44" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="16" nextobjectid="53">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -7,8 +7,8 @@
   <property name="music" value="bell_ambience"/>
  </properties>
  <tileset firstgid="1" source="../../tilesets/church_objects.tsx"/>
- <tileset firstgid="26" source="../../tilesets/bg_dw_church_tileset_new.tsx"/>
- <tileset firstgid="608" source="../../tilesets/light_areas.tsx"/>
+ <tileset firstgid="28" source="../../tilesets/bg_dw_church_tileset_new.tsx"/>
+ <tileset firstgid="610" source="../../tilesets/light_areas.tsx"/>
  <objectgroup id="12" name="objects_parallax"/>
  <layer id="10" name="tiles_bg" width="44" height="12">
   <data encoding="csv">
@@ -22,8 +22,8 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,444,444,444,444,444,444,444,444,444,444,444,444,464,444,444,444,444,444,444,444,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-404,405,406,404,405,406,404,405,406,404,405,406,404,405,406,404,405,406,464,444,464,444,444,464,444,464,404,405,406,404,405,406,404,405,406,404,405,406,404,405,406,404,405,406
+0,0,0,0,0,0,446,446,446,446,446,446,446,446,446,446,446,446,466,446,446,446,446,446,446,446,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+406,407,408,406,407,408,406,407,408,406,407,408,406,407,408,406,407,408,466,446,466,446,446,466,446,466,406,407,408,406,407,408,406,407,408,406,407,408,406,407,408,406,407,408
 </data>
  </layer>
  <layer id="9" name="tiles" width="44" height="12">
@@ -35,18 +35,18 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,438,438,438,0,0,0,0,0,0,438,438,438,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-438,438,438,438,438,438,438,438,438,438,438,438,438,438,438,438,378,402,402,105,105,105,105,105,105,402,402,403,438,438,438,438,438,438,438,438,438,438,438,438,438,438,438,438,
-502,502,105,403,105,105,105,105,105,502,503,105,403,503,502,105,402,500,402,105,105,105,105,105,105,402,500,402,105,502,105,105,503,503,403,105,105,105,105,105,503,502,105,503,
-476,476,476,476,476,476,476,476,476,476,476,476,476,476,476,476,476,476,403,402,501,500,402,402,402,502,476,476,476,476,476,476,476,476,476,476,476,476,476,476,476,476,476,476,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,415,476,476,476,476,476,476,476,476,413,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,440,440,440,0,0,0,0,0,0,440,440,440,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+440,440,440,440,440,440,440,440,440,440,440,440,440,440,440,440,380,404,404,107,107,107,107,107,107,404,404,405,440,440,440,440,440,440,440,440,440,440,440,440,440,440,440,440,
+504,504,107,405,107,107,107,107,107,504,505,107,405,505,504,107,404,502,404,107,107,107,107,107,107,404,502,404,107,504,107,107,505,505,405,107,107,107,107,107,505,504,107,505,
+478,478,478,478,478,478,478,478,478,478,478,478,478,478,478,478,478,478,405,404,503,502,404,404,404,504,478,478,478,478,478,478,478,478,478,478,478,478,478,478,478,478,478,478,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,417,478,478,478,478,478,478,478,478,415,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
  <objectgroup id="7" name="objects_piano">
-  <object id="15" name="pianobig" x="780" y="320" width="200" height="20">
+  <object id="15" name="pianobig" x="860" y="300" width="50" height="20">
    <properties>
     <property name="resetmus" type="bool" value="true"/>
-    <property name="solution" value="aaa"/>
+    <property name="solution" value="aoamcdbaaoaebcdeeeeeacbnaaocdeeeeefghgfecaoamcdbaklji"/>
    </properties>
   </object>
   <object id="45" gid="10" x="720" y="402" width="322" height="382"/>
@@ -58,9 +58,10 @@
     <property name="script" value="wicabel_jumpscare"/>
    </properties>
   </object>
+  <object id="52" gid="27" x="848" y="320" width="70" height="30"/>
  </objectgroup>
  <objectgroup id="8" name="objects_lightarea">
-  <object id="23" gid="610" x="640" y="800" width="120" height="720">
+  <object id="23" gid="612" x="640" y="800" width="120" height="720">
    <properties>
     <property name="light" type="bool" value="true"/>
     <property name="light_alpha" type="float" value="0.1"/>
@@ -68,7 +69,7 @@
     <property name="light_type" type="int" value="1"/>
    </properties>
   </object>
-  <object id="27" gid="610" x="760" y="720" width="240" height="720">
+  <object id="27" gid="612" x="760" y="720" width="240" height="720">
    <properties>
     <property name="light" type="bool" value="true"/>
     <property name="light_alpha" type="float" value="0.1"/>
@@ -76,7 +77,7 @@
     <property name="light_type" type="int" value="1"/>
    </properties>
   </object>
-  <object id="28" gid="610" x="1000" y="800" width="120" height="720">
+  <object id="28" gid="612" x="1000" y="800" width="120" height="720">
    <properties>
     <property name="light" type="bool" value="true"/>
     <property name="light_alpha" type="float" value="0.1"/>
@@ -107,7 +108,7 @@
    <point/>
   </object>
  </objectgroup>
- <objectgroup id="3" name="collision">
+ <objectgroup id="3" name="collision" visible="0">
   <object id="32" x="0" y="320" width="640" height="40"/>
   <object id="34" x="640" y="280" width="480" height="40"/>
   <object id="35" x="1120" y="320" width="640" height="40"/>

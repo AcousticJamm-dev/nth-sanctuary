@@ -8,6 +8,7 @@ function actor:init()
     })
     TableUtils.merge(self.offsets, {
         ["pirouette"] = {5, 0},
+        ["piano"] = {-6, -1},
         -- TODO: Accuracy.
         ["climb/climb"] = {0, 0},
         ["climb/charge"] = {0, 3},

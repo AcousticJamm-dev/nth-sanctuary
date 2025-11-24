@@ -77,7 +77,7 @@ function ProphecyText:drawToCanvas(func, clear)
 		Draw.setColor(1,1,1,1)
 		Draw.rectangle("fill", 0, 0, 320, 240)
 		love.graphics.setColorMask(false, false, false, true)
-		Ch4Lib.setBlendState("add", "add", "oneminusdstalpha", "oneminusdstalpha", "zero", "zero")
+		Ch4Lib.setBlendState("add", "oneminusdstalpha", "zero")
         love.graphics.setShader(Kristal.Shaders["Mask"])
 		Draw.setColor(1,1,1,1)
 	end
@@ -85,7 +85,7 @@ function ProphecyText:drawToCanvas(func, clear)
 	if Ch4Lib.accurate_blending then
 		love.graphics.setShader(last_shader)
 		love.graphics.setColorMask(true, true, true, true)
-		Ch4Lib.setBlendState("add", "add", "srcalpha", "srcalpha", "oneminussrcalpha", "oneminussrcalpha")
+		Ch4Lib.setBlendState("add", "srcalpha", "oneminussrcalpha")
 	end
     love.graphics.pop()
     Draw.popScissor()

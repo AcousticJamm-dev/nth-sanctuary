@@ -88,10 +88,10 @@ function ProphecyPanel:draw()
 		local sprite_canvas = Draw.pushCanvas(self.sprite.canvas:getWidth(), self.sprite.canvas:getHeight())
 		if Ch4Lib.accurate_blending then
 			love.graphics.push()
-			Ch4Lib.setBlendState("add", "add", "srcalpha", "srcalpha", "oneminussrcalpha", "oneminussrcalpha")
+			Ch4Lib.setBlendState("add", "srcalpha", "oneminussrcalpha")
 			draw_sprite_tiled_ext(self.tilespr, 0, math.ceil(self.siner / 2), math.ceil(self.siner / 2), 1, 1, self.propblue)
 			love.graphics.setBlendMode("alpha", "premultiplied")
-			Ch4Lib.setBlendState("add", "add", "zero", "zero", "oneminussrccolor", "oneminussrccolor")
+			Ch4Lib.setBlendState("add", "zero", "oneminussrccolor")
 			Draw.setColor(0,0,0,1)
 			Draw.draw(self.sprite.canvas, self.width/2, 28, 0, 1, 1, 199/2, 124/2)
 			love.graphics.pop()
@@ -115,7 +115,7 @@ function ProphecyPanel:draw()
 		love.graphics.setBlendMode("alpha")
 		if Ch4Lib.accurate_blending then
 			Draw.setColor(ogbg[1], ogbg[2], ogbg[3], gradalpha)
-			Ch4Lib.setBlendState("add", "add", "srcalpha", "srcalpha", "oneminussrcalpha", "oneminussrcalpha")
+			Ch4Lib.setBlendState("add", "srcalpha", "oneminussrcalpha")
 		else
 			Draw.setColor(ogbg[1], ogbg[2], ogbg[3], gradalpha*0.45)
 		end
@@ -132,7 +132,7 @@ function ProphecyPanel:draw()
 		if self.fade_edges then
 			if Ch4Lib.accurate_blending then
 				love.graphics.setBlendMode("alpha", "premultiplied")
-				Ch4Lib.setBlendState("add", "add", "zero", "zero", "oneminussrccolor", "oneminussrccolor")
+				Ch4Lib.setBlendState("add", "zero", "oneminussrccolor")
 				love.graphics.setColorMask(false, false, false, true)
 				Draw.setColor(gradcol, 1)
 				Draw.draw(self.gradient20, 0, 0, 0, self.width/20, -3, 0, 20)
@@ -141,7 +141,7 @@ function ProphecyPanel:draw()
 				Draw.draw(self.gradient20, self.width, 0, math.rad(90), self.height/20, -3, 0, 20)
 				Draw.setColor(1,1,1,1)
 				love.graphics.setColorMask(true, true, true, true)
-				Ch4Lib.setBlendState("add", "add", "srcalpha", "srcalpha", "oneminussrcalpha", "oneminussrcalpha")
+				Ch4Lib.setBlendState("add", "srcalpha", "oneminussrcalpha")
 			else
 				local fade_edges_canvas = Draw.pushCanvas(self.width, self.height)
 				Draw.setColor(1,1,1,1)
@@ -162,21 +162,17 @@ function ProphecyPanel:draw()
 		else
 			Draw.setColor(self.panel_alpha*0.7,self.panel_alpha*0.7,self.panel_alpha*0.7)
 		end
-		love.graphics.setBlendMode("add", "alphamultiply")
-		if self.fade_edges then
-			 -- Deltarune doesn't do this.
-			 -- But, if I didn't put this code here, the sprite would
-			 -- be faded by the edges, which shouldn't happen. Argh.
+		if self.fade_edges and not Ch4Lib.accurate_blending then
 			love.graphics.setBlendMode("alpha")
 			Draw.draw(sprite_canvas, 0, 0, 0, 1, 1)
-			love.graphics.setBlendMode("add")
 		end
-		Draw.draw(sprite_canvas, 0, 0, 0, 1, 1)
-		Draw.draw(sprite_canvas, 0, 0, 0, 1, 1)
-		Draw.draw(sprite_canvas, 0, 0, 0, 1, 1)
+		love.graphics.setBlendMode("add", "alphamultiply")
 		if Ch4Lib.accurate_blending then
-			love.graphics.setBlendMode("alpha", "alphamultiply")
+			Ch4Lib.setBlendState("add", "srcalpha", "one")
 		end
+		Draw.draw(sprite_canvas, 0, 0, 0, 1, 1)
+		Draw.draw(sprite_canvas, 0, 0, 0, 1, 1)
+		Draw.draw(sprite_canvas, 0, 0, 0, 1, 1)
 		love.graphics.setBlendMode("alpha")
 		love.graphics.pop()
 		Draw.popCanvas(true)
@@ -198,13 +194,13 @@ function ProphecyPanel:draw()
 		local text_canvas = Draw.pushCanvas(320, self.text.canvas:getHeight()-10)
 		if Ch4Lib.accurate_blending then
 			love.graphics.push()
-			Ch4Lib.setBlendState("add", "add", "srcalpha", "srcalpha", "oneminussrcalpha", "oneminussrcalpha")
+			Ch4Lib.setBlendState("add", "srcalpha", "oneminussrcalpha")
 			Draw.setColor(0, 1, 1, 1)
 			Draw.rectangle("fill", 0, 0, 320, 240)
 			draw_sprite_tiled_ext(self.tiletex, 0, math.ceil(self.siner / 2), math.ceil(self.siner / 2), 1, 1, COLORS["white"], 0.6)
 			Draw.setColor(1, 1, 1, 1)
 			love.graphics.setBlendMode("alpha", "premultiplied")
-			Ch4Lib.setBlendState("add", "add", "zero", "zero", "oneminussrccolor", "oneminussrccolor")
+			Ch4Lib.setBlendState("add", "zero", "oneminussrccolor")
 			Draw.setColor(0,0,0,1)
 			Draw.draw(self.text.canvas, 0, -10, 0, 1, 1)
 			love.graphics.pop()

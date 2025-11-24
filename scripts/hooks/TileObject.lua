@@ -32,12 +32,29 @@ function TileObject:drawLightA()
 			sx = MathUtils.absMin(sx, sy)
 			sy = sx
 		end
-		if self.light_type == 1 then -- Deltarune does something different here but I have no idea how to make it work
+		if self.light_type == 1 then
+			if Ch4Lib.accurate_blending then
+				love.graphics.push()
+				Ch4Lib.setBlendState("add", "zero", "oneminussrccolor")
+				love.graphics.setColor(1,1,1,1)
+				local xx, yy = self:localToScreenPos(0,0)
+				self.tileset:drawTile(self.tile, xx+self.width/2, yy+self.height/2, 0, sx, sy, tile_width/2, tile_height/2)
+				Ch4Lib.setBlendState("add", "srcalpha", "oneminussrcalpha")
+				love.graphics.pop()
+			end
 		end
-		if self.light_type == 3 or self.light_type == 5 then
-			love.graphics.setColor(1,1,1,self.light_alpha)
-			local xx, yy = self:localToScreenPos(0,0)
-			self.tileset:drawTile(self.tile, xx+self.width/2, yy+self.height/2, 0, sx, sy, tile_width/2, tile_height/2)
+		if Ch4Lib.accurate_blending then
+			if self.light_type == 2 or self.light_type == 4 then
+				love.graphics.setColor(1,1,1,self.light_alpha)
+				local xx, yy = self:localToScreenPos(0,0)
+				self.tileset:drawTile(self.tile, xx+self.width/2, yy+self.height/2, 0, sx, sy, tile_width/2, tile_height/2)
+			end
+		else
+			if self.light_type == 3 or self.light_type == 5 then
+				love.graphics.setColor(1,1,1,self.light_alpha)
+				local xx, yy = self:localToScreenPos(0,0)
+				self.tileset:drawTile(self.tile, xx+self.width/2, yy+self.height/2, 0, sx, sy, tile_width/2, tile_height/2)
+			end
 		end
 	end
 end
@@ -51,10 +68,18 @@ function TileObject:drawLightB()
 			sx = MathUtils.absMin(sx, sy)
 			sy = sx
 		end
-		if self.light_type == 1 or self.light_type == 2 or self.light_type == 4 then
-			love.graphics.setColor(1,1,1,1)
-			local xx, yy = self:localToScreenPos(0,0)
-			self.tileset:drawTile(self.tile, xx+self.width/2, yy+self.height/2, 0, sx, sy, tile_width/2, tile_height/2)
+		if Ch4Lib.accurate_blending then
+			if self.light_type == 1 or self.light_type == 2 or self.light_type == 3 or self.light_type == 4 or self.light_type == 5 then
+				love.graphics.setColor(1,1,1,1)
+				local xx, yy = self:localToScreenPos(0,0)
+				self.tileset:drawTile(self.tile, xx+self.width/2, yy+self.height/2, 0, sx, sy, tile_width/2, tile_height/2)
+			end
+		else
+			if self.light_type == 1 or self.light_type == 2 or self.light_type == 4 then
+				love.graphics.setColor(1,1,1,1)
+				local xx, yy = self:localToScreenPos(0,0)
+				self.tileset:drawTile(self.tile, xx+self.width/2, yy+self.height/2, 0, sx, sy, tile_width/2, tile_height/2)
+			end
 		end
 	end
 end

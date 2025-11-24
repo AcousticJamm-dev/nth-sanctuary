@@ -55,97 +55,179 @@ function Darkness:drawLightsB()
 end
 
 function Darkness:draw()
-    local dark_canvas = Draw.pushCanvas(SCREEN_WIDTH, SCREEN_HEIGHT)
-    love.graphics.setColor(1-self.alpha, 1-self.alpha, 1-self.alpha)
-    love.graphics.rectangle("fill",0,0,SCREEN_WIDTH,SCREEN_HEIGHT)
-    if self.overlap then
-        love.graphics.setBlendMode("add")
-    else
-        love.graphics.setBlendMode("lighten", "premultiplied")
-    end
-    self:drawLightsB()
-    self:drawLightsA()
-    love.graphics.setBlendMode("alpha")
-    Draw.popCanvas(true)
-	
-    love.graphics.setBlendMode("multiply", "premultiplied")
-    love.graphics.setColor(1,1,1)
-    love.graphics.draw(dark_canvas)
-    love.graphics.setBlendMode("alpha")
-    local base_highlight_canvas = Draw.pushCanvas(SCREEN_WIDTH,SCREEN_HEIGHT)
-    love.graphics.clear()
+	if Ch4Lib.accurate_blending then
+		local base_dim_canvas = Draw.pushCanvas(SCREEN_WIDTH, SCREEN_HEIGHT)
+		love.graphics.clear(COLORS.black)
 
-    love.graphics.translate(-Game.world.camera.x+SCREEN_WIDTH/2, -Game.world.camera.y+SCREEN_HEIGHT/2)
+		love.graphics.translate(MathUtils.round(-Game.world.camera.x+SCREEN_WIDTH/2), MathUtils.round(-Game.world.camera.y+SCREEN_HEIGHT/2))
 
-    for _, object in ipairs(Game.world.children) do
-        if object:includes(Character) and not object.no_highlight then
-            love.graphics.stencil((function ()
-				love.graphics.translate(0, 2)
-				love.graphics.setShader(Kristal.Shaders["Mask"])
-				self:drawCharacter(object)
+		for _, object in ipairs(Game.world.children) do
+			if object:includes(Character) and not object.no_highlight then
+				love.graphics.stencil((function ()
+					love.graphics.translate(0, 2)
+					love.graphics.setShader(Kristal.Shaders["Mask"])
+					self:drawCharacter(object)
+					love.graphics.setShader()
+					love.graphics.translate(0, -2)
+				end), "replace", 1)
+				love.graphics.setStencilTest("less", 1)
+
+				love.graphics.setShader(Kristal.Shaders["AddColor"])
+				
+				local col = COLORS["gray"]
+				if Game:getPartyMember(object.party) then
+					col = Game:getPartyMember(object.party).highlight_color or COLORS["gray"]
+				end
+				local alpha = self.highlightalpha
+				if object:getFX("climb_fade") then -- dumb fix
+					alpha = alpha * object:getFX("climb_fade").alpha
+				end
+				Kristal.Shaders["AddColor"]:sendColor("inputcolor", col)
+				Kristal.Shaders["AddColor"]:send("amount", alpha)
+
+				if alpha > 0 then
+					Draw.setColor(1,1,1,alpha)
+					self:drawCharacter(object)
+					Draw.setColor(1,1,1,1)
+				end
+
 				love.graphics.setShader()
-				love.graphics.translate(0, -2)
-			end), "replace", 1)
-            love.graphics.setStencilTest("less", 1)
 
-            love.graphics.setShader(Kristal.Shaders["AddColor"])
-			
-			local col = COLORS["gray"]
-			if Game:getPartyMember(object.party) then
-				col = Game:getPartyMember(object.party).highlight_color or COLORS["gray"]
+				love.graphics.setStencilTest()
 			end
-            Kristal.Shaders["AddColor"]:sendColor("inputcolor", col)
-            Kristal.Shaders["AddColor"]:send("amount", 1)
-
-            self:drawCharacter(object)
-
-            love.graphics.setShader()
-
-            love.graphics.setStencilTest()
-        end
-    end
-	Draw.popCanvas(true)
-    local fade_highlight_canvas = Draw.pushCanvas(SCREEN_WIDTH,SCREEN_HEIGHT)
-    love.graphics.clear()
-    love.graphics.setColor(0,0,0,1)
-    love.graphics.rectangle("fill",0,0,SCREEN_WIDTH,SCREEN_HEIGHT)
-    if self.overlap then
-        love.graphics.setBlendMode("add")
-    else
-        love.graphics.setBlendMode("lighten", "premultiplied")
-    end
-    love.graphics.setColor(1,1,1)
-    self:drawLightsB()
-    self:drawLightsA()
-    love.graphics.setBlendMode("alpha")
-	Draw.popCanvas(true)
-    local highlight_canvas = Draw.pushCanvas(SCREEN_WIDTH,SCREEN_HEIGHT)
-    love.graphics.clear()
-	local glowalpha = 1
-	for _,roomglow in ipairs(Game.world.map:getEvents("roomglow")) do
-		if roomglow then
-			glowalpha = 1-roomglow.actind
 		end
-	end
-	Draw.setColor(1,1,1,glowalpha)
-    Draw.drawCanvas(base_highlight_canvas)
-	love.graphics.setBlendMode("multiply", "premultiplied")
-	local last_shader = love.graphics.getShader()
-	love.graphics.setShader(Kristal.Shaders["InvertColor"])
-    love.graphics.setColor(1,1,1,1)
-	Draw.drawCanvas(fade_highlight_canvas, 0, 0, 0)
-    love.graphics.setShader(last_shader)
-	love.graphics.setBlendMode("alpha")
-	Draw.popCanvas(true)
-	love.graphics.stencil((function ()
-		love.graphics.setShader(Kristal.Shaders["Mask"])
+		
+		love.graphics.translate(MathUtils.round(Game.world.camera.x+SCREEN_WIDTH/2), MathUtils.round(Game.world.camera.y+SCREEN_HEIGHT/2))
+		Draw.popCanvas(true)
+		
+		local dim_canvas = Draw.pushCanvas(SCREEN_WIDTH, SCREEN_HEIGHT)
+		love.graphics.clear(COLORS.black)
+		love.graphics.push()
+		Draw.drawCanvas(base_dim_canvas)
+		love.graphics.setBlendMode("add", "alphamultiply")
+		Ch4Lib.setBlendState("add", "zero", "oneminussrccolor")
+		self:drawLightsA()
+		love.graphics.pop()
+		Draw.popCanvas(true)
+		
+		local dark_canvas = Draw.pushCanvas(SCREEN_WIDTH, SCREEN_HEIGHT)
+		love.graphics.clear(COLORS.black)
+		love.graphics.push()
+		Draw.drawCanvas(dim_canvas)
+		love.graphics.setBlendMode("add", "alphamultiply")
+		Ch4Lib.setBlendState("add", "zero", "oneminussrccolor")
 		self:drawLightsB()
-		love.graphics.setShader()
-	end), "replace", 1)
-    love.graphics.setStencilTest("less", 1)
-	Draw.setColor(1,1,1,self.alpha)
-    Draw.draw(highlight_canvas)
-    love.graphics.setStencilTest()
+		love.graphics.pop()
+		Draw.popCanvas(true)
+		
+		love.graphics.setBlendMode("alpha", "alphamultiply")
+		love.graphics.setColor(1,1,1,0.5*self.alpha)
+		Draw.draw(dim_canvas)
+		love.graphics.setColor(1,1,1,self.alpha)
+		Draw.draw(dark_canvas)
+	else
+		local dark_canvas = Draw.pushCanvas(SCREEN_WIDTH, SCREEN_HEIGHT)
+		love.graphics.setColor(1-self.alpha, 1-self.alpha, 1-self.alpha)
+		love.graphics.rectangle("fill",0,0,SCREEN_WIDTH,SCREEN_HEIGHT)
+		if self.overlap then
+			love.graphics.setBlendMode("add")
+		else
+			love.graphics.setBlendMode("lighten", "premultiplied")
+		end
+		self:drawLightsB()
+		self:drawLightsA()
+		love.graphics.setBlendMode("alpha")
+		Draw.popCanvas(true)
+		
+		love.graphics.setBlendMode("multiply", "premultiplied")
+		love.graphics.setColor(1,1,1)
+		love.graphics.draw(dark_canvas)
+		love.graphics.setBlendMode("alpha")
+		local base_highlight_canvas = Draw.pushCanvas(SCREEN_WIDTH,SCREEN_HEIGHT)
+		love.graphics.clear()
+
+		love.graphics.translate(MathUtils.round(-Game.world.camera.x+SCREEN_WIDTH/2), MathUtils.round(-Game.world.camera.y+SCREEN_HEIGHT/2))
+
+		for _, object in ipairs(Game.world.children) do
+			if object:includes(Character) and not object.no_highlight then
+				love.graphics.stencil((function ()
+					love.graphics.translate(0, 2)
+					love.graphics.setShader(Kristal.Shaders["Mask"])
+					self:drawCharacter(object)
+					love.graphics.setShader()
+					love.graphics.translate(0, -2)
+				end), "replace", 1)
+				love.graphics.setStencilTest("less", 1)
+
+				love.graphics.setShader(Kristal.Shaders["AddColor"])
+				
+				local col = COLORS["gray"]
+				if Game:getPartyMember(object.party) then
+					col = Game:getPartyMember(object.party).highlight_color or COLORS["gray"]
+				end
+				local alpha = self.highlightalpha
+				if object:getFX("climb_fade") then -- dumb fix
+					alpha = alpha * object:getFX("climb_fade").alpha
+				end
+				Kristal.Shaders["AddColor"]:sendColor("inputcolor", col)
+				Kristal.Shaders["AddColor"]:send("amount", alpha)
+
+				if alpha > 0 then
+					Draw.setColor(1,1,1,alpha)
+					self:drawCharacter(object)
+					Draw.setColor(1,1,1,1)
+				end
+
+				self:drawCharacter(object)
+
+				love.graphics.setShader()
+
+				love.graphics.setStencilTest()
+			end
+		end
+		Draw.popCanvas(true)
+		local fade_highlight_canvas = Draw.pushCanvas(SCREEN_WIDTH,SCREEN_HEIGHT)
+		love.graphics.clear()
+		love.graphics.setColor(0,0,0,1)
+		love.graphics.rectangle("fill",0,0,SCREEN_WIDTH,SCREEN_HEIGHT)
+		if self.overlap then
+			love.graphics.setBlendMode("add")
+		else
+			love.graphics.setBlendMode("lighten", "premultiplied")
+		end
+		love.graphics.setColor(1,1,1)
+		self:drawLightsB()
+		self:drawLightsA()
+		love.graphics.setBlendMode("alpha")
+		Draw.popCanvas(true)
+		local highlight_canvas = Draw.pushCanvas(SCREEN_WIDTH,SCREEN_HEIGHT)
+		love.graphics.clear()
+		local glowalpha = 1
+		for _,roomglow in ipairs(Game.world.map:getEvents("roomglow")) do
+			if roomglow then
+				glowalpha = 1-roomglow.actind
+			end
+		end
+		Draw.setColor(1,1,1,glowalpha)
+		Draw.drawCanvas(base_highlight_canvas)
+		love.graphics.setBlendMode("multiply", "premultiplied")
+		local last_shader = love.graphics.getShader()
+		love.graphics.setShader(Kristal.Shaders["InvertColor"])
+		love.graphics.setColor(1,1,1,1)
+		Draw.drawCanvas(fade_highlight_canvas, 0, 0, 0)
+		love.graphics.setShader(last_shader)
+		love.graphics.setBlendMode("alpha")
+		Draw.popCanvas(true)
+		love.graphics.stencil((function ()
+			love.graphics.setShader(Kristal.Shaders["Mask"])
+			self:drawLightsB()
+			love.graphics.setShader()
+		end), "replace", 1)
+		love.graphics.setStencilTest("less", 1)
+		Draw.setColor(1,1,1,self.alpha)
+		Draw.draw(highlight_canvas)
+		love.graphics.setStencilTest()
+	end
 end
 
 function Darkness:drawMask()

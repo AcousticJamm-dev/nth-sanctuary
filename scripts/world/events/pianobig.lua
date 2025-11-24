@@ -131,13 +131,11 @@ function BigChurchPiano:onInteract(player, dir)
 		if Game.stage:getObjects(TutorialText)[1] then
 			Game.stage:getObjects(TutorialText)[1].target = self
 		end
-		if Game.world.music then
-			self.memvolume = 1
-			Game.world.music:fade(0, 30/30)
-		end
 		local cutscene = self.world:startCutscene(function(cutscene)
 			cutscene:detachCamera()
 			cutscene:detachFollowers()
+			Game.world.music:fade(0, 30/30)
+			Game.world.camera:panTo(560+SCREEN_WIDTH/2, Game.world.camera.y, 15/30)
 			local leader = cutscene:getCharacter(Game.party[1]:getActor().id)
 			local party2, party3, party4 = nil, nil, nil
 			if #Game.party >= 2 then
@@ -149,58 +147,34 @@ function BigChurchPiano:onInteract(player, dir)
 			if #Game.party >= 4 then
 				party4 = cutscene:getCharacter(Game.party[4]:getActor().id)
 			end
-			local pointdist = MathUtils.dist(self.leader_x, self.leader_y, leader.x, leader.y)
-			if pointdist > 4 then
-				local walkwait = math.min(scr_returnwait(leader.x, leader.y, self.leader_x, self.leader_y, 4), 15)
-				cutscene:wait(cutscene:walkToSpeed(leader, self.leader_x, self.leader_y, walkwait, "up"))
-			else
-				leader.x = self.leader_x
-				leader.y = self.leader_y
-				cutscene:look(leader, "up")
-				print("no need to move")
-			end
-			if self.catafollow then
-				if party2 then
-					local p2x, p2y = self.leader_x + 30, self.leader_y + 30
-					pointdist = MathUtils.dist(p2x, p2y, party2.x, party2.y)
-					if pointdist > 4 then
-						local walkwait = math.min(scr_returnwait(party2.x, party2.y, p2x, p2y, 4), 15)
-						cutscene:wait(cutscene:walkToSpeed(party2, p2x, p2y, walkwait, "up"))
-					else
-						party2.x = p2x
-						party2.y = p2y
-						cutscene:look(party2, "up")
-					end
-				end
-				if party3 then
-					local p3x, p3y = self.leader_x - 30, self.leader_y + 30
-					pointdist = MathUtils.dist(p3x, p3y, party3.x, party3.y)
-					if pointdist > 4 then
-						local walkwait = math.min(scr_returnwait(party3.x, party3.y, p3x, p3y, 4), 15)
-						cutscene:wait(cutscene:walkToSpeed(party3, p3x, p3y, walkwait, "up"))
-					else
-						party3.x = p3x
-						party3.y = p3y
-						cutscene:look(party3, "up")
-					end
-				end
-				if party4 then
-					local p4x, p4y = self.leader_x, self.leader_y + 30
-					pointdist = MathUtils.dist(p4x, p4y, party4.x, party4.y)
-					if pointdist > 4 then
-						local walkwait = math.min(scr_returnwait(party4.x, party4.y, p4x, p4y, 4), 15)
-						cutscene:wait(cutscene:walkToSpeed(party4, p4x, p4y, walkwait, "up"))
-					else
-						party4.x = p4x
-						party4.y = p4y
-						cutscene:look(party4, "up")
-					end
+			cutscene:walkTo(leader, 269 + 560, leader.y, 12/30)
+			Game.world.timer:after(13/30, function() cutscene:walkTo(leader, 269 + 560, 300, 12/30) end)
+			Game.world.timer:after(26/30, function() cutscene:walkTo(leader, 321 + 560, 300, 12/30) end)
+			Game.world.timer:after(39/30, function() cutscene:look(leader, "up") end)
+			if party2 then
+				if #Game.party < 3 then
+					cutscene:walkTo(party2, 321 + 560, 382, 12/30)
+				else
+					cutscene:walkTo(party2, 371 + 560, 362, 12/30)
 				end
 			end
-			self.resetlight = true
-			cutscene:wait(1/30)
-			cutscene:interpolateFollowers()
-			cutscene:attachFollowers()
+			if party3 then
+				cutscene:walkTo(party3, 271 + 560, 362, 12/30)
+			end
+			if party4 then
+				cutscene:walkTo(party4, 321 + 560, 382, 12/30)
+			end
+			cutscene:wait(12/30)
+			if party2 then
+				cutscene:look(party2, "up")
+			end
+			if party3 then
+				cutscene:look(party3, "up")
+			end
+			if party4 then
+				cutscene:look(party4, "up")
+			end
+			cutscene:wait(30/30)
 		end)
 		cutscene:after(function()
 			Game.lock_movement = true
@@ -222,47 +196,44 @@ function BigChurchPiano:update()
 	
 	if self.con == 0.2 then
 		self.con = 1
+		Game.world.player:setSprite("piano")
 		self.engaged = true
 	end
 	
 	if self.con == 1 then
 		Game.lock_movement = true
-		if Input.down("cancel") then
+		if Input.down("cancel") and not Game.world.cutscene then
 			self.canceltimer = self.canceltimer + 1 * DTMULT
 		else
 			self.canceltimer = 0
 		end
 		
 		if self.canceltimer >= self.canceltime or self.forceend then
-			local skipcamreset = 0
-			
-			--[[if Game.world.camera.x == 0 or Game.world.camera.x == (Game.world.map.width * Game.world.map.tile_width) - SCREEN_WIDTH then
-				skipcamreset = 2
-			end]]
-			if skipcamreset == 0 then
-				if Game.world.music and self.memvolume ~= -1 then
-					if self.reset_music then
-						Game.world.music:seek(0)
-					end
-					Game.world.music:fade(self.memvolume, 120/30)
-				end
-				local tx, ty = Game.world.camera:getTargetPosition()
-				Game.world.camera:panTo(tx, ty, 4/30, "linear", function() Game.world:setCameraAttached(true) end)
-				Game.world.timer:after(8/30, function() self.con = 4 end)
-			else
-				if skipcamreset == 2 then
-					if Game.world.music and self.memvolume ~= -1 then
-						if self.reset_music then
-							Game.world.music:seek(0)
-						end
-						Game.world.music:fade(self.memvolume, 120/30)
-					end
-					local tx, ty = Game.world.camera:getTargetPosition()
-					Game.world:setCameraAttached(true)
-					Game.world.camera:setPosition(tx, ty)
-				end
-				self.con = 4
-			end
+			self.con = 4
+			Game.world.player:resetSprite()
+			local cutscene = self.world:startCutscene(function(cutscene)
+				cutscene:detachCamera()
+				cutscene:detachFollowers()
+				Game.world.music:seek(0)
+				Game.world.music:setVolume(0)
+				Game.world.music:fade(1, 120/30)
+				Game.world.camera:panTo(560+SCREEN_WIDTH/2, Game.world.camera.y, 15/30)
+				local leader = cutscene:getCharacter(Game.party[1]:getActor().id)
+				cutscene:walkTo(leader, leader.x - 50, leader.y, 12/30)
+				Game.world.timer:after(13/30, function() cutscene:walkTo(leader, leader.x, leader.y + 40, 12/30) end)
+				Game.world.timer:after(26/30, function() cutscene:walkTo(leader, leader.x + 50, leader.y, 12/30) end)
+				Game.world.timer:after(39/30, function() cutscene:look(leader, "down") end)
+				cutscene:wait(44/30)
+				cutscene:panTo(leader, 15/30)
+				cutscene:wait(16/30)
+				cutscene:walkToSpeed(leader, leader.x, leader.y + 4, 4) -- lol
+				cutscene:interpolateFollowers()
+				cutscene:attachFollowers()
+				cutscene:attachCamera()
+			end)
+			cutscene:after(function()
+				Game.lock_movement = false
+			end)
 		end
 		
 		self.soundtoplay = 0
@@ -291,7 +262,7 @@ function BigChurchPiano:update()
 			self.soundtoplay = 8
 		end
 		local soundplayed = false
-		if Input.pressed("confirm") and self.soundtoplay ~= -1 and not Input.down("cancel") then
+		if Input.pressed("confirm") and self.soundtoplay ~= -1 and not Input.down("cancel") and not Game.world.cutscene then
 			local mypitch, passkey = scr_piano_determinepitch(self.soundtoplay)
 			Assets.playSound(self.instrument, 0.8, mypitch)
 			soundplayed = true
@@ -301,13 +272,49 @@ function BigChurchPiano:update()
 			self.endlessplaylog = self.endlessplaylog..passkey
 			local i = 1
 			while i <= utf8.len(self.endlessplaylog) do
+
+                --solution
 				if StringUtils.sub(self.endlessplaylog, i, utf8.len(self.endlessplaylog)) == self.solution then
 					Assets.playSound("bell")
 					self.endlessplaylog = ""
 					break
+					
+                --His Theme
+				elseif StringUtils.sub(self.endlessplaylog, i, utf8.len(self.endlessplaylog)) == "mbamooamamooa" then
+					self.endlessplaylog = ""
+					Game.world:startCutscene("bigpiano.histheme")
+					break
+
+                --Your Best Friend
+				elseif StringUtils.sub(self.endlessplaylog, i, utf8.len(self.endlessplaylog)) == "ccdecddebm" then
+					self.endlessplaylog = ""
+					Game.world:startCutscene("bigpiano.yourbestfriend")
+					break
+
+                --Unknown "Annoying" Song
+				elseif StringUtils.sub(self.endlessplaylog, i, utf8.len(self.endlessplaylog)) == "adefddcdbadedcdd" then
+					self.endlessplaylog = ""
+					Game.world:startCutscene("bigpiano.annoying")
+					break
+
+                --MEGALOVANIA
 				elseif StringUtils.sub(self.endlessplaylog, i, utf8.len(self.endlessplaylog)) == "nnfc" then
 					self.endlessplaylog = ""
-					Game.world:startCutscene("events.tobykillsyou")
+					Game.world:startCutscene("bigpiano.megalovania")
+					break
+
+                --You've Got A Friend in Me/Chopsticks/Heart & Soul
+				elseif StringUtils.sub(self.endlessplaylog, i, utf8.len(self.endlessplaylog)) == "cecfeafhfhe" then
+					self.endlessplaylog = ""
+					Game.world:startCutscene("bigpiano.misc")
+					break
+				elseif StringUtils.sub(self.endlessplaylog, i, utf8.len(self.endlessplaylog)) == "ddddddddccccccccgggggfghhhhgf" then
+					self.endlessplaylog = ""
+					Game.world:startCutscene("bigpiano.annoying")
+					break
+				elseif StringUtils.sub(self.endlessplaylog, i, utf8.len(self.endlessplaylog)) == "aaaaonoabccccbabcd" then
+					self.endlessplaylog = ""
+					Game.world:startCutscene("bigpiano.misc")
 					break
 				end
 				i = i + 1
@@ -316,6 +323,7 @@ function BigChurchPiano:update()
 				self.endlessplaylog = StringUtils.sub(self.endlessplaylog, 1, StringUtils.len(self.endlessplaylog) - 1)
 			end
 			print(self.endlessplaylog)
+			Kristal.Console:log(self.endlessplaylog)
 		end
 	end
 	
@@ -329,7 +337,6 @@ function BigChurchPiano:update()
 		self.buffer = 6
 		self.canceltimer = 0
 		self.dontdrawmenu = false
-		Game.lock_movement = false
 	end
 end
 

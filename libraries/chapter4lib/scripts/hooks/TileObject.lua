@@ -1,15 +1,8 @@
-local TileObject, super = Class(Event, "TileObject")
+local TileObject, super = HookSystem.hookScript(TileObject)
 
 function TileObject:init(tileset, tile, x, y, w, h, rotation, flip_x, flip_y, properties)
-    local tile_width, tile_height = tileset:getTileSize(tile)
+    super.init(self, tileset, tile, x, y, w, h, rotation, flip_x, flip_y)
 
-    super.init(self, x, y, {w or self.tile_width, h or self.tile_height})
-
-    self.tileset = tileset
-    self.tile = tile
-    self.rotation = rotation
-    self.tile_flip_x = flip_x
-    self.tile_flip_y = flip_y
 	self.properties = properties or {}
 	self.light_area = self.properties["light"] or false
 	self.light_type = self.properties["light_type"] or 1
@@ -18,9 +11,6 @@ function TileObject:init(tileset, tile, x, y, w, h, rotation, flip_x, flip_y, pr
 	self.light_dust = self.properties["light_dust"] or false
 	self.tint_color = TiledUtils.parseColorProperty(self.properties["color"]) or nil
 	self.light_amount = 1
-	
-    local origin = Tileset.ORIGINS[self.tileset.object_alignment] or Tileset.ORIGINS["unspecified"]
-    self:setOrigin(origin[1], origin[2])
 end
 
 function TileObject:drawLightA()

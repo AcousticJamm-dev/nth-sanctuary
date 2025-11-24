@@ -3,6 +3,7 @@ local ChurchLightBeamFX, super = Class(Event, "lightbeamfx")
 function ChurchLightBeamFX:init(data)
     super.init(self, data)
 	
+	self:setPosition(0,0)
 	self:setParallax(0,0)
 	
     local properties = data.properties or {}
@@ -12,7 +13,8 @@ function ChurchLightBeamFX:init(data)
 		self.part_timer = 1
 		self:updateParticles()
 	end
-	self.part_tex = Assets.getTexture("effects/spr_dw_church_dust")
+	self.part_tex = Assets.getTexture("effects/dw_church_dust")
+	self.shader = Assets.newShader("pixelate")
 end
 
 function ChurchLightBeamFX:onAdd(parent)
@@ -71,11 +73,10 @@ end
 
 function ChurchLightBeamFX:drawParticles()
     local last_shader = love.graphics.getShader()
-    local shader = Assets.newShader("Pixelate")
-    love.graphics.setShader(shader)
+    love.graphics.setShader(self.shader)
     local width, height = SCREEN_WIDTH, SCREEN_HEIGHT
-    shader:send("size", {width, height})
-    shader:send("factor", 1)
+    self.shader:send("size", {width, height})
+    self.shader:send("factor", 1)
 	love.graphics.setBlendMode("add")
 	for i, part in ipairs(self.particles) do
 		Draw.setColor(1, 1, 1, part.alpha * self.alpha)
@@ -89,6 +90,11 @@ function ChurchLightBeamFX:draw()
     super.draw(self)
     local mask_canvas = Draw.pushCanvas(SCREEN_WIDTH, SCREEN_HEIGHT)
 	local transformed = false
+	if Ch4Lib.accurate_blending then
+		love.graphics.push()
+		love.graphics.clear(COLORS.white, 1)
+		Ch4Lib.setBlendState("add", "zero", "oneminussrccolor")
+	end
 	for index, value in ipairs(Game.world.stage:getObjects(TileObject)) do
 		if value.light_area and value.light_dust then
 			if not transformed then
@@ -105,30 +111,46 @@ function ChurchLightBeamFX:draw()
 			love.graphics.setColor(1,1,1,1)
 			value.tileset:drawTile(value.tile, value.x + value.width / 2, value.y - value.height + value.height / 2, 0, sx, sy, tile_width/2, tile_height/2)
 		end
-    end
-    local dust_canvas = Draw.pushCanvas(SCREEN_WIDTH, SCREEN_HEIGHT)
+	end
+	if Ch4Lib.accurate_blending then
+		love.graphics.pop()
+	end
+	Draw.popCanvas(true)
+	local dust_canvas = Draw.pushCanvas(SCREEN_WIDTH, SCREEN_HEIGHT)
 	self:drawParticles()
+	Draw.popCanvas(true)
 	local dust_tiled_canvas = Draw.pushCanvas(SCREEN_WIDTH, SCREEN_HEIGHT)
 	love.graphics.setBlendMode("alpha", "premultiplied")
-	Draw.drawWrapped(dust_canvas, true, true, -(Game.world.camera.x - SCREEN_WIDTH/2), -(Game.world.camera.y - SCREEN_HEIGHT/2), 0)
-	love.graphics.setBlendMode("multiply", "premultiplied")
-	Draw.drawCanvas(mask_canvas)
-	love.graphics.setBlendMode("alpha", "alphamultiply")
-    Draw.popCanvas()
-    Draw.popCanvas()
-    Draw.popCanvas()
-    Draw.setColor(1, 1, 1, 1)
-    love.graphics.stencil(function()
-        local last_shader = love.graphics.getShader()
-        love.graphics.setShader(Kristal.Shaders["Mask"])
-        Draw.draw(mask_canvas)
-        love.graphics.setShader(last_shader)
-    end, "replace", 1)
-    --love.graphics.setStencilTest('greater', 1)
-	Draw.drawCanvas(dust_tiled_canvas)
-	love.graphics.setStencilTest()
-    Draw.setColor(1, 1, 1, 1)
-    super.draw(self)
+	if Ch4Lib.accurate_blending then
+		love.graphics.push()
+		Draw.drawWrapped(dust_canvas, true, true, -(Game.world.camera.x - SCREEN_WIDTH/2), -(Game.world.camera.y - SCREEN_HEIGHT/2), 0)
+		love.graphics.setBlendMode("alpha", "alphamultiply")
+		Ch4Lib.setBlendState("add", "zero", "oneminussrccolor")
+		Draw.draw(mask_canvas)
+		love.graphics.pop()
+		Draw.popCanvas(true)
+		Draw.setColor(1, 1, 1, 1)
+		Draw.drawCanvas(dust_tiled_canvas)
+		Draw.setColor(1, 1, 1, 1)
+	else
+		Draw.drawWrapped(dust_canvas, true, true, -(Game.world.camera.x - SCREEN_WIDTH/2), -(Game.world.camera.y - SCREEN_HEIGHT/2), 0)
+		love.graphics.setBlendMode("multiply", "premultiplied")
+		Draw.drawCanvas(mask_canvas)
+		love.graphics.setBlendMode("alpha", "alphamultiply")
+		Draw.popCanvas(true)
+		Draw.setColor(1, 1, 1, 1)
+		love.graphics.stencil(function()
+			local last_shader = love.graphics.getShader()
+			love.graphics.setShader(Kristal.Shaders["Mask"])
+			Draw.draw(mask_canvas)
+			love.graphics.setShader(last_shader)
+		end, "replace", 1)
+		--love.graphics.setStencilTest('greater', 1)
+		Draw.drawCanvas(dust_tiled_canvas)
+		love.graphics.setStencilTest()
+		Draw.setColor(1, 1, 1, 1)
+	end
+	super.draw(self)
 end
 
 return ChurchLightBeamFX

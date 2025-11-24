@@ -100,17 +100,6 @@ function Mod:afmPostInit(new_file)
  ]]
 end
 
-function Mod:updateLightBeams(alpha)
-	for index, value in ipairs(Game.world.stage:getObjects(TileObject)) do
-		if value.light_area then
-			value.light_amount = MathUtils.lerp(0.1, 1, alpha)
-		end
-	end
-	for index, value in ipairs(Game.world.map:getEvents("lightbeamfx")) do
-		value.alpha = MathUtils.lerp(0.1, 1, alpha)
-	end
-end
-
 function Mod:onTextSound(sound, node)
     if sound == "3d" then
         local ranNum = love.math.random(1, 7)

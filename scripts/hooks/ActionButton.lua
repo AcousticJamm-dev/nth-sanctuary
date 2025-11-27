@@ -6,7 +6,7 @@ function ActionButton:hasSpecial()
 			return true
 		end
 	end
-	super.hasSpecial(self)
+	return super.hasSpecial(self)
 end
 
 return ActionButton

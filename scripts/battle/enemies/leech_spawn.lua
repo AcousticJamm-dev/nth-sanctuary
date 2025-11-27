@@ -6,8 +6,8 @@ function LeechSpawn:init()
     self.name = "Leech Spawn"
     self:setActor("leech")
 
-    self.max_health = 2750
-    self.health = 2750
+    self.max_health = 2350
+    self.health = 2350
     self.attack = 12
     self.defense = -5
     self.money = 100

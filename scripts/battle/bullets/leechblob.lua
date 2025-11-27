@@ -7,10 +7,11 @@ function LeechBlob:init(x, y)
     self.sprite:stop()
 
     self.layer = BATTLE_LAYERS["top"]
-	self:setScale(1,1)
+	self:setScale(1.5,1.5)
     self.collidable = false
     self.grazed = true
     self.size = 2
+	self.size_to = 1.2
     self.damage = 90
 	self.tension_amt = 0
 
@@ -26,7 +27,7 @@ function LeechBlob:init(x, y)
 end
 
 function LeechBlob:prime()
-    local size_to = 1.2
+    local size_to = self.size_to
 	
     Game.battle.timer:lerpVar(self, "scale_x", self.scale_x, size_to, 20)
     Game.battle.timer:lerpVar(self, "scale_y", self.scale_y, size_to, 20)

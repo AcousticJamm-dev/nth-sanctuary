@@ -3,20 +3,7 @@ local LeechShape, super = Class(DarkShapeBullet)
 function LeechShape:init(x, y)
     super.init(self, x, y, "bullets/titan/leech/idle", "bullets/titan/leech/shrink")
 	
-    --self.radius = 22
-    --self.light = 0
-    --self.color = COLORS.red
-    --self.tracking_val2 = 1
-    --self.destroy_on_hit = false
-    --self.speed_max = self.speed_max * 2.5
-
-    --self:setScale(1, 1)
-    --self.scalefactor = 1
-
-    --self.can_do_shrivel = false
-    self.can_do_pushback = false
-    --self.can_destroy = false
-	
+    self.can_do_pushback = false	
 	self.updateimageangle = true
 end
 
@@ -32,7 +19,7 @@ function LeechShape:destroy()
 end
 
 function LeechShape:onDamage(soul)
-    local damage = self:getDamage()
+    local damage = self:getDamage()*math.min((1-self.light)+0.25, 1)
     if damage > 0 then
 		Assets.playSound("spawn_weaker", 1, 2)
 		Assets.playSound("break1")
@@ -41,8 +28,8 @@ function LeechShape:onDamage(soul)
         soul.inv_timer = self.inv_timer
         soul:onDamage(self, damage)
 		local spin_amt = (Game:getTension()/Game:getMaxTension())*0.25
-		self.wave.spinfactor = self.wave.spinfactor + spin_amt
-		local tension_loss = math.floor(4 + (8 * (Game:getTension()/Game:getMaxTension())))
+		self.wave.spinfactor = self.wave.spinfactor + spin_amt*math.min((1-self.light)+0.25, 1)
+		local tension_loss = math.floor(2*math.min((1-self.light)+0.25, 1) + (8 * (Game:getTension()/Game:getMaxTension())*math.min((1-self.light)+0.25, 1)))
 		tension_loss = Game:removeTension(tension_loss)
 		local tp_blob = self.wave:spawnBullet("leechblob", self.x, self.y)
 		tp_blob:setLayer(self.layer - 1)
@@ -61,9 +48,11 @@ function LeechShape:onDamage(soul)
 				end
 			end
 		end
-		tp_blob.damage = self:getDamage()
+		tp_blob.damage = damage
 		tp_blob.tension_amt = tension_loss
 		tp_blob.spin_amt = spin_amt
+		tp_blob:setScale(1+(0.5*(1-self.light)))
+		tp_blob.size_to = 0.6+(0.6*math.min((1-self.light)+0.25))
 		tp_blob:prime()
 		local boom = Sprite("effects/titan/finisher_explosion", self.x, self.y)
 		boom.rotation = math.rad(0)

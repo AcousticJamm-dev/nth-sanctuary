@@ -13,7 +13,7 @@ function LeechShape:init(x, y)
     --self:setScale(1, 1)
     --self.scalefactor = 1
 
-    self.can_do_shrivel = false
+    --self.can_do_shrivel = false
     self.can_do_pushback = false
     --self.can_destroy = false
 	

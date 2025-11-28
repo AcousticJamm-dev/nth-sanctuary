@@ -209,8 +209,8 @@ function LeechSpawn:getEnemyDialogue()
 end
 
 function LeechSpawn:onSpared()
-	local recruit = RecruitMessage("purified", 500, self.y - 40)
-	recruit.start_x = 500
+	local recruit = RecruitMessage("purified", self.target_x, self.y - 40)
+	recruit.start_x = self.target_x
 	Game.battle:addChild(recruit)
 end
 

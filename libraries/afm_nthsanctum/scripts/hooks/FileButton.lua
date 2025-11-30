@@ -11,20 +11,14 @@ function FileButton:setData(data)
 	self.shards = data and data.flags["shards"] or 0
 end
 
-function FileButton:drawCoolRectangle(x, y, w, h)
-    love.graphics.setLineWidth(4)
-    love.graphics.setLineStyle("rough")
-    Draw.setColor(self:getDrawColor())
-    love.graphics.rectangle("line", x, y, w, h)
-end
-
 function FileButton:draw()
     -- Draw the transparent background
     Draw.setColor(0, 0, 0, 0.5)
     love.graphics.rectangle("fill", 0, 0, self.width, self.height)
 
     -- Draw the rectangle outline
-    self:drawCoolRectangle(0, 0, self.width, self.height)
+    Draw.setColor(self:getDrawColor())
+    Draw.drawMenuRectangle(0, 0, self.width, self.height)
 
     -- Draw text inside the button rectangle
     Draw.pushScissor()
@@ -39,7 +33,7 @@ function FileButton:draw()
         love.graphics.print(self.name, 50, 10)
 
         -- Draw the time shadow
-        local time_x = self.width-128-self.font:getWidth(self.time) + 2
+        local time_x = self.width-96-self.font:getWidth(self.time) + 2
         Draw.setColor(0, 0, 0)
         love.graphics.print(self.time, time_x + 2, 10 + 2)
         -- Draw the time
@@ -47,14 +41,18 @@ function FileButton:draw()
         love.graphics.print(self.time, time_x, 10)
 		
         -- Draw the shards shadow
-        local shards_x = self.width-64-self.font:getWidth(self.shards) + 2
+        local shards_x = self.width-64
         Draw.setColor(0, 0, 0)
 		Draw.draw(self.shard_icon, shards_x + 2, 16 + 2, 0, 2, 2)
-        love.graphics.print(self.shards, shards_x + 26 + 2, 10 + 2)
+		local shard_x_scale = 1
+		if self.shards >= 100 then
+			shard_x_scale = 0.5
+		end
+        love.graphics.print(self.shards, shards_x + 26 + 2, 10 + 2, 0, shard_x_scale, 1)
         -- Draw the shards
         Draw.setColor(self:getDrawColor())
 		Draw.draw(self.shard_icon, shards_x, 16, 0, 2, 2)
-        love.graphics.print(self.shards, shards_x+26, 10)
+        love.graphics.print(self.shards, shards_x+26, 10, 0, shard_x_scale, 1)
     else
         -- Draw the prompt shadow
         Draw.setColor(0, 0, 0)

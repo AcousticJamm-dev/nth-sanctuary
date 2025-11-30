@@ -55,6 +55,9 @@ end
 
 function FileSelectMenu:onAddToStage()
     self.state_manager:setState("FILESELECT")
+    if not Kristal.hasAnySaves(Mod.info.id) and self.file_select.previous_chapter then
+        self:pushState("COMPLETION")
+    end
 end
 
 function FileSelectMenu:setState(state, ...)

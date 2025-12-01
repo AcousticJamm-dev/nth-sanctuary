@@ -23,7 +23,7 @@ return {
   },
   properties = {},
   wangsets = {},
-  tilecount = 23,
+  tilecount = 26,
   tiles = {
     {
       id = 0,
@@ -62,6 +62,18 @@ return {
       height = 100
     },
     {
+      id = 6,
+      image = "../../../assets/sprites/world/objects/spr_dw_church_stairs_legendmarker.png",
+      width = 20,
+      height = 80
+    },
+    {
+      id = 14,
+      image = "../../../assets/sprites/world/objects/spr_dw_church_stairs_legendmarker_longer.png",
+      width = 20,
+      height = 100
+    },
+    {
       id = 7,
       image = "../../../assets/sprites/world/objects/spr_dw_church_piano.png",
       width = 45,
@@ -78,12 +90,6 @@ return {
       image = "../../../assets/sprites/world/objects/spr_dw_church_organ_large.png",
       width = 161,
       height = 191
-    },
-    {
-      id = 26,
-      image = "../../../assets/sprites/world/objects/spr_dw_church_organ_large_chair.png",
-      width = 35,
-      height = 15
     },
     {
       id = 11,
@@ -180,6 +186,18 @@ return {
       image = "../../../assets/sprites/world/objects/bell_enemy.png",
       width = 42,
       height = 60
+    },
+    {
+      id = 26,
+      image = "../../../assets/sprites/world/objects/npc_sign.png",
+      width = 20,
+      height = 20
+    },
+    {
+      id = 29,
+      image = "../../../assets/sprites/world/objects/treasure_chest_1.png",
+      width = 20,
+      height = 20
     }
   }
 }

@@ -16,7 +16,7 @@ function ModlandCredits:init(menu)
                 { "Spritework", COLORS.yellow },
                 "Runius",
                 "Hyperboid",
-                "Azrael",
+                "",
                 "",
                 "",
             },
@@ -24,13 +24,13 @@ function ModlandCredits:init(menu)
                 { "Contributors", COLORS.yellow },
                 "AcousticJamm",
                 "nazareth",
-                "",
+                "JARU",
                 "",
                 { "Music", COLORS.yellow },
                 "DeltaPulsar",
                 "obj_lily",
                 "therealaarami",
-                "",
+                "squibles",
                 ""
             }
         },
@@ -63,6 +63,7 @@ function ModlandCredits:init(menu)
                 ""
             }
         },
+        
     }, self.pages)
 end
 

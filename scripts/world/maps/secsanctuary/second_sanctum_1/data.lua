@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.10.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 11,
-  nextobjectid = 62,
+  nextobjectid = 64,
   parallaxorigin = {
     x = -320,
     y = -240
@@ -565,6 +565,19 @@ return {
           rotation = 0,
           visible = true,
           properties = {}
+        },
+        {
+          id = 62,
+          name = "entry2",
+          type = "",
+          shape = "point",
+          x = 750,
+          y = 1020,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
         }
       }
     },
@@ -659,18 +672,18 @@ return {
         },
         {
           id = 61,
-          name = "interactable",
+          name = "transition",
           type = "",
           shape = "rectangle",
-          x = 760,
+          x = 800,
           y = 960,
           width = 40,
           height = 120,
           rotation = 0,
           visible = true,
           properties = {
-            ["solid"] = true,
-            ["text1"] = "* imagine these as dark place dog cones. yeah, theres no more rooms right now."
+            ["map"] = "secsanctuary/second_sanctum_2",
+            ["marker"] = "entry"
           }
         }
       }

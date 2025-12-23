@@ -69,7 +69,7 @@ function ModlandFileNamer:onLeave(new_state)
 end
 
 function ModlandFileNamer:draw()
-    local mod_name = string.upper((Kristal.getLibConfig("afilemenu", "chaptername").long).." "..(Kristal.getLibConfig("afilemenu", "chapter") or Game.chapter))
+    local mod_name = string.upper((Kristal.getLibConfig("afilemenu", "chaptername").long))
     Draw.setColor(PALETTE["filemenu_header"])
     Draw.printShadow(mod_name, 16, 8)
 end

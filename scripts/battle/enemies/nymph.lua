@@ -229,8 +229,8 @@ function NymphSpawn:onAct(battler, name)
 			Game.battle.timer:tween(15/30, self, {shaker = 5}, "linear")
 			Game.battle.timer:tween(15/30, self.colormask, {amount = 1}, "linear")
 			cutscene:wait(15/30)
-			local spawn1 = Game.battle.encounter:addEnemy("leech", self.x, self.y)
-			local spawn2 = Game.battle.encounter:addEnemy("leech", self.x, self.y)
+			local spawn1 = Game.battle.encounter:addEnemy("leech_spawn", self.x, self.y)
+			local spawn2 = Game.battle.encounter:addEnemy("leech_spawn", self.x, self.y)
 			local xx, yy = 550, 200 - 45
 			Game.battle.timer:tween(15/30, spawn1, {x = xx, y = yy}, "out-cubic")
 			xx, yy = 550 + 10, 200 + 45
@@ -293,8 +293,8 @@ function NymphSpawn:onDefeat(damage, battler)
 	Game.battle.timer:tween(15/30, self, {shaker = 5}, "linear")
 	Game.battle.timer:tween(15/30, self.colormask, {amount = 1}, "linear")
 	Game.battle.timer:after(15/30, function()
-		local spawn1 = Game.battle.encounter:addEnemy("leech", self.x, self.y)
-		local spawn2 = Game.battle.encounter:addEnemy("leech", self.x, self.y)
+		local spawn1 = Game.battle.encounter:addEnemy("leech_spawn", self.x, self.y)
+		local spawn2 = Game.battle.encounter:addEnemy("leech_spawn", self.x, self.y)
 		local xx, yy = 550, 200 - 45
 		Game.battle.timer:tween(15/30, spawn1, {x = xx, y = yy}, "out-cubic")
 		xx, yy = 550 + 10, 200 + 45

@@ -40,12 +40,12 @@ function ModlandFileSelect:draw()
         Draw.printShadow(self:gasterize "Erase", 280, 380)
         if not self.chapter_select then
             setColor(3, 4)
-            Draw.printShadow(self:gasterize "Mod Select", self.bottom_row_heart[3] + 28, 380)
+            Draw.printShadow(self:gasterize "Exit", self.bottom_row_heart[3] + 28, 380)
         else
             setColor(3, 4)
             Draw.printShadow(self:gasterize "Chapter Select", self.bottom_row_heart[3] + 28, 380)
             setColor(3, 5)
-            Draw.printShadow(self:gasterize "Mod Select", self.bottom_row_heart[3] + 28, 380 + 40)
+            Draw.printShadow(self:gasterize "Exit", self.bottom_row_heart[3] + 28, 380 + 40)
         end
         if self.previous_chapter then
             setColor(1, 5)

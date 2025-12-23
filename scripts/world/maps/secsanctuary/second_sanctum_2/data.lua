@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 11,
-  nextobjectid = 26,
+  nextobjectid = 28,
   backgroundcolor = { 11, 0, 34 },
   properties = {
     ["border"] = "church_b",
@@ -305,6 +305,19 @@ return {
           rotation = 0,
           visible = true,
           properties = {}
+        },
+        {
+          id = 27,
+          name = "entry2",
+          type = "",
+          shape = "point",
+          x = 1160,
+          y = 100,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
         }
       }
     },
@@ -532,6 +545,22 @@ return {
           properties = {
             ["map"] = "secsanctuary/second_sanctum_1",
             ["marker"] = "entry2"
+          }
+        },
+        {
+          id = 26,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 1200,
+          y = 40,
+          width = 40,
+          height = 120,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "secsanctuary/second_sanctum_3",
+            ["marker"] = "entry"
           }
         }
       }

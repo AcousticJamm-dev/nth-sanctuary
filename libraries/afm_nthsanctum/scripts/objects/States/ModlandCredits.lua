@@ -31,7 +31,7 @@ function ModlandCredits:init(menu)
                 "obj_lily",
                 "therealaarami",
                 "squibles",
-                ""
+                "AkitA"
             }
         },
         {

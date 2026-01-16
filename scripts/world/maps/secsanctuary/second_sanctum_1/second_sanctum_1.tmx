@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="20" height="28" tilewidth="40" tileheight="40" infinite="0" parallaxoriginx="-320" parallaxoriginy="-240" nextlayerid="11" nextobjectid="64">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="20" height="28" tilewidth="40" tileheight="40" infinite="0" parallaxoriginx="-320" parallaxoriginy="-240" nextlayerid="11" nextobjectid="66">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -18,9 +18,10 @@
   <object id="36" gid="793" x="360" y="760" width="640" height="200"/>
  </objectgroup>
  <objectgroup id="7" name="objects_parallax" parallaxx="0.7" parallaxy="0.7">
-  <object id="29" gid="785" x="680" y="1160" width="640" height="1600" rotation="330"/>
+  <object id="29" gid="785" x="-320" y="1120" width="640" height="1600" rotation="-315"/>
+  <object id="65" gid="785" x="800" y="1080" width="640" height="1600" rotation="-45"/>
  </objectgroup>
- <objectgroup id="9" name="objects_shadow" locked="1">
+ <objectgroup id="9" name="objects_shadow" visible="0" locked="1">
   <object id="37" gid="789" x="800" y="1120" width="900" height="800" rotation="270"/>
  </objectgroup>
  <objectgroup id="10" name="objects_osc">
@@ -67,7 +68,7 @@
 0,0,0,610,610,610,610,610,610,610,610,610,610,610,610,610,610,610,610,610
 </data>
  </layer>
- <objectgroup color="#ff0000" id="2" name="collision">
+ <objectgroup color="#ff0000" id="2" name="collision" visible="0">
   <object id="1" x="40" y="0" width="40" height="240"/>
   <object id="2" x="160" y="0" width="240" height="120"/>
   <object id="3" x="520" y="200" width="240" height="40"/>

@@ -1,10 +1,10 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.10.2",
+  tiledversion = "1.11.2",
   name = "church_objects",
   class = "",
-  tilewidth = 900,
+  tilewidth = 960,
   tileheight = 800,
   spacing = 0,
   margin = 0,
@@ -23,7 +23,7 @@ return {
   },
   properties = {},
   wangsets = {},
-  tilecount = 27,
+  tilecount = 29,
   tiles = {
     {
       id = 0,
@@ -204,6 +204,18 @@ return {
       image = "../../../assets/sprites/world/objects/spr_dw_church_organ_large_chair.png",
       width = 35,
       height = 15
+    },
+    {
+      id = 31,
+      image = "../../../assets/sprites/world/parallax/spr_dw_parallax_church_darkwall.png",
+      width = 200,
+      height = 289
+    },
+    {
+      id = 32,
+      image = "../../../assets/sprites/world/parallax/spr_dw_parallax_church_distant_tower_longer.png",
+      width = 960,
+      height = 100
     }
   }
 }

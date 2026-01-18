@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="87" height="80" tilewidth="40" tileheight="40" infinite="0" nextlayerid="20" nextobjectid="163">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="87" height="80" tilewidth="40" tileheight="40" infinite="0" nextlayerid="20" nextobjectid="164">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -624,10 +624,10 @@
   <object id="42" name="entry" x="40" y="2880">
    <point/>
   </object>
-  <object id="112" name="entry2" x="3400" y="480">
+  <object id="112" name="entry2" x="3440" y="460">
    <point/>
   </object>
-  <object id="119" name="spawn" x="120" y="2880">
+  <object id="163" name="spawn" x="3240" y="440">
    <point/>
   </object>
  </objectgroup>
@@ -709,12 +709,6 @@
    <properties>
     <property name="map" value="fourth_sanctum_5"/>
     <property name="marker" value="entry"/>
-   </properties>
-  </object>
-  <object id="118" name="interactable" x="3440" y="400" width="40" height="120">
-   <properties>
-    <property name="solid" type="bool" value="true"/>
-    <property name="text1" value="* imagine these as dark place dog cones. yeah, theres no more rooms right now."/>
    </properties>
   </object>
   <object id="162" name="savepoint" x="3160" y="360" width="40" height="40">

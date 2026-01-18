@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.10.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 20,
-  nextobjectid = 163,
+  nextobjectid = 164,
   properties = {
     ["border"] = "church_d",
     ["music"] = "fourth_church",
@@ -1489,8 +1489,8 @@ return {
           name = "entry2",
           type = "",
           shape = "point",
-          x = 3400,
-          y = 480,
+          x = 3440,
+          y = 460,
           width = 0,
           height = 0,
           rotation = 0,
@@ -1498,12 +1498,12 @@ return {
           properties = {}
         },
         {
-          id = 119,
+          id = 163,
           name = "spawn",
           type = "",
           shape = "point",
-          x = 120,
-          y = 2880,
+          x = 3240,
+          y = 440,
           width = 0,
           height = 0,
           rotation = 0,
@@ -1996,22 +1996,6 @@ return {
           properties = {
             ["map"] = "fourth_sanctum_5",
             ["marker"] = "entry"
-          }
-        },
-        {
-          id = 118,
-          name = "interactable",
-          type = "",
-          shape = "rectangle",
-          x = 3440,
-          y = 400,
-          width = 40,
-          height = 120,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["solid"] = true,
-            ["text1"] = "* imagine these as dark place dog cones. yeah, theres no more rooms right now."
           }
         },
         {

@@ -53,4 +53,11 @@ function item:init()
     }
 end
 
+function item:getAttackSound(battler, enemy, points)
+    local crit = points == 150
+    if crit then
+        return "crit-jamm"
+    end
+end
+
 return item

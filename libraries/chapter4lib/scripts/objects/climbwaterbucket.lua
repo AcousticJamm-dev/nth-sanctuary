@@ -1,14 +1,24 @@
----@class Event.bell_button : Event
-local event, super = Class(Event, "climbwaterbucket")
+---@class Chapter4Lib.ClimbWaterBucket : Event
+---@field generator boolean *[Property `generate`]* Whether the bucket generates water rather than stopping it (Defaults to `false`)
+---@field remote boolean *[Property `remote`]* Needs description! (Defaults to `false`)
+---@field timer number *[Property `timer`]* Timer used for waiting to spawn water. Property can be used to add an offset to the cycle, like the phase of a wave. (Defaults to `0`)
+---@field waittime number *[Property `waittime`]* Needs description! (Defaults to `60`)
+---@field activetime number *[Property `activetime`]* Needs description! (Defaults to `60`)
+---@field spawnrate number *[Property `spawnrate`]* Needs description! (Defaults to `4`)
+---@field watermovetimer number *[Property `watermovetimer`]* Needs description! (Defaults to `0`)
+---@field watermoverate number *[Property `watermoverate`]* Needs description! (Defaults to `4`)
+---@field watertilelimit number *[Property `watertilelimit`]* Needs description! (Defaults to `12`)
+---@field waterfallingtimer number *[Property `waterfallingtimer`]* Needs description! (Defaults to `12`)
+local ClimbWaterBucket, super = Class(Event, "ClimbWaterBucket")
 
-function event:init(data)
+function ClimbWaterBucket:init(data)
     super.init(self, data)
     local properties = data and data.properties or {}
     self.generator = properties["generate"] or false
 	self:setOrigin(0, 0.5)
     self:setSprite("world/events/climbwater/climb_waterbucket")
 	self.buffer = 0
-	self:setHitbox(0, 0, 40, 40)
+	self:setHitbox(5, 0, 30, 40)
 	self.drawwater = 0
 	self.makewater = 0
 	self.con = 0
@@ -28,7 +38,7 @@ function event:init(data)
 	self.stoptimerconds = nil
 end
 
-function event:update()
+function ClimbWaterBucket:update()
     super.update(self)
 	if self.generator then
 		self.drawwater = self.drawwater - DTMULT
@@ -122,4 +132,4 @@ function event:update()
 	end
 end
 
-return event
+return ClimbWaterBucket

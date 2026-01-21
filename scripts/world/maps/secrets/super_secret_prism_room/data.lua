@@ -12,7 +12,8 @@ return {
   nextlayerid = 8,
   nextobjectid = 39,
   properties = {
-    ["music"] = "darkchurch_intro"
+    ["music"] = "darkchurch_intro",
+    ["name"] = "1 of 5."
   },
   tilesets = {
     {
@@ -28,7 +29,7 @@ return {
     },
     {
       name = "light_areas",
-      firstgid = 602,
+      firstgid = 616,
       filename = "../../../tilesets/light_areas.tsx"
     }
   },
@@ -465,7 +466,7 @@ return {
           width = 184,
           height = 262,
           rotation = 0,
-          gid = 605,
+          gid = 619,
           visible = true,
           properties = {
             ["light"] = true,
@@ -484,7 +485,7 @@ return {
           width = 120,
           height = 262,
           rotation = 0,
-          gid = 605,
+          gid = 619,
           visible = true,
           properties = {
             ["light"] = true,
@@ -503,7 +504,7 @@ return {
           width = 62,
           height = 80,
           rotation = 0,
-          gid = 608,
+          gid = 622,
           visible = true,
           properties = {
             ["light"] = true,
@@ -522,7 +523,7 @@ return {
           width = 62,
           height = 80,
           rotation = 0,
-          gid = 2147484256,
+          gid = 2147484270,
           visible = true,
           properties = {
             ["light"] = true,
@@ -541,7 +542,7 @@ return {
           width = 62,
           height = 80,
           rotation = 0,
-          gid = 608,
+          gid = 622,
           visible = true,
           properties = {
             ["light"] = true,
@@ -560,7 +561,7 @@ return {
           width = 62,
           height = 80,
           rotation = 0,
-          gid = 2147484256,
+          gid = 2147484270,
           visible = true,
           properties = {
             ["light"] = true,
@@ -579,7 +580,7 @@ return {
           width = 62,
           height = 80,
           rotation = 0,
-          gid = 608,
+          gid = 622,
           visible = true,
           properties = {
             ["light"] = true,
@@ -598,7 +599,7 @@ return {
           width = 62,
           height = 80,
           rotation = 0,
-          gid = 2147484256,
+          gid = 2147484270,
           visible = true,
           properties = {
             ["light"] = true,

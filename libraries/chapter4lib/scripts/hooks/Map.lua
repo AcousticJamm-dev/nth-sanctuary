@@ -64,6 +64,7 @@ function Map:loadClimbAreas(layer, depth)
         end
 
         local obj
+        -- TODO: Make ClimbArea a registered event
         obj = Registry.createLegacyEvent("climbarea", v)
         obj.x = obj.x + (layer.offsetx or 0)
         obj.y = obj.y + (layer.offsety or 0)

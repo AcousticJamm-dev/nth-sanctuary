@@ -12,4 +12,15 @@ function Map:onExit()
 	end
 end
 
+function Map:load()
+	super.load(self)
+	if DISCORD_RPC_AVAILABLE and Kristal.Config["discordRPC"] then
+        local presence = Kristal.getPresence()
+		print(Game.world.map.name)
+        presence.state = "Map: "..(Game.world.map.name or "???")
+        presence.details = "Shards: "..tostring(Game:getFlag("shards") or 0)
+        Kristal.setPresence(presence)
+    end
+end
+
 return Map

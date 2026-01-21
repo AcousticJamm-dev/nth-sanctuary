@@ -102,6 +102,8 @@ return {
         proph:remove()
         cutscene:loadMap("final/final-1")
         rect:fadeOutAndRemove(1)
+        local cam = Game.world.camera
+        Game.world.timer:tween(1, cam, {zoom_y = 0.5, zoom_x = 0.5}, 'out-expo')
 
 
 

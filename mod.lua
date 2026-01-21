@@ -8,6 +8,7 @@ function Mod:init()
         local dt = orig(...)
         return dt * math.max(0.05, self.DT_MULT)
     end)
+    -- in Mod:init()
 end
 
 function Mod:afmGetMusic()
@@ -31,6 +32,13 @@ end
 
 function Mod:afmGetStyle()
     return "normal"
+end
+
+function Mod:unload()
+    if DISCORD_RPC_AVAILABLE and Kristal.Config["discordRPC"] then
+        DiscordRPC.shutdown()
+        DiscordRPC.initialize(DISCORD_RPC_ID, true)
+    end
 end
 
 function Mod:c4lCreateFilterFX(type, properties)
@@ -221,19 +229,15 @@ function Mod:preInit()
 end
 --]==]
 
---[[
+
 function Mod:postInit()
-    self.thingy = {0,0,0,0,0,0,0}
-    self.thingy2 = {0,0,0,0,0,0,0}
-    Game.stage.timer:every(2/30, function ()
-        table.insert(self.thingy, Ch4Lib.scr_wave(0, 1, 1/30, 0))
-        table.insert(self.thingy, Ch4Lib.scr_wave(1, 0, 1/30, 0))
-        if #self.thingy > (SCREEN_WIDTH/6) then
-            table.remove(self.thingy, 1)
-        end
-    end)
+    if DISCORD_RPC_AVAILABLE and Kristal.Config["discordRPC"] then
+        DiscordRPC.shutdown()
+        DiscordRPC.initialize("1235713537322651648", true)
+    end
 end
 
+--[[
 function Mod:postDraw()
     local points = {}
     for index, value in ipairs(self.thingy or {}) do

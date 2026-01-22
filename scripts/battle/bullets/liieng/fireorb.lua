@@ -85,7 +85,7 @@ function FireOrb:update()
 			bul.visible = false
 		end
 		bul.angle = bul.angle + math.rad(self.turn) * DTMULT
-		bul.dist = (bul.basebuldist - (math.cos((self.siner + (self.index * 4)) / 15) * bul.sinbuldist))
+		bul.dist = (bul.basebuldist - (math.cos(self.siner / 15) * bul.sinbuldist))
 		bul.x = self.x + 25 + MathUtils.lengthDirX(bul.dist, bul.angle)
 		bul.y = self.y + 25 + MathUtils.lengthDirY(bul.dist, bul.angle)
 	end

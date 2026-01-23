@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.10.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -35,8 +35,7 @@ return {
     {
       name = "ExtraClimbableBrickTiles",
       firstgid = 814,
-      filename = "../../../tilesets/ExtraClimbableBrickTiles.tsx",
-      exportfilename = "../../../tilesets/ExtraClimbableBrickTiles.tsx"
+      filename = "../../../tilesets/ExtraClimbableBrickTiles.tsx"
     }
   },
   layers = {

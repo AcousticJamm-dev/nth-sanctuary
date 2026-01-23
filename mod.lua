@@ -1,6 +1,5 @@
 function Mod:init()
     print("Loaded "..self.info.name.."!")
-    Game:setFlag("apkpure", false)
     TableUtils.copyInto(MUSIC_VOLUMES, {
         second_church = 0.8
     })
@@ -91,6 +90,7 @@ function Mod:c4lCreateFilterFX(type, properties)
 end
 
 function Mod:afmPostInit(new_file)
+    Game:setFlag("apkpure", false)
     if new_file then
         Game:setFlag("fun", love.math.random(1, 170))
         Game:setFlag("shards", 1)

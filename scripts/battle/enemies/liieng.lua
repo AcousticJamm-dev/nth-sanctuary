@@ -23,8 +23,7 @@ function Dummy:init()
 
     -- List of possible wave ids, randomly picked each turn
     self.waves = {
-        "holyfire",
-        "clawdrop"
+        "liieng/fireorbs",
     }
 
     -- Dialogue randomly displayed in the enemy's speech bubble
@@ -33,15 +32,14 @@ function Dummy:init()
     }
 
     -- Check text (automatically has "ENEMY NAME - " at the start)
-    self.check = "A restless spirit known to appear when salvation is at it's lowest."
+    self.check = "A restless spirit known to appear when salvation is at its lowest."
 
     -- Text randomly displayed at the bottom of the screen each turn
     self.text = {
         "* Liieng gazes into your eyes.",
-        "* Smells like[speed:0.2]... [speed:1]Like?",
+        "* Smells like...[wait:5] like?",
         "* Liieng's mandibles twitch.",
-        "* It emits a ghastly sound.",
-        
+        "* Liieng emits a ghastly wail."
     }
     -- Text displayed at the bottom of the screen when the enemy has low health
     self.low_health_text = "* Liieng looks battered."

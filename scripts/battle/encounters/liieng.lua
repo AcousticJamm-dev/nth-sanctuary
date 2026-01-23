@@ -3,7 +3,7 @@ local Winglade, super = Class(Encounter)
 function Winglade:init()
     super.init(self)
 
-    self.text = "* Liieng wisp in the way!"
+    self.text = "* Liieng wisps in your way!"
 
     self.music = "ch4_battle2"
     self.background = true

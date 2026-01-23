@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.10.2",
+  tiledversion = "1.11.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -9,7 +9,7 @@ return {
   height = 21,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 22,
+  nextlayerid = 24,
   nextobjectid = 102,
   properties = {
     ["border"] = "base_sanctum",

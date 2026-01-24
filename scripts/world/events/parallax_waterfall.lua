@@ -24,7 +24,7 @@ end
 function WaterfallParallax:draw()
     super.draw(self)
 
-    local canvas = Draw.pushCanvas(80, self.world.map.height * self.world.map.tile_height)
+    local canvas = Draw.pushCanvas(80, (self.world.map.height * self.world.map.tile_height) * self.parallax_y)
     love.graphics.clear()
 
     love.graphics.translate(-self.x + 40, -self.y)

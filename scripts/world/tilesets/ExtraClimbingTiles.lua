@@ -26,6 +26,6 @@ return {
   },
   properties = {},
   wangsets = {},
-  tilecount = 9,
+  tilecount = 36,
   tiles = {}
 }

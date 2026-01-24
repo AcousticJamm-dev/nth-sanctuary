@@ -44,6 +44,14 @@ function ChurchTileButton:update()
 			Game.world.timer:lerpVar(glowspr, "alpha", MathUtils.clamp((0.35 + (math.sin(self.siner / 20) * 0.125)) - pressed, 0.05, 0.5), 0, lifetime)
 			glowspr.color = self.glow_color
 			glowspr.physics.direction = math.rad(self.siner * 12)
+			for _,darkness in ipairs(Game.world.map:getEvents("darkness")) do
+				if darkness then
+					glowspr.visible = false
+					glowspr.layer = darkness.layer + 1
+				else
+					glowspr.layer = self.layer + 1
+				end
+			end
 			glowspr.layer = self.layer + 0.01
 			glowspr.physics.gravity = -0.7
 			glowspr.physics.speed_y = 1.5

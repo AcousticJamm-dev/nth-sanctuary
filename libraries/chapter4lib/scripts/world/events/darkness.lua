@@ -30,6 +30,11 @@ function Darkness:drawCharacter(object)
 end
 
 function Darkness:drawLightsA()
+    for _,light in ipairs(Game.world.children) do
+		if light.light_source and light.light_active then
+			light:drawLightA()
+		end
+    end
     for _,light in ipairs(Game.stage:getObjects(TileObject)) do
 		if light.light_area then
 			light:drawLightA()
@@ -38,6 +43,11 @@ function Darkness:drawLightsA()
 end
 
 function Darkness:drawLightsB()
+    for _,light in ipairs(Game.world.children) do
+		if light.light_source and light.light_active then
+			light:drawLightB()
+		end
+    end
     for _,light in ipairs(Game.stage:getObjects(TileObject)) do
 		if light.light_area then
 			light:drawLightB()
@@ -53,7 +63,10 @@ function Darkness:draw()
 		love.graphics.translate(MathUtils.round(-Game.world.camera.x+SCREEN_WIDTH/2), MathUtils.round(-Game.world.camera.y+SCREEN_HEIGHT/2))
 
 		for _, object in ipairs(Game.world.children) do
-			if object:includes(Character) and not object.no_highlight then
+			if object.darkness_unlit then
+				self:drawCharacter(object)
+			end
+			if object:includes(Character) and not object.no_highlight and self.highlight then
 				love.graphics.stencil((function ()
 					love.graphics.translate(0, 2)
 					love.graphics.setShader(Kristal.Shaders["Mask"])
@@ -97,20 +110,18 @@ function Darkness:draw()
 		Draw.popCanvas(true)
 		
 		local dim_canvas = Draw.pushCanvas(SCREEN_WIDTH, SCREEN_HEIGHT)
-		love.graphics.clear(COLORS.black)
+		love.graphics.clear()
 		love.graphics.push()
 		Draw.drawCanvas(base_dim_canvas)
-		love.graphics.setBlendMode("add", "alphamultiply")
 		Ch4Lib.setBlendState("add", "zero", "oneminussrccolor")
 		self:drawLightsA()
 		love.graphics.pop()
 		Draw.popCanvas(true)
 		
 		local dark_canvas = Draw.pushCanvas(SCREEN_WIDTH, SCREEN_HEIGHT)
-		love.graphics.clear(COLORS.black)
+		love.graphics.clear()
 		love.graphics.push()
 		Draw.drawCanvas(dim_canvas)
-		love.graphics.setBlendMode("add", "alphamultiply")
 		Ch4Lib.setBlendState("add", "zero", "oneminussrccolor")
 		self:drawLightsB()
 		love.graphics.pop()
@@ -145,7 +156,10 @@ function Darkness:draw()
 		love.graphics.translate(MathUtils.round(-Game.world.camera.x+SCREEN_WIDTH/2), MathUtils.round(-Game.world.camera.y+SCREEN_HEIGHT/2))
 
 		for _, object in ipairs(Game.world.children) do
-			if object:includes(Character) and not object.no_highlight then
+			if object.darkness_unlit then
+				self:drawCharacter(object)
+			end
+			if object:includes(Character) and not object.no_highlight and self.highlight then
 				love.graphics.stencil((function ()
 					love.graphics.translate(0, 2)
 					love.graphics.setShader(Kristal.Shaders["Mask"])
@@ -227,6 +241,11 @@ function Darkness:draw()
 end
 
 function Darkness:drawMask()
+    for _,light in ipairs(Game.world.children) do
+		if light.light_source and light.light_active then
+			light:drawLightB()
+		end
+    end
 	for _,light in ipairs(Game.stage:getObjects(TileObject)) do
 		if light.light_area then
 			light:drawLightB()

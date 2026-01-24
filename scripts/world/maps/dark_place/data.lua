@@ -1,7 +1,7 @@
 return {
-  version = "1.11",
+  version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.10.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 9,
-  nextobjectid = 25,
+  nextobjectid = 26,
   properties = {
     ["music"] = "darkchurch_intro"
   },
@@ -80,7 +80,30 @@ return {
       parallaxx = 1,
       parallaxy = 1,
       properties = {},
-      objects = {}
+      objects = {
+        {
+          id = 25,
+          name = "churchtilebutton",
+          type = "",
+          shape = "rectangle",
+          x = 120,
+          y = 440,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["color"] = "#ff000000",
+            ["glow_color"] = "#ffffffff",
+            ["npcpress"] = false,
+            ["offsound"] = "",
+            ["onsound"] = 3,
+            ["pressedsprite"] = "world/events/churchglowtile/yellow/pressed",
+            ["ripple"] = true,
+            ["sprite"] = "world/events/churchglowtile/yellow/idle"
+          }
+        }
+      }
     },
     {
       type = "objectgroup",
@@ -95,21 +118,7 @@ return {
       parallaxx = 1,
       parallaxy = 1,
       properties = {},
-      objects = {
-        {
-          id = 24,
-          name = "bell_button",
-          type = "",
-          shape = "rectangle",
-          x = 120,
-          y = 440,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        }
-      }
+      objects = {}
     },
     {
       type = "objectgroup",

@@ -6,16 +6,6 @@
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="0">
   <image width="200" height="289" source="../../../assets/sprites/world/parallax/spr_dw_parallax_church_arches.png"/>
-  <animation>
-   <frame tileid="40" duration="125"/>
-   <frame tileid="41" duration="125"/>
-   <frame tileid="42" duration="125"/>
-   <frame tileid="43" duration="125"/>
-   <frame tileid="44" duration="125"/>
-   <frame tileid="45" duration="125"/>
-   <frame tileid="46" duration="125"/>
-   <frame tileid="47" duration="125"/>
-  </animation>
  </tile>
  <tile id="1">
   <image width="100" height="620" source="../../../assets/sprites/world/parallax/spr_dw_parallax_church_buttress_connectable.png"/>

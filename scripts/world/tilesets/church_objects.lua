@@ -29,41 +29,7 @@ return {
       id = 0,
       image = "../../../assets/sprites/world/parallax/spr_dw_parallax_church_arches.png",
       width = 200,
-      height = 289,
-      animation = {
-        {
-          tileid = 40,
-          duration = 125
-        },
-        {
-          tileid = 41,
-          duration = 125
-        },
-        {
-          tileid = 42,
-          duration = 125
-        },
-        {
-          tileid = 43,
-          duration = 125
-        },
-        {
-          tileid = 44,
-          duration = 125
-        },
-        {
-          tileid = 45,
-          duration = 125
-        },
-        {
-          tileid = 46,
-          duration = 125
-        },
-        {
-          tileid = 47,
-          duration = 125
-        }
-      }
+      height = 289
     },
     {
       id = 1,

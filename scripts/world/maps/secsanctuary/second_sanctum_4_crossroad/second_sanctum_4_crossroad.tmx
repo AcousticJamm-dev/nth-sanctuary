@@ -5,7 +5,7 @@
  </editorsettings>
  <properties>
   <property name="border" value="church_b"/>
-  <property name="music" value="second_church"/>
+  <property name="music" value="homebase"/>
  </properties>
  <tileset firstgid="1" source="../../../tilesets/bg_dw_church_2_tileset.tsx"/>
  <tileset firstgid="199" source="../../../tilesets/bg_dw_church_tileset_new.tsx"/>
@@ -28,7 +28,7 @@
  <objectgroup id="16" name="objects_parallax1" parallaxx="0.8">
   <object id="90" gid="3221226620" x="-40" y="1120" width="400" height="1600"/>
   <object id="91" gid="3221226621" x="82" y="1520" width="640" height="1600"/>
-  <object id="131" gid="2147484797" x="1200" y="3080" width="960" height="2400" rotation="-45"/>
+  <object id="131" gid="2147484797" x="-1280" y="2440" width="960" height="2400" rotation="45"/>
   <object id="97" gid="1145" x="-1240" y="0" width="400" height="578" rotation="-180"/>
   <object id="98" gid="1145" x="-840" y="0" width="400" height="578" rotation="-180"/>
   <object id="99" gid="1145" x="-440" y="0" width="400" height="578" rotation="-180"/>
@@ -212,8 +212,7 @@
   <object id="85" x="760" y="1160" width="200" height="160"/>
   <object id="119" x="0" y="960" width="520" height="200"/>
   <object id="120" x="0" y="1160" width="160" height="560"/>
-  <object id="121" x="320" y="1320" width="440" height="400"/>
-  <object id="123" x="760" y="1520" width="960" height="200"/>
+  <object id="121" x="320" y="1320" width="1400" height="400"/>
   <object id="124" x="1200" y="960" width="520" height="200"/>
   <object id="125" x="0" y="360" width="360" height="480"/>
  </objectgroup>

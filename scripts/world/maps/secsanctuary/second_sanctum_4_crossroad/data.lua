@@ -13,7 +13,7 @@ return {
   nextobjectid = 137,
   properties = {
     ["border"] = "church_b",
-    ["music"] = "second_church"
+    ["music"] = "homebase"
   },
   tilesets = {
     {
@@ -24,7 +24,8 @@ return {
     {
       name = "bg_dw_church_tileset_new",
       firstgid = 199,
-      filename = "../../../tilesets/bg_dw_church_tileset_new.tsx"
+      filename = "../../../tilesets/bg_dw_church_tileset_new.tsx",
+      exportfilename = "../../../tilesets/bg_dw_church_tileset_new.lua"
     },
     {
       name = "bg_dw_church_watertileset",
@@ -235,11 +236,11 @@ return {
           name = "",
           type = "",
           shape = "rectangle",
-          x = 1200,
-          y = 3080,
+          x = -1280,
+          y = 2440,
           width = 960,
           height = 2400,
-          rotation = -45,
+          rotation = 45,
           gid = 2147484797,
           visible = true,
           properties = {}
@@ -808,21 +809,8 @@ return {
           shape = "rectangle",
           x = 320,
           y = 1320,
-          width = 440,
+          width = 1400,
           height = 400,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 123,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 760,
-          y = 1520,
-          width = 960,
-          height = 200,
           rotation = 0,
           visible = true,
           properties = {}

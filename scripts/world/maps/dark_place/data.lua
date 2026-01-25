@@ -9,8 +9,8 @@ return {
   height = 24,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 9,
-  nextobjectid = 26,
+  nextlayerid = 10,
+  nextobjectid = 27,
   properties = {
     ["music"] = "darkchurch_intro"
   },
@@ -87,7 +87,7 @@ return {
           type = "",
           shape = "rectangle",
           x = 120,
-          y = 440,
+          y = 460,
           width = 40,
           height = 40,
           rotation = 0,

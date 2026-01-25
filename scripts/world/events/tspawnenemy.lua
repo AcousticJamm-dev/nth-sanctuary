@@ -117,13 +117,14 @@ function TitanSpawnChaser:update()
             self:chaseMovement()
 			self.sprite.anim_delay = MathUtils.lerp(0.25, 1/30, MathUtils.clamp(self.chase_speed / self.chase_max, 0, 1))
 			if self.ripple_timer ~= nil then
-				self.ripple_timer = self.ripple_timer + DTMULT
 				if self.ripple_timer >= 20 then
 					local hhsp = MathUtils.lengthDirX(self.chase_speed, -MathUtils.angle(self.x, self.y, self.world.player.x, self.world.player.y))
 					local vvsp = MathUtils.lengthDirY(self.chase_speed, -MathUtils.angle(self.x, self.y, self.world.player.x, self.world.player.y))
 					local x, y = self:getRelativePos(self.width/2, 19 + self.sprite.y)
 					self.world.map.ripple_fx:makeRipple(x, y, 60, COLORS.red, 120, 1, 12, 0, hhsp, vvsp)
 					self.ripple_timer = 0
+				else
+					self.ripple_timer = self.ripple_timer + DTMULT
 				end
 			end
         end

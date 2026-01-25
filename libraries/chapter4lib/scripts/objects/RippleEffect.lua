@@ -74,7 +74,7 @@ function RippleEffect:draw()
 	Draw.popCanvas()
 	
 	Draw.setColor(1,1,1,1)
-	Draw.drawCanvas(ripple_canvas, cx, cy)
+	Draw.draw(ripple_canvas, cx, cy)
 end
 
 return RippleEffect

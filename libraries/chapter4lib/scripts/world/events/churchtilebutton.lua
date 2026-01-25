@@ -52,6 +52,8 @@ function ChurchTileButton:update()
 				self.simplify_glowspr:fadeOutSpeedAndRemove(12/30)
 				self.simplify_glowspr = nil
 			end
+			-- I would love to have this run only at 30 FPS using a timer
+			-- but it causes awful flickering so I can't
 			local glowspr = Sprite(self.sprite.texture_path, self.x + self.width/2, self.y + self.height/2)
 			glowspr:setOrigin(0.5)
 			glowspr:stop()

@@ -48,6 +48,12 @@ function map:onEnter()
 	end
 	self.stupid_hitbox = self:getHitbox("rippleblock") ---@type Hitbox
 	self.stupid_hitbox.collidable = true
+	self.ripple_fx = RippleEffect()
+	self.ripple_fx.layer = WORLD_LAYERS["bottom"]
+	Game.world:addChild(self.ripple_fx)
+	self.ripple_fx_alt = RippleEffect()
+	self.ripple_fx_alt.layer = WORLD_LAYERS["above_events"]
+	Game.world:addChild(self.ripple_fx_alt)
 end
 
 function map:onExit()
@@ -101,7 +107,7 @@ function map:update()
 				end
 				local hhsp = -math.cos(masterdir) * 2
 				local vvsp = -math.sin(masterdir) * 2
-				RippleEffect:MakeRipple(loc[self.ripindex+1].x,loc[self.ripindex+1].y, 30, {1,1,1}, 200, 1, 10, -5, hhsp, vvsp, 0.25)
+				self.ripple_fx_alt:makeRipple(loc[self.ripindex+1].x,loc[self.ripindex+1].y, 60, {1,1,1}, 200, 1, 14, -5, hhsp, vvsp, 0.25)
 				self.ripindex = self.ripindex + 1
 				if self.ripindex > #loc-1 then
 					self.ripindex = 0
@@ -140,18 +146,12 @@ end
 function map:onFootstep(char, num)
     if not char.is_player then return end
     ---@type RippleEffect
-    local effect = RippleEffect(char, {Game.party[1]:getColor()})
     local x, y = char:getRelativePos(18/2, 72/2)
     -- TODO: I couldn't find the right numbers
+	local sizemod = 1
 	if self.frame_timer < 780 then
-		    if Input.down("cancel") then
-        RippleEffect:MakeRipple(x,y, 60, {74/255, 145/255, 246/255}, 192, 1, 15):applySpeedFrom(char, 0.75)
-    else
-        -- RippleEffect:MakeRipple(x,y, 30, nil, 192/2, 1, 8):applySpeedFrom(char, 0.75)
-        -- RippleEffect:MakeRipple(x,y, 30, nil, 192/3, 1, 8):applySpeedFrom(char, 0.75)
-        self.world:addChild(RippleEffect(x, y, 30, 192/2, 8, {74/255, 145/255, 246/255})):applySpeedFrom(char, 0.75)
-        self.world:addChild(RippleEffect(x, y, 30, 192/3, 8, {74/255, 145/255, 246/255})):applySpeedFrom(char, 0.75)
-    end
+		self.ripple_fx:makeRipple(x, y, 60, ColorUtils.hexToRGB("#4A91F6"), 220 * sizemod, 1, 18 * sizemod, 1999000, Game.world.player.moving_x * 1.05, Game.world.player.moving_y * 1.05)
+		self.ripple_fx:makeRipple(x, y, 60, ColorUtils.hexToRGB("#4A91F6"), 140 * sizemod, 1, 15 * sizemod, 1999000, Game.world.player.moving_x * 1.05, Game.world.player.moving_y * 1.05)
 	end
 end
 

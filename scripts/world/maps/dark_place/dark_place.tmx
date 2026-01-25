@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="32" height="24" tilewidth="40" tileheight="40" infinite="0" nextlayerid="9" nextobjectid="26">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="32" height="24" tilewidth="40" tileheight="40" infinite="0" nextlayerid="10" nextobjectid="27">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -36,7 +36,7 @@
 </data>
  </layer>
  <objectgroup id="2" name="objects_bg">
-  <object id="25" name="churchtilebutton" x="120" y="440" width="40" height="40">
+  <object id="25" name="churchtilebutton" x="120" y="460" width="40" height="40">
    <properties>
     <property name="color" type="color" value="#ff000000"/>
     <property name="glow_color" type="color" value="#ffffffff"/>

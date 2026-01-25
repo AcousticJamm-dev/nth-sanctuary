@@ -55,7 +55,7 @@ function RippleEffect:draw()
 		
 		local xx = ripple.x - cx
 		local yy = ripple.y - cy
-		ripple.rad = MathUtils.lerp(ripple.radstart, ripple.radmax, ripple.curve(1 - (ripple.life / ripple.lifemax)) * DTMULT)
+		ripple.rad = MathUtils.lerp(ripple.radstart, ripple.radmax, ripple.curve(1 - (ripple.life / ripple.lifemax)))
 		if ripple.rad > 0 then
 			love.graphics.setShader(self.shader)
 			self.shader:send("rippleCenter", {xx, yy})

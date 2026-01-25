@@ -14,8 +14,8 @@ function ChurchTileButton:init(data)
     self.do_ripple = properties["ripple"] or false
     self.glow_color = TiledUtils.parseColorProperty(properties["glow_color"]) or ColorUtils.hexToRGB("#4EADFF")
 	self.siner = MathUtils.random(360) * math.pi
-	self.glow_timer = 0
     self.npc_activated = properties["npcpress"]
+	self.simplify_glowspr = nil
 end
 
 function ChurchTileButton:update()
@@ -30,8 +30,36 @@ function ChurchTileButton:update()
 		onscreen = false
     end
 	if self.glow and onscreen then
-		self.glow_timer = self.glow_timer + DTMULT
-		if self.glow_timer >= 1 then
+		if Kristal.Config["simplifyVFX"] then
+			if not self.simplify_glowspr then
+				self.simplify_glowspr = Sprite(self.sprite.texture_path, self.x + self.width/2, self.y + self.height/2)
+				self.simplify_glowspr:setOrigin(0.5)
+				self.simplify_glowspr:stop()
+				self.simplify_glowspr:setScale(2)
+				self.simplify_glowspr.color = self.glow_color
+				for _,darkness in ipairs(Game.world.map:getEvents("darkness")) do
+					if darkness then
+						self.simplify_glowspr.visible = false
+						self.simplify_glowspr.layer = darkness.layer + 0.01
+					else
+						self.simplify_glowspr.layer = self.layer + 0.01
+					end
+				end
+				self.simplify_glowspr.darkness_unlit = true
+				self.simplify_glowspr.debug_select = false
+				Game.world:addChild(self.simplify_glowspr)
+			else
+				self.simplify_glowspr:setSprite(self.sprite.texture_path)
+				self.simplify_glowspr.alpha = (0.95 + (math.sin(self.siner / 20) * 0.125))
+				self.simplify_glowspr:setScale(2 + math.abs(math.sin(self.siner / 30) * 0.1))
+			end
+		else
+			if self.simplify_glowspr then
+				self.simplify_glowspr:fadeOutSpeedAndRemove(12/30)
+				self.simplify_glowspr = nil
+			end
+			-- I would love to have this run only at 30 FPS using a timer
+			-- but it causes awful flickering so I can't
 			local glowspr = Sprite(self.sprite.texture_path, self.x + self.width/2, self.y + self.height/2)
 			glowspr:setOrigin(0.5)
 			glowspr:stop()
@@ -42,17 +70,16 @@ function ChurchTileButton:update()
 			Game.world.timer:lerpVar(glowspr, "scale_x", scale, (scale / 2) + (math.sin(self.siner / 6) * 0.1), lifetime, 2, "in")
 			Game.world.timer:lerpVar(glowspr, "scale_y", scale, (scale / 2) + (math.sin(self.siner / 8) * 0.1), lifetime, 2, "in")
 			Game.world.timer:lerpVar(glowspr, "alpha", MathUtils.clamp((0.35 + (math.sin(self.siner / 20) * 0.125)) - pressed, 0.05, 0.5), 0, lifetime)
-			glowspr.color = self.glow_color
 			glowspr.physics.direction = math.rad(self.siner * 12)
+			glowspr.color = self.glow_color
 			for _,darkness in ipairs(Game.world.map:getEvents("darkness")) do
 				if darkness then
 					glowspr.visible = false
-					glowspr.layer = darkness.layer + 1
+					glowspr.layer = darkness.layer + 0.01
 				else
-					glowspr.layer = self.layer + 1
+					glowspr.layer = self.layer + 0.01
 				end
 			end
-			glowspr.layer = self.layer + 0.01
 			glowspr.physics.gravity = -0.7
 			glowspr.physics.speed_y = 1.5
 			Game.world.timer:after(lifetime/30, function()
@@ -61,7 +88,6 @@ function ChurchTileButton:update()
 			glowspr.darkness_unlit = true
 			glowspr.debug_select = false
 			Game.world:addChild(glowspr)
-			self.glow_timer = 0
 		end
 	end
     self.sprite.alpha = self.do_ripple and 0 or 1

@@ -53,7 +53,6 @@ function ChurchTileButton:update()
 				self.simplify_glowspr.alpha = (0.95 + (math.sin(self.siner / 20) * 0.125))
 				self.simplify_glowspr:setScale(2 + math.abs(math.sin(self.siner / 30) * 0.1))
 			end
-			self.glow_timer = 0
 		else
 			if self.simplify_glowspr then
 				self.simplify_glowspr:fadeOutSpeedAndRemove(12/30)

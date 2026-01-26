@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 14,
-  nextobjectid = 30,
+  nextobjectid = 32,
   properties = {
     ["music"] = "waves"
   },
@@ -149,8 +149,8 @@ return {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 432, 432, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 432, 432, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 432, 432, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 432, 432, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 432, 432, 0
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 432, 432, 432,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 432, 432, 432
       }
     },
     {
@@ -259,6 +259,19 @@ return {
           shape = "point",
           x = 40,
           y = 180,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 31,
+          name = "entry2",
+          type = "",
+          shape = "point",
+          x = 600,
+          y = 600,
           width = 0,
           height = 0,
           rotation = 0,
@@ -436,6 +449,22 @@ return {
             ["map"] = "floodedsanctuary/between",
             ["marker"] = "entry"
           }
+        },
+        {
+          id = 30,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 640,
+          y = 560,
+          width = 40,
+          height = 80,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "floodedsanctuary/flooded_1",
+            ["marker"] = "spawn"
+          }
         }
       }
     },
@@ -474,7 +503,7 @@ return {
           x = 600,
           y = 80,
           width = 40,
-          height = 560,
+          height = 480,
           rotation = 0,
           visible = true,
           properties = {}
@@ -577,7 +606,7 @@ return {
           shape = "rectangle",
           x = 520,
           y = 640,
-          width = 80,
+          width = 120,
           height = 40,
           rotation = 0,
           visible = true,

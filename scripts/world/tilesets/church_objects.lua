@@ -23,7 +23,7 @@ return {
   },
   properties = {},
   wangsets = {},
-  tilecount = 78,
+  tilecount = 79,
   tiles = {
     {
       id = 0,
@@ -650,6 +650,12 @@ return {
       image = "../../../assets/sprites/world/objects/Wallsign.png",
       width = 20,
       height = 15
+    },
+    {
+      id = 83,
+      image = "../../../assets/sprites/world/objects/churchb_door.png",
+      width = 40,
+      height = 60
     }
   }
 }

@@ -27,7 +27,6 @@ function map:onEnter()
 		self.tiles3.alpha = 0
 		self.tiles4.alpha = 0
 		self.tiles5.alpha = 0
-		self.tileslava.alpha = 0
 		Game.world.timer:after(10/30, function()
 			self.con = 1
 		end)

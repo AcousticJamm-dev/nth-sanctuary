@@ -14,6 +14,7 @@ function map:init(world, data)
 	end
 	self.lava_alpha = 0.5 + (math.sin((Kristal.getTime() * 30) / 12) * 0.3)
 	self.lava_grad_scale = (math.sin((Kristal.getTime() * 30) / 12) * 0.5)
+	self.hell_border_alpha = nil
 end
 
 function map:onEnter()
@@ -48,6 +49,7 @@ function map:onEnter()
 			Game.world:spawnObject(musiclogo("flooded"), 9999)
 		end)
 		Game:setFlag("shownfloodedmusic", true)
+		Kristal.hideBorder()
 	else
 		self.stupid_hitbox = self:getHitbox("rippleblock") ---@type Hitbox
 		self.stupid_hitbox2 = self:getHitbox("rippleblock2") ---@type Hitbox
@@ -56,11 +58,13 @@ function map:onEnter()
 		self.stupid_hitbox2.collidable = false
 		self.stupid_hitbox3.collidable = false
 	end
+	self.hell_border_alpha = MathUtils.clamp((Game.world.camera.y - SCREEN_HEIGHT/2) / ((self.height * self.tile_height)) * 2, 0, 1)
 end
 
 function map:update(world, data)
 	if Game:getFlag("shownfloodedmusic") then
 		super.update(self)
+		self.hell_border_alpha = MathUtils.clamp((Game.world.camera.y - SCREEN_HEIGHT/2) / ((self.height * self.tile_height)) * 2, 0, 1)
 		self.lava_alpha = (math.sin((Kristal.getTime() * 30) / 12) * 0.2)
 		self.lava_grad_scale = (math.sin((Kristal.getTime() * 30) / 12) * 0.5)
 		if self.con == 1 then
@@ -102,6 +106,7 @@ function map:update(world, data)
 					Game.world.timer:tween(0.85, self.fakefader, {alpha = 1})
 				end
 				if self.frame_timer == 445 then
+					Kristal.showBorder()
 					Game.world.color = COLORS.white
 					self.fakefader:fadeOutAndRemove(0.5)
 					self.tiles.alpha = 1

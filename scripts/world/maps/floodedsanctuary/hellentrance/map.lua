@@ -4,6 +4,7 @@ local map, super = Class(Map, "hellentrance")
 function map:init(world, data)
     super.init(self, world, data)
 	self.riptimer = 119
+	self.hell_border_alpha = nil
 end
 
 function map:onEnter()
@@ -12,6 +13,7 @@ function map:onEnter()
 	self.ripple_fx = RippleEffect()
 	self.ripple_fx.layer = WORLD_LAYERS["bottom"]
 	Game.world:addChild(self.ripple_fx)
+	self.hell_border_alpha = 1
 end
 
 function map:update(world, data)

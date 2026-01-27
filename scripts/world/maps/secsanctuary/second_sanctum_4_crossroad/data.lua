@@ -74,7 +74,6 @@ return {
       offsety = 0,
       parallaxx = 0.6,
       parallaxy = 0.6,
-      tintcolor = { 170, 25, 27 },
       properties = {},
       objects = {
         {
@@ -89,7 +88,9 @@ return {
           rotation = 0,
           gid = 2147484797,
           visible = true,
-          properties = {}
+          properties = {
+            ["color"] = "#ffaa191b"
+          }
         }
       }
     },
@@ -105,7 +106,6 @@ return {
       offsety = 0,
       parallaxx = 0.8,
       parallaxy = 0.8,
-      tintcolor = { 170, 25, 27 },
       properties = {},
       objects = {
         {
@@ -120,7 +120,9 @@ return {
           rotation = 0,
           gid = 2147484797,
           visible = true,
-          properties = {}
+          properties = {
+            ["color"] = "#ffaa191b"
+          }
         },
         {
           id = 103,
@@ -134,7 +136,9 @@ return {
           rotation = 0,
           gid = 1145,
           visible = true,
-          properties = {}
+          properties = {
+            ["color"] = "#ffaa191b"
+          }
         },
         {
           id = 104,
@@ -148,7 +152,9 @@ return {
           rotation = 0,
           gid = 1145,
           visible = true,
-          properties = {}
+          properties = {
+            ["color"] = "#ffaa191b"
+          }
         },
         {
           id = 105,
@@ -162,7 +168,9 @@ return {
           rotation = 0,
           gid = 1145,
           visible = true,
-          properties = {}
+          properties = {
+            ["color"] = "#ffaa191b"
+          }
         },
         {
           id = 106,
@@ -176,7 +184,9 @@ return {
           rotation = 0,
           gid = 1145,
           visible = true,
-          properties = {}
+          properties = {
+            ["color"] = "#ffaa191b"
+          }
         },
         {
           id = 117,
@@ -190,7 +200,9 @@ return {
           rotation = 0,
           gid = 1148,
           visible = true,
-          properties = {}
+          properties = {
+            ["color"] = "#ffaa191b"
+          }
         }
       }
     },
@@ -569,7 +581,7 @@ return {
       id = 19,
       name = "roomglow_dark",
       class = "",
-      visible = false,
+      visible = true,
       opacity = 1,
       offsetx = 0,
       offsety = 0,

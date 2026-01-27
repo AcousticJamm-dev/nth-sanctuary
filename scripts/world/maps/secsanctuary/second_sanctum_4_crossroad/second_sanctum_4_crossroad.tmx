@@ -15,16 +15,44 @@
  <tileset firstgid="1136" source="../../../tilesets/ExtraClimbingTiles.tsx"/>
  <tileset firstgid="1145" source="../../../tilesets/church_objects.tsx"/>
  <tileset firstgid="1229" source="../../../tilesets/bg_dw_dither_overlay_tileset.tsx"/>
- <objectgroup id="18" name="objects_parallax3" tintcolor="#aa191b" parallaxx="0.6" parallaxy="0.6">
-  <object id="134" gid="2147484797" x="1040" y="1200" width="480" height="1200"/>
+ <objectgroup id="18" name="objects_parallax3" parallaxx="0.6" parallaxy="0.6">
+  <object id="134" gid="2147484797" x="1040" y="1200" width="480" height="1200">
+   <properties>
+    <property name="color" type="color" value="#ffaa191b"/>
+   </properties>
+  </object>
  </objectgroup>
- <objectgroup id="17" name="objects_parallax2" tintcolor="#aa191b" parallaxx="0.8" parallaxy="0.8">
-  <object id="116" gid="2147484797" x="534" y="1560" width="640" height="1600"/>
-  <object id="103" gid="1145" x="1360" y="1480" width="400" height="578"/>
-  <object id="104" gid="1145" x="1760" y="1480" width="400" height="578"/>
-  <object id="105" gid="1145" x="2160" y="1480" width="400" height="578"/>
-  <object id="106" gid="1145" x="2560" y="1480" width="400" height="578"/>
-  <object id="117" gid="1148" x="1000" y="1960" width="400" height="1600"/>
+ <objectgroup id="17" name="objects_parallax2" parallaxx="0.8" parallaxy="0.8">
+  <object id="116" gid="2147484797" x="534" y="1560" width="640" height="1600">
+   <properties>
+    <property name="color" type="color" value="#ffaa191b"/>
+   </properties>
+  </object>
+  <object id="103" gid="1145" x="1360" y="1480" width="400" height="578">
+   <properties>
+    <property name="color" type="color" value="#ffaa191b"/>
+   </properties>
+  </object>
+  <object id="104" gid="1145" x="1760" y="1480" width="400" height="578">
+   <properties>
+    <property name="color" type="color" value="#ffaa191b"/>
+   </properties>
+  </object>
+  <object id="105" gid="1145" x="2160" y="1480" width="400" height="578">
+   <properties>
+    <property name="color" type="color" value="#ffaa191b"/>
+   </properties>
+  </object>
+  <object id="106" gid="1145" x="2560" y="1480" width="400" height="578">
+   <properties>
+    <property name="color" type="color" value="#ffaa191b"/>
+   </properties>
+  </object>
+  <object id="117" gid="1148" x="1000" y="1960" width="400" height="1600">
+   <properties>
+    <property name="color" type="color" value="#ffaa191b"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup id="16" name="objects_parallax1" parallaxx="0.8">
   <object id="90" gid="3221226620" x="-40" y="1120" width="400" height="1600"/>
@@ -223,7 +251,7 @@
 0,0,0,0,10,10,10,10,164,165,166,154,164,165,166,154,164,165,166,145,155,156,157,145,155,156,157,145,155,156,157,145,155,156,157,145,155,156,157,145,155,156,157
 </data>
  </layer>
- <layer id="19" name="roomglow_dark" width="43" height="43" visible="0">
+ <layer id="19" name="roomglow_dark" width="43" height="43">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,0,0,0,0,0,0,0,0,0,

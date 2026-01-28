@@ -23,15 +23,16 @@ return {
         end
 		Game.world.music:stop()
         cutscene:fadeOut(0)
-        susie.x = susie.x - 70
-        ralsei.x = ralsei.x + 70
+        susie.x = 550
+        kris.x = 630
+        ralsei.x = 260
 		local kris_y = kris.y
 		local susie_y = susie.y
 		local ralsei_y = ralsei.y
         centerText(
             "Hello.[wait:10]\n\n" ..
             "Just a fair warning before proceeding.[wait:10]\n" ..
-            "The Dark, [wait:5]Second, [wait:5]and Third Sanctuaries are not recreations of\nDELTARUNE Chapter 4's maps. [wait:5]\n\nI do not want to get sued.[wait:10]\n\n" ..
+            "The Dark, [wait:5]Second, [wait:5]and Third Sanctuaries are not recreations of\nDELTARUNE Chapter 4's maps. [wait:10]\n\n" ..
             "#th Sanctuary is meant to be enjoyed at your own pace.[wait:10]\nPlease, [wait:5]enjoy yourself.")
         cutscene:wait(1)
         cutscene:text("* Which route do you desire?")
@@ -43,7 +44,8 @@ return {
         elseif ch == 3 then
             Assets.playSound("ominous")
         end
-        cutscene:wait(2)
+        cutscene:wait(3)
+        Assets.playSound("ch4_first_intro", 1, 1)
         local remove = {}
         local sum = 85
         for i = 1,9 do
@@ -52,11 +54,13 @@ return {
             letter:setParallax(0)
             letter:setOrigin(0, 1)
             letter.layer = 1000
+            letter.alpha = 0
             Game.world:addChild(letter)
+            Game.world.timer:tween(0.5, letter, {alpha = 1})
             letter.x = sum
             letter.y = SCREEN_HEIGHT/2
-            Assets.playSound("noise")
-            cutscene:wait(1/15)
+            --Assets.playSound("noise")
+            cutscene:wait(1/10)
             sum = sum + (letter.width*2) + 12
             table.insert(remove, letter)
         end 
@@ -80,22 +84,29 @@ return {
         grad.x = 85 + 224
         grad.y = SCREEN_HEIGHT/2 - 34
         table.insert(remove, grad)
-        cutscene:wait(1)
+        cutscene:wait(6.6) --evil
         local a = Text("#th Sanctuary")
         a.layer = 1000
         a:setOrigin(0, 0)
         a:setScale(2)
+        local fake_fade = Rectangle(130, 240, 400, 200)
+        fake_fade:setColor(COLORS.black)
+        fake_fade:setOrigin(0, 0)
+        fake_fade.alpha = 1
+        fake_fade.layer = 99999999999
         a.x, a.y = 140, 244
 		a:addFX(ProphecyScrollFXAlt(3), "prop")
         Game.stage:addChild(a)
-        Assets.playSound("bell_bounce_short")
+        Game.stage:addChild(fake_fade)
+        Game.world.timer:tween(2, fake_fade, {alpha = 0}, 'linear', function() fake_fade:remove() end)
+        --Assets.playSound("bell_bounce_short")
         for _, sprite in ipairs(remove) do
 			if not sprite.noprop then
 				sprite:addFX(ProphecyScrollFX(nil, 2), "prop")
 				sprite:addFX(AlphaFX(0.7, 1), "alpha")
 			end
         end
-        cutscene:wait(2)
+        cutscene:wait(4)
         cutscene:detachFollowers()
 		local kris_layer = kris.layer
 		local susie_layer = susie.layer
@@ -131,7 +142,7 @@ return {
         ralsei:setSprite("ball")
 		cutscene:slideTo(kris, kris.x, kris_y, 14/30)
 		cutscene:slideTo(susie, susie.x, susie_y, 14/30)
-		cutscene:slideTo(ralsei, ralsei.x, ralsei_y, 14/30)
+		cutscene:slideTo(ralsei, "ralpoint",0.01)
 		cutscene:wait(10/30)
 		Assets.playSound("dtrans_flip")
         kris:setSprite("landed")
@@ -146,6 +157,7 @@ return {
         snd.complexsnd:add(2, "glassbreak", 0.6, 0.4, 2, -1, 0)
         snd.complexsnd:add(3, "punchmed", 0.7, 0.95, 0, -1, 0)
         snd.complexsnd:play()
+        Assets.stopSound("ch4_first_intro")
 		Assets.playSound("ch4_first_intro_breaking", 0.5, 0.5)
 		Assets.playSound("ch4_first_intro_breaking", 0.5, 0.44)
         for _, sprite in ipairs(remove) do
@@ -177,12 +189,23 @@ return {
             Game.world:addChild(groundshard)
             table.insert(shards_remove, groundshard)
         end
-        cutscene:wait(1)
+        cutscene:wait(3)
         Assets.playSound("him_quick")
         cutscene:fadeIn(1)
         Game.world.timer:tween(1, a, {alpha = 0})
 		Kristal.showBorder(1)
 		cutscene:wait(1)
+        susie:shake(4, 0, 1)
+        Assets.playSound("wing")
+        cutscene:wait(1)
+        susie:shake(2, 0, 1)
+        Assets.playSound("wing")
+        susie:shake(1, 0, 1)
+        Assets.playSound("wing")
+        cutscene:wait(2)
+        cutscene:setSpeaker(susie)
+        cutscene:text("[facec:susie_bangs/down]* Ngh.. [wait:10]What a fall.")
+        cutscene:wait(1)
         kris.sprite:setFrame(2)
         susie.sprite:setFrame(2)
         ralsei.sprite:setFrame(2)
@@ -197,7 +220,6 @@ return {
 		kris:resetSprite()
 		susie:resetSprite()
 		ralsei:resetSprite()
-		cutscene:wait(1/30)
 		kris:removeFX("fakehsv")
 		susie:removeFX("fakehsv")
 		ralsei:removeFX("fakehsv")
@@ -212,42 +234,130 @@ return {
             sprite:remove()
         end
 		snd:remove()
-        cutscene:wait(0.5)
+        cutscene:wait(1)
+        susie:setFacing("up")
+        cutscene:wait(1)
+        susie:setFacing("right")
+        cutscene:wait(1)
+        susie:setFacing("down")
+        cutscene:wait(2)
+        susie:setFacing("right")
+        cutscene:wait(1)
         cutscene:setSpeaker(susie)
-        Assets.playSound("whip_hard")
-        susie:setSprite("exasperated_right")
-        susie:shake(3,nil, nil)
         cutscene:wait(1)
         for _, shard in ipairs(shards_remove) do
             shard:remove()
         end
 		a:remove()
-		Game.world.music:play()
-        cutscene:text("* God [wait:5]DAMN IT Kris, [wait:10]where are we this time?!", "teeth_b")
-        susie:resetSprite()
+        cutscene:text("* ...Where are we, [wait:5] anyways?", "suspicious")
+        		Game.world.music:play()
+        cutscene:wait(1) 
+        susie:setFacing("up")
+        cutscene:wait(1)
+        cutscene:text("* You're all... [wait:10][func:turn]Green.[wait:10] And I'm blue.", "suspicious", {
+            functions = {
+                turn = function (text)
+                    susie:setFacing("right")
+                end
+            }
+        })
+        
         susie:walkTo(susie.x - 40, susie.y, 1)
         cutscene:wait(1)
         susie:setSprite("away_hips")
-        cutscene:wait(0.5)
-        cutscene:setSpeaker(ralsei)
-        cutscene:text("* It...[wait:5] Feels like the church...", "roaring")
+        cutscene:wait(1)
+        susie:setFacing("right")
         susie:resetSprite()
-        cutscene:walkTo(susie, "suspoint",2)
-        cutscene:text("* But at the same time, [wait:5]not really.", "roaring")
+        susie:walkTo(susie.x + 60, susie.y, 1)
+        cutscene:wait(1)
+        cutscene:text("* Did the Knight-", "suspicious", {auto = true})
+        cutscene:setSpeaker(ralsei)
+        cutscene:text("[shake:0.51][speed:0.5]* Kris...? [wait:10]Susie...?")
+        susie:setFacing("left")
+        ralsei:resetSprite()
+        ralsei:setFacing("up")
+        cutscene:attachCamera()
+        Game.world.camera.keep_in_bounds = false
+        Game.world.camera:panTo(220, 360, 2)
+        cutscene:wait(3)
+
+        cutscene:text("[shake:0.51][speed:0.5]* You may want to come here...", "horror")
+        cutscene:text("[shake:0.51][speed:0.5]* (This is bad... [wait:10]This is.. [wait:5]VERY bad...)", "horror")
+        cutscene:attachCamera()
         cutscene:wait(2)
-        susie:setFacing("up")
+        susie:setFacing("right")
         cutscene:setSpeaker(susie)
-        cutscene:text("* Uh... [wait:5]Guys?", "nervous")
-        cutscene:text("* You, [wait:5]uh. [wait:10]Might wanna check this out.", "nervous_side")
-        cutscene:walkTo(ralsei, "ralpoint",3)
+        cutscene:text("* We should go.", "nervous")
+        cutscene:text("* Ralsei sounds, [wait:5]uh.. [wait:5]Spooked.", "nervous_side")
+        cutscene:walkTo(susie, susie.x-80, susie.y, 1)
+        cutscene:wait(cutscene:walkTo(kris, kris.x-40, kris.y, 1))
+        kris:shake(4, 0, 1)
+        cutscene:detachCamera()
+        kris.flip_x = true --?
+        Assets.playSound("wing")
+        susie:setFacing("right")
+        kris:shake(6, 0, 1)
+        susie:setSprite("surprise_step")
+        kris:setSprite("sit")
+        cutscene:text("* Kris..! [wait:10]Almost forgot!", "surprise_frown")
+        cutscene:text("* (Yeesh, [wait:5]Talk about a fall. [wait:10]Even MY legs hurt a little.)", "dejected")
+        susie:resetSprite()
+        cutscene:wait(cutscene:walkTo(susie, kris.x-25, susie.y, 1))
+        susie:setSprite("heal_kneel")
+        cutscene:text("[facec:susie_bangs/down]* Hold still, [wait:5]I got it.")
+        Assets.playSound("wing")
+        susie:setSprite("heal_kneel_arms")
+        cutscene:wait(1/2)
+        kris:flash()
+        susie:flash()
+        Game.world.timer:every(1/30, function()
+            for i = 1, 2 do
+                local x = kris.x + ((love.math.random() * kris.width) - (kris.width / 2)) * 2
+                local y = kris.y - (love.math.random() * kris.height) * 2
+                local sparkle = HealSparkle(x, y)
+                sparkle:setLayer(WORLD_LAYERS["below_ui"])
+                sparkle:setColor(COLORS.lime)
+                Game.world:addChild(sparkle)
+            end
+        end, 4)
+        Game.world.timer:every(1/30, function()
+            for Kristal = 1, 2 do --                    <-- Evil moniey deletr
+                local x = susie.x + ((love.math.random() * susie.width) - (susie.width / 2)) * 2
+                local y = susie.y - (love.math.random() * susie.height) * 2
+                local sparkle = HealSparkle(x, y)
+                sparkle:setLayer(WORLD_LAYERS["below_ui"])
+                sparkle:setColor(COLORS.lime)
+                Game.world:addChild(sparkle)
+            end
+        end, 4)
+        local dmg = DamageNumber("msg", "max",susie.x, susie.y,{COLORS.lime})
+        Game.world:addChild(dmg)
+        Assets.playSound("power")
+        cutscene:wait(1)
+        susie:setSprite("heal_kneel")
+        cutscene:wait(2)
+        cutscene:text("* You, [wait:5]uh... [wait:10]Feel better?", "nervous")
+        cutscene:text("* Good. [wait:10]Let's see what Ralsei's so spooked about.", "nervous_side")
+        kris.flip_x = false
+        cutscene:attachCamera()
+        susie:resetSprite()
+        kris:resetSprite()
+
+        cutscene:walkTo(susie, "suspoint",3)
         cutscene:wait(cutscene:walkTo(kris, "kpoint",3))
         kris:setFacing("up")
-        ralsei:setFacing("up")
+        susie:setFacing("up")
         cutscene:wait(1)
         cutscene:setSpeaker(ralsei)
-        cutscene:text("* Wh... [wait:5]What is this...?", "concern")
+        cutscene:text("[shake:0.51][speed:0.62]* T-This.. [wait:5]Shouldn't be happening...", "concern_smile")
         cutscene:text("[shake:0.51][speed:0.62]* This isn't... [wait:10]Part of the prophecy...", "concern_smile")
-        cutscene:wait(1)
+        cutscene:text("[shake:0.51][speed:0.62]* Kris, [wait:5]Susie... [wait:10]We need to seal this fountain right away.", "concern_smile")
+        cutscene:text("[shake:0.51][speed:0.62]* It's been the same as I remember it until now-", "concern_smile", {auto = true})
+        cutscene:text("[shake:0.51][speed:0.7]* First was King-", "concern_smile", {auto = true})
+        cutscene:text("[shake:0.51][speed:0.8]* And then Queen-", "concern_smile", {auto = true})
+        cutscene:text("[shake:0.51][speed:0.9]* And then Tenna, [wait:5]the Knight-", "concern_smile", {auto = true})
+        cutscene:text("[shake:0.51]* And just before this, [wait:5]the Titan-", "concern_smile", {auto = true})
+        cutscene:text("[shake:0.51][speed:1.2]* And right now it should be-", "concern_smile", {auto = true})
         cutscene:setSpeaker(susie)
         cutscene:text("* It's not in the prophecy... [wait:10]and says the Knight didn't do it?", "suspicious")
         cutscene:text("* Heh.[wait:10]", "closed_grin", {auto = true})

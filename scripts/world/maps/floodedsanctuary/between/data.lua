@@ -61,6 +61,11 @@ return {
       firstgid = 1221,
       filename = "../../../tilesets/flooded_sanctuary_extra.tsx",
       exportfilename = "../../../tilesets/flooded_sanctuary_extra.lua"
+    },
+    {
+      name = "bg_dw_library_tileset_new",
+      firstgid = 1419,
+      filename = "../../../tilesets/bg_dw_library_tileset_new.tsx"
     }
   },
   layers = {

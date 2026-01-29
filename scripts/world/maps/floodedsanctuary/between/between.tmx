@@ -16,6 +16,7 @@
  <tileset firstgid="1008" source="../../../tilesets/bg_dw_church_2_tileset.tsx"/>
  <tileset firstgid="1206" source="../../../tilesets/WatersourceAnimated.tsx"/>
  <tileset firstgid="1221" source="../../../tilesets/flooded_sanctuary_extra.tsx"/>
+ <tileset firstgid="1419" source="../../../tilesets/bg_dw_library_tileset_new.tsx"/>
  <layer id="17" name="waterother" width="16" height="24" tintcolor="#535353">
   <data encoding="csv">
 22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,

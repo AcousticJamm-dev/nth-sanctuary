@@ -12,6 +12,7 @@ return {
   nextlayerid = 14,
   nextobjectid = 32,
   properties = {
+    ["border"] = "church_flooded_dynamic",
     ["music"] = "waves"
   },
   tilesets = {

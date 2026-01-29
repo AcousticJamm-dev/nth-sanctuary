@@ -4,6 +4,7 @@
   <export target="data.lua" format="lua"/>
  </editorsettings>
  <properties>
+  <property name="border" value="church_flooded_dynamic"/>
   <property name="music" value="waves"/>
  </properties>
  <tileset firstgid="1" source="../../../tilesets/bg_dw_church_watertileset.tsx"/>

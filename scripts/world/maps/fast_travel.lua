@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.10.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -28,12 +28,12 @@ return {
     },
     {
       name = "light_areas",
-      firstgid = 294,
+      firstgid = 345,
       filename = "../tilesets/light_areas.tsx"
     },
     {
       name = "tiles_moss",
-      firstgid = 304,
+      firstgid = 355,
       filename = "../tilesets/tiles_moss.tsx"
     }
   },
@@ -234,7 +234,7 @@ return {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3221225776, 1073742128, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3221225827, 1073742179, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -304,7 +304,7 @@ return {
           x = 0,
           y = 0,
           width = 520,
-          height = 1120,
+          height = 1280,
           rotation = 0,
           visible = true,
           properties = {}
@@ -317,7 +317,7 @@ return {
           x = 680,
           y = 0,
           width = 400,
-          height = 1120,
+          height = 1280,
           rotation = 0,
           visible = true,
           properties = {}
@@ -362,19 +362,6 @@ return {
           properties = {}
         },
         {
-          id = 84,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 680,
-          y = 1240,
-          width = 400,
-          height = 40,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
           id = 85,
           name = "",
           type = "",
@@ -383,19 +370,6 @@ return {
           y = 1280,
           width = 40,
           height = 80,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 87,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 0,
-          y = 1240,
-          width = 520,
-          height = 40,
           rotation = 0,
           visible = true,
           properties = {}
@@ -876,7 +850,7 @@ return {
           width = 160,
           height = 1980,
           rotation = 0,
-          gid = 296,
+          gid = 347,
           visible = true,
           properties = {
             ["light"] = true,
@@ -895,7 +869,7 @@ return {
           width = 160,
           height = 1980,
           rotation = 0,
-          gid = 296,
+          gid = 347,
           visible = true,
           properties = {
             ["light"] = true,
@@ -914,7 +888,7 @@ return {
           width = 160,
           height = 1980,
           rotation = 0,
-          gid = 2147483944,
+          gid = 2147483995,
           visible = true,
           properties = {
             ["light"] = true,
@@ -949,7 +923,7 @@ return {
           width = 160,
           height = 1980,
           rotation = 0,
-          gid = 296,
+          gid = 347,
           visible = true,
           properties = {
             ["light"] = true,
@@ -968,7 +942,7 @@ return {
           width = 160,
           height = 1980,
           rotation = 0,
-          gid = 2147483944,
+          gid = 2147483995,
           visible = true,
           properties = {
             ["light"] = true,

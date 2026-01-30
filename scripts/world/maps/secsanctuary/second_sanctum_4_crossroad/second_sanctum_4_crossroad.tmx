@@ -220,7 +220,7 @@
   <object id="7" name="entry" x="40" y="920">
    <point/>
   </object>
-  <object id="8" name="spawn" x="860" y="500">
+  <object id="8" name="spawn" x="860" y="740">
    <point/>
   </object>
   <object id="136" name="entry2" x="1680" y="1240">
@@ -229,7 +229,7 @@
   <object id="141" name="entry4" x="1680" y="900">
    <point/>
   </object>
-  <object id="142" name="entry3" x="240" y="1680">
+  <object id="142" name="entry3" x="240" y="1700">
    <point/>
   </object>
   <object id="148" name="targ" x="860" y="320">

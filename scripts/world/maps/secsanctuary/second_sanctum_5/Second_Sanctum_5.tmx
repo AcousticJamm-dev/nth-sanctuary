@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="60" tilewidth="40" tileheight="40" infinite="0" nextlayerid="7" nextobjectid="22">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="60" tilewidth="40" tileheight="40" infinite="0" nextlayerid="7" nextobjectid="32">
  <editorsettings>
-  <export target="second_sanctum_5.lua" format="lua"/>
+  <export target="data.lua" format="lua"/>
  </editorsettings>
  <tileset firstgid="1" source="../../../tilesets/church_objects.tsx"/>
  <tileset firstgid="85" source="../../../tilesets/bg_dw_church_tileset_new.tsx"/>
@@ -64,9 +64,9 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,0,0,0,0,
-676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,0,0,0,0,
-973,973,973,973,973,973,973,973,973,973,973,973,973,973,973,973,973,973,973,973,973,973,973,973,973,973,0,0,0,0,
+676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,0,
+676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,676,0,
+973,973,973,973,973,973,973,973,973,973,973,973,973,973,973,973,973,973,973,973,973,973,973,973,973,973,973,973,973,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
@@ -74,20 +74,24 @@
  <objectgroup id="4" name="collision">
   <object id="4" x="960" y="240" width="200" height="40"/>
   <object id="8" x="1160" y="280" width="40" height="80"/>
-  <object id="9" x="40" y="360" width="1120" height="40"/>
+  <object id="9" x="0" y="360" width="516" height="1840"/>
+  <object id="24" x="644" y="360" width="516" height="1840"/>
   <object id="10" x="40" y="240" width="840" height="40"/>
   <object id="12" x="0" y="280" width="40" height="80"/>
-  <object id="19" x="1040" y="2200" width="40" height="80"/>
-  <object id="20" x="0" y="2280" width="1040" height="40"/>
-  <object id="21" x="0" y="2160" width="1040" height="40"/>
+  <object id="19" x="1160" y="2200" width="40" height="80"/>
+  <object id="20" x="0" y="2280" width="1160" height="40"/>
  </objectgroup>
  <objectgroup id="6" name="objects_door">
   <object id="3" gid="84" x="880" y="280" width="80.4444" height="125.333"/>
-  <object id="17" name="entry" x="920" y="300">
+ </objectgroup>
+ <objectgroup id="5" name="markers">
+  <object id="22" name="entry" x="920" y="300">
+   <point/>
+  </object>
+  <object id="23" name="spawn" x="920" y="320">
    <point/>
   </object>
  </objectgroup>
- <objectgroup id="5" name="markers"/>
  <objectgroup id="3" name="objects_party">
   <object id="18" name="transition" x="880" y="220" width="80" height="40">
    <properties>
@@ -95,6 +99,7 @@
     <property name="marker" value="entry3"/>
    </properties>
   </object>
+  <object id="29" name="slidearea" x="520" y="360" width="120" height="1838"/>
  </objectgroup>
  <objectgroup id="2" name="objects_top">
   <object id="1" name="churchfog" x="-66.061" y="23.636">

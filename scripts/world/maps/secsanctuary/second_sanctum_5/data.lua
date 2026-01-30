@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 7,
-  nextobjectid = 22,
+  nextobjectid = 32,
   properties = {},
   tilesets = {
     {
@@ -110,9 +110,9 @@ return {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 0, 0, 0, 0,
-        676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 0, 0, 0, 0,
-        973, 973, 973, 973, 973, 973, 973, 973, 973, 973, 973, 973, 973, 973, 973, 973, 973, 973, 973, 973, 973, 973, 973, 973, 973, 973, 0, 0, 0, 0,
+        676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 0,
+        676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 676, 0,
+        973, 973, 973, 973, 973, 973, 973, 973, 973, 973, 973, 973, 973, 973, 973, 973, 973, 973, 973, 973, 973, 973, 973, 973, 973, 973, 973, 973, 973, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
       }
@@ -162,10 +162,23 @@ return {
           name = "",
           type = "",
           shape = "rectangle",
-          x = 40,
+          x = 0,
           y = 360,
-          width = 1120,
-          height = 40,
+          width = 516,
+          height = 1840,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 24,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 644,
+          y = 360,
+          width = 516,
+          height = 1840,
           rotation = 0,
           visible = true,
           properties = {}
@@ -201,7 +214,7 @@ return {
           name = "",
           type = "",
           shape = "rectangle",
-          x = 1040,
+          x = 1160,
           y = 2200,
           width = 40,
           height = 80,
@@ -216,20 +229,7 @@ return {
           shape = "rectangle",
           x = 0,
           y = 2280,
-          width = 1040,
-          height = 40,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 21,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 0,
-          y = 2160,
-          width = 1040,
+          width = 1160,
           height = 40,
           rotation = 0,
           visible = true,
@@ -264,19 +264,6 @@ return {
           gid = 84,
           visible = true,
           properties = {}
-        },
-        {
-          id = 17,
-          name = "entry",
-          type = "",
-          shape = "point",
-          x = 920,
-          y = 300,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {}
         }
       }
     },
@@ -293,7 +280,34 @@ return {
       parallaxx = 1,
       parallaxy = 1,
       properties = {},
-      objects = {}
+      objects = {
+        {
+          id = 22,
+          name = "entry",
+          type = "",
+          shape = "point",
+          x = 920,
+          y = 300,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 23,
+          name = "spawn",
+          type = "",
+          shape = "point",
+          x = 920,
+          y = 320,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
     },
     {
       type = "objectgroup",
@@ -324,6 +338,19 @@ return {
             ["map"] = "secsanctuary/second_sanctum_4_crossroad",
             ["marker"] = "entry3"
           }
+        },
+        {
+          id = 29,
+          name = "slidearea",
+          type = "",
+          shape = "rectangle",
+          x = 520,
+          y = 360,
+          width = 120,
+          height = 1838,
+          rotation = 0,
+          visible = true,
+          properties = {}
         }
       }
     },

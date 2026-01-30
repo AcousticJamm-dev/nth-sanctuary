@@ -76,15 +76,18 @@ return {
         table.insert(remove, heart)
 		local grad = Sprite("logo_gradient")
         grad:setScale(2)
-		grad:setParallax(0)
-		grad:setOrigin(0.5, 0.5)
-		grad.layer = 1000 + 1
-		grad.noprop = true
+        grad:setParallax(0)
+        grad:setOrigin(0.5, 0.5)
+        grad.layer = 1000 + 1
+        grad.noprop = true
+        grad.alpha = 0
         Game.world:addChild(grad)
         grad.x = 85 + 224
         grad.y = SCREEN_HEIGHT/2 - 34
         table.insert(remove, grad)
-        cutscene:wait(6.6) --evil
+        cutscene:wait(4.5) --(no longer) evil
+        Game.world.timer:tween(1, grad, {alpha = 1}, "linear")
+        cutscene:wait(1.2)
         local a = Text("#th Sanctuary")
         a.layer = 1000
         a:setOrigin(0, 0)
@@ -99,6 +102,7 @@ return {
         Game.stage:addChild(a)
         Game.stage:addChild(fake_fade)
         Game.world.timer:tween(2, fake_fade, {alpha = 0}, 'linear', function() fake_fade:remove() end)
+        
         --Assets.playSound("bell_bounce_short")
         for _, sprite in ipairs(remove) do
 			if not sprite.noprop then
@@ -106,7 +110,7 @@ return {
 				sprite:addFX(AlphaFX(0.7, 1), "alpha")
 			end
         end
-        cutscene:wait(4)
+        cutscene:wait(9.3)
         cutscene:detachFollowers()
 		local kris_layer = kris.layer
 		local susie_layer = susie.layer
@@ -204,7 +208,7 @@ return {
         Assets.playSound("wing")
         cutscene:wait(2)
         cutscene:setSpeaker(susie)
-        cutscene:text("[facec:susie_bangs/down]* Ngh.. [wait:10]What a fall.")
+        cutscene:text("[facec:susie_bangs/down]* Ngh...[wait:10] what the hell...")
         cutscene:wait(1)
         kris.sprite:setFrame(2)
         susie.sprite:setFrame(2)
@@ -234,13 +238,13 @@ return {
             sprite:remove()
         end
 		snd:remove()
-        cutscene:wait(1)
+        cutscene:wait(0.7)
         susie:setFacing("up")
-        cutscene:wait(1)
+        cutscene:wait(0.7)
         susie:setFacing("right")
-        cutscene:wait(1)
+        cutscene:wait(0.7)
         susie:setFacing("down")
-        cutscene:wait(2)
+        cutscene:wait(1.2)
         susie:setFacing("right")
         cutscene:wait(1)
         cutscene:setSpeaker(susie)
@@ -249,19 +253,27 @@ return {
             shard:remove()
         end
 		a:remove()
-        cutscene:text("* ...Where are we, [wait:5] anyways?", "suspicious")
+        cutscene:text("* ... Hey,[wait:5] where are we, [wait:5] anyways?[wait:5] It looks like the church again,[wait:5] but...", "annoyed_down")
         		Game.world.music:play()
         cutscene:wait(1) 
         susie:setFacing("up")
         cutscene:wait(1)
-        cutscene:text("* You're all... [wait:10][func:turn]Green.[wait:10] And I'm blue.", "suspicious", {
+        cutscene:text("* Kris,[wait:5] you're...[wait:10][func:turn] green?[wait:10] And I'm...", "suspicious", {
             functions = {
                 turn = function (text)
                     susie:setFacing("right")
                 end
             }
         })
-        
+        local choice = cutscene:choicer({"Blue", "Pink"})
+        if choice == 1 then
+            cutscene:text("And I'm blue...[wait:5] Got it.", "nervous_side")
+            Game:setFlag("susiecolor", "blue")
+        else
+            cutscene:text("And I'm pink...[wait:5] Got it.", "nervous_side")
+            Game:setFlag("susiecolor", "pink")
+        end
+        --uhh i'll commit up to this point dont touch this please :3
         susie:walkTo(susie.x - 40, susie.y, 1)
         cutscene:wait(1)
         susie:setSprite("away_hips")

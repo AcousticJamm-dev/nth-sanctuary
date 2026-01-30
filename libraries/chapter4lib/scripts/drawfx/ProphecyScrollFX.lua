@@ -11,6 +11,8 @@ function ProphecyScrollFX:init(texture, priority)
     self.base_texture = 88;
     self.scroll_texture = 991;
     self.fade_time_seconds = 4;
+    self.fade = 0
+    self.fading_in = true
     self.fade_from = 0;
     self.fade_to = 1;
     self.scroll_speed = 1;
@@ -22,6 +24,9 @@ end
 
 function ProphecyScrollFX:update()
     self.tick = self.tick + ((1/15) * self.scroll_speed * DTMULT)
+    if self.fading_in then
+        self.fade = math.min(self.fade + (DTMULT / 60) / 1, 1)
+    end
 end
 
 local function draw_sprite_tiled_ext(tex, _, x, y, sx, sy, color, alpha)
@@ -77,11 +82,11 @@ function ProphecyScrollFX:drawPart(texture, alpha)
     love.graphics.clear(COLORS.white, 0);
     local pnl_tex = Assets.getTexture("backgrounds/perlin_noise_looping")
     local pnl_canvas = Draw.pushCanvas(pnl_tex:getDimensions())
-    draw_sprite_tiled_ext(pnl_tex, 0, 0, 0, 1, 1, returnAlphaColor(self.prophecy_color, alpha))
+    draw_sprite_tiled_ext(pnl_tex, 0, 0, 0, 1, 1, returnAlphaColor(self.prophecy_color, alpha * self.fade))
     Draw.popCanvas(true)
     love.graphics.setColorMask(true, true, true, false);
     local x, y = -((_cx * 2) + (self.tick * 15)) * 0.5, -((_cy * 2) + (self.tick * 15)) * 0.5
-    draw_sprite_tiled_ext(Assets.getTexture("backgrounds/IMAGE_DEPTH_EXTEND_MONO_SEAMLESS_BRIGHTER"), 0, x, y, 2, 2, returnAlphaColor(self.prophecy_color, 1));
+    draw_sprite_tiled_ext(Assets.getTexture("backgrounds/IMAGE_DEPTH_EXTEND_MONO_SEAMLESS_BRIGHTER"), 0, x, y, 2, 2, returnAlphaColor(self.prophecy_color, self.fade));
     local orig_bm, orig_am = love.graphics.getBlendMode()
     love.graphics.setBlendMode("add", "premultiplied");
     draw_sprite_tiled_ext(pnl_canvas, 0, x, y, 2, 2, COLORS.white);

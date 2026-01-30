@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="30" height="24" tilewidth="40" tileheight="40" infinite="0" nextlayerid="15" nextobjectid="48">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="30" height="24" tilewidth="40" tileheight="40" infinite="0" nextlayerid="16" nextobjectid="49">
  <editorsettings>
   <export target="base_sanctum_center.lua" format="lua"/>
  </editorsettings>
@@ -15,6 +15,7 @@
  <tileset firstgid="931" source="../tilesets/light_areas.tsx"/>
  <tileset firstgid="941" source="../tilesets/bg_dw_library_tileset_new.tsx"/>
  <tileset firstgid="1771" source="../tilesets/bg_dw_dither_overlay_tileset.tsx"/>
+ <tileset firstgid="1817" source="../tilesets/church_objects.tsx"/>
  <objectgroup id="12" name="objects_bg">
   <object id="39" name="basesanctum_bg" x="0" y="0">
    <point/>
@@ -188,6 +189,9 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
+ <objectgroup id="15" name="objects_shards">
+  <object id="48" gid="1901" x="470" y="510" width="222" height="140"/>
+ </objectgroup>
  <objectgroup color="#0000ff" id="7" name="collision">
   <object id="6" x="80" y="240" width="240" height="120"/>
   <object id="8" x="320" y="0" width="240" height="280"/>
@@ -214,13 +218,13 @@
   <object id="25" name="entry_s" x="600" y="920">
    <point/>
   </object>
-  <object id="26" name="suspoint" x="140" y="400">
+  <object id="26" name="suspoint" x="150" y="400">
    <point/>
   </object>
   <object id="27" name="kpoint" x="200" y="400">
    <point/>
   </object>
-  <object id="28" name="ralpoint" x="260" y="400">
+  <object id="28" name="ralpoint" x="250" y="400">
    <point/>
   </object>
   <object id="29" name="suspoint2" x="360" y="400">

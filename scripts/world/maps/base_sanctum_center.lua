@@ -9,8 +9,8 @@ return {
   height = 24,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 15,
-  nextobjectid = 48,
+  nextlayerid = 16,
+  nextobjectid = 49,
   properties = {
     ["border"] = "base_sanctum",
     ["music"] = "homebase",
@@ -37,7 +37,8 @@ return {
     {
       name = "bg_dw_church_tileset_new",
       firstgid = 349,
-      filename = "../tilesets/bg_dw_church_tileset_new.tsx"
+      filename = "../tilesets/bg_dw_church_tileset_new.tsx",
+      exportfilename = "../tilesets/bg_dw_church_tileset_new.lua"
     },
     {
       name = "light_areas",
@@ -47,13 +48,18 @@ return {
     {
       name = "bg_dw_library_tileset_new",
       firstgid = 941,
-      filename = "../tilesets/bg_dw_library_tileset_new.tsx",
-      exportfilename = "../tilesets/bg_dw_library_tileset_new.lua"
+      filename = "../tilesets/bg_dw_library_tileset_new.tsx"
     },
     {
       name = "bg_dw_dither_overlay_tileset",
       firstgid = 1771,
       filename = "../tilesets/bg_dw_dither_overlay_tileset.tsx"
+    },
+    {
+      name = "church_objects",
+      firstgid = 1817,
+      filename = "../tilesets/church_objects.tsx",
+      exportfilename = "../tilesets/church_objects.lua"
     }
   },
   layers = {
@@ -353,6 +359,36 @@ return {
     {
       type = "objectgroup",
       draworder = "topdown",
+      id = 15,
+      name = "objects_shards",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 48,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 470,
+          y = 510,
+          width = 222,
+          height = 140,
+          rotation = 0,
+          gid = 1901,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
       id = 7,
       name = "collision",
       class = "",
@@ -595,7 +631,7 @@ return {
           name = "suspoint",
           type = "",
           shape = "point",
-          x = 140,
+          x = 150,
           y = 400,
           width = 0,
           height = 0,
@@ -621,7 +657,7 @@ return {
           name = "ralpoint",
           type = "",
           shape = "point",
-          x = 260,
+          x = 250,
           y = 400,
           width = 0,
           height = 0,

@@ -26,6 +26,10 @@ return {
         susie.x = 550
         kris.x = 630
         ralsei.x = 260
+        kris.y = 400
+        susie.y = 400
+		local kris_x = kris.x
+		local susie_x = susie.x
 		local kris_y = kris.y
 		local susie_y = susie.y
 		local ralsei_y = ralsei.y
@@ -45,7 +49,7 @@ return {
             Assets.playSound("ominous")
         end
         cutscene:wait(3)
-        Assets.playSound("ch4_first_intro", 1, 1)
+        Assets.playSound("ch4_first_intro", MUSIC_VOLUME, 1)
         local remove = {}
         local sum = 85
         for i = 1,9 do
@@ -68,12 +72,11 @@ return {
         heart:setScale(2)
 		heart:setParallax(0)
 		heart:setOrigin(0.5, 0.5)
-		heart.layer = 1000 + 1
+		heart.layer = 1000
 		heart.noprop = true
         Game.world:addChild(heart)
         heart.x = 85 + 224
         heart.y = SCREEN_HEIGHT/2 - 34
-        table.insert(remove, heart)
 		local grad = Sprite("logo_gradient")
         grad:setScale(2)
         grad:setParallax(0)
@@ -102,7 +105,7 @@ return {
         Game.stage:addChild(a)
         Game.stage:addChild(fake_fade)
         Game.world.timer:tween(2, fake_fade, {alpha = 0}, 'linear', function() fake_fade:remove() end)
-        
+                
         --Assets.playSound("bell_bounce_short")
         for _, sprite in ipairs(remove) do
 			if not sprite.noprop then
@@ -121,12 +124,15 @@ return {
         for _, trans in ipairs(Game.world.map:getEvents("ft_transition")) do
             trans.collider.collidable = false
         end
+		cutscene:detachCamera()
 		kris.layer = a.layer + 1
 		susie.layer = a.layer + 1
-		ralsei.layer = a.layer + 1
-		kris.y = Game.world.camera.y - SCREEN_HEIGHT - 40
-		susie.y = Game.world.camera.y - SCREEN_HEIGHT - 40
-		ralsei.y = Game.world.camera.y - SCREEN_HEIGHT - 40	
+		kris:setParallax(0)
+		susie:setParallax(0)
+		kris.x = SCREEN_WIDTH/2 + 40
+		susie.x = SCREEN_WIDTH/2 - 40
+		kris.y = -40
+		susie.y = -40
 		local fakehsv = HSVShiftFX()
 		fakehsv.hue_start = 60;
 		fakehsv.sat_start = 0.4;
@@ -138,51 +144,90 @@ return {
 		fakehsv.sat = fakehsv.sat_start;
 		fakehsv.val = fakehsv.val_start;
 		fakehsv.wave_time = 1;
+		fakehsv.amount = 0;
+		local highlight = ChurchHighlightFX(1, ColorUtils.hexToRGB("#42D0FFFF"), {thickness = -1})
 		kris:addFX(fakehsv, "fakehsv")
 		susie:addFX(fakehsv, "fakehsv")
 		ralsei:addFX(fakehsv, "fakehsv")
-        kris:setSprite("ball")
-        susie:setSprite("ball")
-        ralsei:setSprite("ball")
-		cutscene:slideTo(kris, kris.x, kris_y, 14/30)
-		cutscene:slideTo(susie, susie.x, susie_y, 14/30)
+		kris:addFX(highlight, "highlight")
+		susie:addFX(highlight, "highlight")
+		ralsei:addFX(highlight, "highlight")
+        kris:setAnimation("jump_fall")
+        susie:setAnimation("fall_brace")
+		local windows = IntroFallingWindows()
+		windows.layer = 998
+		windows:addFX(fakehsv, "fakehsv")
+		Game.world:addChild(windows)
+		Game.world.timer:lerpVar(kris, "y", kris.y, SCREEN_HEIGHT/2 - 40, 10)
+		Game.world.timer:lerpVar(susie, "y", susie.y, SCREEN_HEIGHT/2 - 40, 10)
 		cutscene:slideTo(ralsei, "ralpoint",0.01)
 		cutscene:wait(10/30)
-		Assets.playSound("dtrans_flip")
-        kris:setSprite("landed")
-        susie:setSprite("landed")
-        ralsei:setSprite("landed")
-		kris:shake(2)
-		susie:shake(2)
-		ralsei:shake(2)
-		local snd = ComplexSoundUpdater(0,0,-1)
-        Game.world:addChild(snd)
-        snd.complexsnd:add(1, "break1", 1, 0.95, 0, -1, 0)
-        snd.complexsnd:add(2, "glassbreak", 0.6, 0.4, 2, -1, 0)
-        snd.complexsnd:add(3, "punchmed", 0.7, 0.95, 0, -1, 0)
-        snd.complexsnd:play()
-        Assets.stopSound("ch4_first_intro")
-		Assets.playSound("ch4_first_intro_breaking", 0.5, 0.5)
-		Assets.playSound("ch4_first_intro_breaking", 0.5, 0.44)
+		Assets.playSound("break1", 0.95, 1)
+		kris.sprite:stop()
+		susie.sprite:stop()
         for _, sprite in ipairs(remove) do
             sprite:remove()
         end
+        Assets.stopSound("ch4_first_intro")
+		heart.layer = 1003
         for i = 1,94 do
             local letter = Sprite("logo_shatter/logo_piece_"..i)
             letter:setScale(2)
             letter:setParallax(0)
             letter:setOrigin(0.5, 0.5)
-			letter.physics.direction = math.rad(MathUtils.random(360))
-			letter.physics.gravity = 0.4 + MathUtils.random(0.12)
-			letter.physics.friction = 0
-			letter.physics.speed = 4
-            letter.layer = 1000
-            Game.world:addChild(letter)
+			letter.layer = a.layer + 2
+			Game.world.timer:after(10/30, function()
+				letter.physics.direction = math.rad(90 + MathUtils.random(-3, 3))
+				letter.physics.friction = 0
+				letter.physics.speed = MathUtils.random(-2, 2)
+				letter.physics.speed_x, letter.physics.speed_y = letter:getSpeedXY()
+				if i == 94 - 2 or i == 94 - 4 then
+					letter.physics.speed_x = 0.5
+				end
+				if i == 94 - 1 or i == 94 - 3 then
+					letter.physics.speed_x = -0.5
+				end
+				letter.physics.speed, letter.physics.direction = letter:getSpeedDir()
+				letter.physics.gravity_direction = math.rad(270)
+				letter.physics.gravity = 0.25 + MathUtils.random(0.1)
+				letter.layer = 1000
+				if i > (94 - 5) or i % 2 == 0 then
+					letter.layer = letter.layer - 1
+				end
+			end)
+			Game.world:addChild(letter)
             letter.x = 85 + 224
             letter.y = SCREEN_HEIGHT/2 - 34
             table.insert(remove, letter)
-        end
-		a.physics.gravity = 0.5
+        end	
+		Game.world.timer:tween(10/30, kris, {y = kris.y + 5}, "out-cubic")
+		Game.world.timer:tween(10/30, susie, {y = susie.y + 5}, "out-cubic")
+		cutscene:wait(10/30)
+		local heartburst = HeartBurst(heart.x - 224 + 106*2, heart.y - 34 + 20*2, COLORS.red)
+		heartburst:setParallax(0)
+		heartburst.layer = 1003
+		Game.world:addChild(heartburst)
+		heart:remove()
+		cutscene.windvol = 0
+		cutscene.windpitch = 0
+		local windsfx = Assets.playSound("strongwind_loop", 0, 1)
+		windsfx:setLooping(true)
+		windsfx:play()
+		cutscene:during(function()
+			windsfx:setVolume(cutscene.windvol)
+			windsfx:setPitch(cutscene.windpitch)
+		end)
+        kris:setAnimation("jump_fall")
+        susie:setAnimation("jump_fall")
+		Game.world.timer:tween(15/30, cutscene, {windvol = 0.6, windpitch = 1}, "linear")
+		Game.world.timer:after(2/30, function() Assets.playSound("glassbreak", 0.4, 0.6) end)
+		Assets.playSound("punchmed", 0.95, 0.7)
+		Assets.playSound("ch4_first_intro_breaking", 0.5, 0.5)
+		Assets.playSound("ch4_first_intro_breaking", 0.5, 0.44)
+		a.physics.direction = math.rad(90 + MathUtils.random(-3, 3))
+		a.physics.speed = MathUtils.random(-2, 2)
+		a.physics.gravity = 0.25 + MathUtils.random(0.1)
+		a.physics.gravity_direction = math.rad(270)
 		a.graphics.spin = math.rad(Utils.randomSign()/5)
         local shards_remove = {}
         for i = 1,15 do
@@ -193,7 +238,151 @@ return {
             Game.world:addChild(groundshard)
             table.insert(shards_remove, groundshard)
         end
-        cutscene:wait(3)
+		Game.world.timer:tween(90/30, kris, {y = kris.y + 60}, "out-cubic")
+		Game.world.timer:tween(90/30, susie, {y = susie.y + 60}, "out-cubic")
+		Game.world.timer:tween(3/30, highlight, {thickness = 1}, "linear")
+        cutscene:wait(20/30)
+		windows.window_timer = 1
+        cutscene:wait(70/30)
+		Game.world.timer:tween(15/30, windows, {darken = 1}, "in-cubic")
+		local prophecies = IntroGigaProphecies()
+		prophecies.layer = 997
+		prophecies:addFX(fakehsv, "fakehsv")
+		Game.world:addChild(prophecies)
+        cutscene:wait(2)
+		Game.world.timer:tween(3/30, highlight, {thickness = -1}, "linear")
+		local panel_container = Object(SCREEN_WIDTH/2 + 150/2, 500)
+		panel_container:setParallax(0)
+		panel_container.layer = 1002
+		panel_container:addFX(fakehsv, "fakehsv")
+		Game.world:addChild(panel_container)
+		local panel = ProphecyPanel("initial2", "THE LEGEND OF THIS WORLD.\n<DELTARUNE.>", 150, 90)
+		panel:setOrigin(0.5, 0.5)
+		panel.sprite_offset_x = 49
+		panel.sprite_offset_y = 61
+		panel.text_offset_x = -160
+		panel.text_offset_y = -16
+		panel.no_back = true
+		panel.fade_edges = true
+		panel.ignore_onscreen_rules = true
+		panel_container:addChild(panel)
+		Game.world.timer:during(10/30, function()
+			panel.panel_alpha = MathUtils.lerp(panel.panel_alpha, 1.2, DTMULT*0.1)
+		end)
+		Game.world.timer:tween(10/30, panel_container, {y = 250}, "linear")
+		cutscene:wait(10/30)
+		windsfx:stop()
+		windows.delta = 0.05
+		prophecies.delta = 0.05
+		panel.panel_alpha = -99
+		Assets.playSound("break1", 0.95, 1)
+        kris:setSprite("fall_hurt_1")
+        susie:setAnimation("fall_brace")
+		local broken_container = Object(panel_container.x - 150*2 + 49/2, panel_container.y - 90*2 + 34/2)
+		broken_container:setParallax(0)
+		broken_container.layer = 1002
+		broken_container.draw_children_below = 0
+		Game.world:addChild(broken_container)
+		local sprites = Assets.getFrames("world/events/prophecy/shatter/prophecy_shatter_fall")
+		for i, texture in ipairs(sprites) do
+			local s = Sprite(texture)
+			s:setScale(2)
+			broken_container:addChild(s)
+			s.alpha = 0.8
+			s.physics.speed = 7
+			s.physics.friction = 0.75
+			s.physics.direction = math.rad(90 + MathUtils.random(-3, 3))
+			s.physics.speed_x, s.physics.speed_y = s:getSpeedXY()
+			if i == #sprites - 2 or i == #sprites - 4 then
+				s.physics.speed_x = 0.5
+			end
+			if i == #sprites - 1 or i == #sprites - 3 then
+				s.physics.speed_x = -0.5
+			end
+			s.physics.speed, s.physics.direction = s:getSpeedDir()
+			s.physics.gravity_direction = math.rad(270)
+			Game.world.timer:after(10/30, function()
+				s.physics.gravity = 0.25 + MathUtils.random(0.1)
+				s.physics.friction = 0
+				s.physics.speed = 2 + (((#sprites - i) / #sprites) * 15)
+				if i > (#sprites - 5) or i % 2 == 0 then
+					s.layer = -1
+				end
+			end)
+			s:addFX(fakehsv, "fakehsv")
+		end
+		Game.world.timer:after(10/30, function()
+			for i = 1,30 do
+				local groundshard = ProphecyGroundShard((panel_container.x - 199) + ((i * 199) / 30) + MathUtils.random(-30, 30), panel_container.y + MathUtils.random(120))
+				groundshard.layer = 1000
+				groundshard:setParallax(0)
+				groundshard.ytarg = 10000
+				Game.world.timer:after(280/30, function()
+					groundshard:remove()
+				end)
+				Game.world:addChild(groundshard)
+			end
+			panel_container:remove()
+		end)
+		Game.world.timer:lerpVar(kris, "y", kris.y, kris.y + 5, 10, 2, "out")
+		Game.world.timer:lerpVar(susie, "y", susie.y, susie.y + 5, 10, 2, "out")
+		cutscene:wait(10/30)
+		broken_container.layer = 1000
+		Game.world.timer:after(2/30, function() Assets.playSound("glassbreak", 0.4, 0.6) end)
+		Assets.playSound("sparkle_glock", 0.5, 0.8)
+		Assets.playSound("sparkle_glock", 0.5, 0.71)
+		Assets.playSound("punchmed", 0.95, 0.7)
+		windows.delta = 1
+		prophecies.delta = 1
+		windsfx:play()
+        susie:setAnimation("jump_fall")
+        kris:setAnimation("fall_hurt")
+		cutscene.fall_hurt_frame = 0
+		Game.world.timer:lerpVar(cutscene, "fall_hurt_frame", 0, 16, 70, 3, "out")
+		Game.world.timer:tween(3/30, highlight, {thickness = 1}, "linear")
+		Game.world.timer:lerpVar(kris, "y", kris.y, kris.y - 100, 90, 3, "out")
+		Game.world.timer:lerpVar(susie, "y", susie.y, susie.y + 20, 90, 3, "out")
+		Game.world.timer:tween(120/30, fakehsv, {amount = 1}, "in-cubic")
+		Game.world.timer:during(60/30, function()
+			kris.sprite.frame = (math.floor(cutscene.fall_hurt_frame % 4) + 1)
+		end)
+        cutscene:wait(60/30)
+		kris.sprite.frame = 1
+        kris:setAnimation("fall_hurt_wind")
+        cutscene:wait(10/30)
+		kris.fall_hurt_frame = nil
+        cutscene:wait(110/30)
+		local arch = Sprite("effects/foreground_arch_blur", 0, SCREEN_HEIGHT)
+		arch.layer = 1100
+		arch:setParallax(0)
+		arch:setScale(2)
+		Game.world:addChild(arch)
+		Game.world.timer:tween(8/30, arch, {y = -SCREEN_HEIGHT*2}, "linear")
+        cutscene:wait(4/30)
+		windows:remove()
+		prophecies:remove()
+		broken_container:remove()
+		arch:setSprite("effects/foreground_arch")
+		windsfx:stop()
+        Assets.playSound("snd_closet_impact")
+		kris:setParallax(1)
+		susie:setParallax(1)
+		kris.x = kris_x
+		kris.y = kris_y
+		susie.x = susie_x
+		susie.y = susie_y
+		Game.world.camera.x = kris.x + (susie.x - kris.x)/2
+		Game.world.camera.y = kris.y
+		kris:removeFX("highlight")
+		susie:removeFX("highlight")
+		ralsei:removeFX("highlight")
+        kris:setSprite("landed")
+        susie:setSprite("landed")
+		kris:shake()
+		susie:shake()
+        cutscene:wait(8/30)
+        cutscene:wait(60/30)
+		arch:remove()
         Assets.playSound("him_quick")
         cutscene:fadeIn(1)
         Game.world.timer:tween(1, a, {alpha = 0})
@@ -237,7 +426,6 @@ return {
         for _, sprite in ipairs(remove) do
             sprite:remove()
         end
-		snd:remove()
         cutscene:wait(0.7)
         susie:setFacing("up")
         cutscene:wait(0.7)

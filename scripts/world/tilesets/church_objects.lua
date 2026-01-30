@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.10.2",
   name = "church_objects",
   class = "",
   tilewidth = 960,
@@ -23,7 +23,7 @@ return {
   },
   properties = {},
   wangsets = {},
-  tilecount = 79,
+  tilecount = 80,
   tiles = {
     {
       id = 0,
@@ -656,6 +656,12 @@ return {
       image = "../../../assets/sprites/world/objects/churchb_door.png",
       width = 40,
       height = 60
+    },
+    {
+      id = 84,
+      image = "../../../assets/sprites/world/objects/prophecy_shards.png",
+      width = 222,
+      height = 140
     }
   }
 }

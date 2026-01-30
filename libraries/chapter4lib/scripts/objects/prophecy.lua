@@ -34,6 +34,9 @@ function Prophecy:init(data)
     self.can_break = properties["can_break"] -- if true, then allows the player to break panel when interacted with
     self.break_type = properties["break_type"] -- if enabled, sets the delay time for when the panel should break apart to a specific interval
     self.break_delay = properties["break_delay"] -- if "break_type" is not defined, sets the delay time for when the panel should break apart
+    self.break_silent = properties["break_silent"]
+	self.break_second_silent = properties["break_second_silent"]
+	self.break_sparkles = properties["break_sparkles"]
 
 	self.no_back = properties["no_back"] or false
 
@@ -57,6 +60,7 @@ function Prophecy:init(data)
     self.destroy               = 0
 	self.roomglow = nil
 	self.panel_active = false
+	self.destroying = false
 end
 
 function Prophecy:getRealWidth()
@@ -77,79 +81,142 @@ function Prophecy:getSortPosition()
     return self.x,self.y
 end
 
-function Prophecy:breakProphecy(type, silent)
-	local destroytype = type or 0
-	local silent = silent or false
-    local sprites = Assets.getFrames("world/events/prophecy/prophecy_shatter")
+function Prophecy:breakProphecy(type, sprite, sparkles, silent, second_silent)
+	local destroytype = type or self.break_type
+	local silent = self.break_silent or silent or false
+	local second_silent = self.break_second_silent or second_silent or false
+	local sparkles = self.break_sparkles or sparkles or true
+    local sprites = Assets.getFrames("world/events/prophecy/shatter/" .. (sprite or "prophecy_shatter"))
     if #sprites == 0 then return end
 
-    local delaytime = 30/30
+    local delaytime = 30
+	if type == 2 then
+		delaytime = 10
+	end
+	if type == 3 then
+		delaytime = 5
+	end
+	if self.break_delay then
+		delaytime = self.break_delay
+	end
 
+	self.world.timer:after(delaytime/30, function()
+		if sparkles then
+			for i = 1,30 do
+				local groundshard = ProphecyGroundShard((self.x - 199) + ((i * 398) / 30) + MathUtils.random(-30, 30), self.y + MathUtils.random(120))
+				groundshard.layer = self.layer
+				groundshard.ytarg = self.y + SCREEN_HEIGHT/2
+				if type == 3 then
+					groundshard.ytarg = groundshard.ytarg + 10000
+					self.world.timer:after(280/30, function()
+						groundshard:remove()
+					end)
+				end
+				Game.world:addChild(groundshard)
+			end
+		end
+		if type < 2 then
+			broken_container.timer:after(120/30, function()
+				broken_container:remove()
+			end)
+			self:remove()
+		end
+	end)
+	if not silent then
+		if type ~= 3 then
+			Assets.playSound("break1", 1, 0.95)
+		end
+		if not second_silent then
+			broken_container.timer:after(delaytime+2/30, function() Assets.playSound("glassbreak", 0.4, 0.6) end)
+			broken_container.timer:after(delaytime/30, function() Assets.playSound("sparkle_glock", 0.5, 0.8) end)
+			broken_container.timer:after(delaytime/30, function() Assets.playSound("sparkle_glock", 0.5, 0.71) end)
+			broken_container.timer:after(delaytime/30, function() Assets.playSound("punchmed", 0.95, 0.7) end)
+		end
+	end
+	
     local broken_container = Object(self.x-self.panel_width, self.y-self.panel_height)
     broken_container:setScaleOrigin(0.5, 0.5)
     broken_container:setLayer(self:getLayer())
+	broken_container.draw_children_below = 0
     self.parent:addChild(broken_container)
 
     broken_container.timer = Timer()
     broken_container:addChild(broken_container.timer)
 
     local timer = broken_container.timer
-    for _, texture in ipairs(sprites) do
+    for i, texture in ipairs(sprites) do
         local s = Sprite(texture)
         s:setScale(2)
         broken_container:addChild(s)
 
-		if destroytype == 3 then
-			s.alpha = 0.3;
-			s:setPhysics({
-				speed = 0,
-				friction = 0.5,
-				direction = math.rad(270)
-			})
-			delaytime = 5
-			broken_container.timer:after(((delaytime * MathUtils.random(5)) + 1)/30, function()
-				s:setPhysics({
-					speed = 2,
-					friction = 0,
-					gravity = 0.5 + MathUtils.random(0.1)
-				})
+		if destroytype == 0 then
+			s.alpha = 0.8
+			s.physics.speed = 2
+			s.physics.friction = 0.5
+			s.physics.direction = math.rad(MathUtils.random(360))
+			broken_container.timer:after(delaytime/30, function()
+				s.physics.gravity = 0.5 + MathUtils.random(0.1)
+				s.physics.friction = 0
+				s.physics.speed = 2
 			end)
-		else
-			s.alpha = 0.8;
-			s:setPhysics({
-				speed = 2,
-				friction = 0.05,
-				direction = math.rad(Utils.random(360))
-			})
-			s:setGraphics({
-				fade_to = 0,
-				fade = 0.01
-			})
+		end
+		if destroytype == 1 then
+			s.alpha = 0.8
+			s.physics.speed = 2
+			s.physics.friction = 0.5
+			s.physics.direction = math.rad(MathUtils.random(360))
+			broken_container.timer:after(delaytime/30, function()
+				s.physics.speed = 4
+				s.physics.friction = 0.4
+				broken_container.timer:lerpVar(s, "alpha", alpha, 0, 20)
+			end)
+		end
+		if destroytype == 2 then
+			s.alpha = 0.8
+			s.physics.speed = 7
+			s.physics.friction = 0.75
+			s.physics.direction = math.rad(90 + MathUtils.random(-3, 3))
+			s.physics.speed_x, s.physics.speed_y = s:getSpeedXY()
+			if i == #sprites - 2 or i == #sprites - 4 then
+				s.physics.speed_x = 0.5
+			end
+			if i == #sprites - 1 or i == #sprites - 3 then
+				s.physics.speed_x = -0.5
+			end
+			s.physics.speed, s.physics.direction = s:getSpeedDir()
+			s.physics.gravity_direction = math.rad(270)
+			broken_container.timer:after(delaytime/30, function()
+				s.physics.gravity = 0.25 + MathUtils.random(0.1)
+				s.physics.friction = 0
+				s.physics.speed = 2 + (((#sprites - i) / #sprites) * 15)
+				if i > (#sprites - 5) or i % 2 == 0 then
+					s.layer = -1
+				end
+			end)
+		end
+		if destroytype == 3 then
+			s.alpha = 0.3
+			s.physics.speed = 0
+			s.physics.friction = 0.5
+			s.physics.direction = math.rad(270)
+			local delay = (delaytime * MathUtils.random(5)) + 1
+			broken_container.timer:after(delay/30, function()
+				s.physics.gravity = 0.5 + MathUtils.random(0.1)
+				s.physics.friction = 0
+				s.physics.speed = 2
+			end)
 		end
     end
 
-    broken_container:setScale(
+    --[[broken_container:setScale(
         self:getRealWidth() / (sprites[1]:getWidth()*2),
         self:getRealHeight() / (sprites[1]:getHeight()*2)
-    )
-    broken_container.timer:after(120/30, function()
-        broken_container:remove()
-    end)
-
-	if not silent then
-		broken_container.timer:after(2/30, function() Assets.playSound("glassbreak", 0.4, 0.6) end)
-		Assets.playSound("sparkle_glock", 0.5, 0.8)
-		Assets.playSound("sparkle_glock", 0.5, 0.71)
-		Assets.playSound("punchmed", 0.95, 0.7)
-	end
-	
-    self:remove()
+    )]]
+	self.destroying = true
 end
 
 function Prophecy:update()
     super.update(self)
-
-    --self.container.y = Utils.wave(Kristal.getTime()*2, -10, 10)
 
     if self.texture and self.text then
         self.panel.text.y = -self.panel_height + self.panel.text_offset_y
@@ -158,7 +225,11 @@ function Prophecy:update()
     end
 
     Object.startCache()
-	if self.always_visible then
+	if self.destroying then
+		self.panel.panel_alpha = -99
+		self.panel_active = false
+		Ch4Lib.updateLightBeams(1)
+	elseif self.always_visible then
 		self.panel_active = true
 		self.panel.panel_alpha = 1.2
 		Ch4Lib.updateLightBeams(1 - (self.panel.panel_alpha / 1.2))

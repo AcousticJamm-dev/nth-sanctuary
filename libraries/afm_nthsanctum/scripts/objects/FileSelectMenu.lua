@@ -13,6 +13,7 @@ function FileSelectMenu:initStates()
     self.state_manager:addState("CREDITS", self.credits)
     Kristal.hideBorder(0)
 	Game:setBorder("church_grand")
+	Assets.stopSound("strongwind_loop", true)
 end
 
 return FileSelectMenu

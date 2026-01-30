@@ -4,36 +4,10 @@ local actor, super = Class("kris", true)
 function actor:init()
     super.init(self)
     TableUtils.merge(self.animations, {
-        ["pirouette"] = {"battle/pirouette", 3/30, true}
+        ["pirouette"] = {"battle/pirouette", 3/30, true},
+        ["fall_hurt"] = {"fall_hurt", 0, true},
+        ["fall_hurt_wind"] = {"fall_hurt_wind", 1/5, true}
     })
-    TableUtils.merge(self.offsets, {
-        ["pirouette"] = {5, 0},
-        ["piano"] = {-6, -1},
-        -- TODO: Accuracy.
-        ["climb/climb"] = {0, 0},
-        ["climb/charge"] = {0, 3},
-        ["climb/slip_left"] = {0, 0},
-        ["climb/slip_right"] = {0, 0},
-        ["climb/slip_fall"] = {0, 0},
-        ["climb/land_left"] = {0, 0},
-        ["climb/land_right"] = {0, 0},
-        ["climb/jump_up"] = {0, 0},
-        ["climb/jump_left"] = {0, 0},
-        ["climb/jump_right"] = {0, 0},
-    })
-end
-
--- TODO: This sucks.
-function actor:getOffset(sprite)
-    local ox, oy = super.getOffset(self, sprite)
-    if StringUtils.startsWith(sprite, "climb") then
-        ox, oy = ox - 5, oy + 4
-    end
-    return ox, oy
-end
-
-function actor:hasOffset(sprite)
-    if super.hasOffset(self, sprite) then return true end
 end
 
 return actor

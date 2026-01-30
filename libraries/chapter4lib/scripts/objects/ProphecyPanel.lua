@@ -36,6 +36,7 @@ function ProphecyPanel:init(sprite, text, width, height)
     self.text_color = {0, 1, 1, 1}
 	
 	self.panel_alpha = 0
+	self.ignore_onscreen_rules = false
 end
 
 function ProphecyPanel:onAddToStage(stage)
@@ -76,7 +77,7 @@ function ProphecyPanel:draw()
 	local camx = Game.world.camera.x - SCREEN_WIDTH/2
 	local camy = Game.world.camera.y - SCREEN_HEIGHT/2
 	
-	if self.parent.parent then
+	if self.parent.parent and not self.ignore_onscreen_rules then
 		if self.parent.parent.x > (camx + SCREEN_WIDTH + (self.width * 2))
 		or self.parent.parent.x < (camx - (self.width * 2))
 		or self.parent.parent.y > (camy + SCREEN_HEIGHT + (self.height * 2))

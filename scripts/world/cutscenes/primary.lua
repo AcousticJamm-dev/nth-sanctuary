@@ -171,8 +171,8 @@ return {
 			end
 			return false
 		end)
-		Game.world.timer:tween(0.68421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368, menu, {alpha = 0}, 'in-sine')
-		cutscene:wait(0.68421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368)
+		Game.world.timer:tween(1/2, menu, {alpha = 0}, 'in-sine')
+		cutscene:wait(1/2)
 		menu:remove()
 		cutscene:detachFollowers()
 		if not skip_title then
@@ -221,7 +221,7 @@ return {
 			grad.x = 85 + 224
 			grad.y = SCREEN_HEIGHT/2 - 34
 			table.insert(remove, grad)
-			cutscene:wait(2.8421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368) --(no longer) evil
+			cutscene:wait(54/19) --(no longer) evil
 			Game.world.timer:after(1.2, function()
 				Game.world.timer:tween(1, grad, {alpha = 1}, "linear")
 			end)
@@ -610,10 +610,6 @@ return {
             Game:setFlag("susiecolor", "pink")
 		else
 			cutscene:text("* [face:nervous_side]And I'm Su-[face:teeth][speed:1.22]I didn't mean my name,[wait:5] dumbass![speed:1]", "nervous_side")
-			cutscene:text("* I meant you to tell me what color I am!", "blush")
-			cutscene:text("* [wait:10].[wait:10].[wait:10].", "nervous_side")
-			cutscene:text("* ...[wait:5]so,[wait:5] you gonna tell me what color I am or what?", "suspicious")
-			cutscene:text("* .[wait:5].[wait:5].[wait:5] alright then,[wait:5] I see how it is.", "annoyed_b")
 			Game:setFlag("susiecolor", "susie")
         end
         --uhh i'll commit up to this point dont touch this please :3

@@ -858,7 +858,7 @@ return {
       id = 17,
       name = "roomglow_dark",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,

@@ -321,7 +321,7 @@
    <point/>
   </object>
  </objectgroup>
- <layer id="17" name="roomglow_dark" width="20" height="34">
+ <layer id="17" name="roomglow_dark" width="20" height="34" visible="0">
   <data encoding="csv">
 331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,
 331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,331,

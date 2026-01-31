@@ -302,8 +302,8 @@ return {
 				letter:setParallax(0)
 				letter:setOrigin(0.5, 0.5)
 				letter.layer = a.layer + 2
-				letter.physics.speed = 4
-				letter.physics.friction = 0.75
+				letter.physics.speed = 5
+				letter.physics.friction = 0.5
 				letter.physics.direction = math.rad(90)
 				letter.physics.gravity_direction = math.rad(270)
 				Game.world.timer:after(10/30, function()
@@ -322,16 +322,16 @@ return {
 				letter.y = SCREEN_HEIGHT/2 - 34
 				table.insert(remove, letter)
 			end	
-			a.physics.speed = 4
-			a.physics.friction = 0.75
+			a.physics.speed = 5
+			a.physics.friction = 0.5
 			a.physics.direction = math.rad(90)
 			a.physics.gravity_direction = math.rad(270)
-			heart.physics.speed = 4
-			heart.physics.friction = 0.75
+			heart.physics.speed = 5
+			heart.physics.friction = 0.5
 			heart.physics.direction = math.rad(90)
 			heart.physics.gravity_direction = math.rad(270)
-			Game.world.timer:tween(10/30, kris, {y = kris.y + 5}, "out-cubic")
-			Game.world.timer:tween(10/30, susie, {y = susie.y + 5}, "out-cubic")
+			Game.world.timer:lerpVar(kris, "y", kris.y, kris.y + 15, 10, 2, "out")
+			Game.world.timer:lerpVar(susie, "y", susie.y, susie.y + 15, 10, 2, "out")
 			cutscene:wait(10/30)
 			local heartburst = HeartBurst(heart.x - 224 + 106*2, heart.y - 34 + 20*2, COLORS.red)
 			heartburst:setParallax(0)
@@ -368,8 +368,8 @@ return {
 				Game.world:addChild(groundshard)
 				table.insert(shards_remove, groundshard)
 			end
-			Game.world.timer:tween(90/30, kris, {y = kris.y + 60}, "out-cubic")
-			Game.world.timer:tween(90/30, susie, {y = susie.y + 60}, "out-cubic")
+			Game.world.timer:lerpVar(kris, "y", kris.y, kris.y + 50, 90, 3, "out")
+			Game.world.timer:lerpVar(susie, "y", susie.y, susie.y + 50, 90, 3, "out")
 			cutscene:wait(20/30)
 			windows.window_timer = 1
 			cutscene:wait(70/30)
@@ -400,7 +400,7 @@ return {
 			end)
 			Game.world.timer:tween(10/30, panel_container, {y = 250}, "linear")
 			cutscene:wait(10/30)
-			windsfx:stop()
+			cutscene.windvol = 0
 			windows.delta = 0.05
 			prophecies.delta = 0.05
 			panel.panel_alpha = -99
@@ -463,7 +463,7 @@ return {
 			Assets.playSound("punchmed", 0.95, 0.7)
 			windows.delta = 1
 			prophecies.delta = 1
-			windsfx:play()
+			cutscene.windvol = 0.6
 			susie:setAnimation("jump_fall")
 			kris:setAnimation("fall_hurt")
 			cutscene.fall_hurt_frame = 0

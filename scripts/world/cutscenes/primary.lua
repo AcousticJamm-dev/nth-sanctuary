@@ -171,8 +171,8 @@ return {
 			end
 			return false
 		end)
-		Game.world.timer:tween(0.5, menu, {alpha = 0}, 'in-sine')
-		cutscene:wait(0.5)
+		Game.world.timer:tween(0.68421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368, menu, {alpha = 0}, 'in-sine')
+		cutscene:wait(0.68421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368)
 		menu:remove()
 		cutscene:detachFollowers()
 		if not skip_title then
@@ -188,11 +188,11 @@ return {
 				letter.layer = 1000
 				letter.alpha = 0
 				Game.world:addChild(letter)
-				Game.world.timer:tween(0.5, letter, {alpha = 1})
+				Game.world.timer:tween(0, letter, {alpha = 1})
 				letter.x = sum
 				letter.y = SCREEN_HEIGHT/2
 				--Assets.playSound("noise")
-				cutscene:wait(1/10)
+				cutscene:wait(0.31578947368421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368421052632)
 				sum = sum + (letter.width*2) + 12
 				table.insert(remove, letter)
 			end 
@@ -209,6 +209,7 @@ return {
 			grad:setScale(2)
 			grad:setParallax(0)
 			grad:setOrigin(0.5, 0.5)
+			grad:setColor(Utils.hexToRgb("#ffffff"))
 			grad.layer = 1000 + 1
 			grad.noprop = true
 			grad.alpha = 0
@@ -216,8 +217,10 @@ return {
 			grad.x = 85 + 224
 			grad.y = SCREEN_HEIGHT/2 - 34
 			table.insert(remove, grad)
-			cutscene:wait(4.5) --(no longer) evil
-			Game.world.timer:tween(1, grad, {alpha = 1}, "linear")
+			cutscene:wait(2.8421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368421052631578947368) --(no longer) evil
+			Game.world.timer:after(1.2, function()
+				Game.world.timer:tween(1, grad, {alpha = 1}, "linear")
+			end)
 			cutscene:wait(1.2)
 			local a = Text("#th Sanctuary")
 			a.layer = 1000
@@ -522,6 +525,7 @@ return {
 			end
 			arch:remove()
 		end
+	
 		kris.x = kris_x
 		kris.y = kris_y
 		susie.x = susie_x
@@ -533,7 +537,7 @@ return {
 		Game.world.camera.y = kris_y
         kris:setSprite("landed")
         susie:setSprite("landed")
-        cutscene:wait(60/30)
+        cutscene:wait(120/30)
         Assets.playSound("him_quick")
         cutscene:fadeIn(1)
 		Kristal.showBorder(1)

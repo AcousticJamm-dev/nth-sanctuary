@@ -357,22 +357,33 @@ return {
 		arch:setParallax(0)
 		arch:setScale(2)
 		Game.world:addChild(arch)
-		Game.world.timer:tween(8/30, arch, {y = -SCREEN_HEIGHT*2}, "linear")
-        cutscene:wait(4/30)
+		Game.world.timer:tween(2, arch, {y = -SCREEN_HEIGHT*2}, "linear")
+        local wvol = 0.6
+        cutscene:during(function ()
+        wvol = MathUtils.clamp(wvol-DT, 0, 1)
+        windsfx:setVolume(wvol)
+        end)
+        cutscene:wait(1)
 		windows:remove()
 		prophecies:remove()
 		broken_container:remove()
 		arch:setSprite("effects/foreground_arch")
-		windsfx:stop()
+        kris.y = susie.y
+        kris:setSprite("ball")
+        susie:setSprite("ball")
+        kris:play(0.05)
+        susie:play(0.05)
+        cutscene:wait(1)
+        windsfx:stop()
         Assets.playSound("snd_closet_impact")
-		kris:setParallax(1)
+        kris:setParallax(1)
 		susie:setParallax(1)
 		kris.x = kris_x
 		kris.y = kris_y
 		susie.x = susie_x
 		susie.y = susie_y
-		Game.world.camera.x = kris.x + (susie.x - kris.x)/2
-		Game.world.camera.y = kris.y
+        Game.world.camera.x = kris_x + (susie_x - kris_x)/2
+		Game.world.camera.y = kris_y
 		kris:removeFX("highlight")
 		susie:removeFX("highlight")
 		ralsei:removeFX("highlight")
@@ -446,14 +457,20 @@ return {
         cutscene:wait(1) 
         susie:setFacing("up")
         cutscene:wait(1)
-        cutscene:text("* Kris,[wait:5] you're...[wait:10][func:turn] green?[wait:10] And I'm...", "suspicious", {
+        cutscene:text("* Kris,[wait:5][func:turn0][wait:5] you're...[wait:10][func:turn] green?[wait:10] And I'm...[wait:10] uh...[wait:10][react:1]", "suspicious", {
+            reactions = {
+                {"(Uhh... hey, Kris!\nHelp me out here!)", "right", "bottom", "blush", "susie"},
+            },
             functions = {
-                turn = function (text)
+                turn0 = function(text)
                     kris:setFacing("left")
+                end,
+                turn = function (text)
                     susie:setFacing("right")
                 end
-            }
+            },
         })
+        
         local choice = cutscene:choicer({"Blue", "Pink"})
         if choice == 1 then
             cutscene:text("* And I'm blue...[wait:5] Got it.", "nervous_side")
@@ -474,7 +491,7 @@ return {
         cutscene:text("* Hey,[wait:5] wait a second...[wait:5] where's Ralsei?", "surprise_frown")
         cutscene:text("* Did the Knight-", "sad", {auto = true})
         cutscene:setSpeaker(ralsei)
-        cutscene:text("[shake:0.31][speed:0.8]* N-[wait:5]No...[wait:5] this can't be...")
+        cutscene:text("[shake:0.51][speed:0.8]* N-[wait:5]No...[wait:5] this can't be...")
         susie:setSprite("shock_left")
         susie:setFacing("left")
         cutscene:setSpeaker(susie)
@@ -487,9 +504,9 @@ return {
         susie:resetSprite()
         cutscene:wait(1)
         cutscene:setSpeaker(ralsei)
-        cutscene:text("[shake:0.31][speed:0.8]* You may want to come here...", "horror")
-        cutscene:text("[shake:0.31][speed:0.8]* (This is bad... [wait:10]No,[wait:5] this is [shake:0.81]VERY[shake:0.31] bad...)", "horror")
-        cutscene:wait(cutscene:panTo(Game.world.player.x, 360, 2, "out-cubic"))
+        cutscene:text("[shake:0.51][speed:0.8]* You may want to come here...", "horror")
+        cutscene:text("[shake:0.51][speed:0.8]* (This is bad... [wait:10]No,[wait:5] this is [shake:0.81]VERY[shake:0.31] bad...)", "horror")
+        cutscene:wait(cutscene:panTo(kris.x + (susie.x - kris.x)/2, kris.y, 2, "out-cubic"))
         cutscene:attachCamera()
         cutscene:wait(2)
         susie:setFacing("right")
@@ -510,7 +527,7 @@ return {
         cutscene:text("* Kris..![wait:10] You okay??", "surprise_frown")
         cutscene:text("* Yeesh,[wait:5] talk about a fall...[wait:10] (Even MY legs hurt a little.)", "dejected")
         susie:resetSprite()
-        cutscene:wait(cutscene:walkTo(susie, kris.x-70, susie.y, 1))
+        cutscene:wait(cutscene:walkTo(susie, kris.x-50, susie.y, 1))
         susie:setSprite("heal_kneel")
         cutscene:text("[facec:susie_bangs/down]* Here,[wait:5] hold still.[wait:5]\n* Let me...")
         Assets.playSound("wing")
@@ -539,6 +556,7 @@ return {
             end
         end, 4)
         local dmg = DamageNumber("msg", "max",susie.x, susie.y,{COLORS.lime})
+        dmg:setLayer(99999999999999999999999999)
         Game.world:addChild(dmg)
         Assets.playSound("power")
         cutscene:wait(1)
@@ -558,15 +576,15 @@ return {
         susie:setFacing("up")
         cutscene:wait(1)
         cutscene:setSpeaker(ralsei)
-        cutscene:text("[shake:0.31][speed:0.8]* T-This.. [wait:5]shouldn't be happening...", "concern_smile")
-        cutscene:text("[shake:0.31][speed:0.8]* This isn't part of the prophecy...", "concern_smile")
-        cutscene:text("[shake:0.31][speed:0.8]* Kris, [wait:5]Susie... [wait:10]We need to seal this fountain.[wait:5] Now...", "concern_smile")
-        cutscene:text("[shake:0.31][speed:0.8]* It's been the same as I remember it until now because-", "concern_smile", {auto = true})
-        cutscene:text("[shake:0.31][speed:1]* First was the King-", "concern_smile", {auto = true})
-        cutscene:text("[shake:0.31][speed:1.1]* And then Queen and her chariot-", "concern_smile", {auto = true})
-        cutscene:text("[shake:0.31][speed:1.2]* Then Tenna, [wait:5]a-[wait:5]and the Knight-", "concern_smile", {auto = true})
-        cutscene:text("[shake:0.31]* Just before this was the Titan-", "concern_smile", {auto = true})
-        cutscene:text("[shake:0.31][speed:1.3]* And right now it should be-", "concern_smile", {auto = true})
+        cutscene:text("[shake:0.51][speed:0.8]* T-This.. [wait:5]shouldn't be happening...", "concern_smile")
+        cutscene:text("[shake:0.51][speed:0.8]* This isn't part of the prophecy...", "concern_smile")
+        cutscene:text("[shake:0.51][speed:0.8]* Kris, [wait:5]Susie... [wait:10]We need to seal this fountain.[wait:5] Now...", "concern_smile")
+        cutscene:text("[shake:0.51][speed:0.8]* It's been the same as I remember it until now because-", "concern_smile", {auto = true})
+        cutscene:text("[shake:0.56][speed:1]* First was the King-", "concern_smile", {auto = true})
+        cutscene:text("[shake:0.60][speed:1.1]* And then Queen and her chariot-", "concern_smile", {auto = true})
+        cutscene:text("[shake:0.70][speed:1.2]* Then Tenna, [shake:0.85][wait:5]a-[wait:5]and the Knight-", "concern_smile", {auto = true})
+        cutscene:text("[shake:0.95]* Just before this was the Titan-", "concern_smile", {auto = true})
+        cutscene:text("[shake:1][speed:1.3]* And right now it should be-", "concern_smile", {auto = true})
         cutscene:setSpeaker(susie)
         cutscene:text("* Hang on a sec,[wait:5] it's not in the prophecy...", "suspicious")
         cutscene:text("* And it says the Knight didn't do it?", "suspicious")

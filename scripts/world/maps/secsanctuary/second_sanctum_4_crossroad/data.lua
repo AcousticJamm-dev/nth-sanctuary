@@ -72,8 +72,8 @@ return {
       opacity = 1,
       offsetx = 0,
       offsety = 0,
-      parallaxx = 0.6,
-      parallaxy = 0.6,
+      parallaxx = 0.3,
+      parallaxy = 0.82,
       tintcolor = { 170, 25, 27 },
       properties = {},
       objects = {
@@ -105,8 +105,8 @@ return {
       opacity = 1,
       offsetx = 0,
       offsety = 0,
-      parallaxx = 0.8,
-      parallaxy = 0.8,
+      parallaxx = 0.4,
+      parallaxy = 0.85,
       tintcolor = { 170, 25, 27 },
       properties = {},
       objects = {
@@ -218,8 +218,8 @@ return {
       opacity = 1,
       offsetx = 0,
       offsety = 0,
-      parallaxx = 0.8,
-      parallaxy = 1,
+      parallaxx = 0.5,
+      parallaxy = 0.9,
       properties = {},
       objects = {
         {

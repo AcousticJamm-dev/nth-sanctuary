@@ -162,8 +162,8 @@ return {
       opacity = 1,
       offsetx = 0,
       offsety = 0,
-      parallaxx = 0.6,
-      parallaxy = 1,
+      parallaxx = 0.4,
+      parallaxy = 0.85,
       properties = {},
       objects = {
         {
@@ -242,8 +242,8 @@ return {
       opacity = 1,
       offsetx = 0,
       offsety = 0,
-      parallaxx = 0.7,
-      parallaxy = 0.7,
+      parallaxx = 0.5,
+      parallaxy = 0.9,
       properties = {},
       objects = {
         {

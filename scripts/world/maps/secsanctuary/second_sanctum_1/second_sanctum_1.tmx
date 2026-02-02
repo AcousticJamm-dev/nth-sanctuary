@@ -43,7 +43,7 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup id="8" name="objects_parallax2" parallaxx="0.6">
+ <objectgroup id="8" name="objects_parallax2" parallaxx="0.4" parallaxy="0.85">
   <object id="33" gid="793" x="-280" y="240" width="640" height="200">
    <properties>
     <property name="color" type="color" value="#ff2525ba"/>
@@ -65,7 +65,7 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup id="7" name="objects_parallax" parallaxx="0.7" parallaxy="0.7">
+ <objectgroup id="7" name="objects_parallax" parallaxx="0.5" parallaxy="0.9">
   <object id="29" gid="785" x="-320" y="1120" width="640" height="1600" rotation="-315"/>
   <object id="65" gid="785" x="800" y="1080" width="640" height="1600" rotation="-45"/>
  </objectgroup>

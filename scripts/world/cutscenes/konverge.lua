@@ -161,6 +161,7 @@ return {
             cutscene:setSpeaker()
             Assets.playSound("item")
             cutscene:text("* (You got the S.POISON.)")
+            Game.inventory:tryGiveItem("s_poison", true)
             Game:setFlag("scammed", true)
         end
         ::endcut::

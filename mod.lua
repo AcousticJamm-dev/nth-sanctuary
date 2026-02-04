@@ -112,10 +112,10 @@ function Mod:afmPostInit(new_file)
     Game:setFlag("apkpure", false)
     if new_file then
         Game:setFlag("fun", love.math.random(1, 170))
-        Game:setFlag("shards", 1)
         Game.world:startCutscene("primary.intro")
 		Game:setFlag("ft_last_map", "base_sanctum_center")
     else
+        Game:setFlag("shards", nil) -- Clean up old save files
         if Game:getFlag("apkpure", true) then
             Game.world:startCutscene(function(cutscene)
                 cutscene:setSpeaker("susie")

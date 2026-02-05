@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="24" height="30" tilewidth="40" tileheight="40" infinite="0" nextlayerid="8" nextobjectid="137">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="24" height="30" tilewidth="40" tileheight="40" infinite="0" nextlayerid="8" nextobjectid="140">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -92,6 +92,11 @@
   <object id="123" name="interactable" x="360" y="988" width="240" height="67">
    <properties>
     <property name="cutscene" value="study.table"/>
+   </properties>
+  </object>
+  <object id="139" name="interactable" x="330" y="220" width="62" height="60">
+   <properties>
+    <property name="cutscene" value="study.book"/>
    </properties>
   </object>
  </objectgroup>

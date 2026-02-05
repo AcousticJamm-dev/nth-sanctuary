@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 8,
-  nextobjectid = 137,
+  nextobjectid = 140,
   properties = {
     ["border"] = "church_a",
     ["music"] = "church_study_slower"
@@ -19,7 +19,8 @@ return {
     {
       name = "bg_dw_church_tileset_new",
       firstgid = 1,
-      filename = "../../tilesets/bg_dw_church_tileset_new.tsx"
+      filename = "../../tilesets/bg_dw_church_tileset_new.tsx",
+      exportfilename = "../../tilesets/bg_dw_church_tileset_new.lua"
     },
     {
       name = "church_objects",
@@ -439,6 +440,21 @@ return {
           visible = true,
           properties = {
             ["cutscene"] = "study.table"
+          }
+        },
+        {
+          id = 139,
+          name = "interactable",
+          type = "",
+          shape = "rectangle",
+          x = 330,
+          y = 220,
+          width = 62,
+          height = 60,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["cutscene"] = "study.book"
           }
         }
       }

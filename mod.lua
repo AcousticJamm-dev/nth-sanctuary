@@ -2,7 +2,8 @@
 Mod.DarkShardID = {
     TEST_SHARD_1 = 0,
     TEST_SHARD_2 = 1,
-    TEST_SHARD_3_MORE_LIKE_TEST_SHART = 2,
+    BookShard = 2,
+    TEST_SHARD_3_MORE_LIKE_TEST_SHART = 3,
 }
 
 ---@param plugin TypeGenPlugin.MainScript

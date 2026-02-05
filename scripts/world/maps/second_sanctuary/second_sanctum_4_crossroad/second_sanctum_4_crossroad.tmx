@@ -404,13 +404,13 @@
   </object>
   <object id="135" name="transition" x="1720" y="1160" width="40" height="160">
    <properties>
-    <property name="map" value="floodedsanctuary/between"/>
+    <property name="map" value="flooded_sanctuary/between"/>
     <property name="marker" value="entry2"/>
    </properties>
   </object>
   <object id="143" name="transition" x="1720" y="760" width="40" height="120">
    <properties>
-    <property name="map" value="floodedsanctuary/between"/>
+    <property name="map" value="flooded_sanctuary/between"/>
     <property name="marker" value="entry3"/>
    </properties>
   </object>

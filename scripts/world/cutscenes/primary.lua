@@ -119,7 +119,7 @@ return {
 			return false
 		end)
 		Game.world.timer:tween(2, menu, {scale_x = 0, scale_y = 0, x = SCREEN_WIDTH/2, y = 0, alpha = 0}, 'out-sine')
-		cutscene:wait(2)
+		cutscene:wait(2.25)
 		text:remove()
 		normal_text:remove()
 		violence_text:remove()
@@ -151,8 +151,8 @@ return {
 		heart.inherit_color = true
 		heart.color = COLORS.red
 		menu:addChild(heart)
-
-		Game.world.timer:tween(0.25, menu, {alpha = 1}, 'out-sine')
+		
+		Game.world.timer:tween(0.5, menu, {alpha = 1}, 'out-sine')
 		cutscene:wait(function()
 			if Input.pressed("left") and menu.index ~= 1 then
 				Assets.playSound("ui_move")

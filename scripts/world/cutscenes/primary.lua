@@ -390,6 +390,13 @@ return {
 			prophecies:addFX(fakehsv, "fakehsv")
 			Game.world:addChild(prophecies)
 			cutscene:wait(2)
+			a:remove()
+			for _, sprite in ipairs(remove) do
+				sprite:remove()
+			end
+			for _, shard in ipairs(shards_remove) do
+				shard:remove()
+			end
 			local panel_container = Object(SCREEN_WIDTH/2 + 150/2, 500)
 			panel_container:setParallax(0)
 			panel_container.layer = 1002
@@ -517,12 +524,8 @@ return {
 			kris:removeFX("fakehsv")
 			susie:removeFX("fakehsv")
 			ralsei:removeFX("fakehsv")
-			a:remove()
 			for _, sprite in ipairs(remove) do
 				sprite:remove()
-			end
-			for _, shard in ipairs(shards_remove) do
-				shard:remove()
 			end
 			for _, trans in ipairs(Game.world.map:getEvents("transition")) do
 				trans.collider.collidable = true

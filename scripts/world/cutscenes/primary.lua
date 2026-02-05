@@ -36,6 +36,7 @@ return {
 		local kris_layer = kris.layer
 		local susie_layer = susie.layer
 		local ralsei_layer = ralsei.layer
+		local do_ripple = false
         centerText(
             "Hello.[wait:10]\n\n" ..
             "Just a fair warning before proceeding.[wait:10]\n" ..
@@ -116,13 +117,17 @@ return {
 			end
 			return false
 		end)
-		Game.world.timer:tween(0.5, menu, {alpha = 0}, 'in-sine')
-		cutscene:wait(1)
+		Game.world.timer:tween(2, menu, {scale_x = 0, scale_y = 0, x = SCREEN_WIDTH/2, y = 0, alpha = 0}, 'out-sine')
+		cutscene:wait(2)
 		text:remove()
 		normal_text:remove()
 		violence_text:remove()
 		weird_text:remove()
 		heart:remove()
+		menu.scale_x = 1
+		menu.scale_y = 1
+		menu.x = 0
+		menu.y = 0
 		menu.index = 0
 		menu.y = 0
 		local skip_title = false
@@ -171,8 +176,6 @@ return {
 			end
 			return false
 		end)
-		Game.world.timer:tween(1/2, menu, {alpha = 0}, 'in-sine')
-		cutscene:wait(1/2)
 		menu:remove()
 		cutscene:detachFollowers()
 		if not skip_title then
@@ -392,7 +395,7 @@ return {
 			panel_container.layer = 1002
 			panel_container:addFX(fakehsv, "fakehsv")
 			Game.world:addChild(panel_container)
-			local panel = ProphecyPanel("initial2", "THE LEGEND OF THIS WORLD.\n<DELTARUNE.>", 150, 90)
+			local panel = ProphecyPanel("backgrounds/IMAGE_DEPTH_EXTEND_MONO_SEAMLESS", "backgrounds/IMAGE_DEPTH_EXTEND_SEAMLESS", "initial2", "THE LEGEND OF THIS WORLD.\n<DELTARUNE.>", 150, 90)
 			panel:setOrigin(0.5, 0.5)
 			panel.sprite_offset_x = 49
 			panel.sprite_offset_y = 61
@@ -449,7 +452,7 @@ return {
 			end
 			Game.world.timer:after(10/30, function()
 				for i = 1,30 do
-					local groundshard = ProphecyGroundShard((panel_container.x - 199) + ((i * 199) / 30) + MathUtils.random(-30, 30), panel_container.y + MathUtils.random(120))
+					local groundshard = ProphecyGroundShard((panel_container.x - 150/2 - 199) + ((i * 398) / 30) + MathUtils.random(-30, 30), panel_container.y - 90/2 + MathUtils.random(120))
 					groundshard.layer = 1000
 					groundshard:setParallax(0)
 					groundshard.ytarg = 10000
@@ -500,14 +503,11 @@ return {
 			arch:setColor(COLORS.black)
 			Game.world:addChild(arch)
 			Game.world.timer:tween(4/30, arch, {y = 0}, "linear")
-			cutscene:wait(20/30)
+			cutscene:wait(8/30)
 			windsfx:stop()
-			cutscene:wait(10/30)
 			windows:remove()
 			prophecies:remove()
 			broken_container:remove()
-			cutscene:wait(10/30)
-			cutscene:wait(0/30)
 			Assets.playSound("snd_closet_impact")
 			kris:setParallax(1)
 			susie:setParallax(1)
@@ -531,8 +531,8 @@ return {
 				trans.collider.collidable = true
 			end
 			arch:remove()
-		end
-	
+			do_ripple = true
+		end	
 		kris.x = kris_x
 		kris.y = kris_y
 		susie.x = susie_x
@@ -544,7 +544,27 @@ return {
 		Game.world.camera.y = kris_y
         kris:setSprite("landed")
         susie:setSprite("landed")
+		local ripple_fx
+		if do_ripple then
+			kris.layer = 1110
+			susie.layer = 1110
+			kris:setColor(COLORS.black)
+			susie:setColor(COLORS.black)
+			ripple_fx = RippleEffect()
+			ripple_fx.layer = 1101
+			Game.world:addChild(ripple_fx)
+			ripple_fx:makeRipple(kris_x, kris_y, 100, COLORS.aqua, 220, 1, 18, 1101, 0, 1.05)
+			ripple_fx:makeRipple(susie_x, susie_y, 100, COLORS.fuchsia, 220, 1, 18, 1101, 0, 1.05)
+		end
         cutscene:wait(120/30)
+		if do_ripple then
+			kris.layer = kris_layer
+			susie.layer = susie_layer
+			ralsei.layer = ralsei_layer
+			kris:setColor(COLORS.white)
+			susie:setColor(COLORS.white)
+			ripple_fx:remove()
+		end
         Assets.playSound("him_quick")
         cutscene:fadeIn(1)
 		Kristal.showBorder(1)

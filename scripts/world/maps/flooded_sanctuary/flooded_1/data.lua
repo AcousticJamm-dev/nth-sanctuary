@@ -970,7 +970,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["map"] = "flooded_sanctuary/hellentrance",
+            ["map"] = "flooded_sanctuary/hell_entrance",
             ["marker"] = "entry2"
           }
         },

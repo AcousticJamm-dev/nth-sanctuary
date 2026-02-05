@@ -23,7 +23,7 @@ return {
   },
   properties = {},
   wangsets = {},
-  tilecount = 80,
+  tilecount = 84,
   tiles = {
     {
       id = 0,
@@ -662,6 +662,48 @@ return {
       image = "../../../assets/sprites/world/objects/prophecy_shards.png",
       width = 222,
       height = 140
+    },
+    {
+      id = 85,
+      image = "../../../assets/sprites/world/events/churchcandle/lit_1.png",
+      width = 13,
+      height = 18,
+      animation = {
+        {
+          tileid = 85,
+          duration = 125
+        },
+        {
+          tileid = 86,
+          duration = 125
+        },
+        {
+          tileid = 87,
+          duration = 125
+        },
+        {
+          tileid = 88,
+          duration = 125
+        }
+      }
+    },
+    {
+      id = 86,
+      image = "../../../assets/sprites/world/events/churchcandle/lit_2.png",
+      width = 13,
+      height = 18
+    },
+    {
+      id = 87,
+      image = "../../../assets/sprites/world/events/churchcandle/lit_3.png",
+      width = 13,
+      height = 18
+    },
+    {
+      id = 88,
+      image = "../../../assets/sprites/world/events/churchcandle/lit_4.png",
+      width = 13,
+      height = 18
     }
   }
 }

@@ -37,6 +37,12 @@ function ChurchPiano:init(data)
 	self.cutscene = properties["cutscene"] or nil
 	self.clear_darkness = properties["cleardark"] ~= false
 	self.destroy_hints = properties["destroyhints"] ~= false
+	self.destroy_switches = properties["destroyswitches"] ~= false
+	self.destroy_cages = properties["destroycages"] ~= false
+	self.doomtime = properties["doomtime"] or 30
+	self.doomstyle = properties["doomstyle"] or 2
+	self.doomkind = properties["doomkind"] or "out"
+	self.flag = properties["flag"]
 	local space = 28
 	table.insert(self.drawunits, {sound = 3, x = 0, y = space, offx = 5, offy = 5, rot = math.rad(0), tex = self.arrowspr})
 	table.insert(self.drawunits, {sound = 5, x = space, y = 0, offx = 5, offy = 5, rot = math.rad(-90), tex = self.arrowspr})
@@ -57,6 +63,9 @@ function ChurchPiano:onAdd(parent)
 		table.insert(self.solution_nums, solution_num)
         i = i + 1
     end
+	if self.flag and Game:getFlag(self.flag, false) then
+		self.solved = true
+	end
 end
 
 local function scr_returnwait(x1, y1, x2, y2, spd)
@@ -308,14 +317,33 @@ function ChurchPiano:update()
 								Assets.playSound("sparkle_gem")
 								self.forceend = true
 								self.timer = 0
+								if self.flag then
+									Game:setFlag(self.flag, true)
+								end
 								if self.clear_darkness then
-									--for _, hint in ipairs(Game.world.map:getEvents("pianohint")) do
-									--	Game.world.timer:tween(20/30, hint, {hintalpha = 0}, 'out-quad', function() hint:remove() end)
-									--end
+									for _, dark in ipairs(Game.world.map:getEvents("darkness")) do
+										Game.world.timer:lerpVar(dark, "alpha", 1, 0, MathUtils.round(self.doomtime * 1.5), self.doomstyle, self.doomkind)
+									end
+								end
+								if self.destroy_switches then
+									for _, button in ipairs(Game.world.map:getEvents("tilebutton")) do
+										Game.world.timer:lerpVar(button, "alpha", 1, 0, self.doomtime, self.doomstyle, self.doomkind)
+										Game.world.timer:after(self.doomtime/30, function() button:remove() end)
+									end
+									for _, button in ipairs(Game.world.map:getEvents("churchtilebutton")) do
+										Game.world.timer:lerpVar(button, "alpha", 1, 0, self.doomtime, self.doomstyle, self.doomkind)
+										Game.world.timer:after(self.doomtime/30, function() button:remove() end)
+									end
 								end
 								if self.destroy_hints then
 									for _, hint in ipairs(Game.world.map:getEvents("pianohint")) do
-										Game.world.timer:tween(20/30, hint, {hintalpha = 0}, 'out-quad', function() hint:remove() end)
+										Game.world.timer:lerpVar(hint, "hintalpha", 1, 0, self.doomtime, self.doomstyle, self.doomkind)
+										Game.world.timer:after(self.doomtime/30, function() hint:remove() end)
+									end
+								end
+								if self.destroy_cages then
+									for _, cage in ipairs(Game.world.map:getEvents("steelcage")) do
+										cage:remove()
 									end
 								end
 							end

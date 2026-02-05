@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.10" tiledversion="1.10.2" name="church_objects" tilewidth="960" tileheight="800" tilecount="80" columns="0">
+<tileset version="1.10" tiledversion="1.10.2" name="church_objects" tilewidth="960" tileheight="800" tilecount="84" columns="0">
  <editorsettings>
   <export target="church_objects.lua" format="lua"/>
  </editorsettings>
@@ -290,5 +290,23 @@
  </tile>
  <tile id="84">
   <image width="222" height="140" source="../../../assets/sprites/world/objects/prophecy_shards.png"/>
+ </tile>
+ <tile id="85">
+  <image width="13" height="18" source="../../../assets/sprites/world/events/churchcandle/lit_1.png"/>
+  <animation>
+   <frame tileid="85" duration="125"/>
+   <frame tileid="86" duration="125"/>
+   <frame tileid="87" duration="125"/>
+   <frame tileid="88" duration="125"/>
+  </animation>
+ </tile>
+ <tile id="86">
+  <image width="13" height="18" source="../../../assets/sprites/world/events/churchcandle/lit_2.png"/>
+ </tile>
+ <tile id="87">
+  <image width="13" height="18" source="../../../assets/sprites/world/events/churchcandle/lit_3.png"/>
+ </tile>
+ <tile id="88">
+  <image width="13" height="18" source="../../../assets/sprites/world/events/churchcandle/lit_4.png"/>
  </tile>
 </tileset>

@@ -16,7 +16,28 @@ function ChurchPianoHint:init(data)
 	self.hintcol = ColorUtils.hexToRGB("#698DE6FF")
 	self.hintactive = false
 	self.hintalpha = 0
+	self.trigger = properties["alreadyactive"] or false
+	self.group = properties["group"] or nil
 	self.siner = 0
+    self.create_light = properties["light"] ~= false
+    self.lightsize = properties["lightsize"] or 120
+    self.once = properties["once"] ~= false
+end
+
+function ChurchPianoHint:onLoad()
+    super.onLoad(self)
+    if self.once and self:getFlag("used_once", false) then
+		if self.create_light then
+			local xx, yy = self:getRelativePos(self.width/2, self.height/2)
+			local light = Registry.createLegacyEvent("lightfollowing", {x = xx, y = yy})
+			light.target = nil
+			light.size = 1
+			self.world.timer:lerpVar(light, "size", 1, self.lightsize, 30, -1, "out")
+			self.world:spawnObject(light)
+		end
+		self.world.timer:lerpVar(self, "hintalpha", 0, 1, 30, 2, "out")
+		self.hintactive = true
+    end
 end
 
 function ChurchPianoHint:onAdd(parent)
@@ -34,15 +55,41 @@ end
 
 function ChurchPianoHint:update()
 	super.update(self)
-	local trig = true
-	if trig and not self.hintactive then
+	if self.group then
+		for _, button in ipairs(Game.world.map:getEvents("tilebutton")) do
+			if button.group == self.group then
+				if button.pressed then
+					self.trigger = true
+				end
+			end
+		end
+		for _, button in ipairs(Game.world.map:getEvents("churchtilebutton")) do
+			if button.group == self.group then
+				if button.pressed then
+					self.trigger = true
+				end
+			end
+		end
+	end
+	if self.trigger and not self.hintactive then
 		if not self.silent then
 			Assets.playSound("spearappear", 0.45, 1.2)
 			Assets.playSound("spearappear", 0.65, 1.3)
 			Assets.playSound("spearappear", 0.85, 1.4)
 		end
-		Game.world.timer:tween(30/30, self, {hintalpha = 1}, 'out-quad')
+		if self.create_light then
+			local xx, yy = self:getRelativePos(self.width/2, self.height/2)
+			local light = Registry.createLegacyEvent("lightfollowing", {x = xx, y = yy})
+			light.target = nil
+			light.size = 1
+			self.world.timer:lerpVar(light, "size", 1, self.lightsize, 30, -1, "out")
+			self.world:spawnObject(light)
+		end
+		self.world.timer:lerpVar(self, "hintalpha", 0, 1, 30, 2, "out")
 		self.hintactive = true
+        if self.once then
+            self:setFlag("used_once", true)
+        end
 	end
 end
 

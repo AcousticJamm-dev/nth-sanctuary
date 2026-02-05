@@ -10,9 +10,16 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 8,
-  nextobjectid = 37,
+  nextobjectid = 46,
   properties = {},
-  tilesets = {},
+  tilesets = {
+    {
+      name = "church_objects",
+      firstgid = 1,
+      filename = "../tilesets/church_objects.tsx",
+      exportfilename = "../tilesets/church_objects.lua"
+    }
+  },
   layers = {
     {
       type = "objectgroup",

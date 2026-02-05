@@ -90,7 +90,7 @@ function ChurchTileButton:update()
 			Game.world:addChild(glowspr)
 		end
 	end
-    self.sprite.alpha = self.do_ripple and 0 or 1
+    self.sprite.alpha = self.do_ripple and 0 or self.alpha
 end
 
 function ChurchTileButton:onPressed()

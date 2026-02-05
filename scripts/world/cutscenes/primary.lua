@@ -548,6 +548,8 @@ return {
 		if do_ripple then
 			kris.layer = 1110
 			susie.layer = 1110
+			kris:shake()
+			susie:shake()
 			kris:setColor(COLORS.black)
 			susie:setColor(COLORS.black)
 			ripple_fx = RippleEffect()

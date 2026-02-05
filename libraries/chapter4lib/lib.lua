@@ -26,12 +26,61 @@ Ch4Lib.BLEND_FACTORS = {
     srcalphasaturated = 0x0308, -- GL_SRC_ALPHA_SATURATE
 }
 
+function lib:computeBezier(curve, iteration)
+	local numpoints = math.max(#curve.x, #curve.value)
+	if numpoints < 2 then return nil end
+	local points = {}
+	local iterations = iteration * 2
+	local iter = 1 / iterations
+	for i = 1, numpoints do
+		local p0x = curve.x[i]
+		local p0y = curve.value[i]
+		local p1x = curve.x[i] + curve.tx1[i]
+		local p1y = curve.value[i] + curve.ty1[i]
+		local p2x = curve.x[math.min(i + 1, numpoints)] + curve.tx0[i]
+		local p2y = curve.value[math.min(i + 1, numpoints)] + curve.ty0[i]
+		local p3x = curve.x[math.min(i + 1, numpoints)]
+		local p3y = curve.value[math.min(i + 1, numpoints)]
+		for j = 0, iterations do
+			local t = j * iter
+			local t2 = t * t
+			local t3 = t2 * t
+			local mt = 1 - t
+			local mt2 = mt * mt
+			local mt3 = mt2 * mt
+			local vx = (p0x * mt3) + (3 * p1x * mt2 * t) + (3 * p2x * mt * t2) + (p3x * t3)
+			local vy = (p0y * mt3) + (3 * p1y * mt2 * t) + (3 * p2y * mt * t2) + (p3y * t3)
+			table.insert(points, {x = vx, value = vy})
+		end
+	end
+	return points
+end
+
 function lib:init()
     TableUtils.merge(MUSIC_VOLUMES, {
         ch4_battle = 0.7
     })
 	self.invert_alpha = Assets.getShader("invert_alpha")
 	self.accurate_blending = false
+	-- I had to guesstimaate a lot of this. x and value should be accurate though.
+	self.ripple_curve = {
+		norm = self:computeBezier({
+			x = {0, 0.05, 1},
+			value = {0, 0.21, 1},
+			tx0 = {0.01, -0.848, 0},
+			tx1 = {-0.01, 0, 0},
+			ty0 = {0, 0, 0},
+			ty1 = {0, 0, 0},
+		}, 16),
+		slow = self:computeBezier({
+			x = {0, 0.01, 1},
+			value = {0, 0.10, 1},
+			tx0 = {0.01, -0.82, 0},
+			tx1 = {0, 0, 0},
+			ty0 = {0, -0.48, 0},
+			ty1 = {0, 0, 0},
+		}, 16),
+	}
     if Kristal.getLibConfig("chapter4lib", "use_bm_subtract_blending") then
 		self.accurate_blending = true
 		local major, minor, revision = love.getVersion()

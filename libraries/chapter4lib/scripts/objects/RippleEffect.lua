@@ -16,7 +16,7 @@ function RippleEffect:makeRipple(x, y, life, color, radmax, radstart, thickness,
 	hsp = hsp or 0
 	vsp = vsp or 0
 	fric = fric or 0.1
-	curve = curve or LibTimer.tween["out-quart"]
+	curve = curve or Ch4Lib.ripple_curve["norm"]
 	table.insert(self.ripples, {
 		x = x,
 		y = y,
@@ -32,6 +32,41 @@ function RippleEffect:makeRipple(x, y, life, color, radmax, radstart, thickness,
 		fric = fric,
 		curve = curve
 	})
+end
+
+function RippleEffect:evaluate(curve, time)
+	if time < 0 then
+		time = 0
+	end
+	if time > 1 then
+		time = 1
+	end
+	local cmax = #curve
+	local cstart = 0
+	local cend = cmax  - 1
+	local cmid = math.floor(cend / 2)
+	while (cmid ~= cstart) do
+		if curve[math.min(cmid + 1, #curve)].x > time then
+			cend = cmid
+		else
+			cstart = cmid
+		end
+		cmid = math.floor((cstart + cend) / 2)
+	end
+	local x1 = curve[math.min(cmid + 1, cmax)].x
+	local x2 = curve[math.min(cmid + 2, cmax)].x
+	
+	if x1 == x2 then
+		return curve[math.min(cmid + 1, cmax)].value
+	end
+	
+	local val1 = curve[math.min(cmid + 1, cmax)].value
+	local val2 = curve[math.min(cmid + 2, cmax)].value
+	
+	local ratio = (time - x1) / (x2 - x1)
+	local val = ((val2 - val1) * ratio) + val1
+	
+	return val
 end
 
 function RippleEffect:draw()
@@ -55,7 +90,7 @@ function RippleEffect:draw()
 		
 		local xx = ripple.x - cx
 		local yy = ripple.y - cy
-		ripple.rad = MathUtils.lerp(ripple.radstart, ripple.radmax, ripple.curve(1 - (ripple.life / ripple.lifemax)))
+		ripple.rad = MathUtils.lerp(ripple.radstart, ripple.radmax, self:evaluate(ripple.curve, 1 - (ripple.life / ripple.lifemax)))
 		if ripple.rad > 0 then
 			love.graphics.setShader(self.shader)
 			self.shader:send("rippleCenter", {xx, yy})

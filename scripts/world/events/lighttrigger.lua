@@ -6,7 +6,7 @@ function ChurchLightTrigger:init(data)
 	
     self.solid = false
 
-    self.marker = properties["marker"]
+    self.markers = TiledUtils.parsePropertyList("marker", properties)
     self.xpos = properties["lightx"] or self.x
     self.ypos = properties["lighty"] or self.y
 
@@ -22,29 +22,42 @@ end
 function ChurchLightTrigger:onLoad()
     super.onLoad(self)
     if self.once and not self.temp and self:getFlag("used_once", false) then
-		local xx, yy = self.xpos, self.ypos
-		if self.marker then
-			xx, yy = self.world.map:getMarker(self.marker)
+		if #self.markers > 0 then
+			for i, marker in ipairs(self.markers) do
+				local xx, yy = self.world.map:getMarker(marker)
+				local light = Registry.createLegacyEvent("lightfollowing", {x = xx, y = yy})
+				light.target = nil
+				light.size = self.lightsize
+				self.world:spawnObject(light)
+			end
+		else
+			local light = Registry.createLegacyEvent("lightfollowing", {x = self.xpos, y = self.ypos})
+			light.target = nil
+			light.size = self.lightsize
+			self.world:spawnObject(light)
 		end
-		local light = Registry.createLegacyEvent("lightfollowing", {x = xx, y = yy})
-		light.target = nil
-		light.size = self.lightsize
-		self.world:spawnObject(light)
 		self:remove()
     end
 end
 
 function ChurchLightTrigger:onEnter(chara)
     if chara.is_player then
-		local xx, yy = self.xpos, self.ypos
-		if self.marker then
-			xx, yy = self.world.map:getMarker(self.marker)
+		if #self.markers > 0 then
+			for _, marker in ipairs(self.markers) do
+				local xx, yy = self.world.map:getMarker(marker)
+				local light = Registry.createLegacyEvent("lightfollowing", {x = xx, y = yy})
+				light.target = nil
+				light.size = self.lightsize
+				self.world.timer:lerpVar(light, "size", 1, self.lightsize, self.fadeintime, -1, "out")
+				self.world:spawnObject(light)
+			end
+		else
+			local light = Registry.createLegacyEvent("lightfollowing", {x = self.xpos, y = self.ypos})
+			light.target = nil
+			light.size = self.lightsize
+			self.world.timer:lerpVar(light, "size", 1, self.lightsize, self.fadeintime, -1, "out")
+			self.world:spawnObject(light)
 		end
-		local light = Registry.createLegacyEvent("lightfollowing", {x = xx, y = yy})
-		light.target = nil
-		light.size = 1
-		self.world.timer:lerpVar(light, "size", 1, self.lightsize, self.fadeintime, -1, "out")
-		self.world:spawnObject(light)
 		Assets.playSound("noise", 0.4, 0.6)
 		Assets.playSound("spearappear", 0.7, 1.4)
         if self.set_flag then

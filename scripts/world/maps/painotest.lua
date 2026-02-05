@@ -9,8 +9,8 @@ return {
   height = 12,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 7,
-  nextobjectid = 28,
+  nextlayerid = 8,
+  nextobjectid = 32,
   properties = {
     ["music"] = "smallpiano_room"
   },
@@ -23,7 +23,7 @@ return {
     },
     {
       name = "bg_dw_church_2_tileset",
-      firstgid = 10,
+      firstgid = 90,
       filename = "../tilesets/bg_dw_church_2_tileset.tsx"
     }
   },
@@ -49,10 +49,10 @@ return {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19,
-        0, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19,
-        0, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19,
-        0, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19,
+        0, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99,
+        0, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99,
+        0, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99,
+        0, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -63,8 +63,64 @@ return {
     {
       type = "objectgroup",
       draworder = "topdown",
+      id = 7,
+      name = "objects_switches",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 30,
+          name = "churchtilebutton",
+          type = "",
+          shape = "rectangle",
+          x = 180,
+          y = 240,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["downonce"] = true,
+            ["group"] = "hint2",
+            ["keepdown"] = true,
+            ["npcpress"] = false,
+            ["offsound"] = 0,
+            ["onsound"] = 0
+          }
+        },
+        {
+          id = 31,
+          name = "churchtilebutton",
+          type = "",
+          shape = "rectangle",
+          x = 560,
+          y = 120,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["downonce"] = true,
+            ["group"] = "hint",
+            ["keepdown"] = true,
+            ["npcpress"] = false,
+            ["offsound"] = 0,
+            ["onsound"] = 0
+          }
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
       id = 3,
-      name = "objects",
+      name = "objects_party",
       class = "",
       visible = true,
       opacity = 1,
@@ -113,10 +169,11 @@ return {
           x = 40,
           y = 0,
           width = 120,
-          height = 120,
+          height = 40,
           rotation = 0,
           visible = true,
           properties = {
+            ["group"] = "hint2",
             ["hint"] = "000111",
             ["staff"] = "start"
           }
@@ -129,11 +186,13 @@ return {
           x = 220,
           y = 0,
           width = 120,
-          height = 120,
+          height = 40,
           rotation = 0,
           visible = true,
           properties = {
+            ["group"] = "hint2",
             ["hint"] = "333111",
+            ["silent"] = true,
             ["staff"] = "end"
           }
         },
@@ -149,6 +208,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
+            ["destroyhints"] = false,
+            ["destroyswitches"] = false,
             ["solution"] = "131315"
           }
         },
@@ -157,13 +218,14 @@ return {
           name = "pianohint",
           type = "",
           shape = "rectangle",
-          x = 360,
+          x = 340,
           y = 280,
           width = 120,
-          height = 120,
+          height = 40,
           rotation = 0,
           visible = true,
           properties = {
+            ["group"] = "hint",
             ["hint"] = "131",
             ["staff"] = "start"
           }
@@ -173,14 +235,16 @@ return {
           name = "pianohint",
           type = "",
           shape = "rectangle",
-          x = 520,
+          x = 500,
           y = 280,
           width = 120,
-          height = 120,
+          height = 40,
           rotation = 0,
           visible = true,
           properties = {
+            ["group"] = "hint",
             ["hint"] = "315",
+            ["silent"] = true,
             ["staff"] = "end"
           }
         },

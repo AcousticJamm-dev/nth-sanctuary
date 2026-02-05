@@ -9,23 +9,40 @@ return {
   height = 12,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 7,
-  nextobjectid = 45,
-  properties = {},
+  nextlayerid = 9,
+  nextobjectid = 62,
+  properties = {
+    ["music"] = "darkchurch_intro"
+  },
   tilesets = {
     {
       name = "church_objects",
       firstgid = 1,
       filename = "../../tilesets/church_objects.tsx",
       exportfilename = "../../tilesets/church_objects.lua"
+    },
+    {
+      name = "libraryexcerpt",
+      firstgid = 90,
+      filename = "../../tilesets/libraryexcerpt.tsx",
+      exportfilename = "../../tilesets/libraryexcerpt.lua"
+    },
+    {
+      name = "bg_dw_church_tileset_new",
+      firstgid = 138,
+      filename = "../../tilesets/bg_dw_church_tileset_new.tsx",
+      exportfilename = "../../tilesets/bg_dw_church_tileset_new.lua"
     }
   },
   layers = {
     {
-      type = "objectgroup",
-      draworder = "topdown",
-      id = 3,
-      name = "objects_bg",
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 32,
+      height = 12,
+      id = 8,
+      name = "Tile Layer 2",
       class = "",
       visible = true,
       opacity = 1,
@@ -34,20 +51,20 @@ return {
       parallaxx = 1,
       parallaxy = 1,
       properties = {},
-      objects = {
-        {
-          id = 9,
-          name = "darkroombg",
-          type = "",
-          shape = "point",
-          x = 40,
-          y = 0,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        }
+      encoding = "lua",
+      data = {
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 0, 0, 0, 270, 270, 270, 270, 270,
+        270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270,
+        270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270
       }
     },
     {
@@ -68,18 +85,18 @@ return {
       properties = {},
       encoding = "lua",
       data = {
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        409, 409, 409, 409, 409, 480, 516, 517, 518, 552, 516, 517, 518, 552, 516, 517, 518, 480, 409, 409, 409, 409, 409, 480, 410, 410, 410, 480, 409, 409, 409, 409,
+        409, 409, 402, 409, 409, 486, 522, 523, 524, 558, 522, 523, 524, 558, 522, 523, 524, 486, 409, 409, 402, 409, 409, 486, 410, 410, 410, 486, 409, 409, 402, 409,
+        409, 409, 408, 409, 409, 492, 528, 529, 530, 564, 528, 529, 530, 564, 528, 529, 530, 492, 409, 409, 408, 409, 409, 492, 410, 410, 410, 492, 409, 409, 408, 409,
+        409, 409, 414, 409, 409, 510, 534, 535, 536, 576, 534, 535, 536, 576, 534, 535, 536, 510, 409, 409, 414, 409, 409, 510, 410, 410, 410, 510, 409, 409, 414, 409,
+        415, 415, 415, 415, 415, 504, 546, 547, 548, 582, 546, 547, 548, 582, 546, 547, 548, 504, 415, 415, 415, 415, 415, 504, 211, 211, 211, 504, 415, 415, 415, 415,
+        211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211,
+        211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211,
+        211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211, 211,
+        588, 588, 588, 588, 588, 588, 588, 588, 588, 588, 588, 588, 588, 588, 588, 588, 588, 588, 588, 588, 588, 588, 588, 588, 211, 211, 211, 588, 588, 588, 588, 588,
+        618, 619, 620, 621, 0, 0, 0, 618, 619, 620, 621, 0, 0, 0, 618, 619, 620, 621, 0, 0, 618, 619, 620, 621, 588, 588, 588, 618, 619, 620, 621, 0,
+        624, 625, 626, 627, 0, 0, 0, 624, 625, 626, 627, 0, 0, 0, 624, 625, 626, 627, 0, 0, 624, 625, 626, 627, 573, 0, 573, 624, 625, 626, 627, 0,
+        630, 631, 632, 633, 0, 0, 0, 630, 631, 632, 633, 0, 0, 0, 630, 631, 632, 633, 0, 0, 630, 631, 632, 633, 579, 0, 579, 630, 631, 632, 633, 0
       }
     },
     {
@@ -111,11 +128,11 @@ return {
         },
         {
           id = 11,
-          name = "light",
+          name = "light1",
           type = "",
           shape = "point",
-          x = 542,
-          y = 250,
+          x = 540,
+          y = 122,
           width = 0,
           height = 0,
           rotation = 0,
@@ -127,8 +144,8 @@ return {
           name = "light2",
           type = "",
           shape = "point",
-          x = 700,
-          y = 250,
+          x = 698,
+          y = 122,
           width = 0,
           height = 0,
           rotation = 0,
@@ -140,10 +157,117 @@ return {
           name = "light3",
           type = "",
           shape = "point",
-          x = 860,
-          y = 250,
+          x = 940,
+          y = 122,
           width = 0,
           height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 47,
+          name = "light4",
+          type = "",
+          shape = "point",
+          x = 1100,
+          y = 122,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 7,
+      name = "collision",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 54,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1080,
+          y = 160,
+          width = 200,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 56,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 960,
+          y = 120,
+          width = 120,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 58,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 0,
+          y = 160,
+          width = 960,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 59,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 0,
+          y = 320,
+          width = 960,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 60,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1080,
+          y = 320,
+          width = 200,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 61,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 960,
+          y = 360,
+          width = 120,
+          height = 40,
           rotation = 0,
           visible = true,
           properties = {}
@@ -176,8 +300,10 @@ return {
           rotation = 0,
           visible = true,
           properties = {
+            ["downonce"] = true,
             ["flagcheck"] = "!pianotest",
             ["group"] = "hint",
+            ["keepdown"] = true,
             ["npcpress"] = false,
             ["offsound"] = 0,
             ["onsound"] = 0
@@ -189,7 +315,7 @@ return {
           type = "",
           shape = "rectangle",
           x = 1200,
-          y = 60,
+          y = 74,
           width = 58,
           height = 246,
           rotation = 0,
@@ -219,8 +345,8 @@ return {
           name = "staticlight",
           type = "",
           shape = "point",
-          x = 382,
-          y = 250,
+          x = 380,
+          y = 122,
           width = 0,
           height = 0,
           rotation = 0,
@@ -234,14 +360,16 @@ return {
           name = "",
           type = "",
           shape = "rectangle",
-          x = 370,
-          y = 274,
+          x = 368,
+          y = 146,
           width = 26,
           height = 36,
           rotation = 0,
           gid = 86,
           visible = true,
-          properties = {}
+          properties = {
+            ["color"] = "#ff808080"
+          }
         },
         {
           id = 5,
@@ -249,13 +377,13 @@ return {
           type = "",
           shape = "rectangle",
           x = 440,
-          y = 0,
+          y = 200,
           width = 40,
-          height = 480,
+          height = 120,
           rotation = 0,
           visible = true,
           properties = {
-            ["marker"] = "light"
+            ["marker"] = "light1"
           }
         },
         {
@@ -263,14 +391,16 @@ return {
           name = "",
           type = "",
           shape = "rectangle",
-          x = 530,
-          y = 274,
+          x = 528,
+          y = 146,
           width = 26,
           height = 36,
           rotation = 0,
           gid = 86,
           visible = true,
-          properties = {}
+          properties = {
+            ["color"] = "#ff808080"
+          }
         },
         {
           id = 13,
@@ -278,9 +408,9 @@ return {
           type = "",
           shape = "rectangle",
           x = 600,
-          y = 10,
+          y = 200,
           width = 40,
-          height = 470,
+          height = 120,
           rotation = 0,
           visible = true,
           properties = {
@@ -292,8 +422,8 @@ return {
           name = "",
           type = "",
           shape = "rectangle",
-          x = 688,
-          y = 274,
+          x = 686,
+          y = 146,
           width = 26,
           height = 36,
           rotation = 0,
@@ -307,13 +437,14 @@ return {
           type = "",
           shape = "rectangle",
           x = 760,
-          y = 0,
+          y = 200,
           width = 40,
-          height = 480,
+          height = 120,
           rotation = 0,
           visible = true,
           properties = {
-            ["marker"] = "light3"
+            ["marker1"] = "light3",
+            ["marker2"] = "light4"
           }
         },
         {
@@ -321,8 +452,8 @@ return {
           name = "",
           type = "",
           shape = "rectangle",
-          x = 848,
-          y = 274,
+          x = 928,
+          y = 146,
           width = 26,
           height = 36,
           rotation = 0,
@@ -352,7 +483,7 @@ return {
           type = "",
           shape = "rectangle",
           x = 880,
-          y = 40,
+          y = 400,
           width = 120,
           height = 40,
           rotation = 0,
@@ -372,7 +503,7 @@ return {
           type = "",
           shape = "rectangle",
           x = 1040,
-          y = 40,
+          y = 400,
           width = 120,
           height = 40,
           rotation = 0,
@@ -406,8 +537,8 @@ return {
           name = "staticlight",
           type = "",
           shape = "point",
-          x = 222,
-          y = 250,
+          x = 220,
+          y = 122,
           width = 0,
           height = 0,
           rotation = 0,
@@ -421,8 +552,8 @@ return {
           name = "",
           type = "",
           shape = "rectangle",
-          x = 210,
-          y = 274,
+          x = 208,
+          y = 146,
           width = 26,
           height = 36,
           rotation = 0,
@@ -436,7 +567,7 @@ return {
           type = "",
           shape = "point",
           x = 1320,
-          y = 200,
+          y = 240,
           width = 0,
           height = 0,
           rotation = 0,
@@ -444,6 +575,20 @@ return {
           properties = {
             ["size"] = 160
           }
+        },
+        {
+          id = 46,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1088,
+          y = 146,
+          width = 26,
+          height = 36,
+          rotation = 0,
+          gid = 86,
+          visible = true,
+          properties = {}
         }
       }
     },

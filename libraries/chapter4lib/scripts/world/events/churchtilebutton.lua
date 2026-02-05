@@ -11,11 +11,20 @@ function ChurchTileButton:init(data)
     self:setHitbox(10, 6, 20, 12)
 	
     self.glow = properties["glow"] or true
+    self.downonce = properties["downonce"] or false
     self.do_ripple = properties["ripple"] or false
     self.glow_color = TiledUtils.parseColorProperty(properties["glow_color"]) or ColorUtils.hexToRGB("#4EADFF")
 	self.siner = MathUtils.random(360) * math.pi
     self.npc_activated = properties["npcpress"]
 	self.simplify_glowspr = nil
+end
+
+function ChurchTileButton:onLoad()
+    super.onLoad(self)
+	if self.downonce and self:getFlag("pressed_once", false) then
+		self:setSprite(self.pressed_sprite)
+		self.pressed = true
+	end
 end
 
 function ChurchTileButton:update()
@@ -114,6 +123,9 @@ function ChurchTileButton:onPressed()
 		ripple_fx:makeRipple(x, y, 120, COLORS.yellow, 380, 1, 15, 1999000)
 		ripple_fx:makeRipple(x, y, 120, COLORS.yellow, 320, 1, 15, 1999000)
 		ripple_fx:makeRipple(x, y, 120, COLORS.yellow, 240, 1, 15, 1999000)
+	end
+	if self.downonce then
+		self:setFlag("pressed_once", true)
 	end
 end
 

@@ -55,8 +55,9 @@
    <properties>
     <property name="actor" value="ral"/>
     <property name="text1_1" value="* I have no connection to Ralsei whatsoever I am Ralszor"/>
-    <property name="text1_2" value="* Dont drag me into it"/>
+    <property name="text1_2" value="* Dont drag me into [color:red][style:none]it"/>
     <property name="text2_1" value="* stop it youre dragging me into it"/>
+    <property name="text3_1" value="[color:red][style:none]* it"/>
    </properties>
   </object>
  </objectgroup>

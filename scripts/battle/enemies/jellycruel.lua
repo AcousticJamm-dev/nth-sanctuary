@@ -9,8 +9,8 @@ function Jellycruel:init()
     self:setActor("jellycruel")
 
     -- Enemy health
-    self.max_health = 10000
-    self.health = 10000
+    self.max_health = 5000
+    self.health = 5000
     -- Enemy attack (determines bullet damage)
     self.attack = 12
     -- Enemy defense (usually 0)
@@ -24,6 +24,8 @@ function Jellycruel:init()
     -- List of possible wave ids, randomly picked each turn
     self.waves = {
         "jellycruel/jellies",
+        "jellycruel/circle",
+        "jellycruel/TRAGEDY",
     }
 
     -- Dialogue randomly displayed in the enemy's speech bubble

@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.10.2",
+  tiledversion = "1.11.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 14,
-  nextobjectid = 36,
+  nextobjectid = 38,
   properties = {
     ["music"] = "homebase"
   },
@@ -23,7 +23,8 @@ return {
     {
       name = "bg_dw_church_tileset_new",
       firstgid = 199,
-      filename = "../../tilesets/bg_dw_church_tileset_new.tsx"
+      filename = "../../tilesets/bg_dw_church_tileset_new.tsx",
+      exportfilename = "../../tilesets/bg_dw_church_tileset_new.lua"
     },
     {
       name = "church_objects",
@@ -39,7 +40,7 @@ return {
       id = 12,
       name = "objects_parallax",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -83,7 +84,7 @@ return {
       id = 13,
       name = "objects_parallax_fade",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -412,6 +413,21 @@ return {
           rotation = 0,
           visible = true,
           properties = {}
+        },
+        {
+          id = 37,
+          name = "spawn",
+          type = "",
+          shape = "point",
+          x = 360,
+          y = 480,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["comment"] = "Like, Titan spawn?"
+          }
         }
       }
     },

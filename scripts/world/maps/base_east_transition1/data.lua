@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.10.2",
+  tiledversion = "1.11.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -19,7 +19,8 @@ return {
     {
       name = "bg_dw_church_tileset_new",
       firstgid = 1,
-      filename = "../../tilesets/bg_dw_church_tileset_new.tsx"
+      filename = "../../tilesets/bg_dw_church_tileset_new.tsx",
+      exportfilename = "../../tilesets/bg_dw_church_tileset_new.lua"
     },
     {
       name = "church_objects",
@@ -29,7 +30,7 @@ return {
     },
     {
       name = "light_areas",
-      firstgid = 609,
+      firstgid = 673,
       filename = "../../tilesets/light_areas.tsx"
     }
   },
@@ -481,7 +482,7 @@ return {
       id = 4,
       name = "objects_lightareas",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 0.5,
       offsetx = 0,
       offsety = 0,
@@ -499,7 +500,7 @@ return {
           width = 62,
           height = 480,
           rotation = 0,
-          gid = 613,
+          gid = 677,
           visible = true,
           properties = {
             ["light"] = true,
@@ -518,7 +519,7 @@ return {
           width = 18,
           height = 480,
           rotation = 0,
-          gid = 613,
+          gid = 677,
           visible = true,
           properties = {
             ["light"] = true,
@@ -537,7 +538,7 @@ return {
           width = 62,
           height = 480,
           rotation = 0,
-          gid = 613,
+          gid = 677,
           visible = true,
           properties = {
             ["light"] = true,
@@ -556,7 +557,7 @@ return {
           width = 18,
           height = 480,
           rotation = 0,
-          gid = 613,
+          gid = 677,
           visible = true,
           properties = {
             ["light"] = true,
@@ -575,7 +576,7 @@ return {
           width = 62,
           height = 480,
           rotation = 0,
-          gid = 613,
+          gid = 677,
           visible = true,
           properties = {
             ["light"] = true,
@@ -594,7 +595,7 @@ return {
           width = 18,
           height = 480,
           rotation = 0,
-          gid = 613,
+          gid = 677,
           visible = true,
           properties = {
             ["light"] = true,
@@ -613,7 +614,7 @@ return {
           width = 62,
           height = 480,
           rotation = 0,
-          gid = 613,
+          gid = 677,
           visible = true,
           properties = {
             ["light"] = true,
@@ -632,7 +633,7 @@ return {
           width = 18,
           height = 480,
           rotation = 0,
-          gid = 613,
+          gid = 677,
           visible = true,
           properties = {
             ["light"] = true,
@@ -651,7 +652,7 @@ return {
           width = 62,
           height = 480,
           rotation = 0,
-          gid = 613,
+          gid = 677,
           visible = true,
           properties = {
             ["light"] = true,
@@ -670,7 +671,7 @@ return {
           width = 18,
           height = 480,
           rotation = 0,
-          gid = 613,
+          gid = 677,
           visible = true,
           properties = {
             ["light"] = true,
@@ -689,7 +690,7 @@ return {
           width = 62,
           height = 480,
           rotation = 0,
-          gid = 613,
+          gid = 677,
           visible = true,
           properties = {
             ["light"] = true,
@@ -708,7 +709,7 @@ return {
           width = 18,
           height = 480,
           rotation = 0,
-          gid = 613,
+          gid = 677,
           visible = true,
           properties = {
             ["light"] = true,
@@ -727,7 +728,7 @@ return {
           width = 62,
           height = 480,
           rotation = 0,
-          gid = 613,
+          gid = 677,
           visible = true,
           properties = {
             ["light"] = true,
@@ -746,7 +747,7 @@ return {
           width = 18,
           height = 480,
           rotation = 0,
-          gid = 613,
+          gid = 677,
           visible = true,
           properties = {
             ["light"] = true,
@@ -765,7 +766,7 @@ return {
           width = 62,
           height = 480,
           rotation = 0,
-          gid = 613,
+          gid = 677,
           visible = true,
           properties = {
             ["light"] = true,
@@ -784,7 +785,7 @@ return {
           width = 18,
           height = 480,
           rotation = 0,
-          gid = 613,
+          gid = 677,
           visible = true,
           properties = {
             ["light"] = true,
@@ -803,7 +804,7 @@ return {
           width = 62,
           height = 480,
           rotation = 0,
-          gid = 613,
+          gid = 677,
           visible = true,
           properties = {
             ["light"] = true,
@@ -822,7 +823,7 @@ return {
           width = 18,
           height = 480,
           rotation = 0,
-          gid = 613,
+          gid = 677,
           visible = true,
           properties = {
             ["light"] = true,
@@ -841,7 +842,7 @@ return {
           width = 62,
           height = 480,
           rotation = 0,
-          gid = 613,
+          gid = 677,
           visible = true,
           properties = {
             ["light"] = true,
@@ -860,7 +861,7 @@ return {
           width = 18,
           height = 480,
           rotation = 0,
-          gid = 613,
+          gid = 677,
           visible = true,
           properties = {
             ["light"] = true,
@@ -879,7 +880,7 @@ return {
           width = 62,
           height = 480,
           rotation = 0,
-          gid = 613,
+          gid = 677,
           visible = true,
           properties = {
             ["light"] = true,
@@ -898,7 +899,7 @@ return {
           width = 18,
           height = 480,
           rotation = 0,
-          gid = 613,
+          gid = 677,
           visible = true,
           properties = {
             ["light"] = true,
@@ -917,7 +918,7 @@ return {
           width = 62,
           height = 480,
           rotation = 0,
-          gid = 613,
+          gid = 677,
           visible = true,
           properties = {
             ["light"] = true,
@@ -936,7 +937,7 @@ return {
           width = 18,
           height = 480,
           rotation = 0,
-          gid = 613,
+          gid = 677,
           visible = true,
           properties = {
             ["light"] = true,
@@ -955,7 +956,7 @@ return {
           width = 62,
           height = 480,
           rotation = 0,
-          gid = 613,
+          gid = 677,
           visible = true,
           properties = {
             ["light"] = true,
@@ -974,7 +975,7 @@ return {
           width = 18,
           height = 480,
           rotation = 0,
-          gid = 613,
+          gid = 677,
           visible = true,
           properties = {
             ["light"] = true,
@@ -993,7 +994,7 @@ return {
           width = 62,
           height = 480,
           rotation = 0,
-          gid = 613,
+          gid = 677,
           visible = true,
           properties = {
             ["light"] = true,

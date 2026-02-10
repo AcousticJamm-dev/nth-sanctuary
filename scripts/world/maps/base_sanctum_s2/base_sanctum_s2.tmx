@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="16" height="26" tilewidth="40" tileheight="40" infinite="0" nextlayerid="14" nextobjectid="36">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="16" height="26" tilewidth="40" tileheight="40" infinite="0" nextlayerid="14" nextobjectid="38">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -9,11 +9,11 @@
  <tileset firstgid="1" source="../../tilesets/bg_dw_church_2_tileset.tsx"/>
  <tileset firstgid="199" source="../../tilesets/bg_dw_church_tileset_new.tsx"/>
  <tileset firstgid="781" source="../../tilesets/church_objects.tsx"/>
- <objectgroup id="12" name="objects_parallax">
+ <objectgroup id="12" name="objects_parallax" visible="0">
   <object id="32" gid="782" x="-20" y="1040" width="200" height="1240"/>
   <object id="35" gid="785" x="150" y="1480" width="640" height="1600"/>
  </objectgroup>
- <objectgroup id="13" name="objects_parallax_fade">
+ <objectgroup id="13" name="objects_parallax_fade" visible="0">
   <object id="34" gid="789" x="680" y="1040" width="900" height="680" rotation="270"/>
  </objectgroup>
  <layer id="1" name="Tile Layer 1" width="16" height="26">
@@ -145,6 +145,12 @@
    <point/>
   </object>
   <object id="30" name="walkp3" x="220" y="900">
+   <point/>
+  </object>
+  <object id="37" name="spawn" x="360" y="480">
+   <properties>
+    <property name="comment" value="Like, Titan spawn?"/>
+   </properties>
    <point/>
   </object>
  </objectgroup>

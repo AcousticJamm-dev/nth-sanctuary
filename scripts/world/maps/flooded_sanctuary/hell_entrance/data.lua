@@ -12,7 +12,7 @@ return {
   nextlayerid = 15,
   nextobjectid = 35,
   properties = {
-    ["border"] = "church_flooded_dynamic",
+    ["border"] = "church_flooded_hell_dim",
     ["music"] = "waves"
   },
   tilesets = {
@@ -52,7 +52,7 @@ return {
     },
     {
       name = "WatersourceAnimated",
-      firstgid = 1206,
+      firstgid = 1071,
       filename = "../../../tilesets/WatersourceAnimated.tsx",
       exportfilename = "../../../tilesets/WatersourceAnimated.lua"
     }
@@ -196,7 +196,7 @@ return {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 405, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 411, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 411, 0, 0, 1206, 1207, 1207, 1208, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 411, 0, 0, 1071, 1072, 1072, 1073, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 411, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 417, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,

@@ -4,7 +4,7 @@
   <export target="data.lua" format="lua"/>
  </editorsettings>
  <properties>
-  <property name="border" value="church_flooded_dynamic"/>
+  <property name="border" value="church_flooded_hell_dim"/>
   <property name="music" value="waves"/>
  </properties>
  <tileset firstgid="1" source="../../../tilesets/bg_dw_church_watertileset.tsx"/>
@@ -13,7 +13,7 @@
  <tileset firstgid="942" source="../../../tilesets/libraryexcerpt.tsx"/>
  <tileset firstgid="990" source="../../../tilesets/bg_dw_church_watertileset_drained.tsx"/>
  <tileset firstgid="1008" source="../../../tilesets/flooded_sanctuary_extra.tsx"/>
- <tileset firstgid="1206" source="../../../tilesets/WatersourceAnimated.tsx"/>
+ <tileset firstgid="1071" source="../../../tilesets/WatersourceAnimated.tsx"/>
  <layer id="13" name="water" width="16" height="17" tintcolor="#535353">
   <data encoding="csv">
 22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,
@@ -87,7 +87,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,405,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,411,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,411,0,0,1206,1207,1207,1208,0,
+0,0,0,0,0,0,0,0,411,0,0,1071,1072,1072,1073,0,
 0,0,0,0,0,0,0,0,411,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,417,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,

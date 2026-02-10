@@ -48,7 +48,7 @@ function map:onEnter()
     end
 
     self.fade_top_tiles = 6
-    self.fade_bottom_tiles = 18
+    self.fade_bottom_tiles = 8
 end
 
 function map:update(world, data)

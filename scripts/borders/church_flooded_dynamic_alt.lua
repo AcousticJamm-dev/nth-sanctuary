@@ -3,7 +3,7 @@ local ChurchFloodedBorder, super = Class(ImageBorder)
 
 function ChurchFloodedBorder:init()
     super.init(self, "blank")
-    self.hell_texture_alt = Assets.getTexture("borders/church_flooded")
+    self.hell_texture_alt = Assets.getTexture("borders/church_flooded_dim")
 	self.hell_border_alpha_alt = Game:getFlag("floodedChurchBorderLastAlphaAlt", 0)
 	self.id = "church_flooded_dynamic_alt"
 end

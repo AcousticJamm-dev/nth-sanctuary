@@ -31,7 +31,8 @@ return {
     {
       name = "bg_dw_church_tileset_new",
       firstgid = 247,
-      filename = "../../../tilesets/bg_dw_church_tileset_new.tsx"
+      filename = "../../../tilesets/bg_dw_church_tileset_new.tsx",
+      exportfilename = "../../../tilesets/bg_dw_church_tileset_new.lua"
     },
     {
       name = "church_objects",
@@ -415,7 +416,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["map"] = "hell-1",
+            ["map"] = "hell_1",
             ["marker"] = "frisk_room_exit"
           }
         },

@@ -133,6 +133,8 @@ function Mod:c4lCreateFilterFX(type, properties)
 		hsv.val = hsv.val_start;
 		hsv.wave_time = 2;
         return hsv
+    elseif fxtype == "fractured" then
+        return FracturedHSVFX()
     elseif fxtype == "custom" then --FINALLY
 		local hsv = HSVShiftFX()
 		hsv.hue_start = properties["hue_start"] or 0; --NO

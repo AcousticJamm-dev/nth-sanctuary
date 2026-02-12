@@ -45,6 +45,8 @@ function map:onFootstep(char, num)
 
 		local px = Game.world.player.moving_x * Game.world.player:getCurrentSpeed(running)
 		local py = Game.world.player.moving_y * Game.world.player:getCurrentSpeed(running)
+		if Game.world.player.last_collided_x then px = 0 end
+		if Game.world.player.last_collided_y then py = 0 end
 		self.ripple_fx:makeRipple(x, y, 60, ColorUtils.hexToRGB("#4A91F6"), 220 * sizemod, 1, 18 * sizemod, 1999000, px * 1.05, py * 1.05)
 		self.ripple_fx:makeRipple(x, y, 60, ColorUtils.hexToRGB("#4A91F6"), 140 * sizemod, 1, 15 * sizemod, 1999000, px * 1.05, py * 1.05)
 	end

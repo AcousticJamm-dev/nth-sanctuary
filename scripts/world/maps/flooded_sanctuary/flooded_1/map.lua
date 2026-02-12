@@ -23,7 +23,7 @@ end
 function map:onEnter()
     if not Game:getFlag("shownfloodedmusic") then
         self.world.color = COLORS.black
-        self.tiles = Game.world.map:getTileLayer("tiles")
+        self.tiles = Game.world.map:getTileLayer("tiles1")
         self.tiles2 = Game.world.map:getTileLayer("tiles2")
         self.tiles3 = Game.world.map:getTileLayer("tiles3")
         self.tiles4 = Game.world.map:getTileLayer("tiles4")

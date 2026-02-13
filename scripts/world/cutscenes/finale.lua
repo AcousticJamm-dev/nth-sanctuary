@@ -8,7 +8,7 @@ return {
             cutscene:fadeOut(0, {music = true})
             Assets.playSound("locker", 1, 0.5)
             cutscene:wait(1)
-            Game.world:loadMap("final/final-intro")
+            Game.world:loadMap("wip_rooms/final_sanctuary/final_intro")
             cutscene:gotoCutscene("finale", "intro")
         else
             cutscene:text("* (Get ready.)")
@@ -100,7 +100,7 @@ return {
         Game.stage.timer:tween(0.67, rect, {alpha = 1})
         cutscene:wait(0.67)
         proph:remove()
-        cutscene:loadMap("final/final-1")
+        cutscene:loadMap("wip_rooms/final_sanctuary/final_1")
         rect:fadeOutAndRemove(1)
         local cam = Game.world.camera
         Game.world.timer:tween(1, cam, {zoom_y = 0.5, zoom_x = 0.5}, 'out-expo')

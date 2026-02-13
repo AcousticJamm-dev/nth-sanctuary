@@ -8,13 +8,13 @@ function GameOver:update()
     super.update(self)
 	
     if (self.current_stage == 11) then
-        Game.world:loadMap("hell-1")
+        Game.world:loadMap("sanctum_hell/hell_1")
 		self.current_stage = 12
 	end
 
     if ((self.timer >= 80) and (self.timer < 150)) then
         if (self.skipping >= 4) then
-            Game.world:loadMap("hell-1")
+            Game.world:loadMap("sanctum_hell/hell_1")
         end
     end
 end

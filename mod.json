@@ -73,7 +73,7 @@
                 "short": "Ep"
             },
             "chapter": false,
-            "map": "base_sanctum_center",
+            "map": "0_base_sanctum/base_sanctum_center",
             // "music": "silent",
             //"music": "mod_menu",
             "noStyledOptions": false,

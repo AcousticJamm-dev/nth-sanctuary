@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="27" height="48" tilewidth="40" tileheight="40" infinite="0" nextlayerid="11" nextobjectid="106">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="27" height="48" tilewidth="40" tileheight="40" infinite="0" nextlayerid="11" nextobjectid="106">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
  <properties>
   <property name="border" value="blank"/>
+  <property name="ft_blacklist" type="bool" value="true"/>
   <property name="music" value="fast-travel"/>
  </properties>
  <tileset firstgid="1" source="../../../tilesets/bg_dw_church_library_2_tileset.tsx"/>
@@ -367,7 +368,7 @@
   </object>
   <object id="64" name="transition" x="520" y="-40" width="160" height="40">
    <properties>
-    <property name="map" value="0_base_sanctum/grand_"/>
+    <property name="map" value="0_base_sanctum/base_grand_door"/>
     <property name="marker" value="entry_ft"/>
    </properties>
   </object>

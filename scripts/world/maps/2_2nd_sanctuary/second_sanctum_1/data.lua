@@ -859,7 +859,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["map"] = "2_2nd_sanctuary/ripplepost",
+            ["map"] = "2_2nd_sanctuary/second_sanctum_0_ripple_post",
             ["marker"] = "entry"
           }
         },

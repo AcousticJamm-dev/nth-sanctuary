@@ -195,7 +195,7 @@
  <objectgroup id="5" name="objects_party">
   <object id="19" name="transition" x="80" y="-40" width="80" height="40">
    <properties>
-    <property name="map" value="2_2nd_sanctuary/ripplepost"/>
+    <property name="map" value="2_2nd_sanctuary/second_sanctum_0_ripple_post"/>
     <property name="marker" value="entry"/>
    </properties>
   </object>

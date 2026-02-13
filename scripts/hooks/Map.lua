@@ -2,11 +2,7 @@ local Map, super = Class("Map", true)
 
 function Map:onExit()
 	super.onExit(self)
-	if Game.world.map.id and not TableUtils.contains({
-		"fast_travel", "grand_door", "citadel_room",
-		"citadel_room/citadel_room2", "citadel_room/citadel_room3",
-		"Map"
-	}, Game.world.map.id) then
+	if Game.world.map.id and Game.world.map.id ~= "Map" and not Game.world.map.data.properties["ft_blacklist"] then
 		Game:setFlag("ft_last_map", Game.world.map.id)
 	end
 end

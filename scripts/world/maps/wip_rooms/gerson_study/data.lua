@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.10.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -32,7 +32,7 @@ return {
   layers = {
     {
       type = "imagelayer",
-      image = "../../../../assets/sprites/backgrounds/gerson_study_base.png",
+      image = "../../../../../assets/sprites/backgrounds/gerson_study_base.png",
       id = 2,
       name = "bg",
       class = "",

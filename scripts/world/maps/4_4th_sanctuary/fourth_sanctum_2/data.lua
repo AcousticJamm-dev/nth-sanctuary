@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.10.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -36,7 +36,7 @@ return {
     },
     {
       name = "bg_dw_dither_overlay_tileset",
-      firstgid = 866,
+      firstgid = 871,
       filename = "../../../tilesets/bg_dw_dither_overlay_tileset.tsx"
     }
   },
@@ -1316,7 +1316,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["map"] = "secrets/super_secret_prism_room",
+            ["map"] = "secrets/prism_room",
             ["marker"] = "entry"
           }
         }

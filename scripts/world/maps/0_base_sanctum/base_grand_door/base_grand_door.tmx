@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="16" height="25" tilewidth="40" tileheight="40" infinite="0" nextlayerid="13" nextobjectid="57">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="16" height="25" tilewidth="40" tileheight="40" infinite="0" nextlayerid="13" nextobjectid="57">
  <editorsettings>
   <export format="lua"/>
  </editorsettings>
  <properties>
   <property name="border" value=""/>
+  <property name="ft_blacklist" type="bool" value="true"/>
   <property name="music" value="grand_bells"/>
   <property name="name" value="Entrance to Grand Sanctum"/>
  </properties>
@@ -55,7 +56,7 @@
  <objectgroup id="7" name="objects_party">
   <object id="30" name="transition" x="240" y="1000" width="160" height="40">
    <properties>
-    <property name="map" value="0_base_sanctum/base_grand_door"/>
+    <property name="map" value="0_base_sanctum/base_fast_travel"/>
     <property name="marker" value="entry_grand"/>
    </properties>
   </object>

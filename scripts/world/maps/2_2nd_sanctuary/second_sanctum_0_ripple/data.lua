@@ -447,7 +447,7 @@ return {
       width = 26,
       height = 18,
       id = 18,
-      name = "tile_osc_optimize",
+      name = "tiles_osc_optimize",
       class = "",
       visible = true,
       opacity = 1,

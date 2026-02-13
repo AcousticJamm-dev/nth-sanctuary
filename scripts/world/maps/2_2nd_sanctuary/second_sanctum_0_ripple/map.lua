@@ -16,6 +16,8 @@ function map:onEnter()
     self.world.color = COLORS.black
 	self.tiles = Game.world.map:getTileLayer("tiles")
 	self.tiles.alpha = 0
+	self.tiles_osc = Game.world.map:getTileLayer("tiles_osc_optimize")
+	self.tiles_osc.alpha = 0
 	for _, event in ipairs(self.events) do
 		if event.layer == self.layers["objects_tile_oscillate"] then
 			 event.visible = false
@@ -121,6 +123,7 @@ function map:update()
 				Game.world.color = COLORS.white
 				self.fakefader:fadeOutAndRemove(0.5)
 				self.tiles.alpha = 1
+				self.tiles_osc.alpha = 1
 				self.con = 2
 				for _, event in ipairs(self.events) do
 					if event.layer == self.layers["objects_parallax"] then

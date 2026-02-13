@@ -127,7 +127,7 @@
   <object id="57" gid="833" x="-720" y="760" width="640" height="1600" rotation="-315"/>
   <object id="58" gid="1073742657" x="120" y="730" width="640" height="1600" rotation="-315"/>
  </objectgroup>
- <layer id="18" name="tile_osc_optimize" width="26" height="18">
+ <layer id="18" name="tiles_osc_optimize" width="26" height="18">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,

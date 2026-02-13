@@ -13,6 +13,7 @@ return {
   nextobjectid = 57,
   properties = {
     ["border"] = "",
+    ["ft_blacklist"] = true,
     ["music"] = "grand_bells",
     ["name"] = "Entrance to Grand Sanctum"
   },
@@ -20,23 +21,24 @@ return {
     {
       name = "bg_dw_church_library_2_tileset",
       firstgid = 1,
-      filename = "../../tilesets/bg_dw_church_library_2_tileset.tsx"
+      filename = "../../../tilesets/bg_dw_church_library_2_tileset.tsx"
     },
     {
       name = "church_objects",
       firstgid = 261,
-      filename = "../../tilesets/church_objects.tsx",
-      exportfilename = "../../tilesets/church_objects.lua"
+      filename = "../../../tilesets/church_objects.tsx",
+      exportfilename = "../../../tilesets/church_objects.lua"
     },
     {
       name = "light_areas",
-      firstgid = 292,
-      filename = "../../tilesets/light_areas.tsx"
+      firstgid = 351,
+      filename = "../../../tilesets/light_areas.tsx"
     },
     {
       name = "bg_dw_church_tileset_new",
-      firstgid = 302,
-      filename = "../../tilesets/bg_dw_church_tileset_new.tsx"
+      firstgid = 361,
+      filename = "../../../tilesets/bg_dw_church_tileset_new.tsx",
+      exportfilename = "../../../tilesets/bg_dw_church_tileset_new.lua"
     }
   },
   layers = {
@@ -78,14 +80,14 @@ return {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        851, 851, 851, 851, 851, 851, 851, 851, 851, 851, 851, 851, 851, 851, 851, 851,
-        434, 434, 434, 434, 434, 434, 434, 434, 434, 434, 434, 434, 434, 434, 434, 434,
-        434, 434, 434, 434, 434, 434, 434, 434, 434, 434, 434, 434, 434, 434, 434, 434,
-        434, 434, 434, 434, 434, 434, 434, 434, 434, 434, 434, 434, 434, 434, 434, 434,
-        434, 434, 434, 434, 434, 434, 434, 434, 434, 434, 434, 434, 434, 434, 434, 434,
-        434, 434, 434, 434, 434, 434, 434, 434, 434, 434, 434, 434, 434, 434, 434, 434,
-        434, 434, 434, 434, 434, 434, 434, 434, 434, 434, 434, 434, 434, 434, 434, 434,
-        434, 434, 434, 434, 434, 434, 434, 434, 434, 434, 434, 434, 434, 434, 434, 434,
+        910, 910, 910, 910, 910, 910, 910, 910, 910, 910, 910, 910, 910, 910, 910, 910,
+        493, 493, 493, 493, 493, 493, 493, 493, 493, 493, 493, 493, 493, 493, 493, 493,
+        493, 493, 493, 493, 493, 493, 493, 493, 493, 493, 493, 493, 493, 493, 493, 493,
+        493, 493, 493, 493, 493, 493, 493, 493, 493, 493, 493, 493, 493, 493, 493, 493,
+        493, 493, 493, 493, 493, 493, 493, 493, 493, 493, 493, 493, 493, 493, 493, 493,
+        493, 493, 493, 493, 493, 493, 493, 493, 493, 493, 493, 493, 493, 493, 493, 493,
+        493, 493, 493, 493, 493, 493, 493, 493, 493, 493, 493, 493, 493, 493, 493, 493,
+        493, 493, 493, 493, 493, 493, 493, 493, 493, 493, 493, 493, 493, 493, 493, 493,
         0, 0, 0, 0, 0, 0, 171, 163, 162, 174, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 171, 172, 173, 184, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 171, 173, 173, 174, 0, 0, 0, 0, 0, 0,
@@ -124,7 +126,7 @@ return {
           width = 140,
           height = 40,
           rotation = 0,
-          gid = 434,
+          gid = 493,
           visible = true,
           properties = {}
         },
@@ -138,7 +140,7 @@ return {
           width = 150,
           height = 40,
           rotation = 0,
-          gid = 434,
+          gid = 493,
           visible = true,
           properties = {}
         }
@@ -339,7 +341,7 @@ return {
           width = 220,
           height = 860,
           rotation = 0,
-          gid = 294,
+          gid = 353,
           visible = true,
           properties = {
             ["light"] = true,

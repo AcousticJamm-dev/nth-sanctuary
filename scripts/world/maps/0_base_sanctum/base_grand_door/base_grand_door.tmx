@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="16" height="25" tilewidth="40" tileheight="40" infinite="0" nextlayerid="13" nextobjectid="57">
  <editorsettings>
-  <export format="lua"/>
+  <export target="data.lua" format="lua"/>
  </editorsettings>
  <properties>
   <property name="border" value=""/>

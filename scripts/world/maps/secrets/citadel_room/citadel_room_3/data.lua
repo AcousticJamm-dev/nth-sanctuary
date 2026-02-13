@@ -195,7 +195,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["map"] = "citadel_room/citadel_room_1",
+            ["map"] = "secrets/citadel_room_1",
             ["marker"] = "entry2"
           }
         },

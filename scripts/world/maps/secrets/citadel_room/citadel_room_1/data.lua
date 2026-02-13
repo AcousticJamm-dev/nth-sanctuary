@@ -470,7 +470,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["map"] = "citadel_room/citadel_room_2",
+            ["map"] = "secrets/citadel_room_2",
             ["marker"] = "entry"
           }
         },
@@ -486,7 +486,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["map"] = "citadel_room/citadel_room3",
+            ["map"] = "secrets/citadel_room_3",
             ["marker"] = "entry"
           }
         },

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="32" height="24" tilewidth="40" tileheight="40" infinite="0" nextlayerid="10" nextobjectid="27">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="32" height="24" tilewidth="40" tileheight="40" infinite="0" nextlayerid="10" nextobjectid="29">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
  <properties>
   <property name="music" value="darkchurch_intro"/>
  </properties>
- <tileset firstgid="1" source="../../tilesets/libraryexcerpt.tsx"/>
+ <tileset firstgid="1" source="../../../tilesets/libraryexcerpt.tsx"/>
  <layer id="1" name="mask" width="32" height="24">
   <data encoding="csv">
 31,0,0,31,31,31,31,31,31,31,31,31,31,31,31,0,0,31,31,0,0,31,31,31,31,31,31,0,0,31,31,31,
@@ -49,7 +49,14 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup color="#ff00ff" id="3" name="objects_party"/>
+ <objectgroup color="#ff00ff" id="3" name="objects_party">
+  <object id="28" name="transition" x="-40" y="440" width="40" height="80">
+   <properties>
+    <property name="map" value="sanctum_hell/hell_1"/>
+    <property name="marker" value="entry"/>
+   </properties>
+  </object>
+ </objectgroup>
  <objectgroup id="4" name="objects_fg"/>
  <objectgroup color="#0000ff" id="5" name="collision" visible="0">
   <object id="2" x="0" y="0" width="40" height="440"/>
@@ -77,6 +84,9 @@
  </objectgroup>
  <objectgroup color="#7f00ff" id="7" name="markers">
   <object id="1" name="spawn" x="80" y="40">
+   <point/>
+  </object>
+  <object id="27" name="entry" x="40" y="480">
    <point/>
   </object>
  </objectgroup>

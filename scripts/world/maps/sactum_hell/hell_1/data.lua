@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 8,
-  nextobjectid = 62,
+  nextobjectid = 63,
   properties = {
     ["border"] = "hell",
     ["music"] = "hellworld",
@@ -20,8 +20,8 @@ return {
     {
       name = "libraryexcerpt",
       firstgid = 1,
-      filename = "../../tilesets/libraryexcerpt.tsx",
-      exportfilename = "../../tilesets/libraryexcerpt.lua"
+      filename = "../../../tilesets/libraryexcerpt.tsx",
+      exportfilename = "../../../tilesets/libraryexcerpt.lua"
     }
   },
   layers = {
@@ -133,8 +133,8 @@ return {
           name = "spawn",
           type = "",
           shape = "point",
-          x = 600,
-          y = 440,
+          x = 620,
+          y = 510,
           width = 0,
           height = 0,
           rotation = 0,
@@ -188,8 +188,8 @@ return {
           name = "savepoint",
           type = "",
           shape = "rectangle",
-          x = 620,
-          y = 460,
+          x = 600,
+          y = 440,
           width = 40,
           height = 40,
           rotation = 0,
@@ -236,19 +236,6 @@ return {
           type = "",
           shape = "rectangle",
           x = -40,
-          y = 400,
-          width = 40,
-          height = 120,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 41,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 1200,
           y = 400,
           width = 40,
           height = 120,
@@ -369,8 +356,24 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["map"] = "flooded_sanctuary/hell_entrance",
+            ["map"] = "3_flooded_sanctuary/flooded_hell_entrance",
             ["marker"] = "spawn"
+          }
+        },
+        {
+          id = 62,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 1200,
+          y = 440,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "wip_rooms/dark_place",
+            ["marker"] = "entry"
           }
         }
       }

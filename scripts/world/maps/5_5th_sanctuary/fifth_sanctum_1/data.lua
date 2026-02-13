@@ -848,7 +848,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["map"] = "fifth_sanctum/fifth_sanctum_prophecy",
+            ["map"] = "5_5th_sanctuary/fifth_sanctum_prophecy",
             ["marker"] = "spawn"
           }
         },

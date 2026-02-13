@@ -845,7 +845,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["map"] = "0_base_sanctum/base_0_base_sanctum/base_fast_travel",
+            ["map"] = "0_base_sanctum/base_fast_travel",
             ["marker"] = "entry_primary"
           }
         },

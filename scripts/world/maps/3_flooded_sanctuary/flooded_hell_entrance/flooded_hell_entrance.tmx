@@ -150,9 +150,9 @@
    </properties>
   </object>
   <object id="12" name="ripplefloor" x="120" y="440" width="520" height="240"/>
-  <object id="21" name="transition" x="320" y="640" width="40" height="40">
+  <object id="21" name="transition" x="320" y="680" width="40" height="40">
    <properties>
-    <property name="map" value="hell_1"/>
+    <property name="map" value="sactum_hell/hell_1"/>
     <property name="marker" value="north_exit"/>
    </properties>
   </object>

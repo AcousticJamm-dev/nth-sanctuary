@@ -447,13 +447,13 @@ return {
           type = "",
           shape = "rectangle",
           x = 320,
-          y = 640,
+          y = 680,
           width = 40,
           height = 40,
           rotation = 0,
           visible = true,
           properties = {
-            ["map"] = "hell_1",
+            ["map"] = "sactum_hell/hell_1",
             ["marker"] = "north_exit"
           }
         }

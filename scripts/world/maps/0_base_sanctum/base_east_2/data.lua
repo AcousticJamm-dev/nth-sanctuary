@@ -19,19 +19,19 @@ return {
     {
       name = "bg_dw_church_tileset_new",
       firstgid = 1,
-      filename = "../../tilesets/bg_dw_church_tileset_new.tsx",
-      exportfilename = "../../tilesets/bg_dw_church_tileset_new.lua"
+      filename = "../../../tilesets/bg_dw_church_tileset_new.tsx",
+      exportfilename = "../../../tilesets/bg_dw_church_tileset_new.lua"
     },
     {
       name = "church_objects",
       firstgid = 583,
-      filename = "../../tilesets/church_objects.tsx",
-      exportfilename = "../../tilesets/church_objects.lua"
+      filename = "../../../tilesets/church_objects.tsx",
+      exportfilename = "../../../tilesets/church_objects.lua"
     },
     {
       name = "light_areas",
       firstgid = 673,
-      filename = "../../tilesets/light_areas.tsx"
+      filename = "../../../tilesets/light_areas.tsx"
     }
   },
   layers = {
@@ -454,7 +454,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["map"] = "0_base_sanctum/base_east2",
+            ["map"] = "0_base_sanctum/base_east_3",
             ["marker"] = "entry"
           }
         },
@@ -470,7 +470,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["map"] = "0_base_sanctum/base_east",
+            ["map"] = "0_base_sanctum/base_east_1",
             ["marker"] = "entry2"
           }
         }

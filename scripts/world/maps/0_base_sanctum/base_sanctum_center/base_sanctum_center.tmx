@@ -283,7 +283,7 @@ THE KNIGHT IS TO NO FAULT.</property>
   </object>
   <object id="24" name="transition" x="560" y="-40" width="80" height="40">
    <properties>
-    <property name="map" value="0_base_sanctum/base_0_base_sanctum/base_fast_travel"/>
+    <property name="map" value="0_base_sanctum/base_fast_travel"/>
     <property name="marker" value="entry_primary"/>
    </properties>
   </object>

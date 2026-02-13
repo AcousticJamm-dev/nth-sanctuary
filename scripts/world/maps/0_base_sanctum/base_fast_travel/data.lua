@@ -831,7 +831,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["map"] = "0_base_sanctum/base_0_base_sanctum/base_fast_travel",
+            ["map"] = "0_base_sanctum/grand_",
             ["marker"] = "entry_ft"
           }
         },
@@ -949,7 +949,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["map"] = "citadel_room",
+            ["map"] = "secrets/citadel_room",
             ["map_name"] = "a special place",
             ["req"] = "0",
             ["solid"] = true,
@@ -1000,7 +1000,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["map"] = "0_base_sanctum/base_0_base_sanctum/base_sanctum_center",
+            ["map"] = "0_base_sanctum/base_sanctum_center",
             ["marker"] = "entry_north"
           }
         }

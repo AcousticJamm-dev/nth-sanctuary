@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.10.2",
+  tiledversion = "1.11.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 10,
-  nextobjectid = 27,
+  nextobjectid = 29,
   properties = {
     ["music"] = "darkchurch_intro"
   },
@@ -18,8 +18,8 @@ return {
     {
       name = "libraryexcerpt",
       firstgid = 1,
-      filename = "../../tilesets/libraryexcerpt.tsx",
-      exportfilename = "../../tilesets/libraryexcerpt.lua"
+      filename = "../../../tilesets/libraryexcerpt.tsx",
+      exportfilename = "../../../tilesets/libraryexcerpt.lua"
     }
   },
   layers = {
@@ -118,7 +118,24 @@ return {
       parallaxx = 1,
       parallaxy = 1,
       properties = {},
-      objects = {}
+      objects = {
+        {
+          id = 28,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = -40,
+          y = 440,
+          width = 40,
+          height = 80,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "sanctum_hell/hell_1",
+            ["marker"] = "entry"
+          }
+        }
+      }
     },
     {
       type = "objectgroup",
@@ -458,6 +475,19 @@ return {
           shape = "point",
           x = 80,
           y = 40,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 27,
+          name = "entry",
+          type = "",
+          shape = "point",
+          x = 40,
+          y = 480,
           width = 0,
           height = 0,
           rotation = 0,

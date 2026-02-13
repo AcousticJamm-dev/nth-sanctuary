@@ -64,13 +64,13 @@
  <objectgroup id="5" name="objects_party">
   <object id="77" name="transition" x="1280" y="360" width="40" height="40">
    <properties>
-    <property name="map" value="0_base_sanctum/base_east_transition1"/>
+    <property name="map" value="0_base_sanctum/base_east_3"/>
     <property name="marker" value="entry"/>
    </properties>
   </object>
   <object id="78" name="transition" x="-40" y="360" width="40" height="40">
    <properties>
-    <property name="map" value="0_base_sanctum/base_east_transition1"/>
+    <property name="map" value="0_base_sanctum/base_east_1"/>
     <property name="marker" value="entry2"/>
    </properties>
   </object>

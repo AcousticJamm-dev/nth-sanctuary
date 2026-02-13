@@ -940,7 +940,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["map"] = "0_base_sanctum/base_east_transition1",
+            ["map"] = "0_base_sanctum/base_east_2",
             ["marker"] = "entry"
           }
         },

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="24" tilewidth="40" tileheight="40" infinite="0" nextlayerid="8" nextobjectid="62">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="24" tilewidth="40" tileheight="40" infinite="0" nextlayerid="8" nextobjectid="63">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -8,7 +8,7 @@
   <property name="music" value="hellworld"/>
   <property name="name" value="Hell Sanctum - Main"/>
  </properties>
- <tileset firstgid="1" source="../../tilesets/libraryexcerpt.tsx"/>
+ <tileset firstgid="1" source="../../../tilesets/libraryexcerpt.tsx"/>
  <layer id="7" name="mask" width="30" height="24">
   <data encoding="csv">
 31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,0,31,31,31,31,31,31,31,31,31,31,31,31,31,31,
@@ -66,7 +66,7 @@
 </data>
  </layer>
  <objectgroup id="3" name="markers">
-  <object id="4" name="spawn" x="600" y="440">
+  <object id="4" name="spawn" x="620" y="510">
    <point/>
   </object>
   <object id="51" name="frisk_room_exit" x="20" y="790">
@@ -77,7 +77,7 @@
   </object>
  </objectgroup>
  <objectgroup id="4" name="objects_party">
-  <object id="5" name="savepoint" x="620" y="460" width="40" height="40">
+  <object id="5" name="savepoint" x="600" y="440" width="40" height="40">
    <properties>
     <property name="text1">* Welcome to Hell.[wait:10]
 This is your home now.</property>
@@ -97,7 +97,6 @@ This is your home now.</property>
    <point/>
   </object>
   <object id="39" x="-40" y="400" width="40" height="120"/>
-  <object id="41" x="1200" y="400" width="40" height="120"/>
   <object id="49" name="transition" x="-40" y="760" width="40" height="40">
    <properties>
     <property name="map" value="secrets/frisk_room"/>
@@ -122,8 +121,14 @@ This is your home now.</property>
   </object>
   <object id="61" name="transition" x="600" y="-40" width="40" height="40">
    <properties>
-    <property name="map" value="flooded_sanctuary/hell_entrance"/>
+    <property name="map" value="3_flooded_sanctuary/flooded_hell_entrance"/>
     <property name="marker" value="spawn"/>
+   </properties>
+  </object>
+  <object id="62" name="transition" x="1200" y="440" width="40" height="40">
+   <properties>
+    <property name="map" value="wip_rooms/dark_place"/>
+    <property name="marker" value="entry"/>
    </properties>
   </object>
  </objectgroup>

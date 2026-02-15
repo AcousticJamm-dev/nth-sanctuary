@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.10.2",
+  tiledversion = "1.11.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 16,
-  nextobjectid = 56,
+  nextobjectid = 59,
   properties = {
     ["music"] = "bell_ambience"
   },
@@ -202,6 +202,22 @@ return {
           gid = 31,
           visible = true,
           properties = {}
+        },
+        {
+          id = 56,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 1760,
+          y = 360,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "debug_rooms/piano_test",
+            ["marker"] = "entry"
+          }
         }
       }
     },
@@ -418,6 +434,19 @@ return {
           type = "",
           shape = "point",
           x = 200,
+          y = 390,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 57,
+          name = "entry2",
+          type = "",
+          shape = "point",
+          x = 1720,
           y = 390,
           width = 0,
           height = 0,

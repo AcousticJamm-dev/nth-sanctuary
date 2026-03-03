@@ -1,10 +1,10 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.10.2",
+  tiledversion = "1.11.2",
   name = "church_objects",
   class = "",
-  tilewidth = 960,
+  tilewidth = 2880,
   tileheight = 800,
   spacing = 0,
   margin = 0,
@@ -23,7 +23,7 @@ return {
   },
   properties = {},
   wangsets = {},
-  tilecount = 85,
+  tilecount = 88,
   tiles = {
     {
       id = 0,
@@ -710,6 +710,24 @@ return {
       image = "../../../assets/sprites/world/events/churchcandle/lit_4.png",
       width = 13,
       height = 18
+    },
+    {
+      id = 91,
+      image = "../../../assets/sprites/world/parallax/spr_dw_parallax_church_distant_tower_longest.png",
+      width = 2880,
+      height = 100
+    },
+    {
+      id = 92,
+      image = "../../../assets/sprites/world/parallax/spr_dw_parallax_church_arches_fade_alt.png",
+      width = 200,
+      height = 289
+    },
+    {
+      id = 93,
+      image = "../../../assets/sprites/world/parallax/spr_dw_parallax_church_arches_fade.png",
+      width = 200,
+      height = 289
     }
   }
 }

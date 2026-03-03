@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 13,
-  nextobjectid = 35,
+  nextobjectid = 47,
   properties = {
     ["border"] = "church_b",
     ["music"] = "second_church"
@@ -340,8 +340,8 @@ return {
           name = "spawn",
           type = "",
           shape = "point",
-          x = 640,
-          y = 560,
+          x = 280,
+          y = 940,
           width = 0,
           height = 0,
           rotation = 0,
@@ -624,20 +624,51 @@ return {
           }
         },
         {
-          id = 34,
-          name = "enemy",
+          id = 35,
+          name = "organikkenemy",
           type = "",
-          shape = "point",
+          shape = "rectangle",
           x = 740,
-          y = 940,
+          y = 880,
           width = 0,
           height = 0,
           rotation = 0,
           visible = true,
           properties = {
             ["actor"] = "organikk",
-            ["chase"] = "true",
-            ["encounter"] = "organikk"
+            ["aura"] = true,
+            ["chase"] = "false",
+            ["chasedist"] = 100,
+            ["chasetype"] = "linear",
+            ["encounter"] = "organikk",
+            ["group"] = 1,
+            ["pacetype"] = "verticalswing",
+            ["swingdiv"] = -30,
+            ["swinglength"] = 240
+          }
+        },
+        {
+          id = 36,
+          name = "organikkenemy",
+          type = "",
+          shape = "rectangle",
+          x = 460,
+          y = 880,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["actor"] = "organikk",
+            ["aura"] = true,
+            ["chase"] = "false",
+            ["chasedist"] = 100,
+            ["chasetype"] = "linear",
+            ["encounter"] = "organikk",
+            ["group"] = 1,
+            ["pacetype"] = "verticalswing",
+            ["swingdiv"] = 30,
+            ["swinglength"] = 240
           }
         }
       }

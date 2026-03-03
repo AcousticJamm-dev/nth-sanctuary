@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="28" tilewidth="40" tileheight="40" infinite="0" nextlayerid="13" nextobjectid="35">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="28" tilewidth="40" tileheight="40" infinite="0" nextlayerid="13" nextobjectid="47">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -158,7 +158,7 @@
   <object id="1" name="entry" x="60" y="940">
    <point/>
   </object>
-  <object id="25" name="spawn" x="640" y="560">
+  <object id="25" name="spawn" x="280" y="940">
    <point/>
   </object>
   <object id="27" name="entry2" x="1160" y="100">
@@ -200,13 +200,33 @@
     <property name="marker" value="entry"/>
    </properties>
   </object>
-  <object id="34" name="enemy" x="740" y="940">
+  <object id="35" name="organikkenemy" x="740" y="880">
    <properties>
     <property name="actor" value="organikk"/>
-    <property name="chase" value="true"/>
+    <property name="aura" type="bool" value="true"/>
+    <property name="chase" value="false"/>
+    <property name="chasedist" type="float" value="100"/>
+    <property name="chasetype" value="linear"/>
     <property name="encounter" value="organikk"/>
+    <property name="group" type="int" value="1"/>
+    <property name="pacetype" value="verticalswing"/>
+    <property name="swingdiv" type="float" value="-30"/>
+    <property name="swinglength" type="float" value="240"/>
    </properties>
-   <point/>
+  </object>
+  <object id="36" name="organikkenemy" x="460" y="880">
+   <properties>
+    <property name="actor" value="organikk"/>
+    <property name="aura" type="bool" value="true"/>
+    <property name="chase" value="false"/>
+    <property name="chasedist" type="float" value="100"/>
+    <property name="chasetype" value="linear"/>
+    <property name="encounter" value="organikk"/>
+    <property name="group" type="int" value="1"/>
+    <property name="pacetype" value="verticalswing"/>
+    <property name="swingdiv" type="float" value="30"/>
+    <property name="swinglength" type="float" value="240"/>
+   </properties>
   </object>
  </objectgroup>
  <objectgroup id="9" name="objects_top">

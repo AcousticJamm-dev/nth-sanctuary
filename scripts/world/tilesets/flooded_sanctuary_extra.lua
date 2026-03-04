@@ -11,7 +11,7 @@ return {
   columns = 9,
   image = "../../../assets/sprites/tilesets/flooded_sanctuary_extra.png",
   imagewidth = 180,
-  imageheight = 440,
+  imageheight = 140,
   objectalignment = "unspecified",
   tilerendersize = "grid",
   fillmode = "stretch",
@@ -26,6 +26,32 @@ return {
   },
   properties = {},
   wangsets = {},
-  tilecount = 198,
-  tiles = {}
+  tilecount = 63,
+  tiles = {
+    {
+      id = 36,
+      animation = {
+        {
+          tileid = 36,
+          duration = 125
+        },
+        {
+          tileid = 37,
+          duration = 125
+        },
+        {
+          tileid = 38,
+          duration = 125
+        },
+        {
+          tileid = 39,
+          duration = 125
+        },
+        {
+          tileid = 40,
+          duration = 125
+        }
+      }
+    }
+  }
 }

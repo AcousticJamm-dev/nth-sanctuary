@@ -16,7 +16,7 @@ function map:init(world, data)
     self.lava_grad_scale = (math.sin((Kristal.getTime() * 30) / 12) * 0.5)
     self.hell_border_alpha = 0
     self.font = nil
-    self.debug = false
+    self.debug = true
 
 end
 
@@ -54,7 +54,7 @@ function map:onEnter()
 	end
 
     self.fade_top_tiles = 6
-    self.fade_bottom_tiles = 8
+    self.fade_bottom_tiles = 12
 end
 
 function map:onExit()

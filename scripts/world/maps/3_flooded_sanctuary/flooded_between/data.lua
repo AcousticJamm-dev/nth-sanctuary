@@ -1,5 +1,5 @@
 return {
-  version = "1.11",
+  version = "1.10",
   luaversion = "5.1",
   tiledversion = "1.11.2",
   class = "",
@@ -79,12 +79,11 @@ return {
       name = "waterother",
       class = "",
       visible = true,
-      opacity = 1,
+      opacity = 0.8,
       offsetx = 0,
       offsety = 0,
       parallaxx = 1,
       parallaxy = 1,
-      tintcolor = { 83, 90, 132 },
       properties = {},
       encoding = "lua",
       data = {

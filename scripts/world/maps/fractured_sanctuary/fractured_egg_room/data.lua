@@ -10,10 +10,10 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 13,
-  nextobjectid = 45,
+  nextobjectid = 46,
   properties = {
     ["border"] = "none",
-    ["music"] = "raining_in_church2"
+    ["music"] = "alt_church_lobby"
   },
   tilesets = {
     {
@@ -62,7 +62,7 @@ return {
       objects = {
         {
           id = 43,
-          name = "",
+          name = "spires",
           type = "",
           shape = "rectangle",
           x = -160,
@@ -73,12 +73,13 @@ return {
           gid = 203,
           visible = true,
           properties = {
+            ["HasProphecyEffect"] = true,
             ["color"] = "#ff4b61a3"
           }
         },
         {
           id = 44,
-          name = "",
+          name = "spires",
           type = "",
           shape = "rectangle",
           x = 160,
@@ -89,7 +90,24 @@ return {
           gid = 3221225675,
           visible = true,
           properties = {
+            ["HasProphecyEffect"] = true,
             ["color"] = "#ff4b61a3"
+          }
+        },
+        {
+          id = 45,
+          name = "ProphecyTestObject ",
+          type = "",
+          shape = "rectangle",
+          x = 440,
+          y = 440,
+          width = 62,
+          height = 63,
+          rotation = 0,
+          gid = 220,
+          visible = true,
+          properties = {
+            ["HasProphecyEffect"] = true
           }
         }
       }
@@ -253,7 +271,7 @@ return {
         0, 0, 0, 0, 0, 46, 48, 47, 48, 48, 50, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 55, 1708, 47, 48, 1707, 59, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 64, 55, 56, 57, 59, 64, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 73, 65, 66, 67, 68, 73, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 73, 65, 66, 637, 68, 73, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 74, 75, 76, 77, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="16" height="24" tilewidth="40" tileheight="40" infinite="0" nextlayerid="20" nextobjectid="49">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="16" height="24" tilewidth="40" tileheight="40" infinite="0" nextlayerid="20" nextobjectid="49">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -17,7 +17,7 @@
  <tileset firstgid="1201" source="../../../tilesets/WatersourceAnimated.tsx"/>
  <tileset firstgid="1225" source="../../../tilesets/flooded_sanctuary_extra.tsx"/>
  <tileset firstgid="1288" source="../../../tilesets/bg_dw_library_tileset_new.tsx"/>
- <layer id="17" name="waterother" width="16" height="24" tintcolor="#535a84">
+ <layer id="17" name="waterother" width="16" height="24" opacity="0.8">
   <data encoding="csv">
 22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,
 22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,

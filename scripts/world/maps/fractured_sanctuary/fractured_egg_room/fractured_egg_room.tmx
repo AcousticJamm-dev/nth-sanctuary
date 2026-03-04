@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="16" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="13" nextobjectid="45">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="16" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="13" nextobjectid="46">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
  <properties>
   <property name="border" value="none"/>
-  <property name="music" value="raining_in_church2"/>
+  <property name="music" value="alt_church_lobby"/>
  </properties>
  <tileset firstgid="1" source="../../../tilesets/bg_dw_church_2_tileset.tsx"/>
  <tileset firstgid="199" source="../../../tilesets/church_objects.tsx"/>
@@ -13,14 +13,21 @@
  <tileset firstgid="877" source="../../../tilesets/bg_dw_library_tileset_new.tsx"/>
  <tileset firstgid="1707" source="../../../tilesets/ExtraCarpetTiles.tsx"/>
  <objectgroup id="12" name="objects_parallax">
-  <object id="43" gid="203" x="-160" y="1560" width="640" height="1600">
+  <object id="43" name="spires" gid="203" x="-160" y="1560" width="640" height="1600">
    <properties>
+    <property name="HasProphecyEffect" type="bool" value="true"/>
     <property name="color" type="color" value="#ff4b61a3"/>
    </properties>
   </object>
-  <object id="44" gid="3221225675" x="160" y="480" width="640" height="1600">
+  <object id="44" name="spires" gid="3221225675" x="160" y="480" width="640" height="1600">
    <properties>
+    <property name="HasProphecyEffect" type="bool" value="true"/>
     <property name="color" type="color" value="#ff4b61a3"/>
+   </properties>
+  </object>
+  <object id="45" name="ProphecyTestObject " gid="220" x="440" y="440" width="62" height="63">
+   <properties>
+    <property name="HasProphecyEffect" type="bool" value="true"/>
    </properties>
   </object>
  </objectgroup>
@@ -45,7 +52,7 @@
 0,0,0,0,0,46,48,47,48,48,50,0,0,0,0,0,
 0,0,0,0,0,55,1708,47,48,1707,59,0,0,0,0,0,
 0,0,0,0,0,64,55,56,57,59,64,0,0,0,0,0,
-0,0,0,0,0,73,65,66,67,68,73,0,0,0,0,0,
+0,0,0,0,0,73,65,66,637,68,73,0,0,0,0,0,
 0,0,0,0,0,0,74,75,76,77,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0

@@ -20,6 +20,7 @@ end
 
 function Mod:init()
     print("Loaded "..self.info.name.."!")
+    
     TableUtils.copyInto(MUSIC_VOLUMES, {
         second_church = 0.8
     })

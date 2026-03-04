@@ -1,5 +1,5 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
   tiledversion = "1.11.2",
   class = "",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 20,
-  nextobjectid = 138,
+  nextobjectid = 141,
   properties = {
     ["border"] = "church_flooded_dynamic",
     ["music"] = "floodedsanctuary"
@@ -1037,8 +1037,8 @@ return {
           name = "spawn",
           type = "",
           shape = "point",
-          x = 720,
-          y = 1680,
+          x = 480,
+          y = 1400,
           width = 0,
           height = 0,
           rotation = 0,
@@ -1147,6 +1147,19 @@ return {
             ["map"] = "3_flooded_sanctuary/flooded_2",
             ["marker"] = "entry"
           }
+        },
+        {
+          id = 139,
+          name = "RemotePianoMove",
+          type = "",
+          shape = "rectangle",
+          x = 320,
+          y = 1360,
+          width = 80,
+          height = 80,
+          rotation = 0,
+          visible = true,
+          properties = {}
         }
       }
     },

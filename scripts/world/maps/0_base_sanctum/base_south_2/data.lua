@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.10.2",
+  tiledversion = "1.11.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 14,
-  nextobjectid = 38,
+  nextobjectid = 40,
   properties = {
     ["music"] = "homebase"
   },
@@ -265,9 +265,9 @@ return {
           name = "script",
           type = "",
           shape = "rectangle",
-          x = 320,
+          x = 80,
           y = 920,
-          width = 40,
+          width = 200,
           height = 80,
           rotation = 0,
           visible = true,
@@ -428,6 +428,32 @@ return {
           properties = {
             ["comment"] = "Like, Titan spawn?"
           }
+        },
+        {
+          id = 38,
+          name = "jpoint",
+          type = "",
+          shape = "point",
+          x = 180,
+          y = 990,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 39,
+          name = "walkp4",
+          type = "",
+          shape = "point",
+          x = 180,
+          y = 910,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
         }
       }
     },

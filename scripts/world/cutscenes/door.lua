@@ -1,15 +1,21 @@
 return {
     d1 = function(cutscene)
         local man = cutscene:getCharacter("lobbyman")
-        local susie, ralsei, kris = cutscene:getCharacter("susie"),cutscene:getCharacter("ralsei"),cutscene:getCharacter("kris")
+        local susie, ralsei, kris, jamm = cutscene:getCharacter("susie"),cutscene:getCharacter("ralsei"),cutscene:getCharacter("kris"),cutscene:getCharacter("jamm")
         cutscene:detachFollowers()
         cutscene:walkTo(susie, "spoint", 1.5)
         cutscene:walkTo(ralsei, "rpoint", 1.5)
         cutscene:walkTo(kris, "kpoint", 1.5)
+        if Game:hasPartyMember("jamm") then
+            cutscene:walkTo(jamm, "jpoint", 1.5)
+        end
         cutscene:wait(1.5)
         susie:setFacing("up")
         kris:setFacing("up")
         ralsei:setFacing("up")
+        if Game:hasPartyMember("jamm") then
+            jamm:setFacing("up")
+        end
         cutscene:wait(1)
         cutscene:setSpeaker(susie)
         cutscene:text("* Hmm...", "suspicious")
@@ -36,5 +42,8 @@ return {
         cutscene:walkTo(susie, "walkp2", 1.5)
         cutscene:walkTo(ralsei, "walkp3", 1.5)
         cutscene:walkTo(kris, "walkp", 1.5)
+        if Game:hasPartyMember("jamm") then
+            cutscene:walkTo(jamm, "walkp4", 1.5)
+        end
     end
 }

@@ -831,16 +831,16 @@ return {
     end,
     prefall = function (cutscene)
         if Game:hasPartyMember("jamm") then
-            local j = cutscene:getCharacter("jamm")
-            cutscene:setSpeaker(j)
+            local jamm = cutscene:getCharacter("jamm")
+            cutscene:setSpeaker(jamm)
             cutscene:text("* Hey, [wait:5]you guys can go ahead.", "neutral")
             cutscene:text("* I think I dropped something.", "neutral")
-            if j.x > 920 and j.y > 640 then
-                cutscene:wait(cutscene:walkTo(j, "j-detour", 1))
+            if jamm.x > 920 and jamm.y > 640 then
+                cutscene:wait(cutscene:walkTo(jamm, "j-detour", 1))
             end
             Game.lock_movement = false
-            cutscene:walkTo(j, "jammgoesbyebye", 2)
-            j.following = false
+            cutscene:walkTo(jamm, "jammgoesbyebye", 2)
+            jamm.following = false
         end
     end,
     fall = function (cutscene)
@@ -848,7 +848,7 @@ return {
         local sus = cutscene:getCharacter("susie")
         local no = cutscene:getCharacter("noelle")
         local kris = cutscene:getCharacter("kris")
-        local j = cutscene:getCharacter("jamm")
+        local jamm = cutscene:getCharacter("jamm")
         cutscene:detachFollowers()
         cutscene:setSpeaker("susie")
         cutscene:text("* (Kris, [wait:5]look! [wait:10]It's Noelle!)", "blush")
@@ -918,9 +918,21 @@ return {
         cutscene:text("* (Ralsei, [wait:5]are humans supposed to breathe like that?)", "suspicious")
         cutscene:setSpeaker(ral)
         cutscene:text("* (...)", "frown")
+		cutscene:wait(1/2)
         if Game:hasPartyMember("jamm") then
-            j.x, j.y = 760, 640
+            jamm.x, jamm.y = 760, 640
+			jamm.following = true
+			sus:setFacing("right")
+			kris:setFacing("right")
+			ral:setFacing("right")
+			cutscene:wait(1/2)
+			cutscene:wait(cutscene:walkTo(jamm, "jpoint", 0.1))
+			cutscene:wait(cutscene:walkTo(jamm, "jpoint2", 2))
+			cutscene:wait(1)
+			cutscene:setSpeaker(jamm)
+        	cutscene:text("* Sorry, I'm back.", "neutral")
         end
+		
         cutscene:attachFollowers()
         Game:setFlag("noellefall", true)
     end,

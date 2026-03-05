@@ -413,7 +413,7 @@
   </object>
   <object id="105" name="ft_transition" x="520" y="1920" width="160" height="40">
    <properties>
-    <property name="map" value="0_base_sanctum/base_sanctum_center"/>
+    <property name="map" value="0_base_sanctum/base_center"/>
     <property name="marker" value="entry_north"/>
    </properties>
   </object>

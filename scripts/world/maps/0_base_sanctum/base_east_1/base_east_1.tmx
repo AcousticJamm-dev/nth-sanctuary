@@ -326,7 +326,7 @@
   </object>
   <object id="27" name="transition" x="-40" y="240" width="40" height="80">
    <properties>
-    <property name="map" value="0_base_sanctum/base_sanctum_center"/>
+    <property name="map" value="0_base_sanctum/base_center"/>
     <property name="marker" value="entry_east"/>
    </properties>
   </object>

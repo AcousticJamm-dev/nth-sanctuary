@@ -1026,7 +1026,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["map"] = "0_base_sanctum/base_sanctum_center",
+            ["map"] = "0_base_sanctum/base_center",
             ["marker"] = "entry_north"
           }
         },

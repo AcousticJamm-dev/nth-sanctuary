@@ -201,7 +201,7 @@ you.</property>
   </object>
   <object id="71" name="transition" x="1320" y="640" width="40" height="240">
    <properties>
-    <property name="map" value="0_base_sanctum/base_sanctum_center"/>
+    <property name="map" value="0_base_sanctum/base_center"/>
    </properties>
   </object>
  </objectgroup>

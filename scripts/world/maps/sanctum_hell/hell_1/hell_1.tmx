@@ -88,7 +88,7 @@ This is your home now.</property>
   </object>
   <object id="35" name="transition" x="600" y="960" width="40" height="40">
    <properties>
-    <property name="map" value="0_base_sanctum/base_sanctum_center"/>
+    <property name="map" value="0_base_sanctum/base_center"/>
     <property name="marker" value="spawn"/>
    </properties>
   </object>

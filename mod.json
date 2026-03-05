@@ -45,7 +45,7 @@
                 "short": "Ep"
             },
             "chapter": false,
-            "map": "0_base_sanctum/base_sanctum_center",
+            "map": "0_base_sanctum/base_center",
             "noStyledOptions": false,
             "style": "greatdoor",
             "hookOverlay": true,

@@ -80,19 +80,19 @@
   <object id="96" gid="640" x="430" y="844" width="108" height="104"/>
   <object id="103" name="transition" x="-40" y="920" width="40" height="80">
    <properties>
-    <property name="map" value="0_base_sanctum/base_sanctum_center"/>
+    <property name="map" value="0_base_sanctum/base_center"/>
     <property name="marker" value="entry_east"/>
    </properties>
   </object>
   <object id="106" name="transition" x="960" y="920" width="40" height="80">
    <properties>
-    <property name="map" value="0_base_sanctum/base_sanctum_center"/>
+    <property name="map" value="0_base_sanctum/base_center"/>
     <property name="marker" value="entry_east"/>
    </properties>
   </object>
   <object id="107" name="transition" x="180" y="240" width="110" height="40">
    <properties>
-    <property name="map" value="0_base_sanctum/base_sanctum_center"/>
+    <property name="map" value="0_base_sanctum/base_center"/>
     <property name="marker" value="entry_east"/>
    </properties>
   </object>

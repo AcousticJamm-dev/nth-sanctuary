@@ -160,7 +160,7 @@
  <objectgroup id="6" name="objects party">
   <object id="1" name="transition" x="80" y="-40" width="80" height="40">
    <properties>
-    <property name="map" value="0_base_sanctum/base_sanctum_center"/>
+    <property name="map" value="0_base_sanctum/base_center"/>
     <property name="marker" value="entry_south"/>
    </properties>
   </object>

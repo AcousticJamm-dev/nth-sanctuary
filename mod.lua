@@ -164,7 +164,7 @@ function Mod:afmPostInit(new_file)
     if new_file then
         Game:setFlag("fun", love.math.random(1, 170))
         Game.world:startCutscene("primary.intro")
-		Game:setFlag("ft_last_map", "base_sanctum_center")
+		Game:setFlag("ft_last_map", "base_center")
     else
         Game:setFlag("shards", nil) -- Clean up old save files
         if Game:getFlag("apkpure", true) then

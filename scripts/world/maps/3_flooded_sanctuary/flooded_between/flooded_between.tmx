@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="16" height="24" tilewidth="40" tileheight="40" infinite="0" nextlayerid="20" nextobjectid="52">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="16" height="24" tilewidth="40" tileheight="40" infinite="0" nextlayerid="20" nextobjectid="53">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -255,16 +255,15 @@
     <property name="marker" value="entry4"/>
    </properties>
   </object>
-  <object id="48" name="chest" x="220" y="270">
-   <properties>
-    <property name="item" value="revivemint"/>
-   </properties>
-   <point/>
-  </object>
   <object id="50" name="transition" x="640" y="200" width="40" height="120">
    <properties>
     <property name="map" value="3_flooded_sanctuary/flooded_1"/>
     <property name="marker" value="entry4"/>
+   </properties>
+  </object>
+  <object id="52" name="chest" x="200" y="240" width="40" height="40">
+   <properties>
+    <property name="item" value="revivemint"/>
    </properties>
   </object>
  </objectgroup>

@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 20,
-  nextobjectid = 52,
+  nextobjectid = 53,
   properties = {
     ["border"] = "church_flooded_dynamic_alt",
     ["music"] = "waves",
@@ -540,21 +540,6 @@ return {
           }
         },
         {
-          id = 48,
-          name = "chest",
-          type = "",
-          shape = "point",
-          x = 220,
-          y = 270,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["item"] = "revivemint"
-          }
-        },
-        {
           id = 50,
           name = "transition",
           type = "",
@@ -568,6 +553,21 @@ return {
           properties = {
             ["map"] = "3_flooded_sanctuary/flooded_1",
             ["marker"] = "entry4"
+          }
+        },
+        {
+          id = 52,
+          name = "chest",
+          type = "",
+          shape = "rectangle",
+          x = 200,
+          y = 240,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["item"] = "revivemint"
           }
         }
       }

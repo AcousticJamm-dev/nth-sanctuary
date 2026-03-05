@@ -5,6 +5,8 @@ function map:init(world, data)
     super.init(self, world, data)
     self.hell_border_alpha = 0
     self.debug = true
+    self.lava_alpha = 0.5 + (math.sin((Kristal.getTime() * 30) / 12) * 0.3)
+    self.lava_grad_scale = (math.sin((Kristal.getTime() * 30) / 12) * 0.5)
 end
 
 function map:onEnter()
@@ -26,6 +28,8 @@ function map:update()
             0, 1
         )
     end
+    self.lava_alpha = (math.sin((Kristal.getTime() * 30) / 12) * 0.2)
+    self.lava_grad_scale = (math.sin((Kristal.getTime() * 30) / 12) * 0.5)
 end
 
 function map:draw()

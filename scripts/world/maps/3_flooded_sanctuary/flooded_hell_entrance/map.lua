@@ -5,6 +5,8 @@ function map:init(world, data)
     super.init(self, world, data)
 	self.riptimer = 119
 	self.hell_border_alpha = nil
+    self.lava_alpha = 0.5 + (math.sin((Kristal.getTime() * 30) / 12) * 0.3)
+    self.lava_grad_scale = (math.sin((Kristal.getTime() * 30) / 12) * 0.5)
 end
 
 function map:onEnter()
@@ -27,6 +29,8 @@ function map:update(world, data)
 		end
 	end
 	self.riptimer = self.riptimer + 1 * DTMULT
+    self.lava_alpha = (math.sin((Kristal.getTime() * 30) / 12) * 0.2)
+    self.lava_grad_scale = (math.sin((Kristal.getTime() * 30) / 12) * 0.5)
 end
 
 ---@param char Player

@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.10.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 20,
-  nextobjectid = 146,
+  nextobjectid = 147,
   properties = {
     ["border"] = "church_flooded_dynamic",
     ["music"] = "floodedsanctuary"
@@ -88,27 +88,14 @@ return {
       properties = {},
       objects = {
         {
-          id = 99,
+          id = 146,
           name = "lavawaverbg",
           type = "",
-          shape = "rectangle",
+          shape = "point",
           x = 0,
-          y = 80,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 100,
-          name = "lavagradient",
-          type = "",
-          shape = "rectangle",
-          x = 80,
-          y = -40,
-          width = 40,
-          height = 40,
+          y = 120,
+          width = 0,
+          height = 0,
           rotation = 0,
           visible = true,
           properties = {}

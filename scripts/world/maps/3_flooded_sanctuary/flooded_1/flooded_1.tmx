@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="34" height="44" tilewidth="40" tileheight="40" infinite="0" nextlayerid="20" nextobjectid="146">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="34" height="44" tilewidth="40" tileheight="40" infinite="0" nextlayerid="20" nextobjectid="147">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -18,8 +18,9 @@
  <tileset firstgid="1524" source="../../../tilesets/ExtraClimbingTiles.tsx"/>
  <tileset firstgid="1533" source="../../../tilesets/church_objects.tsx"/>
  <objectgroup id="16" name="objects_bg">
-  <object id="99" name="lavawaverbg" x="0" y="80" width="40" height="40"/>
-  <object id="100" name="lavagradient" x="80" y="-40" width="40" height="40"/>
+  <object id="146" name="lavawaverbg" x="0" y="120">
+   <point/>
+  </object>
  </objectgroup>
  <layer id="19" name="Tile Layer 6" width="34" height="44" tintcolor="#586798">
   <data encoding="csv">

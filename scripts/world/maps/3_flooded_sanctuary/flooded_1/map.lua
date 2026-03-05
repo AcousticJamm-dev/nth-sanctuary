@@ -153,7 +153,7 @@ end
 
 function map:draw()
     super.draw(self)
-    local alpha = Game:getFlag("floodedChurchBorderLastAlpha", 0)
+    --[[local alpha = Game:getFlag("floodedChurchBorderLastAlpha", 0)
     if Game.world.player then
         local px = Game.world.player.x - 22
         local py = Game.world.player.y - 100
@@ -176,7 +176,7 @@ function map:draw()
             love.graphics.print(text, px, py)
             love.graphics.setFont(prev_font)
         end
-    end
+    end]]
 end
 
 return map

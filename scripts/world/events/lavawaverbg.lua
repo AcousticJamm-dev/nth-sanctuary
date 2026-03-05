@@ -5,6 +5,9 @@ function LavaWaverBG:init(data)
     local properties = data and data.properties or {}
     self.debug_select = false
     self.bg_tex = Assets.getTexture(properties["texture"] or "world/events/lavabg")
+    if data.shape ~= "point" then
+        self:addFX(MaskFX(self))
+	end
 end
 
 ---@see Draw.drawWrapped
@@ -24,6 +27,14 @@ local function drawWrappedHack(drawable, wrap_w, wrap_h)
         for j = 1, wrap_height do
             Draw.draw(drawable, x_offset + (i - 1) * dw, y_offset + (j - 1) * dh)
         end
+    end
+end
+
+function LavaWaverBG:drawMask()
+    if self.collider then
+        self.collider:drawFill()
+    else
+        love.graphics.rectangle("fill", 0,0,self:getSize())
     end
 end
 

@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 19,
-  nextobjectid = 43,
+  nextobjectid = 47,
   properties = {
     ["border"] = "church_flooded_hell_dim",
     ["music"] = "waves"
@@ -78,29 +78,24 @@ return {
       properties = {},
       objects = {
         {
-          id = 37,
-          name = "lavawavercropped",
+          id = 46,
+          name = "lavawaverbg",
           type = "",
-          shape = "rectangle",
+          shape = "polygon",
           x = 0,
-          y = 120,
-          width = 40,
-          height = 40,
+          y = 160,
+          width = 0,
+          height = 0,
           rotation = 0,
           visible = true,
-          properties = {}
-        },
-        {
-          id = 38,
-          name = "lavagradient",
-          type = "",
-          shape = "rectangle",
-          x = 150,
-          y = 40,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          visible = true,
+          polygon = {
+            { x = 0, y = 0 },
+            { x = 640, y = 0 },
+            { x = 640, y = 80 },
+            { x = 40, y = 80 },
+            { x = 40, y = 520 },
+            { x = 0, y = 520 }
+          },
           properties = {}
         }
       }
@@ -398,7 +393,7 @@ return {
           shape = "rectangle",
           x = 0,
           y = 120,
-          width = 120,
+          width = 80,
           height = 40,
           rotation = 0,
           visible = true,
@@ -413,9 +408,9 @@ return {
           name = "lavagradient",
           type = "",
           shape = "rectangle",
-          x = 560,
+          x = 600,
           y = 120,
-          width = 80,
+          width = 40,
           height = 40,
           rotation = 0,
           visible = true,

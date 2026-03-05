@@ -1337,7 +1337,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["parallax_x"] = 1.3
+            ["parallax_x"] = 1.2
           }
         },
         {
@@ -1360,14 +1360,14 @@ return {
           name = "parallax_waterfall",
           type = "",
           shape = "rectangle",
-          x = 1480,
+          x = 1360,
           y = 0,
           width = 80,
           height = 1280,
           rotation = 0,
           visible = true,
           properties = {
-            ["parallax_x"] = 1.3
+            ["parallax_x"] = 1.2
           }
         },
         {
@@ -1375,14 +1375,14 @@ return {
           name = "parallax_waterfall",
           type = "",
           shape = "rectangle",
-          x = 1720,
+          x = 1600,
           y = 0,
           width = 80,
           height = 1280,
           rotation = 0,
           visible = true,
           properties = {
-            ["parallax_x"] = 1.4
+            ["parallax_x"] = 1.2
           }
         },
         {
@@ -1390,7 +1390,7 @@ return {
           name = "parallax_waterfall",
           type = "",
           shape = "rectangle",
-          x = 2360,
+          x = 2240,
           y = 0,
           width = 80,
           height = 1280,
@@ -1405,14 +1405,14 @@ return {
           name = "parallax_waterfall",
           type = "",
           shape = "rectangle",
-          x = 2840,
-          y = 0,
+          x = 2720,
+          y = 10,
           width = 80,
           height = 1280,
           rotation = 0,
           visible = true,
           properties = {
-            ["parallax_x"] = 1.3
+            ["parallax_x"] = 1.2
           }
         },
         {
@@ -1420,14 +1420,14 @@ return {
           name = "parallax_waterfall",
           type = "",
           shape = "rectangle",
-          x = 3000,
-          y = 0,
+          x = 2880,
+          y = 10,
           width = 80,
           height = 1280,
           rotation = 0,
           visible = true,
           properties = {
-            ["parallax_x"] = 1.3
+            ["parallax_x"] = 1.2
           }
         }
       }

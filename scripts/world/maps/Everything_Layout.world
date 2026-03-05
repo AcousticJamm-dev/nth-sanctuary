@@ -359,10 +359,10 @@
         },
         {
             "fileName": "debug_rooms/lantern_test/lantern_test.tmx",
-            "height": 960,
-            "width": 1280,
+            "height": 1040,
+            "width": 1680,
             "x": -7640,
-            "y": -5680
+            "y": -5880
         },
         {
             "fileName": "debug_rooms/lighting_test/lighting_test.tmx",

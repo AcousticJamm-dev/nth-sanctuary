@@ -10,8 +10,8 @@ function map:init(world, data)
 end
 
 function map:onEnter()
-    self.fade_top_px = 0
-    self.fade_bottom_px = -7
+    self.fade_top_px = -4
+    self.fade_bottom_px = -4
 end
 
 function map:update()

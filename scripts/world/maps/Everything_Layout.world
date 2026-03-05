@@ -142,10 +142,10 @@
         },
         {
             "fileName": "3_flooded_sanctuary/flooded_hell_entrance/flooded_hell_entrance.tmx",
-            "height": 680,
+            "height": 800,
             "width": 640,
             "x": 7440,
-            "y": 6040
+            "y": 5920
         },
         {
             "fileName": "2_2nd_sanctuary/second_sanctum_0_ripple/second_sanctum_0_ripple.tmx",

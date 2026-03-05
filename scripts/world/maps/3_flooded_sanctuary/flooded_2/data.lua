@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.10.2",
+  tiledversion = "1.11.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -143,6 +143,7 @@ return {
       offsety = 0,
       parallaxx = 1,
       parallaxy = 1,
+      tintcolor = { 88, 103, 152 },
       properties = {},
       encoding = "lua",
       data = {

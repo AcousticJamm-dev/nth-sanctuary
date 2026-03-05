@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="34" height="44" tilewidth="40" tileheight="40" infinite="0" nextlayerid="20" nextobjectid="150">
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="34" height="44" tilewidth="40" tileheight="40" infinite="0" nextlayerid="20" nextobjectid="150">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -70,7 +70,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer id="13" name="tiles5" width="34" height="44" opacity="0.9" tintcolor="#586798">
+ <layer id="13" name="tiles5" width="34" height="44" tintcolor="#586798">
   <data encoding="csv">
 22,22,22,22,22,22,22,22,22,22,22,22,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 22,22,22,22,22,22,22,22,22,22,22,22,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -396,7 +396,7 @@
     <property name="marker" value="entry"/>
    </properties>
   </object>
-  <object id="118" name="transition" x="1360" y="530" width="40" height="110">
+  <object id="118" name="transition" x="1360" y="520" width="40" height="120">
    <properties>
     <property name="map" value="3_flooded_sanctuary/flooded_2"/>
     <property name="marker" value="entry"/>

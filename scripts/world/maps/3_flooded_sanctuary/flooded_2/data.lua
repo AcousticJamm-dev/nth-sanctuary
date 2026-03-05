@@ -1345,14 +1345,14 @@ return {
           name = "parallax_waterfall",
           type = "",
           shape = "rectangle",
-          x = 760,
+          x = 720,
           y = 0,
           width = 80,
           height = 1280,
           rotation = 0,
           visible = true,
           properties = {
-            ["parallax_x"] = 1.3
+            ["parallax_x"] = 1.1
           }
         },
         {
@@ -1375,14 +1375,14 @@ return {
           name = "parallax_waterfall",
           type = "",
           shape = "rectangle",
-          x = 1640,
+          x = 1720,
           y = 0,
           width = 80,
           height = 1280,
           rotation = 0,
           visible = true,
           properties = {
-            ["parallax_x"] = 1.3
+            ["parallax_x"] = 1.4
           }
         },
         {
@@ -1397,7 +1397,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["parallax_x"] = 1.3
+            ["parallax_x"] = 1.2
           }
         },
         {

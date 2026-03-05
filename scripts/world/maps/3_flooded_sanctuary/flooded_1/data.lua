@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 20,
-  nextobjectid = 147,
+  nextobjectid = 149,
   properties = {
     ["border"] = "church_flooded_dynamic",
     ["music"] = "floodedsanctuary"
@@ -945,19 +945,6 @@ return {
           properties = {}
         },
         {
-          id = 130,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = -440,
-          y = 120,
-          width = 80,
-          height = 120,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
           id = 131,
           name = "",
           type = "",
@@ -975,7 +962,7 @@ return {
           name = "",
           type = "",
           shape = "rectangle",
-          x = 400,
+          x = 440,
           y = 0,
           width = 40,
           height = 240,
@@ -990,7 +977,7 @@ return {
           shape = "rectangle",
           x = 0,
           y = 240,
-          width = 440,
+          width = 480,
           height = 40,
           rotation = 0,
           visible = true,
@@ -1076,6 +1063,19 @@ return {
           rotation = 0,
           visible = true,
           properties = {}
+        },
+        {
+          id = 148,
+          name = "entry4",
+          type = "",
+          shape = "point",
+          x = 40,
+          y = 180,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
         }
       }
     },
@@ -1139,6 +1139,22 @@ return {
           properties = {
             ["map"] = "3_flooded_sanctuary/flooded_2",
             ["marker"] = "entry"
+          }
+        },
+        {
+          id = 147,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = -40,
+          y = 120,
+          width = 40,
+          height = 120,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "3_flooded_sanctuary/flooded_between",
+            ["marker"] = "entry4"
           }
         }
       }

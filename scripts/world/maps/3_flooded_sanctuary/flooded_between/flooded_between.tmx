@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="16" height="24" tilewidth="40" tileheight="40" infinite="0" nextlayerid="20" nextobjectid="49">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="16" height="24" tilewidth="40" tileheight="40" infinite="0" nextlayerid="20" nextobjectid="52">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -226,6 +226,9 @@
   <object id="36" name="entry3" x="40" y="260">
    <point/>
   </object>
+  <object id="51" name="entry4" x="600" y="260">
+   <point/>
+  </object>
  </objectgroup>
  <objectgroup color="#0000ff" id="11" name="objects">
   <object id="31" name="transition" x="640" y="600" width="40" height="120">
@@ -257,6 +260,12 @@
     <property name="item" value="revivemint"/>
    </properties>
    <point/>
+  </object>
+  <object id="50" name="transition" x="640" y="200" width="40" height="120">
+   <properties>
+    <property name="map" value="3_flooded_sanctuary/flooded_1"/>
+    <property name="marker" value="entry4"/>
+   </properties>
   </object>
  </objectgroup>
  <objectgroup color="#ff02ff" id="7" name="objects_party"/>
@@ -293,6 +302,7 @@
   <object id="29" x="0" y="560" width="640" height="40"/>
   <object id="41" x="0" y="160" width="640" height="40"/>
   <object id="42" x="0" y="320" width="640" height="40"/>
+  <object id="49" x="280" y="200" width="80" height="120"/>
  </objectgroup>
  <objectgroup id="19" name="objects_silhouette">
   <object id="45" name="watersilhouette" x="80" y="0" width="80" height="760"/>

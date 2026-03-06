@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="20" height="34" tilewidth="40" tileheight="40" infinite="0" nextlayerid="21" nextobjectid="78">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="20" height="34" tilewidth="40" tileheight="40" infinite="0" nextlayerid="22" nextobjectid="78">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -463,10 +463,12 @@ THROUGH HER HEART.</property>
    </properties>
   </object>
  </objectgroup>
- <objectgroup id="4" name="objects_overlay">
+ <objectgroup id="21" name="objects_fog">
   <object id="3" name="churchfog" x="-147.333" y="50">
    <point/>
   </object>
+ </objectgroup>
+ <objectgroup id="4" name="objects_overlay">
   <object id="4" name="filter" x="-237.333" y="0">
    <properties>
     <property name="type" value="hsv3"/>

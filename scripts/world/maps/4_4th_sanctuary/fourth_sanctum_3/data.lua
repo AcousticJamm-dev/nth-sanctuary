@@ -9,7 +9,7 @@ return {
   height = 34,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 21,
+  nextlayerid = 22,
   nextobjectid = 78,
   properties = {
     ["border"] = "church_d",
@@ -1376,8 +1376,8 @@ return {
     {
       type = "objectgroup",
       draworder = "topdown",
-      id = 4,
-      name = "objects_overlay",
+      id = 21,
+      name = "objects_fog",
       class = "",
       visible = true,
       opacity = 1,
@@ -1399,7 +1399,23 @@ return {
           rotation = 0,
           visible = true,
           properties = {}
-        },
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 4,
+      name = "objects_overlay",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
         {
           id = 4,
           name = "filter",

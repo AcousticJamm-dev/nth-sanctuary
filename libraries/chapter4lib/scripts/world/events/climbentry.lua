@@ -14,7 +14,7 @@ end
 
 function event:update()
     super.update(self)
-	if self.center_if_tower and self.world.player and not (self.world.player.onrotatingtower) then
+	if self.center_if_tower and self.world.map.cyltower and self.world.player and not (self.world.player.onrotatingtower) then
 		self.x = self.world.map.cyltower.tower_x - 20
 	else
 		self.x = self.true_x

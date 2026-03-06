@@ -61,7 +61,7 @@ function preview:draw()
     love.graphics.rectangle("fill", 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)
     love.graphics.setColor(1,1,1)
     if flag == 0 or not flag then
-		self.scroll_speed = self.fade
+		self.scroll_speed = 1
 		local surf = Draw.pushCanvas(640, 480);
 		local amt = math.sin((self.tick / 15) * (2 * math.pi)) * (self.scroll_speed * 6)
 		love.graphics.setColor(0, 0, 0, 1)
@@ -136,7 +136,7 @@ function preview:drawPart(texture, xx, yy)
     draw_sprite_tiled_ext(pnl_tex, 0, 0, 0, 1, 1, oldHexToRgb("#42D0FF", scr_wave(0, 0.4, 4, 0)))
     Draw.popCanvas(true)
     love.graphics.setColorMask(true, true, true, false);
-    local x, y = -((_cx * 2) + (self.tick * 15)) * 0.5, -((_cy * 2) + (self.tick * 15)) * 0.5
+    local x, y = ((_cx * 2) + (self.tick * 15)) * 0.5, ((_cy * 2) + (self.tick * 15)) * 0.5
     draw_sprite_tiled_ext(self.prophecy, 0, x, y, 2, 2, oldHexToRgb("#42D0FF", 1));
     local orig_bm, orig_am = love.graphics.getBlendMode()
     love.graphics.setBlendMode("add", "premultiplied");

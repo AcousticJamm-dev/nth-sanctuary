@@ -42,6 +42,10 @@ function FileSelectBackground:onStateChange(old,new, ...)
     end
 end
 
+function FileSelectBackground:update()
+    self.siner = self.siner - DTMULT
+end
+
 function FileSelectBackground:draw()
     super.draw(self)
     if self.flag == 0 or not self.flag then
@@ -132,7 +136,7 @@ function FileSelectBackground:drawPart(texture, xx, yy)
     draw_sprite_tiled_ext(pnl_tex, 0, 0, 0, 1, 1, oldHexToRgb("#42D0FF", scr_wave(0, 0.4, 4, 0)))
     Draw.popCanvas(true)
     love.graphics.setColorMask(true, true, true, false);
-    local x, y = -((_cx * 2) + (self.tick * 15)) * 0.5, -((_cy * 2) + (self.tick * 15)) * 0.5
+    local x, y = ((_cx * 2) + (self.tick * 15)) * 0.5, ((_cy * 2) + (self.tick * 15)) * 0.5
     draw_sprite_tiled_ext(self.prophecy, 0, x, y, 2, 2, oldHexToRgb("#42D0FF", 1));
     local orig_bm, orig_am = love.graphics.getBlendMode()
     love.graphics.setBlendMode("add", "premultiplied");
@@ -147,7 +151,7 @@ function FileSelectBackground:drawPart(texture, xx, yy)
         love.graphics.setShader(shader)
         local rune = self.rune
         local runeox, runeoy = rune:getWidth()/2, rune:getHeight()/2
-        love.graphics.draw(rune, SCREEN_WIDTH/2+_xx, SCREEN_HEIGHT/2+30+math.sin(self.siner/30)*10+_yy, 0, 2, 2, runeox, runeoy)
+        love.graphics.draw(rune, SCREEN_WIDTH/2+_xx, SCREEN_HEIGHT/2+math.sin(self.siner/30)*10+_yy, 0, 2, 2, runeox, runeoy)
         love.graphics.setShader(last_shader)
     end, "replace", 1)
     love.graphics.setStencilTest("greater", 0)

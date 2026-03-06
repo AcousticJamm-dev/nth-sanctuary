@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 15,
-  nextobjectid = 65,
+  nextobjectid = 67,
   parallaxorigin = {
     x = -320,
     y = -240
@@ -650,6 +650,22 @@ return {
             ["light_color"] = "#ffffffff",
             ["light_dust"] = true,
             ["light_type"] = 1
+          }
+        },
+        {
+          id = 66,
+          name = "darkness",
+          type = "",
+          shape = "point",
+          x = 0,
+          y = 0,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["alpha"] = 0.2,
+            ["highlight"] = true
           }
         }
       }

@@ -72,6 +72,7 @@ function RotatingTower:init(data)
 	end
 	self.horizontaltilecount = self.tower_circumference / self.tile_width_fine
 	self.tile_angle_difference = 360 / self.horizontaltilecount
+	self.tm_background = {}
 	self.tm_tileset = {}
 	self.tile_data = {}
 	self.tile_id_data = {}
@@ -124,6 +125,12 @@ function RotatingTower:postLoad()
 	if self.use_collision_map then
 		--local layer_id = Game.world.map:loadHitboxes(self.collision_name)
 		--self.tm_collision = layer_id
+	end
+	if self.use_background_map then
+		for _, layer in ipairs(self.background_name) do
+			local layer_id = self.world.map:getTileLayer(layer)
+			table.insert(self.tm_background, layer_id)
+		end
 	end
 	self.tower_angle_prev = nil
 	self.tower_angle_prev2 = nil
@@ -201,6 +208,11 @@ function RotatingTower:update()
 					end
 				end
 			end
+		end
+	end
+	if self.use_background_map then
+		for _, layer in ipairs(self.tm_background) do
+			layer.x = -360 + ((self.tower_angle + 360) % 360)
 		end
 	end
 end

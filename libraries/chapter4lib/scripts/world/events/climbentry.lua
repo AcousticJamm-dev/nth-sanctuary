@@ -71,9 +71,13 @@ function event:onInteract(player, dir)
     end
 
     local id = "climb_fade"
+    local id2 = "climb_color"
     for _,follower in ipairs(self.world.followers) do
-        local mask = follower:addFX(AlphaFX(1), id)
-        self.world.timer:tween(10/30, mask, {alpha = 0})
+        local colormask = follower:addFX(RecolorFX(1,1,1,1,1), id2)
+        local mask = follower:addFX(AlphaFX(2), id)
+        self.world.timer:tween(7/30, colormask, {color = {0.5,0.5,0.5,1}})
+        self.world.timer:tween(7/30, mask, {alpha = 0})
+		follower.shadow_force_off = true
     end
 
     self:startScript(function (scr)
@@ -91,7 +95,7 @@ function event:onInteract(player, dir)
         
         Assets.playSound("wing")
         player.sprite:set("jump_ball")
-        scr.wait(jumpTo(player,tx,ty,10,.5))
+        scr.wait(jumpTo(player,tx,ty,8,8/30))
         player:resetSprite()
         self.world:detachFollowers()
 		if self.marker then
@@ -99,6 +103,7 @@ function event:onInteract(player, dir)
 		end
         Assets.playSound("noise")
         player:setState("CLIMB")
+		player.highlight_force_off = true
 		if self.world.map.cyltower then
 			if self.center_if_tower then
 				player.x = self.true_x + 20
@@ -137,21 +142,38 @@ function event:preClimbEnter(player)
         self:startScript(function (scr)
             Assets.stopAndPlaySound("wing")
             player.sprite:set("jump_ball")
-            scr.wait(jumpTo(player,tx,ty,10,.5))
+			local jumpstrength = 8
+			if self.facing == "up" then
+				jumpstrength = 12
+			end
+            scr.wait(jumpTo(player,tx,ty,jumpstrength,16/30))
             player:resetSprite()
             Assets.playSound("noise")
-            local id = "climb_fade"
+			local id = "climb_fade"
+			local id2 = "climb_color"
             for i,follower in ipairs(self.world.followers) do
                 local mask = follower:getFX(id)
                 if mask then
-                    self.world.timer:tween(10/30, mask, {alpha = 1}, nil, function ()
+                    self.world.timer:tween(8/30, mask, {alpha = 1}, nil, function ()
                         follower:removeFX(mask)
                     end)
                 end
+                local colormask = follower:getFX(id2)
+                if colormask then
+                    self.world.timer:tween(8/30, colormask, {color = {1,1,1,1}}, nil, function ()
+                        follower:removeFX(colormask)
+                    end)
+                end
+				self.world.timer:after(8/30, function()
+					follower.shadow_force_off = false
+				end)
                 -- TODO: Support parties > 3
                 follower:setPosition(tx + (i == 1 and -30 or 30), ty + (self.up and 10 or -10))
                 follower:setFacing(player.facing)
             end
+			self.world.timer:after(8/30, function()
+				self.world.player.highlight_force_off = false
+			end)
             self.world.player:interpolateFollowers()
             self.world:attachFollowers()
         end)

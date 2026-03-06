@@ -72,7 +72,7 @@ function Darkness:draw()
 				self:drawCharacter(object)
 				Draw.setColor(1, 1, 1, 1)
 			end
-			if object:includes(Character) and not object.no_highlight and self.draw_highlight then
+			if object:includes(Character) and not object.no_highlight and not object.highlight_force_off and self.draw_highlight then
 				love.graphics.stencil((function ()
 					love.graphics.translate(0, 2)
 					love.graphics.setShader(Kristal.Shaders["Mask"])
@@ -165,7 +165,7 @@ function Darkness:draw()
 			if object.darkness_unlit then
 				self:drawCharacter(object)
 			end
-			if object:includes(Character) and not object.no_highlight and self.draw_highlight then
+			if object:includes(Character) and not object.no_highlight and not object.highlight_force_off and self.draw_highlight then
 				love.graphics.stencil((function ()
 					love.graphics.translate(0, 2)
 					love.graphics.setShader(Kristal.Shaders["Mask"])

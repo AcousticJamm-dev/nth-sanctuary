@@ -303,7 +303,7 @@ function RotatingTower:draw()
 	if self.appearance == 0 then
 		Draw.setColor(0,0,0,0.6 * self.col_blend)
 		Draw.draw(self.gradient40, (self.tower_x - self.tower_radius) + self.tile_width, self.tower_y, -math.rad(270), self.verticaltilecount + 1, 1)
-		Draw.draw(self.gradient40, (self.tower_x + self.tower_radius) - self.tile_width, self.tower_y, -math.rad(90), -self.verticaltilecount + 1, 1)
+		Draw.draw(self.gradient40, (self.tower_x + self.tower_radius) - self.tile_width, self.tower_y, -math.rad(90), -self.verticaltilecount - 1, 1)
 	end
 	self.tower_x = self.tower_x - self.tower_xshake
 	self.tower_y = self.tower_y - self.tower_yshake

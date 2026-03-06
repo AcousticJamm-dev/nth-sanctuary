@@ -1,7 +1,7 @@
 return {
-  version = "1.11",
+  version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.10.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -9,7 +9,7 @@ return {
   height = 28,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 14,
+  nextlayerid = 15,
   nextobjectid = 95,
   parallaxorigin = {
     x = -320,
@@ -347,9 +347,9 @@ return {
         0, 0, 0, 0, 776, 776, 776, 776, 776, 776, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 776, 776, 776, 776, 776, 776, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 776, 776, 776, 776, 776, 776, 776, 776,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 776, 776, 776, 776, 776, 776, 776, 776,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 776, 776, 776, 776, 776, 776, 776, 776,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 776, 776, 776, 776, 776, 776, 776, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 776, 776, 776, 776, 776, 776, 776, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 776, 776, 776, 776, 776, 776, 776, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
       }
@@ -969,8 +969,8 @@ return {
     {
       type = "objectgroup",
       draworder = "topdown",
-      id = 6,
-      name = "objects_overlay",
+      id = 14,
+      name = "objects_fog",
       class = "",
       visible = true,
       opacity = 1,
@@ -992,7 +992,23 @@ return {
           rotation = 0,
           visible = true,
           properties = {}
-        },
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 6,
+      name = "objects_overlay",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
         {
           id = 23,
           name = "filter",

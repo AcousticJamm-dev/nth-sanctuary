@@ -399,7 +399,6 @@ function Player:processClimbInputs()
 				dust.physics.speed_x = MathUtils.random(-1, 1)
 				if self.onrotatingtower then
 					dust.x = self.world.map.cyltower.tower_x
-					dust.layer = self.world.map.cyltower.layer + 0.01
 				end
 				self.world:addChild(dust)
 			end
@@ -723,11 +722,10 @@ function Player:doClimbJump(direction, distance)
 				if self.onrotatingtower then
 					dust_x = self.world.map.cyltower.tower_x
 					if self.facing == "right" then
-						dust.physics.speed_x = 4
+						dust.physics.speed_x = -4
 					elseif self.facing == "left" then
 						dust.physics.speed_x = 4
 					end
-					dust.layer = self.world.map.cyltower.layer + 0.01
 				end
 				if charged then
 					dust_x = dust_x + MathUtils.random(-10, 10)
@@ -773,7 +771,6 @@ function Player:doClimbJump(direction, distance)
 						elseif self.facing == "left" then
 							afterimage.physics.speed_x = 4
 						end
-						afterimage.layer = self.world.map.cyltower.layer + 0.5
 					end
 					Game.world:addChild(afterimage)
 				end)

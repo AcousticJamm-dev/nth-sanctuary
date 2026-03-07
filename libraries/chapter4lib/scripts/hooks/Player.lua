@@ -432,7 +432,7 @@ function Player:processClimbInputs()
 			if self.grabonclimbtimer >= initwait + waittime then
 				if self.onrotatingtower then
 					self.x = (math.floor(self.x / 40) * 40) + 20
-					self.y = (math.floor(self.y / 40) * 40) + 20
+					self.y = (math.floor(self.y / 40) * 40)
 				else
 					self.x = MathUtils.round(self.x / 10) * 10
 					self.y = MathUtils.round(self.y / 10) * 10

@@ -46,6 +46,10 @@ function ClimbEnemy:init(data)
     self.speed = properties["speed"] or 12
     self.progress = (properties["progress"] or 0) % 1
     self.reverse_progress = false
+	if Game.world.map.cyltower then
+		self.visible = false
+	end
+	self.climb_obstacle = true
 end
 
 function ClimbEnemy:onAdd(parent)
@@ -150,7 +154,12 @@ function ClimbEnemy:update()
 	if self.damagecon == 2 then
 		self.timer = 0
 		self.color = COLORS.white
-		self:flash()
+		if self.world.map.cyltower then
+			local flash = FlashFadeTower(self.sprite.texture, self.x, self.y)
+			Game.world:addChild(flash)
+		else
+			self:flash()
+		end
 		Assets.playSound("ui_cancel", 0.4, 1.2)
 		Assets.playSound("laz_c", 0.3, 1.2)
 		local dmg_sprite = Sprite("effects/attack/cut")
@@ -158,6 +167,9 @@ function ClimbEnemy:update()
         dmg_sprite:setScale(2, 2)
         local relative_pos_x, relative_pos_y = self:getRelativePos(-40+self.width / 2, -40+self.height / 2)
         dmg_sprite:setPosition(relative_pos_x, relative_pos_y)
+		if self.world.map.cyltower then
+			dmg_sprite:setPosition(self.world.map.cyltower.tower_x, self.world.map.cyltower.krisy)
+		end
         dmg_sprite.layer = self.layer + 1
         dmg_sprite:play(1 / 15, false, function(s) s:remove() end)
         Game.world:addChild(dmg_sprite)
@@ -180,6 +192,9 @@ function ClimbEnemy:update()
 			dmg_sprite:setScale(2, 2)
 			local relative_pos_x, relative_pos_y = self:getRelativePos(-40+self.width / 2, -40+self.height / 2)
 			dmg_sprite:setPosition(relative_pos_x, relative_pos_y)
+			if self.world.map.cyltower then
+				dmg_sprite:setPosition(self.world.map.cyltower.tower_x, self.world.map.cyltower.krisy)
+			end
 			dmg_sprite.layer = self.layer + 0.01
 			dmg_sprite:play(1 / 15, false, function(s) s:remove() end)
 			Game.world:addChild(dmg_sprite)
@@ -197,12 +212,21 @@ function ClimbEnemy:update()
 			Assets.playSound("ui_cancel", 1, 0.5)
 			Assets.playSound("damage", 0.5, 0.5)
 			Assets.playSound("punchmed", 0.4, 1)
-            local afterimage_2 = AfterImageCutHalf(self.sprite.texture_path)
-			afterimage_2:setPosition(self.x/2, self.y/2)
-			afterimage_2.layer = self.layer
-			afterimage_2:setOriginExact(0, 0)
-			Game.world:addChild(afterimage_2)
-			self:remove()
+			if self.world.map.cyltower then	
+				local afterimage_2 = AfterImageCutHalfTower(self.sprite.texture_path)
+				afterimage_2:setPosition(self.x/2, self.y/2)
+				afterimage_2.layer = self.layer
+				afterimage_2:setOriginExact(0, 0)
+				Game.world:addChild(afterimage_2)
+				self:remove()
+			else
+				local afterimage_2 = AfterImageCutHalf(self.sprite.texture_path)
+				afterimage_2:setPosition(self.x/2, self.y/2)
+				afterimage_2.layer = self.layer
+				afterimage_2:setOriginExact(0, 0)
+				Game.world:addChild(afterimage_2)
+				self:remove()
+			end
 			return
 		end
 	end

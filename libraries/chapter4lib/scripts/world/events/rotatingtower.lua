@@ -302,6 +302,109 @@ function RotatingTower:draw()
 	end
 	local cull_top = render_ypos_start * self.tile_height_fine
 	local cull_bottom = render_ypos_end * self.tile_height_fine
+	local xscale_scaled = 1 / self.tile_width_fine
+	for _, event in ipairs(self.world.map.events) do
+		if event and event.climb_obstacle then
+			if event.id == "ClimbWaterBucket" then
+				local tilex = math.floor((event.x * xscale_scaled) + 1)
+				if tilex > self.horizontaltilecount - 1 then
+					tilex = tilex - self.horizontaltilecount - 1
+				elseif tilex < 0 then
+					tilex = tilex + self.horizontaltilecount - 1
+				end
+				local tile = self.tile_data[self.tm_tileset[1]][tilex - 1]
+				if tile.vis == 1 then
+					Draw.setColor(tile.color)
+					if event.generator then
+						Draw.draw(event.sprite.texture, self.tower_x + event.graphics.shake_x + tile.x, event.y + event.graphics.shake_y, 0, (tile.xscale * 2) / self.tile_width_fine, -2, 0, 10)
+						if event.drawwater > 0 then
+							local sprite = Assets.getFrames("world/events/climbwater/climb_waterbucket_splash")
+							local frame = math.floor(#sprite - (event.drawwater / 3)) + 1
+							Draw.draw(sprite[frame], self.tower_x + event.graphics.shake_x + tile.x, event.y + event.graphics.shake_y, 0, (tile.xscale * 2) / self.tile_width_fine, 2.2, 0, 13)
+						end
+					else
+						Draw.draw(event.sprite.texture, self.tower_x + event.graphics.shake_x + tile.x, event.y + event.graphics.shake_y, 0, (tile.xscale * 2) / self.tile_width_fine, 2.2, 0, 10)
+						if event.drawwater > 0 then
+							local sprite = Assets.getFrames("world/events/climbwater/climb_waterbucket_splash")
+							local frame = math.floor(#sprite - (event.drawwater / 3)) + 1
+							Draw.draw(sprite[frame], self.tower_x + event.graphics.shake_x + tile.x, event.y + event.graphics.shake_y, 0, (tile.xscale * 2) / self.tile_width_fine, 2.2, 0, 13)
+						end
+					end
+				end
+			else
+				local ox, oy = event:getOriginExact()
+				local adjustment = 1
+				if self.appearance == 1 then
+					adjustment = 3
+				end
+				local tilex = math.floor((event.x * xscale_scaled) + adjustment)
+				if tilex > self.horizontaltilecount - 1 then
+					tilex = tilex - self.horizontaltilecount - 1
+				elseif tilex < 0 then
+					tilex = tilex + self.horizontaltilecount - 1
+				end
+				local tile = self.tile_data[self.tm_tileset[1]][tilex - 1]
+				if tile.vis == 1 then
+					Draw.setColor(tile.color)
+					Draw.draw(event.sprite.texture, self.tower_x + event.graphics.shake_x + tile.x, event.y + event.graphics.shake_y, event.rotation, (tile.xscale * event.scale_x) / self.tile_width_fine, event.scale_y, ox, oy)
+				end
+			end
+		end
+	end
+	for _, flash in ipairs(Game.stage:getObjects(FlashFadeTower)) do
+		if flash then
+			local ox, oy = flash:getOriginExact()
+			local tilex = math.floor((flash.x * xscale_scaled) + 1)
+			if tilex > self.horizontaltilecount - 1 then
+				tilex = tilex - self.horizontaltilecount - 1
+			elseif tilex < 0 then
+				tilex = tilex + self.horizontaltilecount - 1
+			end
+			local xoff = flash.x % self.tile_width_fine
+			local tile = self.tile_data[self.tm_tileset[1]][tilex - 1]
+			if tile.vis == 1 then
+				Draw.setColor(tile.color)
+				local last_shader = love.graphics.getShader()
+				local shader = Kristal.Shaders["AddColor"]
+				love.graphics.setShader(shader)
+				shader:send("inputcolor", COLORS.white)
+				shader:send("amount", flash.alpha)
+				Draw.draw(flash.sprite.texture, self.tower_x + flash.graphics.shake_x + tile.x + xoff, flash.y + flash.graphics.shake_y, flash.rotation, (tile.xscale * flash.scale_x) / self.tile_width_fine, flash.scale_y, ox, oy)
+				shader:send("amount", 1)
+				love.graphics.setShader(last_shader)
+			end
+		end
+	end
+	for _, cuthalf in ipairs(Game.stage:getObjects(AfterImageCutHalfTower)) do
+		if cuthalf then
+			local ox, oy = cuthalf:getOriginExact()
+			local tilex = math.floor((cuthalf.x * xscale_scaled) + 1)
+			if tilex > self.horizontaltilecount - 1 then
+				tilex = tilex - self.horizontaltilecount - 1
+			elseif tilex < 0 then
+				tilex = tilex + self.horizontaltilecount - 1
+			end
+			local xoff = cuthalf.x % self.tile_width_fine
+			local tile = self.tile_data[self.tm_tileset[1]][tilex - 1]
+			if tile.vis == 1 then
+				local x = self.tower_x + cuthalf.graphics.shake_x + tile.x - 20 
+				if cuthalf.flash then
+					cuthalf.flash = false
+				else
+					local r, g, b, a = cuthalf:getDrawColor()
+					
+					local hw = cuthalf.width/2
+					local hh = cuthalf.height/2
+
+					local m = Utils.ease(0, hh, (cuthalf.siner + 2)/10, "out-sine")
+					love.graphics.setColor(r, g, b, cuthalf.spr_alpha)
+					
+					Draw.drawPart(cuthalf.texture, x - (cuthalf.width / 2), (cuthalf.y - m) - ((cuthalf.yo * cuthalf.scale_y) / 2), 0, 0, hw * 2, hh, ox, oy)
+					Draw.drawPart(cuthalf.texture, x - (cuthalf.width / 2), (cuthalf.y + m) - ((cuthalf.yo * cuthalf.scale_y) / 2), 0, hh, hw * 2, hh, ox, oy)
+				end
+			end
+		end
+	end
 	if self.appearance == 0 then
 		Draw.setColor(0,0,0,0.6 * self.col_blend)
 		Draw.draw(self.gradient40, (self.tower_x - self.tower_radius) + self.tile_width, self.tower_y, -math.rad(270), self.verticaltilecount + 1, 1)

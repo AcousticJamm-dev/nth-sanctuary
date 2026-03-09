@@ -1,7 +1,7 @@
 ---@class Event.destructableclimbarea : Event
-local event, super = Class(Event, "destructableclimbarea")
+local DestructableClimbArea, super = Class(Event, "DestructableClimbArea")
 
-function event:init(data)
+function DestructableClimbArea:init(data)
     super.init(self, data)
     local properties = data and data.properties or {}
     self.climbable = true
@@ -17,9 +17,13 @@ function event:init(data)
     self.y_start = self.y
     self.siner = 0
     self.timer = 0
+	self.climb_obstacle = true
+	if Game.world.map.cyltower then
+		self.visible = false
+	end
 end
 
-function event:update()
+function DestructableClimbArea:update()
     super.update(self)
     local collider = Hitbox(self, 0, 0, self.tiles_x * 40, self.tiles_y * 40)
     if self.con == 0 then
@@ -61,7 +65,7 @@ function event:update()
     end
 end
 
-function event:draw()
+function DestructableClimbArea:draw()
     for i = 1, self.tiles_x do
         for j = 1, self.tiles_y do
             local xoff = 0
@@ -93,4 +97,4 @@ function event:draw()
     end
 end
 
-return event
+return DestructableClimbArea

@@ -11,7 +11,9 @@ return {
   tileheight = 40,
   nextlayerid = 7,
   nextobjectid = 24,
-  properties = {},
+  properties = {
+    ["music"] = "climb"
+  },
   tilesets = {
     {
       name = "bg_dw_church_tileset_new",

@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.10.2",
+  tiledversion = "1.11.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -92,22 +92,6 @@ return {
           properties = {
             ["HasProphecyEffect"] = true,
             ["color"] = "#ff4b61a3"
-          }
-        },
-        {
-          id = 45,
-          name = "ProphecyTestObject ",
-          type = "",
-          shape = "rectangle",
-          x = 440,
-          y = 440,
-          width = 62,
-          height = 63,
-          rotation = 0,
-          gid = 220,
-          visible = true,
-          properties = {
-            ["HasProphecyEffect"] = true
           }
         }
       }
@@ -271,7 +255,7 @@ return {
         0, 0, 0, 0, 0, 46, 48, 47, 48, 48, 50, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 55, 1710, 47, 48, 1709, 59, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 64, 55, 56, 57, 59, 64, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 73, 65, 66, 639, 68, 73, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 73, 65, 66, 67, 68, 73, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 74, 75, 76, 77, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0

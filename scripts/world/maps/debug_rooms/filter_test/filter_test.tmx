@@ -3,6 +3,9 @@
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
+ <properties>
+  <property name="music" value="climb"/>
+ </properties>
  <tileset firstgid="1" source="../../../tilesets/bg_dw_church_tileset_new.tsx"/>
  <tileset firstgid="583" source="../../../tilesets/bg_dw_church_2_tileset.tsx"/>
  <tileset firstgid="781" source="../../../tilesets/light_areas.tsx"/>

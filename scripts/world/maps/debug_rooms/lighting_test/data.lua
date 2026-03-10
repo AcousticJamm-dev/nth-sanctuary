@@ -1,5 +1,5 @@
 return {
-  version = "1.11",
+  version = "1.10",
   luaversion = "5.1",
   tiledversion = "1.11.2",
   class = "",
@@ -11,7 +11,9 @@ return {
   tileheight = 40,
   nextlayerid = 7,
   nextobjectid = 25,
-  properties = {},
+  properties = {
+    ["music"] = "climb"
+  },
   tilesets = {
     {
       name = "bg_dw_church_tileset_new",

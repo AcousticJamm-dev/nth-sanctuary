@@ -1,7 +1,7 @@
 ---@class Event.climbcoin : Event
-local event, super = Class(Event, "climbswitch")
+local ClimbSwitch, super = Class(Event, "ClimbSwitch")
 
-function event:init(data)
+function ClimbSwitch:init(data)
     super.init(self, data)
     local properties = data and data.properties or {}
     self.timed = properties["timed"] or false
@@ -30,12 +30,16 @@ function event:init(data)
     if self.exit_script then
         assert(Registry.getEventScript(self.exit_script), "No such event script \""..self.exit_script.."\"")
     end
+	self.climb_obstacle = true
+	if Game.world.map.cyltower then
+		self.visible = false
+	end
 end
 
-function event:update()
+function ClimbSwitch:update()
     super.update(self)
     self.siner = self.siner + DTMULT
-    local collider = Hitbox(self, 0, 0, 40, 40)
+    local collider = Hitbox(self, 5, 5, 30, 30)
     if self.con == 0 then
         Object.startCache()
         if Game.world.player:collidesWith(collider) and Game.world.player.state == "CLIMB" then
@@ -121,4 +125,4 @@ function event:update()
     self.complexsnd:update()
 end
 
-return event
+return ClimbSwitch

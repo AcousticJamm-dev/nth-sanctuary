@@ -475,7 +475,19 @@ function RotatingTower:draw()
 					local tile_color = ColorUtils.mergeColor(brightcol, darkcol, event.bowlindex/15)
 					local sinamt = math.sin(event.siner / 20) * 6 * MathUtils.clamp(1 - (event.bowlindex / 7), 0, 1)
 					Draw.setColor(tile_color)
-					Draw.draw(event.sprite_tex[(math.floor(event.bowlindex)%6)+1], self.tower_x + event.graphics.shake_x + tile_x, event.y + event.graphics.shake_y - sinamt, 0, tile_xscale * 2, tile_yscale * 2, ox, oy)
+					Draw.draw(event.sprite_tex[(math.floor(event.bowlindex)%6)+1], self.tower_x + event.graphics.shake_x + tile_x, event.y + 10 + event.graphics.shake_y - sinamt, 0, tile_xscale * 2, tile_yscale * 2, ox, oy)
+				end
+			elseif event.id == "ClimbSwitch" then
+				local tilex = math.floor(((event.x + 40) * xscale_scaled) + 1)
+				if tilex > self.horizontaltilecount - 1 then
+					tilex = tilex - self.horizontaltilecount - 1
+				elseif tilex < 0 then
+					tilex = tilex + self.horizontaltilecount - 1
+				end
+				local tile = self.tile_data[self.tm_tileset[1]][tilex - 1]
+				if tile.vis == 1 then
+					Draw.setColor(tile.color)
+					Draw.draw(event.sprite.texture, self.tower_x + event.graphics.shake_x + tile.x, event.y + 10 + event.graphics.shake_y, 0, (tile.xscale * 2) / self.tile_width_fine, 2, 0, 0)
 				end
 			else
 				local ox, oy = event:getOriginExact()
@@ -597,7 +609,7 @@ function RotatingTower:drawTowerCoin(event, angle)
 	end
 	Draw.setColor(ColorUtils.mergeColor(COLORS.white, COLORS.black, MathUtils.clamp(1 - factor, 0, 1)))
 	if event.con == 0 then
-		Draw.draw(spr, coin_x, event.y + 20 + math.sin(event.siner / 20) * 4, 0, 2, 2, xoff, yoff)
+		Draw.draw(spr, coin_x, event.y + 30 + math.sin(event.siner / 20) * 4, 0, 2, 2, xoff, yoff)
 	end
 end
 

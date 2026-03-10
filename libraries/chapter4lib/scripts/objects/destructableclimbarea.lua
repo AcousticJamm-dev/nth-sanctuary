@@ -25,7 +25,7 @@ end
 
 function DestructableClimbArea:update()
     super.update(self)
-    local collider = Hitbox(self, 0, 0, self.tiles_x * 40, self.tiles_y * 40)
+    local collider = Hitbox(self, 5, 5, (self.tiles_x * 40) - 10, (self.tiles_y * 40) - 10)
     if self.con == 0 then
         Object.startCache()
         if self.world.player:collidesWith(collider) and self.world.player.state == "CLIMB" then

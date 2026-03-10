@@ -126,15 +126,7 @@ function map:update()
 				self.tiles_osc.alpha = 1
 				self.con = 2
 				for _, event in ipairs(self.events) do
-					if event.layer == self.layers["collision"] then
-						event:remove()
-						print("Tweaking object number "..k)
-						event.collidable = true
-					end
-					if event.layer == self.layers["postcollision"] then
-						event.data.properties.solid = true
-						event.collidable = true
-					end
+					self.world:Loadmap
 					if event.layer == self.layers["objects_parallax"] then
 						event.visible = true
 					elseif event.layer == self.layers["objects_parallax2"] then

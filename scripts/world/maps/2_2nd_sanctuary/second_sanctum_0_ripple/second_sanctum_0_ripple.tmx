@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="27" height="70" tilewidth="40" tileheight="40" infinite="0" nextlayerid="20" nextobjectid="135">
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="27" height="70" tilewidth="40" tileheight="40" infinite="0" nextlayerid="20" nextobjectid="150">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -85,100 +85,6 @@
 613,613,613,613,0,0,613,613,0,0,613,613,0,0,613,613,613,613,613,613,613,613,613,613,613,613,613
 </data>
  </layer>
- <objectgroup id="15" name="objects_parallax3" visible="0" parallaxx="0.3" parallaxy="0.82">
-  <object id="75" gid="841" x="-80" y="210" width="416" height="130">
-   <properties>
-    <property name="color" type="color" value="#ff00007f"/>
-   </properties>
-  </object>
-  <object id="76" gid="841" x="336" y="210" width="416" height="130">
-   <properties>
-    <property name="color" type="color" value="#ff00007f"/>
-   </properties>
-  </object>
-  <object id="77" gid="841" x="752" y="210" width="416" height="130">
-   <properties>
-    <property name="color" type="color" value="#ff00007f"/>
-   </properties>
-  </object>
-  <object id="78" gid="841" x="-80" y="410" width="416" height="130">
-   <properties>
-    <property name="color" type="color" value="#ff00007f"/>
-   </properties>
-  </object>
-  <object id="79" gid="841" x="336" y="410" width="416" height="130">
-   <properties>
-    <property name="color" type="color" value="#ff00007f"/>
-   </properties>
-  </object>
-  <object id="80" gid="841" x="752" y="410" width="416" height="130">
-   <properties>
-    <property name="color" type="color" value="#ff00007f"/>
-   </properties>
-  </object>
-  <object id="81" gid="841" x="-80" y="610" width="416" height="130">
-   <properties>
-    <property name="color" type="color" value="#ff00007f"/>
-   </properties>
-  </object>
-  <object id="82" gid="841" x="336" y="610" width="416" height="130">
-   <properties>
-    <property name="color" type="color" value="#ff00007f"/>
-   </properties>
-  </object>
-  <object id="83" gid="841" x="752" y="610" width="416" height="130">
-   <properties>
-    <property name="color" type="color" value="#ff00007f"/>
-   </properties>
-  </object>
- </objectgroup>
- <objectgroup id="14" name="objects_parallax2" visible="0" parallaxx="0.4" parallaxy="0.85">
-  <object id="53" x="-40" y="160" width="360" height="320"/>
-  <object id="59" gid="841" x="270" y="720" width="480" height="150" rotation="-90">
-   <properties>
-    <property name="color" type="color" value="#ff2525ba"/>
-   </properties>
-  </object>
-  <object id="60" gid="841" x="270" y="240" width="480" height="150" rotation="-90">
-   <properties>
-    <property name="color" type="color" value="#ff2525ba"/>
-   </properties>
-  </object>
-  <object id="61" gid="841" x="630" y="720" width="480" height="150" rotation="-90">
-   <properties>
-    <property name="color" type="color" value="#ff2525ba"/>
-   </properties>
-  </object>
-  <object id="62" gid="841" x="630" y="240" width="480" height="150" rotation="-90">
-   <properties>
-    <property name="color" type="color" value="#ff2525ba"/>
-   </properties>
-  </object>
-  <object id="63" gid="841" x="850" y="720" width="480" height="150" rotation="-90">
-   <properties>
-    <property name="color" type="color" value="#ff2525ba"/>
-   </properties>
-  </object>
-  <object id="64" gid="841" x="850" y="240" width="480" height="150" rotation="-90">
-   <properties>
-    <property name="color" type="color" value="#ff2525ba"/>
-   </properties>
-  </object>
-  <object id="65" gid="841" x="1190" y="720" width="480" height="150" rotation="-90">
-   <properties>
-    <property name="color" type="color" value="#ff2525ba"/>
-   </properties>
-  </object>
-  <object id="66" gid="841" x="1190" y="240" width="480" height="150" rotation="-90">
-   <properties>
-    <property name="color" type="color" value="#ff2525ba"/>
-   </properties>
-  </object>
- </objectgroup>
- <objectgroup id="13" name="objects_parallax" visible="0" parallaxx="0.5" parallaxy="0.9">
-  <object id="57" gid="833" x="-720" y="760" width="640" height="1600" rotation="-315"/>
-  <object id="58" gid="1073742657" x="120" y="730" width="640" height="1600" rotation="-315"/>
- </objectgroup>
  <layer id="18" name="tiles_osc_optimize" width="27" height="70">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -261,7 +167,7 @@
    <point/>
   </object>
  </objectgroup>
- <layer id="12" name="tiles" width="27" height="70" visible="0">
+ <layer id="12" name="tiles" width="27" height="70">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -279,44 +185,44 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,649,649,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,649,649,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,649,649,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,649,649,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,649,649,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,649,649,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,649,649,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,649,649,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,649,649,649,649,649,649,649,649,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,649,649,649,649,649,649,649,649,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,649,649,0,0,0,0,649,649,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,649,649,0,0,0,0,649,649,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,649,649,0,0,0,0,649,649,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,649,649,649,649,649,649,649,649,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,649,649,649,649,649,649,649,649,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,649,649,0,0,0,0,649,649,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,649,649,0,0,0,0,649,649,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,649,649,0,0,0,0,649,649,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,649,649,649,649,649,649,649,649,649,649,649,649,649,649,0,0,0,0,0,0,
-0,0,0,0,0,0,0,649,649,649,649,649,649,649,649,649,649,649,649,649,649,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,649,649,0,0,0,0,649,649,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,649,649,0,0,0,0,649,649,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,649,649,0,0,0,0,649,649,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,649,649,649,649,649,649,649,649,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,649,649,649,649,649,649,649,649,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,649,649,0,0,0,0,649,649,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,649,649,0,0,0,0,649,649,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,649,649,0,0,0,0,649,649,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,649,649,649,649,649,649,649,649,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,649,649,649,649,649,649,649,649,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,649,649,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,649,649,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,649,649,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,649,649,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,649,649,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,649,649,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,649,649,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,649,649,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -335,128 +241,84 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <objectgroup id="6" name="tempcollision" visible="0">
-  <object id="94" name="interactable" x="360" y="0" width="40" height="840">
-   <properties>
-    <property name="solid" value="true"/>
-   </properties>
-  </object>
-  <object id="95" name="interactable" x="360" y="840" width="280" height="40">
-   <properties>
-    <property name="solid" value="true"/>
-   </properties>
-  </object>
-  <object id="96" name="interactable" x="600" y="880" width="40" height="520">
-   <properties>
-    <property name="solid" value="true"/>
-   </properties>
-  </object>
-  <object id="97" name="interactable" x="200" y="1360" width="400" height="40">
-   <properties>
-    <property name="solid" value="true"/>
-   </properties>
-  </object>
-  <object id="98" name="interactable" x="160" y="1360" width="40" height="600">
-   <properties>
-    <property name="solid" value="true"/>
-   </properties>
-  </object>
-  <object id="99" name="interactable" x="160" y="1960" width="360" height="40">
-   <properties>
-    <property name="solid" value="true"/>
-   </properties>
-  </object>
-  <object id="100" name="interactable" x="520" y="1960" width="40" height="440">
-   <properties>
-    <property name="solid" value="true"/>
-   </properties>
-  </object>
-  <object id="101" name="interactable" x="320" y="2400" width="240" height="40">
-   <properties>
-    <property name="solid" value="true"/>
-   </properties>
-  </object>
-  <object id="102" name="interactable" x="280" y="2400" width="40" height="400">
-   <properties>
-    <property name="solid" value="true"/>
-   </properties>
-  </object>
-  <object id="103" name="interactable" x="400" y="2520" width="40" height="280">
-   <properties>
-    <property name="solid" value="true"/>
-   </properties>
-  </object>
-  <object id="104" name="interactable" x="440" y="2520" width="240" height="40">
-   <properties>
-    <property name="solid" value="true"/>
-   </properties>
-  </object>
-  <object id="106" name="interactable" x="640" y="1840" width="40" height="680">
-   <properties>
-    <property name="solid" value="true"/>
-   </properties>
-  </object>
-  <object id="107" name="interactable" x="280" y="1840" width="360" height="40">
-   <properties>
-    <property name="solid" value="true"/>
-   </properties>
-  </object>
-  <object id="108" name="interactable" x="280" y="1480" width="40" height="360">
-   <properties>
-    <property name="solid" value="true"/>
-   </properties>
-  </object>
-  <object id="109" name="interactable" x="320" y="1480" width="440" height="40">
-   <properties>
-    <property name="solid" value="true"/>
-   </properties>
-  </object>
-  <object id="110" name="interactable" x="720" y="720" width="40" height="760">
-   <properties>
-    <property name="solid" value="true"/>
-   </properties>
-  </object>
-  <object id="111" name="interactable" x="480" y="720" width="240" height="40">
-   <properties>
-    <property name="solid" value="true"/>
-   </properties>
-  </object>
-  <object id="112" name="interactable" x="480" y="0" width="40" height="720">
-   <properties>
-    <property name="solid" value="true"/>
-   </properties>
-  </object>
-  <object id="113" x="-1080" y="640" width="1080" height="1520"/>
+ <objectgroup id="6" name="collision">
+  <object id="94" x="360" y="0" width="40" height="840"/>
+  <object id="95" x="360" y="840" width="280" height="40"/>
+  <object id="96" x="600" y="880" width="40" height="520"/>
+  <object id="97" x="200" y="1360" width="400" height="40"/>
+  <object id="98" x="160" y="1360" width="40" height="600"/>
+  <object id="99" x="160" y="1960" width="360" height="40"/>
+  <object id="100" x="520" y="1960" width="40" height="440"/>
+  <object id="101" x="320" y="2400" width="240" height="40"/>
+  <object id="102" x="280" y="2400" width="40" height="400"/>
+  <object id="103" x="400" y="2520" width="40" height="280"/>
+  <object id="104" x="440" y="2520" width="240" height="40"/>
+  <object id="106" x="640" y="1840" width="40" height="680"/>
+  <object id="107" x="280" y="1840" width="360" height="40"/>
+  <object id="108" x="280" y="1480" width="40" height="360"/>
+  <object id="109" x="320" y="1480" width="440" height="40"/>
+  <object id="110" x="720" y="720" width="40" height="760"/>
+  <object id="111" x="480" y="720" width="240" height="40"/>
+  <object id="112" x="480" y="0" width="40" height="720"/>
  </objectgroup>
- <objectgroup id="19" name="postcollision"/>
  <objectgroup id="3" name="markers">
   <object id="1" name="spawn" x="440" y="40">
    <point/>
   </object>
  </objectgroup>
  <objectgroup id="4" name="objects_party">
-  <object id="29" name="window_glow" x="-1040" y="280">
-   <point/>
-  </object>
-  <object id="30" name="window_glow" x="-80" y="280">
-   <point/>
-  </object>
-  <object id="32" name="window_glow" x="-1000" y="520">
-   <point/>
-  </object>
-  <object id="45" name="window_glow" x="-120" y="520">
-   <point/>
-  </object>
-  <object id="46" name="window_glow" x="-680" y="680">
-   <point/>
-  </object>
-  <object id="47" name="window_glow" x="-400" y="680">
+  <object id="30" name="window_glow" x="120" y="360">
    <point/>
   </object>
   <object id="92" name="transition" x="320" y="2800" width="80" height="40">
    <properties>
     <property name="map" value="2_2nd_sanctuary/second_sanctum_0_ripple_post2"/>
    </properties>
+  </object>
+  <object id="135" name="window_glow" x="560" y="680">
+   <point/>
+  </object>
+  <object id="136" name="window_glow" x="780" y="420">
+   <point/>
+  </object>
+  <object id="137" name="window_glow" x="900" y="1220">
+   <point/>
+  </object>
+  <object id="138" name="window_glow" x="180" y="1100">
+   <point/>
+  </object>
+  <object id="139" name="window_glow" x="380" y="1320">
+   <point/>
+  </object>
+  <object id="140" name="window_glow" x="-40" y="1400">
+   <point/>
+  </object>
+  <object id="141" name="window_glow" x="900" y="1870">
+   <point/>
+  </object>
+  <object id="142" name="window_glow" x="500" y="1610">
+   <point/>
+  </object>
+  <object id="143" name="window_glow" x="560" y="2840">
+   <point/>
+  </object>
+  <object id="144" name="window_glow" x="920" y="2280">
+   <point/>
+  </object>
+  <object id="145" name="window_glow" x="200" y="2280">
+   <point/>
+  </object>
+  <object id="146" name="window_glow" x="120" y="2080">
+   <point/>
+  </object>
+  <object id="147" name="window_glow" x="680" y="2120">
+   <point/>
+  </object>
+  <object id="148" name="window_glow" x="900" y="2540">
+   <point/>
+  </object>
+  <object id="149" name="window_glow" x="320" y="1840">
+   <point/>
   </object>
  </objectgroup>
  <objectgroup id="5" name="objects_fog">

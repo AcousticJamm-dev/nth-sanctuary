@@ -73,7 +73,7 @@
         {
             "fileName": "2_2nd_sanctuary/second_sanctum_1/second_sanctum_1.tmx",
             "height": 1120,
-            "width": 800,
+            "width": 880,
             "x": -520,
             "y": 4600
         },
@@ -149,9 +149,9 @@
         },
         {
             "fileName": "2_2nd_sanctuary/second_sanctum_0_ripple/second_sanctum_0_ripple.tmx",
-            "height": 720,
-            "width": 1040,
-            "x": -1720,
+            "height": 2800,
+            "width": 1080,
+            "x": -3160,
             "y": 3040
         },
         {
@@ -496,6 +496,13 @@
             "width": 1040,
             "x": -560,
             "y": 3800
+        },
+        {
+            "fileName": "2_2nd_sanctuary/second_sanctum_0_ripple_post1/second_sanctum_0_ripple_post1.tmx",
+            "height": 1520,
+            "width": 1080,
+            "x": -2080,
+            "y": 3680
         }
     ],
     "onlyShowAdjacentMaps": false,

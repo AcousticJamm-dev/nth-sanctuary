@@ -121,22 +121,11 @@ function map:update()
 			end
 			if self.frame_timer == 780 then
 				Game.world.color = COLORS.white
+				self.world:loadMap("2_2nd_sanctuary/second_sanctum_0_ripple_post1", "spawn")
 				self.fakefader:fadeOutAndRemove(0.5)
 				self.tiles.alpha = 1
 				self.tiles_osc.alpha = 1
 				self.con = 2
-				for _, event in ipairs(self.events) do
-					self.world:Loadmap
-					if event.layer == self.layers["objects_parallax"] then
-						event.visible = true
-					elseif event.layer == self.layers["objects_parallax2"] then
-						event.visible = true
-					elseif event.layer == self.layers["objects_parallax3"] then
-						event.visible = true
-					elseif event.layer == self.layers["objects_tile_oscillate"] then
-						event.visible = true
-					end
-				end
 				for _, filter in ipairs(Game.world.map:getEvents("filter")) do
 					filter.visible = true
 				end

@@ -1010,7 +1010,9 @@ return {
           height = 40,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["sprite"] = "world/events/climbtiles/brittlewall"
+          }
         },
         {
           id = 104,
@@ -1023,7 +1025,9 @@ return {
           height = 40,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["sprite"] = "world/events/climbtiles/brittlewall"
+          }
         },
         {
           id = 105,
@@ -1036,7 +1040,9 @@ return {
           height = 40,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["sprite"] = "world/events/climbtiles/brittlewall"
+          }
         },
         {
           id = 106,

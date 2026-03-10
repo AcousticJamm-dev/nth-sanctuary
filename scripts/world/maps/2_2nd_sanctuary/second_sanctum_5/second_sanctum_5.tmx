@@ -402,9 +402,21 @@
     <property name="generate" type="bool" value="false"/>
    </properties>
   </object>
-  <object id="103" name="destructableclimbarea" x="360" y="440" width="40" height="40"/>
-  <object id="104" name="destructableclimbarea" x="400" y="440" width="40" height="40"/>
-  <object id="105" name="destructableclimbarea" x="440" y="440" width="40" height="40"/>
+  <object id="103" name="destructableclimbarea" x="360" y="440" width="40" height="40">
+   <properties>
+    <property name="sprite" value="world/events/climbtiles/brittlewall"/>
+   </properties>
+  </object>
+  <object id="104" name="destructableclimbarea" x="400" y="440" width="40" height="40">
+   <properties>
+    <property name="sprite" value="world/events/climbtiles/brittlewall"/>
+   </properties>
+  </object>
+  <object id="105" name="destructableclimbarea" x="440" y="440" width="40" height="40">
+   <properties>
+    <property name="sprite" value="world/events/climbtiles/brittlewall"/>
+   </properties>
+  </object>
   <object id="106" name="climbcoin" x="240" y="560" width="40" height="40">
    <properties>
     <property name="value" type="int" value="10"/>

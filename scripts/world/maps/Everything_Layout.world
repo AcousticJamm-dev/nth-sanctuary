@@ -74,7 +74,7 @@
             "fileName": "2_2nd_sanctuary/second_sanctum_1/second_sanctum_1.tmx",
             "height": 1120,
             "width": 920,
-            "x": -1240,
+            "x": -1200,
             "y": 4080
         },
         {
@@ -477,7 +477,9 @@
             "y": 8360
         },
         {
-            "fileName": "fractured_sanctuary/fractured_egg_room/fractured_second_sanctum_0_ripple_post2 second_sanctum_0_ripple_post2     "width": 640,
+            "fileName": "fractured_sanctuary/fractured_egg_room/fractured_egg_room.tmx",
+            "height": 480,
+            "width": 640,
             "x": 6000,
             "y": 1960
         },
@@ -489,7 +491,9 @@
             "y": 3280
         },
         {
-            "fileName": "2_2nd_sanctuary/second_sanctum_0_ripple_post/second_sanctumsecond_sanctum_0_ripple_post1 second_sanctum_0_ripple_post1     "width": 1680,
+            "fileName": "2_2nd_sanctuary/second_sanctum_0_ripple_post/second_sanctum_0_ripple_post.tmx",
+            "height": 960,
+            "width": 1680,
             "x": -1360,
             "y": 3040
         },

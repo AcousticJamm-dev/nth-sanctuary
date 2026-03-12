@@ -1313,22 +1313,6 @@ return {
           rotation = 0,
           visible = true,
           properties = {}
-        },
-        {
-          id = 195,
-          name = "transition",
-          type = "",
-          shape = "rectangle",
-          x = -160,
-          y = 800,
-          width = 80,
-          height = 40,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["map"] = "0_base_sanctum/base_south_2",
-            ["marker"] = "kpoint"
-          }
         }
       }
     },

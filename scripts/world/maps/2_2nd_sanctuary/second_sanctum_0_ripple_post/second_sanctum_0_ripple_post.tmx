@@ -205,12 +205,6 @@
   <object id="193" name="window_glow" x="140" y="360">
    <point/>
   </object>
-  <object id="195" name="transition" x="-160" y="800" width="80" height="40">
-   <properties>
-    <property name="map" value="0_base_sanctum/base_south_2"/>
-    <property name="marker" value="kpoint"/>
-   </properties>
-  </object>
  </objectgroup>
  <objectgroup id="5" name="objects_fog">
   <object id="23" name="churchfog" x="0" y="0">

@@ -1,18 +1,18 @@
-local Waferr, super = Class(Encounter)
+local ScentedCandles, super = Class(Encounter)
 
-function Waferr:init()
+function ScentedCandles:init()
     super.init(self)
 
-    self.text = "* Waferr shapes up for battle!"
+    self.text = "* Smells like scented candles."
 
-    self.music = "ch4_battle2"
+    self.music = "ch4_battle"
     self.background = true
 
-    self.organ_1 = self:addEnemy("waferr", 550, 182)
-    self.organ_2 = self:addEnemy("waferr", 526, 284)
+    self.guei = self:addEnemy("guei", 550, 182)
+    self.balthizard = self:addEnemy("balthizard", 526, 284)
 end
 
-function Waferr:getPartyPosition(index)
+function ScentedCandles:getPartyPosition(index)
     if #Game.battle.party > 3 then return super.getPartyPosition(self, index) end
 
     local krloc = {94, 50}
@@ -37,4 +37,4 @@ function Waferr:getPartyPosition(index)
     end
 end
 
-return Waferr
+return ScentedCandles

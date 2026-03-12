@@ -1,28 +1,27 @@
-local NymphSpawn, super = Class(Encounter)
+local TitanSpawn, super = Class(Encounter)
 
-function NymphSpawn:init()
+function TitanSpawn:init()
     super.init(self)
 
-    self.text = "*          constricts you...\n* [color:yellow]TP[color:reset] Gain reduced outside of [color:green][shake:10]-[shake:0] [color:reset]"
+    self.text = "* Darkness constricts you...\n* [color:yellow]TP[color:reset] Gain reduced outside of [color:green]???[color:reset]"
 
-    self.music = "titan_spawn2"
+    self.music = "titan_spawn"
     self.background = true
 
-    self:addEnemy("nymph_spawn")
-
+    self.titan_spawn_1 = self:addEnemy("titan_spawn", 500, 130)
+    self.titan_spawn_2 = self:addEnemy("titan_spawn", 500, 290)
+	
     self.reduced_tension = true
 	self.light_radius = 48
-	self.difficulty = 1
 	self.unleash_threshold = 64
 end
 
-function NymphSpawn:onTurnEnd()
+function TitanSpawn:onTurnEnd()
     super.onTurnEnd(self)
 	self.light_radius = 48
-    self.difficulty = self.difficulty + 1
 end
 
-function NymphSpawn:getPartyPosition(index)
+function TitanSpawn:getPartyPosition(index)
     if #Game.battle.party > 3 then return super.getPartyPosition(self, index) end
 
     local krloc = {94, 50}
@@ -47,7 +46,7 @@ function NymphSpawn:getPartyPosition(index)
     end
 end
 
-function NymphSpawn:onBattleStart(battler)
+function TitanSpawn:onBattleStart(battler)
 	if Game:hasPartyMember("kris") then
 		self.default_xactions = false
 		for _,battler in ipairs(Game.battle.party) do
@@ -60,4 +59,4 @@ function NymphSpawn:onBattleStart(battler)
 	end
 end
 
-return NymphSpawn
+return TitanSpawn

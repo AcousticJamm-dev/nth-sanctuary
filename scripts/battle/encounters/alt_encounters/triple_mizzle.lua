@@ -1,18 +1,19 @@
-local Waferr, super = Class(Encounter)
+local TripleMizzle, super = Class(Encounter)
 
-function Waferr:init()
+function TripleMizzle:init()
     super.init(self)
 
-    self.text = "* Waferr shapes up for battle!"
+    self.text = "* Placeholder."
 
-    self.music = "ch4_battle2"
+    self.music = "ch4_battle"
     self.background = true
 
-    self.organ_1 = self:addEnemy("waferr", 550, 182)
-    self.organ_2 = self:addEnemy("waferr", 526, 284)
+    self.mizzle_1 = self:addEnemy("mizzle", 548, 130)
+    self.mizzle_2 = self:addEnemy("mizzle", 526, 210)
+    self.mizzle_3 = self:addEnemy("mizzle", 550, 300)
 end
 
-function Waferr:getPartyPosition(index)
+function TripleMizzle:getPartyPosition(index)
     if #Game.battle.party > 3 then return super.getPartyPosition(self, index) end
 
     local krloc = {94, 50}
@@ -37,4 +38,4 @@ function Waferr:getPartyPosition(index)
     end
 end
 
-return Waferr
+return TripleMizzle

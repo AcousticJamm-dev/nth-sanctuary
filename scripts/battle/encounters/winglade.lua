@@ -1,18 +1,18 @@
-local Waferr, super = Class(Encounter)
+local Winglade, super = Class(Encounter)
 
-function Waferr:init()
+function Winglade:init()
     super.init(self)
 
-    self.text = "* Waferr shapes up for battle!"
+    self.text = "* Winglade cuts in!"
 
-    self.music = "ch4_battle2"
+    self.music = "ch4_battle"
     self.background = true
 
-    self.organ_1 = self:addEnemy("waferr", 550, 182)
-    self.organ_2 = self:addEnemy("waferr", 526, 284)
+    self:addEnemy("winglade", 520, 140)
+    self:addEnemy("winglade", 520, 300)
 end
 
-function Waferr:getPartyPosition(index)
+function Winglade:getPartyPosition(index)
     if #Game.battle.party > 3 then return super.getPartyPosition(self, index) end
 
     local krloc = {94, 50}
@@ -37,4 +37,4 @@ function Waferr:getPartyPosition(index)
     end
 end
 
-return Waferr
+return Winglade

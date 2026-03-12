@@ -834,10 +834,19 @@ return {
 	end,
     prefall = function (cutscene)
         if Game:hasPartyMember("jamm") then
+			local ral = cutscene:getCharacter("ralsei")
+        	local sus = cutscene:getCharacter("susie")
+        	local kris = cutscene:getCharacter("kris")
             local jamm = cutscene:getCharacter("jamm")
+			cutscene:detachFollowers()
+			cutscene:wait(cutscene:walkTo(kris, 560, 530, 0.5, "left", true), cutscene:walkTo(sus, 640, 480, 0.5, "left", true), cutscene:walkTo(ral, 720, 480, 0.5, "left", true), cutscene:walkTo(jamm, 720, 400, 0.5, "down", true))
+			cutscene:wait(cutscene:walkTo(jamm, 680, 420, 0.5, "down", true))
+			sus:setFacing("up")
+			ral:setFacing("up")
+			kris:setFacing("right")
             cutscene:setSpeaker(jamm)
             cutscene:text("* Guys wait,[wait:5] I think I dropped my slingshot back there.", "neutral")
-            cutscene:text("* You guys can go on ahead.", "neutral")
+            cutscene:text("* You guys can go on ahead,[wait:5] I'll be right behind you guys.", "look_left")
             cutscene:wait(cutscene:walkToSpeed(jamm, "jpointA1", 8))
 			cutscene:wait(cutscene:walkToSpeed(jamm, "jpointA2", 8))
 			cutscene:wait(cutscene:walkToSpeed(jamm, "jpointA3", 8, "left", true))
@@ -846,6 +855,7 @@ return {
 			jamm = jamm:convertToNPC({ cutscene = "events2.jammslingshot" })
             Game.lock_movement = false
             jamm.following = false
+			cutscene:attachFollowers()
         end
     end,
     fall = function (cutscene)
@@ -891,14 +901,13 @@ return {
         cutscene:wait(1)
         no:setSprite("shocked")
         cutscene:wait(0.25)
-		no:setRotationOrigin(0, 0)
-        Game.world.timer:tween(4, no, {y = no.y + 280, x = no.x - 130, rotation = math.rad(-765)}, 'in-out-elastic')
+        Game.world.timer:tween(2, no, {y = no.y + 400, x = no.x - 130 + 130, rotation = math.rad(0)}, 'in-circ')
         sus:resetSprite()
 		ral:resetSprite()
         cutscene:walkTo(sus, "spoint2", 0.25, "left")
         cutscene:walkTo(ral, "rpoint", 0.25, "left")
         cutscene:walkTo(kris, "kpoint", 0.25, "left")
-        cutscene:fadeOut(4, {music = false})
+        cutscene:fadeOut(1, {music = false})
         cutscene:text("* Wait, [wait:5]NOELLE!", "surprise_frown")
         cutscene:wait(1)
         Assets.playSound("snd_closet_fall")
@@ -913,7 +922,7 @@ return {
         cutscene:wait(4)
         img:remove()
         --Assets.playSound("snd_closet_impact")
-		local pitch = 0.9
+		local pitch = 0.75
 		Assets.playSound("splat", 1, pitch)
 		Game.world.timer:script(function(wait)
 		    wait(11/30)
@@ -962,17 +971,28 @@ return {
 			kris:setFacing("right")
 			ral:setFacing("right")
 			cutscene:wait(1/2)
-			cutscene:wait(cutscene:walkToSpeed(jamm, 600, 480, 8))
-			cutscene:wait(cutscene:walkToSpeed(jamm, 480, 640, 8))
+			cutscene:wait(cutscene:walkToSpeed(jamm, 600, 460, 8, "left", true))
+			cutscene:wait(cutscene:walkToSpeed(jamm, 480, 620, 8, "left", true))
 			cutscene:wait(cutscene:walkToSpeed(jamm, "jpoint2", 8, "left", true))
 			cutscene:wait(0.75)
 			cutscene:setSpeaker(jamm)
-        	cutscene:text("* Sorry, I'm back.", "neutral")
+        	cutscene:text("* Found my slingshot, [wait:5]did I miss anything?", "neutral")
+			cutscene:text("* I could've sworn I heard someone scream down here...", "suspicious")
+			cutscene:setSpeaker(sus)
+        	cutscene:text("* ", "shock")
+			cutscene:text("* ", "shock_down")
+			cutscene:text("* ", "shock_nervous")
+			cutscene:text("* Uhhhhhhh", "shock")
+			cutscene:text("* Nope nothing not at all absolutely nothing happened", "shock_nervous")
+			cutscene:setSpeaker(jamm)
+			cutscene:text("* [wait:30]..Uuh[wait:3]h[wait:3]h huh.", "suspicious")
+			cutscene:text("* Alright then.", "look_left")
 			Game:setFlag("slingCon", 2)
 			jamm.solid = false
         end
 		
         cutscene:attachFollowers()
+		cutscene:attachCamera()
         Game:setFlag("noellefall", true)
     end,
     jamm = function (cutscene)

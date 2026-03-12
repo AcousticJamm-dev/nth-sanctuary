@@ -266,8 +266,8 @@ return {
 			susie.layer = a.layer + 1
 			kris:setParallax(0)
 			susie:setParallax(0)
-			kris.x = SCREEN_WIDTH/2 + 40
-			susie.x = SCREEN_WIDTH/2 - 40
+			kris.x = SCREEN_WIDTH/2 + 60
+			susie.x = SCREEN_WIDTH/2 - 20
 			kris.y = -40
 			susie.y = -40
 			local fakehsv = HSVShiftFX()
@@ -295,8 +295,8 @@ return {
 			windows.layer = 998
 			windows:addFX(fakehsv, "fakehsv")
 			Game.world:addChild(windows)
-			Game.world.timer:lerpVar(kris, "y", kris.y, SCREEN_HEIGHT/2 - 40, 10)
-			Game.world.timer:lerpVar(susie, "y", susie.y, SCREEN_HEIGHT/2 - 40, 10)
+			Game.world.timer:lerpVar(kris, "y", kris.y, SCREEN_HEIGHT/2 - 20, 10)
+			Game.world.timer:lerpVar(susie, "y", susie.y, SCREEN_HEIGHT/2 - 20, 10)
 			cutscene:slideTo(ralsei, "ralpoint",0.01)
 			cutscene:wait(10/30)
 			Assets.playSound("break1", 0.95, 1)
@@ -552,14 +552,14 @@ return {
 			end
 			arch:remove()
 		end	
-		kris.x = kris_x
+		kris.x = kris_x + 10
 		kris.y = kris_y
-		susie.x = susie_x
+		susie.x = susie_x + 10
 		susie.y = susie_y
 		kris.layer = kris_layer
 		susie.layer = susie_layer
 		ralsei.layer = ralsei_layer
-        Game.world.camera.x = kris_x + (susie_x - kris_x)/2
+        Game.world.camera.x = kris_x + 10 + (susie_x - kris_x)/2
 		Game.world.camera.y = kris_y
         kris:setSprite("landed")
         susie:setSprite("landed")

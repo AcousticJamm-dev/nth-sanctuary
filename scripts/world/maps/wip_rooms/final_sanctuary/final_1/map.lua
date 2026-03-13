@@ -15,6 +15,9 @@ function Map:onEnter()
 			 event.parallax_y = 0.9 
 			 event:addFX(ProphecyShaderFX(0.19), "prop")
 		end
+		if event.layer == self.layers["objects_shadow"] then
+			 event:addFX(ProphecyShaderFX(0.2), "prop")
+		end
 	end
 	self:getTileLayer("tiles_texture"):addFX(ProphecyShaderFX(0.5), "prop")
 end

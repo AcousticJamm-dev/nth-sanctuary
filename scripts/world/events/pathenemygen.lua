@@ -3,7 +3,6 @@ local PathingEnemyGenerator, super = Class(Event, "pathenemygen")
 function PathingEnemyGenerator:init(data)
     super.init(self, data)
     local properties = data and data.properties or {}
-	self.spawnamount = properties["spawnamount"] or false
 	self.timer = properties["timer"] or 0
 	self.rate = properties["rate"] or 0
 	self.damage = properties["damage"] or 25
@@ -28,7 +27,7 @@ function PathingEnemyGenerator:onAdd(parent)
     self:snapToPath()
 end
 
-function PathingEnemyGenerator	:snapToPath()
+function PathingEnemyGenerator:snapToPath()
     if self.path and self.world.map.paths[self.path] then
         local path = self.world.map.paths[self.path]
 
@@ -97,8 +96,7 @@ function PathingEnemyGenerator:update()
 		return
 	end
 	self.timer = self.timer + DTMULT
-	if self.spawnamount > 0 then
-		if self.timer >= self.rate then
+	if self.timer >= self.rate then
 		local bullet = self.world:spawnBullet("pathingenemy", self.x, self.y, {
 			damage = self.damage,
 			movetype = self.movetype,
@@ -117,9 +115,7 @@ function PathingEnemyGenerator:update()
 		})
 		bullet:setLayer(self.layer)
 		self.timer = 0
-	end
-	end
-	
+	end	
 end
 
 return PathingEnemyGenerator

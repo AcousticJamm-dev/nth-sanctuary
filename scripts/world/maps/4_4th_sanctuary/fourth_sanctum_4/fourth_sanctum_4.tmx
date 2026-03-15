@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="67" height="78" tilewidth="40" tileheight="40" infinite="0" nextlayerid="22" nextobjectid="212">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="67" height="78" tilewidth="40" tileheight="40" infinite="0" nextlayerid="22" nextobjectid="212">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -13,10 +13,10 @@
  <tileset firstgid="583" source="../../../tilesets/bg_dw_church_2_tileset.tsx"/>
  <tileset firstgid="781" source="../../../tilesets/church_objects.tsx"/>
  <tileset firstgid="883" source="../../../tilesets/bg_dw_dither_overlay_tileset.tsx"/>
- <objectgroup id="12" name="objects_parallax3" parallaxx="0.3" parallaxy="0.82">
+ <objectgroup id="12" name="objects_parallax3" visible="0" parallaxx="0.3" parallaxy="0.82">
   <object id="187" gid="2147484520" x="-920" y="2520" width="3744" height="130" rotation="-45"/>
  </objectgroup>
- <objectgroup id="4" name="objects_parallax2" parallaxx="0.4" parallaxy="0.85">
+ <objectgroup id="4" name="objects_parallax2" visible="0" parallaxx="0.4" parallaxy="0.85">
   <object id="139" gid="793" x="760" y="680" width="480" height="150" rotation="-45">
    <properties>
     <property name="color" type="color" value="#ff2525ba"/>
@@ -52,7 +52,7 @@
   <object id="182" gid="872" x="-200" y="-1200" width="4320" height="150" rotation="45"/>
   <object id="183" gid="872" x="1040" y="-560" width="4320" height="150" rotation="45"/>
  </objectgroup>
- <objectgroup id="3" name="objects_parallax" parallaxx="0.5" parallaxy="0.9">
+ <objectgroup id="3" name="objects_parallax" visible="0" parallaxx="0.5" parallaxy="0.9">
   <object id="51" gid="785" x="-44" y="3080" width="640" height="1600"/>
   <object id="52" gid="1073742609" x="1080" y="1920" width="640" height="1600"/>
   <object id="58" gid="2147484432" x="1120" y="3370" width="400" height="1600"/>

@@ -147,6 +147,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -264,6 +265,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["type"] = "hsv"
@@ -279,6 +281,7 @@ return {
           width = 240,
           height = 200,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -353,6 +356,7 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["text1"] = "* Welcome to Hell.[wait:10]\nThis is your home now.",
@@ -370,6 +374,7 @@ return {
           width = 80,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "0_base_sanctum/base_center",
@@ -386,6 +391,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "leech",
@@ -402,6 +408,7 @@ return {
           width = 40,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "secrets/frisk_room",
@@ -418,6 +425,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["active"] = true,
@@ -438,6 +446,7 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "3_flooded_sanctuary/flooded_1_hellentrance",
@@ -454,6 +463,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["hue_start"] = "0",
@@ -476,6 +486,7 @@ return {
           width = 160,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -489,6 +500,7 @@ return {
           width = 80,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -502,6 +514,7 @@ return {
           width = 480,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -531,6 +544,7 @@ return {
           width = 80,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -544,6 +558,7 @@ return {
           width = 320,
           height = 520,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -557,6 +572,7 @@ return {
           width = 40,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -570,6 +586,7 @@ return {
           width = 720,
           height = 200,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -583,6 +600,7 @@ return {
           width = 80,
           height = 360,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -596,6 +614,7 @@ return {
           width = 440,
           height = 360,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -609,6 +628,7 @@ return {
           width = 80,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -622,6 +642,7 @@ return {
           width = 160,
           height = 240,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -635,6 +656,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           polygon = {
             { x = 0, y = -360 },
@@ -654,6 +676,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           polygon = {
             { x = 0, y = 0 },
@@ -677,6 +700,7 @@ return {
           width = 880,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -706,6 +730,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -719,6 +744,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -732,6 +758,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -745,6 +772,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -758,6 +786,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }

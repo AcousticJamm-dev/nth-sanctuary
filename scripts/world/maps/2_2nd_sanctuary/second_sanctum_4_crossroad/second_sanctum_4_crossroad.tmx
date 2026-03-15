@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="43" height="43" tilewidth="40" tileheight="40" infinite="0" nextlayerid="33" nextobjectid="193">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="43" height="43" tilewidth="40" tileheight="40" infinite="0" nextlayerid="33" nextobjectid="210">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -17,18 +17,34 @@
  <tileset firstgid="1251" source="../../../tilesets/bg_dw_dither_overlay_tileset.tsx"/>
  <tileset firstgid="1297" source="../../../tilesets/RandomExtraTiles.tsx"/>
  <tileset firstgid="1585" source="../../../tilesets/bg_dw_church_watertileset_drained.tsx"/>
- <objectgroup id="32" name="objects_parallax4" tintcolor="#144139" parallaxx="0.45" parallaxy="0.81"/>
- <objectgroup id="17" name="objects_parallax2" tintcolor="#144139" parallaxx="0.5" parallaxy="0.9">
-  <object id="116" gid="1249" x="542" y="1448" width="640" height="1600">
+ <objectgroup id="16" name="objects_parallax1" parallaxx="0.5" parallaxy="0.9">
+  <object id="90" gid="3221226624" x="-235" y="899" width="400" height="1600"/>
+  <object id="91" gid="1153" x="529" y="-309" width="640" height="1600" rotation="-180"/>
+  <object id="205" gid="1249" x="542" y="1687" width="640" height="1600">
    <properties>
     <property name="color" type="color" value="#ff144139"/>
    </properties>
   </object>
-  <object id="192" gid="1247" x="916" y="1480" width="200" height="1240"/>
- </objectgroup>
- <objectgroup id="16" name="objects_parallax1" parallaxx="0.5" parallaxy="0.9">
-  <object id="90" gid="3221226624" x="-235" y="899" width="400" height="1600"/>
-  <object id="91" gid="1153" x="529" y="-309" width="640" height="1600" rotation="-180"/>
+  <object id="206" gid="1247" x="916" y="1719" width="200" height="1240">
+   <properties>
+    <property name="color" type="color" value="#ff144139"/>
+   </properties>
+  </object>
+  <object id="207" gid="1247" x="916" y="1719" width="200" height="1240">
+   <properties>
+    <property name="color" type="color" value="#ff144139"/>
+   </properties>
+  </object>
+  <object id="208" gid="1250" x="1114" y="1369" width="400" height="578">
+   <properties>
+    <property name="color" type="color" value="#ff144139"/>
+   </properties>
+  </object>
+  <object id="209" gid="1250" x="1114" y="1719" width="400" height="578">
+   <properties>
+    <property name="color" type="color" value="#ff144139"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup id="31" name="objects_parallax3" parallaxx="0.55" parallaxy="0.99">
   <object id="189" gid="1153" x="-920" y="2200" width="704" height="1760" rotation="45"/>

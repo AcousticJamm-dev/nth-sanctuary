@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 33,
-  nextobjectid = 193,
+  nextobjectid = 210,
   properties = {
     ["border"] = "church_b",
     ["music"] = "second_church"
@@ -75,69 +75,6 @@ return {
     {
       type = "objectgroup",
       draworder = "topdown",
-      id = 32,
-      name = "objects_parallax4",
-      class = "",
-      visible = true,
-      opacity = 1,
-      offsetx = 0,
-      offsety = 0,
-      parallaxx = 0.45,
-      parallaxy = 0.81,
-      tintcolor = { 20, 65, 57 },
-      properties = {},
-      objects = {}
-    },
-    {
-      type = "objectgroup",
-      draworder = "topdown",
-      id = 17,
-      name = "objects_parallax2",
-      class = "",
-      visible = true,
-      opacity = 1,
-      offsetx = 0,
-      offsety = 0,
-      parallaxx = 0.5,
-      parallaxy = 0.9,
-      tintcolor = { 20, 65, 57 },
-      properties = {},
-      objects = {
-        {
-          id = 116,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 542,
-          y = 1448,
-          width = 640,
-          height = 1600,
-          rotation = 0,
-          gid = 1249,
-          visible = true,
-          properties = {
-            ["color"] = "#ff144139"
-          }
-        },
-        {
-          id = 192,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 916,
-          y = 1480,
-          width = 200,
-          height = 1240,
-          rotation = 0,
-          gid = 1247,
-          visible = true,
-          properties = {}
-        }
-      }
-    },
-    {
-      type = "objectgroup",
-      draworder = "topdown",
       id = 16,
       name = "objects_parallax1",
       class = "",
@@ -176,6 +113,86 @@ return {
           gid = 1153,
           visible = true,
           properties = {}
+        },
+        {
+          id = 205,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 542,
+          y = 1687,
+          width = 640,
+          height = 1600,
+          rotation = 0,
+          gid = 1249,
+          visible = true,
+          properties = {
+            ["color"] = "#ff144139"
+          }
+        },
+        {
+          id = 206,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 916,
+          y = 1719,
+          width = 200,
+          height = 1240,
+          rotation = 0,
+          gid = 1247,
+          visible = true,
+          properties = {
+            ["color"] = "#ff144139"
+          }
+        },
+        {
+          id = 207,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 916,
+          y = 1719,
+          width = 200,
+          height = 1240,
+          rotation = 0,
+          gid = 1247,
+          visible = true,
+          properties = {
+            ["color"] = "#ff144139"
+          }
+        },
+        {
+          id = 208,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1114,
+          y = 1369,
+          width = 400,
+          height = 578,
+          rotation = 0,
+          gid = 1250,
+          visible = true,
+          properties = {
+            ["color"] = "#ff144139"
+          }
+        },
+        {
+          id = 209,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1114,
+          y = 1719,
+          width = 400,
+          height = 578,
+          rotation = 0,
+          gid = 1250,
+          visible = true,
+          properties = {
+            ["color"] = "#ff144139"
+          }
         }
       }
     },

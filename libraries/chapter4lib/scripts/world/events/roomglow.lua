@@ -95,10 +95,20 @@ end
 
 function RoomGlow:draw()
 	if self.actind > 0 then
+		love.graphics.push()
 		love.graphics.setColor(ColorUtils.mergeColor({1,1,1}, {self.tint[1],self.tint[2],self.tint[3]}, self.actind))
-		love.graphics.setBlendMode("multiply", "premultiplied")
+		if Ch4Lib.accurate_blending then
+			Ch4Lib.setBlendState("add", "zero", "srccolor")
+		else
+			love.graphics.setBlendMode("multiply", "premultiplied")
+		end
 		love.graphics.rectangle("fill", 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)
-		love.graphics.setBlendMode("alpha", "alphamultiply")
+		if Ch4Lib.accurate_blending then
+			Ch4Lib.setBlendState("add", "srcalpha", "oneminussrcalpha")
+		else
+			love.graphics.setBlendMode("alpha", "alphamultiply")
+		end
+		love.graphics.pop()
 	end
     super.draw(self)
 end

@@ -36,7 +36,7 @@ return {
     },
     {
       name = "bg_dw_dither_overlay_tileset",
-      firstgid = 879,
+      firstgid = 883,
       filename = "../../../tilesets/bg_dw_dither_overlay_tileset.tsx"
     }
   },
@@ -1464,8 +1464,6 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["fade_edges"] = true,
-            ["no_back"] = true,
             ["offx"] = 150,
             ["offy"] = -140,
             ["panel_h"] = "120",

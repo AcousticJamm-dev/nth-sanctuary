@@ -346,8 +346,6 @@
   </object>
   <object id="36" name="prophecy" x="400" y="240" width="280" height="80">
    <properties>
-    <property name="fade_edges" type="bool" value="true"/>
-    <property name="no_back" type="bool" value="true"/>
     <property name="offx" type="float" value="150"/>
     <property name="offy" type="float" value="-100"/>
     <property name="spr_offx" type="float" value="50"/>

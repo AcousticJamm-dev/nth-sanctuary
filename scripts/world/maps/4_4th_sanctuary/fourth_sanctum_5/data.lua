@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.10.2",
+  tiledversion = "1.11.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 15,
-  nextobjectid = 70,
+  nextobjectid = 74,
   parallaxorigin = {
     x = -320,
     y = -240
@@ -682,6 +682,86 @@ return {
           properties = {
             ["alpha"] = 0.2,
             ["highlight"] = true
+          }
+        },
+        {
+          id = 70,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 160,
+          y = 1498,
+          width = 160,
+          height = 880,
+          rotation = 0,
+          gid = 1073742607,
+          visible = true,
+          properties = {
+            ["light"] = true,
+            ["light_alpha"] = 0.25,
+            ["light_color"] = "#ffffffff",
+            ["light_dust"] = true,
+            ["light_type"] = 1
+          }
+        },
+        {
+          id = 71,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 640,
+          y = 1498,
+          width = 160,
+          height = 880,
+          rotation = 0,
+          gid = 1073742607,
+          visible = true,
+          properties = {
+            ["light"] = true,
+            ["light_alpha"] = 0.25,
+            ["light_color"] = "#ffffffff",
+            ["light_dust"] = true,
+            ["light_type"] = 1
+          }
+        },
+        {
+          id = 72,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1120,
+          y = 1498,
+          width = 160,
+          height = 880,
+          rotation = 0,
+          gid = 1073742607,
+          visible = true,
+          properties = {
+            ["light"] = true,
+            ["light_alpha"] = 0.25,
+            ["light_color"] = "#ffffffff",
+            ["light_dust"] = true,
+            ["light_type"] = 1
+          }
+        },
+        {
+          id = 73,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1600,
+          y = 1498,
+          width = 160,
+          height = 880,
+          rotation = 0,
+          gid = 1073742607,
+          visible = true,
+          properties = {
+            ["light"] = true,
+            ["light_alpha"] = 0.25,
+            ["light_color"] = "#ffffffff",
+            ["light_dust"] = true,
+            ["light_type"] = 1
           }
         }
       }

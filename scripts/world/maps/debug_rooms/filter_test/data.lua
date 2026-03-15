@@ -1,5 +1,5 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
   tiledversion = "1.11.2",
   class = "",
@@ -165,7 +165,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["map"] = "debug_rooms/lighting_room",
+            ["map"] = "debug_rooms/lighting_test",
             ["marker"] = "entry"
           }
         }

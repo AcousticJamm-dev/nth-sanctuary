@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="48" height="18" tilewidth="40" tileheight="40" infinite="0" parallaxoriginx="-320" parallaxoriginy="-240" nextlayerid="15" nextobjectid="70">
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="48" height="18" tilewidth="40" tileheight="40" infinite="0" parallaxoriginx="-320" parallaxoriginy="-240" nextlayerid="15" nextobjectid="74">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -255,6 +255,42 @@
     <property name="highlight" type="bool" value="true"/>
    </properties>
    <point/>
+  </object>
+  <object id="70" gid="1073742607" x="160" y="1498" width="160" height="880">
+   <properties>
+    <property name="light" type="bool" value="true"/>
+    <property name="light_alpha" type="float" value="0.25"/>
+    <property name="light_color" type="color" value="#ffffffff"/>
+    <property name="light_dust" type="bool" value="true"/>
+    <property name="light_type" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="71" gid="1073742607" x="640" y="1498" width="160" height="880">
+   <properties>
+    <property name="light" type="bool" value="true"/>
+    <property name="light_alpha" type="float" value="0.25"/>
+    <property name="light_color" type="color" value="#ffffffff"/>
+    <property name="light_dust" type="bool" value="true"/>
+    <property name="light_type" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="72" gid="1073742607" x="1120" y="1498" width="160" height="880">
+   <properties>
+    <property name="light" type="bool" value="true"/>
+    <property name="light_alpha" type="float" value="0.25"/>
+    <property name="light_color" type="color" value="#ffffffff"/>
+    <property name="light_dust" type="bool" value="true"/>
+    <property name="light_type" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="73" gid="1073742607" x="1600" y="1498" width="160" height="880">
+   <properties>
+    <property name="light" type="bool" value="true"/>
+    <property name="light_alpha" type="float" value="0.25"/>
+    <property name="light_color" type="color" value="#ffffffff"/>
+    <property name="light_dust" type="bool" value="true"/>
+    <property name="light_type" type="int" value="1"/>
+   </properties>
   </object>
  </objectgroup>
  <objectgroup id="4" name="markers">

@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.10.2",
+  tiledversion = "1.11.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 19,
-  nextobjectid = 75,
+  nextobjectid = 77,
   properties = {
     ["border"] = "simple",
     ["music"] = "negative_Sanctum_wip",
@@ -37,12 +37,12 @@ return {
     },
     {
       name = "bg_dw_church_2_tileset",
-      firstgid = 713,
+      firstgid = 725,
       filename = "../../../tilesets/bg_dw_church_2_tileset.tsx"
     },
     {
       name = "bg_dw_dither_overlay_tileset",
-      firstgid = 911,
+      firstgid = 923,
       filename = "../../../tilesets/bg_dw_dither_overlay_tileset.tsx"
     }
   },
@@ -316,18 +316,18 @@ return {
         0, 0, 0, 0, 367, 576, 576, 576, 367, 576, 576, 576, 367, 576, 576, 576, 367, 367, 403, 404, 405, 367, 367, 576, 576, 576, 367, 0, 0, 0,
         0, 0, 0, 0, 74, 74, 74, 74, 378, 74, 74, 74, 74, 353, 354, 74, 74, 74, 74, 74, 74, 378, 74, 74, 74, 475, 476, 0, 0, 0,
         0, 0, 0, 0, 74, 74, 74, 74, 74, 74, 74, 74, 74, 359, 360, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 477, 377, 0, 0, 0,
-        0, 0, 0, 0, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 74, 74, 476, 740, 740, 740, 740, 740, 740, 0, 0, 0,
+        0, 0, 0, 0, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 74, 74, 476, 752, 752, 752, 752, 752, 752, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 74, 74, 74, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 475, 74, 74, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 135, 74, 74, 74, 353, 354, 74, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 135, 141, 74, 74, 74, 359, 360, 74, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 135, 141, 147, 740, 740, 740, 740, 740, 740, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 135, 141, 147, 752, 752, 752, 752, 752, 752, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 135, 141, 147, 158, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 135, 141, 147, 158, 159, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 135, 141, 147, 158, 159, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         74, 74, 74, 74, 74, 378, 74, 74, 74, 141, 147, 158, 159, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         74, 477, 74, 74, 74, 74, 74, 74, 74, 147, 158, 159, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        740, 740, 740, 740, 740, 740, 740, 740, 740, 158, 159, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        752, 752, 752, 752, 752, 752, 752, 752, 752, 158, 159, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
       }
     },
     {
@@ -441,22 +441,6 @@ return {
           }
         },
         {
-          id = 61,
-          name = "interactable",
-          type = "",
-          shape = "rectangle",
-          x = 720,
-          y = 240,
-          width = 120,
-          height = 40,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["solid"] = true,
-            ["text1"] = "this isnt finished yet uhhh yeah deltarune chapter 5 tomorrow! i think this should be like a library (corrupted version) maybe leads to gersons study (destroyed)?"
-          }
-        },
-        {
           id = 66,
           name = "window_parallax",
           type = "",
@@ -507,6 +491,38 @@ return {
           rotation = 0,
           visible = true,
           properties = {}
+        },
+        {
+          id = 75,
+          name = "",
+          type = "",
+          shape = "text",
+          x = 520,
+          y = 120,
+          width = 622.333,
+          height = 19,
+          rotation = 0,
+          visible = true,
+          text = "should lead to library (corrupted) and maybe gerson's study second sanct edition",
+          wrap = true,
+          color = { 255, 255, 255 },
+          properties = {}
+        },
+        {
+          id = 76,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 720,
+          y = 200,
+          width = 120,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "5_5th_sanctuary/fifth_sanctum_3",
+            ["marker"] = "entry"
+          }
         }
       }
     },
@@ -622,7 +638,7 @@ return {
           shape = "rectangle",
           x = 120,
           y = 240,
-          width = 600,
+          width = 720,
           height = 40,
           rotation = 0,
           visible = true,

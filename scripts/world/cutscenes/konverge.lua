@@ -78,6 +78,69 @@ return {
         end
     end,
 
+    mason = function (cutscene)
+        local intMason = Game:getFlag("intMason", 0)
+        local belch = Game:getFlag("belch", false)
+        local belch2 = Game:getFlag("belch2", false)
+        local belch3 = Game:getFlag("belch3", false)
+        local mason = cutscene:getCharacter("mason")
+        if not belch then
+            if intMason >= 1 then
+                cutscene:text("> i am still mason.[wait:5] im in a very [gold]golden[gold:ungold] mood right now.", { indent_string = "> " }, mason)
+                cutscene:text("> let me just tell you again to please do not mention the [color:red]belch.plorgius[color:reset].", { indent_string = "> " }, mason)
+                local ch = cutscene:choicer({"Mention", "Do Not"})
+                if ch == 2 then
+                    cutscene:text("> most people would've mentioned it by now.[wait:5] thank you for not.", { indent_string = "> " }, mason)
+                    cutscene:text("> here's your terrific prize:[wait:10]\n> [rainbow]New Future![rainbow:unrainbow]", { indent_string = "> " }, mason)
+                else
+                    mason:setSprite("fell")
+                    Assets.playSound("noise")
+                    Assets.playSound("bump")
+                    cutscene:wait(0.5)
+                    cutscene:text("> owww...[wait:5] the horrors of the [color:red]belch.plorgius[color:reset]...", { indent_string = "> " }, mason)
+                    Game:setFlag("belch", true)
+                end
+            else
+                cutscene:text("> i am mason.[wait:5] im in a very [gold]golden[gold:ungold] mood right now.", { indent_string = "> " }, mason)
+                cutscene:text("> but please do not mention the [color:red]belch.plorgius[color:reset].", { indent_string = "> " }, mason)
+                cutscene:text("> things you can mention include:[wait:5] [color:#ffb467]funnyfeline[color:reset],[wait:5] deltarune,[wait:5] undertale,[wait:5] [color:#0085fa]tts bot[color:reset],[wait:5] etc.", { indent_string = "> " }, mason)
+                cutscene:text("> [rainbow]New Future![rainbow:unrainbow]", { indent_string = "> " }, mason)
+            end
+        elseif not belch2 then
+            cutscene:text("> why would you do this to me.", { indent_string = "> " }, mason)
+            cutscene:text("> please dont mention it again.", { indent_string = "> " }, mason)
+            local ch = cutscene:choicer({"Mention", "Do Not"})
+            if ch == 2 then
+                cutscene:text("> ... thank you.", { indent_string = "> " }, mason)
+            else
+                Game:setFlag("belch2", true)
+                Game:saveQuick()
+                Game:gameOver(Game.world.player.x, Game.world.player.y)
+            end
+        elseif not belch3 then
+            cutscene:text("> man WHAT did I tell you about not mentioning it.", { indent_string = "> " }, mason)
+            local ch = cutscene:choicer({"Mention", "Do Not"})
+            if ch == 2 then
+                cutscene:text("> ... are you really thinking about saying it again?", { indent_string = "> " }, mason)
+            else
+                Game:setFlag("belch3", true)
+                Game:saveQuick()
+                Game:gameOver(Game.world.player.x, Game.world.player.y)
+            end
+        else
+            cutscene:text("> so did you hear about the belch.plorgius from that man in hell?", { indent_string = "> " }, mason)
+            cutscene:text("> good.", { indent_string = "> " }, mason)
+            local ch = cutscene:choicer({"Mention", "Do Not"})
+            if ch == 2 then
+                cutscene:text("> ... are you really thinking about saying it again?", { indent_string = "> " }, mason)
+            else
+                Game:saveQuick()
+                Game:gameOver(Game.world.player.x, Game.world.player.y)
+            end
+        end
+        Game:setFlag("intMason", intMason + 1)
+    end,
+
     cruel = function (cutscene, event)
         for _, child in ipairs(event.children) do
             if child:includes(TileObject) then

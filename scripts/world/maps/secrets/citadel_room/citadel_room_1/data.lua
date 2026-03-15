@@ -1,5 +1,5 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
   tiledversion = "1.11.2",
   class = "",
@@ -280,19 +280,6 @@ return {
       properties = {},
       objects = {
         {
-          id = 48,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 640,
-          y = 880,
-          width = 80,
-          height = 40,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
           id = 49,
           name = "",
           type = "",
@@ -320,26 +307,7 @@ return {
       parallaxx = 1,
       parallaxy = 1,
       properties = {},
-      objects = {
-        {
-          id = 36,
-          name = "RemotePianoMove",
-          type = "",
-          shape = "point",
-          x = 680,
-          y = 1040,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["debug_mode"] = true,
-            ["height"] = 20,
-            ["show_collision"] = "true",
-            ["width"] = 30
-          }
-        }
-      }
+      objects = {}
     },
     {
       type = "objectgroup",

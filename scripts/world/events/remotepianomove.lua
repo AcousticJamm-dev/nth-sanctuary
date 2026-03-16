@@ -30,7 +30,7 @@ function RemotePianoMove:init(data)
 	self.canceltime = 15
 	self.engaged = false
 	self.siner = 0
-	self.no_cancel = properties["nocancel"] or true
+	self.no_cancel = properties["nocancel"] or false
 	self.final_mode = properties["final"] ~= false
 	self.ubuff = 0
 	self.rbuff = 0

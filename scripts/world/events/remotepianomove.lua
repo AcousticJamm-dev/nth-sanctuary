@@ -599,6 +599,9 @@ function RemotePianoMove:update()
 			self.xbuff = 0
 			self.zbuff = 0
 			Game.world.player:setFacing("down")
+			for _, follower in ipairs(Game.world.followers) do
+				follower:setFacing("down")
+			end
 			self.timer = 0
 			self.con = 0
 			Game.lock_movement = false

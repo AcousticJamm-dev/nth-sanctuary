@@ -34,6 +34,11 @@ function TutorialText:init(type, target)
 		table.insert(self.instruction_lines, {line = "Reset", but = "menu", hold = true})
 		table.insert(self.instruction_lines, {line = "Exit", but = "cancel", hold = true, cancel = true})
 	end
+	if self.instruction_type == 4 then
+		self.line_count = 3
+		table.insert(self.instruction_lines, {line = "Move Piano", but = "confirm"})
+		table.insert(self.instruction_lines, {line = "Exit", but = "cancel", hold = true, cancel = true})
+	end
 end
 
 function TutorialText:onAdd(parent)
@@ -45,7 +50,7 @@ function TutorialText:update()
     super.update(self)
 	if self.target then
 		self.instruction_active = false
-		if self.target.con == 1 and not self.target.forceend then
+		if self.target.show_instructions and not self.target.forceend then
 			self.instruction_active = true
 		end
 		self.canceltimer = self.target.canceltimer

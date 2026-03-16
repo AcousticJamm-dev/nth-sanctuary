@@ -1,0 +1,249 @@
+return {
+  version = "1.10",
+  luaversion = "5.1",
+  tiledversion = "1.10.2",
+  class = "",
+  orientation = "orthogonal",
+  renderorder = "right-down",
+  width = 15,
+  height = 12,
+  tilewidth = 40,
+  tileheight = 40,
+  nextlayerid = 11,
+  nextobjectid = 51,
+  properties = {
+    ["music"] = "smallpiano_room"
+  },
+  tilesets = {
+    {
+      name = "church_objects",
+      firstgid = 1,
+      filename = "../../../tilesets/church_objects.tsx",
+      exportfilename = "../../../tilesets/church_objects.lua"
+    },
+    {
+      name = "bg_dw_church_2_tileset",
+      firstgid = 103,
+      filename = "../../../tilesets/bg_dw_church_2_tileset.tsx"
+    },
+    {
+      name = "bg_dw_church_tileset_new",
+      firstgid = 301,
+      filename = "../../../tilesets/bg_dw_church_tileset_new.tsx",
+      exportfilename = "../../../tilesets/bg_dw_church_tileset_new.lua"
+    },
+    {
+      name = "flooded_sanctuary_extra",
+      firstgid = 883,
+      filename = "../../../tilesets/flooded_sanctuary_extra.tsx",
+      exportfilename = "../../../tilesets/flooded_sanctuary_extra.lua"
+    }
+  },
+  layers = {
+    {
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 15,
+      height = 12,
+      id = 10,
+      name = "tiles",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      encoding = "lua",
+      data = {
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 374, 374, 374, 374, 374, 374, 374, 374, 374, 374, 374, 374, 374, 0,
+        0, 380, 380, 380, 380, 380, 380, 380, 380, 380, 380, 380, 380, 380, 0,
+        0, 374, 374, 374, 374, 374, 374, 374, 374, 374, 374, 374, 374, 374, 0,
+        0, 380, 380, 380, 380, 380, 380, 380, 380, 380, 380, 380, 380, 380, 0,
+        0, 374, 374, 374, 374, 374, 374, 374, 374, 374, 374, 374, 374, 374, 0,
+        0, 380, 380, 380, 380, 380, 380, 380, 380, 380, 380, 380, 380, 380, 0,
+        0, 374, 374, 374, 374, 374, 374, 374, 374, 374, 374, 374, 374, 374, 0,
+        0, 380, 380, 380, 380, 380, 380, 380, 380, 380, 380, 380, 380, 380, 0,
+        0, 374, 374, 374, 374, 374, 374, 374, 374, 374, 374, 374, 374, 374, 0,
+        0, 380, 380, 380, 380, 380, 380, 380, 380, 380, 380, 380, 380, 380, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+      }
+    },
+    {
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 15,
+      height = 12,
+      id = 9,
+      name = "tiles_edge",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      encoding = "lua",
+      data = {
+        0, 907, 908, 908, 908, 908, 908, 908, 908, 908, 908, 908, 908, 909, 0,
+        0, 916, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 918, 0,
+        0, 916, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 918, 0,
+        0, 916, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 918, 0,
+        0, 916, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 918, 0,
+        0, 916, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 918, 0,
+        0, 916, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 918, 0,
+        0, 916, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 918, 0,
+        0, 916, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 918, 0,
+        0, 916, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 918, 0,
+        0, 916, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 918, 0,
+        0, 934, 934, 934, 934, 934, 934, 934, 934, 934, 934, 934, 934, 934, 0
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 7,
+      name = "objects_switches",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {}
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 3,
+      name = "objects_party",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 50,
+          name = "remotepianomove",
+          type = "",
+          shape = "rectangle",
+          x = 280,
+          y = 200,
+          width = 80,
+          height = 80,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 6,
+      name = "collision",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 34,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 0,
+          y = 440,
+          width = 600,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 47,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 0,
+          y = 0,
+          width = 600,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 48,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 0,
+          y = 40,
+          width = 40,
+          height = 400,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 49,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 560,
+          y = 40,
+          width = 40,
+          height = 400,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 4,
+      name = "markers",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 3,
+          name = "spawn",
+          type = "",
+          shape = "point",
+          x = 320,
+          y = 400,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    }
+  }
+}

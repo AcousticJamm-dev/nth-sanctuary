@@ -49,6 +49,7 @@ function ChurchPiano:init(data)
 	table.insert(self.drawunits, {sound = 7, x = 0, y = -space, offx = 5, offy = 5, rot = math.rad(180), tex = self.arrowspr})
 	table.insert(self.drawunits, {sound = 1, x = -space, y = 0, offx = 5, offy = 5, rot = math.rad(-270), tex = self.arrowspr})
 	table.insert(self.drawunits, {sound = 0, x = 0, y = 0, offx = 3, offy = 3, rot = math.rad(0), tex = self.circlespr})
+	self.show_instructions = false
 end
 
 function ChurchPiano:onAdd(parent)
@@ -193,6 +194,7 @@ function ChurchPiano:update()
 	
 	if self.con == 0.2 then
 		self.con = 1
+		self.show_instructions = true
 		self.engaged = true
 	end
 	
@@ -226,6 +228,7 @@ function ChurchPiano:update()
 					Game.world:setCameraAttached(true)
 					Game.world.camera:setPosition(tx, ty)
 				end
+				self.show_instructions = false
 				self.con = 4
 			end
 		end
@@ -359,6 +362,7 @@ function ChurchPiano:update()
 	
 	if self.con == 4 then
 		self.forceend = false
+		self.show_instructions = false
 		self.con = 0
 		self.timer = 0
 		self.buffer = 6
@@ -412,7 +416,8 @@ function ChurchPiano:draw()
 				if self.soundtoplay == 0 then
 					note.physics.speed = 0
 				end
-				Game.world.timer:tween(20/30, note, {alpha = 0}, 'out-quad', function()
+				Game.world.timer:lerpvar(note, "alpha", 1, 0, 20, 2, "out")
+				Game.world.timer:after(20/30, function()
 					note:remove()
 				end)
 				self:addChild(note)

@@ -14,22 +14,22 @@ return {
 	end,
 	egg_tree = function(cutscene)
 		if not Game:getFlag("egg") then
-			cutscene:text("* (He's behind.)")
+			cutscene:text("* (He is behind the tree.)")
 		else
-			cutscene:text("* (He's gone.)")
+			cutscene:text("* (It is a tree.)")
 		end
 	end,
 	egggive = function (cutscene)
 		if not Game:getFlag("egg") then
 			Game:setFlag("egg", true)
 			--Game.inventory:addItem("egg")
-			cutscene:text("* (Well, [wait:10]there is a man here.)")
+			cutscene:text("* (Well,[wait:5] there is a man here.)")
 			cutscene:text("* (He has been waiting for you.)")
 			cutscene:text("* (He whispers something to your ear,)")
-			Assets.playSound("item")
-			cutscene:text("* (And gives you an egg.)")
+			Assets.playSound("egg")
+			cutscene:text("* (And he gives you an Egg.)")
 		else
-			cutscene:text("* (Well, [wait:10]there is no more man here.)")
+			cutscene:text("* (Well,[wait:5] there is not a man here.)")
 		end
 	end,
     moss1 = function (cutscene)

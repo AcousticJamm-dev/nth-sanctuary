@@ -54,6 +54,7 @@ function RemotePianoMove:init(data)
 	self.show_instructions = false
 	self.remember_pos = properties["rememberxy"] or true
 	self.cam_marker = properties["cammarker"] or nil
+	self.dust_timer = Kristal.getTime()*30
 end
 
 function RemotePianoMove:onAdd(parent)
@@ -251,6 +252,7 @@ end
 
 function RemotePianoMove:update()
 	super.update(self)
+	self.dust_timer = self.dust_timer + DTMULT
 	local mywidth = 80
 	local myheight = 80
 	if self.engaged then
@@ -437,7 +439,7 @@ function RemotePianoMove:update()
 		local stoppingpoint = false
 		Object.startCache()
 		local collided = false
-		local bound_check = Hitbox(self.world, self.x + 1 + self.myhspeed, self.y + 1 + self.myvspeed, mywidth - 2, myheight - 2)
+		local bound_check = Hitbox(self.world, self.x + 1 + self.myhspeed * DTMULT, self.y + 1 + self.myvspeed * DTMULT, mywidth - 2, myheight - 2)
 		for _, collider in ipairs(Game.world.map.block_collision) do
 			if collider:collidesWith(bound_check) then
 				collided = true
@@ -453,7 +455,7 @@ function RemotePianoMove:update()
 		if collided then
 			stoppingpoint = true
 		end
-		if math.floor(Kristal.getTime()*30) % 2 == 0 then
+		if math.floor(self.dust_timer) % 2 == 0 then
 			local xoffset = 0.5
 			local yoffset = MathUtils.random(0.6) + 0.2
 			if self.myvspeed ~= 0 then
@@ -468,6 +470,7 @@ function RemotePianoMove:update()
 			dust.physics.speed_x = MathUtils.random(-1, 1)
 			dust.layer = self.layer - 0.1
 			Game.world:addChild(dust)
+			self.dust_timer = self.dust_timer + DTMULT
 		end
 		if stoppingpoint then
 			self.myhspeed = MathUtils.round(self.myhspeed)
@@ -479,7 +482,7 @@ function RemotePianoMove:update()
 			for i = 0, (math.max(math.abs(self.myhspeed), math.abs(self.myvspeed)) + 1) do
 				if not endloop then
 					local collided = false
-					local bound_check = Hitbox(self.world, self.x + self.myhspeed, self.y + self.myvspeed, mywidth - 1, myheight - 1)
+					local bound_check = Hitbox(self.world, self.x + 1 + self.myhspeed * DTMULT, self.y + 1 + self.myvspeed * DTMULT, mywidth - 2, myheight - 2)
 					for _, collider in ipairs(Game.world.map.block_collision) do
 						if collider:collidesWith(bound_check) then
 							collided = true
@@ -493,10 +496,10 @@ function RemotePianoMove:update()
 					end
 					if collided then
 						if self.myhspeed ~= 0 then
-							self.myhspeed = (math.abs(self.myhspeed) - 1) * MathUtils.sign(self.myhspeed)
+							self.myhspeed = (math.abs(self.myhspeed * DTMULT) - 1) * MathUtils.sign(self.myhspeed * DTMULT)
 						end
 						if self.myvspeed ~= 0 then
-							self.myvspeed = (math.abs(self.myvspeed) - 1) * MathUtils.sign(self.myvspeed)
+							self.myvspeed = (math.abs(self.myvspeed * DTMULT) - 1) * MathUtils.sign(self.myvspeed * DTMULT)
 						end
 					else
 						endloop = true
@@ -516,8 +519,8 @@ function RemotePianoMove:update()
 			end
 			self.con = 2
 		elseif self.hitstop <= 0 then
-			self.x = self.x + MathUtils.round(self.myhspeed) * DTMULT
-			self.y = self.y + MathUtils.round(self.myvspeed) * DTMULT
+			self.x = self.x + MathUtils.round(self.myhspeed * DTMULT)
+			self.y = self.y + MathUtils.round(self.myvspeed * DTMULT)
 		else
 			self.hitstop = self.hitstop - DTMULT
 		end
@@ -530,8 +533,8 @@ function RemotePianoMove:update()
 		if self.myvspeed ~= 0 then
 			self.myvspeed = MathUtils.lerp(math.abs(self.myvspeed), maxspeed, 0.25*DTMULT) * MathUtils.sign(self.myvspeed)
 		end	
-		self.x = self.x + MathUtils.round(self.myhspeed) * DTMULT
-		self.y = self.y + MathUtils.round(self.myvspeed) * DTMULT
+		self.x = self.x + MathUtils.round(self.myhspeed * DTMULT)
+		self.y = self.y + MathUtils.round(self.myvspeed * DTMULT)
 		self.yspeed = self.yspeed + 0.65 * DTMULT
 		self.yoffset = self.yoffset + self.yspeed * DTMULT
 		if self.yoffset >= 0 then

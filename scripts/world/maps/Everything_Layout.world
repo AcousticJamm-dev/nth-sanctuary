@@ -510,6 +510,13 @@
             "width": 1040,
             "x": 13280,
             "y": -3080
+        },
+        {
+            "fileName": "debug_rooms/piano_move_test/piano_test.tmx",
+            "height": 480,
+            "width": 600,
+            "x": -6440,
+            "y": -2920
         }
     ],
     "onlyShowAdjacentMaps": false,

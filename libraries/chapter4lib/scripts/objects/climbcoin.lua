@@ -77,7 +77,6 @@ function ClimbCoin:update()
 			value_text.x_offset = font:getWidth("+"..self.value)/2
 			value_text.visible = false
 			value_text.onrotatingtower = true
-			value_text:setLayer(Game.world.player.layer + 0.05)
 		end
 		Game.world.timer:after(1, function()
 			value_text:remove()

@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.10.2",
+  tiledversion = "1.11.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 20,
-  nextobjectid = 53,
+  nextobjectid = 57,
   properties = {
     ["border"] = "church_flooded_dynamic_alt",
     ["music"] = "waves",
@@ -476,38 +476,6 @@ return {
       properties = {},
       objects = {
         {
-          id = 31,
-          name = "transition",
-          type = "",
-          shape = "rectangle",
-          x = 640,
-          y = 600,
-          width = 40,
-          height = 120,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["map"] = "3_flooded_sanctuary/flooded_1",
-            ["marker"] = "entry"
-          }
-        },
-        {
-          id = 32,
-          name = "transition",
-          type = "",
-          shape = "rectangle",
-          x = -40,
-          y = 600,
-          width = 40,
-          height = 120,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["map"] = "2_2nd_sanctuary/second_sanctum_4_crossroad",
-            ["marker"] = "entry2"
-          }
-        },
-        {
           id = 35,
           name = "savepoint",
           type = "",
@@ -521,38 +489,6 @@ return {
           properties = {
             ["text1"] = "* (With water, flowing slowly in the distance...)",
             ["text2"] = "* (You're filled with the power of feeling wet.)"
-          }
-        },
-        {
-          id = 38,
-          name = "transition",
-          type = "",
-          shape = "rectangle",
-          x = -40,
-          y = 200,
-          width = 40,
-          height = 120,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["map"] = "2_2nd_sanctuary/second_sanctum_4_crossroad",
-            ["marker"] = "entry4"
-          }
-        },
-        {
-          id = 50,
-          name = "transition",
-          type = "",
-          shape = "rectangle",
-          x = 640,
-          y = 200,
-          width = 40,
-          height = 120,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["map"] = "3_flooded_sanctuary/flooded_1",
-            ["marker"] = "entry4"
           }
         },
         {
@@ -585,7 +521,72 @@ return {
       parallaxx = 1,
       parallaxy = 1,
       properties = {},
-      objects = {}
+      objects = {
+        {
+          id = 53,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 640,
+          y = 600,
+          width = 40,
+          height = 120,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "3_flooded_sanctuary/flooded_1",
+            ["marker"] = "entry"
+          }
+        },
+        {
+          id = 54,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = -40,
+          y = 600,
+          width = 40,
+          height = 120,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "2_2nd_sanctuary/second_sanctum_4_crossroad",
+            ["marker"] = "entry2"
+          }
+        },
+        {
+          id = 55,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = -40,
+          y = 200,
+          width = 40,
+          height = 120,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "2_2nd_sanctuary/second_sanctum_4_crossroad",
+            ["marker"] = "entry4"
+          }
+        },
+        {
+          id = 56,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 640,
+          y = 200,
+          width = 40,
+          height = 120,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "3_flooded_sanctuary/flooded_1",
+            ["marker"] = "entry4"
+          }
+        }
+      }
     },
     {
       type = "tilelayer",

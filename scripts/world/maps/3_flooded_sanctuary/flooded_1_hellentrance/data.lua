@@ -1,5 +1,5 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
   tiledversion = "1.11.2",
   class = "",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 19,
-  nextobjectid = 49,
+  nextobjectid = 50,
   properties = {
     ["border"] = "church_flooded_hell_dim",
     ["music"] = "waves"
@@ -508,6 +508,22 @@ return {
             ["map"] = "sanctum_hell/hell_1",
             ["marker"] = "flooded_exit"
           }
+        },
+        {
+          id = 49,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = -40,
+          y = 680,
+          width = 40,
+          height = 80,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "3_flooded_sanctuary/flooded_1",
+            ["marker"] = "entry3"
+          }
         }
       }
     },
@@ -578,22 +594,6 @@ return {
           visible = true,
           properties = {
             ["text1"] = "* (It's an empty basin.)"
-          }
-        },
-        {
-          id = 30,
-          name = "transition",
-          type = "",
-          shape = "rectangle",
-          x = -40,
-          y = 680,
-          width = 40,
-          height = 80,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["map"] = "3_flooded_sanctuary/flooded_1",
-            ["marker"] = "entry3"
           }
         }
       }

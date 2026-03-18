@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="16" height="20" tilewidth="40" tileheight="40" infinite="0" nextlayerid="19" nextobjectid="49">
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="16" height="20" tilewidth="40" tileheight="40" infinite="0" nextlayerid="19" nextobjectid="50">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -194,6 +194,12 @@
     <property name="marker" value="flooded_exit"/>
    </properties>
   </object>
+  <object id="49" name="transition" x="-40" y="680" width="40" height="80">
+   <properties>
+    <property name="map" value="3_flooded_sanctuary/flooded_1"/>
+    <property name="marker" value="entry3"/>
+   </properties>
+  </object>
  </objectgroup>
  <layer id="3" name="Basin" width="16" height="20" visible="0">
   <data encoding="csv">
@@ -223,12 +229,6 @@
   <object id="24" name="interactable" x="440" y="560" width="160" height="120">
    <properties>
     <property name="text1" value="* (It's an empty basin.)"/>
-   </properties>
-  </object>
-  <object id="30" name="transition" x="-40" y="680" width="40" height="80">
-   <properties>
-    <property name="map" value="3_flooded_sanctuary/flooded_1"/>
-    <property name="marker" value="entry3"/>
    </properties>
   </object>
  </objectgroup>

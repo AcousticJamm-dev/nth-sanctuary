@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 20,
-  nextobjectid = 150,
+  nextobjectid = 154,
   properties = {
     ["border"] = "church_flooded_dynamic",
     ["music"] = "floodedsanctuary"
@@ -343,7 +343,7 @@ return {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 893, 893, 888, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 887, 888, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 898, 899, 899, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 898, 899, 899, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 638, 638, 639, 0, 637, 638, 638, 638, 638, 638, 639, 0, 0, 0, 886, 887, 0, 887, 887, 888, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 643, 644, 644, 644, 644, 644, 645, 0, 643, 644, 644, 644, 644, 644, 645, 0, 0, 0, 892, 893, 0, 893, 893, 894, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 652, 653, 653, 653, 653, 653, 654, 930, 652, 653, 653, 653, 653, 653, 654, 0, 0, 0, 898, 899, 0, 0, 0, 0, 0, 0,
@@ -1092,72 +1092,7 @@ return {
       parallaxx = 1,
       parallaxy = 1,
       properties = {},
-      objects = {
-        {
-          id = 28,
-          name = "transition",
-          type = "",
-          shape = "rectangle",
-          x = 1360,
-          y = 1640,
-          width = 40,
-          height = 80,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["map"] = "3_flooded_sanctuary/flooded_1_hellentrance",
-            ["marker"] = "entry"
-          }
-        },
-        {
-          id = 111,
-          name = "transition",
-          type = "",
-          shape = "rectangle",
-          x = -40,
-          y = 520,
-          width = 40,
-          height = 120,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["map"] = "3_flooded_sanctuary/flooded_0_between",
-            ["marker"] = "entry"
-          }
-        },
-        {
-          id = 118,
-          name = "transition",
-          type = "",
-          shape = "rectangle",
-          x = 1360,
-          y = 520,
-          width = 40,
-          height = 120,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["map"] = "3_flooded_sanctuary/flooded_2",
-            ["marker"] = "entry"
-          }
-        },
-        {
-          id = 147,
-          name = "transition",
-          type = "",
-          shape = "rectangle",
-          x = -40,
-          y = 120,
-          width = 40,
-          height = 120,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["map"] = "3_flooded_sanctuary/flooded_0_between",
-            ["marker"] = "entry4"
-          }
-        }
-      }
+      objects = {}
     },
     {
       type = "objectgroup",
@@ -1299,6 +1234,70 @@ return {
           properties = {
             ["area"] = { id = 87 },
             ["up"] = true
+          }
+        },
+        {
+          id = 150,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 1360,
+          y = 1640,
+          width = 40,
+          height = 80,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "3_flooded_sanctuary/flooded_1_hellentrance",
+            ["marker"] = "entry"
+          }
+        },
+        {
+          id = 151,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = -40,
+          y = 520,
+          width = 40,
+          height = 120,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "3_flooded_sanctuary/flooded_0_between",
+            ["marker"] = "entry"
+          }
+        },
+        {
+          id = 152,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 1360,
+          y = 520,
+          width = 40,
+          height = 120,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "3_flooded_sanctuary/flooded_2",
+            ["marker"] = "entry"
+          }
+        },
+        {
+          id = 153,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = -40,
+          y = 120,
+          width = 40,
+          height = 120,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "3_flooded_sanctuary/flooded_0_between",
+            ["marker"] = "entry4"
           }
         }
       }

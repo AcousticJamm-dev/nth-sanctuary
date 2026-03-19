@@ -1,7 +1,7 @@
 return {
-  version = "1.11",
+  version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.10.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 19,
-  nextobjectid = 84,
+  nextobjectid = 87,
   properties = {
     ["border"] = "church_a",
     ["music"] = "climb"
@@ -552,6 +552,45 @@ return {
           properties = {
             ["trigger_rad"] = 140
           }
+        },
+        {
+          id = 84,
+          name = "bookshelf_destructable",
+          type = "",
+          shape = "rectangle",
+          x = 560,
+          y = 200,
+          width = 80,
+          height = 160,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 85,
+          name = "bookshelf_destructable",
+          type = "",
+          shape = "rectangle",
+          x = 720,
+          y = 520,
+          width = 80,
+          height = 160,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 86,
+          name = "bookshelf_destructable",
+          type = "",
+          shape = "rectangle",
+          x = 400,
+          y = 520,
+          width = 80,
+          height = 160,
+          rotation = 0,
+          visible = true,
+          properties = {}
         }
       }
     },

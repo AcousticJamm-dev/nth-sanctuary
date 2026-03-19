@@ -16,7 +16,7 @@ function ClimbEnemy:init(data)
 	self.flashadjustmentx = 0
 	self.flashadjustmenty = 0
 	self.effectadjustmentx = 0
-	self.effectadjustmenty = 0
+	self.effectadjustmenty = 80
 	self.shakex = 0
 	self.hp = properties["hp"] or 1
 	self.dir = 2
@@ -231,14 +231,14 @@ function ClimbEnemy:update()
 			Assets.playSound("punchmed", 0.4, 1)
 			if self.world.map.cyltower then	
 				local afterimage_2 = AfterImageCutHalfTower(self.sprite.texture_path)
-				afterimage_2:setPosition(self.x/2 + self.effectadjustmentx + 40, self.y/2 + self.effectadjustmenty)
+				afterimage_2:setPosition(self.x + self.effectadjustmentx + 40, self.y + self.effectadjustmenty)
 				afterimage_2.layer = self.layer
 				afterimage_2:setOriginExact(0, 0)
 				Game.world:addChild(afterimage_2)
 				self:remove()
 			else
 				local afterimage_2 = AfterImageCutHalf(self.sprite.texture_path)
-				afterimage_2:setPosition(self.x/2 + self.effectadjustmentx, self.y/2 + self.effectadjustmenty)
+				afterimage_2:setPosition(self.x + self.effectadjustmentx, self.y/2 + self.effectadjustmenty)
 				afterimage_2.layer = self.layer
 				afterimage_2:setOriginExact(0, 0)
 				Game.world:addChild(afterimage_2)

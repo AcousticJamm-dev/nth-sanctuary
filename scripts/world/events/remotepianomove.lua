@@ -388,6 +388,7 @@ function RemotePianoMove:update()
 				px = -1
 			end
 			Object.startCache()
+			local collider = nil
 			local collided = false
 			local bound_check = Hitbox(self.world, self.x + 1 + px * 40, self.y + 1 + py * 40, mywidth - 2, myheight - 2)
 			for _, collider in ipairs(Game.world.map.block_collision) do
@@ -398,7 +399,10 @@ function RemotePianoMove:update()
 			end
 			if not collided then
 				self.collidable = false
-				collided = self.world:checkCollision(bound_check)
+				collided, collider = self.world:checkCollision(bound_check)
+				if collider and collider.solid_breakable then
+					collided = false
+				end
 				self.collidable = true
 			end
 			Object.endCache()
@@ -439,6 +443,7 @@ function RemotePianoMove:update()
 		end	
 		local stoppingpoint = false
 		Object.startCache()
+		local collider = nil
 		local collided = false
 		local bound_check = Hitbox(self.world, self.x + 1 + self.myhspeed * DTMULT, self.y + 1 + self.myvspeed * DTMULT, mywidth - 2, myheight - 2)
 		for _, collider in ipairs(Game.world.map.block_collision) do
@@ -449,7 +454,10 @@ function RemotePianoMove:update()
 		end
 		if not collided then
 			self.collidable = false
-			collided = self.world:checkCollision(bound_check)
+			collided, collider = self.world:checkCollision(bound_check)
+			if collider and collider.solid_breakable then
+				collided = false
+			end
 			self.collidable = true
 		end
 		Object.endCache()

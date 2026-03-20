@@ -147,7 +147,7 @@ return {
       name = "tile_bg",
       class = "",
       visible = true,
-      opacity = 1,
+      opacity = 0.6,
       offsetx = 0,
       offsety = 0,
       parallaxx = 1,

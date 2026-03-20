@@ -56,6 +56,7 @@ function RemotePianoMove:init(data)
 	self.cam_marker = properties["cammarker"] or nil
 	self.dust_timer = (Kristal.getTime()*30) % 2
 	self.last_dust_timer = self.dust_timer
+	self.start_layer = self.layer
 end
 
 function RemotePianoMove:onAdd(parent)
@@ -80,6 +81,7 @@ function RemotePianoMove:onAdd(parent)
 	self.ui = RemotePianoMoveUI(self)
 	self.ui.layer = WORLD_LAYERS["above_events"]
 	Game.world:addChild(self.ui)
+	self.start_layer = self.layer
 end
 
 local function scr_returnwait(x1, y1, x2, y2, spd)
@@ -770,6 +772,7 @@ end
 
 function RemotePianoMove:stepTwo()
 	if self.engaged then
+		self.layer = self.start_layer - 0.05
 		Game.world.player:setPosition(self.x + self.width / 2 - 1, self.y + self.height + (self.yoffset * 1.1) - 10)
 		Game.world.player:setSprite("piano")
 		Game.world.player.layer = self.layer + 0.01

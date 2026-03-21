@@ -70,16 +70,16 @@ function map:update(world, data)
     super.update(self)
     self.lava_alpha = (math.sin((Kristal.getTime() * 30) / 12) * 0.2)
     self.lava_grad_scale = (math.sin((Kristal.getTime() * 30) / 12) * 0.5)
-    if not Game:getFlag("intro_complete") then
-        local kris = Game.world.player
-        if kris then
-            local room_center = (self.height * self.tile_height) / 2
-            local dist = kris.y - room_center
-            local top_px = self.fade_top_tiles * -40
-            local bottom_px = self.fade_bottom_tiles * 40
-            self.hell_border_alpha = MathUtils.clamp(1 - (dist - bottom_px) / (top_px - bottom_px), 0, 1)
-        end
+	local kris = Game.world.player
+    if kris then
+        local room_center = (self.height * self.tile_height) / 2
+        local dist = kris.y - room_center
+        local top_px = self.fade_top_tiles * -40
+        local bottom_px = self.fade_bottom_tiles * 40
+        self.hell_border_alpha = MathUtils.clamp(1 - (dist - bottom_px) / (top_px - bottom_px), 0, 1)
+    end
         
+    if not Game:getFlag("intro_complete") then
         if self.con == 1 then
             self.frame_timer = self.frame_timer + DTMULT
             

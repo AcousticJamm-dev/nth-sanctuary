@@ -15,6 +15,12 @@ function BookshelfDestructable:init(data)
 	self.con = 0
 	self.special = 0
 	self.solid_breakable = true
+	self.start_layer = self.layer
+end
+
+function BookshelfDestructable:onAdd(parent)
+    super.onAdd(self,parent)
+	self.start_layer = self.layer
 end
 
 function BookshelfDestructable:onLoad()
@@ -44,6 +50,11 @@ function BookshelfDestructable:update()
 			collided = true
 			collider = piano
 			break
+		end
+		if piano.engaged and self.y + 80 < piano.y then
+			self.layer = piano.layer - 0.1
+		else
+			self.layer = self.start_layer
 		end
 	end
 	Object.endCache()

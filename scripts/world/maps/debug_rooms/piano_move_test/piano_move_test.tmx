@@ -12,20 +12,20 @@
  <tileset firstgid="301" source="../../../tilesets/bg_dw_church_tileset_new.tsx"/>
  <tileset firstgid="883" source="../../../tilesets/flooded_sanctuary_extra.tsx"/>
  <tileset firstgid="946" source="../../../tilesets/bg_dw_church_c_tileset.tsx"/>
- <objectgroup id="18" name="objects_towers3" visible="0" parallaxx="0.3" parallaxy="0.72">
-  <object id="74" gid="95" x="-120" y="6050" width="400" height="1000"/>
-  <object id="76" gid="95" x="280" y="6050" width="400" height="1000"/>
-  <object id="83" gid="95" x="680" y="6050" width="400" height="1000"/>
+ <objectgroup id="18" name="objects_towers3" parallaxx="0.3" parallaxy="0.72">
+  <object id="74" gid="95" x="-120" y="5130" width="400" height="1000"/>
+  <object id="76" gid="95" x="280" y="5130" width="400" height="1000"/>
+  <object id="83" gid="95" x="680" y="5130" width="400" height="1000"/>
  </objectgroup>
- <objectgroup id="17" name="objects_towers2" visible="0" parallaxx="0.4" parallaxy="0.82">
-  <object id="72" gid="97" x="520" y="6550" width="640" height="1600"/>
-  <object id="73" gid="2147483744" x="294" y="6941" width="400" height="1600"/>
+ <objectgroup id="17" name="objects_towers2" parallaxx="0.4" parallaxy="0.82">
+  <object id="72" gid="97" x="520" y="5630" width="640" height="1600"/>
+  <object id="73" gid="2147483744" x="294" y="6021" width="400" height="1600"/>
  </objectgroup>
- <objectgroup id="11" name="objects_towers" visible="0" parallaxx="0.5" parallaxy="0.9">
-  <object id="61" gid="97" x="-130" y="6980" width="640" height="1600"/>
-  <object id="65" gid="96" x="234" y="7371" width="400" height="1600"/>
+ <objectgroup id="11" name="objects_towers" parallaxx="0.5" parallaxy="0.9">
+  <object id="61" gid="97" x="-130" y="6060" width="640" height="1600"/>
+  <object id="65" gid="96" x="234" y="6451" width="400" height="1600"/>
  </objectgroup>
- <objectgroup id="12" name="objects_shadow" visible="0">
+ <objectgroup id="12" name="objects_shadow">
   <object id="62" gid="9" x="2000" y="6900" width="1040" height="2000" rotation="270"/>
  </objectgroup>
  <layer id="15" name="tiles_texture" width="160" height="160" tintcolor="#985100">

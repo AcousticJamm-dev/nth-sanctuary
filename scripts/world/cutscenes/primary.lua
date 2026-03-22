@@ -370,8 +370,10 @@ return {
 			Game.world.timer:tween(15/30, cutscene, {windvol = 0.5, windpitch = 1}, "linear")
 			Game.world.timer:after(2/30, function() Assets.playSound("glassbreak", 0.4, 0.6) end)
 			Assets.playSound("punchmed", 0.95, 0.7)
-			Assets.playSound("ch4_first_intro_breaking", 0.5, 0.5)
-			Assets.playSound("ch4_first_intro_breaking", 0.5, 0.44)
+			Assets.playSound("ch4_first_intro_breaking", 0.5, 1)
+			Assets.playSound("ch4_first_intro_breaking", 0.5, 0.94)
+			Assets.playSound("ch4_first_intro_breaking", 0.25, 0.5)
+			Assets.playSound("ch4_first_intro_breaking", 0.25, 0.44)
 			a.physics.direction = math.rad(90 + MathUtils.random(-3, 3))
 			a.physics.speed = -2
 			a.physics.friction = 0
@@ -489,6 +491,8 @@ return {
 			Assets.playSound("sparkle_glock", 0.5, 0.8)
 			Assets.playSound("sparkle_glock", 0.5, 0.71)
 			Assets.playSound("punchmed", 0.95, 0.7)
+			Assets.playSound("ch4_first_intro_breaking", 0.25, 0.25)
+			Assets.playSound("ch4_first_intro_breaking", 0.25, 0.14)
 			windows.delta = 1
 			prophecies.delta = 1
 			cutscene.windvol = 0.5
@@ -533,6 +537,7 @@ return {
 			windsfx:stop()
 			dronesfx:stop()
 			Assets.playSound("snd_closet_impact")
+			Assets.stopSound("ch4_first_intro_breaking")
 			kris:setParallax(1)
 			susie:setParallax(1)
 			kris:removeFX("fakehighlight")

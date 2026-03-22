@@ -14,7 +14,7 @@ function FracturedHSVFX:init(heartbeat, priority)
     self.hue = self.hue_start;
     self.sat = self.sat_start;
     self.val = self.val_start;
-    self.wave_time = love.math.random(1, 10);
+    self.wave_time = MathUtils.rangeMap(math.abs(self.hue_start - self.hue_target), 0, 255, 1, 10);
     self.heartbeat_mode = heartbeat or false
 	self.amount = 1
 

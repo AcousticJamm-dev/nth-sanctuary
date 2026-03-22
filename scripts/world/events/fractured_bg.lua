@@ -7,7 +7,7 @@ end
 
 function BaseSanctumBGEvent:onAdd(parent)
     super.onAdd(self, parent)
-	Game.world:spawnObject(IntroGigaProphecies(), "objects_bg")
+	Game.world:spawnObject(FracturedGigaProphecies(), "objects_bg")
 	self:remove()
 end
 

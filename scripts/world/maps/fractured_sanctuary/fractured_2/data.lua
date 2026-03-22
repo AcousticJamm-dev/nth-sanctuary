@@ -48,6 +48,35 @@ return {
   },
   layers = {
     {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 6,
+      name = "objects_bg",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 18,
+          name = "fractured_bg",
+          type = "",
+          shape = "point",
+          x = 40,
+          y = 40,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
       type = "tilelayer",
       x = 0,
       y = 0,
@@ -57,7 +86,7 @@ return {
       name = "Tile Layer 3",
       class = "",
       visible = false,
-      opacity = 1,
+      opacity = 0.8,
       offsetx = 0,
       offsety = 0,
       parallaxx = 0.5,
@@ -99,7 +128,7 @@ return {
       name = "tiles_bg",
       class = "",
       visible = false,
-      opacity = 1,
+      opacity = 0.8,
       offsetx = 0,
       offsety = 0,
       parallaxx = 0.55,
@@ -129,35 +158,6 @@ return {
         0, 0, 710, 0, 0, 0, 710, 0, 0, 0, 710, 0, 0, 0, 710, 0, 0, 0, 710, 0, 0, 0, 710, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-      }
-    },
-    {
-      type = "objectgroup",
-      draworder = "topdown",
-      id = 6,
-      name = "objects_bg",
-      class = "",
-      visible = true,
-      opacity = 1,
-      offsetx = 0,
-      offsety = 0,
-      parallaxx = 1,
-      parallaxy = 1,
-      properties = {},
-      objects = {
-        {
-          id = 18,
-          name = "fractured_bg",
-          type = "",
-          shape = "point",
-          x = 40,
-          y = 40,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        }
       }
     },
     {
@@ -545,19 +545,6 @@ return {
           properties = {}
         },
         {
-          id = 38,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 1000,
-          y = 520,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
           id = 39,
           name = "",
           type = "",
@@ -565,7 +552,7 @@ return {
           x = 880,
           y = 520,
           width = 40,
-          height = 40,
+          height = 160,
           rotation = 0,
           visible = true,
           properties = {}
@@ -576,9 +563,9 @@ return {
           type = "",
           shape = "rectangle",
           x = 1000,
-          y = 720,
+          y = 520,
           width = 40,
-          height = 80,
+          height = 280,
           rotation = 0,
           visible = true,
           properties = {}

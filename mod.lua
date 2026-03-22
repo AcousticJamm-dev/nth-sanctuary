@@ -18,6 +18,60 @@ function Mod:onTiledTypegen(plugin)
     })
 end
 
+function Mod:registerDebugOptions(debug)
+    debug:registerMenu("nth_sanctumdebug", "#th Sanctuary Debug","menu")
+    
+    debug:registerOption("main", "#th Sanctuary Options", "Enter the  Funky  Menu.", function () debug:enterMenu("nth_sanctumdebug", 1) end)
+    
+    debug:registerOption(
+        "nth_sanctumdebug", 
+        "Set Dark Shards to somthign big", 
+        "Ease of Access.",
+        function()
+        for i=1,100 do
+            Mod.dark_shards[i]=-1
+        end
+    end)
+    
+    debug:registerOption(
+    "nth_sanctumdebug", 
+    "Set Dark Shards to 1", 
+    "Set them to 1.",
+    function()
+        for g, shard in ipairs(Mod.dark_shards) do
+            shard[g] = 0
+        end
+    end)
+
+    debug:registerOption(
+    "nth_sanctumdebug", 
+    "Force mod finish", 
+    function()
+        local b = (Game:getFlag("finished")==false and "OFF") or "ON"
+        return "Probably of good use? ("..b      ..")"
+    end,
+    function()
+        Game:setFlag("finished", not Game:getFlag("finished"))
+    end)
+
+    debug:registerOption(
+    "nth_sanctumdebug", 
+    "The Cooler 'Give Money'", 
+    "fre mony genrtr",
+    function()
+        Game.money = Game.money + 1000
+    end)    
+    
+    debug:registerOption(
+    "nth_sanctumdebug", 
+    "Toggle 3D Mode", 
+    "Enables first person view & 3D graphics. (Not actually dont do this please)",
+    function()
+        love.graphics.setCanvas(4)
+    end)
+
+end
+
 function Mod:init()
     print("Loaded "..self.info.name.."!")
     Game:registerEvent("squeak", function(data)

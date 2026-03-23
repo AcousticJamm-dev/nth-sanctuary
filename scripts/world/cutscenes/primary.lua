@@ -800,7 +800,7 @@ return {
         cutscene:text("* ... Fine.", "nervous_side")
         susie:setSprite("walk_back_arm")
         susie.sprite:play(1/5, true)
-        cutscene:slideTo(susie, "suspoint2",3)
+        cutscene:slideTo(susie, "suspoint2",2.5)
 		cutscene:wait(1.5)
         cutscene:text("* What a load of junk. [wait:5][face:smile]Are we REALLY gonna fall for this?", "closed_grin")
         cutscene:text("* These panel things aren't THAT important anyways.", "smile")

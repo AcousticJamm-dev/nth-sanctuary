@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 11,
-  nextobjectid = 197,
+  nextobjectid = 198,
   properties = {
     ["border"] = "church_a",
     ["music"] = "church_study_slower"
@@ -710,9 +710,9 @@ return {
           name = "interactable",
           type = "",
           shape = "rectangle",
-          x = 363.75,
+          x = 356,
           y = 685.167,
-          width = 253.053,
+          width = 262.803,
           height = 85.8333,
           rotation = 0,
           visible = true,
@@ -750,6 +750,22 @@ return {
           gid = 620,
           visible = true,
           properties = {}
+        },
+        {
+          id = 197,
+          name = "script",
+          type = "",
+          shape = "rectangle",
+          x = 100,
+          y = 920,
+          width = 40,
+          height = 80,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["cutscene"] = "study.oldman",
+            ["once"] = true
+          }
         }
       }
     },

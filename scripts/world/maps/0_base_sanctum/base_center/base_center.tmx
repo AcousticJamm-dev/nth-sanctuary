@@ -248,8 +248,11 @@
  <objectgroup id="5" name="objects_party">
   <object id="2" name="savepoint" x="740" y="280">
    <properties>
-    <property name="text1" value="* (... this certainly isn't a normal Dark Sanctuary.)"/>
-    <property name="text2" value="* (You are filled with the power of liminal exploration.)"/>
+    <property name="text1" value="* (... This certainly isn't a normal Dark Sanctuary.)"/>
+    <property name="text2">* (The air has changed.)[wait:5]
+* (The colors have shifted even more.)</property>
+    <property name="text3" value="* (But despite all that...)"/>
+    <property name="text4" value="* (You are filled with the power of liminal exploration.)"/>
    </properties>
   </object>
   <object id="20" name="prophecy" x="80" y="360" width="240" height="80">

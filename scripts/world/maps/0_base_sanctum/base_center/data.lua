@@ -772,8 +772,10 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "* (... this certainly isn't a normal Dark Sanctuary.)",
-            ["text2"] = "* (You are filled with the power of liminal exploration.)"
+            ["text1"] = "* (... This certainly isn't a normal Dark Sanctuary.)",
+            ["text2"] = "* (The air has changed.)[wait:5]\n* (The colors have shifted even more.)",
+            ["text3"] = "* (But despite all that...)",
+            ["text4"] = "* (You are filled with the power of liminal exploration.)"
           }
         },
         {

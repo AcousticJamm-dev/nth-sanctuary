@@ -1,4 +1,47 @@
 return {
+    oldman = function(cutscene, event)
+        local susie, ralsei, kris = cutscene:getCharacter("susie"),cutscene:getCharacter("ralsei"),cutscene:getCharacter("kris")
+		cutscene:detachCamera()
+		cutscene:detachFollowers()
+
+		Assets.playSound("sussurprise")
+		susie:setSprite("surprise_step")
+		susie:shake()
+		
+		cutscene:setSpeaker(susie)
+		cutscene:text("* ... Old man!", "dejected_scared")
+
+		susie:resetSprite()
+		susie:walkTo(481, susie.y, 1.5)
+		cutscene:wait(cutscene:panTo(484, 784, 1.5))
+		cutscene:wait(0.01)
+		susie:setFacing("up")
+
+		cutscene:wait(.5)
+		cutscene:text("* ... [wait:5]He's not here.", "dejected")
+
+		cutscene:wait(1)
+		Assets.playSound("sussurprise")
+		susie:shake()
+		susie:setSprite("exasperated_left")
+		cutscene:text("* Why,[wait:5] of COURSE he wouldn't be here!", "angry_e")
+		cutscene:text("* If he would then he'd...", "angry_look")
+
+		cutscene:wait(1.5)
+		Assets.playSound("wing")
+		susie:shake()
+		susie:setFacing("down")
+		susie:setSprite("walk_unhappy")
+		cutscene:text("* ...", "dejected")
+		susie:setFacing("left")
+		cutscene:text("* ... Whatever.[wait:5]\n* Let's just explore this place for a bit.", "dejected_look")
+		cutscene:text("* Maybe we can find something interesting.", "dejected_smile")
+		
+		cutscene:attachCamera()
+        cutscene:wait(cutscene:attachFollowers())
+		kris:setFacing("down")
+		susie:setFacing("down")
+    end,
     fountain = function(cutscene, event)
 		if not Game:getFlag("interactedWithFountain", false) then
 			cutscene:text("* (It's a pool of water. ...[wait:5] huh?)")
@@ -15,6 +58,7 @@ return {
 			Game:setFlag("interactedWithTable", true)
 		else]]
 			cutscene:text("* Umm,[wait:5] would you like anything,[wait:5] Kris?", "blush_smile", "ralsei")
+			cutscene:text("* (Make sure to pay for it, Kris.)", "shy_b", "susie")
 		--end
         local choicer = cutscene:choicer({"Buy", "Do not"})
         if choicer == 1 then

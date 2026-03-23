@@ -215,7 +215,7 @@ return {
             ["actor"] = "ral",
             ["text1_1"] = "* I have no connection to Ralsei whatsoever I am Ralszor",
             ["text1_2"] = "* Dont drag me into [color:red][style:none]it",
-            ["text2_1"] = "* stop it youre dragging me into it",
+            ["text2_1"] = "* stop it youre dragging me into [color:red][style:none]it",
             ["text3_1"] = "[color:red][style:none]* it"
           }
         },

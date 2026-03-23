@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 23,
-  nextobjectid = 193,
+  nextobjectid = 194,
   parallaxorigin = {
     x = -320,
     y = -240
@@ -1043,6 +1043,23 @@ return {
           properties = {
             ["actor"] = "waferr",
             ["animation"] = "right"
+          }
+        },
+        {
+          id = 193,
+          name = "npc",
+          type = "",
+          shape = "point",
+          x = 440,
+          y = 380,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["actor"] = "wafer",
+            ["text1"] = "* Who is this unholy, foolish morton over there?!",
+            ["text2"] = "* The devil,[wait:5] I'm telling you,[wait:5] the devil!"
           }
         }
       }

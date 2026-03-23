@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="48" height="18" tilewidth="40" tileheight="40" infinite="0" parallaxoriginx="-320" parallaxoriginy="-240" nextlayerid="23" nextobjectid="193">
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="48" height="18" tilewidth="40" tileheight="40" infinite="0" parallaxoriginx="-320" parallaxoriginy="-240" nextlayerid="23" nextobjectid="194">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -328,6 +328,14 @@
    <properties>
     <property name="actor" value="waferr"/>
     <property name="animation" value="right"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="193" name="npc" x="440" y="380">
+   <properties>
+    <property name="actor" value="wafer"/>
+    <property name="text1" value="* Who is this unholy, foolish morton over there?!"/>
+    <property name="text2" value="* The devil,[wait:5] I'm telling you,[wait:5] the devil!"/>
    </properties>
    <point/>
   </object>

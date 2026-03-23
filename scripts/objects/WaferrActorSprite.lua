@@ -23,8 +23,15 @@ function OrganikkActorSprite:update()
     self.siner = self.siner + 0.1 * DTMULT
 
     local anim = self.anim or "idle"
-    if anim == "idle" then
+    if anim == "idle" or anim == "right" then
         self.head:setFrame(math.floor(self.siner))
+        
+        local scale = (anim == "right") and -1 or 1
+        local bx = (anim == "right") and 30 or 0
+        self.head.scale_x = scale
+        self.body.scale_x = scale
+        self.head.x = bx
+        self.body.x = bx
     end
 end
 

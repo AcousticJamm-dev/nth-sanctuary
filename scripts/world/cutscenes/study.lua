@@ -69,22 +69,22 @@ return {
 		local flag = Game:getFlag("readCount")
 		local books = {
 			[1] = {
-				"* 'Our recent mission to bring forth our God had a minor setback.'",
-				"* 'The church we desecrated had spread word to its inhabitants,'",
-				"* 'And they came with their magic and weapons.'",
-				"* 'We sent our seven strongest acolytes to shield us.'",
-				"* 'They had the idea of enclosing the offendors in a mountain, and raise a barrier.'",
-				"* 'We all agreed.'",
-				"* 'Any second now, [wait:5]Shade rises.'"
+				"* \"Our recent mission to bring forth our God had a minor setback.\"",
+				"* \"The church we desecrated had spread word to its inhabitants,\"",
+				"* \"And they came with their magic and weapons.\"",
+				"* \"We sent our seven strongest acolytes to shield us.\"",
+				"* \"They had the idea of enclosing the offendors in a mountain, and raise a barrier.\"",
+				"* \"We all agreed.\"",
+				"* \"Any second now, [wait:5]Shade rises.\""
 			},
 			[2] = {
 				"* Interacted 2",
 				"* 2 times!!!1!"
 			},
 			[3] = {
-				"* 'The Order has tasked me with aiding them. [wait:10]I uphold their will.'",
-				"* 'Their recent church has its people fighting back. And I, [wait:5]will enter this war.'",
-				"* 'I will seal them with my fellows in hand. [wait:10]Let the Order prosper.'"
+				"* \"The Order has tasked me with aiding them. [wait:10]I uphold their will.\"",
+				"* \"Their recent church has its people fighting back. And I, [wait:5]will enter this war.\"",
+				"* \"I will seal them with my fellows in hand. [wait:10]Let the Order prosper.\""
 			},
 			[4] = {
 				"* Interacted 4",
@@ -107,23 +107,23 @@ return {
 			},
 			[10] = {
 				"* (Wait, [wait:5]this passage feels like it was just written.)",
-				"* 'Project Dusk is going very smoothly.'",
-				"* 'A shame I've to be the undercover one.'",
-				"* 'Oh well. [wait:10]Beggars can't be choosers.'",
-				"* 'If I want to climb, [wait:5]then I will do so.'",
-				"* '...By coordinating the fresh bodies that stepped right in.'",
-				"* 'The one with the sword looks like the best candidate.'",
-				"* 'I can feel their aura. [wait:10]It's so strong...'",
-				"* 'It's as if their heart is the ark which guides them.'",
-				"* 'The girl looks tough. [wait:10]With an axe and wits,[wait:5] she may be last.'",
-				"* 'We break her down until her hope is the least of her worries.'",
-				"* 'The other girl looks innocent. [wait:10]She may be the first.'",
-				"* 'A dependant, [wait:5]lost girl.'",
-				"* 'Yet she possesses magical prowess more than the one with a robe.'",
-				"* 'That one. [wait:10]A fake. [wait:10]No aura. [wait:10]It's different.'",
-				"* 'We can always throw him to the pit.'",
-				"* 'It pains me to be the face that appears everywhere.'",
-				"* 'I digress. [wait:10]Long Prosper.'",
+				"* \"Project Dusk is going very smoothly.\"",
+				"* \"A shame I\"ve to be the undercover one.\"",
+				"* \"Oh well. [wait:10]Beggars can't be choosers.\"",
+				"* \"If I want to climb, [wait:5]then I will do so.\"",
+				"* \"...By coordinating the fresh bodies that stepped right in.\"",
+				"* \"The one with the sword looks like the best candidate.\"",
+				"* \"I can feel their aura. [wait:10]It's so strong...\"",
+				"* \"It\"s as if their heart is the ark which guides them.\"",
+				"* \"The girl looks tough. [wait:10]With an axe and wits,[wait:5] she may be last.\"",
+				"* \"We break her down until her hope is the least of her worries.\"",
+				"* \"The other girl looks innocent. [wait:10]She may be the first.\"",
+				"* \"A dependant, [wait:5]lost girl.\"",
+				"* \"Yet she possesses magical prowess more than the one with a robe.\"",
+				"* \"That one. [wait:10]A fake. [wait:10]No aura. [wait:10]It's different.\"",
+				"* \"We can always throw him to the pit.\"",
+				"* \"It pains me to be the face that appears everywhere.\"",
+				"* \"I digress. [wait:10]Long Prosper.\"",
 				"* (For a moment, [wait:5]you felt like you were being watched.)",
 			},
 			--^ Add more passages in blanks. Ref Undertale or smth^--

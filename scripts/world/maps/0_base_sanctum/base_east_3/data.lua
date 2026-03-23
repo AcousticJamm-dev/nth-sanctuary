@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 18,
-  nextobjectid = 65,
+  nextobjectid = 69,
   properties = {
     ["border"] = "base_sanctum",
     ["music"] = "homebase"
@@ -306,9 +306,9 @@ return {
         0, 0, 0, 298, 299, 299, 300, 298, 299, 299, 300, 298, 299, 299, 300, 298, 299, 299, 300, 373, 419, 419, 373, 298, 299, 299, 300, 0, 0, 0,
         0, 0, 0, 304, 305, 305, 306, 304, 305, 305, 306, 304, 305, 305, 306, 304, 305, 305, 306, 361, 419, 419, 361, 304, 305, 305, 306, 0, 0, 0,
         0, 0, 0, 310, 311, 311, 312, 310, 311, 311, 312, 310, 311, 311, 312, 310, 311, 311, 312, 367, 419, 419, 367, 310, 311, 311, 312, 0, 0, 0,
-        0, 0, 0, 365, 366, 74, 74, 74, 378, 74, 74, 74, 74, 353, 354, 74, 74, 74, 74, 74, 74, 378, 74, 74, 74, 475, 476, 0, 0, 0,
-        0, 0, 0, 371, 372, 377, 74, 74, 74, 74, 74, 74, 74, 359, 360, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 477, 377, 0, 0, 0,
-        0, 0, 0, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 74, 74, 476, 74, 752, 752, 752, 752, 0, 0, 0,
+        0, 0, 0, 365, 366, 74, 74, 74, 378, 74, 74, 74, 74, 353, 354, 74, 74, 74, 74, 74, 74, 378, 74, 74, 74, 475, 476, 74, 74, 74,
+        0, 0, 0, 371, 372, 377, 74, 74, 74, 74, 74, 74, 74, 359, 360, 74, 74, 74, 74, 74, 74, 74, 74, 74, 74, 477, 377, 74, 74, 74,
+        0, 0, 0, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 74, 74, 476, 74, 752, 752, 752, 752, 752, 752, 752,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 74, 74, 74, 74, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 475, 74, 74, 74, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 135, 74, 74, 74, 353, 354, 74, 478, 74, 0, 0, 0, 0, 0, 0, 0,
@@ -382,6 +382,19 @@ return {
           shape = "point",
           x = 1160,
           y = 640,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 67,
+          name = "entry_study",
+          type = "",
+          shape = "point",
+          x = 1160,
+          y = 280,
           width = 0,
           height = 0,
           rotation = 0,
@@ -526,6 +539,22 @@ return {
             ["text4"] = "* But as I reflect...[wait:5]\n* I feel a certain coldness.",
             ["text5"] = "* Those dreams...[wait:5]\n* They were truly malicious."
           }
+        },
+        {
+          id = 68,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 1200,
+          y = 240,
+          width = 40,
+          height = 80,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "0_base_sanctum/gerson_study",
+            ["marker"] = "entry_left"
+          }
         }
       }
     },
@@ -622,45 +651,6 @@ return {
           properties = {}
         },
         {
-          id = 11,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 920,
-          y = 320,
-          width = 160,
-          height = 120,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 12,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 1080,
-          y = 200,
-          width = 40,
-          height = 160,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 14,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 880,
-          y = 200,
-          width = 200,
-          height = 40,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
           id = 15,
           name = "",
           type = "",
@@ -721,6 +711,32 @@ return {
             { x = 240, y = 40 },
             { x = 0, y = 40 }
           },
+          properties = {}
+        },
+        {
+          id = 65,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 880,
+          y = 200,
+          width = 320,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 66,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 920,
+          y = 320,
+          width = 280,
+          height = 120,
+          rotation = 0,
+          visible = true,
           properties = {}
         }
       }

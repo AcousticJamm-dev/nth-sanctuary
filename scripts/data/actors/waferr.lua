@@ -5,9 +5,9 @@ function actor:init()
 
     self.name = "Waferr"
 
-    self.width = 57
-    self.height = 73
-    self.hitbox = {15, 28, 25, 38}
+    self.width = 30
+    self.height = 62
+    self.hitbox = {2, 22, 25, 38}
 
     self.color = {0, 0, 1}
 

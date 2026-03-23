@@ -1,5 +1,5 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
   tiledversion = "1.11.2",
   class = "",
@@ -9,8 +9,8 @@ return {
   height = 12,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 9,
-  nextobjectid = 13,
+  nextlayerid = 11,
+  nextobjectid = 23,
   properties = {
     ["border"] = "base_sanctum",
     ["music"] = "homebase"
@@ -310,6 +310,132 @@ return {
             ["actor"] = "lobbyman",
             ["cutscene"] = "lobbyman.proph"
           }
+        }
+      }
+    },
+    {
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 16,
+      height = 12,
+      id = 9,
+      name = "tile overlay",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      encoding = "lua",
+      data = {
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        283, 284, 284, 285, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        295, 296, 296, 297, 283, 284, 284, 285, 0, 0, 0, 0, 0, 0, 0, 0,
+        295, 296, 296, 297, 295, 296, 296, 297, 283, 284, 284, 285, 0, 0, 0, 0,
+        295, 296, 296, 297, 295, 296, 296, 297, 295, 296, 296, 297, 0, 0, 0, 0,
+        301, 302, 302, 303, 301, 302, 302, 303, 295, 296, 296, 297, 0, 0, 0, 0,
+        301, 302, 302, 303, 301, 302, 302, 303, 301, 302, 302, 303, 0, 0, 0, 0,
+        301, 302, 302, 303, 301, 302, 302, 303, 301, 302, 302, 303, 0, 0, 0, 0
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 10,
+      name = "objects_over_party_but_not_top",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 17,
+          name = "silhouette",
+          type = "",
+          shape = "rectangle",
+          x = 160,
+          y = 240,
+          width = 160,
+          height = 160,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 18,
+          name = "highlight",
+          type = "",
+          shape = "rectangle",
+          x = 160,
+          y = 240,
+          width = 160,
+          height = 160,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 19,
+          name = "silhouette",
+          type = "",
+          shape = "rectangle",
+          x = 0,
+          y = 200,
+          width = 160,
+          height = 200,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 20,
+          name = "highlight",
+          type = "",
+          shape = "rectangle",
+          x = 0,
+          y = 200,
+          width = 160,
+          height = 200,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 21,
+          name = "silhouette",
+          type = "",
+          shape = "rectangle",
+          x = 320,
+          y = 280,
+          width = 160,
+          height = 160,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 22,
+          name = "highlight",
+          type = "",
+          shape = "rectangle",
+          x = 320,
+          y = 280,
+          width = 160,
+          height = 160,
+          rotation = 0,
+          visible = true,
+          properties = {}
         }
       }
     },

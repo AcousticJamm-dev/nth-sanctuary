@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="40" tileheight="40" infinite="0" nextlayerid="18" nextobjectid="69">
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="40" tileheight="40" infinite="0" nextlayerid="20" nextobjectid="85">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -193,6 +193,9 @@
     <property name="marker" value="entry_left"/>
    </properties>
   </object>
+  <object id="77" gid="657" x="428.667" y="318.75" width="68" height="50"/>
+  <object id="78" gid="656" x="631.583" y="276.75" width="76" height="38"/>
+  <object id="79" gid="661" x="335.417" y="266.917" width="36" height="50"/>
  </objectgroup>
  <objectgroup color="#55aa00" id="7" name="collision">
   <object id="5" x="0" y="600" width="360" height="80"/>
@@ -211,6 +214,43 @@
   </object>
   <object id="65" x="880" y="200" width="320" height="40"/>
   <object id="66" x="920" y="320" width="280" height="120"/>
+  <object id="80" x="664.333" y="240.667" width="42.3333" height="22.6667"/>
+  <object id="81" x="632.333" y="248.667" width="28" height="27.6667"/>
+  <object id="82" x="427.917" y="268.833" width="36" height="49.3333"/>
+  <object id="83" x="469.25" y="285.5" width="26.6667" height="26.6667"/>
+  <object id="84" x="335.25" y="217.75" width="36" height="46"/>
+ </objectgroup>
+ <layer id="18" name="tile_overlay" width="30" height="20">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,283,284,284,285,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,283,284,284,285,295,296,296,297,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,295,296,296,297,295,296,296,297,283,284,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,283,284,284,285,295,296,296,297,295,296,296,297,295,296,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,295,296,296,297,301,302,302,303,301,302,302,303,301,302,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,295,296,296,297,301,302,302,303,301,302,302,303,301,302,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,301,302,302,303,307,308,308,309,307,308,308,309,307,308
+</data>
+ </layer>
+ <objectgroup id="19" name="objects_over_party_but_not_top">
+  <object id="71" name="silhouette" x="800" y="560" width="160" height="160"/>
+  <object id="72" name="highlight" x="800" y="560" width="160" height="160"/>
+  <object id="73" name="silhouette" x="960" y="520" width="160" height="200"/>
+  <object id="74" name="silhouette" x="1120" y="600" width="160" height="160"/>
+  <object id="75" name="highlight" x="960" y="520" width="160" height="200"/>
+  <object id="76" name="highlight" x="1120" y="600" width="160" height="160"/>
  </objectgroup>
  <objectgroup id="16" name="objects_fog">
   <object id="58" name="churchfog" x="-270" y="60">

@@ -1,5 +1,5 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
   tiledversion = "1.11.2",
   class = "",
@@ -452,6 +452,74 @@ return {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 4,
+      name = "markers",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 11,
+          name = "entry",
+          type = "",
+          shape = "point",
+          x = 40,
+          y = 140,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 63,
+          name = "spawn",
+          type = "",
+          shape = "point",
+          x = 560,
+          y = 140,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 64,
+          name = "targ",
+          type = "",
+          shape = "point",
+          x = 520,
+          y = 480,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 69,
+          name = "entry2",
+          type = "",
+          shape = "point",
+          x = 1870,
+          y = 520,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
       }
     },
     {
@@ -1106,10 +1174,54 @@ return {
     {
       type = "objectgroup",
       draworder = "topdown",
+      id = 22,
+      name = "objects_pillars",
+      class = "",
+      visible = false,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 0.8,
+      parallaxy = 0.8,
+      properties = {},
+      objects = {
+        {
+          id = 188,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 370,
+          y = 1800,
+          width = 2880,
+          height = 100,
+          rotation = 261.205,
+          gid = 882,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 189,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1145.65,
+          y = 1900.02,
+          width = 2880,
+          height = 100,
+          rotation = 278.661,
+          gid = 882,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
       id = 10,
       name = "objects_lightarea",
       class = "",
-      visible = false,
+      visible = true,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -1209,7 +1321,7 @@ return {
           visible = true,
           properties = {
             ["light"] = true,
-            ["light_alpha"] = 0.25,
+            ["light_alpha"] = 0.1,
             ["light_color"] = "#ffffffff",
             ["light_dust"] = true,
             ["light_type"] = 1
@@ -1229,7 +1341,7 @@ return {
           visible = true,
           properties = {
             ["light"] = true,
-            ["light_alpha"] = 0.25,
+            ["light_alpha"] = 0.1,
             ["light_color"] = "#ffffffff",
             ["light_dust"] = true,
             ["light_type"] = 1
@@ -1249,7 +1361,7 @@ return {
           visible = true,
           properties = {
             ["light"] = true,
-            ["light_alpha"] = 0.25,
+            ["light_alpha"] = 0.1,
             ["light_color"] = "#ffffffff",
             ["light_dust"] = true,
             ["light_type"] = 1
@@ -1269,7 +1381,7 @@ return {
           visible = true,
           properties = {
             ["light"] = true,
-            ["light_alpha"] = 0.25,
+            ["light_alpha"] = 0.1,
             ["light_color"] = "#ffffffff",
             ["light_dust"] = true,
             ["light_type"] = 1
@@ -1305,7 +1417,7 @@ return {
           visible = true,
           properties = {
             ["light"] = true,
-            ["light_alpha"] = 0.25,
+            ["light_alpha"] = 0.1,
             ["light_color"] = "#ffffffff",
             ["light_dust"] = true,
             ["light_type"] = 1
@@ -1325,7 +1437,7 @@ return {
           visible = true,
           properties = {
             ["light"] = true,
-            ["light_alpha"] = 0.25,
+            ["light_alpha"] = 0.1,
             ["light_color"] = "#ffffffff",
             ["light_dust"] = true,
             ["light_type"] = 1
@@ -1345,7 +1457,7 @@ return {
           visible = true,
           properties = {
             ["light"] = true,
-            ["light_alpha"] = 0.25,
+            ["light_alpha"] = 0.1,
             ["light_color"] = "#ffffffff",
             ["light_dust"] = true,
             ["light_type"] = 1
@@ -1365,79 +1477,11 @@ return {
           visible = true,
           properties = {
             ["light"] = true,
-            ["light_alpha"] = 0.25,
+            ["light_alpha"] = 0.1,
             ["light_color"] = "#ffffffff",
             ["light_dust"] = true,
             ["light_type"] = 1
           }
-        }
-      }
-    },
-    {
-      type = "objectgroup",
-      draworder = "topdown",
-      id = 4,
-      name = "markers",
-      class = "",
-      visible = true,
-      opacity = 1,
-      offsetx = 0,
-      offsety = 0,
-      parallaxx = 1,
-      parallaxy = 1,
-      properties = {},
-      objects = {
-        {
-          id = 11,
-          name = "entry",
-          type = "",
-          shape = "point",
-          x = 40,
-          y = 140,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 63,
-          name = "spawn",
-          type = "",
-          shape = "point",
-          x = 560,
-          y = 140,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 64,
-          name = "targ",
-          type = "",
-          shape = "point",
-          x = 520,
-          y = 480,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 69,
-          name = "entry2",
-          type = "",
-          shape = "point",
-          x = 1870,
-          y = 520,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {}
         }
       }
     },
@@ -1805,50 +1849,6 @@ return {
             { x = 240, y = 240 },
             { x = 240, y = 0 }
           },
-          properties = {}
-        }
-      }
-    },
-    {
-      type = "objectgroup",
-      draworder = "topdown",
-      id = 22,
-      name = "objects_pillars",
-      class = "",
-      visible = false,
-      opacity = 1,
-      offsetx = 0,
-      offsety = 0,
-      parallaxx = 0.8,
-      parallaxy = 0.8,
-      properties = {},
-      objects = {
-        {
-          id = 188,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 370,
-          y = 1800,
-          width = 2880,
-          height = 100,
-          rotation = 261.205,
-          gid = 882,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 189,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 1145.65,
-          y = 1900.02,
-          width = 2880,
-          height = 100,
-          rotation = 278.661,
-          gid = 882,
-          visible = true,
           properties = {}
         }
       }

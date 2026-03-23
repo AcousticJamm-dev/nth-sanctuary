@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="48" height="18" tilewidth="40" tileheight="40" infinite="0" parallaxoriginx="-320" parallaxoriginy="-240" nextlayerid="23" nextobjectid="194">
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="48" height="18" tilewidth="40" tileheight="40" infinite="0" parallaxoriginx="-320" parallaxoriginy="-240" nextlayerid="23" nextobjectid="194">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -193,6 +193,20 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
+ <objectgroup id="4" name="markers">
+  <object id="11" name="entry" x="40" y="140">
+   <point/>
+  </object>
+  <object id="63" name="spawn" x="560" y="140">
+   <point/>
+  </object>
+  <object id="64" name="targ" x="520" y="480">
+   <point/>
+  </object>
+  <object id="69" name="entry2" x="1870" y="520">
+   <point/>
+  </object>
+ </objectgroup>
  <objectgroup id="3" name="objects_party">
   <object id="12" name="transition" x="-40" y="80" width="40" height="120">
    <properties>
@@ -363,7 +377,11 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <objectgroup id="10" name="objects_lightarea" visible="0">
+ <objectgroup id="22" name="objects_pillars" visible="0" parallaxx="0.8" parallaxy="0.8">
+  <object id="188" gid="882" x="370" y="1800" width="2880" height="100" rotation="261.205"/>
+  <object id="189" gid="882" x="1145.65" y="1900.02" width="2880" height="100" rotation="278.661"/>
+ </objectgroup>
+ <objectgroup id="10" name="objects_lightarea">
   <object id="31" name="highlight" x="1480" y="360" width="40" height="280"/>
   <object id="32" name="highlight" x="1640" y="360" width="40" height="280"/>
   <object id="33" name="highlight" x="1800" y="360" width="40" height="280"/>
@@ -373,7 +391,7 @@
   <object id="37" gid="783" x="160" y="720" width="160" height="880">
    <properties>
     <property name="light" type="bool" value="true"/>
-    <property name="light_alpha" type="float" value="0.25"/>
+    <property name="light_alpha" type="float" value="0.1"/>
     <property name="light_color" type="color" value="#ffffffff"/>
     <property name="light_dust" type="bool" value="true"/>
     <property name="light_type" type="int" value="1"/>
@@ -382,7 +400,7 @@
   <object id="40" gid="783" x="640" y="720" width="160" height="880">
    <properties>
     <property name="light" type="bool" value="true"/>
-    <property name="light_alpha" type="float" value="0.25"/>
+    <property name="light_alpha" type="float" value="0.1"/>
     <property name="light_color" type="color" value="#ffffffff"/>
     <property name="light_dust" type="bool" value="true"/>
     <property name="light_type" type="int" value="1"/>
@@ -391,7 +409,7 @@
   <object id="42" gid="783" x="1120" y="720" width="160" height="880">
    <properties>
     <property name="light" type="bool" value="true"/>
-    <property name="light_alpha" type="float" value="0.25"/>
+    <property name="light_alpha" type="float" value="0.1"/>
     <property name="light_color" type="color" value="#ffffffff"/>
     <property name="light_dust" type="bool" value="true"/>
     <property name="light_type" type="int" value="1"/>
@@ -400,7 +418,7 @@
   <object id="45" gid="783" x="1600" y="720" width="160" height="880">
    <properties>
     <property name="light" type="bool" value="true"/>
-    <property name="light_alpha" type="float" value="0.25"/>
+    <property name="light_alpha" type="float" value="0.1"/>
     <property name="light_color" type="color" value="#ffffffff"/>
     <property name="light_dust" type="bool" value="true"/>
     <property name="light_type" type="int" value="1"/>
@@ -416,7 +434,7 @@
   <object id="70" gid="1073742607" x="160" y="1498" width="160" height="880">
    <properties>
     <property name="light" type="bool" value="true"/>
-    <property name="light_alpha" type="float" value="0.25"/>
+    <property name="light_alpha" type="float" value="0.1"/>
     <property name="light_color" type="color" value="#ffffffff"/>
     <property name="light_dust" type="bool" value="true"/>
     <property name="light_type" type="int" value="1"/>
@@ -425,7 +443,7 @@
   <object id="71" gid="1073742607" x="640" y="1498" width="160" height="880">
    <properties>
     <property name="light" type="bool" value="true"/>
-    <property name="light_alpha" type="float" value="0.25"/>
+    <property name="light_alpha" type="float" value="0.1"/>
     <property name="light_color" type="color" value="#ffffffff"/>
     <property name="light_dust" type="bool" value="true"/>
     <property name="light_type" type="int" value="1"/>
@@ -434,7 +452,7 @@
   <object id="72" gid="1073742607" x="1120" y="1498" width="160" height="880">
    <properties>
     <property name="light" type="bool" value="true"/>
-    <property name="light_alpha" type="float" value="0.25"/>
+    <property name="light_alpha" type="float" value="0.1"/>
     <property name="light_color" type="color" value="#ffffffff"/>
     <property name="light_dust" type="bool" value="true"/>
     <property name="light_type" type="int" value="1"/>
@@ -443,25 +461,11 @@
   <object id="73" gid="1073742607" x="1600" y="1498" width="160" height="880">
    <properties>
     <property name="light" type="bool" value="true"/>
-    <property name="light_alpha" type="float" value="0.25"/>
+    <property name="light_alpha" type="float" value="0.1"/>
     <property name="light_color" type="color" value="#ffffffff"/>
     <property name="light_dust" type="bool" value="true"/>
     <property name="light_type" type="int" value="1"/>
    </properties>
-  </object>
- </objectgroup>
- <objectgroup id="4" name="markers">
-  <object id="11" name="entry" x="40" y="140">
-   <point/>
-  </object>
-  <object id="63" name="spawn" x="560" y="140">
-   <point/>
-  </object>
-  <object id="64" name="targ" x="520" y="480">
-   <point/>
-  </object>
-  <object id="69" name="entry2" x="1870" y="520">
-   <point/>
   </object>
  </objectgroup>
  <objectgroup color="#ff0000" id="2" name="collision" visible="0">
@@ -502,10 +506,6 @@
   <object id="169" name="enemy_5" x="700" y="140">
    <polygon points="0,0 0,240 240,240 240,0"/>
   </object>
- </objectgroup>
- <objectgroup id="22" name="objects_pillars" visible="0" parallaxx="0.8" parallaxy="0.8">
-  <object id="188" gid="882" x="370" y="1800" width="2880" height="100" rotation="261.205"/>
-  <object id="189" gid="882" x="1145.65" y="1900.02" width="2880" height="100" rotation="278.661"/>
  </objectgroup>
  <objectgroup id="6" name="objects_fog">
   <object id="17" name="churchfog" x="-133" y="-8">

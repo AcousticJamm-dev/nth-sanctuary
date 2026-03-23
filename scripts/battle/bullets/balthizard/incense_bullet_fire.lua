@@ -25,7 +25,7 @@ end
 function Incense_Bullet_Fire:update()
     super.update(self)
     self.chainreactiontimer = self.chainreactiontimer + 1
-    self.timer = self.timer + 1
+    self.timer = self.timer + DTMULT
     if(self.timer >= 58) then
         self.alpha = self.alpha - 0.25
     end

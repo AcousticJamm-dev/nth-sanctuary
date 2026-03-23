@@ -1,5 +1,5 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
   tiledversion = "1.11.2",
   class = "",
@@ -35,7 +35,7 @@ return {
     },
     {
       name = "light_areas",
-      firstgid = 883,
+      firstgid = 884,
       filename = "../../../tilesets/light_areas.tsx"
     }
   },
@@ -502,7 +502,7 @@ return {
             ["chasemax"] = 100,
             ["chasespeed"] = 1,
             ["chasetype"] = "multiplier",
-            ["encounter"] = "balthizard",
+            ["encounter"] = "alt_encounters/scented_candles",
             ["pacetype"] = "horizontalswing",
             ["swinglength"] = 80
           }
@@ -533,7 +533,7 @@ return {
           width = 755.284,
           height = 920,
           rotation = 0,
-          gid = 883,
+          gid = 884,
           visible = true,
           properties = {
             ["light"] = true,
@@ -553,7 +553,7 @@ return {
           width = 755.284,
           height = 920,
           rotation = 0,
-          gid = 2147484531,
+          gid = 2147484532,
           visible = true,
           properties = {
             ["light"] = true,

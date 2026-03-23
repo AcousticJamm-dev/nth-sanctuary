@@ -3,7 +3,7 @@ local actor, super = Class(Actor)
 function actor:init()
     super.init(self)
 
-    self.name = "Waferr"
+    self.name = "Organikk"
 
     self.width = 57
     self.height = 73
@@ -13,7 +13,7 @@ function actor:init()
 
     self.flip = nil
 
-    self.path = "enemies/waferr"
+    self.path = "battle/enemies/organikk"
     self.default = "idle"
 
     self.talk_sprites = {}
@@ -32,7 +32,7 @@ function actor:init()
 end
 
 function actor:createSprite()
-    return WaferrActorSprite(self)
+    return OrganikkActorSprite(self)
 end
 
 function actor:onSetAnimation(sprite, anim, ...)

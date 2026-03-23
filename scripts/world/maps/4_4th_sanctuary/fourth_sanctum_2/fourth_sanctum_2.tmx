@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="48" height="32" tilewidth="40" tileheight="40" infinite="0" nextlayerid="27" nextobjectid="142">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="48" height="32" tilewidth="40" tileheight="40" infinite="0" nextlayerid="27" nextobjectid="142">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -580,7 +580,7 @@ HEROES CLIMB INFINITY FLIGHT.</property>
   </object>
   <object id="129" name="climbwaterbucket" x="1320" y="160" width="40" height="40">
    <properties>
-    <property name="activetime" type="float" value="45"/>
+    <property name="activetime" type="float" value="25"/>
     <property name="generate" type="bool" value="true"/>
     <property name="spawnrate" type="float" value="12"/>
     <property name="timelimit" type="float" value="5"/>

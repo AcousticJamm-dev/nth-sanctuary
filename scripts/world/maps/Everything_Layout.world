@@ -531,6 +531,13 @@
             "width": 6400,
             "x": -11960,
             "y": -1800
+        },
+        {
+            "fileName": "0_base_sanctum/gerson_study/gerson_study.tmx",
+            "height": 1200,
+            "width": 960,
+            "x": 6160,
+            "y": -80
         }
     ],
     "onlyShowAdjacentMaps": false,

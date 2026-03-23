@@ -1,5 +1,5 @@
 return {
-  version = "1.11",
+  version = "1.10",
   luaversion = "5.1",
   tiledversion = "1.11.2",
   class = "",
@@ -1042,7 +1042,8 @@ return {
           visible = true,
           properties = {
             ["actor"] = "waferr",
-            ["animation"] = "right"
+            ["animation"] = "right",
+            ["text1"] = "* So,[wait:5] there was... [wait:5] Something?"
           }
         },
         {
@@ -1827,8 +1828,8 @@ return {
           name = "",
           type = "",
           shape = "rectangle",
-          x = 448.41,
-          y = 1814.76,
+          x = 370,
+          y = 1800,
           width = 2880,
           height = 100,
           rotation = 261.205,

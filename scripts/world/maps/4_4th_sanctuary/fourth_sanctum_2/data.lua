@@ -1,5 +1,5 @@
 return {
-  version = "1.11",
+  version = "1.10",
   luaversion = "5.1",
   tiledversion = "1.11.2",
   class = "",
@@ -1805,7 +1805,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["activetime"] = 45,
+            ["activetime"] = 25,
             ["generate"] = true,
             ["spawnrate"] = 12,
             ["timelimit"] = 5,

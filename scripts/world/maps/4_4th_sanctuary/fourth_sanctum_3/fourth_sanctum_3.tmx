@@ -293,10 +293,10 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,174,174,174,174,174,174,174,174,0,0,0,0,0,0,0,0,174,174,174,
-0,10,10,10,10,10,10,10,10,37,38,39,40,39,39,40,41,10,10,10,
-0,10,10,10,10,10,10,10,10,55,56,57,58,57,57,58,59,10,10,10,
-0,10,10,10,28,28,28,28,28,64,65,68,66,67,69,70,71,28,28,28,
+0,174,174,174,174,174,174,174,0,0,0,0,0,0,0,0,174,174,174,174,
+0,10,10,10,10,10,10,10,37,38,39,40,39,39,40,41,10,10,10,10,
+0,10,10,10,10,10,10,10,55,56,57,58,57,57,58,59,10,10,10,10,
+0,10,10,10,28,28,28,28,64,65,68,66,67,69,70,71,28,28,28,28,
 0,10,10,10,0,0,0,0,0,73,74,77,75,76,78,79,80,0,0,0,
 0,10,10,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,10,10,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -321,7 +321,7 @@
 </data>
  </layer>
  <objectgroup id="20" name="objects_eyeglow">
-  <object id="77" name="eye_glow" x="520" y="516">
+  <object id="77" name="eye_glow" x="480" y="516">
    <point/>
   </object>
  </objectgroup>
@@ -400,7 +400,7 @@
   <object id="47" name="spawn" x="280" y="440">
    <point/>
   </object>
-  <object id="53" name="targ" x="520" y="360">
+  <object id="53" name="targ" x="480" y="360">
    <point/>
   </object>
   <object id="76" name="entry2" x="760" y="440">
@@ -431,7 +431,7 @@
     <property name="area" type="object" value="45"/>
    </properties>
   </object>
-  <object id="49" name="prophecy" x="360" y="400" width="320" height="80">
+  <object id="49" name="prophecy" x="320" y="400" width="320" height="80">
    <properties>
     <property name="offx" type="float" value="160"/>
     <property name="offy" type="float" value="-140"/>
@@ -450,7 +450,7 @@ THROUGH HER HEART.</property>
    </properties>
    <point/>
   </object>
-  <object id="51" name="cameratarget" x="360" y="400" width="320" height="80">
+  <object id="51" name="cameratarget" x="320" y="400" width="320" height="80">
    <properties>
     <property name="lockx" type="bool" value="true"/>
     <property name="locky" type="bool" value="true"/>
@@ -467,7 +467,8 @@ THROUGH HER HEART.</property>
   <object id="94" name="enemy" x="57.375" y="698.375">
    <properties>
     <property name="actor" value="organikk"/>
-    <property name="encounter" value="organikk"/>
+    <property name="encounter" value="organikk3"/>
+    <property name="group" type="int" value="1"/>
     <property name="pacetype" value="horizontalswing"/>
     <property name="swingdiv" type="float" value="20"/>
     <property name="swinglength" type="float" value="200"/>
@@ -476,7 +477,8 @@ THROUGH HER HEART.</property>
   <object id="97" name="enemy" x="57.875" y="801.875">
    <properties>
     <property name="actor" value="organikk"/>
-    <property name="encounter" value="organikk"/>
+    <property name="encounter" value="organikk3"/>
+    <property name="group" type="int" value="1"/>
     <property name="pacetype" value="horizontalswing"/>
     <property name="swingdiv" type="float" value="25"/>
     <property name="swinglength" type="float" value="200"/>
@@ -485,7 +487,8 @@ THROUGH HER HEART.</property>
   <object id="96" name="enemy" x="56.0417" y="462.958">
    <properties>
     <property name="actor" value="organikk"/>
-    <property name="encounter" value="organikk"/>
+    <property name="encounter" value="organikk3"/>
+    <property name="group" type="int" value="1"/>
     <property name="pacetype" value="horizontalswing"/>
     <property name="swingdiv" type="float" value="10"/>
     <property name="swinglength" type="float" value="200"/>
@@ -494,7 +497,8 @@ THROUGH HER HEART.</property>
   <object id="95" name="enemy" x="55.875" y="581.375">
    <properties>
     <property name="actor" value="organikk"/>
-    <property name="encounter" value="organikk"/>
+    <property name="encounter" value="organikk3"/>
+    <property name="group" type="int" value="1"/>
     <property name="pacetype" value="horizontalswing"/>
     <property name="swingdiv" type="float" value="15"/>
     <property name="swinglength" type="float" value="200"/>

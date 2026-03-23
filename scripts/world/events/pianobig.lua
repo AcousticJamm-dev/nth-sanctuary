@@ -36,6 +36,7 @@ function BigChurchPiano:init(data)
 	self.notedisplay = nil
 	self.makenote = false
 	self.reset_music = properties["resetmus"] ~= false
+	self.show_instructions = false
 end
 
 function BigChurchPiano:onAdd(parent)
@@ -198,6 +199,7 @@ function BigChurchPiano:update()
 		self.con = 1
 		Game.world.player:setSprite("piano")
 		self.engaged = true
+		self.show_instructions = true
 	end
 	
 	if self.con == 1 then
@@ -210,6 +212,7 @@ function BigChurchPiano:update()
 		
 		if self.canceltimer >= self.canceltime or self.forceend then
 			self.con = 4
+			self.show_instructions = false
 			Game.world.player:resetSprite()
 			local cutscene = self.world:startCutscene(function(cutscene)
 				cutscene:detachCamera()

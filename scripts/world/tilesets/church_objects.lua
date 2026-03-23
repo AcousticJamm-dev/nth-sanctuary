@@ -1,7 +1,7 @@
 return {
-  version = "1.11",
+  version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.10.2",
   name = "church_objects",
   class = "",
   tilewidth = 2880,
@@ -23,7 +23,7 @@ return {
   },
   properties = {},
   wangsets = {},
-  tilecount = 96,
+  tilecount = 97,
   tiles = {
     {
       id = 0,
@@ -776,6 +776,12 @@ return {
       image = "../../../assets/sprites/world/parallax/spr_dw_parallax_church_arches_recolorable.png",
       width = 200,
       height = 289
+    },
+    {
+      id = 102,
+      image = "../../../assets/sprites/world/objects/gersoncurtain.png",
+      width = 121,
+      height = 140
     }
   }
 }

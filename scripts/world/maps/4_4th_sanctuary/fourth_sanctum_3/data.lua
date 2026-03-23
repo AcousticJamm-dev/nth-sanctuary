@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 23,
-  nextobjectid = 88,
+  nextobjectid = 98,
   properties = {
     ["border"] = "church_d",
     ["music"] = "fourth_church",
@@ -1423,6 +1423,82 @@ return {
           properties = {
             ["map"] = "4_4th_sanctuary/fourth_sanctum_4",
             ["marker"] = "entry"
+          }
+        },
+        {
+          id = 94,
+          name = "enemy",
+          type = "",
+          shape = "rectangle",
+          x = 57.375,
+          y = 698.375,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["actor"] = "organikk",
+            ["encounter"] = "organikk",
+            ["pacetype"] = "horizontalswing",
+            ["swingdiv"] = 20,
+            ["swinglength"] = 200
+          }
+        },
+        {
+          id = 97,
+          name = "enemy",
+          type = "",
+          shape = "rectangle",
+          x = 57.875,
+          y = 801.875,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["actor"] = "organikk",
+            ["encounter"] = "organikk",
+            ["pacetype"] = "horizontalswing",
+            ["swingdiv"] = 25,
+            ["swinglength"] = 200
+          }
+        },
+        {
+          id = 96,
+          name = "enemy",
+          type = "",
+          shape = "rectangle",
+          x = 56.0417,
+          y = 462.958,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["actor"] = "organikk",
+            ["encounter"] = "organikk",
+            ["pacetype"] = "horizontalswing",
+            ["swingdiv"] = 10,
+            ["swinglength"] = 200
+          }
+        },
+        {
+          id = 95,
+          name = "enemy",
+          type = "",
+          shape = "rectangle",
+          x = 55.875,
+          y = 581.375,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["actor"] = "organikk",
+            ["encounter"] = "organikk",
+            ["pacetype"] = "horizontalswing",
+            ["swingdiv"] = 15,
+            ["swinglength"] = 200
           }
         }
       }

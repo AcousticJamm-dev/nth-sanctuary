@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="20" height="34" tilewidth="40" tileheight="40" infinite="0" nextlayerid="23" nextobjectid="88">
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="20" height="34" tilewidth="40" tileheight="40" infinite="0" nextlayerid="23" nextobjectid="98">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -462,6 +462,42 @@ THROUGH HER HEART.</property>
    <properties>
     <property name="map" value="4_4th_sanctuary/fourth_sanctum_4"/>
     <property name="marker" value="entry"/>
+   </properties>
+  </object>
+  <object id="94" name="enemy" x="57.375" y="698.375">
+   <properties>
+    <property name="actor" value="organikk"/>
+    <property name="encounter" value="organikk"/>
+    <property name="pacetype" value="horizontalswing"/>
+    <property name="swingdiv" type="float" value="20"/>
+    <property name="swinglength" type="float" value="200"/>
+   </properties>
+  </object>
+  <object id="97" name="enemy" x="57.875" y="801.875">
+   <properties>
+    <property name="actor" value="organikk"/>
+    <property name="encounter" value="organikk"/>
+    <property name="pacetype" value="horizontalswing"/>
+    <property name="swingdiv" type="float" value="25"/>
+    <property name="swinglength" type="float" value="200"/>
+   </properties>
+  </object>
+  <object id="96" name="enemy" x="56.0417" y="462.958">
+   <properties>
+    <property name="actor" value="organikk"/>
+    <property name="encounter" value="organikk"/>
+    <property name="pacetype" value="horizontalswing"/>
+    <property name="swingdiv" type="float" value="10"/>
+    <property name="swinglength" type="float" value="200"/>
+   </properties>
+  </object>
+  <object id="95" name="enemy" x="55.875" y="581.375">
+   <properties>
+    <property name="actor" value="organikk"/>
+    <property name="encounter" value="organikk"/>
+    <property name="pacetype" value="horizontalswing"/>
+    <property name="swingdiv" type="float" value="15"/>
+    <property name="swinglength" type="float" value="200"/>
    </properties>
   </object>
  </objectgroup>

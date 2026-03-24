@@ -271,7 +271,7 @@
   <object id="66" name="window_glow" x="300" y="520">
    <point/>
   </object>
-  <object id="74" name="savepoint" x="400" y="120">
+  <object id="74" name="savepoint" x="740" y="260">
    <properties>
     <property name="text1" value="* (You find yourself in a familiar sanctuary...)"/>
     <property name="text2" value="* (You're filled with the power of liminal nostalgia.)"/>

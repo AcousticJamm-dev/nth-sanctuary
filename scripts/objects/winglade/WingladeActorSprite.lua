@@ -89,6 +89,17 @@ function WingladeActorSprite:setAnimation(anim, callback, ignore_actor_callback)
         self.right_wing.frame = 0
         self.eye_pupil.visible = false
     else
+        local stop = false
+        if anim == 'spin' or anim == "spin2" then
+            Game.world.map.timer:every(0.15, function() 
+                if stop == false then
+                    self:addChild(AfterImage(self, 0.25, 0.025))
+                end
+            end)
+        end
+        if anim == 'hurt' then
+            stop = true
+        end
         self.left_wing.frame = self.left_wing_frame
         self.left_wing.anim_speed = 1
         self.right_wing.frame = self.right_wing_frame
@@ -110,12 +121,19 @@ function WingladeActorSprite:update()
 
     local anim = self.anim or 'idle'
 
-    if anim == 'spin' then
+    if anim == 'spin' or anim == "spin2" then
         self:setOriginExact(26, 24)
         self.x = 52/2
         self.y = 48/2
-        self.spin_angle = (self.spin_angle or 0) - math.rad(2) * DTMULT
-        self.rotation = MathUtils.lerp(self.rotation, self.spin_angle, 0.2 * DTMULT)
+        if not self.spin_angle then
+            if anim == "spin2" then
+                self.spin_angle = math.rad(180)
+            else
+                self.spin_angle = 0
+            end
+        end
+        self.spin_angle = self.spin_angle - math.rad(2.975) * DTMULT
+        self.rotation = self.spin_angle
         return
     end
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="28" tilewidth="40" tileheight="40" infinite="0" nextlayerid="14" nextobjectid="47">
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="28" tilewidth="40" tileheight="40" infinite="0" nextlayerid="15" nextobjectid="59">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -165,7 +165,15 @@
    <point/>
   </object>
  </objectgroup>
- <objectgroup color="#ff0000" id="7" name="collision">
+ <objectgroup color="#ff0000" id="14" name="paths">
+  <object id="50" name="circle" x="601.5" y="816.5">
+   <polygon points="164.5,0 161.32,35.8437 151.998,70.2193 136.754,101.904 116.356,129.796 91.3523,152.55 62.9487,169.554 32.1323,179.952 0,183.5 -32.1323,179.952 -62.9487,169.554 -91.3523,152.55 -116.356,129.796 -136.754,101.904 -151.998,70.2193 -161.32,35.8437 -164.5,0 -161.32,-35.8437 -151.998,-70.2193 -136.754,-101.904 -116.356,-129.796 -91.3523,-152.55 -62.9487,-169.554 -32.1323,-179.952 0,-183.5 32.1323,-179.952 62.9487,-169.554 91.3523,-152.55 116.356,-129.796 136.754,-101.904 151.998,-70.2193 161.32,-35.8437 164.5,0"/>
+  </object>
+  <object id="57" name="circle2" x="881.5" y="816.5">
+   <polygon points="164.5,0 161.32,35.8437 151.998,70.2193 136.754,101.904 116.356,129.796 91.3523,152.55 62.9487,169.554 32.1323,179.952 0,183.5 -32.1323,179.952 -62.9487,169.554 -91.3523,152.55 -116.356,129.796 -136.754,101.904 -151.998,70.2193 -161.32,35.8437 -164.5,0 -161.32,-35.8437 -151.998,-70.2193 -136.754,-101.904 -116.356,-129.796 -91.3523,-152.55 -62.9487,-169.554 -32.1323,-179.952 0,-183.5 32.1323,-179.952 62.9487,-169.554 91.3523,-152.55 116.356,-129.796 136.754,-101.904 151.998,-70.2193 161.32,-35.8437 164.5,0"/>
+  </object>
+ </objectgroup>
+ <objectgroup color="#ff0000" id="7" name="collision" visible="0">
   <object id="4" x="0" y="640" width="400" height="240"/>
   <object id="5" x="0" y="480" width="40" height="160"/>
   <object id="7" x="40" y="360" width="560" height="160"/>
@@ -200,21 +208,7 @@
     <property name="marker" value="entry"/>
    </properties>
   </object>
-  <object id="35" name="organikkenemy" x="740" y="880">
-   <properties>
-    <property name="actor" value="organikk"/>
-    <property name="aura" type="bool" value="true"/>
-    <property name="chase" value="false"/>
-    <property name="chasedist" type="float" value="100"/>
-    <property name="chasetype" value="linear"/>
-    <property name="encounter" value="organikk"/>
-    <property name="group" type="int" value="1"/>
-    <property name="pacetype" value="verticalswing"/>
-    <property name="swingdiv" type="float" value="-30"/>
-    <property name="swinglength" type="float" value="240"/>
-   </properties>
-  </object>
-  <object id="36" name="organikkenemy" x="460" y="880">
+  <object id="36" name="organikkenemy" x="-654.667" y="1203.33">
    <properties>
     <property name="actor" value="organikk"/>
     <property name="aura" type="bool" value="true"/>
@@ -227,6 +221,60 @@
     <property name="swingdiv" type="float" value="30"/>
     <property name="swinglength" type="float" value="240"/>
    </properties>
+  </object>
+  <object id="51" name="enemy" x="600" y="600">
+   <properties>
+    <property name="actor" value="winglade"/>
+    <property name="animation" value="spin2"/>
+    <property name="chase" value="false"/>
+    <property name="chasedist" type="float" value="1"/>
+    <property name="encounter" value="winglade"/>
+    <property name="group" type="int" value="1"/>
+    <property name="path" value="circle"/>
+    <property name="speed" type="int" value="-9"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="56" name="enemy" x="880" y="600">
+   <properties>
+    <property name="actor" value="winglade"/>
+    <property name="animation" value="spin2"/>
+    <property name="chase" value="false"/>
+    <property name="chasedist" type="float" value="1"/>
+    <property name="encounter" value="winglade"/>
+    <property name="group" type="int" value="1"/>
+    <property name="path" value="circle2"/>
+    <property name="speed" type="int" value="-9"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="52" name="enemy" x="600" y="920">
+   <properties>
+    <property name="actor" value="winglade"/>
+    <property name="animation" value="spin"/>
+    <property name="chase" value="false"/>
+    <property name="chasedist" type="float" value="1"/>
+    <property name="encounter" value="winglade"/>
+    <property name="group" type="int" value="1"/>
+    <property name="path" value="circle"/>
+    <property name="progress" type="float" value="2.5"/>
+    <property name="speed" type="int" value="-9"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="58" name="enemy" x="880" y="920">
+   <properties>
+    <property name="actor" value="winglade"/>
+    <property name="animation" value="spin"/>
+    <property name="chase" value="false"/>
+    <property name="chasedist" type="float" value="1"/>
+    <property name="encounter" value="winglade"/>
+    <property name="group" type="int" value="1"/>
+    <property name="path" value="circle2"/>
+    <property name="progress" type="float" value="2.5"/>
+    <property name="speed" type="int" value="-9"/>
+   </properties>
+   <point/>
   </object>
  </objectgroup>
  <objectgroup id="13" name="objects_fog">

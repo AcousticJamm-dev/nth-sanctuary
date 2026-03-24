@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.10.2",
+  tiledversion = "1.11.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 12,
-  nextobjectid = 105,
+  nextobjectid = 106,
   properties = {
     ["border"] = "simple",
     ["music"] = "negative_Sanctum_wip",
@@ -964,7 +964,7 @@ return {
         },
         {
           id = 18,
-          name = "pathenemygen",
+          name = "pathenemynum",
           type = "",
           shape = "point",
           x = 260,
@@ -1124,6 +1124,19 @@ return {
           properties = {
             ["group"] = "lantern"
           }
+        },
+        {
+          id = 105,
+          name = "pathenemyender",
+          type = "",
+          shape = "point",
+          x = 260,
+          y = 520,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
         }
       }
     },

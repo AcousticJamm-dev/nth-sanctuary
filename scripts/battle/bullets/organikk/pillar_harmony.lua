@@ -79,7 +79,7 @@ function PillarHarmony:onWaveSpawn()
         self.wave.timer:lerpVar(self, "scale_x", 1, 0, 4)
     end)
 
-    self.wave.timer:everyInstant(2 / 60, function()
+    self.wave.timer:everyInstant(0.02, function()
         if self:isRemoved() or self.wave.del then
             return false
         end
@@ -91,7 +91,7 @@ function PillarHarmony:onWaveSpawn()
         end
     end)
 
-    self.wave.timer:everyInstant(4 / 60, function()
+    self.wave.timer:everyInstant(0.04, function()
         if self:isRemoved() or self.wave.del then
             return false
         end

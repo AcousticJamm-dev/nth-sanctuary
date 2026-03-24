@@ -89,7 +89,7 @@ function WingladeActorSprite:setAnimation(anim, callback, ignore_actor_callback)
         self.right_wing.frame = 0
         self.eye_pupil.visible = false
     else
-        local stop = false
+        --[[local stop = false
         if anim == 'spin' or anim == "spin2" then
             Game.world.map.timer:every(0.15, function() 
                 if stop == false then
@@ -99,7 +99,7 @@ function WingladeActorSprite:setAnimation(anim, callback, ignore_actor_callback)
         end
         if anim == 'hurt' then
             stop = true
-        end
+        end]]
         self.left_wing.frame = self.left_wing_frame
         self.left_wing.anim_speed = 1
         self.right_wing.frame = self.right_wing_frame

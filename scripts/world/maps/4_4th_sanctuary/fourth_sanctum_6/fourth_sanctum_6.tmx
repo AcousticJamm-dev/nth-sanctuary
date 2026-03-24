@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="26" height="14" tilewidth="40" tileheight="40" infinite="0" nextlayerid="22" nextobjectid="74">
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="26" height="14" tilewidth="40" tileheight="40" infinite="0" nextlayerid="22" nextobjectid="75">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -43,36 +43,6 @@
  </objectgroup>
  <objectgroup id="19" name="objects_parallax_fade">
   <object id="63" gid="789" x="1040" y="680" width="487.656" height="1040.33" rotation="270"/>
- </objectgroup>
- <layer id="20" name="tiles_osc_optimize" width="26" height="14">
-  <data encoding="csv">
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-194,194,194,194,194,194,194,194,194,194,194,194,0,0,194,194,194,194,0,0,0,0,0,0,0,0,
-194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,0,0,0,0,0,0,0,0,
-194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,194,194,194,194,194,194,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,194,194,194,194,194,194,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,194,194,194,194,194,194,194,194,0,0,0,0,0,0,0,0,0,
-0,0,0,0,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,
-0,0,0,0,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,
-0,0,0,0,194,194,194,194,194,194,194,0,0,0,0,194,194,194,194,194,194,194,194,194,194,194,
-0,0,0,0,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-</data>
- </layer>
- <objectgroup id="21" name="objects_osc">
-  <object id="64" name="tile_oscillate" x="160" y="320" width="200" height="120"/>
-  <object id="65" name="tile_oscillate" x="160" y="440" width="120" height="120"/>
-  <object id="66" name="tile_oscillate" x="440" y="280" width="160" height="120"/>
-  <object id="67" name="tile_oscillate" x="360" y="280" width="80" height="160"/>
-  <object id="68" name="tile_oscillate" x="400" y="200" width="240" height="80"/>
-  <object id="69" name="tile_oscillate" x="600" y="280" width="80" height="160"/>
-  <object id="70" name="tile_oscillate" x="680" y="320" width="360" height="120"/>
-  <object id="71" name="tile_oscillate" x="560" y="80" width="160" height="120"/>
-  <object id="72" name="tile_oscillate" x="0" y="80" width="480" height="120"/>
-  <object id="73" name="tile_oscillate" x="480" y="120" width="80" height="80"/>
  </objectgroup>
  <layer id="14" name="black" width="26" height="14" tintcolor="#000000">
   <data encoding="csv">
@@ -128,6 +98,42 @@
 155,156,157,155,0,0,0,0,0,625,0,0,0,631,0,137,138,139,137,138,139,137,138,139,137,138
 </data>
  </layer>
+ <layer id="20" name="tiles_osc_optimize" width="26" height="14">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+194,194,194,194,194,194,194,194,194,194,194,194,0,0,194,194,194,194,0,0,0,0,0,0,0,0,
+194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,0,0,0,0,0,0,0,0,
+194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,194,194,194,194,194,194,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,194,194,194,194,194,194,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,194,194,194,194,194,194,194,194,0,0,0,0,0,0,0,0,0,
+0,0,0,0,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,
+0,0,0,0,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,194,
+0,0,0,0,194,194,194,194,194,194,194,0,0,0,0,194,194,194,194,194,194,194,194,194,194,194,
+0,0,0,0,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,194,194,194,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup id="21" name="objects_osc">
+  <object id="64" name="tile_oscillate" x="160" y="320" width="200" height="120"/>
+  <object id="65" name="tile_oscillate" x="160" y="440" width="120" height="120"/>
+  <object id="66" name="tile_oscillate" x="440" y="280" width="160" height="120"/>
+  <object id="67" name="tile_oscillate" x="360" y="280" width="80" height="160"/>
+  <object id="68" name="tile_oscillate" x="400" y="200" width="240" height="80"/>
+  <object id="69" name="tile_oscillate" x="600" y="280" width="80" height="160"/>
+  <object id="70" name="tile_oscillate" x="680" y="320" width="360" height="120"/>
+  <object id="71" name="tile_oscillate" x="560" y="80" width="160" height="120"/>
+  <object id="72" name="tile_oscillate" x="0" y="80" width="480" height="120"/>
+  <object id="73" name="tile_oscillate" x="480" y="120" width="80" height="80"/>
+  <object id="74" name="texturescroller" x="-80" y="-80">
+   <properties>
+    <property name="type" value="hsv"/>
+   </properties>
+   <point/>
+  </object>
+ </objectgroup>
  <layer id="1" name="Tile Layer 1" width="26" height="14">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,772,773,772,773,772,773,0,0,
@@ -313,12 +319,6 @@
   <object id="43" name="highlight" x="0" y="160" width="120" height="40"/>
  </objectgroup>
  <objectgroup id="3" name="objects_overlay">
-  <object id="1" name="texturescroller" x="222.333" y="-48.6667">
-   <properties>
-    <property name="type" value="hsv"/>
-   </properties>
-   <point/>
-  </object>
   <object id="2" name="filter" x="29.3333" y="-26.6667">
    <properties>
     <property name="type" value="hsv3"/>

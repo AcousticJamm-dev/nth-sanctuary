@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.10.2",
+  tiledversion = "1.11.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -9,8 +9,8 @@ return {
   height = 24,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 16,
-  nextobjectid = 105,
+  nextlayerid = 19,
+  nextobjectid = 118,
   properties = {
     ["border"] = "hell",
     ["music"] = "hellworld",
@@ -32,6 +32,12 @@ return {
       name = "bg_church_library_c_tileset",
       firstgid = 247,
       filename = "../../../tilesets/bg_church_library_c_tileset.tsx"
+    },
+    {
+      name = "bg_dw_church_tileset_new",
+      firstgid = 507,
+      filename = "../../../tilesets/bg_dw_church_tileset_new.tsx",
+      exportfilename = "../../../tilesets/bg_dw_church_tileset_new.lua"
     }
   },
   layers = {
@@ -285,6 +291,38 @@ return {
       }
     },
     {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 18,
+      name = "objects_below",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 113,
+          name = "churchmagicglass",
+          type = "",
+          shape = "rectangle",
+          x = 760,
+          y = 520,
+          width = 480,
+          height = 80,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["idlealpha"] = 0,
+            ["starthidden"] = true
+          }
+        }
+      }
+    },
+    {
       type = "tilelayer",
       x = 0,
       y = 0,
@@ -303,11 +341,11 @@ return {
       properties = {},
       encoding = "lua",
       data = {
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 58, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 58, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 222, 222, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 136, 58, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 205, 85, 89, 203, 0, 0, 0, 0, 0, 0, 0, 0, 136, 145, 58, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 205, 103, 107, 203, 0, 0, 0, 0, 0, 0, 0, 136, 145, 154, 76, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 205, 58, 58, 203, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 58, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 205, 58, 58, 203, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 58, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 205, 58, 58, 203, 0, 0, 0, 0, 0, 0, 0, 0, 0, 136, 58, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 205, 58, 58, 203, 0, 0, 0, 0, 0, 0, 0, 0, 136, 145, 58, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 205, 58, 58, 203, 0, 0, 0, 0, 0, 0, 0, 136, 145, 154, 76, 0,
         0, 0, 222, 222, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 205, 58, 58, 203, 0, 0, 0, 0, 0, 0, 136, 145, 154, 163, 0, 0,
         0, 0, 58, 67, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 205, 58, 58, 203, 0, 0, 0, 0, 0, 136, 145, 154, 163, 0, 0, 0,
         0, 0, 67, 58, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 214, 58, 58, 212, 0, 0, 0, 0, 136, 145, 154, 163, 0, 0, 0, 0,
@@ -366,14 +404,14 @@ return {
           type = "",
           shape = "rectangle",
           x = 600,
-          y = 120,
+          y = -80,
           width = 80,
           height = 80,
           rotation = 0,
           visible = true,
           properties = {
-            ["map"] = "0_base_sanctum/base_center",
-            ["marker"] = "spawn"
+            ["map"] = "0_base_sanctum/base_south_1",
+            ["marker"] = "hell"
           }
         },
         {
@@ -383,6 +421,54 @@ return {
           shape = "point",
           x = 640,
           y = 820,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["actor"] = "leech",
+            ["encounter"] = "leech_spawn"
+          }
+        },
+        {
+          id = 116,
+          name = "enemy",
+          type = "",
+          shape = "point",
+          x = 1040,
+          y = 585,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["actor"] = "leech",
+            ["encounter"] = "leech_spawn"
+          }
+        },
+        {
+          id = 107,
+          name = "enemy",
+          type = "",
+          shape = "point",
+          x = 640,
+          y = 120,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["actor"] = "leech",
+            ["encounter"] = "leech_spawn"
+          }
+        },
+        {
+          id = 108,
+          name = "enemy",
+          type = "",
+          shape = "point",
+          x = 1013,
+          y = 253,
           width = 0,
           height = 0,
           rotation = 0,
@@ -409,26 +495,6 @@ return {
           }
         },
         {
-          id = 59,
-          name = "roomglow",
-          type = "",
-          shape = "point",
-          x = 0,
-          y = 0,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["active"] = true,
-            ["alpha"] = 1,
-            ["darkness"] = "#ff800000",
-            ["highlight"] = "#ffff7400",
-            ["shadow"] = false,
-            ["tint"] = "#ffff0000"
-          }
-        },
-        {
           id = 61,
           name = "transition",
           type = "",
@@ -442,28 +508,6 @@ return {
           properties = {
             ["map"] = "3_flooded_sanctuary/flooded_1_hellentrance",
             ["marker"] = "spawn"
-          }
-        },
-        {
-          id = 65,
-          name = "filter",
-          type = "",
-          shape = "point",
-          x = -60,
-          y = -162.667,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["hue_start"] = "0",
-            ["hue_target"] = "0",
-            ["sat_start"] = "0",
-            ["sat_target"] = "0",
-            ["speed"] = 0,
-            ["type"] = "custom",
-            ["val_start"] = "1.2",
-            ["val_target"] = "1.2"
           }
         },
         {
@@ -524,6 +568,38 @@ return {
             ["text1_3"] = "[color:#808080]> do not be fooled by ral's lies about [color:red]it[color:#808080],[wait:5] for he created [color:red]it[color:#808080].",
             ["text2_1"] = "[color:#808080]> do not be fooled by ral's lies about [color:red]it[color:#808080]."
           }
+        },
+        {
+          id = 109,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 1200,
+          y = 760,
+          width = 40,
+          height = 80,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "4_4th_sanctuary/fourth_sanctum_5",
+            ["marker"] = "hell"
+          }
+        },
+        {
+          id = 117,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 1200,
+          y = 520,
+          width = 40,
+          height = 80,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "2_2nd_sanctuary/second_sanctum_3",
+            ["marker"] = "hell"
+          }
         }
       }
     },
@@ -581,19 +657,6 @@ return {
           properties = {}
         },
         {
-          id = 71,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 480,
-          y = 560,
-          width = 720,
-          height = 200,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
           id = 73,
           name = "",
           type = "",
@@ -615,19 +678,6 @@ return {
           y = 0,
           width = 440,
           height = 360,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 77,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 600,
-          y = 0,
-          width = 80,
-          height = 120,
           rotation = 0,
           visible = true,
           properties = {}
@@ -682,8 +732,8 @@ return {
             { x = -40, y = 80 },
             { x = -80, y = 80 },
             { x = -440, y = 440 },
-            { x = -440, y = 480 },
-            { x = 0, y = 480 }
+            { x = -440, y = 440 },
+            { x = 0, y = 440 }
           },
           properties = {}
         },
@@ -696,6 +746,58 @@ return {
           y = 840,
           width = 880,
           height = 120,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 111,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 320,
+          y = 440,
+          width = 40,
+          height = 160,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 112,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 440,
+          y = 440,
+          width = 40,
+          height = 160,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 114,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 480,
+          y = 560,
+          width = 280,
+          height = 200,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 115,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 760,
+          y = 600,
+          width = 440,
+          height = 160,
           rotation = 0,
           visible = true,
           properties = {}
@@ -721,7 +823,7 @@ return {
           name = "spawn",
           type = "",
           shape = "point",
-          x = 620,
+          x = 660,
           y = 510,
           width = 0,
           height = 0,
@@ -784,6 +886,50 @@ return {
       }
     },
     {
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 30,
+      height = 24,
+      id = 17,
+      name = "tile_party",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1.1,
+      parallaxy = 1,
+      properties = {},
+      encoding = "lua",
+      data = {
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 559, 560, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 559, 560, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 559, 560, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 559, 560, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 559, 560, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 559, 560, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 559, 560, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 559, 560, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 559, 560, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 559, 560, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 559, 560, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 559, 560, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 559, 560, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 559, 560, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 559, 560, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 559, 560, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 559, 560, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 559, 560, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 559, 560, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 559, 560, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 559, 560, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 559, 560, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 559, 560, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 559, 560, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+      }
+    },
+    {
       type = "objectgroup",
       draworder = "topdown",
       id = 2,
@@ -796,7 +942,50 @@ return {
       parallaxx = 1,
       parallaxy = 1,
       properties = {},
-      objects = {}
+      objects = {
+        {
+          id = 105,
+          name = "roomglow",
+          type = "",
+          shape = "point",
+          x = 20,
+          y = 2.667,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["active"] = true,
+            ["alpha"] = 1,
+            ["darkness"] = "#ff800000",
+            ["highlight"] = "#ffff7400",
+            ["shadow"] = false,
+            ["tint"] = "#ffff0000"
+          }
+        },
+        {
+          id = 106,
+          name = "filter",
+          type = "",
+          shape = "point",
+          x = -40,
+          y = -160,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["hue_start"] = "0",
+            ["hue_target"] = "0",
+            ["sat_start"] = "0",
+            ["sat_target"] = "0",
+            ["speed"] = 0,
+            ["type"] = "custom",
+            ["val_start"] = "1.2",
+            ["val_target"] = "1.2"
+          }
+        }
+      }
     },
     {
       type = "objectgroup",

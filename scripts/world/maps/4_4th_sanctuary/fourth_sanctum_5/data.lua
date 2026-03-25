@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 23,
-  nextobjectid = 194,
+  nextobjectid = 202,
   parallaxorigin = {
     x = -320,
     y = -240
@@ -376,7 +376,24 @@ return {
       parallaxx = 1,
       parallaxy = 1,
       properties = {},
-      objects = {}
+      objects = {
+        {
+          id = 199,
+          name = "churchmagicglass",
+          type = "",
+          shape = "rectangle",
+          x = -240,
+          y = 360,
+          width = 480,
+          height = 80,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["idlealpha"] = 0,
+            ["starthidden"] = true
+          }
+        }
+      }
     },
     {
       type = "tilelayer",
@@ -519,6 +536,19 @@ return {
           rotation = 0,
           visible = true,
           properties = {}
+        },
+        {
+          id = 197,
+          name = "hell",
+          type = "",
+          shape = "point",
+          x = 40,
+          y = 400,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
         }
       }
     },
@@ -528,7 +558,7 @@ return {
       id = 3,
       name = "objects_party",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -573,9 +603,9 @@ return {
           name = "cameratarget",
           type = "",
           shape = "rectangle",
-          x = 240,
+          x = -200,
           y = 360,
-          width = 400,
+          width = 840,
           height = 320,
           rotation = 0,
           visible = true,
@@ -1491,7 +1521,7 @@ return {
       id = 2,
       name = "collision",
       class = "",
-      visible = false,
+      visible = true,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -1521,19 +1551,6 @@ return {
           y = 80,
           width = 120,
           height = 280,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 5,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 160,
-          y = 360,
-          width = 80,
-          height = 360,
           rotation = 0,
           visible = true,
           properties = {}
@@ -1716,6 +1733,58 @@ return {
           y = 80,
           width = 40,
           height = 400,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 195,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 0,
+          y = 440,
+          width = 240,
+          height = 280,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 196,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = -240,
+          y = 360,
+          width = 40,
+          height = 80,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 200,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = -200,
+          y = 320,
+          width = 200,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 201,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = -200,
+          y = 440,
+          width = 200,
+          height = 40,
           rotation = 0,
           visible = true,
           properties = {}

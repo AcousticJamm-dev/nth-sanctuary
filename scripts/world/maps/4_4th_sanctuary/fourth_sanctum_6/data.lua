@@ -1,7 +1,7 @@
 return {
-  version = "1.11",
+  version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.10.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -845,6 +845,7 @@ return {
           visible = true,
           properties = {
             ["actor"] = "balthizard",
+            ["animation"] = "spared_overlay",
             ["text1"] = "[spacing:5][speed:0.25]* Do not mind me."
           }
         },

@@ -393,9 +393,11 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "* Welcome to Hell.[wait:10]\nThis is your home now.",
-            ["text2"] = "* You may find the path right here leads you to Base.",
-            ["text3"] = "* With that, [wait:5]you are filled with the power of burning."
+            ["text1"] = "* (You are in Hell.)",
+            ["text2"] = "* (A place of all sins and exits.)",
+            ["text3"] = "* (You may try to exit this place by passing through the Leech Spawns.)",
+            ["text4"] = "* (... Or, you can go deeper into the Hell and get lost.)",
+            ["text5"] = "* (With that, the power of choice drowns you.)"
           }
         },
         {

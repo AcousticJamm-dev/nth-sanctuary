@@ -177,10 +177,11 @@
  <objectgroup id="4" name="objects_party">
   <object id="5" name="savepoint" x="520" y="320" width="40" height="40">
    <properties>
-    <property name="text1">* Welcome to Hell.[wait:10]
-This is your home now.</property>
-    <property name="text2" value="* You may find the path right here leads you to Base."/>
-    <property name="text3" value="* With that, [wait:5]you are filled with the power of burning."/>
+    <property name="text1" value="* (You are in Hell.)"/>
+    <property name="text2" value="* (A place of all sins and exits.)"/>
+    <property name="text3" value="* (You may try to exit this place by passing through the Leech Spawns.)"/>
+    <property name="text4" value="* (... Or, you can go deeper into the Hell and get lost.)"/>
+    <property name="text5" value="* (With that, the power of choice drowns you.)"/>
    </properties>
   </object>
   <object id="35" name="transition" x="600" y="-80" width="80" height="80">

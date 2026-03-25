@@ -231,7 +231,7 @@
   <object id="62" name="npc" x="670" y="400">
    <properties>
     <property name="actor" value="balthizard"/>
-    <property name="sprite" value="spared"/>
+    <property name="animation" value="spared_overlay"/>
     <property name="text1" value="[spacing:5][speed:0.25]* Do not mind me."/>
    </properties>
    <point/>

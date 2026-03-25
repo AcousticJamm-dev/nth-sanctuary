@@ -845,7 +845,7 @@ return {
           visible = true,
           properties = {
             ["actor"] = "balthizard",
-            ["sprite"] = "spared",
+            ["animation"] = "spared_overlay",
             ["text1"] = "[spacing:5][speed:0.25]* Do not mind me."
           }
         },

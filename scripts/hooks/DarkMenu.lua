@@ -7,6 +7,14 @@ function DarkMenu:init()
 	self.shard_sprite = Assets.getTexture("ui/menu/icon/shard")
 end
 
+function DarkMenu:update()
+    super.update(self)
+    
+    if Game.world.map.id == "sanctum_hell/hell_1" or 
+    Game.world.map.id == "secrets/frisk_room" then
+        Game.world:closeMenu()
+    end
+end
 
 function DarkMenu:draw()
     super.draw(self)

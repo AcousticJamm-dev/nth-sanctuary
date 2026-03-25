@@ -17,7 +17,7 @@ return {
                     cutscene:text("* A beautiful coloring of purple to orange...")
                     tick2 = 1
                 else
-                    cutscene:text("* Heh heh.. [wait:10]I needn't spoil it.")
+                    cutscene:text("* Heh heh... [wait:10]I needn't spoil it.")
                     cutscene:text("* It'd ruin the fun.")
                 end
                 choicebox()

@@ -11,6 +11,7 @@ function DarkMenu:update()
     super.update(self)
     
     if Game.world.map.id == "sanctum_hell/hell_1" or 
+    Game.world.map.id == "sanctum_hell/hell_unknown" or 
     Game.world.map.id == "secrets/frisk_room" then
         Game.world:closeMenu()
     end

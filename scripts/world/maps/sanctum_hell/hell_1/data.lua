@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 19,
-  nextobjectid = 118,
+  nextobjectid = 122,
   properties = {
     ["border"] = "hell",
     ["music"] = "hellworld",
@@ -361,10 +361,10 @@ return {
         0, 0, 0, 0, 0, 0, 0, 0, 58, 58, 58, 67, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 67, 67, 67, 58, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 58, 67, 58, 67, 58, 58, 58, 58, 58, 67, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 67, 58, 67, 58, 67, 67, 67, 67, 67, 58, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 76, 76, 76, 76, 76, 76, 76, 76, 76, 76, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        0, 0, 0, 0, 0, 0, 0, 0, 67, 67, 58, 58, 67, 67, 67, 67, 67, 58, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 76, 67, 58, 76, 76, 76, 76, 76, 76, 76, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 67, 58, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 58, 67, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
       }
     },
     {
@@ -412,6 +412,22 @@ return {
           properties = {
             ["map"] = "0_base_sanctum/base_south_1",
             ["marker"] = "hell"
+          }
+        },
+        {
+          id = 120,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 360,
+          y = 960,
+          width = 80,
+          height = 80,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "sanctum_hell/hell_unknown",
+            ["marker"] = "1"
           }
         },
         {
@@ -738,19 +754,6 @@ return {
           properties = {}
         },
         {
-          id = 98,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 320,
-          y = 840,
-          width = 880,
-          height = 120,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
           id = 111,
           name = "",
           type = "",
@@ -798,6 +801,32 @@ return {
           y = 600,
           width = 440,
           height = 160,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 118,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 320,
+          y = 840,
+          width = 40,
+          height = 120,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 119,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 440,
+          y = 840,
+          width = 760,
+          height = 120,
           rotation = 0,
           visible = true,
           properties = {}
@@ -877,6 +906,19 @@ return {
           shape = "point",
           x = 1140,
           y = 50,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 121,
+          name = "dess",
+          type = "",
+          shape = "point",
+          x = 400,
+          y = 920,
           width = 0,
           height = 0,
           rotation = 0,

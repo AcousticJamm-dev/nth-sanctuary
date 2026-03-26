@@ -1940,8 +1940,8 @@ return {
           properties = {
             ["actor"] = "organik",
             ["sprite"] = "cr",
-            ["text1"] = "* The sanctum's spire...",
-            ["text3"] = "* How much longer can it go?"
+            ["text1"] = "* The [color:yellow]Sanctum's Spire...[color:reset]",
+            ["text2"] = "* How much longer can it go?"
           }
         }
       }

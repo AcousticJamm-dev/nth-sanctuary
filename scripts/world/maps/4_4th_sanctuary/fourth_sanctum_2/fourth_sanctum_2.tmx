@@ -615,8 +615,8 @@ HEROES CLIMB INFINITY FLIGHT.</property>
    <properties>
     <property name="actor" value="organik"/>
     <property name="sprite" value="cr"/>
-    <property name="text1" value="* The sanctum's spire..."/>
-    <property name="text3" value="* How much longer can it go?"/>
+    <property name="text1" value="* The [color:yellow]Sanctum's Spire...[color:reset]"/>
+    <property name="text2" value="* How much longer can it go?"/>
    </properties>
    <point/>
   </object>

@@ -1,7 +1,7 @@
 return {
-  version = "1.11",
+  version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.10.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -29,18 +29,18 @@ return {
     },
     {
       name = "bg_dw_church_tileset_new",
-      firstgid = 301,
+      firstgid = 302,
       filename = "../../../tilesets/bg_dw_church_tileset_new.tsx",
       exportfilename = "../../../tilesets/bg_dw_church_tileset_new.lua"
     },
     {
       name = "bg_dw_library_tileset_new",
-      firstgid = 883,
+      firstgid = 884,
       filename = "../../../tilesets/bg_dw_library_tileset_new.tsx"
     },
     {
       name = "ExtraCarpetTiles",
-      firstgid = 1713,
+      firstgid = 1714,
       filename = "../../../tilesets/ExtraCarpetTiles.tsx",
       exportfilename = "../../../tilesets/ExtraCarpetTiles.lua"
     }
@@ -251,9 +251,9 @@ return {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 37, 38, 39, 41, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 37, 1716, 48, 48, 1715, 41, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 37, 1717, 48, 48, 1716, 41, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 46, 48, 47, 48, 48, 50, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 55, 1714, 47, 48, 1713, 59, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 55, 1715, 47, 48, 1714, 59, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 64, 55, 56, 57, 59, 64, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 73, 65, 66, 67, 68, 73, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 74, 75, 76, 77, 0, 0, 0, 0, 0, 0,
@@ -418,8 +418,8 @@ return {
           name = "prophecy",
           type = "",
           shape = "point",
-          x = 280,
-          y = 40,
+          x = 320,
+          y = 182,
           width = 0,
           height = 0,
           rotation = 0,

@@ -77,7 +77,7 @@ return {
 				"* \"We all agreed.\"",
 				"* \"Any second now, [wait:5]Shade rises.\""
 			},
-			[6] = {
+			[2] = {
 				"* \"They call us heretics.\"",
 				"* \"Blasphemers.[wait:10] Monsters.\"",
 				"* \"...Yet they pray to silence.\"",

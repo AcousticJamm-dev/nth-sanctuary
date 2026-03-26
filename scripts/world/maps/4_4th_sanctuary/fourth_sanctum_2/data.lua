@@ -1,5 +1,5 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
   tiledversion = "1.11.2",
   class = "",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 27,
-  nextobjectid = 144,
+  nextobjectid = 145,
   properties = {
     ["border"] = "church_d",
     ["music"] = "fourth_church",
@@ -1924,6 +1924,24 @@ return {
           visible = true,
           properties = {
             ["area"] = { id = 136 }
+          }
+        },
+        {
+          id = 144,
+          name = "npc",
+          type = "",
+          shape = "point",
+          x = 280,
+          y = 400,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["actor"] = "organik",
+            ["sprite"] = "cr",
+            ["text1"] = "* The sanctum's spire...",
+            ["text3"] = "* How much longer can it go?"
           }
         }
       }

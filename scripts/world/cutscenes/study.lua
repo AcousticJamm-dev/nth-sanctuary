@@ -171,7 +171,7 @@ return {
 				"* \"And the 'fake'...\"",
 				"* \"Still empty.\"",
 				"* \"Still wrong.\"",
-				"* \"Yet even that hollow thing moves when pulled.\"
+				"* \"Yet even that hollow thing moves when pulled.\"",
 				"* \"What does that make the first?\"",
 				"* \"Guide?\"",
 				"* \"God?\"",

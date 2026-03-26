@@ -360,9 +360,15 @@ return {
 			dronesfx:setLooping(true)
 			dronesfx:play()
 			cutscene:during(function()
-				windsfx:setVolume(cutscene.windvol)
+				if cutscene.windvol ~= cutscene.lastwindvol then
+					windsfx:setVolume(cutscene.windvol)
+					cutscene.lastwindvol = cutscene.windvol
+				end
 				windsfx:setPitch(cutscene.windpitch)
-				dronesfx:setVolume(cutscene.dronevol)
+				if cutscene.dronevol ~= cutscene.lastdronevol then
+					dronesfx:setVolume(cutscene.dronevol)
+					cutscene.lastdronevol = cutscene.dronevol
+				end
 				dronesfx:setPitch(cutscene.dronepitch)
 			end)
 			kris:setAnimation("jump_fall")

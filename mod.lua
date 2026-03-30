@@ -86,6 +86,18 @@ function Mod:init()
         return dt * math.max(0.05, self.DT_MULT)
     end)
     self.legacy_base_music = Kristal.Config["nthSanctuary/legacyBaseMusic"] or false
+
+    Registry.original_createMap = Registry.createMap
+    Registry.createMap = function(id, world, ...)
+        local ok, result = pcall(Registry.original_createMap, id, world, ...)
+        if ok then
+            return result
+        elseif id ~= "dogcheck" then
+            return Registry.original_createMap("dogcheck", world, ...)
+        else
+            error("Attempt to create non existent map \"" .. tostring(id) .. "\"")
+        end
+    end
 end
 
 function Mod:afmGetMusic()

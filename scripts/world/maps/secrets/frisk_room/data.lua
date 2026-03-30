@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 16,
-  nextobjectid = 31,
+  nextobjectid = 32,
   properties = {
     ["border"] = "church_a",
     ["music"] = "mus_rain_deep",
@@ -448,6 +448,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
+            ["cond"] = "Game:getFlag(\"fun\") ~= 69",
             ["fade_edges"] = true,
             ["no_back"] = true,
             ["offx"] = 130,
@@ -456,6 +457,30 @@ return {
             ["spr_offy"] = 78,
             ["text"] = "FRISK ROOM",
             ["texture"] = "friskroom",
+            ["txt_offy"] = -20
+          }
+        },
+        {
+          id = 31,
+          name = "prophecy",
+          type = "",
+          shape = "rectangle",
+          x = 40,
+          y = 280,
+          width = 280,
+          height = 80,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["cond"] = "Game:getFlag(\"fun\") == 69",
+            ["fade_edges"] = true,
+            ["no_back"] = true,
+            ["offx"] = 130,
+            ["offy"] = -110,
+            ["spr_offx"] = 32,
+            ["spr_offy"] = 78,
+            ["text"] = "FAFA",
+            ["texture"] = "friskroom-fafa",
             ["txt_offy"] = -20
           }
         }

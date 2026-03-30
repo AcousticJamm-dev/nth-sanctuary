@@ -3,7 +3,9 @@ local map, super = Class(Map, "secrets/secret_frisk_room")
 
 function map:init(world, data)
     super.init(self, world, data)
-    
+    -- if Game:getFlag("fun") == 69 then
+		-- Game.world.map:getEvent(26).data.properties.texture = "world/events/prophecy/friskroom-fafa"
+	-- end
 end
 
 function map:onEnter()

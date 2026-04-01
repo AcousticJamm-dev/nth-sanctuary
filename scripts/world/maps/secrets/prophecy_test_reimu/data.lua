@@ -96,7 +96,7 @@ return {
             ["panel_w"] = 160,
             ["spr_offx"] = 64,
             ["spr_offy"] = 78,
-            ["text"] = "A WITCH, FLYING TOWARDS SCARLET MANSION.",
+            ["text"] = "THE SHRINE MAIDEN, LURED BY SCARLET MISTS\nFINDS A MANSION WHERE THE NIGHT SKY PERSISTS.",
             ["texture"] = "reimu",
             ["txt_offx"] = -157,
             ["txt_offy"] = -30

@@ -29,6 +29,13 @@
             "armor": ["princessrbn", ""]
         }
     },
+    	"namesMessages": {
+		// Characters (I guess)
+		"CAMAC": "did you mean: tobyfox?\ndiscord.gg/tobyfox",
+        "RALSZOR": "hi its me",
+        "RAL": "hi its still me",
+        "MERG": "What's up guys, today we are\nplaying Deltarune: #th Sanctuary, \netc etc..."
+    },
 
     "hardReset": false,
     "hidden": false,

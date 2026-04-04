@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 8,
-  nextobjectid = 39,
+  nextobjectid = 40,
   properties = {
     ["music"] = "darkchurch_intro",
     ["name"] = "1 of 5."
@@ -30,7 +30,7 @@ return {
     },
     {
       name = "light_areas",
-      firstgid = 673,
+      firstgid = 686,
       filename = "../../../tilesets/light_areas.tsx"
     }
   },
@@ -467,12 +467,13 @@ return {
           width = 184,
           height = 262,
           rotation = 0,
-          gid = 676,
+          gid = 689,
           visible = true,
           properties = {
             ["light"] = true,
             ["light_alpha"] = 0.1,
             ["light_color"] = "#ffffffff",
+            ["light_dust"] = true,
             ["light_type"] = 1
           }
         },
@@ -486,12 +487,13 @@ return {
           width = 120,
           height = 262,
           rotation = 0,
-          gid = 676,
+          gid = 689,
           visible = true,
           properties = {
             ["light"] = true,
             ["light_alpha"] = 0.2,
             ["light_color"] = "#ffffffff",
+            ["light_dust"] = true,
             ["light_type"] = 1
           }
         },
@@ -505,7 +507,7 @@ return {
           width = 62,
           height = 80,
           rotation = 0,
-          gid = 679,
+          gid = 692,
           visible = true,
           properties = {
             ["light"] = true,
@@ -524,7 +526,7 @@ return {
           width = 62,
           height = 80,
           rotation = 0,
-          gid = 2147484327,
+          gid = 2147484340,
           visible = true,
           properties = {
             ["light"] = true,
@@ -543,7 +545,7 @@ return {
           width = 62,
           height = 80,
           rotation = 0,
-          gid = 679,
+          gid = 692,
           visible = true,
           properties = {
             ["light"] = true,
@@ -562,7 +564,7 @@ return {
           width = 62,
           height = 80,
           rotation = 0,
-          gid = 2147484327,
+          gid = 2147484340,
           visible = true,
           properties = {
             ["light"] = true,
@@ -581,7 +583,7 @@ return {
           width = 62,
           height = 80,
           rotation = 0,
-          gid = 679,
+          gid = 692,
           visible = true,
           properties = {
             ["light"] = true,
@@ -600,7 +602,7 @@ return {
           width = 62,
           height = 80,
           rotation = 0,
-          gid = 2147484327,
+          gid = 2147484340,
           visible = true,
           properties = {
             ["light"] = true,
@@ -608,6 +610,19 @@ return {
             ["light_color"] = "#ffffffff",
             ["light_type"] = 1
           }
+        },
+        {
+          id = 39,
+          name = "lightbeamfx",
+          type = "",
+          shape = "point",
+          x = 40,
+          y = 0,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
         }
       }
     },

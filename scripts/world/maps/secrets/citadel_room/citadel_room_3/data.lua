@@ -1,7 +1,7 @@
 return {
-  version = "1.11",
+  version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.10.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 5,
-  nextobjectid = 15,
+  nextobjectid = 18,
   properties = {
     ["border"] = "tvworld",
     ["music"] = "greenroom_detune"
@@ -85,19 +85,6 @@ return {
           properties = {}
         },
         {
-          id = 2,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 880,
-          y = 120,
-          width = 80,
-          height = 440,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
           id = 3,
           name = "",
           type = "",
@@ -145,6 +132,19 @@ return {
           type = "",
           shape = "point",
           x = 40,
+          y = 320,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 17,
+          name = "entry2",
+          type = "",
+          shape = "point",
+          x = 840,
           y = 320,
           width = 0,
           height = 0,
@@ -265,6 +265,41 @@ return {
           properties = {
             ["actor"] = "mangle",
             ["cutscene"] = "konverge.mangle"
+          }
+        },
+        {
+          id = 15,
+          name = "npc",
+          type = "",
+          shape = "point",
+          x = 240,
+          y = 520,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["actor"] = "waferr",
+            ["text1_1"] = "* Whisper...[wait:10] whisper...[wait:10]\n* A [color:yellow]tree[color:white]...",
+            ["text1_2"] = "* Where is it...?[wait:10]\n* It was [color:yellow]right [color:white]there...",
+            ["text2_1"] = "* ...[color:red]Scarlet [color:white]tree..."
+          }
+        },
+        {
+          id = 16,
+          name = "script",
+          type = "",
+          shape = "rectangle",
+          x = 880,
+          y = 120,
+          width = 40,
+          height = 440,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["cutscene"] = "events.scarlet_tree",
+            ["map"] = "secrets/citadel_room/edge",
+            ["once"] = false
           }
         }
       }

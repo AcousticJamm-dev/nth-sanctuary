@@ -12,6 +12,19 @@ return {
 			end
 		end
 	end,
+	scarlet_tree = function (cutscene)
+		--local get = Game:getFlag("egg")
+		local rand = love.math.random(1,10)
+		if rand == 10 then
+			Game.world:mapTransition("secrets/citadel_room/tree", "spawn")
+		else
+			if Game.world.map.id == "secrets/citadel_room/citadel_room_3" then
+				Game.world:mapTransition("secrets/citadel_room/edge", "entry")
+			elseif Game.world.map.id == "secrets/citadel_room/edge" then
+				Game.world:mapTransition("secrets/citadel_room/citadel_room_3", "entry2")
+			end
+		end
+	end,
 	egg_tree = function(cutscene)
 		if not Game:getFlag("egg") then
 			cutscene:text("* (He is behind the tree.)")

@@ -14,6 +14,43 @@ return {
 ]])
         end
     end,
+    clean = function(cutscene)
+        local h = Game.inventory:hasItem("rake")
+        local a = Game:getFlag("cleanup") if a then return end
+        if h then
+            cutscene:text("* (The glass shards that fell off this tree look like leaves.)")
+            cutscene:text("* (...[wait:5]Well, [wait:5]you happen to have a rake.)")
+            cutscene:text("* (Do janitor things?)")
+            local ch = cutscene:choicer({"Yes", "No"})
+            if ch == 1 then goto clean else
+                cutscene:text("* (And they shall remain.)")
+                return
+            end
+            ::clean::
+            cutscene:fadeOut(1)
+            for i = 1, 4 do
+                cutscene:wait(20/30)
+                Assets.playSound("leaf_dodge")
+            end
+            local glass = Game.world.map:getEvent(11)
+            cutscene:text("* (You used the rake to clean up the glass shards.)")
+            cutscene:text("* (...Well, [wait:5]you did your best, [wait:5]but there is no trash bin.)")
+            cutscene:text("* (Reluctantly,[wait:5] you sweep them off the side of the platform.)")
+            cutscene:wait(1)
+            glass:remove()
+            cutscene:fadeIn(1)
+            cutscene:text("* (But, [wait:5]one leaf looked to remain. [wait:10]One you forgot.)")
+            cutscene:text("* (Unlike the others, [wait:5]this one is black in color.)")
+            cutscene:text("* (It twinges with a strange energy...)")
+            cutscene:text("* (You pick it up, [wait:5]and realize it's a [color:9999ff]Dark Shard.[color:white].)")
+            Assets.playSound("shard_get")
+			cutscene:text("* (You obtained a [color:9999ff]Dark Shard.[color:white])")
+			Mod:setDarkShard(Mod.DarkShardID.LeafRoomShard, true)
+            Game:setFlag("cleanup", true)
+        else
+            cutscene:text("* (The glass shards that fell off this tree look like leaves.)")
+        end
+    end,
     sans = function(cutscene)
         local sans = cutscene:getCharacter("sans")
         local flag = Game:getFlag("got_rake")

@@ -95,6 +95,9 @@ function BookshelfDestructable:update()
 			debris:setFrame((this_id % 5) + 1)
 			debris.layer = self.layer - 0.4
 			Game.world:addChild(debris)
+			if Game.world.map.bookshelf_debris_sprites then
+				table.insert(Game.world.map.bookshelf_debris_sprites, debris)
+			end
 			local afterimage = AfterImageCutHalf(self.sprite.texture_path)
 			afterimage:setScale(2, 2)
 			afterimage:setPosition(self.x + 40, self.y + 40)

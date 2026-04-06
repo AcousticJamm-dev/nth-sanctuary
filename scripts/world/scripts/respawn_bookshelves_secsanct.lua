@@ -36,7 +36,7 @@ return function(script)
 			shelf.layer = pos.layer
 			shelf.unique_id = pos.uid
 			shelf.object_id = pos.oid
-			if shelf.once then
+			if shelf.once and shelf:getFlag("used_once", nil) then
 				shelf:setFlag("used_once", false)
 			end
 			Game.world:addChild(shelf)

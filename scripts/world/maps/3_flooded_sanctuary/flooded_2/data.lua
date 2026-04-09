@@ -2626,7 +2626,8 @@ return {
           visible = true,
           properties = {
             ["dir"] = 0,
-            ["movetype"] = 3
+            ["movetype"] = 3,
+            ["onscreen"] = true
           }
         },
         {
@@ -2642,7 +2643,8 @@ return {
           visible = true,
           properties = {
             ["dir"] = 2,
-            ["movetype"] = 3
+            ["movetype"] = 3,
+            ["onscreen"] = true
           }
         },
         {
@@ -2674,7 +2676,8 @@ return {
           visible = true,
           properties = {
             ["dir"] = 3,
-            ["movetype"] = 3
+            ["movetype"] = 3,
+            ["onscreen"] = true
           }
         },
         {
@@ -2690,7 +2693,8 @@ return {
           visible = true,
           properties = {
             ["dir"] = 3,
-            ["movetype"] = 3
+            ["movetype"] = 3,
+            ["onscreen"] = true
           }
         },
         {
@@ -2706,7 +2710,8 @@ return {
           visible = true,
           properties = {
             ["dir"] = 3,
-            ["movetype"] = 3
+            ["movetype"] = 3,
+            ["onscreen"] = true
           }
         },
         {
@@ -2722,7 +2727,8 @@ return {
           visible = true,
           properties = {
             ["dir"] = 1,
-            ["movetype"] = 3
+            ["movetype"] = 3,
+            ["onscreen"] = true
           }
         },
         {
@@ -2738,7 +2744,8 @@ return {
           visible = true,
           properties = {
             ["dir"] = 1,
-            ["movetype"] = 3
+            ["movetype"] = 3,
+            ["onscreen"] = true
           }
         },
         {
@@ -2754,7 +2761,8 @@ return {
           visible = true,
           properties = {
             ["dir"] = 1,
-            ["movetype"] = 3
+            ["movetype"] = 3,
+            ["onscreen"] = true
           }
         },
         {
@@ -2770,7 +2778,8 @@ return {
           visible = true,
           properties = {
             ["dir"] = 1,
-            ["movetype"] = 3
+            ["movetype"] = 3,
+            ["onscreen"] = true
           }
         },
         {
@@ -2786,7 +2795,8 @@ return {
           visible = true,
           properties = {
             ["dir"] = 0,
-            ["movetype"] = 3
+            ["movetype"] = 3,
+            ["onscreen"] = true
           }
         },
         {
@@ -2802,7 +2812,8 @@ return {
           visible = true,
           properties = {
             ["dir"] = 2,
-            ["movetype"] = 3
+            ["movetype"] = 3,
+            ["onscreen"] = true
           }
         },
         {
@@ -2818,7 +2829,8 @@ return {
           visible = true,
           properties = {
             ["dir"] = 2,
-            ["movetype"] = 3
+            ["movetype"] = 3,
+            ["onscreen"] = true
           }
         }
       }

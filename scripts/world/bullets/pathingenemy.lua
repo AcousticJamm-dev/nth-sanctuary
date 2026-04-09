@@ -40,6 +40,7 @@ function PathingEnemy:init(x, y, properties)
 	self.alpha = 0
 	self.sprite.visible = false
 	self.animindex = 0
+	self.onscreen = properties["onscreen"] or false
 end
 
 function PathingEnemy:onAdd(parent)
@@ -143,6 +144,11 @@ function PathingEnemy:update()
 	if self.movetype == 9 then
 		return
 	end
+    local x, y = self:getScreenPos()
+	local margin = 80
+    if self.onscreen and not (x > -margin and x < SCREEN_WIDTH + margin and y < SCREEN_HEIGHT + margin and y > -margin) then
+		return
+    end
 	if self.path then
         if self.world.map.paths[self.path] then
             local path = self.world.map.paths[self.path]

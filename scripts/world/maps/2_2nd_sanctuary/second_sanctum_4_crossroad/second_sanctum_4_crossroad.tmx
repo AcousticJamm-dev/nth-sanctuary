@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="43" height="43" tilewidth="40" tileheight="40" infinite="0" nextlayerid="35" nextobjectid="229">
+<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="43" height="43" tilewidth="40" tileheight="40" infinite="0" nextlayerid="35" nextobjectid="229">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -487,7 +487,7 @@
  </layer>
  <objectgroup id="14" name="climbareas"/>
  <objectgroup id="15" name="objects_buckets"/>
- <objectgroup id="7" name="collision">
+ <objectgroup id="7" name="collision" visible="0">
   <object id="23" x="160" y="520" width="1400" height="240"/>
   <object id="26" x="0" y="880" width="596" height="280"/>
   <object id="164" x="1360" y="360" width="200" height="160"/>

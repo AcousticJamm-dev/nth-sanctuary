@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 23,
-  nextobjectid = 98,
+  nextobjectid = 102,
   properties = {
     ["border"] = "church_d",
     ["music"] = "fourth_church",
@@ -733,7 +733,7 @@ return {
         0, 10, 10, 10, 10, 10, 10, 10, 37, 38, 39, 40, 39, 39, 40, 41, 10, 10, 10, 10,
         0, 10, 10, 10, 10, 10, 10, 10, 55, 56, 57, 58, 57, 57, 58, 59, 10, 10, 10, 10,
         0, 10, 10, 10, 28, 28, 28, 28, 64, 65, 68, 66, 67, 69, 70, 71, 28, 28, 28, 28,
-        0, 10, 10, 10, 0, 0, 0, 0, 0, 73, 74, 77, 75, 76, 78, 79, 80, 0, 0, 0,
+        0, 10, 10, 10, 0, 0, 0, 0, 73, 74, 77, 75, 76, 78, 79, 80, 0, 0, 0, 0,
         0, 10, 10, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 10, 10, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 10, 10, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -1181,7 +1181,7 @@ return {
           type = "",
           shape = "point",
           x = 480,
-          y = 360,
+          y = 240,
           width = 0,
           height = 0,
           rotation = 0,
@@ -1355,28 +1355,6 @@ return {
           }
         },
         {
-          id = 49,
-          name = "prophecy",
-          type = "",
-          shape = "rectangle",
-          x = 320,
-          y = 400,
-          width = 320,
-          height = 80,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["offx"] = 160,
-            ["offy"] = -140,
-            ["panel_h"] = "107",
-            ["spr_offx"] = 55,
-            ["spr_offy"] = 50,
-            ["text"] = "FOUNTAINS ARE GIFTED \nTHROUGH HER HEART.",
-            ["texture"] = "endlessnight",
-            ["txt_offy"] = 20
-          }
-        },
-        {
           id = 50,
           name = "roomglow",
           type = "",
@@ -1503,6 +1481,29 @@ return {
             ["pacetype"] = "horizontalswing",
             ["swingdiv"] = 15,
             ["swinglength"] = 200
+          }
+        },
+        {
+          id = 98,
+          name = "prophecy",
+          type = "",
+          shape = "rectangle",
+          x = 320,
+          y = 400,
+          width = 320,
+          height = 80,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["offx"] = 158,
+            ["offy"] = -188,
+            ["panel_h"] = 148,
+            ["spr_offx"] = 62,
+            ["spr_offy"] = 77,
+            ["text"] = "FOUNTAINS ARE GIFTED \nTHROUGH HER HEART.",
+            ["texture"] = "fountain",
+            ["txt_offx"] = -158,
+            ["txt_offy"] = -40
           }
         }
       }

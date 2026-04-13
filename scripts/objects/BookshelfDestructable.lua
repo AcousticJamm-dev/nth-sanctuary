@@ -74,7 +74,7 @@ function BookshelfDestructable:update()
 	if self.con == 1 then
 		local explosion = Sprite("effects/explosion_round")
 		explosion:setScale(2, 2)
-		explosion:setPosition(self.x + 10, self.y + 40)
+		explosion:setPosition(self.x - 10, self.y + 40)
 		explosion.layer = self.layer + 0.01
         explosion:play(1 / 18, false, function(s) s:remove() end)
         Game.world:addChild(explosion)

@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.10.2",
+  tiledversion = "1.11.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 12,
-  nextobjectid = 230,
+  nextobjectid = 233,
   properties = {
     ["border"] = "church_b",
     ["music"] = "second_church"
@@ -725,7 +725,7 @@ return {
           name = "",
           type = "",
           shape = "rectangle",
-          x = 440,
+          x = 400,
           y = 1000,
           width = 40,
           height = 280,
@@ -741,6 +741,19 @@ return {
           x = 560,
           y = 960,
           width = 80,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 231,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 440,
+          y = 1240,
+          width = 40,
           height = 40,
           rotation = 0,
           visible = true,
@@ -797,6 +810,19 @@ return {
           shape = "point",
           x = 1660,
           y = 360,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 230,
+          name = "entry2",
+          type = "",
+          shape = "point",
+          x = 520,
+          y = 1240,
           width = 0,
           height = 0,
           rotation = 0,
@@ -1974,6 +2000,22 @@ return {
           rotation = 0,
           visible = true,
           properties = {}
+        },
+        {
+          id = 232,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 480,
+          y = 1280,
+          width = 80,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "2_2nd_sanctuary/second_sanctum_7",
+            ["marker"] = "entry"
+          }
         }
       }
     },

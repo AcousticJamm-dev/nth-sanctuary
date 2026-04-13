@@ -573,6 +573,13 @@
             "width": 640,
             "x": 2120,
             "y": 8920
+        },
+        {
+            "fileName": "2_2nd_sanctuary/second_sanctum_7/second_sanctum_7.tmx",
+            "height": 2560,
+            "width": 1280,
+            "x": 0,
+            "y": 8840
         }
     ],
     "onlyShowAdjacentMaps": false,

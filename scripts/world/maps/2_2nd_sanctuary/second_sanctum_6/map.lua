@@ -74,10 +74,12 @@ function map:outOfBoundsFailsafe()
 			end
 		end
 		if self.bookshelf_debris_sprites then
-			for _, debris in ipairs(self.bookshelf_debris_sprites) do
-				if debris then
-					debris:remove()
-					TableUtils.removeValue(self.bookshelf_debris_sprites, debris)
+			for i = 1, 2 do
+				for _, debris in ipairs(self.bookshelf_debris_sprites) do
+					if debris then
+						debris:remove()
+						TableUtils.removeValue(self.bookshelf_debris_sprites, debris)
+					end
 				end
 			end
 		end

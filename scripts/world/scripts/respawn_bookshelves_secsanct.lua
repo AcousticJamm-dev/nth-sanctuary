@@ -22,7 +22,7 @@ return function(script)
 			end
 		end
 		if map.bookshelf_debris_sprites then
-			for i = 1, 2 do
+			for i = 1, math.ceil(#map.bookshelf_debris_sprites/2) do
 				for _, debris in ipairs(map.bookshelf_debris_sprites) do
 					if debris then
 						debris:remove()

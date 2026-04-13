@@ -25,6 +25,7 @@ return function(script)
 			for _, debris in ipairs(map.bookshelf_debris_sprites) do
 				if debris then
 					debris:remove()
+					TableUtils.removeValue(self.bookshelf_debris_sprites, debris)
 				end
 			end
 		end

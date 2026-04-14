@@ -583,9 +583,9 @@
         },
         {
             "fileName": "2_2nd_sanctuary/second_sanctum_8/second_sanctum_8.tmx",
-            "height": 960,
-            "width": 2240,
-            "x": -1120,
+            "height": 800,
+            "width": 1280,
+            "x": -80,
             "y": 11720
         }
     ],

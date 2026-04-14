@@ -28,7 +28,7 @@ function MainMenuOptions:initializeOptions()
             if current_music == "second_church" then
                 -- Force the music system to re-evaluate
                 Game.world.music:stop()
-                Game.world.music:play("second_church_gamble")
+                Game.world.music:play("second_church")
             end
         end
     end)

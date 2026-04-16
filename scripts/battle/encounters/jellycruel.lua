@@ -21,4 +21,13 @@ end
 function Jellycruel:createBackground()
     return Game.battle:addChild(self.bg)
 end
+
+function Jellycruel:onBattleStart()
+    Game:setBorder("jellycruel")
+end
+
+function Jellycruel:onBattleEnd()
+    Game:setBorder("tvworld")
+end
+
 return Jellycruel

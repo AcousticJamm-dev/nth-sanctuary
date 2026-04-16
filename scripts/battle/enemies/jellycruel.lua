@@ -124,6 +124,9 @@ function Jellycruel:onAct(battler, name)
         self:registerAct("BeCruel", "Be\ncruel", "susie")
 
         return {"* You tried to beg for mercy...", "* But your names weren't [color:yellow]YELLOW[color:white]...", "* But, [wait:5]more [color:yellow]ACT[color:reset]s have been unlocked!"}
+    elseif name == "BeCruel" then
+        self:addMercy(8)
+        return "* You and Susie showed cruelty!"
     elseif name == "BeCool" then
         battler:setAnimation("act")
         Game.battle:startActCutscene(function(cutscene)
@@ -153,4 +156,5 @@ function Jellycruel:onTurnStart()
         self.attack = 12
     end
 end
+
 return Jellycruel

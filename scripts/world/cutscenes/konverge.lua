@@ -287,11 +287,6 @@ return {
         end
     end,
     cruel = function (cutscene, event)
-        for _, child in ipairs(event.children) do
-            if child:includes(TileObject) then
-                child:remove()
-            end
-        end
         if Game:getFlag("cruelled") then
             cutscene:text("* (Never again.)")
             if Game:getFlag("cruelled") == 1 then
@@ -303,6 +298,11 @@ return {
                 Game:setFlag("cruelled", 2)
             end
             return
+        end
+        for _, child in ipairs(event.children) do
+            if child:includes(TileObject) then
+                child:remove()
+            end
         end
         event:setSprite("world/objects/treasure_chest_2")
         event:setScale(2, 1)

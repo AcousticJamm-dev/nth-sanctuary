@@ -406,9 +406,9 @@ return {
           type = "",
           shape = "rectangle",
           x = 600,
-          y = -80,
+          y = -40,
           width = 80,
-          height = 80,
+          height = 40,
           rotation = 0,
           visible = true,
           properties = {

@@ -184,7 +184,7 @@
     <property name="text5" value="* (With that, the power of choice drowns you.)"/>
    </properties>
   </object>
-  <object id="35" name="transition" x="600" y="-80" width="80" height="80">
+  <object id="35" name="transition" x="600" y="-40" width="80" height="40">
    <properties>
     <property name="map" value="0_base_sanctum/base_south_1"/>
     <property name="marker" value="hell"/>

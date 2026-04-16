@@ -18,7 +18,7 @@ return {
                     tick2 = 1
                 else
                     cutscene:text("* I foresee a crossroads...")
-                    cutscene:text("* I can only wish you two luck.")
+                    cutscene:text("* I can only wish you all luck.")
                 end
                 choicebox()
             elseif choice == 2 then

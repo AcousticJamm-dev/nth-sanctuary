@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 15,
-  nextobjectid = 290,
+  nextobjectid = 291,
   properties = {
     ["border"] = "church_b",
     ["music"] = "second_church"
@@ -57,7 +57,7 @@ return {
       id = 14,
       name = "objects_parallax",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -413,6 +413,20 @@ return {
           x = 160,
           y = 480,
           width = 320,
+          height = 120,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 290,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1280,
+          y = 360,
+          width = 40,
           height = 120,
           rotation = 0,
           opacity = 1,

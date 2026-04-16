@@ -68,6 +68,8 @@ function map:onEnter()
 
     self.fade_top_tiles = 6
     self.fade_bottom_tiles = 12
+    self.silhouette_tiles = Game.world.map:getTileLayer("tile_silhouette")
+	self.silhouette_tiles.visible = false
 end
 
 function map:onExit()

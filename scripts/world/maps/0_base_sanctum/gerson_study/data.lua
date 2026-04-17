@@ -9,8 +9,8 @@ return {
   height = 30,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 11,
-  nextobjectid = 221,
+  nextlayerid = 12,
+  nextobjectid = 222,
   properties = {
     ["border"] = "base_sanctum",
     ["music"] = "church_study_slower",
@@ -2012,6 +2012,40 @@ return {
           visible = true,
           properties = {
             ["type"] = "hsv2"
+          }
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 11,
+      name = "controllers",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 221,
+          name = "toggle",
+          type = "",
+          shape = "point",
+          x = 0,
+          y = 0,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["flag"] = "readCount",
+            ["inverted"] = true,
+            ["target"] = { id = 196 },
+            ["value"] = 10
           }
         }
       }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="24" height="30" tilewidth="40" tileheight="40" infinite="0" nextlayerid="11" nextobjectid="221">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="24" height="30" tilewidth="40" tileheight="40" infinite="0" nextlayerid="12" nextobjectid="222">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -306,6 +306,17 @@
   <object id="144" name="filter" x="-120" y="40.0006">
    <properties>
     <property name="type" value="hsv2"/>
+   </properties>
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup color="#00aa00" id="11" name="controllers">
+  <object id="221" name="toggle" x="0" y="0">
+   <properties>
+    <property name="flag" value="readCount"/>
+    <property name="inverted" type="bool" value="true"/>
+    <property name="target" type="object" value="196"/>
+    <property name="value" type="int" value="10"/>
    </properties>
    <point/>
   </object>

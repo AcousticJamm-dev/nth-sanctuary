@@ -1,7 +1,7 @@
 return {
-  version = "1.11",
+  version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.12.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -60,6 +60,7 @@ return {
           width = 416,
           height = 130,
           rotation = -315,
+          opacity = 1,
           gid = 793,
           visible = true,
           properties = {
@@ -76,6 +77,7 @@ return {
           width = 416,
           height = 130,
           rotation = -315,
+          opacity = 1,
           gid = 793,
           visible = true,
           properties = {
@@ -92,6 +94,7 @@ return {
           width = 416,
           height = 130,
           rotation = -315,
+          opacity = 1,
           gid = 793,
           visible = true,
           properties = {
@@ -108,6 +111,7 @@ return {
           width = 416,
           height = 130,
           rotation = -315,
+          opacity = 1,
           gid = 793,
           visible = true,
           properties = {
@@ -124,6 +128,7 @@ return {
           width = 416,
           height = 130,
           rotation = -315,
+          opacity = 1,
           gid = 793,
           visible = true,
           properties = {
@@ -156,6 +161,7 @@ return {
           width = 480,
           height = 150,
           rotation = 45,
+          opacity = 1,
           gid = 793,
           visible = true,
           properties = {
@@ -172,6 +178,7 @@ return {
           width = 480,
           height = 150,
           rotation = 45,
+          opacity = 1,
           gid = 793,
           visible = true,
           properties = {
@@ -188,6 +195,7 @@ return {
           width = 480,
           height = 150,
           rotation = 45,
+          opacity = 1,
           gid = 793,
           visible = true,
           properties = {
@@ -204,6 +212,7 @@ return {
           width = 480,
           height = 150,
           rotation = -45,
+          opacity = 1,
           gid = 793,
           visible = true,
           properties = {
@@ -220,6 +229,7 @@ return {
           width = 480,
           height = 150,
           rotation = -45,
+          opacity = 1,
           gid = 793,
           visible = true,
           properties = {
@@ -236,6 +246,7 @@ return {
           width = 480,
           height = 150,
           rotation = -45,
+          opacity = 1,
           gid = 793,
           visible = true,
           properties = {
@@ -268,6 +279,7 @@ return {
           width = 400,
           height = 1600,
           rotation = 0,
+          opacity = 1,
           gid = 1073742608,
           visible = true,
           properties = {}
@@ -282,6 +294,7 @@ return {
           width = 640,
           height = 1600,
           rotation = 0,
+          opacity = 1,
           gid = 1073742609,
           visible = true,
           properties = {}
@@ -296,6 +309,7 @@ return {
           width = 640,
           height = 1600,
           rotation = 45,
+          opacity = 1,
           gid = 785,
           visible = true,
           properties = {}
@@ -310,6 +324,7 @@ return {
           width = 2880,
           height = 100,
           rotation = 264.822,
+          opacity = 1,
           gid = 872,
           visible = true,
           properties = {}
@@ -324,6 +339,7 @@ return {
           width = 2880,
           height = 100,
           rotation = 248.191,
+          opacity = 1,
           gid = 872,
           visible = true,
           properties = {}
@@ -338,6 +354,7 @@ return {
           width = 2880,
           height = 100,
           rotation = 328.954,
+          opacity = 1,
           gid = 872,
           visible = true,
           properties = {}
@@ -352,6 +369,7 @@ return {
           width = 2880,
           height = 100,
           rotation = 349.312,
+          opacity = 1,
           gid = 872,
           visible = true,
           properties = {}
@@ -382,6 +400,7 @@ return {
           width = 311.141,
           height = 800,
           rotation = 270,
+          opacity = 1,
           gid = 789,
           visible = true,
           properties = {}
@@ -466,6 +485,7 @@ return {
           width = 240,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -479,6 +499,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["type"] = "hsv"
@@ -550,7 +571,7 @@ return {
       name = "Tile Layer 3",
       class = "",
       visible = true,
-      opacity = 0.5,
+      opacity = 1,
       offsetx = 0,
       offsety = 0,
       parallaxx = 1,
@@ -571,27 +592,27 @@ return {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 128, 129, 130, 128, 129, 130, 128, 129, 130, 128, 129, 130, 128, 129, 130, 128,
-        0, 0, 0, 0, 137, 138, 139, 137, 138, 139, 137, 138, 139, 137, 138, 139, 137, 138, 139, 137,
-        0, 0, 0, 0, 146, 147, 148, 146, 147, 148, 146, 147, 148, 146, 147, 148, 146, 147, 148, 146,
-        0, 0, 0, 0, 155, 0, 166, 155, 0, 166, 155, 0, 166, 155, 0, 166, 155, 0, 166, 155,
-        0, 0, 0, 0, 155, 0, 166, 155, 0, 166, 155, 0, 166, 155, 0, 166, 155, 0, 166, 155,
-        0, 0, 0, 0, 155, 156, 157, 155, 156, 157, 155, 156, 166, 164, 0, 166, 155, 0, 166, 155,
-        0, 0, 0, 0, 164, 165, 166, 164, 165, 166, 164, 165, 166, 164, 0, 166, 155, 0, 166, 155,
-        0, 0, 0, 0, 164, 165, 166, 164, 165, 166, 164, 0, 166, 164, 0, 166, 155, 0, 166, 155,
-        0, 0, 0, 0, 164, 165, 166, 164, 0, 166, 164, 0, 166, 164, 0, 166, 155, 0, 166, 155,
-        0, 0, 0, 0, 164, 165, 166, 164, 0, 166, 164, 0, 166, 164, 0, 166, 155, 0, 166, 155,
-        0, 128, 129, 130, 164, 165, 166, 164, 0, 166, 164, 0, 166, 164, 0, 166, 155, 0, 166, 155,
-        0, 137, 138, 139, 164, 165, 166, 164, 0, 166, 164, 0, 166, 164, 0, 166, 155, 0, 166, 155,
-        0, 146, 147, 148, 164, 165, 166, 164, 0, 166, 164, 0, 166, 164, 0, 166, 155, 0, 166, 155,
-        0, 155, 156, 157, 164, 165, 166, 164, 0, 166, 164, 0, 166, 164, 0, 166, 155, 0, 166, 155,
-        0, 164, 165, 166, 164, 165, 166, 164, 0, 166, 164, 0, 166, 164, 0, 166, 164, 0, 166, 155,
-        0, 164, 165, 166, 164, 165, 166, 164, 0, 166, 164, 0, 166, 164, 0, 166, 164, 0, 166, 155,
-        0, 164, 165, 166, 164, 165, 166, 164, 0, 166, 164, 0, 166, 164, 0, 166, 164, 0, 166, 155,
-        0, 164, 0, 166, 164, 0, 166, 164, 0, 166, 164, 0, 166, 164, 0, 166, 164, 0, 166, 155,
-        0, 164, 0, 166, 164, 0, 166, 164, 0, 166, 164, 0, 166, 164, 0, 166, 164, 0, 166, 155,
-        0, 164, 0, 166, 164, 0, 166, 164, 0, 166, 164, 0, 166, 164, 0, 166, 164, 0, 166, 155,
-        0, 164, 165, 166, 164, 0, 166, 164, 0, 166, 164, 0, 166, 164, 0, 166, 164, 0, 166, 155
+        0, 0, 0, 0, 128, 129, 130, 127, 128, 129, 130, 127, 128, 129, 130, 127, 128, 129, 130, 127,
+        0, 0, 0, 0, 137, 138, 139, 136, 137, 138, 139, 136, 137, 138, 139, 136, 137, 138, 139, 136,
+        0, 0, 0, 0, 146, 147, 148, 145, 146, 147, 148, 145, 146, 147, 148, 145, 146, 147, 148, 145,
+        0, 0, 0, 0, 155, 0, 166, 154, 155, 0, 166, 154, 155, 0, 166, 154, 155, 0, 166, 154,
+        0, 0, 0, 0, 155, 0, 166, 154, 155, 0, 166, 154, 155, 0, 166, 154, 155, 0, 166, 154,
+        0, 0, 0, 0, 155, 156, 157, 154, 155, 156, 157, 154, 155, 0, 157, 154, 155, 156, 157, 154,
+        0, 0, 0, 0, 164, 165, 166, 154, 164, 165, 166, 154, 164, 0, 166, 154, 164, 165, 166, 154,
+        0, 0, 0, 0, 164, 165, 166, 154, 164, 165, 166, 154, 164, 0, 166, 154, 164, 165, 166, 154,
+        0, 0, 0, 0, 164, 165, 166, 154, 164, 165, 166, 154, 164, 0, 166, 154, 164, 165, 166, 154,
+        0, 0, 0, 0, 164, 165, 166, 154, 164, 165, 166, 154, 164, 0, 166, 154, 164, 165, 166, 154,
+        0, 128, 129, 130, 164, 165, 166, 154, 164, 165, 166, 154, 164, 0, 166, 154, 164, 165, 166, 154,
+        0, 137, 138, 139, 164, 165, 166, 154, 164, 165, 166, 154, 164, 0, 166, 154, 164, 165, 166, 154,
+        0, 146, 147, 148, 164, 165, 166, 154, 164, 165, 166, 154, 164, 0, 166, 154, 164, 165, 166, 154,
+        0, 155, 156, 157, 164, 165, 166, 154, 164, 165, 166, 154, 164, 0, 166, 154, 164, 165, 166, 154,
+        0, 164, 165, 166, 164, 165, 166, 154, 164, 165, 166, 154, 164, 0, 166, 154, 164, 165, 166, 154,
+        0, 164, 165, 166, 164, 165, 166, 154, 164, 165, 166, 154, 164, 0, 166, 154, 164, 165, 166, 154,
+        0, 164, 165, 166, 164, 165, 166, 154, 164, 165, 166, 154, 164, 0, 166, 154, 164, 0, 166, 154,
+        0, 164, 165, 166, 164, 0, 166, 154, 164, 0, 166, 154, 164, 0, 166, 154, 164, 0, 166, 154,
+        0, 164, 165, 166, 164, 0, 166, 154, 164, 0, 166, 154, 164, 0, 166, 154, 164, 0, 166, 154,
+        0, 164, 165, 166, 164, 0, 166, 154, 164, 0, 166, 154, 164, 0, 166, 154, 164, 0, 166, 154,
+        0, 164, 165, 166, 164, 0, 166, 154, 164, 0, 166, 154, 164, 0, 166, 154, 164, 0, 166, 154
       }
     },
     {
@@ -733,7 +754,7 @@ return {
         0, 10, 10, 10, 10, 10, 10, 10, 37, 38, 39, 40, 39, 39, 40, 41, 10, 10, 10, 10,
         0, 10, 10, 10, 10, 10, 10, 10, 55, 56, 57, 58, 57, 57, 58, 59, 10, 10, 10, 10,
         0, 10, 10, 10, 28, 28, 28, 28, 64, 65, 68, 66, 67, 69, 70, 71, 28, 28, 28, 28,
-        0, 10, 10, 10, 0, 0, 0, 0, 73, 74, 77, 75, 76, 78, 79, 80, 0, 0, 0, 0,
+        0, 10, 10, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 10, 10, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 10, 10, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 10, 10, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -750,10 +771,10 @@ return {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 88, 10, 10, 10, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 88, 97, 10, 10, 10, 0, 0,
         174, 174, 174, 174, 174, 174, 174, 174, 174, 174, 174, 174, 88, 97, 106, 28, 28, 28, 0, 0,
-        10, 2, 3, 132, 133, 134, 35, 10, 10, 10, 10, 10, 97, 106, 115, 128, 129, 130, 0, 0,
-        10, 10, 132, 44, 44, 44, 142, 10, 10, 10, 10, 10, 106, 115, 0, 137, 138, 139, 0, 0,
-        28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 115, 0, 0, 146, 147, 148, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 155, 156, 157, 0, 0
+        10, 2, 3, 132, 133, 134, 35, 10, 10, 10, 10, 10, 97, 106, 0, 127, 0, 127, 0, 0,
+        10, 10, 132, 44, 44, 44, 142, 10, 10, 10, 10, 10, 106, 115, 0, 136, 0, 136, 0, 0,
+        28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 115, 0, 0, 0, 0, 145, 0, 0,
+        128, 129, 130, 127, 128, 129, 130, 127, 128, 129, 130, 127, 0, 0, 0, 0, 0, 154, 0, 0
       }
     },
     {
@@ -780,6 +801,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -863,6 +885,7 @@ return {
           width = 480,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -876,6 +899,7 @@ return {
           width = 480,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -889,6 +913,7 @@ return {
           width = 120,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -902,6 +927,7 @@ return {
           width = 80,
           height = 160,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -915,6 +941,7 @@ return {
           width = 120,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -928,6 +955,7 @@ return {
           width = 200,
           height = 160,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -941,6 +969,7 @@ return {
           width = 120,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -954,6 +983,7 @@ return {
           width = 40,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -967,6 +997,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           polygon = {
             { x = 0, y = 0 },
@@ -985,6 +1016,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           polygon = {
             { x = 0, y = 0 },
@@ -1003,6 +1035,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           polygon = {
             { x = 0, y = 0 },
@@ -1021,6 +1054,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           polygon = {
             { x = 0, y = 0 },
@@ -1039,6 +1073,7 @@ return {
           width = 120,
           height = 320,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -1052,6 +1087,7 @@ return {
           width = 520,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -1065,6 +1101,7 @@ return {
           width = 40,
           height = 480,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -1078,6 +1115,7 @@ return {
           width = 760,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -1091,6 +1129,7 @@ return {
           width = 440,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -1104,6 +1143,7 @@ return {
           width = 80,
           height = 240,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -1117,6 +1157,7 @@ return {
           width = 120,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -1130,6 +1171,7 @@ return {
           width = 120,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -1159,6 +1201,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -1172,6 +1215,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -1185,6 +1229,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -1198,6 +1243,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -1227,6 +1273,7 @@ return {
           width = 40,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "4_4th_sanctuary/fourth_sanctum_2",
@@ -1243,6 +1290,7 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -1256,6 +1304,7 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["area"] = { id = 37 }
@@ -1271,6 +1320,7 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -1284,6 +1334,7 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -1297,6 +1348,7 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -1310,6 +1362,7 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -1323,6 +1376,7 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -1336,6 +1390,7 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -1349,6 +1404,7 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["area"] = { id = 45 }
@@ -1364,6 +1420,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["prophecy"] = true
@@ -1379,6 +1436,7 @@ return {
           width = 320,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["lockx"] = true,
@@ -1397,6 +1455,7 @@ return {
           width = 40,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "4_4th_sanctuary/fourth_sanctum_4",
@@ -1413,6 +1472,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "organikk",
@@ -1433,6 +1493,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "organikk",
@@ -1453,6 +1514,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "organikk",
@@ -1473,6 +1535,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "organikk",
@@ -1493,6 +1556,7 @@ return {
           width = 320,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["offx"] = 158,
@@ -1532,6 +1596,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -1561,6 +1626,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["type"] = "hsv3"

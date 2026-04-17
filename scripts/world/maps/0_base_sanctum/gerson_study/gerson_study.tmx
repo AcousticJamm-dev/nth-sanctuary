@@ -116,9 +116,7 @@
   <object id="155" gid="621" x="262" y="887" width="36" height="50"/>
   <object id="173" name="interactable" x="150.333" y="280" width="158.333" height="29">
    <properties>
-    <property name="text1" value="* A bunch of dusty, dry history books."/>
-    <property name="text2" value="* They seem to be standing in the way..."/>
-    <property name="text3" value="* ... Of something far more interesting."/>
+    <property name="cutscene" value="study.jack"/>
    </properties>
   </object>
   <object id="176" name="interactable" x="356" y="685.167" width="262.803" height="85.8333">

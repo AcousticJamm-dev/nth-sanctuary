@@ -700,9 +700,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "* A bunch of dusty, dry history books.",
-            ["text2"] = "* They seem to be standing in the way...",
-            ["text3"] = "* ... Of something far more interesting."
+            ["cutscene"] = "study.jack"
           }
         },
         {

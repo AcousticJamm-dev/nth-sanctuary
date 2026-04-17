@@ -77,6 +77,7 @@ function Mod:registerDebugOptions(debug)
 end
 
 function Mod:init()
+    self.sound_timer = 0
     print("Loaded "..self.info.name.."!")
     Game:registerEvent("squeak", function(data)
         return Squeak(data.x, data.y, {data.width, data.height, data.polygon})
@@ -361,6 +362,13 @@ function Mod:onTextSound(sound, node)
             Assets.playSound("voice/chops/t7")
         end
         return true
+    elseif sound == "jack" then
+        if self.sound_timer == 0 then
+            local snd = Assets.stopAndPlaySound("voice/jack")
+            snd:setPitch(0.9 + MathUtils.random(0.15))
+            self.sound_timer = 4
+        end
+        return true
     end
 end
 
@@ -463,6 +471,11 @@ function Mod:getDarkShard(id)
     local subid = bit.band(id, 0b00011111)
     return bit.band(self.dark_shards[word] or 0, bit.lshift(1, subid)) ~= 0
 end
+
+function Mod:preUpdate()
+    self.sound_timer = MathUtils.approach(self.sound_timer, 0, DTMULT)
+end
+
 --[==[
 function Mod:preInit()
     ---@return string|number[][]

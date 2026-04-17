@@ -40,6 +40,9 @@ return {
         local susie, ralsei, kris = cutscene:getCharacter("susie"),cutscene:getCharacter("ralsei"),cutscene:getCharacter("kris")
 		cutscene:detachCamera()
 		cutscene:detachFollowers()
+        for _, save in ipairs(Game.world.map:getEvents("savepoint")) do
+            save.visible = false
+        end
 
 		Assets.playSound("sussurprise")
 		susie:setSprite("surprise_step")
@@ -49,7 +52,7 @@ return {
 		cutscene:text("* ... Old man!", "dejected_scared")
 
 		susie:resetSprite()
-		susie:walkTo(481, susie.y, 1.5)
+		susie:walkTo(481, 960, 1.5)
 		cutscene:wait(cutscene:panTo(484, 784, 1.5))
 		cutscene:wait(0.01)
 		susie:setFacing("up")
@@ -78,6 +81,9 @@ return {
         cutscene:wait(cutscene:attachFollowers())
 		kris:setFacing("down")
 		susie:setFacing("down")
+        for _, save in ipairs(Game.world.map:getEvents("savepoint")) do
+            save.visible = true
+        end
 		Game:setFlag("enteredGersonStudy", true)
     end,
     fountain = function(cutscene, event)

@@ -78,8 +78,8 @@ return {
 		cutscene:text("* Maybe we can find something interesting.", "dejected_smile")
 		
 		cutscene:attachCamera()
-		susie:walkTo(340, 960, 1.5)
-		cutscene:wait(1.5)
+		susie:walkTo(340, 960, 1)
+		cutscene:wait(1)
         cutscene:wait(cutscene:attachFollowers())
 		kris:setFacing("down")
 		susie:setFacing("down")

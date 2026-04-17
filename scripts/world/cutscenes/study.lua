@@ -178,7 +178,7 @@ return {
 			[10] = Game:getFlag("route") ~= 3 and {
 				"* (Wait, [wait:5]this passage feels like it was just written.)",
 				"* \"Project Dusk is going very smoothly.\"",
-				"* \"A shame I\"ve to be the undercover one.\"",
+				"* \"A shame I've to be the undercover one.\"",
 				"* \"Oh well. [wait:10]Beggars can't be choosers.\"",
 				"* \"If I want to climb, [wait:5]then I will do so.\"",
 				"* \"...By coordinating the fresh bodies that stepped right in.\"",

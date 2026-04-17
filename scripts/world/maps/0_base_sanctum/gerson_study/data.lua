@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 11,
-  nextobjectid = 220,
+  nextobjectid = 221,
   properties = {
     ["border"] = "base_sanctum",
     ["music"] = "church_study_slower",
@@ -734,8 +734,8 @@ return {
           shape = "rectangle",
           x = 150.333,
           y = 280,
-          width = 158.333,
-          height = 29,
+          width = 89.667,
+          height = 40,
           rotation = 0,
           opacity = 1,
           visible = true,
@@ -826,6 +826,22 @@ return {
             ["text2"] = "* (The old man is still missing...)[wait:5]\n* (Susie looks like she's lost in thought in this place.)",
             ["text3"] = "* (But despite all that...)",
             ["text4"] = "* (You are filled with the power of investigating what happened here.)"
+          }
+        },
+        {
+          id = 220,
+          name = "interactable",
+          type = "",
+          shape = "rectangle",
+          x = 150.333,
+          y = 280,
+          width = 169.667,
+          height = 50,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["cutscene"] = "study.jack"
           }
         }
       }

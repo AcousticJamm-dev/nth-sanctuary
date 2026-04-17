@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="24" height="30" tilewidth="40" tileheight="40" infinite="0" nextlayerid="11" nextobjectid="220">
+<map version="1.10" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="24" height="30" tilewidth="40" tileheight="40" infinite="0" nextlayerid="11" nextobjectid="221">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -115,7 +115,7 @@
   <object id="163" gid="621" x="222" y="326" width="36" height="50"/>
   <object id="186" gid="621" x="566" y="309" width="36" height="50"/>
   <object id="155" gid="621" x="262" y="887" width="36" height="50"/>
-  <object id="173" name="interactable" x="150.333" y="280" width="158.333" height="29">
+  <object id="173" name="interactable" x="150.333" y="280" width="89.667" height="40">
    <properties>
     <property name="cutscene" value="study.jack"/>
    </properties>
@@ -146,6 +146,11 @@
 * (Susie looks like she's lost in thought in this place.)</property>
     <property name="text3" value="* (But despite all that...)"/>
     <property name="text4" value="* (You are filled with the power of investigating what happened here.)"/>
+   </properties>
+  </object>
+  <object id="220" name="interactable" x="150.333" y="280" width="169.667" height="50">
+   <properties>
+    <property name="cutscene" value="study.jack"/>
    </properties>
   </object>
  </objectgroup>

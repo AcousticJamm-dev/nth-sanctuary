@@ -237,7 +237,7 @@
   <object id="323" name="tile_oscillate" x="0" y="400" width="320" height="120"/>
   <object id="324" name="tile_oscillate" x="720" y="600" width="280" height="120"/>
   <object id="325" name="tile_oscillate" x="1360" y="800" width="320" height="120"/>
-  <object id="326" name="texturescroller" x="-40" y="220">
+  <object id="326" name="texturescroller" x="40" y="0">
    <properties>
     <property name="type" value="hsv"/>
    </properties>
@@ -762,12 +762,12 @@
   </object>
  </objectgroup>
  <objectgroup id="31" name="objects_fog">
-  <object id="120" name="churchfog" x="1093.94" y="-192.364">
+  <object id="120" name="churchfog" x="80" y="0">
    <point/>
   </object>
  </objectgroup>
  <objectgroup id="4" name="objects_top" offsetx="-1200" offsety="520">
-  <object id="121" name="filter" x="1040" y="-296">
+  <object id="121" name="filter" x="1200" y="-520">
    <properties>
     <property name="type" value="hsv"/>
    </properties>

@@ -3,7 +3,7 @@ local Wicabel, super = HookSystem.hookScript("wicabel")
 function Wicabel:init()
     super.init(self)
 	
-    self:registerAct("J-Tuningx2", "Tuning\ntwice", {"jamm"})
+    self:registerAct("RingBell", "Aim and\nshoot at\nWicabel", {"jamm"})
 end
 
 function Wicabel:onAct(battler, name)
@@ -13,7 +13,7 @@ function Wicabel:onAct(battler, name)
         local tuning = WicabelTuning(self, battler, isdouble, Game.battle:getPartyBattler('susie'))
         Game.battle:addChild(tuning)
         return
-    elseif name =="J-Tuningx2" then
+    elseif name =="RingBell" then
         local tuning = WicabelTuning(self, battler, true, Game.battle:getPartyBattler('jamm'))
         Game.battle:addChild(tuning)
         return

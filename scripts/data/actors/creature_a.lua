@@ -22,7 +22,7 @@ function actor:init()
     -- Path to this actor's sprites (defaults to "")
     self.path = "enemies/creature_a"
     -- This actor's default sprite or animation, relative to the path (defaults to "")
-    self.default = "body"
+    self.default = nil
 
     -- Sound to play when this actor speaks (optional)
     self.voice = nil

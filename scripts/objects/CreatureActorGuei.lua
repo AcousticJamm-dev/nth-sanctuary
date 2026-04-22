@@ -8,7 +8,7 @@ function CreatureActorGuei:init(actor)
 
 
     super.init(self, actor)
-    self.body = Sprite(self:getTexturePath("body"), 0, 0)
+    self.body = Sprite(self:getTexturePath("body"), 0, 24)
     self.body.debug_select = true
     self:addChild(self.body)
     self.body:addFX(static_fx, "static_fx")
@@ -55,6 +55,8 @@ function CreatureActorGuei:update()
 
     self.siner = self.siner + DT
     self.animsiner = self.animsiner + (1 * DTMULT)
+
+    self.body:setFrame(math.floor(self.animsiner / 6))
 
     self.hand.x = math.sin(self.siner * 1.5) * 24 + 8
     self.hand.y = -math.cos(self.siner * 1.5) * 12 + 30

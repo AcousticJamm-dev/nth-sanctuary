@@ -21,4 +21,7 @@ function Dummy:init()
     --self:addEnemy("dummy")
 end
 
+function Dummy:createBackground()
+    return Game.battle:addChild(CreatureBG())
+end
 return Dummy

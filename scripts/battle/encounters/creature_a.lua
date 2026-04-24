@@ -10,7 +10,7 @@ function Dummy:init()
 ]]
 
     -- Battle music ("battle" is rude buster)
-    self.music = "titan_spawn2"
+    self.music = "battle_creature"
     -- Enables the purple grid battle background
     self.background = true
 

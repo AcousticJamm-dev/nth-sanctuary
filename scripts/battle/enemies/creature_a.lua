@@ -32,6 +32,7 @@ function Dummy:init()
     self.waves = {
         "creatures/guei/basic",
         "creatures/guei/guei_fire",
+        "creatures/guei/box_grab_rain",
         
 
     }
@@ -68,7 +69,7 @@ end
 function Dummy:onHurt(damage, battler)
 	super.onHurt(self, damage, battler)
 
-    Assets.stopAndPlaySound("spawn_weaker")
+    Assets.stopAndPlaySound("creature_hurt", 1.5)
 end
 
 function Dummy:getAttackDamage(damage, battler, points)

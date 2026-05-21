@@ -30,7 +30,7 @@ function Dummy:init()
 
     -- Mercy given when sparing this enemy before its spareable (20% for basic enemies)
     self.spare_points = 0
-
+	
     -- List of possible wave ids, randomly picked each turn
     self.waves = {
         "creatures/guei/basic",
@@ -41,7 +41,8 @@ function Dummy:init()
     }
 
     -- Dialogue randomly displayed in the enemy's speech bubble
-    self.dialogue = {}
+    self.dialogue = {"..."}
+    self.dialogue_offset = {0, -48}
 
     -- Check text (automatically has "ENEMY NAME - " at the start)
     self.check = {
@@ -103,6 +104,26 @@ function Dummy:getAttackDamage(damage, battler, points)
         return math.ceil(dmg/1.5)
     end
     --return super.getAttackDamage(self, damage, battler, points)
+end
+
+function Dummy:spawnSpeechBubble(...)
+    self.balloon_type = 1
+
+    local x, y = self.sprite:getRelativePos(-40, self.sprite.height/2, Game.battle)
+    if self.dialogue_offset then
+        x, y = x + self.dialogue_offset[1], y + self.dialogue_offset[2]
+    end
+    local tx, ty = x + 90, y + 30
+	Assets.stopAndPlaySound("giygastalk")
+    local textbox = CreatureGueiTextbox(x, y, 60, 60, tx, ty, "right", self.balloon_type)	
+	textbox.spike_drawing = {
+		top = true,
+		left = true,
+		right = true,
+		bottom = true
+	}
+    Game.battle:addChild(textbox)
+    return textbox
 end
 
 function Dummy:onAct(battler, name)

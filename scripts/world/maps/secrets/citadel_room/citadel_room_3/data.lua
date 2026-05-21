@@ -1,7 +1,7 @@
 return {
   version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.12.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -93,6 +93,7 @@ return {
           width = 40,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -106,6 +107,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["type"] = "hsv"
@@ -205,6 +207,7 @@ return {
           width = 1040,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -218,6 +221,7 @@ return {
           width = 1040,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -231,6 +235,7 @@ return {
           width = 40,
           height = 200,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -244,6 +249,7 @@ return {
           width = 40,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -257,6 +263,7 @@ return {
           width = 80,
           height = 280,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -270,6 +277,7 @@ return {
           width = 80,
           height = 160,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -299,6 +307,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -312,6 +321,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -325,6 +335,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -354,6 +365,7 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "spamton",
@@ -370,6 +382,7 @@ return {
           width = 40,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "secrets/citadel_room/citadel_room_1",
@@ -386,6 +399,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "ral",
@@ -405,6 +419,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "mason",
@@ -421,6 +436,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "ddelta",
@@ -437,6 +453,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "mangle",
@@ -453,6 +470,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "waferr",
@@ -471,6 +489,7 @@ return {
           width = 40,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["cutscene"] = "events.scarlet_tree",
@@ -488,12 +507,12 @@ return {
           width = 120,
           height = 120,
           rotation = 0,
+          opacity = 1,
           gid = 157,
           visible = true,
           properties = {
+            ["cutscene"] = "secrets.camac",
             ["solid"] = "true",
-            ["text1"] = "* camac 117",
-            ["text2"] = "* big balls metal gear",
             ["usetile"] = true
           }
         }

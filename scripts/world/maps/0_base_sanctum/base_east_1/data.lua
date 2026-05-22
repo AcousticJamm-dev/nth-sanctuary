@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.12.1",
+  tiledversion = "1.10.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 24,
-  nextobjectid = 102,
+  nextobjectid = 106,
   properties = {
     ["border"] = "base_sanctum",
     ["music"] = "homebase"
@@ -106,7 +106,6 @@ return {
           width = 400,
           height = 578,
           rotation = 0,
-          opacity = 1,
           gid = 633,
           visible = true,
           properties = {}
@@ -121,7 +120,6 @@ return {
           width = 640,
           height = 1600,
           rotation = 0,
-          opacity = 1,
           gid = 637,
           visible = true,
           properties = {}
@@ -136,7 +134,6 @@ return {
           width = 400,
           height = 578,
           rotation = 0,
-          opacity = 1,
           gid = 633,
           visible = true,
           properties = {}
@@ -167,7 +164,6 @@ return {
           width = 900,
           height = 1200,
           rotation = 270,
-          opacity = 1,
           gid = 641,
           visible = true,
           properties = {}
@@ -526,7 +522,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["trigger_horz"] = 200
@@ -542,7 +537,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["trigger_horz"] = 200
@@ -615,7 +609,6 @@ return {
           width = 1040,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -629,7 +622,6 @@ return {
           width = 880,
           height = 80,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -643,7 +635,6 @@ return {
           width = 40,
           height = 480,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -657,7 +648,6 @@ return {
           width = 720,
           height = 80,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -671,7 +661,6 @@ return {
           width = 40,
           height = 320,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -685,7 +674,6 @@ return {
           width = 880,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -699,7 +687,6 @@ return {
           width = 200,
           height = 80,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -713,7 +700,6 @@ return {
           width = 280,
           height = 120,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -727,7 +713,6 @@ return {
           width = 120,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -741,7 +726,6 @@ return {
           width = 120,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -755,7 +739,6 @@ return {
           width = 200,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -785,7 +768,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -799,7 +781,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -813,7 +794,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -827,7 +807,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -857,7 +836,6 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["area"] = { id = 5 }
@@ -873,7 +851,6 @@ return {
           width = 120,
           height = 80,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -887,7 +864,6 @@ return {
           width = 120,
           height = 80,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -901,7 +877,6 @@ return {
           width = 120,
           height = 80,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -915,7 +890,6 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["area"] = { id = 7 }
@@ -931,7 +905,6 @@ return {
           width = 40,
           height = 80,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "0_base_sanctum/base_center",
@@ -944,15 +917,13 @@ return {
           type = "",
           shape = "point",
           x = 880,
-          y = 770,
+          y = 760,
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "jamm",
-            ["cutscene"] = "primary.jamm",
             ["flagcheck"] = "!jamm_join"
           }
         },
@@ -966,7 +937,6 @@ return {
           width = 40,
           height = 80,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "0_base_sanctum/base_east_2",
@@ -983,7 +953,6 @@ return {
           width = 280,
           height = 80,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["offx"] = 150,
@@ -1005,7 +974,6 @@ return {
           width = 280,
           height = 80,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["lockx"] = true,
@@ -1024,10 +992,25 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["prophecy"] = true
+          }
+        },
+        {
+          id = 102,
+          name = "script",
+          type = "",
+          shape = "rectangle",
+          x = 640,
+          y = 720,
+          width = 40,
+          height = 82.6667,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["cutscene"] = "primary.jamm",
+            ["flagcheck"] = "!jamm_join"
           }
         }
       }
@@ -1056,7 +1039,6 @@ return {
           width = 160,
           height = 720,
           rotation = 0,
-          opacity = 1,
           gid = 625,
           visible = true,
           properties = {
@@ -1076,7 +1058,6 @@ return {
           width = 160,
           height = 720,
           rotation = 0,
-          opacity = 1,
           gid = 625,
           visible = true,
           properties = {
@@ -1096,7 +1077,6 @@ return {
           width = 376,
           height = 458,
           rotation = 0,
-          opacity = 1,
           gid = 623,
           visible = true,
           properties = {
@@ -1117,7 +1097,6 @@ return {
           width = 376,
           height = 458,
           rotation = 0,
-          opacity = 1,
           gid = 623,
           visible = true,
           properties = {
@@ -1138,7 +1117,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -1152,7 +1130,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["alpha"] = 0.2,
@@ -1185,7 +1162,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -1215,7 +1191,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["type"] = "hsv"
@@ -1231,7 +1206,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["force_above"] = true,

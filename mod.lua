@@ -446,6 +446,12 @@ function Mod:onMapMusic(map, music)
 	end
 end
 
+function Mod:onMapBorder(map, border)
+	if border == "leaves" and Game:getFlag("hometown_time", "day") == "night" then
+		return "leaves_night"
+	end
+end
+
 
 function Mod:onShadowCrystal(item, light)
     if light then return end

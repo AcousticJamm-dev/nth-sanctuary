@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="16" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="6" nextobjectid="20">
+<map version="1.11" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="16" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="6" nextobjectid="20">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -62,13 +62,6 @@
     <property name="marker" value="entryrudy"/>
     <property name="sound" value="dooropen"/>
    </properties>
-  </object>
-  <object id="19" name="npc" x="320" y="286">
-   <properties>
-    <property name="actor" value="rudy"/>
-    <property name="cutscene" value="hometown.rudy"/>
-   </properties>
-   <point/>
   </object>
  </objectgroup>
  <objectgroup color="#ff00ff" id="5" name="markers">

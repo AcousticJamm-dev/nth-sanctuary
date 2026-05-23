@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="23" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="7" nextobjectid="34">
+<map version="1.11" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="23" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="7" nextobjectid="34">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -29,7 +29,6 @@
   <object id="32" name="npc" x="543" y="164">
    <properties>
     <property name="actor" value="sans"/>
-    <property name="cutscene" value="hometown.sans"/>
    </properties>
    <point/>
   </object>

@@ -367,7 +367,7 @@ return {
           visible = true,
           properties = {
             ["facing"] = "down",
-            ["map"] = "hometown/interior/library_lobby",
+            ["map"] = "light/hometown/interior/library_lobby",
             ["marker"] = "entrycyber"
           }
         },

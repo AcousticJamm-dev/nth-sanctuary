@@ -172,7 +172,7 @@ function LightRainEffect:update()
 				local raindrop
 				local cx, cy = Game.world.camera.x - SCREEN_WIDTH / 2, Game.world.camera.y - SCREEN_HEIGHT / 2
 				if self.prewarm then
-					raindrop = LightRainDrop(cx + MathUtils.randomInt(720) + (64 * self.xdir), cy - 38 + MathUtils.randomInt(278))
+					raindrop = LightRainDrop(cx + MathUtils.randomInt(720) + (64 * self.xdir), cy - 76 + MathUtils.randomInt(556))
 					if self.inherit_visibility then
 						raindrop.visible = self.visible
 					end

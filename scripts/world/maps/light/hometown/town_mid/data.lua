@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 32,
-  nextobjectid = 71,
+  nextobjectid = 72,
   properties = {
     ["border"] = "leaves",
     ["light"] = true,
@@ -980,7 +980,7 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["cond"] = "Game:getFlag(\"hometown_time\", \"day\") == \"day\" and not Game.stage:hasWeather(\"rain\")",
+            ["cond"] = "Game:getFlag(\"hometown_time\", \"day\") == \"day\" and Game:getFlag(\"hometown_raining\", 0) == 0",
             ["scalex"] = 2,
             ["scaley"] = 2,
             ["speed"] = 0.5,
@@ -1188,6 +1188,20 @@ return {
           type = "",
           shape = "point",
           x = 0,
+          y = 0,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 71,
+          name = "lwraineffect",
+          type = "",
+          shape = "point",
+          x = 40,
           y = 0,
           width = 0,
           height = 0,

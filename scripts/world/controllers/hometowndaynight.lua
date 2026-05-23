@@ -70,19 +70,19 @@ function HometownDayNight:postLoad()
 			end
 		end
 	end
-	--[[if Game.stage:hasWeather("rain") then
+	if Game:getFlag("hometown_raining", 0) > 0 then
 		for index, value in ipairs(Game.world.stage:getObjects(Object)) do
 			if value.rain_mode == 0 then
 				value:remove()
 			end
 		end
-	else]]
+	else
 		for index, value in ipairs(Game.world.stage:getObjects(Object)) do
 			if value.rain_mode == 1 then
 				value:remove()
 			end
 		end
-	--end
+	end
 end
 
 function HometownDayNight:onRemove(parent)

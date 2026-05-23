@@ -85,7 +85,7 @@ function Interactable:onInteract(player, dir)
 			elseif self.sunrise_text and time == "sunrise" then
 				text = self.sunrise_text
 			end
-			if self.rain_text and Game.stage:hasWeather("rain") then
+			if self.rain_text and Game:getFlag("hometown_raining", 0) > 0 then
 				text = self.rain_text
 			end
             local text_index = Utils.clamp(self.interact_count, 1, #text)

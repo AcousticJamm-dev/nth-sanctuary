@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.10.2",
+  tiledversion = "1.12.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 20,
-  nextobjectid = 18,
+  nextobjectid = 19,
   properties = {
     ["border"] = "leaves",
     ["light"] = true,
@@ -374,6 +374,7 @@ return {
           width = 440,
           height = 380,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -387,6 +388,7 @@ return {
           width = 1160,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -400,6 +402,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           polygon = {
             { x = 0, y = 0 },
@@ -418,6 +421,7 @@ return {
           width = 80,
           height = 600,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -431,6 +435,7 @@ return {
           width = 64,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -444,6 +449,7 @@ return {
           width = 124,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -457,6 +463,7 @@ return {
           width = 124,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -470,6 +477,7 @@ return {
           width = 94,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -483,6 +491,7 @@ return {
           width = 90,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -496,6 +505,7 @@ return {
           width = 66,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -525,6 +535,7 @@ return {
           width = 40,
           height = 220,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["facing"] = "left",
@@ -542,6 +553,7 @@ return {
           width = 80,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["facing"] = "up",
@@ -575,6 +587,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -588,6 +601,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -653,6 +667,21 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 18,
+          name = "lwraineffect",
+          type = "",
+          shape = "point",
+          x = 20,
+          y = -20,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }

@@ -1,7 +1,7 @@
 return {
   version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.12.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 11,
-  nextobjectid = 29,
+  nextobjectid = 30,
   properties = {
     ["border"] = "leaves",
     ["church"] = true,
@@ -83,6 +83,7 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -96,6 +97,7 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -109,6 +111,7 @@ return {
           width = 480,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -122,6 +125,7 @@ return {
           width = 480,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -135,6 +139,7 @@ return {
           width = 40,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -148,6 +153,7 @@ return {
           width = 240,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -161,6 +167,7 @@ return {
           width = 40,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -174,6 +181,7 @@ return {
           width = 240,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -187,6 +195,7 @@ return {
           width = 120,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -200,6 +209,7 @@ return {
           width = 120,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -229,6 +239,7 @@ return {
           width = 80,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["exit_sound"] = "doorclose",
@@ -248,6 +259,7 @@ return {
           width = 80,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["exit_sound"] = "doorclose",
@@ -267,6 +279,7 @@ return {
           width = 80,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["exit_sound"] = "doorclose",
@@ -286,6 +299,7 @@ return {
           width = 80,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["exit_sound"] = "doorclose",
@@ -305,6 +319,7 @@ return {
           width = 106,
           height = 74,
           rotation = 0,
+          opacity = 1,
           gid = 89,
           visible = true,
           properties = {}
@@ -319,6 +334,7 @@ return {
           width = 106,
           height = 28,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["cutscene"] = "church.candles",
@@ -335,6 +351,7 @@ return {
           width = 120,
           height = 26,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["cutscene"] = "church.entrance_bookshelf",
@@ -351,6 +368,7 @@ return {
           width = 52,
           height = 26,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["cutscene"] = "church.holy_water"
@@ -366,6 +384,7 @@ return {
           width = 26,
           height = 26,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["cutscene"] = "church.fire_extinguisher"
@@ -397,6 +416,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -410,6 +430,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -423,6 +444,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -436,6 +458,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -449,6 +472,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -494,10 +518,25 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["palette"] = "world/church_palette"
           }
+        },
+        {
+          id = 29,
+          name = "lwraineffect",
+          type = "",
+          shape = "point",
+          x = 20,
+          y = 0,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
         }
       }
     }

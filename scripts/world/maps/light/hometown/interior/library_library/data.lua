@@ -9,8 +9,8 @@ return {
   height = 12,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 6,
-  nextobjectid = 14,
+  nextlayerid = 7,
+  nextobjectid = 15,
   properties = {
     ["border"] = "leaves",
     ["inside"] = true,
@@ -254,6 +254,36 @@ return {
           shape = "point",
           x = 486,
           y = 440,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 6,
+      name = "controllers",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 14,
+          name = "lwraineffect",
+          type = "",
+          shape = "point",
+          x = 0,
+          y = 0,
           width = 0,
           height = 0,
           rotation = 0,

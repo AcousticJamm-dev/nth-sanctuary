@@ -4,6 +4,8 @@ return {
             cutscene:text("* (Holy shit it's Frisk from the game UNDERTALE.)")
         else
             cutscene:text("* (It's some sort o[sound:budabing]f [image:npcs/frisk/engine, -5,10,1.5,1.5][wait:1].)")
+            cutscene:text("* (...Or even a[sound:fafa] [image:fafa-dialogue, -5,10,1, 1][wait:1].)")
+            
         end
     end,
     proph = function (cutscene)

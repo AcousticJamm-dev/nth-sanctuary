@@ -1,11 +1,11 @@
 local Part, super = Class(Object)
 
-function Part:init(x, y, distance)
+function Part:init(x, y, distance, sprite)
     super.init(self, x, y)
 	
 	self.distance = distance or 10
 	
-    self.sprite = Sprite("enemies/creature_a/eye", -distance, 0)
+    self.sprite = Sprite(sprite or "enemies/creature_a/eye", -distance, 0)
 	self.sprite:setOrigin(0.5, 0.5)
 
 	self.rotating = true

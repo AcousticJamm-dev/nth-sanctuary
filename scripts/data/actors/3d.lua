@@ -54,8 +54,13 @@ function actor:init()
 	self.rage_aura_timer = 0
 end
 
+function actor:createSprite()
+    return ThreeDActorPrism(self)
+end
+
 function actor:preSpriteDraw(sprite)
-    if sprite.texture and Game.battle and Game.battle.encounter.rage_anim_speed > 1 then
+	super.preSpriteDraw(sprite)
+    if sprite.canvas and Game.battle and Game.battle.encounter.rage_anim_speed > 1 then
         -- Use additive blending if the enemy is not being drawn to a canvas
 		self.rage_aura_timer = self.rage_aura_timer + DTMULT
         if love.graphics.getCanvas() == SCREEN_CANVAS then
@@ -80,7 +85,7 @@ function actor:preSpriteDraw(sprite)
             local aurayscale = math.min(1, 80 / sprite_height)
 
             Draw.setColor(1, 0, 0, ((1 - (auray / 45)) * 0.5) * (Game.battle.encounter.rage_anim_speed - 1))
-            Draw.draw(sprite.texture, -((aurax / 180) * sprite_width), -((auray / 82) * sprite_height * aurayscale), 0, 1 + ((aurax/36) * 0.5), 1 + (((auray / 36) * aurayscale) * 0.5))
+            Draw.draw(sprite.canvas, -((aurax / 180) * sprite_width), -((auray / 82) * sprite_height * aurayscale), 0, 1 + ((aurax/36) * 0.5), 1 + (((auray / 36) * aurayscale) * 0.5))
         end
 
         love.graphics.setBlendMode("alpha")
@@ -90,8 +95,8 @@ function actor:preSpriteDraw(sprite)
         local ysmult = math.min((80 / sprite_height) * ((Game.battle.encounter.rage_anim_speed - 1) * 0.2), (Game.battle.encounter.rage_anim_speed - 1) * 0.2)
 
         Draw.setColor(1, 0, 0, 0.2 * (Game.battle.encounter.rage_anim_speed - 1))
-        Draw.draw(sprite.texture, (sprite_width / 2) + (math.sin(self.rage_aura_timer / 5) * xmult) / 2, (sprite_height / 2) + (math.cos(self.rage_aura_timer / 5) * ymult) / 2, 0, 1, 1 + (math.sin(self.rage_aura_timer / 5) * ysmult) / 2, sprite_width / 2, sprite_height / 2)
-        Draw.draw(sprite.texture, (sprite_width / 2) - (math.sin(self.rage_aura_timer / 5) * xmult) / 2, (sprite_height / 2) - (math.cos(self.rage_aura_timer / 5) * ymult) / 2, 0, 1, 1 - (math.sin(self.rage_aura_timer / 5) * ysmult) / 2, sprite_width / 2, sprite_height / 2)
+        Draw.draw(sprite.canvas, (sprite_width / 2) + (math.sin(self.rage_aura_timer / 5) * xmult) / 2, (sprite_height / 2) + (math.cos(self.rage_aura_timer / 5) * ymult) / 2, 0, 1, 1 + (math.sin(self.rage_aura_timer / 5) * ysmult) / 2, sprite_width / 2, sprite_height / 2)
+        Draw.draw(sprite.canvas, (sprite_width / 2) - (math.sin(self.rage_aura_timer / 5) * xmult) / 2, (sprite_height / 2) - (math.cos(self.rage_aura_timer / 5) * ymult) / 2, 0, 1, 1 - (math.sin(self.rage_aura_timer / 5) * ysmult) / 2, sprite_width / 2, sprite_height / 2)
 		
         love.graphics.setShader(Kristal.Shaders["AddColor"])
 
@@ -99,15 +104,21 @@ function actor:preSpriteDraw(sprite)
         Kristal.Shaders["AddColor"]:send("amount", 1)
 
         Draw.setColor(1, 1, 1, 0.3 * (Game.battle.encounter.rage_anim_speed - 1))
-        Draw.draw(sprite.texture,  (Game.battle.encounter.rage_anim_speed - 1)*1,  0)
-        Draw.draw(sprite.texture,  (Game.battle.encounter.rage_anim_speed - 1)*-1,  0)
-        Draw.draw(sprite.texture,  0,  (Game.battle.encounter.rage_anim_speed - 1)*1)
-        Draw.draw(sprite.texture,  0,  (Game.battle.encounter.rage_anim_speed - 1)*-1)
+        Draw.draw(sprite.canvas,  (Game.battle.encounter.rage_anim_speed - 1)*1,  0)
+        Draw.draw(sprite.canvas,  (Game.battle.encounter.rage_anim_speed - 1)*-1,  0)
+        Draw.draw(sprite.canvas,  0,  (Game.battle.encounter.rage_anim_speed - 1)*1)
+        Draw.draw(sprite.canvas,  0,  (Game.battle.encounter.rage_anim_speed - 1)*-1)
 
         love.graphics.setShader(last_shader)
 
         Draw.setColor(sprite:getDrawColor())
     end
+end
+
+function actor:onSpriteDraw(sprite)
+	super.onSpriteDraw(sprite)
+    Draw.setColor(sprite:getDrawColor())
+	Draw.drawCanvas(sprite.canvas)
 end
 
 return actor

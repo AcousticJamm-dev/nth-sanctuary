@@ -54,9 +54,6 @@ function ThreeDPrism:update()
             Game.battle.camera.rotation = Utils.lerp(Game.battle.camera.rotation, 0, 0.1 * DTMULT)
         end 
 	end
-	if self.prism_bg_con <= 2 then
-		self.g.y = Utils.lerp(self.g.y, 269 + y_offset, 0.1 * DTMULT)
-	end
 end
 
 function ThreeDPrism:canSwoon(target)

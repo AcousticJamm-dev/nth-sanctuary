@@ -10,7 +10,7 @@ function ThreeDPrism:init()
 
     -- Enemy health
     self.max_health = 1
-    self.health = 999999
+    self.health = 99999
     -- Enemy attack (determines bullet damage)
     self.attack = 20
     -- Enemy defense (usually 0)
@@ -60,21 +60,8 @@ function ThreeDPrism:init()
     self.progress = 0
 	self.exit_on_defeat = false
 	self.tired_percentage = -1
-    self.sprite.anim_delay = (1/30)
-    self.sprite.loop = true
-	self.sprite:setAnimation(function(sprite, wait)
-		while true do
-			sprite:setFrame(1)
-			wait(sprite.anim_delay)
-			while sprite.frame < #sprite.frames do
-				sprite:setFrame(sprite.frame + math.floor(Game.battle.encounter.rage_anim_speed))
-				wait(sprite.anim_delay)
-				sprite:setFrame(sprite.frame + math.ceil(Game.battle.encounter.rage_anim_speed))
-				wait(sprite.anim_delay)
-			end
-		end
-	end)
 	self.challenge_acted = false
+	self.last_mercy = 0
 end
 
 function ThreeDPrism:isXActionShort(battler)
@@ -128,11 +115,18 @@ function ThreeDPrism:onAct(battler, name)
 			self.attack = 40
 			self:removeAct("Challenge")
 			self:registerAct("BegForMercy", "Revert\ndifficulty", "all", 8)
+			self.last_mercy = self.mercy
+			self.mercy = 0
+			self.disable_mercy = true
+			self.defense = -200
 			Game.battle.encounter.raged = true
 		end)
 	elseif name == "BegForMercy" then
         battler:setAnimation("act")
-        Game.battle:startActCutscene(function(cutscene)		
+        Game.battle:startActCutscene(function(cutscene)
+			self.disable_mercy = false
+			self.mercy = self.last_mercy
+			self.defense = self.defense * 2
 			if self.challenge_acted then
 				self:addMercy(25)
 				Assets.playSound("sparkle_gem")
@@ -211,6 +205,19 @@ end
 
 function ThreeDPrism:onTurnEnd()
     self.progress = self.progress + 1
+	if Game.battle.encounter.raged then
+		if self.defense < -500 then
+			self.defense = self.defense - 100
+		else
+			self.defense = -500
+		end
+	else
+		if self.defense > -100 then
+			self.defense = self.defense + 100
+		else
+			self.defense = -100
+		end
+	end
 end
 
 function ThreeDPrism:getNextWaves()	
@@ -283,9 +290,7 @@ function ThreeDPrism:onSpared()
         end
    end, function()
         spare_flash.amount = 0
-		Game.battle.timer:tween(2, self.sprite, {anim_delay = 1}, "in-quad", function()
-			self.sprite:stop(true)
-		end)
+		self.sprite.slow_down = true
         local img1 = AfterImage(self, 0.7, (1/25) * 0.7)
         local img2 = AfterImage(self, 0.4, (1/30) * 0.4)
         img1:addFX(ColorMaskFX())
@@ -303,6 +308,7 @@ function ThreeDPrism:onSpared()
 end
 
 function ThreeDPrism:onDefeat(damage, battler)
+	self.sprite.slow_down = true
     super.onDefeat(self, damage, battler)
     self.hurt_timer = -1
     self.defeated = true

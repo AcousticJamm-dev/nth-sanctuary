@@ -312,6 +312,10 @@ function ThreeDPrism:onDefeat(damage, battler)
     self.hurt_timer = -1
     self.defeated = true
 
+	Game.battle.timer:tween(1, Game.battle.encounter, {rage_anim_speed = 1}, "in-quad", function()
+		Game.battle.encounter.rage_anim_speed = 1
+	end)
+	Game.battle.timer:tween(1, self.sprite, {color = {1,1,1}}, "in-quad")
 	self.sprite.slow_down = true
 	self.overlay_sprite.slow_down = true
     self:defeat("VIOLENCED", true)

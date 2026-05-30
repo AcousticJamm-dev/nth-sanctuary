@@ -26,21 +26,21 @@ end
 
 function ThreeDActorPrism:update()
     super.update(self)
+	if self.slow_down then
+		self.slow_timer = MathUtils.approach(self.slow_timer, 60, DTMULT)
+	end
 	if self.full_sprite == self:getPath("hurt") then
 		if not self.hurted then
 			self.model.mesh:setTexture(Assets.getTexture("models/prism_hurt"))
 			self.hurted = true
 		end
-		self.timer = self.timer + 1 * DTMULT
+		self.timer = self.timer + MathUtils.lerp(Game.battle.encounter.rage_anim_speed, 0, self.slow_timer/60) * DTMULT
 		self.model:setRotation(math.rad(90), -math.rad(5), math.rad(math.sin(self.timer / 4) * 45))
 		self.model:setTranslation(15, 320, 120)
 	else
 		if self.hurted then
 			self.model.mesh:setTexture(Assets.getTexture("models/prism"))
 			self.hurted = false
-		end
-		if self.slow_down then
-			self.slow_timer = MathUtils.approach(self.slow_timer, 60, DTMULT)
 		end
 		self.timer = self.timer + MathUtils.lerp((10 * Game.battle.encounter.rage_anim_speed), 0, self.slow_timer/60) * DTMULT
 		local y_offset = math.sin((self.timer / 10) * 0.1) * 10

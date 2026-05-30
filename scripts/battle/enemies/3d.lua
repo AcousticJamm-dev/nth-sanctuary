@@ -10,7 +10,7 @@ function ThreeDPrism:init()
 
     -- Enemy health
     self.max_health = 1
-    self.health = 999999
+    self.health = 99999
     -- Enemy attack (determines bullet damage)
     self.attack = 20
     -- Enemy defense (usually 0)
@@ -61,6 +61,7 @@ function ThreeDPrism:init()
 	self.exit_on_defeat = false
 	self.tired_percentage = -1
 	self.challenge_acted = false
+	self.last_mercy = 0
 end
 
 function ThreeDPrism:isXActionShort(battler)
@@ -114,11 +115,18 @@ function ThreeDPrism:onAct(battler, name)
 			self.attack = 40
 			self:removeAct("Challenge")
 			self:registerAct("BegForMercy", "Revert\ndifficulty", "all", 8)
+			self.last_mercy = self.mercy
+			self.mercy = 0
+			self.disable_mercy = true
+			self.defense = -200
 			Game.battle.encounter.raged = true
 		end)
 	elseif name == "BegForMercy" then
         battler:setAnimation("act")
-        Game.battle:startActCutscene(function(cutscene)		
+        Game.battle:startActCutscene(function(cutscene)
+			self.disable_mercy = false
+			self.mercy = self.last_mercy
+			self.defense = self.defense * 2
 			if self.challenge_acted then
 				self:addMercy(25)
 				Assets.playSound("sparkle_gem")
@@ -197,6 +205,19 @@ end
 
 function ThreeDPrism:onTurnEnd()
     self.progress = self.progress + 1
+	if Game.battle.encounter.raged then
+		if self.defense < -500 then
+			self.defense = self.defense - 100
+		else
+			self.defense = -500
+		end
+	else
+		if self.defense > -100 then
+			self.defense = self.defense + 100
+		else
+			self.defense = -100
+		end
+	end
 end
 
 function ThreeDPrism:getNextWaves()	
@@ -292,6 +313,7 @@ function ThreeDPrism:onDefeat(damage, battler)
     self.defeated = true
 
     self:defeat("VIOLENCED", true)
+	self.sprite.slow_down = true
 	Game.battle.encounter.prism_bg_con = 2
     Game.battle.music:stop()
 end

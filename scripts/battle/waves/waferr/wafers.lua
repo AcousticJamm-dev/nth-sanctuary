@@ -86,7 +86,7 @@ function Wafers:onStart()
 						target = (i % 4 == 0 and true or false)
 					elseif target_type == 2 then
 						target = true
-					elseif target_type == 2 then
+					elseif target_type == 3 then
 						target = false
 					end
 					bullet:splitPiece(i, target)

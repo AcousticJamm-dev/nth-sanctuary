@@ -398,6 +398,8 @@ return {
 		cutscene:text("[noskip]* But Marcy was in there, [wait:5]so I figured I should follow.[wait:40]", "stern", jamm, {auto = true})
 		cutscene:wait(cutscene:attachCamera())
 		Game.lock_movement = false
+		Game:setFlag("jamm_lore_done", true)
+		Game.world:getEvent("stairlooper"):remove()
 		
 	end
 }

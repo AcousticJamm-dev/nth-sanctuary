@@ -7,16 +7,6 @@ function DarkMenu:init()
 	self.shard_sprite = Assets.getTexture("ui/menu/icon/shard")
 end
 
-function DarkMenu:update()
-    super.update(self)
-    
-    if Game.world.map.id == "sanctum_hell/hell_1" or 
-    Game.world.map.id == "sanctum_hell/hell_unknown" or 
-    Game.world.map.id == "secrets/frisk_room" then
-        Game.world:closeMenu()
-    end
-end
-
 function DarkMenu:draw()
     super.draw(self)
     if not self.description_box.visible then
@@ -31,11 +21,85 @@ function DarkMenu:draw()
 
 end
 
+function DarkMenu:onKeyPressed(key)
+    if self.state == "MAIN" then
+		if self.box then
+			if self.box.onKeyPressed then
+				self.box:onKeyPressed(key)
+			end
+		end
+
+		if (Input.isMenu(key) or Input.isCancel(key)) then
+			Game.world:closeMenu()
+			return
+		end
+
+		if not self.animation_done then return end
+
+        local old_selected = self.selected_submenu
+		local select_direction = 0
+        if Input.is("left", key)  then select_direction = -1 end
+        if Input.is("right", key) then select_direction = 1 end
+		self.selected_submenu = self.selected_submenu + select_direction
+        if self.selected_submenu < 1             then self.selected_submenu = #self.buttons end
+        if self.selected_submenu > #self.buttons then self.selected_submenu = 1             end
+		local button_disabled = false
+		if (type(self.buttons[self.selected_submenu].disabled) == "function") then
+			button_disabled = self.buttons[self.selected_submenu].disabled()
+		else
+			button_disabled = self.buttons[self.selected_submenu].disabled
+		end
+		while (self.buttons[self.selected_submenu] and button_disabled) do
+			self.selected_submenu = self.selected_submenu + select_direction
+			if self.selected_submenu < 1             then self.selected_submenu = #self.buttons end
+			if self.selected_submenu > #self.buttons then self.selected_submenu = 1             end
+			button_disabled = false
+			if (type(self.buttons[self.selected_submenu].disabled) == "function") then
+				button_disabled = self.buttons[self.selected_submenu].disabled()
+			else
+				button_disabled = self.buttons[self.selected_submenu].disabled
+			end
+		end
+        if old_selected ~= self.selected_submenu then
+            self.ui_move:stop()
+            self.ui_move:play()
+        end
+        if Input.isConfirm(key) then
+            self:onButtonSelect(self.selected_submenu)
+        end
+    else
+		super.onKeyPressed(self, key)
+    end
+end
+
 function DarkMenu:getButtonSpacing()
     if #self.buttons <= 4 then
         return 105
     else
         return 105 - (#self.buttons * #self.buttons)
+    end
+end
+
+function DarkMenu:drawButton(index, x, y)
+    local button = self.buttons[index]
+    local sprite = button.sprite
+    if index == self.selected_submenu then
+        sprite = button.hovered_sprite
+    end	
+	local button_disabled = false
+	if (type(button.disabled) == "function") then
+		button_disabled = button.disabled()
+	else
+		button_disabled = button.disabled
+	end
+    if button_disabled then
+        sprite = button.disabled_sprite
+    end
+    Draw.setColor(1, 1, 1)
+    Draw.draw(sprite, x, y, 0, 2, 2)
+    if index == self.selected_submenu and self.state == "MAIN" then
+        Draw.setColor(Game:getSoulColor())
+        Draw.draw(self.heart_sprite, x + 15, y + 25, 0, 2, 2, self.heart_sprite:getWidth() / 2, self.heart_sprite:getHeight() / 2)
     end
 end
 
@@ -45,6 +109,7 @@ function DarkMenu:addButtons()
         ["state"]          = "ITEMMENU",
         ["sprite"]         = Assets.getTexture("ui/menu/btn/item"),
         ["hovered_sprite"] = Assets.getTexture("ui/menu/btn/item_h"),
+        ["disabled_sprite"]= Assets.getTexture("ui/menu/btn/item"),
         ["desc_sprite"]    = Assets.getTexture("ui/menu/desc/item"),
         ["callback"]       = function()
             self.box = DarkItemMenu()
@@ -53,7 +118,8 @@ function DarkMenu:addButtons()
 
             self.ui_select:stop()
             self.ui_select:play()
-        end
+        end,
+		["disabled"]       = false
     })
 
     -- EQUIP
@@ -61,6 +127,7 @@ function DarkMenu:addButtons()
         ["state"]          = "EQUIPMENU",
         ["sprite"]         = Assets.getTexture("ui/menu/btn/equip"),
         ["hovered_sprite"] = Assets.getTexture("ui/menu/btn/equip_h"),
+        ["disabled_sprite"]= Assets.getTexture("ui/menu/btn/equip"),
         ["desc_sprite"]    = Assets.getTexture("ui/menu/desc/equip"),
         ["callback"]       = function()
             self.box = DarkEquipMenu()
@@ -69,7 +136,8 @@ function DarkMenu:addButtons()
 
             self.ui_select:stop()
             self.ui_select:play()
-        end
+        end,
+		["disabled"]       = false
     })
 
     -- POWER
@@ -77,6 +145,7 @@ function DarkMenu:addButtons()
         ["state"]          = "POWERMENU",
         ["sprite"]         = Assets.getTexture("ui/menu/btn/power"),
         ["hovered_sprite"] = Assets.getTexture("ui/menu/btn/power_h"),
+        ["disabled_sprite"]= Assets.getTexture("ui/menu/btn/power"),
         ["desc_sprite"]    = Assets.getTexture("ui/menu/desc/power"),
         ["callback"]       = function()
             self.box = DarkPowerMenu()
@@ -85,14 +154,16 @@ function DarkMenu:addButtons()
 
             self.ui_select:stop()
             self.ui_select:play()
-        end
+        end,
+		["disabled"]       = false
     })
     
     -- TALK
     self:addButton({
-        ["state"]          = "SANCTUM",
+        ["state"]          = "TRAVELMENU",
         ["sprite"]         = Assets.getTexture("ui/menu/btn/sanctum"),
         ["hovered_sprite"] = Assets.getTexture("ui/menu/btn/sanctum_h"),
+        ["disabled_sprite"]= Assets.getTexture("ui/menu/btn/sanctum_d"),
         ["desc_sprite"]    = Assets.getTexture("ui/menu/desc/sanctum"),
         ["callback"]       = function()
             Input.clear("confirm")
@@ -102,7 +173,15 @@ function DarkMenu:addButtons()
             self.ui_select:play()
 
             Game.world:startCutscene("travel_button")
-        end
+        end,
+		["disabled"]       = function() 
+			if Game.world.map.id == "sanctum_hell/hell_1" or 
+			Game.world.map.id == "sanctum_hell/hell_unknown" or 
+			Game.world.map.id == "secrets/frisk_room" then
+				return true
+			end
+			return false
+		end
     })
 
     -- CONFIG
@@ -110,6 +189,7 @@ function DarkMenu:addButtons()
         ["state"]          = "CONFIGMENU",
         ["sprite"]         = Assets.getTexture("ui/menu/btn/config"),
         ["hovered_sprite"] = Assets.getTexture("ui/menu/btn/config_h"),
+        ["disabled_sprite"]= Assets.getTexture("ui/menu/btn/config"),
         ["desc_sprite"]    = Assets.getTexture("ui/menu/desc/config"),
         ["callback"]       = function()
             self.box = DarkConfigMenu()
@@ -118,7 +198,8 @@ function DarkMenu:addButtons()
 
             self.ui_select:stop()
             self.ui_select:play()
-        end
+        end,
+		["disabled"]       = false
     })
 end
 

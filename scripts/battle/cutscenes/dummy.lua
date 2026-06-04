@@ -31,24 +31,25 @@ return {
         local normal_x, normal_y = cam.x, cam.y
     
         local cam_done = false
-        Game.battle.timer:tween(1, cam, {zoom_x = 3, zoom_y = 3})
-        Game.battle.timer:tween(1, cam, {x = 550, y = 155}, nil, function()
+		Game.battle.battle_ui:setParallax(1, 1)
+		Game.battle.background:setParallax(1, 1)
+        Game.battle.timer:tween(10/30, cam, {zoom_x = 2, zoom_y = 2, x = 550, y = 155}, nil, function()
             cam_done = true
         end)
     
-        cutscene:wait(2)
+        cutscene:wait(20/30)
     
-        local dununnn = Assets.playSound("dununnn")
+        local dununnn = Assets.playSound("dununnn", 1, 0.8)
     
-        dummy:flash()
         dummy:setSprite("mad")
     
         cutscene:wait(2)
     
         local cam_back_done = false
-        Game.battle.timer:tween(1, cam, {zoom_x = 1, zoom_y = 1})
-        Game.battle.timer:tween(1, cam, {x = normal_x, y = normal_y}, nil, function() 
+        Game.battle.timer:tween(10/30, cam, {zoom_x = 1, zoom_y = 1, x = normal_x, y = normal_y}, nil, function() 
             cam_back_done = true
+			Game.battle.battle_ui:setParallax(0, 0)
+			Game.battle.background:setParallax(0, 0)
         end)
     
         local shaking = true
@@ -58,9 +59,11 @@ return {
             end
         end)
     
-        cutscene:wait(1.5)
+        cutscene:wait(0.5)
 
         dummy:flash()
+        dummy:setAnimation("moving")
+		dummy.sprite.siner_active = true
         local afterimage1 = AfterImage(dummy, 0.5)
         local afterimage2 = AfterImage(dummy, 0.6)
         afterimage1.physics.speed_x = -2.5
@@ -119,8 +122,10 @@ return {
         end)
         cutscene:battlerText(dummy, "But you are just LAME!")
         cutscene:battlerText(dummy, "Lame.\nLame!\nSO LAME!!")
+		Game.battle.music:stop()
+		Assets.playSound("slidewhist")
         shaking = false
-        cutscene:slideTo(dummy, SCREEN_WIDTH + 30, dummy.y, 2)
+        cutscene:slideToSpeed(dummy, SCREEN_WIDTH + 30, dummy.y, 4)
         cutscene:wait(2)
         dummy:remove()
 

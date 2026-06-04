@@ -74,7 +74,7 @@ function Aiming:onStart()
                         if enemy.enemy_hitbox and b:collidesWith(enemy.enemy_hitbox) then
                             local dmg = math.floor(enemy.max_health / 50) + math.random(-6, 12)
                             
-                            enemy:hurt(math.max(1, dmg), Game.battle.party[1])
+                            enemy:hurt(math.max(1, dmg), Game.battle.party[1], nil, COLORS.white)
                             Assets.stopAndPlaySound("damage")
                             
                             enemy:shake(6, 0)

@@ -1,10 +1,10 @@
-local Dummy, super = Class(EnemyBattler)
+local MadDummy, super = Class(EnemyBattler)
 
-function Dummy:init()
+function MadDummy:init()
     super.init(self)
 
     self.name = "Dummy"
-    self:setActor("dummy")
+    self:setActor("maddummy")
 
     self.max_health = 450
     self.health = 450
@@ -45,18 +45,10 @@ function Dummy:init()
 
     self:registerAct("Smile", "Induce\nMERCY")
     self:registerAct("Tell Story", "Induce\nTIRED", {"ralsei"})
-
-    Game.battle.timer:every(0.5, function()
-        if self and self.siner_active then
-            local afterimage = AfterImage(self, 0.5)
-            afterimage.physics.speed_x = 2.5
-            afterimage:setLayer(self.layer + 1)
-            Game.battle:addChild(afterimage)
-        end
-    end)
+	self.hit_once = false
 end
 
-function Dummy:getEnemyDialogue()
+function MadDummy:getEnemyDialogue()
     if self.dialogue_override then
         local dialogue = self.dialogue_override
         self.dialogue_override = nil
@@ -76,15 +68,15 @@ function Dummy:getEnemyDialogue()
     return TableUtils.pick(self.dialogue)
 end
 
-function Dummy:getEncounterText()
+function MadDummy:getEncounterText()
     if self.dialogue_index == 2 then
-        return "[facec:ralsei/smile_b_battle][voice:ralsei]* (Hey, Kris!)[wait:5]\n* (It looks like the [color:blue]MAGICAL[color:reset] \nbullets are damaging them!)"
+        return "[facec:ralsei/smile_b_battle][voice:ralsei]* (Hey, Kris!)[wait:5]\n* (It looks like the [color:yellow]MAGICAL[color:reset]\nbullets are damaging them!)"
     elseif self.dialogue_index == 3 then
-        return "[facec:ralsei/wink_battle][voice:ralsei]* (Let's try to make them shoot [color:blue]MAGICAL[color:reset] bullets at themself, [wait:5]\nokay, Kris?)"
+        return "[facec:ralsei/wink_battle][voice:ralsei]* (Let's try to make them\nshoot [color:yellow]MAGICAL[color:reset] bullets at\nthemself,[wait:5] okay, Kris?)"
     elseif self.dialogue_index == 4 then
-        return "[facec:susie/smile][voice:susie]* (Or you can just use my \nRUDE BUSTER, because it's \ncooler.)"
+        return "[facec:susie/smile][voice:susie]* (Or you can just use my\nRUDE BUSTER, because it's\ncooler.)"
     elseif self.dialogue_index == 5 then
-        return "* You tell Mad Dummy that there is no such thing as \"barrier\" in this universe."
+        return "* You tell Mad Dummy that there is no such thing as a \"barrier\" in this universe."
     elseif self.dialogue_index == 6 then
         return "* You are filled with the power of not knowing what you're talking about."
     end
@@ -92,13 +84,13 @@ function Dummy:getEncounterText()
     return super.getEncounterText(self)
 end
 
-function Dummy:onTurnEnd()
+function MadDummy:onTurnEnd()
     self.y_speed = self.y_speed + 0.01
     self.x_speed = self.x_speed + 0.01
     self.radius = self.y_speed * 500
 end
 
-function Dummy:triggerTrueBattle(cause, noact)
+function MadDummy:triggerTrueBattle(cause, noact)
     if self.the_true_fight then return end
 
     self.the_true_fight = true
@@ -165,27 +157,87 @@ function Dummy:triggerTrueBattle(cause, noact)
 
     self:setTired(false)
     self.boss = true
+	self.low_health_percentage = 0.25
     self.tired_percentage = 0.25
     self.spare_points = 0
     self.disable_mercy = true
-    self.check = {"AT 15 DF -60\n* Its cotton burns with fury.\n* It rejects your ACTions.", "... Unless they're [color:blue]MAGICAL.[color:reset]"}
+    self.check = {"AT 15 DF YES\n* Its cotton burns with fury.\n* It rejects your ACTions.", "* Because they're a ghost,[wait:5]\nphysical attacks will fail.[wait:5]\n* Try using [color:yellow]MAGIC[color:reset] instead."}
     self.text = {"* The air crackles with rage.", "* The dummy trembles violently.", "* This is no longer pretend."}
 
+    self:getAct("Check").description = "Consider\nstrategy"
     self:getAct("Smile").description = "Useless\naction"
     self:getAct("Tell Story").description = "Useless\naction"
+    self.low_health_text = "* Mad Dummy looks like they're\nabout to fall apart."
 end
 
-function Dummy:getHealthDisplay()
+function MadDummy:getHealthDisplay()
     if self.the_true_fight then return "???" end
     return super.getHealthDisplay(self)
 end
 
-function Dummy:spare(pacify)
+function MadDummy:spare(pacify)
     self.siner_active = false
     return super.spare(self, pacify)
 end
 
-function Dummy:onDefeat(damage, battler)
+function MadDummy:onHurt(damage, battler)
+	if self.siner_active then
+		if not self.hit_once then
+			self.sprite.rotmod = 0.4
+			self.sprite.speedmod = 1
+			self.hit_once = true
+		end
+		self.sprite.part_data["head"].ox = self.sprite.width/2
+		self.sprite.part_data["head"].oy = 21
+		self.sprite.part_data["head"].orot = self.sprite.rot
+		self.sprite.part_data["body"].ox = self.sprite.width/2
+		self.sprite.part_data["body"].oy = 23 + (self.sprite.rot / 4)
+		self.sprite.part_data["body"].orot = self.sprite.rot / 2
+		self.sprite.part_data["base"].ox = self.sprite.width/2 - (self.sprite.rot / 3)
+		self.sprite.part_data["base"].oy = 36 + (self.sprite.rot / 3)
+		self.sprite.part_data["base"].orot = -self.sprite.rot
+		
+		self.sprite.part_data["head"].x = self.sprite.part_data["head"].ox + -5 + MathUtils.random(10)
+		self.sprite.part_data["head"].y = self.sprite.part_data["head"].oy + -2.5 + MathUtils.random(5)
+		self.sprite.part_data["head"].rot = self.sprite.part_data["head"].orot + -90 + MathUtils.random(180)
+		self.sprite.part_data["body"].x = self.sprite.part_data["head"].ox + -5 + MathUtils.random(10)
+		self.sprite.part_data["body"].y = self.sprite.part_data["head"].oy + -2.5 + MathUtils.random(5)
+		self.sprite.part_data["body"].rot = self.sprite.part_data["head"].orot + -90 + MathUtils.random(180)
+		self.sprite.part_data["base"].x = self.sprite.part_data["head"].ox + -5 + MathUtils.random(10)
+		self.sprite.part_data["base"].y = self.sprite.part_data["head"].oy + -2.5 + MathUtils.random(5)
+		self.sprite.part_data["base"].rot = self.sprite.part_data["head"].orot + -90 + MathUtils.random(180)
+		
+		self.sprite.mode = 5
+		Game.battle.timer:after(5/30, function()
+			self.sprite.ow_timer = 21
+			self.sprite.mode = 2
+		end)
+		
+		for i = 1, self.sprite.cotton_count do
+			local cotton = Sprite("bullets/maddummy/cotton")
+			cotton:setFrame(TableUtils.pick{1, 2, 3})
+			cotton.x, cotton.y = self.x, self.y
+			cotton:setScale(1.5)
+			cotton:setOrigin(0.5)
+			cotton:fadeOutAndRemove(2)
+			cotton.physics.speed_x = MathUtils.random(-2, 2)
+			cotton.graphics.spin = 0.1
+			cotton.graphics.grow = -0.02
+			cotton.physics.speed_y = MathUtils.random(-12, -8)
+			cotton.physics.gravity = 0.5
+			Game.battle:addChild(cotton)
+		end
+	else	
+		self:toggleOverlay(true)
+	end
+    self:getActiveSprite():shake(9, 0, 0.5, 2 / 30)
+
+    if self.health <= (self.max_health * self.tired_percentage) then
+        self:setTired(true, self.tired_percentage <= 0)
+    end
+end
+
+function MadDummy:onDefeat(damage, battler)
     if self.the_true_end == true then return super.onDefeat(self, damage, battler) end
     if Game.battle.battle_ui.attacking then
         Game.battle.battle_ui:endAttack()
@@ -208,10 +260,10 @@ function Dummy:onDefeat(damage, battler)
     -- return super.onDefeat(self, damage, battler)
 end
 
-function Dummy:onAct(battler, name)
+function MadDummy:onAct(battler, name)
     if self.the_true_fight then
         if name == "Check" then
-            return {"* MAD DUMMY - AT 12 DF -60\n* Its cotton burns with fury.\n* It rejects your ACTions.", "* ... Unless they're [color:blue]MAGICAL.[color:reset]"}
+            return {"* MAD DUMMY - AT 30 DF YES\n* Its cotton burns with fury.\n* It rejects your ACTions.", "* Because they're a ghost,[wait:5]\nphysical attacks will fail.[wait:5]\n* Try using [color:yellow]MAGIC[color:reset] instead."}
         elseif name == "Smile" then
             return {
                 "* You smiled.\n* Mad Dummy laughed at your pity."
@@ -245,15 +297,17 @@ function Dummy:onAct(battler, name)
     return super.onAct(self, battler, name)
 end
 
-function Dummy:update()
+function MadDummy:update()
     super.update(self)
+    self.hp_ratio = (self.health / self.max_health)
+	
     if Game.battle.state ~= "TRANSITION" and Game.battle.state ~= "INTRO" then
         if self.siner_active then
             self.siner = self.siner + DTMULT
             local y_offset = math.sin(self.siner * self.y_speed) * self.radius
             local x_offset = math.sin(self.siner * self.x_speed) * (self.radius/4)
-            local lerp_x = Utils.lerp(self.x, self.old_x + x_offset, 0.1 * DTMULT)
-            local lerp_y = Utils.lerp(self.y, self.old_y + y_offset, 0.1 * DTMULT)
+            local lerp_x = MathUtils.lerp(self.x, self.old_x + x_offset, 0.1 * DTMULT)
+            local lerp_y = MathUtils.lerp(self.y, self.old_y + y_offset, 0.1 * DTMULT)
             self:setPosition(lerp_x, lerp_y)
         end
         if self.bubble then
@@ -265,4 +319,4 @@ function Dummy:update()
     end
 end
 
-return Dummy
+return MadDummy

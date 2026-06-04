@@ -30,7 +30,7 @@ function Wall:onStart()
                     if enemy.enemy_hitbox and b:collidesWith(enemy.enemy_hitbox) then
                         if b.is_negative and b.physics.speed < 0 then
                             local dmg = math.floor(enemy.max_health / 200 + Utils.random(-2, 3))
-                            enemy:hurt(math.max(1, dmg), Game.battle.party[1])
+                            enemy:hurt(math.max(1, dmg), Game.battle.party[1], nil, COLORS.white)
                             Assets.stopAndPlaySound("damage")
                             enemy:shake(6, 0)
                             b:remove()

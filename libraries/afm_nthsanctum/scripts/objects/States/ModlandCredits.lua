@@ -40,7 +40,7 @@ function ModlandCredits:init(menu)
                 "Hyperboid",
                 "Krisp / Tamato",
                 "CuriousSpook",
-                "",
+                "XoticKade",
                 "",
                 "",
                 "",

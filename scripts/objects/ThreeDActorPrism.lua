@@ -8,6 +8,12 @@ function ThreeDActorPrism:init(actor)
 	self.stage = Stage3D()
 	Game.battle:addChild(self.stage)
     self.model = Assets3D.newModel("prism", "models/prism", {20,20,20}, {0,0,0})
+	self.model:setShader("p3d", {
+		["matcaps"] = Assets.getTexture("models/p3d_matcaps"),
+		["material"] = 0,
+		["lighting"] = 0,
+		["eyePosition"] = {0,-40,0},
+	})
     self.model:setScale(80,60,80)
     self.stage:add(self.model)
 	self.timer = 0
@@ -32,6 +38,7 @@ function ThreeDActorPrism:update()
 	if self.full_sprite == self:getPath("hurt") then
 		if not self.hurted then
 			self.model.mesh:setTexture(Assets.getTexture("models/prism_hurt"))
+			self.model.shadervars["eyePosition"] = {0,-40,MathUtils.lerp(-20, 0, self.slow_timer/60)}
 			self.hurted = true
 		end
 		self.timer = self.timer + Game.battle.encounter.rage_anim_speed * DTMULT
@@ -41,6 +48,7 @@ function ThreeDActorPrism:update()
 	else
 		if self.hurted then
 			self.model.mesh:setTexture(Assets.getTexture("models/prism"))
+			self.model.shadervars["eyePosition"] = {0,-40,0}
 			self.hurted = false
 		end
 		self.timer = self.timer - MathUtils.lerp((10 * Game.battle.encounter.rage_anim_speed), 0, self.slow_timer/60) * DTMULT

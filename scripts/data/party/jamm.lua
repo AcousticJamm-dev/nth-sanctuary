@@ -27,8 +27,10 @@ function character:init()
     self:addSpell("numbshot")
 
     self.health = 215
+	self.assist_health = 50
     self.stats = {
         health = 215,
+		assist_health = 50,
         attack = 15,
         defense = 4,
         magic = 7
@@ -86,6 +88,7 @@ end
 
 function character:onLevelUp(level)
     self:increaseStat("health", 2)
+    self:increaseStat("assist_health", 1)
     if level % 10 == 0 then
         self:increaseStat("attack", 1)
     end

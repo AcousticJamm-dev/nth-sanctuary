@@ -86,15 +86,15 @@ end
 function ThreeDPrism:onAct(battler, name)
     if name == "Check" then
 		if Game.battle.encounter.raged then
-			if self.defense >= -600 then
+			if self.defense <= -600 then
 				self:getAct("Check").description = "Useless\nanalysis"
 			end
-			return "* FURIOUS 3D PRISM - AT [image:infinite, -5, 0, 2,2]^2 DF "..math.floor((self.defense+100)/10).." \n* Now you've REALLY made it angry!\n* Its DEFENSE will lower each turn."
+			return "* FURIOUS 3D PRISM - AT [image:infinite, -5, 0, 2,2]^2 DF "..math.floor((self.defense+100)/10).." \n* Now you've REALLY made it angry!"..(self.defense > -600 and "\n* Its DEFENSE will lower each turn." or "")
 		else
-			if self.defense <= -100 then
+			if self.defense >= -100 then
 				self:getAct("Check").description = "Useless\nanalysis"
 			end
-			return "* 3D SPINNING PRISM - AT [image:infinite, -5, 0, 2,2] DF "..math.floor((self.defense+100)/10).." \n* Start fucking running"
+			return "* 3D SPINNING PRISM - AT [image:infinite, -5, 0, 2,2] DF "..math.floor((self.defense+100)/10).." \n* Start fucking running"..(self.defense < -100 and "\n* It's slowly regaining its DEFENSE..." or "")
 		end
     elseif name == "HoldBreath" then
 		if Game.battle.encounter.holdbreath then

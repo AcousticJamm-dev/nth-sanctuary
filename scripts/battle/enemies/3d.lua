@@ -194,6 +194,7 @@ function ThreeDPrism:onAct(battler, name)
 			else
 				self.name = "3D Spinning Prism"
 			end
+			self:getAct("Check").description = "Analyze\nDEFENSE"
 			self.attack = 20
 			if self.progress == 6 then
 				self.progress = 4
@@ -270,6 +271,7 @@ function ThreeDPrism:onTurnEnd()
 			self.defense = self.defense - 100
 		else
 			self.defense = -600
+			self:getAct("Check").description = "Useless\nanalysis"
 		end
 	else
 		if self.defense < -100 then

@@ -50,7 +50,7 @@ function ThreeDPrism:init()
     -- Text displayed at the bottom of the screen when the enemy has low health
     self.low_health_text = "* damn he dyin"
 
-    self:getAct("Check").description = "Somewhat\nuseless\nanalysis"
+    self:getAct("Check").description = "Useless\nanalysis"
     -- Register act called "Smile"
     self:registerAct("HoldBreath", "Move\nfaster", nil, 2)
     self:registerAct("Gyrate", "Spin\n6%\nmercy")
@@ -148,6 +148,7 @@ function ThreeDPrism:onAct(battler, name)
 			elseif self.defense == -250 then
 				self.defense = -200
 			end
+			self:getAct("Check").description = "Analyze\nDEFENSE"
 			Game.battle.encounter.raged = true
 		end)
 	elseif name == "BegForMercy" then
@@ -273,6 +274,7 @@ function ThreeDPrism:onTurnEnd()
 			self.defense = self.defense + 50
 		else
 			self.defense = -100
+			self:getAct("Check").description = "Useless\nanalysis"
 		end
 	end
 end

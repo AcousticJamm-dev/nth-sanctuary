@@ -143,7 +143,11 @@ function ThreeDPrism:onAct(battler, name)
 			self.last_mercy = self.mercy
 			self.mercy = 0
 			self.disable_mercy = true
-			self.defense = -100
+			if self.defense == -150 then
+				self.defense = -100
+			elseif self.defense == -250 then
+				self.defense = -200
+			end
 			Game.battle.encounter.raged = true
 		end)
 	elseif name == "BegForMercy" then

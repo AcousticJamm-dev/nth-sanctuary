@@ -163,6 +163,8 @@ function ThreeDPrism:onAct(battler, name)
 				self.defense = -200
 			elseif self.defense == -500 then
 				self.defense = -250
+			elseif self.defense == -600 then
+				self.defense = -300
 			end
 			if self.challenge_acted then
 				self:addMercy(25)
@@ -261,14 +263,14 @@ end
 function ThreeDPrism:onTurnEnd()
     self.progress = self.progress + 1
 	if Game.battle.encounter.raged then
-		if self.defense > -500 then
+		if self.defense > -600 then
 			self.defense = self.defense - 100
 		else
-			self.defense = -500
+			self.defense = -600
 		end
 	else
 		if self.defense < -100 then
-			self.defense = self.defense + 100
+			self.defense = self.defense + 50
 		else
 			self.defense = -100
 		end

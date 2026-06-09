@@ -1,7 +1,9 @@
 local BattleUI, super = HookSystem.hookScript(BattleUI)
 
 function BattleUI:draw()
-    super.draw(self)
+    self:drawActionArena()
+    self:drawActionStrip()
+    super.super.draw(self)
     love.graphics.translate(0,30)
     if Game.battle.state == "DEFENDING" then
         self.adraw2 = self.adraw2 + 4*DT

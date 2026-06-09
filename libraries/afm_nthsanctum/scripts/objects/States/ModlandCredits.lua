@@ -25,7 +25,7 @@ function ModlandCredits:init(menu)
                 "Hyperboid",
                 "JARU",
                 "Leaff",
-                "",
+                "Duskl1ght \"Dusk\"",
                 { "Music", COLORS.yellow },
                 "DeltaPulsar",
                 "squibles",

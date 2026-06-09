@@ -328,7 +328,7 @@ return {
 		g:setLayer(rect.layer + 1)
 		g:addFX(ColorMaskFX(COLORS.white))
 		cutscene:wait(20/30)
-		for i = 1, 15 do -- <-- Need to add one singular big slash instead, need effect sprites
+		for i = 1, 15 do
 			local spr = Sprite("effects/attack/red_slash")
 			spr:setOrigin(0, 0.5)
 			spr:setPosition(g.x, g.y - g.height)
@@ -336,10 +336,10 @@ return {
 			spr.layer = g.layer + 1
 			spr.rotation = math.rad(i * 78)
 			spr:play(1/15, false, function() spr:remove() g:shake() end)
-			local waw = DamageNumber("damage", love.math.random(6500, 8000), g.x + g.width/2, g.y)
+			local waw = DamageNumber("damage", love.math.random(400, 999), g.x, g.y - (20 * (i-1)))
+			waw.font = Assets.getFont("damage-cult")
        		waw.layer = g.layer + 3
        		Game.world:addChild(waw)
-       		waw:setColor({0, 0, 1})
 			Assets.playSound("bigcut", 1, 2 - (i / 15))
 			cutscene:wait(3/30)
 		end
@@ -351,41 +351,32 @@ return {
 		Game.world:spawnObject(sm)
 		g.layer = origlayer
 		sm:setLayer(g.layer + 1)
-		Game.world.camera:shake(20, 0, 0.5, 10, 10) 
+		Game.world.camera:shake(10, 0, 0.5, 10, 10) 
 		        local static_fx = ShaderFX("static_bullet", {
             ["time"] = function() return Kristal.getTime() end,
             ["brightness"] = 2
         })
+		
         local waw = DamageNumber("msg", "imbued", g.x + g.width/2, g.y)
         waw.layer = 99999999
         Game.world:addChild(waw)
         waw:addFX(static_fx, "static_fx")
 		g:addFX(static_fx, "static_fx")
-		
-		--[[
-		S; * [speed:0.7]What... Is that...? 
-[Sad portrait, looks scared imo, step back sprite]
+		local spr = Sprite("enemies/creature_a/eye", 1016, 285)
+		spr:setOrigin(0.5, 0.5)
+		spr:setScale(2)
+		spr.graphics.spin = 0.01
+		spr:setLayer(g.layer + 10)
+		spr.alpha = 1
+		Game.world:addChild(spr)
+		Game.world.timer:tween(2, spr.graphics, {spin = 0.2}, 'out-circ', function()
+		end)
 
-[Ralsei runs over and skids to a halt(?)]
-R: * N- [terrified_up]
-[shake:0.62]* No.... No, No, [shake:1]NO...! [terrified_up_anim]
-[shake:0.62]* The prophecy.... T-This- [w:10]It's- 
-* Has the roaring already begun...?!
+		Game.world.timer:tween(2, spr, {scale_x = 20, scale_y = 20, alpha = 0}, 'out-circ', function()
+			spr:remove()
+		end)
 
-[Kris follows from behind. Jamm too.]
 
-J: Ralsei, the prophecy doesn't matter right now!
-J: This thing looks like it's in pain!
-
-R; * But how...? [terrified]
-* I don't think- Did-
-
-S; * They made a fountain INSIDE this thing! [angry_unsure]
-[Overworld: Point]
-* Kris, [speed:0.8]Jamm, [s:1]let's do this. [angry_teeth]
-* You too, Ralsei. We have to help it.
-]]		
-		
 		susie:setSprite("surprise_step")
 		susie:shake()
 		--cutscene:("")
@@ -398,10 +389,9 @@ S; * They made a fountain INSIDE this thing! [angry_unsure]
 		ralsei:setSprite("shocked_right")
 		cutscene:text("* N-","terrified_up", ralsei)
 		cutscene:text("[shake:0.62][speed:0.5]* No... [speed:1]No, [wait:5]No, [wait:5][shake:1]NO...!", "terrified_up", ralsei)
-		cutscene:text("[shake:0.62][speed:0.5]* The prophecy... [wait:10]T-[wait:5]This- [wait:10]It's- ","terrified_up", ralsei)
 		cutscene:walkTo(kris, 780, kris.y, 2)
 		local a = cutscene:walkTo(jamm, 780, jamm.y, 2)
-		cutscene:text("[shake:0.62][speed:0.5]* Has the roaring already begun...?!", "terrified_up", ralsei)
+		cutscene:text("[shake:0.62][speed:0.5]* Has the roaring already begun...?![wait:10]\nThe prophecy is-", "terrified_up", ralsei, {auto = true})
 		cutscene:wait(a)
 		cutscene:text("* Ralsei, [wait:5]the prophecy doesn't matter right now!", "stern", jamm)
 		cutscene:text("* [shake:0.4]This thing looks like it's in pain!", "stern", jamm)
@@ -411,8 +401,7 @@ S; * They made a fountain INSIDE this thing! [angry_unsure]
 		susie:setSprite("point_right")
 		cutscene:slideTo(susie, susie.x+30, susie.y, 1, 'out-expo')
 		cutscene:text("* They made a fountain INSIDE this thing!", "angry_unsure", susie)
-		cutscene:text("* Kris, [wait:5]Jamm, [wait:5]let's do this.", "angry_teeth", susie)
-		cutscene:text("* You too, [wait:5]Ralsei. [wait:10]We have to help it.", "angry_teeth", susie)
+		cutscene:text("* Kris, [wait:5]Ralsei, [wait:5]Jamm, [wait:5]let's do this.", "angry_teeth", susie)
 		g.layer = Game.world.fader.layer + 1
 		sm:fadeOutAndRemove(2)
 		Game.world.music:fade(0, 1.5)
@@ -436,6 +425,13 @@ S; * They made a fountain INSIDE this thing! [angry_unsure]
 			aura:setOrigin(0.5, 0.5)
 			aura:setPosition(spr.x, spr.y)
 			aura:setScale(1)
+			for i = 1, 5 do
+				local image = AfterImage(aura, 0.7, 1/30)
+				image:addFX(ColorMaskFX(COLORS.white), "color")
+				image.graphics.grow_x = i / 5
+				image.graphics.grow_y = i / 5
+				Game.world:addChild(image)
+			end
 			Game.world.timer:tween(3, aura, {scale_x = 30, scale_y = 30, alpha = 0}, 'out-expo', function() 
 				aura:remove() 
 			end)
@@ -455,8 +451,87 @@ S; * They made a fountain INSIDE this thing! [angry_unsure]
 		cutscene:wait(cutscene:slideTo(spr, 1231, 197, 2, 'in-out-cubic'))
 		Game:setFlag("chase_cutscene_prog", 2)
 		cutscene:startEncounter("creature_a", false)
+		g:remove()
+		spr:remove()
 		cutscene:fadeIn(0.01, {music = false})
+
+		----Post battle
+		cutscene:wait(1)
+		Assets.playSound("damage", 0.7, 1)
+		for d, party in ipairs(Game.world.followers) do 
+			party:shake()
+			cutscene:slideTo(party, party.x - love.math.random(20, 50), party.y + -10 + (10 * (d - 1)), 0.5, 'out-expo')
+			if party.actor.id == "ralsei" then
+				party:setSprite("shocked_right_landed_2")
+			elseif party.actor.id == "jamm" then
+				party:setSprite("battle/swooned_1")
+			else
+				party:setSprite("battle/defeat")
+			end
+		end
+		cutscene:slideTo(kris, kris.x - 30, kris.y, 0.5, 'out-expo')
+		kris:setSprite("battle/defeat")
+		kris:shake()
+		--^ ???? For some reason merging player with followers breaks
+		cutscene:wait(2)
+		ralsei:shake() Assets.playSound("wing") cutscene:wait(1)
+		cutscene:text("[shake:o.6][speed:0.5]* Did.... [wait:10][face:down_eyes_tears]Did we do it...?", "down", ralsei)
+		susie:shake() Assets.playSound("wing") 
+		cutscene:text("[shake:0.52]* The hell... [wait:5]Was THAT!?", "bangs/down", susie)
+		cutscene:text("[shake:0.52]* Why was this thing so damn strong!?", "angry_down", susie)
+		cutscene:text("* ...", "shaded_neutral", jamm)
+		cutscene:text("[shake:o.6][speed:0.5]* That person... [wait:10][face:down]Whatever they did to that Darkner was...", "down_eyes_tears", ralsei)
+		cutscene:text("[shake:0.52]* And that was just one of them...", "bangs/down", susie)
+		cutscene:text("* ...", "shaded_neutral", jamm)
+		cutscene:text("[shake:0.52]* ...You okay, [wait:5]dude?", "bangs/down", susie)
+		cutscene:wait(1) jamm:shake() Assets.playSound("wing") jamm:setSprite("sit")
+		cutscene:wait(1) jamm:shake() Assets.playSound("wing") jamm:resetSprite()
+		cutscene:wait(1)
+		cutscene:wait(cutscene:walkTo(jamm, 980, 365, 2.5))
+		cutscene:text("* You're right...", "shaded_neutral", jamm)
+		cutscene:text("* What if... [wait:10][shake:0.51]What if there ARE more of these things out there...?", "shaded_neutral", jamm)
+		cutscene:text("* There's clearly a lot more of them out there...", "shaded_neutral", jamm)
+		cutscene:text("[shake:0.52][speed:0.7]* What if one of them finds...", "shaded_frown", jamm)
+		susie:resetSprite() Assets.playSound("noise") susie:shake() cutscene:wait(1)
+		ralsei:resetSprite() Assets.playSound("noise") ralsei:shake() cutscene:wait(2)
+		kris:resetSprite() Assets.playSound("noise") kris:shake() cutscene:wait(2)
+		cutscene:text("* ...", "bangs/down", susie)
+		cutscene:text("* I-I'm sure she's okay, [wait:5]Jamm!", "stressed", ralsei)
+		jamm:setFacing("left")
+		cutscene:text("[shake:0.55]* And how the hell are you supposed to know that!?", "pissed", jamm)
+		cutscene:text("[shake:0.55]* Your damn prophecy isn't reliable anymore, [wait:5]in case you couldn't tell!", "pissed", jamm)
+		cutscene:text("[shake:0.55]* There's no telling where she is, [wait:5]or if she's even okay!", "furious", jamm)
+		cutscene:walkTo(susie, 885, 345, 1)
+		cutscene:text("* Calm down, [wait:5]Jamm. [wait:10]Seriously.", "angry_look", susie)
+		cutscene:text("* If you stay this worked up, [wait:5]things are only gonna get worse.", "angry_look", susie)
+		cutscene:text("* ...", "stern", jamm)
+		cutscene:text("* Y... [wait:10]You're right...", "worried", jamm)
+		cutscene:text("* ...Sorry, [wait:10]I... [wait:5]don't know what came over me...", "worried", jamm)
+		cutscene:text("* I don't want her to see me like this, [wait:5]anyways...", "worried", jamm)
+		cutscene:wait(cutscene:walkTo(ralsei, 885, 390, 1))
+		cutscene:text("* Um... [wait:10]Let's keep going, [wait:5]everyone...!", "stressed", ralsei)
+		cutscene:walkTo(ralsei, 1400, ralsei.y, 2)
+		cutscene:wait(ralsei.x == jamm.x)
+		jamm:setFacing("down")
+		cutscene:wait(1)
+		jamm:setFacing("right")
+		cutscene:wait(2)
+		jamm:setFacing("left")
+		cutscene:wait(1)
 		
+		cutscene:walkTo(jamm, 1400, jamm.y, 2)
+		cutscene:wait(cutscene:walkTo(susie, 1400, susie.y, 2))
+		cutscene:wait(cutscene:walkTo(kris, kris.x + 100, kris.y, 1))
+		cutscene:wait(1)
+		cutscene:walkTo(kris, 1400, kris.y, 2)
+
+	end,
+	jamm_book = function (cutscene, event)
+		Game:setFlag("jamm_has_glasses", true)
+		cutscene:text("* Hey Kris, [wait:5]take a look at this.", "neutral", "jamm")
+		cutscene:text("[wait:20][face:look_left][wait:20][face:neutral][wait:20][face:look_left][wait:20]", "neutral", "jamm", {auto = true})
+		cutscene:text("* ...You got any ideas on what that means?", "neutral", "jamm")
+		Game:setFlag("jamm_has_glasses", false)
 	end,
 	jamm_lore = function (cutscene)
 		local susie = cutscene:getCharacter("susie")

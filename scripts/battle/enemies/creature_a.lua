@@ -109,7 +109,8 @@ function Dummy:hurtStatus(amount, battler, on_defeat, color, show_status, attack
 
     self.health = self.health - amount
     if show_status ~= false then
-        self:statusMessage("damage", amount, color or (battler and { battler.chara:getDamageColor() }))
+        local a = self:statusMessage("damage", amount, color or (battler and { battler.chara:getDamageColor() }))
+        a.font = Assets.getFont("damage-cult")
     end
 
     if amount > 0 then

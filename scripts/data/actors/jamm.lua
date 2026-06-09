@@ -109,7 +109,7 @@ function actor:init()
         ["battle/tactic_freeze"] = {-5, -1},
         ["battle/tactic_freeze_shiny"] = {-5, -1},
 		
-		["sit"] = {4, -8},
+		["sit"] = {4, 0},
 		
 		["ball"] = {0, 18},
 		

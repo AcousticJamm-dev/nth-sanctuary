@@ -23,7 +23,7 @@ return {
   },
   properties = {},
   wangsets = {},
-  tilecount = 97,
+  tilecount = 98,
   tiles = {
     {
       id = 0,
@@ -782,6 +782,12 @@ return {
       image = "../../../assets/sprites/world/objects/gersoncurtain.png",
       width = 121,
       height = 140
+    },
+    {
+      id = 103,
+      image = "../../../assets/sprites/world/objects/couch.png",
+      width = 78,
+      height = 40
     }
   }
 }

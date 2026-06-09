@@ -1,7 +1,7 @@
 return {
-  version = "1.11",
+  version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.12.1",
+  tiledversion = "1.10.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -9,8 +9,8 @@ return {
   height = 18,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 15,
-  nextobjectid = 294,
+  nextlayerid = 18,
+  nextobjectid = 311,
   properties = {
     ["border"] = "church_b",
     ["music"] = "second_church"
@@ -24,30 +24,35 @@ return {
     },
     {
       name = "bg_dw_church_tileset_new",
-      firstgid = 104,
+      firstgid = 105,
       filename = "../../../tilesets/bg_dw_church_tileset_new.tsx",
       exportfilename = "../../../tilesets/bg_dw_church_tileset_new.lua"
     },
     {
       name = "bg_dw_church_c_tileset",
-      firstgid = 686,
+      firstgid = 687,
       filename = "../../../tilesets/bg_dw_church_c_tileset.tsx"
     },
     {
       name = "bg_dw_church_2_tileset",
-      firstgid = 965,
+      firstgid = 966,
       filename = "../../../tilesets/bg_dw_church_2_tileset.tsx"
     },
     {
       name = "longslides",
-      firstgid = 1163,
+      firstgid = 1164,
       filename = "../../../tilesets/longslides.tsx",
       exportfilename = "../../../tilesets/longslides.lua"
     },
     {
       name = "bg_dw_church_library_2_tileset",
-      firstgid = 1217,
+      firstgid = 1218,
       filename = "../../../tilesets/bg_dw_church_library_2_tileset.tsx"
+    },
+    {
+      name = "bg_dw_dither_overlay_tileset",
+      firstgid = 1478,
+      filename = "../../../tilesets/bg_dw_dither_overlay_tileset.tsx"
     }
   },
   layers = {
@@ -75,7 +80,6 @@ return {
           width = 640,
           height = 1600,
           rotation = 0,
-          opacity = 1,
           gid = 3221225477,
           visible = true,
           properties = {}
@@ -90,7 +94,6 @@ return {
           width = 640,
           height = 1600,
           rotation = 45,
-          opacity = 1,
           gid = 5,
           visible = true,
           properties = {}
@@ -159,7 +162,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["base_tex"] = "backgrounds/glow_purple_tile_oscillate",
@@ -167,6 +169,44 @@ return {
             ["type"] = "library"
           }
         }
+      }
+    },
+    {
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 22,
+      height = 18,
+      id = 15,
+      name = "Tile Layer 4",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      encoding = "lua",
+      data = {
+        0, 0, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 898, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 975, 975, 975, 975, 975, 975, 198, 199, 199, 199, 199, 200, 975, 975, 975, 975, 975, 975, 0, 0,
+        0, 0, 975, 975, 975, 975, 975, 975, 204, 205, 205, 205, 205, 206, 975, 975, 975, 975, 975, 975, 0, 0,
+        0, 0, 975, 975, 975, 975, 975, 975, 306, 307, 307, 307, 307, 308, 975, 975, 975, 975, 975, 975, 0, 0,
+        0, 0, 312, 313, 312, 312, 313, 312, 312, 313, 312, 312, 313, 312, 312, 313, 312, 312, 313, 312, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 222, 223, 224, 222, 223, 224, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
       }
     },
     {
@@ -187,11 +227,11 @@ return {
       properties = {},
       encoding = "lua",
       data = {
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 1486, 1486, 1486, 1486, 1486, 1486, 1486, 1486, 1486, 1486, 1486, 1486, 111, 112, 113, 113, 113, 114, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 111, 112, 113, 113, 113, 114, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 111, 112, 113, 113, 113, 114, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 117, 118, 119, 119, 119, 120, 0, 0,
+        0, 0, 1139, 1139, 1139, 1139, 1139, 1139, 1139, 1139, 1139, 1139, 1139, 1139, 117, 118, 119, 119, 119, 120, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -213,6 +253,204 @@ return {
       y = 0,
       width = 22,
       height = 18,
+      id = 16,
+      name = "Tile Layer 5",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      encoding = "lua",
+      data = {
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1486, 1486, 1486, 1486, 1486, 1486, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 993, 993, 993, 993, 993, 993, 993, 975, 975, 975, 975, 975, 975, 993, 993, 993, 993, 993, 993, 993, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 975, 975, 975, 975, 975, 975, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 975, 975, 975, 975, 975, 975, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 975, 975, 975, 975, 975, 975, 0, 0, 0, 0, 0, 0, 0, 0,
+        975, 975, 975, 975, 975, 975, 975, 975, 975, 975, 975, 975, 975, 975, 0, 0, 0, 0, 0, 0, 0, 0,
+        975, 975, 975, 975, 975, 975, 975, 975, 975, 975, 975, 975, 975, 975, 0, 0, 0, 0, 0, 0, 0, 0,
+        993, 993, 993, 993, 993, 993, 993, 993, 993, 993, 975, 975, 975, 975, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 975, 975, 975, 975, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 975, 975, 975, 975, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 975, 975, 975, 975, 0, 0, 0, 0, 0, 0, 0, 0
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 17,
+      name = "objects_under_party",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 294,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 80,
+          y = 240,
+          width = 160,
+          height = 80,
+          rotation = 0,
+          gid = 104,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 309,
+          name = "churchmagicglass",
+          type = "",
+          shape = "rectangle",
+          x = 560,
+          y = 480,
+          width = 320,
+          height = 80,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["idlealpha"] = 0.1
+          }
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 3,
+      name = "objects_party",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 18,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = -40,
+          y = 480,
+          width = 40,
+          height = 80,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "2_2nd_sanctuary/second_sanctum_10_final",
+            ["marker"] = "entry2"
+          }
+        },
+        {
+          id = 298,
+          name = "hideparty",
+          type = "",
+          shape = "rectangle",
+          x = -40,
+          y = -80,
+          width = 1040,
+          height = 880,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 299,
+          name = "npc",
+          type = "",
+          shape = "point",
+          x = 138,
+          y = 232,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["actor"] = "susie",
+            ["sprite"] = "sit-couch",
+            ["text1"] = "[face:annoyed_down_alt]* Some guy, [wait:5]huh?",
+            ["text2"] = "[face:smile]* We totally got out alive because of me."
+          }
+        },
+        {
+          id = 300,
+          name = "npc",
+          type = "",
+          shape = "point",
+          x = 185,
+          y = 232,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["actor"] = "ralsei",
+            ["sprite"] = "sit-couch",
+            ["text1"] = "[voice:none]* (He looks deep in thought.)"
+          }
+        },
+        {
+          id = 301,
+          name = "npc",
+          type = "",
+          shape = "point",
+          x = 720,
+          y = 230,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["actor"] = "jamm",
+            ["cutscene"] = "events.jamm_book",
+            ["facing"] = "up"
+          }
+        },
+        {
+          id = 310,
+          name = "interactable",
+          type = "",
+          shape = "rectangle",
+          x = 560,
+          y = 160,
+          width = 120,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["text1"] = "* (This book has schematics of various locations.)",
+            ["text2"] = "* (You recognize the Base Sanctum's floorwork on one of the pages.)",
+            ["text3"] = "* (...And another page, has this very area.)",
+            ["text4"] = "* (Part of it seems to be scratched out.)"
+          }
+        }
+      }
+    },
+    {
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 22,
+      height = 18,
       id = 1,
       name = "Tile Layer 1",
       class = "",
@@ -225,20 +463,20 @@ return {
       properties = {},
       encoding = "lua",
       data = {
+        0, 1092, 1093, 1094, 1095, 1093, 1094, 1095, 0, 0, 0, 0, 0, 0, 1093, 1094, 1095, 1093, 1094, 1095, 1092, 0,
+        0, 1101, 1102, 1103, 1104, 1102, 1103, 1104, 0, 0, 0, 0, 0, 0, 1102, 1103, 1104, 1102, 1103, 1104, 1101, 0,
+        0, 1110, 1111, 1112, 1113, 1111, 1112, 1113, 0, 1112, 0, 0, 0, 0, 1111, 1112, 1113, 1111, 1112, 1113, 1110, 0,
+        0, 1119, 1120, 1121, 1122, 1120, 1121, 1122, 0, 1121, 0, 0, 0, 0, 1120, 1121, 1122, 1120, 1121, 1122, 1119, 0,
+        0, 1119, 1120, 1121, 1122, 1120, 1121, 1122, 0, 1121, 0, 0, 0, 0, 1120, 1121, 1122, 1120, 1121, 1122, 1119, 0,
+        0, 1119, 1120, 1121, 1122, 1120, 1121, 1122, 0, 1121, 0, 0, 0, 0, 1120, 1121, 1122, 1120, 1121, 1122, 1119, 0,
+        0, 1119, 1120, 1121, 1122, 1120, 1121, 1122, 0, 1121, 0, 0, 0, 0, 1120, 1121, 1122, 1120, 1121, 1122, 1119, 0,
+        0, 1128, 1138, 1139, 1140, 1138, 1139, 1140, 0, 0, 0, 0, 0, 0, 1138, 1139, 1140, 1138, 1139, 1140, 1128, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 974, 974, 974, 974, 974, 974, 974, 974, 974, 974, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 974, 974, 974, 974, 974, 974, 974, 974, 974, 974, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 974, 974, 974, 974, 974, 974, 974, 974, 974, 974, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 974, 974, 974, 974, 974, 974, 974, 974, 974, 974, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 974, 974, 974, 974, 974, 974, 974, 974, 974, 974, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 974, 974, 974, 974, 974, 974, 974, 974, 974, 974, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 974, 974, 974, 974, 974, 974, 974, 974, 974, 974, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 974, 974, 974, 974, 974, 974, 974, 974, 974, 974, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 974, 974, 974, 974, 974, 974, 974, 974, 974, 974, 0, 0, 0, 0, 0, 0,
-        974, 974, 974, 974, 974, 974, 974, 974, 974, 974, 974, 974, 974, 974, 974, 974, 0, 0, 0, 0, 0, 0,
-        974, 974, 974, 974, 974, 974, 974, 974, 974, 974, 974, 974, 974, 974, 974, 974, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -258,7 +496,99 @@ return {
       parallaxx = 1,
       parallaxy = 1,
       properties = {},
-      objects = {}
+      objects = {
+        {
+          id = 302,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 0,
+          y = 320,
+          width = 320,
+          height = 160,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 303,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 40,
+          y = 0,
+          width = 40,
+          height = 320,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 304,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 0,
+          y = 160,
+          width = 880,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 305,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 800,
+          y = 0,
+          width = 40,
+          height = 360,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 306,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 560,
+          y = 320,
+          width = 320,
+          height = 160,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 307,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 560,
+          y = 560,
+          width = 320,
+          height = 160,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 308,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 0,
+          y = 560,
+          width = 400,
+          height = 160,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
     },
     {
       type = "objectgroup",
@@ -299,7 +629,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -313,73 +642,8 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
-        },
-        {
-          id = 291,
-          name = "entry2",
-          type = "",
-          shape = "point",
-          x = 440,
-          y = 320,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {}
-        }
-      }
-    },
-    {
-      type = "objectgroup",
-      draworder = "topdown",
-      id = 3,
-      name = "objects_party",
-      class = "",
-      visible = true,
-      opacity = 1,
-      offsetx = 0,
-      offsety = 0,
-      parallaxx = 1,
-      parallaxy = 1,
-      properties = {},
-      objects = {
-        {
-          id = 18,
-          name = "transition",
-          type = "",
-          shape = "rectangle",
-          x = -40,
-          y = 480,
-          width = 40,
-          height = 80,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["map"] = "2_2nd_sanctuary/second_sanctum_10_final",
-            ["marker"] = "entry2"
-          }
-        },
-        {
-          id = 292,
-          name = "transition",
-          type = "",
-          shape = "rectangle",
-          x = 360,
-          y = 200,
-          width = 160,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["map"] = "2_2nd_sanctuary/second_sanctum_9",
-            ["marker"] = "entry"
-          }
         }
       }
     },
@@ -407,7 +671,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -437,7 +700,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["type"] = "hsv"

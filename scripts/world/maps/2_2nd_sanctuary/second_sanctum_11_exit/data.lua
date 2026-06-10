@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 21,
-  nextobjectid = 325,
+  nextobjectid = 328,
   properties = {
     ["border"] = "church_b",
     ["music"] = "second_church"
@@ -519,6 +519,34 @@ return {
             ["text3"] = "* (...And another page, has this very area.)",
             ["text4"] = "* (Part of it seems to be scratched out.)"
           }
+        },
+        {
+          id = 325,
+          name = "window_glow",
+          type = "",
+          shape = "point",
+          x = 100,
+          y = 380,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 327,
+          name = "window_glow",
+          type = "",
+          shape = "point",
+          x = 260,
+          y = 380,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
         }
       }
     },

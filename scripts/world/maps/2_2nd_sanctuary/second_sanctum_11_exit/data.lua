@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.10.2",
+  tiledversion = "1.12.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -80,6 +80,7 @@ return {
           width = 640,
           height = 1600,
           rotation = 0,
+          opacity = 1,
           gid = 3221225477,
           visible = true,
           properties = {}
@@ -94,6 +95,7 @@ return {
           width = 640,
           height = 1600,
           rotation = 45,
+          opacity = 1,
           gid = 5,
           visible = true,
           properties = {}
@@ -162,6 +164,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["base_tex"] = "backgrounds/glow_purple_tile_oscillate",
@@ -309,6 +312,7 @@ return {
           width = 160,
           height = 80,
           rotation = 0,
+          opacity = 1,
           gid = 104,
           visible = true,
           properties = {}
@@ -323,6 +327,7 @@ return {
           width = 320,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["idlealpha"] = 0.1
@@ -354,6 +359,7 @@ return {
           width = 40,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "2_2nd_sanctuary/second_sanctum_10_final",
@@ -370,6 +376,7 @@ return {
           width = 1040,
           height = 880,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -383,6 +390,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "susie",
@@ -401,11 +409,12 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "ralsei",
             ["sprite"] = "sit-couch",
-            ["text1"] = "[voice:none]* (He looks deep in thought.)"
+            ["text1"] = "[voice:default]* (He looks deep in thought.)"
           }
         },
         {
@@ -418,6 +427,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "jamm",
@@ -435,6 +445,7 @@ return {
           width = 120,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["text1"] = "* (This book has schematics of various locations.)",
@@ -507,6 +518,7 @@ return {
           width = 320,
           height = 160,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -520,6 +532,7 @@ return {
           width = 40,
           height = 320,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -533,6 +546,7 @@ return {
           width = 880,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -546,6 +560,7 @@ return {
           width = 40,
           height = 360,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -559,6 +574,7 @@ return {
           width = 320,
           height = 160,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -572,6 +588,7 @@ return {
           width = 320,
           height = 160,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -585,6 +602,7 @@ return {
           width = 400,
           height = 160,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -629,6 +647,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -642,6 +661,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -671,6 +691,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -700,6 +721,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["type"] = "hsv"

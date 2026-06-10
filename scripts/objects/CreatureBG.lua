@@ -25,14 +25,12 @@ end
 
 
 function CreatureBG:drawBackground()
-        -- Draw the black background
-    Draw.setColor(0, 0, 0, self.alpha)
-    love.graphics.rectangle("fill", -10, -10, SCREEN_WIDTH + 20, SCREEN_HEIGHT + 20)
-
     local fog = Assets.getTexture("battle/backgrounds/perlin_noise_dark_looping")
     local bgtexture = Assets.getTexture("battle/backgrounds/creature_bg")
     
 	local canvas = Draw.pushCanvas(SCREEN_WIDTH, SCREEN_HEIGHT)
+    Draw.setColor(0, 0, 0, 1)
+    love.graphics.rectangle("fill", -10, -10, SCREEN_WIDTH + 20, SCREEN_HEIGHT + 20)
     Draw.setColor(1, 1, 1, 0.5 + math.sin(self.h/40)/32)
     Draw.drawWrapped(bgtexture, true, true, MathUtils.round(6 - self.h/2), MathUtils.round(2 - self.h/2), 0, 1, 1)
     Draw.drawWrapped(bgtexture, true, true, MathUtils.round(6 - self.h)-10, MathUtils.round(2 - self.h)-10, 0, 2, 2)

@@ -32,6 +32,7 @@ function Jellycruel:init()
         "jellycruel/jellies",
         "jellycruel/circle",
         "jellycruel/TRAGEDY",
+        "jellycruel/gun",
     }
 
     -- Dialogue randomly displayed in the enemy's speech bubble

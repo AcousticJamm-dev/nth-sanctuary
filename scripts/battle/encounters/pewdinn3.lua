@@ -59,6 +59,11 @@ function Pewdinns:update()
 						bullet:addFX(self.heatfx, "heatfx")
 					end
 				end
+				for _, object in ipairs(wave.objects) do
+					if object and not object:getFX("heatfx") then
+						object:addFX(self.heatfx, "heatfx")
+					end
+				end
 			end
 		end
 	end

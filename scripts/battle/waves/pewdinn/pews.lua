@@ -1,6 +1,6 @@
-local Aiming, super = Class(Wave)
+local Pews, super = Class(Wave)
 
-function Aiming:init()
+function Pews:init()
     super.init(self)
     self.pewcount = 0
     for k,v in ipairs(Game.battle.enemies) do
@@ -14,7 +14,7 @@ function Aiming:init()
     self.time = 15
 end
 
-function Aiming:onStart()
+function Pews:onStart()
     for i = 1, self.pewcount-1 do
         local rectangle = Rectangle(100*i, 0, 5, 150)
         table.insert(self.rectangles, rectangle)
@@ -56,15 +56,23 @@ function Aiming:onStart()
                 a.physics.gravity = 0.5
                 a.physics.direction = math.rad(-90)
                 a:setScale(1)
+				local xx, yy = a:getRelativePos(0, 0)
+				local appear = self:spawnObject(PewdinnFlameAppear(xx, yy))
+				appear:setLayer(a.layer + 0.01)
+                appear.physics.speed = 7
+                appear.physics.gravity = 0.5
+                appear.physics.direction = math.rad(-90)
+				appear:setScale(1)
             end
             
+			Assets.playSound("board_torch_high")
         end
     end)
 end
 
-function Aiming:update()
+function Pews:update()
     -- Code here gets called every frame
     super.update(self)
 end
 
-return Aiming
+return Pews

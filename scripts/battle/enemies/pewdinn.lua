@@ -142,6 +142,19 @@ function Pewdinn:onAct(battler, name)
 			Game.battle.timer:tween(1, Game.battle.encounter, {heat_wave_mag_bg = Game.battle.encounter.heat_wave_mag_bg+2})
 			Game.battle.encounter.heat_wave_mag = Game.battle.encounter.heat_wave_mag + 2
             self.atkup = true
+            self.charcoaled = true
+            self:setAnimation("fire")
+            self:flash()
+			Game.battle.timer:script(function(wait)
+				Assets.playSound("board_bomb")
+				Assets.playSound("board_torch", 1, 1)
+				wait(4/30)
+				Assets.playSound("board_torch", 1, 1.2)
+				wait(4/30)
+				Assets.playSound("board_torch", 1, 1)
+				wait(4/30)
+				Assets.playSound("board_torch", 1, 0.8)
+			end)
             cutscene:text("* You and Ralsei fanned Pewdinn's flames!\n* The flame burned brighter!")
             self.dialogue_override = "[shake:1]Ooooh, that's hot!"
         end)
@@ -174,8 +187,18 @@ function Pewdinn:onAct(battler, name)
             self:hurt(80)
             Assets.playSound("damage")
             self:statusMessage("damage", "+5", {1, 0.25, 0})
-            self:flash()
             self:setAnimation("fire")
+            self:getActiveSprite():flash()
+			Game.battle.timer:script(function(wait)
+				Assets.playSound("board_bomb")
+				Assets.playSound("board_torch", 1, 1)
+				wait(4/30)
+				Assets.playSound("board_torch", 1, 1.2)
+				wait(4/30)
+				Assets.playSound("board_torch", 1, 1)
+				wait(4/30)
+				Assets.playSound("board_torch", 1, 0.8)
+			end)
 			Game.battle.timer:tween(0.5, Game.battle.encounter, {heat_wave_mag_bg = 1})
 			Game.battle.encounter.heat_wave_mag = 2
             cutscene:text("* Pewdinn's ATTACK rose from the charcoal!")
@@ -200,8 +223,8 @@ end
 
 function Pewdinn:onTurnStart()
     if self.charcoaled then
-        if self.mercy == 100 then
-            self:setAnimation("spare")
+        if self:canSpare() then
+            self:setAnimation("spared")
         else
             self:resetSprite()
         end

@@ -7,6 +7,7 @@ function Aiming:init()
     self.gun.alpha = 0
 
     self.time = 1000
+    self:setArenaSize(150)
 end
 function Aiming:onStart()
     -- Every 0.5 seconds...
@@ -25,7 +26,7 @@ function Aiming:onStart()
             Assets.playSound("noise", 0.5, 1)
             local x, y = self.gun:getRelativePos(0, 0)
             Game.battle.timer:tween(0.25, self.gun, {rotation = self.gun.rotation + math.rad(10)}, 'out-expo')
-            self:spawnBullet("smallbullet", x, y, math.rad(180)+self.gun.rotation, 5)
+            self:spawnBullet("jellycruel/jelly2", x, y, math.rad(180)+self.gun.rotation, 5)
             wait(0.1)
         end
         wait(0.5)
@@ -39,7 +40,7 @@ function Aiming:onStart()
             Assets.playSound("noise", 0.7, 1)
             local x, y = self.gun:getRelativePos(0, 0)
             Game.battle.timer:tween(0.25, self.gun, {rotation = self.gun.rotation + math.rad(10)}, 'out-expo')
-            self:spawnBullet("smallbullet", x, y, math.rad(180)+self.gun.rotation, 5)
+            local a = self:spawnBullet("jellycruel/jelly2", x, y, math.rad(180)+self.gun.rotation, 5)
             wait(0.1)
         end
         wait(0.5)
@@ -53,7 +54,7 @@ function Aiming:onStart()
             Assets.playSound("noise", 0.5, 1)
             local x, y = self.gun:getRelativePos(0, 0)
             Game.battle.timer:tween(1/15, self.gun, {rotation = self.gun.rotation + math.rad(5)}, 'out-expo')
-            self:spawnBullet("smallbullet", x, y, math.rad(180)+self.gun.rotation, 2)
+            self:spawnBullet("jellycruel/jelly2", x, y, math.rad(180)+self.gun.rotation, 2)
             wait(1/15)
         end
         wait(0.5)

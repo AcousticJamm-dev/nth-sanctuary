@@ -150,7 +150,6 @@ function Lib:init()
 				changed = true
 			end
 		end
-		Kristal.Console:log(party.chara.id .. ": " .. (changed and "True" or "False"))
 		if (amount > 0) or not changed then
 			orig(self, amount, party, on_defeat, color, show_status, attacked)
 		end

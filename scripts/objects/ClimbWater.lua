@@ -106,10 +106,9 @@ function ClimbWater:update()
 			local collider = Hitbox(self, adjustment + 8, topy + yoff, width - 16, boty - topy - 8)
 			if Game.world.player:collidesWith(collider) then
                 if Game.world.player.climb_state.fall_state == 0 and (Game.world.player.climb_state:isIdle() or Game.world.player.climb_state.charge_state > 0) then
-					Game.world.player.falldir = self.falldir
-					Game.world.player.falling = 1
-					Game.world.player.fallingtimer = self.fallingtimer
-					Game.world.player.cancel = 1
+                    Game.world.player:climbFall(self.fallingtimer, {
+                        direction = self.falldir,
+                    })
 					self.triggered = true
 					if not self.sndplayed then
 						self.sndplayed = true

@@ -785,7 +785,7 @@
   <object id="252" name="screenbounds" x="2560" y="475.294" visible="0">
    <polygon points="0,84.7059 -1395.79,84.7059 -1395.79,338.824 -1560,338.824 -1560,804.706 0,804.706"/>
   </object>
-  <object id="257" name="climbmover" x="1960" y="640" width="40" height="40">
+  <object id="257" name="climbmover" x="1960" y="720" width="40" height="40">
    <properties>
     <property name="one_way" type="bool" value="true"/>
     <property name="target" type="object" value="259"/>
@@ -850,11 +850,6 @@
   <object id="336" name="climbexit" x="1240" y="920" width="40" height="40">
    <properties>
     <property name="target" type="object" value="334"/>
-   </properties>
-  </object>
-  <object id="337" name="climbentry" x="1960" y="720" width="40" height="40">
-   <properties>
-    <property name="target" type="object" value="257"/>
    </properties>
   </object>
  </objectgroup>

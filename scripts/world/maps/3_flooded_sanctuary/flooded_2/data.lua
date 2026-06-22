@@ -2623,7 +2623,7 @@ return {
           type = "",
           shape = "rectangle",
           x = 1960,
-          y = 640,
+          y = 720,
           width = 40,
           height = 40,
           rotation = 0,
@@ -2826,22 +2826,6 @@ return {
           visible = true,
           properties = {
             ["target"] = { id = 334 }
-          }
-        },
-        {
-          id = 337,
-          name = "climbentry",
-          type = "",
-          shape = "rectangle",
-          x = 1960,
-          y = 720,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["target"] = { id = 257 }
           }
         }
       }

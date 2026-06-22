@@ -1,13 +1,15 @@
 return function(script)
 	local map = Game.world.map or nil
 	if map and map.destructableblockpos then
-		for _, climb in ipairs(Game.stage:getObjects(DestructableClimbArea)) do
+		for _, climb in ipairs(Game.world:getEvents("fallingclimbarea")) do
 			if climb then
 				climb:remove()
 			end
 		end
 		for i, pos in ipairs(map.destructableblockpos) do
-			local climb = DestructableClimbArea({x = pos.x, y = pos.y, width = pos.width, height = pos.height, properties = {sprite = pos.sprite, dangerous = pos.danger, dangertime = pos.dangertime}})
+			local climb = FallingClimbArea(pos.x, pos.y, pos.shape, {dont_break = pos.dont_break, breaks_on_leave = pos.breaks_on_leave, fall_time = pos.fall_time, timed = pos.timed, no_unsafe_area = pos.no_unsafe_area})
+			climb.data = pos.data
+			climb:applyTileObject(climb.data, Game.world.map)
 			climb.alpha = 0
 			climb.layer = pos.layer
 			Game.world:addChild(climb)

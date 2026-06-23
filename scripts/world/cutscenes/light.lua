@@ -408,7 +408,7 @@ return {
 		s:shake()
 		s:alert(20/30, {play_sound = false})
 		cutscene:wait(1)
-		s:setSprite("walk")
+		s:setSprite("walk_unhappy")
 		Game.world.music:play("cultchase")
 		cutscene:wait(cutscene:walkTo(s, s.x - 100, 730, 10/30, "down"))
 		cutscene:wait(cutscene:walkTo(s, 600, 730, 20/30, "left"))

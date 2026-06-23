@@ -311,7 +311,7 @@ return {
 		cutscene:text("* ... The festival is tomorrow.[wait:5]\n* I don't wanna forget today.")
 		s:setSprite("walk_unhappy")
 		s:setFacing("down")
-		cutscene:text("* The Knight,[wait:5] the Titan....")
+		cutscene:text("* The Knight,[wait:5] the Titan...")
 		cutscene:text("* ...[wait:5] The old man...")
 		Game:setFlag("hometown_raining", 1)
 		rainfx.faded_in_starting_rainsfx = true

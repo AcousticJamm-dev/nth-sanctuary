@@ -26,7 +26,7 @@ function ChurchDoorDarkness:update()
 			self.timer = 0
 			local ball = Sprite("effects/ball", MathUtils.random(ballregionl * 2, ballregionr * 2), bally * 2)
 			ball:setColor(COLORS.black)
-			Game.world.timer:after(1, function()
+			Game.world.timer:after(60/30, function()
 				ball:remove()
 			end)
 			local randomscale = 0.3 + MathUtils.random(0.1)

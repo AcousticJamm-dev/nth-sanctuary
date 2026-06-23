@@ -591,10 +591,10 @@
   <object id="250" x="620" y="800">
    <point/>
   </object>
-  <object id="255" x="1100" y="480">
+  <object id="255" x="1100" y="490">
    <point/>
   </object>
-  <object id="256" x="620" y="480">
+  <object id="256" x="620" y="490">
    <point/>
   </object>
  </objectgroup>

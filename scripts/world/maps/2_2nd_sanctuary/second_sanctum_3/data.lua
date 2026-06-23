@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 34,
-  nextobjectid = 412,
+  nextobjectid = 414,
   properties = {
     ["border"] = "church_b",
     ["music"] = "second_church",
@@ -1188,7 +1188,7 @@ return {
           type = "",
           shape = "point",
           x = 940,
-          y = 660,
+          y = 690,
           width = 0,
           height = 0,
           rotation = 0,
@@ -1203,6 +1203,34 @@ return {
           shape = "point",
           x = 1420,
           y = 860,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 412,
+          name = "",
+          type = "",
+          shape = "point",
+          x = 1420,
+          y = 890,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 413,
+          name = "",
+          type = "",
+          shape = "point",
+          x = 260,
+          y = 490,
           width = 0,
           height = 0,
           rotation = 0,
@@ -2978,7 +3006,7 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["target"] = { id = 393 }
+            ["target"] = { id = 413 }
           }
         },
         {
@@ -3042,7 +3070,7 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["target"] = { id = 407 }
+            ["target"] = { id = 412 }
           }
         },
         {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="42" height="32" tilewidth="40" tileheight="40" infinite="0" nextlayerid="34" nextobjectid="412">
+<map version="1.11" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="42" height="32" tilewidth="40" tileheight="40" infinite="0" nextlayerid="34" nextobjectid="414">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -321,10 +321,16 @@
   <object id="396" x="780" y="660">
    <point/>
   </object>
-  <object id="406" x="940" y="660">
+  <object id="406" x="940" y="690">
    <point/>
   </object>
   <object id="407" x="1420" y="860">
+   <point/>
+  </object>
+  <object id="412" x="1420" y="890">
+   <point/>
+  </object>
+  <object id="413" x="260" y="490">
    <point/>
   </object>
  </objectgroup>
@@ -749,7 +755,7 @@
   </object>
   <object id="400" name="climbexit" x="240" y="560" width="40" height="40">
    <properties>
-    <property name="target" type="object" value="393"/>
+    <property name="target" type="object" value="413"/>
    </properties>
   </object>
   <object id="401" name="climbentry" x="480" y="1000" width="40" height="40">
@@ -769,7 +775,7 @@
   </object>
   <object id="405" name="climbexit" x="1400" y="960" width="40" height="40">
    <properties>
-    <property name="target" type="object" value="407"/>
+    <property name="target" type="object" value="412"/>
    </properties>
   </object>
   <object id="408" name="climbentry" x="1400" y="760" width="40" height="40">

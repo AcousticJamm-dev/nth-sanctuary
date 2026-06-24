@@ -1,5 +1,78 @@
 return {
     intro = function(cutscene)
+		cutscene.lightning_timers = nil
+		local function lightningFlash()
+			if cutscene.lightning_timers then
+				for _, timer in ipairs(cutscene.lightning_timers) do
+					Game.world.timer:cancel(timer)
+				end
+			end
+			if cutscene.church_lightning then
+				cutscene.church_lightning:remove()
+			end
+			cutscene.lightning_timers = {}
+			local top_layers = {"treeup"}
+			local palettesys = Game.world:getEvent("hometowndaynight")
+			palettesys.night = 2
+			palettesys.overlay.alpha = 0
+			if self.world.map.id == "light/hometown/town_church" then
+				cutscene.church_lightning = Sprite("world/maps/hometown/church_lightning", 440, 0)
+				cutscene.church_lightning:setScale(2)
+				cutscene.church_lightning:setLayer(Game.world:parseLayer("objects"))
+				Game.world:addChild(cutscene.church_lightning)
+			end
+			if cutscene.church_darkness then
+				cutscene.church_darkness.lightning_cancel_alpha = 0
+			end
+			for _, chara in ipairs(Game.stage:getObjects(Character)) do
+				if chara:getFX("flash") then
+					chara:removeFX("flash")
+				end
+				chara:addFX(LightningFlashFX(1, 2), "flash")
+			end
+			for _, layer_id in ipairs(top_layers) do
+				local layer = Game.world.map:getTileLayer(layer_id)
+				if layer:getFX("palhack") then
+					layer:removeFX("palhack")
+				end
+				layer:addFX(PaletteFX("world/town_palette", 2), "palhack")
+			end
+			table.insert(cutscene.lightning_timers, Game.world.timer:tween(80/30, palettesys, {night = 1}, "out-cubic"))
+			table.insert(cutscene.lightning_timers, Game.world.timer:tween(80/30, palettesys.overlay, {alpha = 0.6}, "out-cubic"))
+			if cutscene.church_lightning then
+				table.insert(cutscene.lightning_timers, Game.world.timer:tween(80/30, cutscene.church_lightning, {alpha = 0}, "out-cubic"))
+			end
+			if cutscene.church_darkness then
+				table.insert(cutscene.lightning_timers, Game.world.timer:tween(80/30, cutscene.church_darkness, {lightning_cancel_alpha = 1}, "out-cubic"))
+			end
+			for _, chara in ipairs(Game.stage:getObjects(Character)) do
+				local fx = chara:getFX("flash")
+				table.insert(cutscene.lightning_timers, Game.world.timer:tween(80/30, fx, {alpha = 0}, "out-cubic"))
+			end
+			for _, layer_id in ipairs(top_layers) do
+				local layer = Game.world.map:getTileLayer(layer_id)
+				local fx = layer:getFX("palhack")
+				table.insert(cutscene.lightning_timers, Game.world.timer:tween(80/30, fx, {palette_index = 1}, "out-cubic"))
+			end
+			table.insert(cutscene.lightning_timers, Game.world.timer:after(80/30, function()
+				for _, chara in ipairs(Game.stage:getObjects(Character)) do
+					chara:removeFX("flash")
+				end
+				for _, layer_id in ipairs(top_layers) do
+					local layer = Game.world.map:getTileLayer(layer_id)
+					layer:removeFX("palhack")
+				end
+				palettesys.night = 1
+				palettesys.overlay.alpha = 0.6
+				if cutscene.church_darkness then
+					cutscene.church_darkness.lightning_cancel_alpha = 1
+				end
+				if cutscene.church_lightning then
+					cutscene.church_lightning:remove()
+				end
+				cutscene.lightning_timers = nil
+			end))
+		end
         cutscene:fadeOut(0)
 		Kristal.hideBorder(0)
 		cutscene:wait(0.5)
@@ -349,9 +422,9 @@ return {
 		local church_door = ChurchDoorDarkness(566, 528)
 		church_door:setLayer(Game.world:parseLayer("objects"))
 		Game.world:addChild(church_door)
-		local church_darkness = ChurchDarknessVFX(0, 0)
-		church_darkness:setLayer(Game.world:parseLayer("objects"))
-		Game.world:addChild(church_darkness)
+		cutscene.church_darkness = ChurchDarknessVFX(0, 0)
+		cutscene.church_darkness:setLayer(Game.world:parseLayer("objects"))
+		Game.world:addChild(cutscene.church_darkness)
 		local rainfx = Game.stage:getObjects(LightRainEffect)[1]
 		if not rainfx then
 			rainfx = LightRainEffect()
@@ -393,8 +466,8 @@ return {
 		cutscene.windpitch = 1
 		Assets.playSound("dooropen", 0.7, 0.4)
 		Assets.playSound("dooropen", 0.7, 0.5)
-		church_darkness.bg_active = true
-		church_darkness.window_active = true
+		cutscene.church_darkness.bg_active = true
+		cutscene.church_darkness.window_active = true
 		church_door:setFrame(2)
 		cutscene.wind_sound:fade(1, 1)
 		rainfx.rain_outdoors_sfx:fade(0.3, 1)
@@ -413,5 +486,14 @@ return {
 		cutscene:wait(cutscene:walkTo(s, s.x - 100, 730, 10/30, "down"))
 		cutscene:wait(cutscene:walkTo(s, 600, 730, 20/30, "left"))
 		s:setFacing("up")
+		Assets.playSound("thunder_instant")
+		lightningFlash()
+		cutscene:wait(function()
+			if Input.pressed("menu") then
+				Assets.stopAndPlaySound("thunder_instant")
+				lightningFlash()
+			end
+			return false
+		end)
     end
 }

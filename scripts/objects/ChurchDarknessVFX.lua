@@ -6,6 +6,7 @@ function ChurchDarknessVFX:init(x, y)
 	self.siner = 0
 	self.window_alpha = 0.2
 	self.darkness_strength = 0
+	self.lightning_cancel_alpha = 1
 	self.bg_active = false
 	self.window_active = false
 	self.window_invert_tall_tex = Assets.getTexture("world/objects/town_church_window_invert_tall")
@@ -24,7 +25,7 @@ function ChurchDarknessVFX:update()
 	self.siner = self.siner + 0.2 * DTMULT
 	if self.bg_active then
 		self.darkness_strength = math.sin(self.siner / 4)
-		self.overlay.alpha = 0.4 + (self.darkness_strength * 0.3)
+		self.overlay.alpha = (0.4 + (self.darkness_strength * 0.3)) * self.lightning_cancel_alpha
 	else
 		self.darkness_strength = 0
 		self.overlay.alpha = 0

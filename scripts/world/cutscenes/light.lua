@@ -269,6 +269,11 @@ return {
 		pillow:setScale(2)
 		pillow:setLayer(k.layer - 0.1)
 		Game.world:addChild(pillow)
+		local phone = Sprite("world/objects/kris_phone_floor_1", ((Game.world.camera.x - SCREEN_WIDTH/2) + 408) - 40, 
+		((Game.world.camera.y - SCREEN_HEIGHT/2) + 336) - 94)
+		phone:setScale(2)
+		phone:setLayer(k.layer - 0.1)
+		Game.world:addChild(phone)
 		local wagon = LightIntroWagon(470, 330)
 		wagon:setLayer(k.layer - 0.1)
 		Game.world:addChild(wagon)

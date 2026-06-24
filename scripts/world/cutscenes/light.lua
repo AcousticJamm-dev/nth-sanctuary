@@ -10,6 +10,9 @@ return {
 			if cutscene.church_lightning then
 				cutscene.church_lightning:remove()
 			end
+			if cutscene.church_door_lightning then
+				cutscene.church_door_lightning:remove()
+			end
 			cutscene.lightning_timers = {}
 			local top_layers = {"treeup"}
 			local palettesys = Game.world:getEvent("hometowndaynight")
@@ -22,7 +25,11 @@ return {
 				Game.world:addChild(cutscene.church_lightning)
 			end
 			if cutscene.church_door then
-				cutscene.church_door.lightning_alpha = 1
+				cutscene.church_door_lightning = Sprite("world/objects/church_door_lightning", cutscene.church_door.x, cutscene.church_door.y)
+				cutscene.church_door_lightning:setScale(2)
+				cutscene.church_door_lightning:setFrame(cutscene.church_door.frame)
+				cutscene.church_door_lightning:setLayer(Game.world:parseLayer("objects"))
+				Game.world:addChild(cutscene.church_door_lightning)
 			end
 			if cutscene.church_darkness then
 				cutscene.church_darkness.lightning_cancel_alpha = 0
@@ -45,8 +52,8 @@ return {
 			if cutscene.church_lightning then
 				table.insert(cutscene.lightning_timers, Game.world.timer:tween(80/30, cutscene.church_lightning, {alpha = 0}, "out-cubic"))
 			end
-			if cutscene.church_door then
-				table.insert(cutscene.lightning_timers, Game.world.timer:tween(80/30, cutscene.church_door, {lightning_alpha = 0}, "out-cubic"))
+			if cutscene.church_door_lightning then
+				table.insert(cutscene.lightning_timers, Game.world.timer:tween(80/30, cutscene.church_door_lightning, {alpha = 0}, "out-cubic"))
 			end
 			if cutscene.church_darkness then
 				table.insert(cutscene.lightning_timers, Game.world.timer:tween(80/30, cutscene.church_darkness, {lightning_cancel_alpha = 1}, "out-cubic"))
@@ -73,8 +80,8 @@ return {
 				if cutscene.church_darkness then
 					cutscene.church_darkness.lightning_cancel_alpha = 1
 				end
-				if cutscene.church_door then
-					cutscene.church_door.lightning_alpha = 0
+				if cutscene.church_door_lightning then
+					cutscene.church_door_lightning:remove()
 				end
 				if cutscene.church_lightning then
 					cutscene.church_lightning:remove()

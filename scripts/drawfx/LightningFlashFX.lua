@@ -43,7 +43,7 @@ function LightningFlashFX:draw(texture)
     love.graphics.setShader(shader)
     shader:send("inputcolor", {0, 0, 0})
     shader:send("amount", alpha)
-    Draw.drawCanvas(texture, 0, sy * 4)
+    Draw.drawCanvas(texture, 0, sy * 2)
     love.graphics.setShader(last_shader)
 
     love.graphics.setStencilTest()

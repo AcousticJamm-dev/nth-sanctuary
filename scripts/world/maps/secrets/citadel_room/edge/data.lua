@@ -1,7 +1,7 @@
 return {
-  version = "1.11",
+  version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.10.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -9,8 +9,8 @@ return {
   height = 12,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 6,
-  nextobjectid = 10,
+  nextlayerid = 7,
+  nextobjectid = 18,
   properties = {
     ["border"] = "tvworld",
     ["music"] = "greenroom_detune"
@@ -20,6 +20,12 @@ return {
       name = "bg_ch3_dw_teevie_land_tileset",
       firstgid = 1,
       filename = "../../../../tilesets/teevie_land.tsx"
+    },
+    {
+      name = "church_objects",
+      firstgid = 157,
+      filename = "../../../../tilesets/church_objects.tsx",
+      exportfilename = "../../../../tilesets/church_objects.lua"
     }
   },
   layers = {
@@ -115,19 +121,6 @@ return {
           properties = {}
         },
         {
-          id = 2,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 720,
-          y = 0,
-          width = 40,
-          height = 480,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
           id = 3,
           name = "",
           type = "",
@@ -194,6 +187,49 @@ return {
           rotation = 0,
           visible = true,
           properties = {}
+        },
+        {
+          id = 17,
+          name = "entry2",
+          type = "",
+          shape = "point",
+          x = 680,
+          y = 310,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 6,
+      name = "objects_below_party",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 13,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 440,
+          y = 160,
+          width = 240,
+          height = 160,
+          rotation = 0,
+          gid = 264,
+          visible = true,
+          properties = {}
         }
       }
     },
@@ -245,6 +281,38 @@ return {
             ["cutscene"] = "events.scarlet_tree",
             ["map"] = "secrets/citadel_room/edge",
             ["once"] = false
+          }
+        },
+        {
+          id = 14,
+          name = "interactable",
+          type = "",
+          shape = "rectangle",
+          x = 520,
+          y = 120,
+          width = 80,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["solid"] = "true",
+            ["text1_1"] = "* (\"WARNING!\") [wait:10]\n* (\"TITREN SPAWN AHEAD!\")",
+            ["text2_1"] = "* (Yes, [wait:5]you read that correctly.)"
+          }
+        },
+        {
+          id = 15,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 720,
+          y = 120,
+          width = 120,
+          height = 360,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "secrets/citadel_room/titren_room"
           }
         }
       }

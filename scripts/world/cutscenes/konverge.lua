@@ -14,6 +14,117 @@ return {
 ]])
         end
     end,
+    spawn = function(cutscene)
+        local t = Game.world.map:getEvent(3)
+        
+        local susie = cutscene:getCharacter("susie")
+        local ralsei = cutscene:getCharacter("ralsei")
+
+        cutscene:detachFollowers()
+        
+        t:shake(10, 0)
+        Assets.playSound("tspawn", 1, 1.25)
+        cutscene:wait(1)
+        Game.world.timer:tween(1, t, {x = t.x - 30, y = t.y - 30})
+        cutscene:wait(1.2)
+        t:shake(10, 0) 
+        Assets.playSound("tspawn", 1, 1.25)
+        cutscene:wait(0.5)
+        Game.world.timer:tween(1, t, {x = t.x - 50, y = t.y + 50})
+        cutscene:wait(1.2)
+        t:shake(10, 0) 
+        Assets.playSound("tspawn", 1, 1.25)
+        cutscene:wait(0.5)
+        cutscene:wait(cutscene:walkTo(susie, 540, 310, 1))
+        cutscene:wait(1/4)
+        cutscene:panTo(Game.world.camera.x + 100, Game.world.camera.y)
+        Game.world.timer:tween(1, t, {x = t.x + 50, y = t.y + 20})
+        cutscene:wait(cutscene:walkTo(susie, t.x, t.y, 2))
+        susie:setSprite("diagonal_kick_right")
+        susie.sprite:setFrame(1)
+        cutscene:wait(1.2)
+        t:shake(20, 0) 
+        Assets.playSound("tspawn", 1, 1)
+        susie.sprite:setFrame(2)
+        cutscene:wait(0.5)
+        susie.sprite:play(1/7, false)
+        ralsei:setSprite("shocked_right")
+        ralsei:shake()
+        Assets.stopAllSounds()
+        Assets.playSound("impact")
+        Assets.playSound("damage")
+        t.sprite.physics.direction = math.rad(-25)
+        t.sprite.graphics.spin = 1
+        t.physics.speed = 10
+        t.physics.gravity = 1
+        cutscene:during(function () if t.y > 700 then t:remove() end end)
+        for i = 3, 5 do
+            susie.sprite:setFrame(i)
+            cutscene:wait(1/7)
+        end
+        cutscene:wait(1/3)
+        susie:setSprite("point_laugh_right")
+        susie:play(1/5)
+        Assets.playSound("suslaugh")
+        cutscene:wait(1)
+        susie.sprite:stop()
+        cutscene:text("* That takes care of that.", "smile", susie)
+        cutscene:text("* S-Susie! [wait:10]That one didn't even seem like a threat![wait:5][react:1]", "concern", ralsei, {
+            reactions = {
+                {"Then again, they ARE Titan Spawn...", "middle", "bottom", "dismissive", "ralsei"},
+            }
+        })
+        ralsei:resetSprite()
+        susie:resetSprite()
+        cutscene:attachCamera()
+        cutscene:wait(cutscene:attachFollowers())
+
+        cutscene:text("* (Would you like to see the consequences of Susie's actions?)")
+        local ch = cutscene:choicer({"Yes", "No"})
+
+        if ch == 1 then
+            cutscene:text("* (Keep walking.)")
+            local kris = cutscene:getCharacter("kris")
+            local b = Game.world:spawnObject(ChaserEnemy("buff_spawn", 1480, 260, {encounter = "buff_spawn"}))
+            cutscene:wait(cutscene:walkTo(kris, 1200, 260, 5))
+            cutscene:wait(1)
+            Assets.playSound("spawn_weaker", 1, 0.5)
+            Game.world.camera:shake(20, 0)
+            b:setSprite("throw")
+            for i = 1, 4 do
+                b.sprite:setFrame(i)
+                cutscene:wait(1/6)
+            end
+            cutscene:wait(1.2)
+            cutscene:wait(cutscene:slideTo(b, kris.x,kris.y,0.5))
+        else
+            local spr = Sprite("battle/enemies/titanspawn/idle")
+            Game.world:addChild(spr)
+            spr.x, spr.y = susie.x, -40
+            spr.layer = 9999
+            spr:setOrigin(0.5, 0.5)
+            Assets.playSound("hraaaugh")
+            cutscene:wait(1/2)
+            Assets.playSound("fall")
+            spr.physics.gravity = 0.75
+            spr.graphics.spin = 0.3
+            spr.physics.speed = 0
+            cutscene:wait(function()
+                return spr.y > (susie.y - susie.height/1.5)
+            end)
+            spr.physics.gravity_direction = math.rad(85)
+            spr.physics.speed_y = -20
+            spr.physics.gravity = 2
+            Assets.playSound("hurt")
+            susie:shake()
+            Game.world:hurtParty("susie", Game.party[2].health-1)
+            susie:setSprite("battle/swooned")
+            Assets.stopAndPlaySound("clonk",1, 1.05)
+            cutscene:wait(1/12)
+            Assets.stopAndPlaySound("clonk",1, 1.1)
+        end
+         Game:setFlag("fought_titren", true)
+    end,
     clean = function(cutscene)
         local h = Game.inventory:hasItem("rake")
         local a = Game:getFlag("cleanup") if a then return end

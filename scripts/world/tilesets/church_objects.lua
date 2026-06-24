@@ -1,7 +1,7 @@
 return {
-  version = "1.11",
+  version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.12.1",
+  tiledversion = "1.10.2",
   name = "church_objects",
   class = "",
   tilewidth = 2880,
@@ -23,7 +23,7 @@ return {
   },
   properties = {},
   wangsets = {},
-  tilecount = 101,
+  tilecount = 102,
   tiles = {
     {
       id = 0,
@@ -806,6 +806,12 @@ return {
       image = "../../../assets/sprites/world/events/climbtiles/brittlewallred.png",
       width = 20,
       height = 20
+    },
+    {
+      id = 107,
+      image = "../../../assets/sprites/world/objects/warning_dogmarriage.png",
+      width = 120,
+      height = 80
     }
   }
 }

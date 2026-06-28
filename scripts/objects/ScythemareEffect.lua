@@ -135,7 +135,7 @@ function ScythemareEffect:draw()
 		end
 		if timer < 9 then
 			Draw.setColor(r, g, b, a)
-			Draw.draw(self.slash_tex[math.floor((timer / 3 % self.slash_tex) + 1)], 0, 0, -math.rad(90), 1, 2, self.slash_tex:getWidth() / 2, self.slash_tex:getHeight() / 2)
+			Draw.draw(self.slash_tex[math.floor(timer / 3 % self.slash_tex) + 1], 0, 0, -math.rad(90), 1, 2, self.slash_tex:getWidth() / 2, self.slash_tex:getHeight() / 2)
 		end
 	end
 

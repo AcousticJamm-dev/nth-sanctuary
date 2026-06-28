@@ -78,7 +78,7 @@ function spell:onCast(user, target)
             count = count + 1
         end
     end
-	Game.world.timer:after((64 + (count * 10)/30, function()
+	Game.world.timer:after((64 + (count * 10))/30, function()
 		Game.battle:finishAction()
 	end)
     return false

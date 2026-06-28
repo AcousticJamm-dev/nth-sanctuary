@@ -42,7 +42,6 @@ function ScythemareEffect:update()
 			self.pacify_sound = Assets.playSound("pacify")
 			self.con = 2
 		end
-        self:remove()
     else
 		local timer = self.siner - 34
 		if timer >= 0 and self.con == 2 then

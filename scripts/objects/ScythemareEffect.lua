@@ -47,7 +47,7 @@ function ScythemareEffect:update()
 		local timer = self.siner - 34
 		if timer >= 0 and self.con == 2 then
 			if self.success then
-				Game.world.timer:script(function(wait)
+				Game.battle.timer:script(function(wait)
 					Assets.playSound("swing", 1, 1.5 + (self.count * 0.25))
 					wait(3/30)
 					Assets.playSound("swing", 0.66, 1.5 + (self.count * 0.25))
@@ -97,7 +97,7 @@ function ScythemareEffect:draw()
 			local spin = MathUtils.lerp(-20, 0, MathUtils.easeInAccurate((timer / 20) / 8, 3))
 			local altspin = MathUtils.lerp(-10, 0, MathUtils.easeInAccurate((timer / 20) / 8, 3))
 		end
-		Draw.setColor(r, g, b, a * crossfadeB / 2)
+		Draw.setColor(r, g, b, a * (crossfadeB / 2))
 		Draw.draw(self.spare_z_tex, 0, 0, -math.rad(self.last_altspin), 3, 3, self.spare_z_tex:getWidth() / 2, self.spare_z_tex:getHeight() / 2)
 		Draw.setColor(r, g, b, a * crossfadeB)
 		Draw.draw(self.spare_z_tex, 0, 0, -math.rad(altspin), 3, 3, self.spare_z_tex:getWidth() / 2, self.spare_z_tex:getHeight() / 2)

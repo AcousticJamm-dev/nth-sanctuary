@@ -50,7 +50,7 @@ function spell:onCast(user, target)
     end)
     effect.layer = target.layer + 0.1
     Game.battle:addChild(effect)
-	Game.world.timer:after(75/30, function()
+	Game.battle.timer:after(75/30, function()
 		Game.battle:finishAction()
 	end)
     return false

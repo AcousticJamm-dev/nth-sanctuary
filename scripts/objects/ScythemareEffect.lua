@@ -38,7 +38,7 @@ function ScythemareEffect:update()
 		end
 	elseif self.siner < 34 then
 		local timer = self.siner - 6
-		if timer >= 4 and self.num == 0 and self.con == 1 then
+		if timer >= 7 and self.count == 0 and self.con == 1 then
 			self.pacify_sound = Assets.playSound("pacify")
 			self.con = 2
 		end

@@ -181,7 +181,7 @@ function ReviveSongEffect:draw()
             Game.battle:addChild(cherub)
             local cherub2 = Sprite("effects/titan/ralsei_cherub")
             cherub2:setOrigin(0.5, 0.5)
-            cherub2:setScale(2, -2)
+            cherub2:setScale(-2, 2)
             cherub2:setPosition((self.x + 30 + self.xoff) - spread, self.y + self.yoff)
             cherub2.layer = self.layer + 0.01
             cherub2:play(1/30, false, function(s) s:remove() end)

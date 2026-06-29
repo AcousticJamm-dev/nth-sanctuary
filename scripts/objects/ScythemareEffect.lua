@@ -105,9 +105,9 @@ function ScythemareEffect:draw()
 			local spin = MathUtils.lerp(-90, 10, MathUtils.easeInAccurate((timer / 20) / 8, 3))
 		end
 		Draw.setColor(r, g, b, a * (1 - (crossfadeA / 2)))
-		Draw.draw(self.texture, 0, 0, -math.rad(self.last_spin), 3, 3, self.texture:getWidth() / 2, self.texture:getHeight() / 2)
+		Draw.draw(self.texture, 0, 0, -math.rad(self.last_spin), 2, 2, self.texture:getWidth() / 2, self.texture:getHeight() / 2)
 		Draw.setColor(r, g, b, a * (1 - crossfadeA))
-		Draw.draw(self.texture, 0, 0, -math.rad(spin), 3, 3, self.texture:getWidth() / 2, self.texture:getHeight() / 2)
+		Draw.draw(self.texture, 0, 0, -math.rad(spin), 2, 2, self.texture:getWidth() / 2, self.texture:getHeight() / 2)
 		self.last_spin = spin
 	else
 		local timer = self.siner - 34

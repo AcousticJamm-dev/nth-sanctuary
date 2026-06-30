@@ -42,7 +42,7 @@ function Huemist:init()
         "* Huemist daydreams about an empty\nfield somewhere distant.",
         "* Huemist radiates in pink and gold.",
         "* The air feels clear and broad.",
-        "* Smells like [friend][shake:0][Pink & Gold][friend:unfriend] lemonade vapor.",
+        "* Smells like [friend][Pink & Gold][friend:unfriend] lemonade vapor.",
         "* And then you fired again.",
     }
     -- Text displayed at the bottom of the screen when the enemy has low health

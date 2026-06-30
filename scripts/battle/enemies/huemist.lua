@@ -42,7 +42,6 @@ function Huemist:init()
         "* Huemist daydreams about an empty\nfield somewhere distant.",
         "* Huemist ripples like water.",
         "* The air feels clear and broad.",
-        "* Smells like [friend][Pink & Gold][friend:unfriend] lemonade vapor.",
         "* And then you fired again.",
     }
     -- Text displayed at the bottom of the screen when the enemy has low health
@@ -122,4 +121,20 @@ function Huemist:draw()
     super.draw(self)
     Draw.popShader()
 end
+
+function Huemist:getEncounterText()
+    if self.low_health_text and self.health <= (self.max_health * self.low_health_percentage) then
+        return self.low_health_text
+    elseif self.tired_text and self.tired then
+        return self.tired_text
+    elseif self.spareable_text and self:canSpare() then
+        return self.spareable_text
+    end
+	if love.math.random(0, 100) < 3 then
+		return "* Smells like [friend][Pink & Gold][friend:unfriend] lemonade vapor."
+	else
+		return super.getEncounterText(self)
+	end
+end
+
 return Huemist

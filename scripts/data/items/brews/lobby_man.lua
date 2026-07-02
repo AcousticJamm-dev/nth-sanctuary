@@ -18,7 +18,7 @@ function item:init()
     -- Shop description
     self.shop = ""
     -- Menu description
-    self.description = "It's own-flavored beverage.\nThe flavor just says \"Kris.\""
+    self.description = "It's own-flavored beverage.\nThe flavor is scratched out.\""
 
     -- Amount healed (HealItem variable)
     self.heal_amount = 50

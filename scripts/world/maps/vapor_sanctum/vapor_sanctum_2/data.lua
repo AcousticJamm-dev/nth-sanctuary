@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 11,
-  nextobjectid = 37,
+  nextobjectid = 42,
   properties = {
     ["music"] = "vapor_sanct_wip"
   },
@@ -84,48 +84,6 @@ return {
           rotation = 0,
           visible = true,
           properties = {}
-        },
-        {
-          id = 3,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 320,
-          y = 400,
-          width = 320,
-          height = 800,
-          rotation = 315,
-          gid = 3221226274,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 4,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = -120,
-          y = 840,
-          width = 320,
-          height = 800,
-          rotation = 0,
-          gid = 802,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 5,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 320,
-          y = 840,
-          width = 320,
-          height = 800,
-          rotation = 0,
-          gid = 802,
-          visible = true,
-          properties = {}
         }
       }
     },
@@ -139,10 +97,53 @@ return {
       opacity = 1,
       offsetx = 0,
       offsety = 0,
-      parallaxx = 1,
-      parallaxy = 1,
+      parallaxx = 0.3,
+      parallaxy = 0.3,
       properties = {},
-      objects = {}
+      objects = {
+        {
+          id = 39,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 480,
+          y = 560,
+          width = 320,
+          height = 800,
+          rotation = 315,
+          gid = 3221226274,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 40,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 40,
+          y = 640,
+          width = 320,
+          height = 800,
+          rotation = 0,
+          gid = 802,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 41,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 280,
+          y = 480,
+          width = 320,
+          height = 800,
+          rotation = 0,
+          gid = 802,
+          visible = true,
+          properties = {}
+        }
+      }
     },
     {
       type = "objectgroup",
@@ -237,6 +238,19 @@ return {
           shape = "point",
           x = 40,
           y = 100,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 38,
+          name = "entry2",
+          type = "",
+          shape = "point",
+          x = 1160,
+          y = 450,
           width = 0,
           height = 0,
           rotation = 0,
@@ -400,6 +414,22 @@ return {
           properties = {
             ["actor"] = "huemist",
             ["encounter"] = "huemist"
+          }
+        },
+        {
+          id = 37,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 1200,
+          y = 400,
+          width = 40,
+          height = 120,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "vapor_sanctum/vapor_sanctum_3",
+            ["marker"] = "entry"
           }
         }
       }

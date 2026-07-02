@@ -10,7 +10,7 @@ return {
   tilewidth = 32,
   tileheight = 32,
   nextlayerid = 12,
-  nextobjectid = 36,
+  nextobjectid = 37,
   properties = {
     ["music"] = "vapor_sanct_wip"
   },
@@ -469,6 +469,19 @@ return {
           y = 256,
           width = 32,
           height = 96,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 36,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = -32,
+          y = 128,
+          width = 32,
+          height = 160,
           rotation = 0,
           visible = true,
           properties = {}

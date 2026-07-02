@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="30" height="22" tilewidth="40" tileheight="40" infinite="0" nextlayerid="11" nextobjectid="37">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="30" height="22" tilewidth="40" tileheight="40" infinite="0" nextlayerid="11" nextobjectid="42">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -15,11 +15,12 @@
   <object id="2" name="glowy" x="0" y="0">
    <point/>
   </object>
-  <object id="3" gid="3221226274" x="320" y="400" width="320" height="800" rotation="315"/>
-  <object id="4" gid="802" x="-120" y="840" width="320" height="800"/>
-  <object id="5" gid="802" x="320" y="840" width="320" height="800"/>
  </objectgroup>
- <objectgroup id="4" name="objects_parallax2"/>
+ <objectgroup id="4" name="objects_parallax2" parallaxx="0.3" parallaxy="0.3">
+  <object id="39" gid="3221226274" x="480" y="560" width="320" height="800" rotation="315"/>
+  <object id="40" gid="802" x="40" y="640" width="320" height="800"/>
+  <object id="41" gid="802" x="280" y="480" width="320" height="800"/>
+ </objectgroup>
  <objectgroup id="5" name="objects_parallax" parallaxx="0.4" parallaxy="0.4">
   <object id="6" gid="802" x="-440" y="400" width="640" height="1600" rotation="45"/>
  </objectgroup>
@@ -53,6 +54,9 @@
   <object id="13" name="entry" x="40" y="100">
    <point/>
   </object>
+  <object id="38" name="entry2" x="1160" y="450">
+   <point/>
+  </object>
  </objectgroup>
  <objectgroup id="7" name="objects_reflection">
   <object id="7" name="vaporreflect" x="0" y="40" width="960" height="120"/>
@@ -83,6 +87,12 @@
     <property name="encounter" value="huemist"/>
    </properties>
    <point/>
+  </object>
+  <object id="37" name="transition" x="1200" y="400" width="40" height="120">
+   <properties>
+    <property name="map" value="vapor_sanctum/vapor_sanctum_3"/>
+    <property name="marker" value="entry"/>
+   </properties>
   </object>
  </objectgroup>
  <objectgroup color="#ff0000" id="10" name="collision">

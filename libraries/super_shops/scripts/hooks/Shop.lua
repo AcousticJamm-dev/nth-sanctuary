@@ -224,7 +224,7 @@ function Shop:denySellDialogue(reason)
 	end
 
 	self.dialogue_text.advance_callback = (function()
-		self:enterSellMenu(self.sell_options[self.sell_current_selecting])
+		self:setState("SELLMENU", "DIALOGUE")
 	end)
 end
 
@@ -359,8 +359,8 @@ function Shop:processBuyConfirmInput()
 end
 
 function Shop:processSellConfirmInput()
-    if Input.pressed("confirm") and self.deny_sell[Game.inventory:getStorage(self.state_reason[2])[self.item_current_selected_item].id] then
-		self:denySellDialogue(Game.inventory:getStorage(self.state_reason[2])[self.item_current_selected_item].id)
+    if Input.pressed("confirm") and self.deny_sell[Game.inventory:getStorage(self.selected_storage)[self.current_selected_item].id] then
+		self:denySellDialogue(Game.inventory:getStorage(self.selected_storage)[self.current_selected_item].id)
 		return
 	end
 	

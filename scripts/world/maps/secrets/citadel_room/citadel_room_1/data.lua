@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.10.2",
+  tiledversion = "1.12.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -169,6 +169,7 @@ return {
           width = 560,
           height = 200,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -182,6 +183,7 @@ return {
           width = 520,
           height = 200,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -195,6 +197,7 @@ return {
           width = 80,
           height = 480,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -208,6 +211,7 @@ return {
           width = 80,
           height = 640,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -221,6 +225,7 @@ return {
           width = 80,
           height = 160,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -234,6 +239,7 @@ return {
           width = 80,
           height = 320,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -247,6 +253,7 @@ return {
           width = 600,
           height = 160,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -260,6 +267,7 @@ return {
           width = 560,
           height = 160,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -304,6 +312,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -317,6 +326,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -330,6 +340,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -343,6 +354,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -372,6 +384,7 @@ return {
           width = 200,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "0_base_sanctum/base_fast_travel",
@@ -388,6 +401,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "susie_notaparasite",
@@ -408,6 +422,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "bunny",
@@ -424,6 +439,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "kris_lw",
@@ -444,6 +460,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "sans",
@@ -460,6 +477,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "sans",
@@ -476,6 +494,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["text1"] = "* (This place boggles your mind.)",
@@ -492,6 +511,7 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
+          opacity = 1,
           gid = 491,
           visible = true,
           properties = {
@@ -511,6 +531,7 @@ return {
           width = 40,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "secrets/citadel_room/citadel_room_2",
@@ -527,6 +548,7 @@ return {
           width = 40,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "secrets/citadel_room/citadel_room_3",
@@ -543,6 +565,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "boid",
@@ -560,6 +583,7 @@ return {
           width = 120,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "secrets/citadel_room/legacy_room_1",
@@ -576,6 +600,7 @@ return {
           width = 560,
           height = 200,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["Solid"] = true
@@ -591,6 +616,7 @@ return {
           width = 440,
           height = 200,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["Solid"] = true
@@ -606,6 +632,7 @@ return {
           width = 80,
           height = 480,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["Solid"] = true
@@ -621,6 +648,7 @@ return {
           width = 80,
           height = 640,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["Solid"] = true
@@ -636,6 +664,7 @@ return {
           width = 80,
           height = 160,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["Solid"] = true
@@ -651,6 +680,7 @@ return {
           width = 600,
           height = 160,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["Solid"] = true
@@ -666,6 +696,7 @@ return {
           width = 560,
           height = 160,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["Solid"] = true

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="27" height="48" tilewidth="40" tileheight="40" infinite="0" nextlayerid="11" nextobjectid="121">
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="27" height="48" tilewidth="40" tileheight="40" infinite="0" nextlayerid="11" nextobjectid="121">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -346,7 +346,7 @@
   </object>
   <object id="27" name="shard_door" x="380" y="1570" width="120" height="30">
    <properties>
-    <property name="map" value="vapor_sanctum/vapor_sanctum_ripple"/>
+    <property name="map" value="vapor_sanctum/vapor_sanctum_0_ripple"/>
     <property name="map_name" value="Vapor Sanctuary"/>
     <property name="marker" value="entry"/>
     <property name="req" value="5"/>

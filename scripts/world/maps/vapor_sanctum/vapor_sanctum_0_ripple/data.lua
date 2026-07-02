@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.10.2",
+  tiledversion = "1.12.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -16,8 +16,7 @@ return {
     {
       name = "vapor_assets",
       firstgid = 1,
-      filename = "../../../tilesets/vapor_assets.tsx",
-      exportfilename = "../../../tilesets/vapor_assets.lua"
+      filename = "../../../tilesets/vapor_assets.tsx"
     }
   },
   layers = {
@@ -59,7 +58,7 @@ return {
       id = 10,
       name = "objects_bottom",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -77,6 +76,7 @@ return {
           width = 400,
           height = 278,
           rotation = 0,
+          opacity = 1,
           gid = 1,
           visible = true,
           properties = {}

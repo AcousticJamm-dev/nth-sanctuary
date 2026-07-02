@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.12.1",
+  tiledversion = "1.12.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -35,7 +35,7 @@ return {
     },
     {
       name = "light_areas",
-      firstgid = 885,
+      firstgid = 890,
       filename = "../../../tilesets/light_areas.tsx"
     }
   },
@@ -1030,7 +1030,7 @@ return {
           height = 920,
           rotation = 0,
           opacity = 1,
-          gid = 885,
+          gid = 890,
           visible = true,
           properties = {
             ["light"] = true,
@@ -1051,7 +1051,7 @@ return {
           height = 920,
           rotation = 0,
           opacity = 1,
-          gid = 2147484533,
+          gid = 2147484538,
           visible = true,
           properties = {
             ["light"] = true,

@@ -1,5 +1,5 @@
 ---@class Map.dark_place : Map
-local map, super = Class(Map, "vapor_sanctum_ripple")
+local map, super = Class(Map, "vapor_sanctum_0_ripple")
 
 function map:init(world, data)
     super.init(self, world, data)

@@ -1,7 +1,7 @@
 return {
   version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.12.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -59,6 +59,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -72,6 +73,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -101,6 +103,7 @@ return {
           width = 640,
           height = 1600,
           rotation = -315,
+          opacity = 1,
           gid = 785,
           visible = true,
           properties = {}
@@ -115,6 +118,7 @@ return {
           width = 640,
           height = 1600,
           rotation = -45,
+          opacity = 1,
           gid = 785,
           visible = true,
           properties = {}
@@ -289,6 +293,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["type"] = "hsv"
@@ -304,6 +309,7 @@ return {
           width = 160,
           height = 160,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -317,6 +323,7 @@ return {
           width = 160,
           height = 160,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -330,6 +337,7 @@ return {
           width = 280,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -343,6 +351,7 @@ return {
           width = 400,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -356,6 +365,7 @@ return {
           width = 120,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -434,6 +444,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -447,6 +458,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -460,6 +472,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -473,6 +486,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -486,6 +500,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -563,6 +578,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -576,6 +592,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -589,6 +606,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -600,7 +618,7 @@ return {
       id = 14,
       name = "paths",
       class = "",
-      visible = false,
+      visible = true,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -613,46 +631,47 @@ return {
           name = "circle",
           type = "",
           shape = "polygon",
-          x = 601.5,
-          y = 816.5,
+          x = 600,
+          y = 760,
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           polygon = {
-            { x = 164.5, y = 0 },
-            { x = 161.32, y = 35.8437 },
-            { x = 151.998, y = 70.2193 },
-            { x = 136.754, y = 101.904 },
-            { x = 116.356, y = 129.796 },
-            { x = 91.3523, y = 152.55 },
-            { x = 62.9487, y = 169.554 },
-            { x = 32.1323, y = 179.952 },
-            { x = 0, y = 183.5 },
-            { x = -32.1323, y = 179.952 },
-            { x = -62.9487, y = 169.554 },
-            { x = -91.3523, y = 152.55 },
-            { x = -116.356, y = 129.796 },
-            { x = -136.754, y = 101.904 },
-            { x = -151.998, y = 70.2193 },
-            { x = -161.32, y = 35.8437 },
-            { x = -164.5, y = 0 },
-            { x = -161.32, y = -35.8437 },
-            { x = -151.998, y = -70.2193 },
-            { x = -136.754, y = -101.904 },
-            { x = -116.356, y = -129.796 },
-            { x = -91.3523, y = -152.55 },
-            { x = -62.9487, y = -169.554 },
-            { x = -32.1323, y = -179.952 },
-            { x = 0, y = -183.5 },
-            { x = 32.1323, y = -179.952 },
-            { x = 62.9487, y = -169.554 },
-            { x = 91.3523, y = -152.55 },
-            { x = 116.356, y = -129.796 },
-            { x = 136.754, y = -101.904 },
-            { x = 151.998, y = -70.2193 },
-            { x = 161.32, y = -35.8437 },
-            { x = 164.5, y = 0 }
+            { x = 160, y = 0 },
+            { x = 156.907, y = 31.2534 },
+            { x = 147.84, y = 61.2266 },
+            { x = 133.013, y = 88.8536 },
+            { x = 113.173, y = 113.174 },
+            { x = 88.8533, y = 133.014 },
+            { x = 61.2267, y = 147.84 },
+            { x = 31.2533, y = 156.906 },
+            { x = 0, y = 160 },
+            { x = -31.2533, y = 156.906 },
+            { x = -61.2267, y = 147.84 },
+            { x = -88.8533, y = 133.014 },
+            { x = -113.173, y = 113.174 },
+            { x = -133.013, y = 88.8536 },
+            { x = -147.84, y = 61.2266 },
+            { x = -156.907, y = 31.2534 },
+            { x = -160, y = 0 },
+            { x = -156.907, y = -31.2534 },
+            { x = -147.84, y = -61.2266 },
+            { x = -133.013, y = -88.8536 },
+            { x = -113.173, y = -113.174 },
+            { x = -88.8533, y = -133.014 },
+            { x = -61.2267, y = -147.84 },
+            { x = -31.2533, y = -156.906 },
+            { x = 0, y = -160 },
+            { x = 31.2533, y = -156.906 },
+            { x = 61.2267, y = -147.84 },
+            { x = 88.8533, y = -133.014 },
+            { x = 113.173, y = -113.174 },
+            { x = 133.013, y = -88.8536 },
+            { x = 147.84, y = -61.2266 },
+            { x = 156.907, y = -31.2534 },
+            { x = 160, y = 0 }
           },
           properties = {}
         },
@@ -661,46 +680,47 @@ return {
           name = "circle2",
           type = "",
           shape = "polygon",
-          x = 881.5,
-          y = 816.5,
+          x = 920,
+          y = 760,
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           polygon = {
-            { x = 164.5, y = 0 },
-            { x = 161.32, y = 35.8437 },
-            { x = 151.998, y = 70.2193 },
-            { x = 136.754, y = 101.904 },
-            { x = 116.356, y = 129.796 },
-            { x = 91.3523, y = 152.55 },
-            { x = 62.9487, y = 169.554 },
-            { x = 32.1323, y = 179.952 },
-            { x = 0, y = 183.5 },
-            { x = -32.1323, y = 179.952 },
-            { x = -62.9487, y = 169.554 },
-            { x = -91.3523, y = 152.55 },
-            { x = -116.356, y = 129.796 },
-            { x = -136.754, y = 101.904 },
-            { x = -151.998, y = 70.2193 },
-            { x = -161.32, y = 35.8437 },
-            { x = -164.5, y = 0 },
-            { x = -161.32, y = -35.8437 },
-            { x = -151.998, y = -70.2193 },
-            { x = -136.754, y = -101.904 },
-            { x = -116.356, y = -129.796 },
-            { x = -91.3523, y = -152.55 },
-            { x = -62.9487, y = -169.554 },
-            { x = -32.1323, y = -179.952 },
-            { x = 0, y = -183.5 },
-            { x = 32.1323, y = -179.952 },
-            { x = 62.9487, y = -169.554 },
-            { x = 91.3523, y = -152.55 },
-            { x = 116.356, y = -129.796 },
-            { x = 136.754, y = -101.904 },
-            { x = 151.998, y = -70.2193 },
-            { x = 161.32, y = -35.8437 },
-            { x = 164.5, y = 0 }
+            { x = 160, y = 0 },
+            { x = 156.907, y = 31.2534 },
+            { x = 147.84, y = 61.2266 },
+            { x = 133.013, y = 88.8536 },
+            { x = 113.173, y = 113.174 },
+            { x = 88.8533, y = 133.014 },
+            { x = 61.2267, y = 147.84 },
+            { x = 31.2533, y = 156.906 },
+            { x = 0, y = 160 },
+            { x = -31.2533, y = 156.906 },
+            { x = -61.2267, y = 147.84 },
+            { x = -88.8533, y = 133.014 },
+            { x = -113.173, y = 113.174 },
+            { x = -133.013, y = 88.8536 },
+            { x = -147.84, y = 61.2266 },
+            { x = -156.907, y = 31.2534 },
+            { x = -160, y = 0 },
+            { x = -156.907, y = -31.2534 },
+            { x = -147.84, y = -61.2266 },
+            { x = -133.013, y = -88.8536 },
+            { x = -113.173, y = -113.174 },
+            { x = -88.8533, y = -133.014 },
+            { x = -61.2267, y = -147.84 },
+            { x = -31.2533, y = -156.906 },
+            { x = 0, y = -160 },
+            { x = 31.2533, y = -156.906 },
+            { x = 61.2267, y = -147.84 },
+            { x = 88.8533, y = -133.014 },
+            { x = 113.173, y = -113.174 },
+            { x = 133.013, y = -88.8536 },
+            { x = 147.84, y = -61.2266 },
+            { x = 156.907, y = -31.2534 },
+            { x = 160, y = 0 }
           },
           properties = {}
         }
@@ -730,6 +750,7 @@ return {
           width = 400,
           height = 240,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -743,6 +764,7 @@ return {
           width = 40,
           height = 160,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -756,6 +778,7 @@ return {
           width = 560,
           height = 160,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -769,6 +792,7 @@ return {
           width = 120,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -782,6 +806,7 @@ return {
           width = 400,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -795,6 +820,7 @@ return {
           width = 200,
           height = 240,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -808,6 +834,7 @@ return {
           width = 200,
           height = 230,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -821,6 +848,7 @@ return {
           width = 80,
           height = 520,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -834,6 +862,7 @@ return {
           width = 1120,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -847,6 +876,7 @@ return {
           width = 160,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -860,6 +890,7 @@ return {
           width = 160,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -873,6 +904,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           polygon = {
             { x = 0, y = 0 },
@@ -891,6 +923,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = false,
           polygon = {
             { x = 0, y = 0 },
@@ -910,6 +943,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           polygon = {
             { x = 0, y = 0 },
@@ -928,6 +962,7 @@ return {
           width = 27.6364,
           height = 25.4545,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -941,6 +976,7 @@ return {
           width = 41.0909,
           height = 24.1818,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -954,6 +990,7 @@ return {
           width = 37,
           height = 46.5,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -967,6 +1004,7 @@ return {
           width = 27.75,
           height = 26,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -980,6 +1018,7 @@ return {
           width = 36.25,
           height = 23.75,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -1009,6 +1048,7 @@ return {
           width = 40,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "2_2nd_sanctuary/second_sanctum_1",
@@ -1025,6 +1065,7 @@ return {
           width = 40,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "2_2nd_sanctuary/second_sanctum_3",
@@ -1041,6 +1082,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "organikk",
@@ -1060,11 +1102,12 @@ return {
           name = "enemy",
           type = "",
           shape = "point",
-          x = 620,
+          x = 600,
           y = 600,
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "winglade",
@@ -1082,11 +1125,12 @@ return {
           name = "enemy",
           type = "",
           shape = "point",
-          x = 900,
+          x = 920,
           y = 600,
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "winglade",
@@ -1104,11 +1148,12 @@ return {
           name = "enemy",
           type = "",
           shape = "point",
-          x = 620,
+          x = 600,
           y = 920,
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "winglade",
@@ -1127,11 +1172,12 @@ return {
           name = "enemy",
           type = "",
           shape = "point",
-          x = 900,
+          x = 920,
           y = 920,
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "winglade",
@@ -1155,6 +1201,7 @@ return {
           width = 68,
           height = 50,
           rotation = 0,
+          opacity = 1,
           gid = 815,
           visible = true,
           properties = {}
@@ -1169,6 +1216,7 @@ return {
           width = 76,
           height = 38,
           rotation = 0,
+          opacity = 1,
           gid = 814,
           visible = true,
           properties = {}
@@ -1183,6 +1231,7 @@ return {
           width = 36,
           height = 50,
           rotation = 0,
+          opacity = 1,
           gid = 819,
           visible = true,
           properties = {}
@@ -1197,6 +1246,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "organik",
@@ -1231,6 +1281,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -1260,6 +1311,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["type"] = "hsv"

@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.12.1",
+  tiledversion = "1.12.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -39,12 +39,12 @@ return {
     },
     {
       name = "light_areas",
-      firstgid = 842,
+      firstgid = 847,
       filename = "../../../tilesets/light_areas.tsx"
     },
     {
       name = "bg_dw_church_tileset_new",
-      firstgid = 852,
+      firstgid = 857,
       filename = "../../../tilesets/bg_dw_church_tileset_new.tsx",
       exportfilename = "../../../tilesets/bg_dw_church_tileset_new.lua"
     }
@@ -59,7 +59,7 @@ return {
       id = 16,
       name = "tiles_bg",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = -60,
       offsety = 0,
@@ -83,9 +83,9 @@ return {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        900, 0, 0, 0, 900, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        906, 0, 0, 0, 906, 0, 0, 0, 906, 0, 0, 0, 906, 0, 0, 0, 906, 0, 0, 0, 906, 0, 0, 0, 906, 0, 0, 0, 906, 0,
-        912, 0, 0, 0, 912, 0, 0, 0, 912, 0, 0, 0, 912, 0, 0, 0, 912, 0, 0, 0, 912, 0, 0, 0, 912, 0, 0, 0, 912, 0
+        905, 0, 0, 0, 905, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        911, 0, 0, 0, 911, 0, 0, 0, 911, 0, 0, 0, 911, 0, 0, 0, 911, 0, 0, 0, 911, 0, 0, 0, 911, 0, 0, 0, 911, 0,
+        917, 0, 0, 0, 917, 0, 0, 0, 917, 0, 0, 0, 917, 0, 0, 0, 917, 0, 0, 0, 917, 0, 0, 0, 917, 0, 0, 0, 917, 0
       }
     },
     {
@@ -1020,7 +1020,7 @@ return {
       id = 14,
       name = "objects_lightarea",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -1039,7 +1039,7 @@ return {
           height = 640,
           rotation = 0,
           opacity = 1,
-          gid = 842,
+          gid = 847,
           visible = true,
           properties = {
             ["light"] = true,

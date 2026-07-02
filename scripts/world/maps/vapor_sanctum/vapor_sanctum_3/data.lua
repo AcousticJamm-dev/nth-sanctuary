@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.10.2",
+  tiledversion = "1.12.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -34,7 +34,7 @@ return {
       id = 5,
       name = "objects_parallax3",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -52,6 +52,7 @@ return {
           width = 400,
           height = 278,
           rotation = 0,
+          opacity = 1,
           gid = 801,
           visible = true,
           properties = {}
@@ -64,7 +65,7 @@ return {
       id = 6,
       name = "objects_bottom",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -82,6 +83,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -93,7 +95,7 @@ return {
       id = 7,
       name = "objects_parallax2",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -111,6 +113,7 @@ return {
           width = 320,
           height = 800,
           rotation = 315,
+          opacity = 1,
           gid = 3221226274,
           visible = true,
           properties = {}
@@ -125,6 +128,7 @@ return {
           width = 320,
           height = 800,
           rotation = 315,
+          opacity = 1,
           gid = 802,
           visible = true,
           properties = {}
@@ -137,7 +141,7 @@ return {
       id = 8,
       name = "objects_parallax",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -155,6 +159,7 @@ return {
           width = 640,
           height = 1600,
           rotation = 180,
+          opacity = 1,
           gid = 802,
           visible = true,
           properties = {}
@@ -169,6 +174,7 @@ return {
           width = 640,
           height = 1600,
           rotation = 0,
+          opacity = 1,
           gid = 802,
           visible = true,
           properties = {}
@@ -299,6 +305,7 @@ return {
           width = 800,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -312,6 +319,7 @@ return {
           width = 80,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -325,6 +333,7 @@ return {
           width = 80,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -338,6 +347,7 @@ return {
           width = 240,
           height = 280,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -351,6 +361,7 @@ return {
           width = 360,
           height = 240,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -364,6 +375,7 @@ return {
           width = 80,
           height = 920,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -377,6 +389,7 @@ return {
           width = 480,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -390,6 +403,7 @@ return {
           width = 520,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -403,6 +417,7 @@ return {
           width = 40,
           height = 480,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -416,6 +431,7 @@ return {
           width = 680,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -429,6 +445,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           polygon = {
             { x = 0, y = 0 },
@@ -466,6 +483,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -479,6 +497,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -508,6 +527,7 @@ return {
           width = 600,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -521,6 +541,7 @@ return {
           width = 120,
           height = 360,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -534,6 +555,7 @@ return {
           width = 520,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -547,6 +569,7 @@ return {
           width = 600,
           height = 240,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -560,6 +583,7 @@ return {
           width = 120,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -589,6 +613,7 @@ return {
           width = 60,
           height = 60,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["marker"] = { id = 14 },
@@ -605,6 +630,7 @@ return {
           width = 40,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "vapor_sanctum/vapor_sanctum_2",

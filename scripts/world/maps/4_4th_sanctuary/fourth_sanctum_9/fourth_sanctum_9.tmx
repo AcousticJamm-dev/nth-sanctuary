@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="70" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="11" nextobjectid="25">
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="70" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="11" nextobjectid="25">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -11,10 +11,10 @@
  <tileset firstgid="199" source="../../../tilesets/bg_dw_church_tileset_new.tsx"/>
  <tileset firstgid="781" source="../../../tilesets/bg_dw_library_tileset_new.tsx"/>
  <tileset firstgid="1611" source="../../../tilesets/church_objects.tsx"/>
- <objectgroup id="6" name="objects_bg" tintcolor="#1b1b1b" parallaxx="0">
+ <objectgroup id="6" name="objects_bg" visible="0" tintcolor="#1b1b1b" parallaxx="0">
   <object id="3" gid="1630" x="240" y="360" width="160" height="155"/>
  </objectgroup>
- <objectgroup id="9" name="objects_bg2" parallaxx="0.5">
+ <objectgroup id="9" name="objects_bg2" visible="0" parallaxx="0.5">
   <object id="14" gid="1703" x="560" y="560" width="200" height="289"/>
   <object id="15" gid="1703" x="760" y="560" width="200" height="289"/>
   <object id="16" gid="1703" x="960" y="560" width="200" height="289"/>

@@ -265,7 +265,6 @@
   <object id="244" x="440" y="0" width="40" height="120"/>
   <object id="246" x="480" y="80" width="280" height="40"/>
   <object id="247" x="760" y="120" width="40" height="120"/>
-  <object id="253" x="120" y="2314" width="40" height="46"/>
   <object id="275" x="600" y="120" width="40" height="160"/>
  </objectgroup>
  <objectgroup id="6" name="objects"/>
@@ -326,9 +325,10 @@
    <properties>
     <property name="cutscene" value="events.secondsanctuary_ripple"/>
     <property name="flagcheck" value="!ripple2nd"/>
-    <property name="xback" value="0"/>
-    <property name="yback" type="float" value="-480"/>
-    <property name="ypoint" type="float" value="1800"/>
+    <property name="xback" type="int" value="0"/>
+    <property name="xpoint" type="int" value="0"/>
+    <property name="yback" type="float" value="100"/>
+    <property name="ypoint" type="float" value="1707"/>
    </properties>
    <point/>
   </object>

@@ -616,6 +616,7 @@ return {
 		a.physics.gravity = 0
 		Game.world.map:doIntro()
 		Game.lock_movement = false
-		return false
+		cutscene:wait(function () return (Game:getFlag("ripple2nd") == true) end)
+		cutscene:text("G")
 	end
 }

@@ -566,19 +566,6 @@ return {
           properties = {}
         },
         {
-          id = 253,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 120,
-          y = 2314,
-          width = 40,
-          height = 46,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
           id = 275,
           name = "",
           type = "",
@@ -854,9 +841,10 @@ return {
           properties = {
             ["cutscene"] = "events.secondsanctuary_ripple",
             ["flagcheck"] = "!ripple2nd",
-            ["xback"] = "0",
-            ["yback"] = -480,
-            ["ypoint"] = 1800
+            ["xback"] = 0,
+            ["xpoint"] = 0,
+            ["yback"] = 100,
+            ["ypoint"] = 1707
           }
         }
       }

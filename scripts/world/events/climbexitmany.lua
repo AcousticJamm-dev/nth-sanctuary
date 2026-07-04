@@ -9,8 +9,14 @@ function ClimbExitMany:init(data)
     self.target_left = settings.target_left
     self.target_right = settings.target_right
 
-    self.target_x = {}
-    self.target_y = {}
+    self.target_x["down"] = nil
+    self.target_y["down"] = nil
+    self.target_x["up"] = nil
+    self.target_y["up"] = nil
+    self.target_x["left"] = nil
+    self.target_y["left"] = nil
+    self.target_x["right"] = nil
+    self.target_y["right"] = nil
 
     self.exit["down"] = settings.can_exit_down ~= false
     self.exit["up"] = settings.can_exit_up ~= false

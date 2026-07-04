@@ -27,8 +27,8 @@ function ClimbExitMany:init(data)
 	self.auto_exit["left"] = false
     self.auto_exit["right"] = false
 
-    if self.can_exit and self.target == nil then
-        error(string.format("ClimbExit at (%d, %d) requires a target, found none", self.x, self.y))
+    if self.can_exit and (self.target_down == nil and self.target_up == nil and self.target_left == nil and self.target_right == nil) then
+        error(string.format("ClimbExitMany at (%d, %d) requires at least one target, found none", self.x, self.y))
     end
 end
 

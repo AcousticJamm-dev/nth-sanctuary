@@ -19,6 +19,8 @@ function ClimbExit:init(x, y, shape, settings)
     self.target_x["right"] = nil
     self.target_y["right"] = nil
 
+    self.can_exit = settings.can_exit ~= false
+	
     self.exit["down"] = settings.can_exit_down ~= false
     self.exit["up"] = settings.can_exit_up ~= false
     self.exit["left"] = settings.can_exit_left ~= false

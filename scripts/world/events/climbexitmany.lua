@@ -73,7 +73,7 @@ function ClimbExitMany:getExitDirection()
         return nil
     end
 	local player = Game.world.player
-    return (self.exit[player:getFacing()] or self.auto_exit[player:getFacing()]) and player:getFacing()
+    return (self.exit[player:getFacing()] or self.auto_exit[player:getFacing()]) and player:getFacing() or nil
 end
 
 function ClimbExitMany:getExitPosition()

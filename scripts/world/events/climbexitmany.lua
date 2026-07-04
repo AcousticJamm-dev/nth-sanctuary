@@ -55,13 +55,13 @@ function ClimbExitMany:calculateAutoExit()
 		end
 
 		-- Now we use the directions (and invert them)
-		if climb_x == 1 and not TableUtils.contains(self.auto_exit, "right") then
+		if climb_x == 1 then
 			self.auto_exit["right"] = true
-		elseif climb_x == -1 and not TableUtils.contains(self.auto_exit, "left") then
+		elseif climb_x == -1 then
 			self.auto_exit["left"] = true
-		elseif climb_y == 1 and not TableUtils.contains(self.auto_exit, "down") then
+		elseif climb_y == 1 then
 			self.auto_exit["down"] = true
-		elseif climb_y == -1 and not TableUtils.contains(self.auto_exit, "up") then
+		elseif climb_y == -1 then
 			self.auto_exit["up"] = true
 		end
 	end

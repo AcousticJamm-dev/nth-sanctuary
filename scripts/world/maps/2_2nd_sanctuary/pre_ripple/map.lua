@@ -87,10 +87,11 @@ end
 function map:doIntro()    
     self.ripple_fx = RippleEffect()
     self.ripple_fx.layer = WORLD_LAYERS["bottom"]
-    Game.world:addChild(self.ripple_fx)
+    Game.stage:addChild(self.ripple_fx)
     self.ripple_fx_alt = RippleEffect()
     self.ripple_fx_alt.layer = 0.8
-    Game.world:addChild(self.ripple_fx_alt)
+    Game.stage:addChild(self.ripple_fx_alt)
+    
 
     Game.world.map.timer:script(function(wait)
         wait(10/30)

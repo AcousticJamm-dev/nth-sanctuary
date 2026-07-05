@@ -58,6 +58,19 @@ return {
             cutscene:text("* (You already got the moss.)")
         end
     end,
+	moss3 = function (cutscene)
+        local get = Game:getFlag("moss3")
+        if not get then
+            Game.world.music.volume = 0
+            Assets.playSound("moss_fanfare")
+            cutscene:text("* You found the [color:green]Moss!")
+            Game.inventory:addItem("moss")
+            Game.world.timer:tween(1, Game.world.music, {volume = 1})
+            Game:setFlag("moss3", true)
+        elseif get == true then
+            cutscene:text("* (You already got the moss.)")
+        end
+    end,
 
     moss2 = function (cutscene)
         local get = Game:getFlag("moss2")

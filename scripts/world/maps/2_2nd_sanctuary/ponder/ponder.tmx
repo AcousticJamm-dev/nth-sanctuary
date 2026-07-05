@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="16" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="13" nextobjectid="30">
+ <editorsettings>
+  <export target="data.lua" format="lua"/>
+ </editorsettings>
+ <properties>
+  <property name="border" value="church_b"/>
+  <property name="music" value="second_church"/>
+ </properties>
+ <tileset firstgid="1" source="../../../tilesets/bg_dw_church_2_tileset.tsx"/>
+ <tileset firstgid="199" source="../../../tilesets/bg_dw_church_tileset_new.tsx"/>
+ <tileset firstgid="781" source="../../../tilesets/tiles_moss.tsx"/>
+ <tileset firstgid="783" source="../../../tilesets/church_objects.tsx"/>
+ <objectgroup id="10" name="objects_arch" opacity="0.6" tintcolor="#b3b3b3">
+  <object id="22" gid="783" x="0" y="760" width="397.232" height="574">
+   <properties>
+    <property name="color" type="color" value="#ffadadad"/>
+   </properties>
+  </object>
+  <object id="23" gid="783" x="400" y="760" width="397.232" height="574">
+   <properties>
+    <property name="color" type="color" value="#ffadadad"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="9" name="objects_towers">
+  <object id="21" gid="787" x="-720" y="960" width="640" height="1600" rotation="45"/>
+ </objectgroup>
+ <objectgroup id="7" name="objects_osc">
+  <object id="9" name="texturescroller" x="0" y="0">
+   <properties>
+    <property name="type" value="hsv"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="10" name="tile_oscillate" x="160" y="80" width="320" height="120"/>
+ </objectgroup>
+ <objectgroup id="8" name="collision">
+  <object id="15" x="0" y="200" width="240" height="120"/>
+  <object id="16" x="40" y="0" width="120" height="200"/>
+  <object id="17" x="480" y="0" width="120" height="200"/>
+  <object id="18" x="400" y="200" width="240" height="200"/>
+  <object id="20" x="0" y="400" width="640" height="80"/>
+ </objectgroup>
+ <objectgroup id="2" name="objects_under_party"/>
+ <objectgroup id="6" name="markers">
+  <object id="8" name="entry" x="40" y="360">
+   <point/>
+  </object>
+ </objectgroup>
+ <layer id="1" name="Tile Layer 1" width="16" height="12">
+  <data encoding="csv">
+0,481,482,483,470,470,470,470,470,470,470,470,481,482,483,0,
+0,487,488,489,476,476,476,476,476,476,476,476,487,488,489,0,
+0,493,494,495,7,8,9,14,14,7,8,9,493,494,495,0,
+0,499,500,501,16,17,18,14,14,16,17,18,499,500,501,0,
+0,505,506,507,25,26,27,2,3,25,26,27,505,506,507,0,
+0,28,28,28,28,28,14,11,12,14,28,28,28,28,28,0,
+0,0,0,0,0,0,28,28,28,28,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup id="11" name="objects_under_party">
+  <object id="25" name="churchmagicglass" x="240" y="240" width="160" height="160">
+   <properties>
+    <property name="idlealpha" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="26" name="churchmagicglass" x="0" y="320" width="240" height="80">
+   <properties>
+    <property name="idlealpha" type="float" value="0"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="3" name="objects_party">
+  <object id="5" name="interactable" gid="2147484429" x="440" y="120" width="40" height="40">
+   <properties>
+    <property name="cutscene" value="events.moss3"/>
+    <property name="usetile" value="true"/>
+   </properties>
+  </object>
+  <object id="27" name="transition" x="-40" y="280" width="40" height="160">
+   <properties>
+    <property name="map" value="2_2nd_sanctuary/second_sanctum_11_exit"/>
+    <property name="marker" value="entry2"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="12" name="objects_top">
+  <object id="28" name="churchfog" x="49" y="-5.5">
+   <point/>
+  </object>
+  <object id="29" name="filter" x="9" y="-5.5">
+   <properties>
+    <property name="type" value="hsv"/>
+   </properties>
+   <point/>
+  </object>
+ </objectgroup>
+</map>

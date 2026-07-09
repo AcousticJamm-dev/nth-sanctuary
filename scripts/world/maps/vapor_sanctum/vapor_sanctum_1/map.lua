@@ -11,6 +11,8 @@ function map:onEnter()
     self.target = self:getTileLayer("tiles")
 	self.fx = RecolorFX()
     self.target:addFX(self.fx)
+    self.target_2 = self:getTileLayer("tiles_below")
+    self.target_2:addFX(self.fx)
 end
 function map:update()
     super.update(self)

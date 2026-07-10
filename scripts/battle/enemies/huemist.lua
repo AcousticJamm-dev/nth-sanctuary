@@ -19,6 +19,8 @@ function Huemist:init()
     -- Enemy reward
     self.money = 100
 
+    self.target_soul_speed = 4
+
     -- Mercy given when sparing this enemy before its spareable (20% for basic enemies)
     self.spare_points = 20
 
@@ -52,7 +54,7 @@ function Huemist:init()
     -- Register party act with Ralsei called "Tell Story"
     -- (second argument is description, usually empty)
     self:registerAct("Sour Drink", "35% & TIRE", {"susie"})
-    self:registerAct("Sweet Drink", "50% &\nDelayed\nTIRED", {"ralsei"})
+    self:registerAct("Sweet Drink", "50% &  \nDelayed\nTIRED", {"ralsei"})
     self:registerAct("Lotta Drink", "35% & \nMove\nslower", {"jamm"})
 
     self.siner = 0
@@ -76,6 +78,9 @@ function Huemist:onAct(battler, name)
             -- Make the enemy tired
             enemy:setTired(true)
             self:addMercy(35)
+            if Game.battle.soul then 
+                Game.battle.soul:setSpeed(2)
+            end
         end
         return {
             "* You and Susie share sour drinks with the enemies.[wait:5]\n* The enemies shouldn't have drank that...",

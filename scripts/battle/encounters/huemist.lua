@@ -1,6 +1,6 @@
-local Dummy, super = Class(Encounter)
+local Huemist, super = Class(Encounter)
 
-function Dummy:init()
+function Huemist:init()
     super.init(self)
 
     -- Text displayed at the bottom of the screen at the start of the encounter
@@ -17,11 +17,13 @@ function Dummy:init()
     --- Uncomment this line to add another!
     --self:addEnemy("dummy")
     self.bg = VaporBattleBG()
+
+    self.target_soul_speed = 4
 end
 
-function Dummy:createBackground()
+function Huemist:createBackground()
     self.bg.layer =BATTLE_LAYERS["background"]
     return Game.battle:addChild(self.bg)
 end
 
-return Dummy
+return Huemist

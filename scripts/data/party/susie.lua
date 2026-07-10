@@ -23,7 +23,8 @@ function character:drawPowerStat(index, x, y, menu)
             if self:checkWeapon("cruelaxe") == true then
                 local icon = Assets.getTexture("enemies/jellycruel/jellycruel")
                 Draw.draw(icon, x-26, y+6, 0, 0.5, 0.5)
-                love.graphics.print("Cruel", x, y, 0, 2, 1)
+                love.graphics.print("Cruelty", x, y)
+				love.graphics.print((self:getFlag("cruelaxe_attacks") or 0), x+130, y)
             else
 				love.graphics.print("* Healing", x-24, y)
 				love.graphics.print(15 + (self:getFlag("healing_used") or 0), x+130, y)

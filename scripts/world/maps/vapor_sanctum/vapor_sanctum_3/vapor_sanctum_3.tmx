@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="20" height="30" tilewidth="40" tileheight="40" infinite="0" nextlayerid="16" nextobjectid="40">
+<map version="1.11" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="20" height="30" tilewidth="40" tileheight="40" infinite="0" nextlayerid="16" nextobjectid="41">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -92,6 +92,16 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
+ <objectgroup id="12" name="objects_reflection" locked="1">
+  <object id="31" name="vaporreflect" x="0" y="120" width="600" height="120"/>
+  <object id="32" name="vaporreflect" x="600" y="120" width="120" height="360"/>
+  <object id="33" name="vaporreflect" x="80" y="520" width="520" height="120"/>
+  <object id="34" name="vaporreflect" x="120" y="720" width="600" height="240"/>
+  <object id="35" name="vaporreflect" x="120" y="1040" width="120" height="120"/>
+  <object id="40" name="vaporfloorshine" x="0" y="0">
+   <point/>
+  </object>
+ </objectgroup>
  <layer id="1" name="tiles" width="20" height="30">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -182,13 +192,6 @@
   <object id="14" name="exit" x="240" y="560">
    <point/>
   </object>
- </objectgroup>
- <objectgroup id="12" name="objects_reflection" locked="1">
-  <object id="31" name="vaporreflect" x="0" y="120" width="600" height="120"/>
-  <object id="32" name="vaporreflect" x="600" y="120" width="120" height="360"/>
-  <object id="33" name="vaporreflect" x="80" y="520" width="520" height="120"/>
-  <object id="34" name="vaporreflect" x="120" y="720" width="600" height="240"/>
-  <object id="35" name="vaporreflect" x="120" y="1040" width="120" height="120"/>
  </objectgroup>
  <objectgroup id="9" name="objects_party">
   <object id="11" name="transition" x="210" y="450" width="60" height="60">

@@ -29,6 +29,16 @@ function map:onEnter()
 				wfall.visible = false
 			end
 		end
+		for _, water in ipairs(Game.world.map:getEvents("wateranimator")) do
+			if water then
+				water.visible = false
+			end
+		end
+		for _, obj in ipairs(Game.stage:getObjects(TileObject)) do
+			if obj then
+				obj.visible = false
+			end
+		end
         self.tiles = Game.world.map:getTileLayer("tiles1")
         self.tiles2 = Game.world.map:getTileLayer("tiles2")
         self.tiles3 = Game.world.map:getTileLayer("tiles3")
@@ -138,6 +148,16 @@ function map:update(world, data)
 					for _, wfall in ipairs(Game.world.map:getEvents("parallax_waterfall")) do
 						if wfall then
 							wfall.visible = true
+						end
+					end
+					for _, water in ipairs(Game.world.map:getEvents("wateranimator")) do
+						if water then
+							water.visible = true
+						end
+					end
+					for _, obj in ipairs(Game.stage:getObjects(TileObject)) do
+						if obj then
+							obj.visible = true
 						end
 					end
                     self.con = 2

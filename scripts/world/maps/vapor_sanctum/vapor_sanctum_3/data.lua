@@ -1,7 +1,7 @@
 return {
   version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.12.1",
+  tiledversion = "1.12.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -24,7 +24,8 @@ return {
     {
       name = "vapor_assets",
       firstgid = 801,
-      filename = "../../../tilesets/vapor_assets.tsx"
+      filename = "../../../tilesets/vapor_assets.tsx",
+      exportfilename = "../../../tilesets/vapor_assets.lua"
     }
   },
   layers = {

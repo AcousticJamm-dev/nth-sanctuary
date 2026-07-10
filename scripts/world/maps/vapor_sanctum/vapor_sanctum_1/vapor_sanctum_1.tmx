@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="40" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="17" nextobjectid="43">
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="40" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="17" nextobjectid="43">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -10,7 +10,7 @@
  <tileset firstgid="5" source="../../../tilesets/bg_dw_church_2_tileset.tsx"/>
  <tileset firstgid="203" source="../../../tilesets/vapor_sanctum_wip.tsx"/>
  <objectgroup id="16" name="objects_starfield2" parallaxx="0.005" parallaxy="0.005">
-  <object id="41" gid="4" x="-630" y="200" width="1280" height="720" opacity="0.5"/>
+  <object id="41" gid="4" x="-630" y="200" width="1280" height="720"/>
  </objectgroup>
  <objectgroup id="14" name="objects_starfield" parallaxx="0.01" parallaxy="0.01">
   <object id="40" gid="3" x="-630" y="200" width="1280" height="720"/>
@@ -72,14 +72,6 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <objectgroup id="11" name="objects_reflection" locked="1">
-  <object id="23" name="vaporreflect" x="0" y="200" width="480" height="120"/>
-  <object id="25" name="vaporreflect" x="640" y="320" width="960" height="120"/>
-  <object id="33" name="vaporreflect" x="360" y="320" width="120" height="120"/>
-  <object id="37" name="vaporfloorshine" x="0" y="0">
-   <point/>
-  </object>
- </objectgroup>
  <layer id="1" name="tiles" width="40" height="12">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -96,6 +88,11 @@
 0,0,0,0,0,0,0,0,0,283,284,285,266,266,266,266,283,284,284,284,284,284,284,284,284,284,284,284,284,284,284,284,284,284,284,284,284,284,284,284
 </data>
  </layer>
+ <objectgroup id="11" name="objects_reflection" locked="1">
+  <object id="23" name="vaporreflect" x="0" y="200" width="480" height="120"/>
+  <object id="25" name="vaporreflect" x="640" y="320" width="960" height="120"/>
+  <object id="33" name="vaporreflect" x="360" y="320" width="120" height="120"/>
+ </objectgroup>
  <objectgroup id="7" name="objects_party">
   <object id="34" name="transition" x="1600" y="320" width="40" height="120">
    <properties>

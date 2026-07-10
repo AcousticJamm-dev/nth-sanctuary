@@ -39,6 +39,7 @@ function map:onEnter()
 				obj.visible = false
 			end
 		end
+        self.tiles0 = Game.world.map:getTileLayer("tiles1")
         self.tiles = Game.world.map:getTileLayer("tiles1")
         self.tiles2 = Game.world.map:getTileLayer("tiles2")
         self.tiles3 = Game.world.map:getTileLayer("tiles3")
@@ -138,6 +139,7 @@ function map:update(world, data)
                     Kristal.showBorder()
                     Game.world.color = COLORS.white
                     self.fakefader:fadeOutAndRemove(0.5)
+                    self.tiles0.alpha = 1
                     self.tiles.alpha = 1
                     self.tiles2.alpha = 1
                     self.tiles3.alpha = 1

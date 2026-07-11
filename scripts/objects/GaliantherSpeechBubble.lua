@@ -1,6 +1,6 @@
-local WingladeSpeechBubble, super = Class(Object)
+local GaliantherSpeechBubble, super = Class(Object)
 
-function WingladeSpeechBubble:init(text, speaker)
+function GaliantherSpeechBubble:init(text, speaker)
     super.init(self, speaker.x, speaker.y)
 
     self.done = false
@@ -12,9 +12,9 @@ function WingladeSpeechBubble:init(text, speaker)
     self.wait_timer = 15/30
 end
 
-function WingladeSpeechBubble:setStyle(style) end
+function GaliantherSpeechBubble:setStyle(style) end
 
-function WingladeSpeechBubble:onRemoveFromStage(stage)
+function GaliantherSpeechBubble:onRemoveFromStage(stage)
     super.onRemoveFromStage(self, stage)
     if self.speaker and self.speaker.bubble == self then
         self.speaker:onBubbleRemove(self)
@@ -24,22 +24,22 @@ function WingladeSpeechBubble:onRemoveFromStage(stage)
     self.advanced = true
 end
 
-function WingladeSpeechBubble:advance()
+function GaliantherSpeechBubble:advance()
     if self.wait_timer == 0 then
         self.done = true
         self:remove()
     end
 end
 
-function WingladeSpeechBubble:isTyping()
+function GaliantherSpeechBubble:isTyping()
     return false
 end
 
-function WingladeSpeechBubble:isDone()
+function GaliantherSpeechBubble:isDone()
     return self.done
 end
 
-function WingladeSpeechBubble:update()
+function GaliantherSpeechBubble:update()
     super.update(self)
     local height = self.speaker:getScaledHeight()
     local _, y = self.speaker.sprite:getRelativePosFor(self.parent)
@@ -51,7 +51,7 @@ function WingladeSpeechBubble:update()
     end
 end
 
-function WingladeSpeechBubble:drawText(rotation)
+function GaliantherSpeechBubble:drawText(rotation)
     local radius = 80
     for i = 1, #self.text do
         local char_rotation = math.rad(i * 8) + rotation
@@ -60,10 +60,10 @@ function WingladeSpeechBubble:drawText(rotation)
     end
 end
 
-function WingladeSpeechBubble:draw()
+function GaliantherSpeechBubble:draw()
     Draw.setColor(COLORS.white)
     love.graphics.setFont(Assets.getFont('plain'))
     self:drawText(0)
 end
 
-return WingladeSpeechBubble
+return GaliantherSpeechBubble

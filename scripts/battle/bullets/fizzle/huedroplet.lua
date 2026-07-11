@@ -1,7 +1,7 @@
 local HueDroplet, super = Class(Bullet, "fizzle/huedroplet")
 
 function HueDroplet:init(x, y, speed)
-    super.init(self, x, y, "battle/bullets/mizzle/holydroplet")
+    super.init(self, x, y, "bullets/fizzle/fizzydroplet")
 
     self:setScale(1)
     self:setOriginExact(16, 18)
@@ -10,7 +10,7 @@ function HueDroplet:init(x, y, speed)
 	self.sprite.visible = false
 	self:setColor(COLORS.yellow)
 	self:setHitbox(10, 14, 14, 4)
-	self.outline_tex = Assets.getTexture("battle/bullets/mizzle/holydroplet_outline")
+	self.outline_tex = Assets.getTexture("bullets/fizzle/fizzydroplet_outline")
 	self.removing = false
 	self.was_in_arena = false
 	self.remove_outside_arena = false

@@ -7,7 +7,6 @@ function DropletLines:init()
 	self.side = 0
 	self.last_add_diff = -1
 	self.add_diff_same_count = 0
-	self.trail_tex = Assets.getTexture("battle/bullets/mizzle/holydroplet")
 end
 
 
@@ -51,7 +50,7 @@ function DropletLines:onStart()
 			x_diff = diff
 			y = arena.bottom + distance
 		end
-		for i = -2, 1 do
+		for i = -1, 1 do
 			turnvar = 0
 			local bullet = self:spawnBullet("fizzle/spiral", x + (x_diff * i), y + (y_diff * i), direction, 4, 50, turnvar, speed)
 			bullet.dont_remove_on_lifetime_end = true
@@ -61,6 +60,7 @@ function DropletLines:onStart()
 	end
 
 	self.timer:everyInstant(2.5 / speed, function()
+		spawnBullets()
 		spawnBullets()
 		self.timer:after(1.25 / speed, spawnBullets)
 	end)
@@ -85,7 +85,7 @@ function DropletLines:draw()
 		if bullet:isBullet("fizzle/huedroplet") and not bullet:isRemoved() then
 			for i = 3, 1, -1 do
 				Draw.setColor(ColorUtils.mergeColor(COLORS.yellow, COLORS.fuchsia, (i-1)/2), bullet.alpha * (0.5 - ((i-1)/2)*0.25))
-				Draw.draw(self.trail_tex, bullet.x + ((bullet.last_x - bullet.x) * FRAMERATE/30) * i, bullet.y + ((bullet.last_y - bullet.y) * FRAMERATE/30) * i, MathUtils.angle(bullet.x + ((bullet.last_x - bullet.x) * FRAMERATE/30) * i, bullet.y + ((bullet.last_y - bullet.y) * FRAMERATE/30) * i, bullet.x, bullet.y), bullet.scale_x, bullet.scale_y, 16, 16)
+				Draw.draw(bullet.sprite.texture, bullet.x + ((bullet.last_x - bullet.x) * FRAMERATE/30) * i, bullet.y + ((bullet.last_y - bullet.y) * FRAMERATE/30) * i, MathUtils.angle(bullet.x + ((bullet.last_x - bullet.x) * FRAMERATE/30) * i, bullet.y + ((bullet.last_y - bullet.y) * FRAMERATE/30) * i, bullet.x, bullet.y), bullet.scale_x, bullet.scale_y, 16, 16)
 				Draw.setColor(bullet:getDrawColor())
 			end
 		end

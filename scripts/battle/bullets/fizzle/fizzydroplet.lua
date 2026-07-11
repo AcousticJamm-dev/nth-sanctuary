@@ -1,6 +1,6 @@
-local HueDroplet, super = Class(Bullet, "fizzle/huedroplet")
+local FizzyDroplet, super = Class(Bullet, "fizzle/fizzydroplet")
 
-function HueDroplet:init(x, y, speed)
+function FizzyDroplet:init(x, y, speed)
     super.init(self, x, y, "battle/bullets/mizzle/holydroplet")
 
     self:setScale(1)
@@ -17,7 +17,7 @@ function HueDroplet:init(x, y, speed)
 	self.speed = speed
 end
 
-function HueDroplet:update()
+function FizzyDroplet:update()
     super.update(self)
 	self.siner = self.siner + DTMULT
 
@@ -49,7 +49,7 @@ function HueDroplet:update()
 	end
 end
 
-function HueDroplet:doRemove()
+function FizzyDroplet:doRemove()
 	if self.removing then return end
 	self.removing = true
 	self.physics.speed = 0
@@ -63,10 +63,10 @@ function HueDroplet:doRemove()
 	end)
 end
 
-function HueDroplet:onGraze(success)
+function FizzyDroplet:onGraze(success)
 	if success then
 		Assets.stopAndPlaySound("graze") -- Stop graze sound spam
 	end
 end
 
-return HueDroplet 
+return FizzyDroplet 

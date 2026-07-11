@@ -21,13 +21,13 @@ function Galianther:init()
 
     self.dialogue = {
         "Aggrieve  Abstain  Accede  Abscond  Abjure",
-        "Halo, come with me!            ",
-        "Do you oppose authority?          ",
+        "Halo, come with me!",
+        "Do you oppose authority?",
         "Rebuild our land      Rebuild our land",
     }
     self.dialogue_mercy = {
-        "Viva la revolution!  Viva la revolution!",
-        "To spin, is to trust"
+        "Live to protect!   Live to protect!",
+        "While I spin     There's still hope"
     }
 
     self.check = "A radical blade with\na forked handle."

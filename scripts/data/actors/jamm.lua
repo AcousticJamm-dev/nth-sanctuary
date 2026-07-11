@@ -45,13 +45,13 @@ function actor:init()
         ["battle/item"]         		= {"battle/item", 1/15, false, next="battle/idle"},
         ["battle/spare"]        		= {"battle/act", 1/15, false, next="battle/idle"},
 
-        ["battle/attack_ready"] 		= {"battle/attackready", 0.2, true},
-        ["battle/act_ready"]    		= {"battle/actready", 0.2, true},
-        ["battle/spell_ready"]  		= {"battle/actready", 0.2, true},
-        ["battle/item_ready"]   		= {"battle/itemready", 0.2, true},
+        ["battle/attack_ready"] 		= {"battle/attack_ready", 0.2, true},
+        ["battle/act_ready"]    		= {"battle/act_ready", 0.2, true},
+        ["battle/spell_ready"]  		= {"battle/act_ready", 0.2, true},
+        ["battle/item_ready"]   		= {"battle/item_ready", 0.2, true},
         ["battle/defend_ready"] 		= {"battle/defend", 1/15, false},
 
-        ["battle/act_end"]      		= {"battle/actend", 1/15, false, next="battle/idle"},
+        ["battle/act_end"]      		= {"battle/act_end", 1/15, false, next="battle/idle"},
 
         ["battle/hurt"]         		= {"battle/hurt", 1/15, false, temp=true, duration=0.5},
         ["battle/defeat"]       		= {"battle/defeat", 0.5, true},
@@ -97,8 +97,8 @@ function actor:init()
         ["battle/act_ready"] = {-4, 0},
         ["battle/item"] = {-4, 0},
         ["battle/item_ready"] = {-4, 0},
-        ["battle/defend"] = {-4, 0},
-        ["battle/defend_ready"] = {-4, 0},
+        ["battle/defend"] = {-4, 1},
+        ["battle/defend_ready"] = {-4, 1},
         ["battle/swooned"] = {0, 0},
 
         ["battle/defeat"] = {-3, 4},

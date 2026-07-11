@@ -95,7 +95,7 @@ return {
             Game:setFlag("interested_in_cups", true)
             cutscene:text("* Hey! [wait:10]Delta Warriors!")
             cutscene:text("* Y'need any support? [wait:5]We got your back!")
-            cutscene:text("* With your [color:yellow]expanded party[color:white], [wait:5]you can [color:yellow]RECRUIT[color:white]us into your party!")
+            cutscene:text("* With your [color:yellow]expanded party[color:white], [wait:5]you can [color:yellow]RECRUIT [color:white]us into your party!")
             cutscene:text("* Give it a try!")
             local ch = cutscene:choicer({"Yes", "No"})
             if ch == 1 then

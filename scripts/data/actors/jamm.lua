@@ -96,7 +96,7 @@ function actor:init()
         ["battle/act_end"] = {-4, 0},
         ["battle/act_ready"] = {-4, 0},
         ["battle/item"] = {-4, 0},
-        ["battle/item_ready"] = {-4, 0},
+        ["battle/item_ready"] = {-4, 1},
         ["battle/defend"] = {-4, 1},
         ["battle/defend_ready"] = {-4, 1},
         ["battle/swooned"] = {0, 0},

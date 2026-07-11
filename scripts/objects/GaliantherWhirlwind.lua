@@ -1,6 +1,6 @@
-local Whirlwind, super = Class(Object)
+local GaliantherWhirlwind, super = Class(Object)
 
-function Whirlwind:init(x, y)
+function GaliantherWhirlwind:init(x, y)
     super.init(self, x, y)
 
     self.width = 150
@@ -47,7 +47,7 @@ function Whirlwind:init(x, y)
     self.mesh_2 = love.graphics.newMesh(vertexFormat, vertices, "strip", "static")
 end
 
-function Whirlwind:getVertexAttributes(number)
+function GaliantherWhirlwind:getVertexAttributes(number)
     local percent = (number - 1) / (self.parts - 1)
     local width = MathUtils.lerp(self.min_width, self.max_width, percent)
     local middle_x = math.sin(number * 8 / 10 + self.timer * self.spin_speed / 10) * self.wave_length
@@ -58,7 +58,7 @@ function Whirlwind:getVertexAttributes(number)
            {middle_x + width / 2, y, 1, v}
 end
 
-function Whirlwind:update()
+function GaliantherWhirlwind:update()
     super.update(self)
     self.timer = self.timer + DTMULT
 
@@ -104,13 +104,13 @@ function Whirlwind:update()
     end
 end
 
-function Whirlwind:getEndCallback()
+function GaliantherWhirlwind:getEndCallback()
     return function()
         return self:isRemoved()
     end
 end
 
-function Whirlwind:draw()
+function GaliantherWhirlwind:draw()
     super.draw(self)
     local tex_width, tex_height = self.texture:getDimensions()
 
@@ -155,4 +155,4 @@ function Whirlwind:draw()
     Draw.popShader()
 end
 
-return Whirlwind
+return GaliantherWhirlwind

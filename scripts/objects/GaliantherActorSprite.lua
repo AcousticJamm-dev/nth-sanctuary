@@ -1,6 +1,6 @@
-local WingladeActorSprite, super = Class(ActorSprite)  --in case one of yall peeks, yes i just made a copy for the winglade variant. bite me.
+local GaliantherActorSprite, super = Class(ActorSprite)  --in case one of yall peeks, yes i just made a copy for the winglade variant. bite me.
 
-function WingladeActorSprite:init(actor)
+function GaliantherActorSprite:init(actor)
     super.init(self, actor)
 
     self.horn = Sprite(self:getTexturePath("horn"), 16, 0)
@@ -56,21 +56,21 @@ function WingladeActorSprite:init(actor)
     self.right_wing_frame = 0
 end
 
-function WingladeActorSprite:getTexturePath(sprite_name)
+function GaliantherActorSprite:getTexturePath(sprite_name)
     return self.actor:getSpritePath() .. '/' .. self.actor.parts[sprite_name][1]
 end
 
-function WingladeActorSprite:set(anim, ...)
+function GaliantherActorSprite:set(anim, ...)
     self.actor:onSetAnimation(self, anim, ...)
 end
 
-function WingladeActorSprite:setPartVisible(boolean)
+function GaliantherActorSprite:setPartVisible(boolean)
     for _, child in ipairs(self.children) do
         child.visible = boolean
     end
 end
 
-function WingladeActorSprite:addColorMask(object, color, amount, id)
+function GaliantherActorSprite:addColorMask(object, color, amount, id)
     if not object:getFX(id) then
         local fx = ColorMaskFX(color, amount)
         fx.id = id
@@ -78,7 +78,7 @@ function WingladeActorSprite:addColorMask(object, color, amount, id)
     end
 end
 
-function WingladeActorSprite:setAnimation(anim, callback, ignore_actor_callback)
+function GaliantherActorSprite:setAnimation(anim, callback, ignore_actor_callback)
     if anim == 'blank' then
         self.left_wing_frame = self.left_wing.frame
         self.right_wing_frame = self.right_wing.frame
@@ -103,7 +103,7 @@ function WingladeActorSprite:setAnimation(anim, callback, ignore_actor_callback)
     super.setAnimation(self, anim, callback, ignore_actor_callback)
 end
 
-function WingladeActorSprite:update()
+function GaliantherActorSprite:update()
     super.update(self)
 
     self.timer = self.timer + DTMULT
@@ -194,4 +194,4 @@ function WingladeActorSprite:update()
     end
 end
 
-return WingladeActorSprite
+return GaliantherActorSprite

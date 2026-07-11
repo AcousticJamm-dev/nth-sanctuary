@@ -1,7 +1,7 @@
--- Handles Winglade's arena circling attack separately
-local WingladeCircle, super = Class(Object)
+-- Handles Galianther's arena circling attack separately
+local GaliantherCircle, super = Class(Object)
 
-function WingladeCircle:init(attacker, wave)
+function GaliantherCircle:init(attacker, wave)
     super.init(self)
 
     attacker:shiftOrigin(0.5, 0.5)
@@ -39,11 +39,11 @@ function WingladeCircle:init(attacker, wave)
     end
 end
 
-function WingladeCircle:spawnBullet(...)
+function GaliantherCircle:spawnBullet(...)
     return self.wave:spawnBullet(...)
 end
 
-function WingladeCircle:update()
+function GaliantherCircle:update()
     super.update(self)
     if self.action == 0 then
         self.anim_timer = self.anim_timer + DTMULT
@@ -111,11 +111,11 @@ function WingladeCircle:update()
     if self.reset and self.attacker.x == self.target_x and self.attacker.y == self.target_y then self:remove() end
 end
 
-function WingladeCircle:beforeEnd()
+function GaliantherCircle:beforeEnd()
     self.reset = true
     if self.attacker:canSpare() then self.attacker:onSpareable()
     else self.attacker:setAnimation("idle") end
     self.attacker:setLayer(self.original_layer)
 end
 
-return WingladeCircle
+return GaliantherCircle

@@ -1,7 +1,7 @@
--- Handles Winglade's aim attack separately
-local WingladeAim, super = Class(Object)
+-- Handles Galianther's aim attack separately
+local GaliantherAim, super = Class(Object)
 
-function WingladeAim:init(attacker, wave)
+function GaliantherAim:init(attacker, wave)
     super.init(self)
 
     attacker:shiftOrigin(0.5, 0.5)
@@ -55,11 +55,11 @@ function WingladeAim:init(attacker, wave)
     end
 end
 
-function WingladeAim:spawnBullet(...)
+function GaliantherAim:spawnBullet(...)
     return self.wave:spawnBullet(...)
 end
 
-function WingladeAim:update()
+function GaliantherAim:update()
     super.update(self)
 
     self.timer = self.timer + DTMULT
@@ -209,14 +209,14 @@ function WingladeAim:update()
     end
 end
 
-function WingladeAim:beforeEnd()
+function GaliantherAim:beforeEnd()
     self.wave_end = true
     if self.attacker:canSpare() then self.attacker:onSpareable()
     else self.attacker:setAnimation("idle") end
     self.attacker:setLayer(self.original_layer)
 end
 
-function WingladeAim:getEnemyRatio()
+function GaliantherAim:getEnemyRatio()
     local enemies = #Game.battle:getActiveEnemies()
     if enemies <= 1 then
         return 1
@@ -227,4 +227,4 @@ function WingladeAim:getEnemyRatio()
     end
 end
 
-return WingladeAim
+return GaliantherAim

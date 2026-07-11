@@ -1,7 +1,7 @@
-local Spiral, super = Class(Bullet, "huemist/spiral")
+local Spiral, super = Class(Bullet, "fizzle/spiral")
 
-function Spiral:init(x, y, dir, speed, lifetime, turnvar)
-    super.init(self, x, y, "bullets/huemist/spiral")
+function Spiral:init(x, y, dir, speed, lifetime, turnvar, enemyspeed)
+    super.init(self, x, y, "bullets/fizzle/spiral")
 
     self:setScale(0)
 
@@ -14,6 +14,7 @@ function Spiral:init(x, y, dir, speed, lifetime, turnvar)
 	self.bullet_lifetime = lifetime or 48
 	self.dont_remove_on_lifetime_end = false
 	self.remove_outside_arena = false
+	self.enemy_speed = enemyspeed
 end
 
 function Spiral:update()
@@ -35,18 +36,18 @@ function Spiral:update()
     self.timer = self.timer + DTMULT
 
 	if self.timer == 5 then
-		local bullet = self.wave:spawnBullet("huemist/huedroplet", self.x, self.y)
+		local bullet = self.wave:spawnBullet("fizzle/huedroplet", self.x, self.y, self.enemy_speed)
 		if bullet then
 			bullet.physics.direction = self.bullet_direction
 			bullet.rotation = bullet.physics.direction
 			bullet.alpha = 0
 			bullet.scale_x = 0
 			bullet.scale_y = 0
-			bullet.physics.speed = self.bullet_speed
+			bullet.physics.speed = self.bullet_speed * self.enemy_speed
 			bullet.remove_outside_arena = self.remove_outside_arena
 		end
 
-		local lifetime = self.bullet_lifetime
+		local lifetime = self.bullet_lifetime / self.enemy_speed
 		Game.battle.timer:lerpVar(bullet, "alpha", 0, 1, 8)
 		Game.battle.timer:lerpVar(bullet, "scale_x", 0, 0.75, 14)
 		Game.battle.timer:lerpVar(bullet, "scale_y", 0, 0.75, 14)

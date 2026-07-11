@@ -938,11 +938,11 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["actor"] = "huemist",
+            ["actor"] = "fizzle",
             ["animation"] = "spin",
             ["chase"] = "false",
             ["chasedist"] = 1,
-            ["encounter"] = "huemist_duo",
+            ["encounter"] = "fizzle_duo",
             ["group"] = 1,
             ["path"] = "circle",
             ["speed"] = -9
@@ -978,11 +978,11 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["actor"] = "huemist",
+            ["actor"] = "fizzle",
             ["animation"] = "spin",
             ["chase"] = "false",
             ["chasedist"] = 1,
-            ["encounter"] = "huemist_duo",
+            ["encounter"] = "fizzle_duo",
             ["group"] = 1,
             ["path"] = "circle",
             ["progress"] = 2.5,

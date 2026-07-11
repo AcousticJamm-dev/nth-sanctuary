@@ -2,7 +2,7 @@ local Prism, super = Class(Recruit)
 
 function Prism:init()
     super.init(self)
-    self.name = "Huemist"
+    self.name = "Fizzle"
     self.recruit_amount = 5
     self.description = "Dreamer of colors, \nbasks in the light of \nthe sun."
     self.chapter = "4.5?"
@@ -14,7 +14,7 @@ function Prism:init()
     self.dislike = "Darkness"
     self.box_gradient_type = "bright"
     self.box_gradient_color = {1,1,0}
-    self.box_sprite = {"enemies/huemist/idle", 0, 0, 1/6}
+    self.box_sprite = {"enemies/fizzle/idle", 0, 0, 1/6}
     self.recruited = 0
 end
 

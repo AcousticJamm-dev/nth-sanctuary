@@ -1,6 +1,6 @@
-local HueDroplet, super = Class(Bullet, "huemist/huedroplet")
+local HueDroplet, super = Class(Bullet, "fizzle/huedroplet")
 
-function HueDroplet:init(x, y)
+function HueDroplet:init(x, y, speed)
     super.init(self, x, y, "battle/bullets/mizzle/holydroplet")
 
     self:setScale(1)
@@ -14,16 +14,21 @@ function HueDroplet:init(x, y)
 	self.removing = false
 	self.was_in_arena = false
 	self.remove_outside_arena = false
+	self.speed = speed
 end
 
 function HueDroplet:update()
     super.update(self)
 	self.siner = self.siner + DTMULT
 
-	if self.rotation == 0 or self.rotation == math.rad(180) then
-		self.y = self.y + math.cos((self.siner*(math.pi/2))/6)*2
-	else
-		self.x = self.x + math.cos((self.siner*(math.pi/2))/6)*2
+	if self.rotation == math.rad(0) then
+		self.y = self.y +math.sin((self.siner*(math.pi/2))/12)*2
+	elseif self.rotation == math.rad(90) then
+		self.x = self.x + math.sin((self.siner*(math.pi/2))/12)*2
+	elseif self.rotation == math.rad(180) then
+		self.y = self.y + math.sin((self.siner*(math.pi/2))/12)*2
+	elseif self.rotation == math.rad(270) then
+		self.x = self.x + math.sin((self.siner*(math.pi/2))/12)*2
 	end
 
 	if self.remove_outside_arena then
@@ -53,7 +58,7 @@ function HueDroplet:doRemove()
 	Game.battle.timer:lerpVar(self, "alpha", 1, 0, 5)
 	Game.battle.timer:lerpVar(self, "scale_x", 1, 0, 5)
 	Game.battle.timer:lerpVar(self, "scale_y", 1, 0, 5)
-	Game.battle.timer:after(5/30, function() 
+	Game.battle.timer:after((5/30) / self.speed, function() 
 		self:remove()
 	end)
 end

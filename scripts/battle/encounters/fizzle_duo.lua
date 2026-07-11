@@ -1,10 +1,10 @@
-local Huemist, super = Class(Encounter)
+local Dummy, super = Class(Encounter)
 
-function Huemist:init()
+function Dummy:init()
     super.init(self)
 
     -- Text displayed at the bottom of the screen at the start of the encounter
-    self.text = "* Huemist condensates in!"
+    self.text = "* Fizzles condensate in!"
 
     -- Battle music ("battle" is rude buster)
     self.music = "vaporbattle"
@@ -12,18 +12,17 @@ function Huemist:init()
     self.background = true
 
     -- Add the dummy enemy to the encounter
-    self:addEnemy("huemist")
+    self:addEnemy("fizzle")
+    self:addEnemy("fizzle")
 
     --- Uncomment this line to add another!
     --self:addEnemy("dummy")
     self.bg = VaporBattleBG()
-
-    self.target_soul_speed = 4
 end
 
-function Huemist:createBackground()
+function Dummy:createBackground()
     self.bg.layer =BATTLE_LAYERS["background"]
     return Game.battle:addChild(self.bg)
 end
 
-return Huemist
+return Dummy

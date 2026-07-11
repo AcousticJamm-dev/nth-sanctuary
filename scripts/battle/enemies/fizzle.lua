@@ -1,13 +1,13 @@
-local Huemist, super = Class(EnemyBattler)
+local Fizzle, super = Class(EnemyBattler)
 
-function Huemist:init()
+function Fizzle:init()
     super.init(self)
 
     -- Enemy name
-    self.name = "Huemist"
+    self.name = "Fizzle"
         self.counter = 0
     -- Sets the actor, which handles the enemy's sprites (see scripts/data/actors/dummy.lua)
-    self:setActor("huemist")
+    self:setActor("fizzle")
 
     -- Enemy health
     self.max_health = 550
@@ -19,14 +19,16 @@ function Huemist:init()
     -- Enemy reward
     self.money = 100
 
-    self.target_soul_speed = 4
+    self.next_soul_speed = 4
+    self.sugarcrash = false
+    self.attack_speed = 1
 
     -- Mercy given when sparing this enemy before its spareable (20% for basic enemies)
     self.spare_points = 20
 
     -- List of possible wave ids, randomly picked each turn
     self.waves = {
-        "huemist/dropletlines"
+        "fizzle/dropletlines"
     }
 
     -- Dialogue randomly displayed in the enemy's speech bubble
@@ -41,13 +43,13 @@ function Huemist:init()
 
     -- Text randomly displayed at the bottom of the screen each turn
     self.text = {
-        "* Huemist daydreams about an empty\nfield somewhere distant.",
-        "* Huemist ripples like water.",
+        "* Fizzle daydreams about an empty\nfield somewhere distant.",
+        "* Fizzle ripples like water.",
         "* The air feels clear and broad.",
         "* And then you fired again.",
     }
     -- Text displayed at the bottom of the screen when the enemy has low health
-    self.low_health_text = "* Huemist is turning back into mist."
+    self.low_health_text = "* Fizzle is turning back into mist."
 
     -- Register act called "Smile"
     self:registerAct("Fizzy Drink", "25%\nMERCY")
@@ -58,10 +60,14 @@ function Huemist:init()
     self:registerAct("Lotta Drink", "35% & \nMove\nslower", {"jamm"})
 
     self.siner = 0
-    self.overlay = Assets.getTexture("enemies/huemist/overlay")
+    self.overlay = Assets.getTexture("enemies/fizzle/overlay")
 end
 
-function Huemist:onAct(battler, name)
+function Fizzle:onTurnStart()
+    self.attack_speed = 1
+end
+
+function Fizzle:onAct(battler, name)
     if name == "Fizzy Drink" then
         -- Give the enemy 100% mercy
         self:addMercy(25)
@@ -69,7 +75,7 @@ function Huemist:onAct(battler, name)
         self.dialogue_override = "... ^^"
         -- Act text (since it's a list, multiple textboxes)
         return {
-            "* You pour Huemist and yourself a glass of sparkling water.[wait:5]\n* Huemist appreciates the gesture!"
+            "* You pour Fizzle and yourself a glass of pink lemonade.[wait:5]\n* Fizzle appreciates the gesture!"
         }
     
     elseif name == "Sour Drink" then
@@ -77,31 +83,35 @@ function Huemist:onAct(battler, name)
         for _, enemy in ipairs(Game.battle.enemies) do
             -- Make the enemy tired
             enemy:setTired(true)
-            self:addMercy(35)
-            if Game.battle.soul then 
-                Game.battle.soul:setSpeed(2)
-            end
+            enemy:addMercy(35)
+            enemy.attack_speed = 0.5
         end
+        Game.battle.encounter.next_soul_speed = 2
+        
         return {
-            "* You and Susie share sour drinks with the enemies.[wait:5]\n* The enemies shouldn't have drank that...",
-            "* Everything slows down for this turn!"
+            "* You and Susie pick and squeeze lemons and make lemonade, sharing it with the enemies.",
+            "* The enemies shouldn't have drank that...[wait:5]\n* Everything will be slower this turn!"
         }
     
     elseif name == "Sweet Drink" then
         -- Loop through all enemies
         for _, enemy in ipairs(Game.battle.enemies) do
-            self:addMercy(35)
+            enemy:addMercy(35)
+            self.sugarcrash = true
+            eneattack_speed = 1.5
         end
+        Game.battle.encounter.next_soul_speed = 6
+        
         return {
-            "* You and Ralsei share sugary drinks with the enemies.[wait:5]\n* Everyone became hyper with sugar!",
+            "* You and Ralsei brew sweeter lemonade with the enemies.[wait:5]\n* Everyone became hyper with sugar!",
             "* Everything speeds up for this turn!"
         }
-
+        
     elseif name == "Lotta Drink" then
         -- Loop through all enemies
-        for _, enemy in ipairs(Game.battle.enemies) do
-            self:addMercy(50)
-        end
+        self:addMercy(50)
+        Game.battle.encounter.next_soul_speed = 2
+
         return {
             "* You and Jamm drink a lot of water with the enemies...",
             "* Movement speed down for this turn!"
@@ -112,16 +122,19 @@ function Huemist:onAct(battler, name)
         self:addMercy(25)
         if battler.chara.id == "susie" then
             -- S-Action text
-            return "* Susie throws a bottle of water into the air, and catches it with her mouth.[wait:5]\n* Huemist applaudes!"
+            return {
+                "* Susie throws a bottle of water into the air, and catches it with her mouth.",
+                "* Fizzle applaudes!"
+            }
         elseif battler.chara.id == "ralsei" then
             -- R-Action: start a cutscene (see scripts/battle/cutscenes/dummy.lua)
-            return "* Ralsei drank water with huemist.[wait:5]\n* Huemist enjoyed it!"
+            return "* Ralsei drank water with fizzle.[wait:5]\n* Fizzle enjoyed it!"
         elseif battler.chara.id == "jamm" then
             -- J-Action: start a cutscene (see scripts/battle/cutscenes/dummy.lua)
-            return "* Jamm and Huemist teach the others about the importance of hydration."
+            return "* Jamm and Fizzle teach the others about the importance of hydration."
         else
             -- Text for any other character (like Noelle)
-            return "* "..battler.chara:getName().." pours huemist a drink."
+            return "* "..battler.chara:getName().." pours fizzle a drink."
         end
     end
 
@@ -130,7 +143,7 @@ function Huemist:onAct(battler, name)
     return super.onAct(self, battler, name)
 end
 
-function Huemist:update()
+function Fizzle:update()
     super.update(self)
     self.siner = self.siner + DTMULT
     self.sprite.y = math.sin(self.siner/10)*5
@@ -143,7 +156,9 @@ function Huemist:update()
     end
 end
 
-function Huemist:draw()
+
+
+function Fizzle:draw()
     Draw.pushShader("checkerboard_mask", {
         ["pattern"] = self.overlay
         }
@@ -154,7 +169,7 @@ function Huemist:draw()
     Draw.popShader()
 end
 
-function Huemist:getEncounterText()
+function Fizzle:getEncounterText()
     if self.low_health_text and self.health <= (self.max_health * self.low_health_percentage) then
         return self.low_health_text
     elseif self.tired_text and self.tired then
@@ -169,4 +184,11 @@ function Huemist:getEncounterText()
 	end
 end
 
-return Huemist
+function Fizzle:onTurnEnd()
+    if self.sugarcrash then
+        self.sugarcrash = false
+		self:setTired(true)
+    end
+end
+
+return Fizzle

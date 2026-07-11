@@ -1,10 +1,10 @@
-local actor, super = Class(Actor, "huemist")
+local actor, super = Class(Actor, "fizzle")
 
 function actor:init()
     super.init(self)
 
     -- Display name (optional)
-    self.name = "Huemist"
+    self.name = "Fizzle"
 
     -- Width and height for this actor, used to determine its center
     self.width = 41
@@ -20,7 +20,7 @@ function actor:init()
     self.flip = nil
 
     -- Path to this actor's sprites (defaults to "")
-    self.path = "enemies/huemist"
+    self.path = "enemies/fizzle"
     -- This actor's default sprite or animation, relative to the path (defaults to "")
     self.default = "idle"
 

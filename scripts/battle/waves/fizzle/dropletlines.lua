@@ -11,9 +11,11 @@ end
 
 
 function DropletLines:onStart()
-    local attackers = #self:getAttackers()           --scr_monsterpop()
+    local attackers = self:getAttackers()           --scr_monsterpop()
     local enemies = #Game.battle:getActiveEnemies()  --sameattack
     local arena = Game.battle.arena
+	local speed = attackers[1].attack_speed
+	Game.battle.soul.speed = Game.battle.encounter.next_soul_speed
 
 	local function spawnBullets()
 		local side = (self.side % 4) + 1
@@ -42,24 +44,24 @@ function DropletLines:onStart()
 			x_diff = diff
 			y = arena.top - distance
 		elseif side == 3 then
-			y_diff = -diff
+			y_diff = diff
 			x = arena.right + distance
 		elseif side == 4 then
-			x_diff = -diff
+			x_diff = diff
 			y = arena.bottom + distance
 		end
-		for i = -2, 2 do
+		for i = -2, 1 do
 			turnvar = 0
-			local bullet = self:spawnBullet("huemist/spiral", x + (x_diff * i), y + (y_diff * i), direction, 4, 50, turnvar)
+			local bullet = self:spawnBullet("fizzle/spiral", x + (x_diff * i), y + (y_diff * i), direction, 4, 50, turnvar, speed)
 			bullet.dont_remove_on_lifetime_end = true
 			bullet.remove_outside_arena = true
 		end
 		self.side = self.side + 1
 	end
 
-	self.timer:everyInstant(2.5, function()
+	self.timer:everyInstant(2.5 / speed, function()
 		spawnBullets()
-		self.timer:after(1, spawnBullets)
+		self.timer:after(1.25 / speed, spawnBullets)
 	end)
 end
 
@@ -68,24 +70,18 @@ function DropletLines:update()
 	self.siner = self.siner + DTMULT
     local attackers = #self:getAttackers()           --scr_monsterpop()
     local enemies = #Game.battle:getActiveEnemies()  --sameattack
-    if enemies == attackers then
-		--[[for _, bullet in ipairs(self.bullets) do
-			
-			
-		end]]
-    end
 end
 
 function DropletLines:draw()
 	super.draw(self)
 	for _, bullet in ipairs(self.bullets) do
-		if bullet:isBullet("huemist/huedroplet") and not bullet:isRemoved() then
+		if bullet:isBullet("fizzle/huedroplet") and not bullet:isRemoved() then
 			Draw.setColor(bullet:getDrawColor())
 			Draw.draw(bullet.outline_tex, bullet.x, bullet.y, bullet.rotation, bullet.scale_x, bullet.scale_y, 16, 16)
 		end
 	end
 	for _, bullet in ipairs(self.bullets) do
-		if bullet:isBullet("huemist/huedroplet") and not bullet:isRemoved() then
+		if bullet:isBullet("fizzle/huedroplet") and not bullet:isRemoved() then
 			for i = 3, 1, -1 do
 				Draw.setColor(ColorUtils.mergeColor(COLORS.yellow, COLORS.fuchsia, (i-1)/2), bullet.alpha * (0.5 - ((i-1)/2)*0.25))
 				Draw.draw(bullet.sprite.texture, bullet.x + ((bullet.last_x - bullet.x) * FRAMERATE/30) * i, bullet.y + ((bullet.last_y - bullet.y) * FRAMERATE/30) * i, MathUtils.angle(bullet.x + ((bullet.last_x - bullet.x) * FRAMERATE/30) * i, bullet.y + ((bullet.last_y - bullet.y) * FRAMERATE/30) * i, bullet.x, bullet.y), bullet.scale_x, bullet.scale_y, 16, 16)
@@ -94,7 +90,7 @@ function DropletLines:draw()
 		end
 	end
 	for _, bullet in ipairs(self.bullets) do
-		if bullet:isBullet("huemist/huedroplet") and not bullet:isRemoved() then
+		if bullet:isBullet("fizzle/huedroplet") and not bullet:isRemoved() then
 			Draw.setColor(bullet:getDrawColor())
 			Draw.draw(bullet.sprite.texture, bullet.x, bullet.y, bullet.rotation, bullet.scale_x, bullet.scale_y, 16, 16)
 		end

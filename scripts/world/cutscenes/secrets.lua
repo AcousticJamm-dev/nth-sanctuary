@@ -1,12 +1,24 @@
 return {
-    frisk = function (cutscene)
-        if Game:getFlag("fun") ~= 69 then
-            cutscene:text("* (Holy shit it's Frisk from the game UNDERTALE.)")
-        else
-            cutscene:text("* (It's some sort o[sound:budabing]f [image:npcs/frisk/engine, -5,10,1.5,1.5][wait:1].)")
-            cutscene:text("* (...Or even a[sound:fafa] [image:fafa-dialogue, -5,10,1, 1][wait:1].)")
-            
-        end
+    frisk = function (cutscene, event)
+		if event.interact_count == 1 then
+			if Game:getFlag("fun") ~= 69 then
+				cutscene:text("* (Holy shit it's Frisk from the game UNDERTALE.)")
+			else
+				cutscene:text("* (It's some sort o[sound:budabing]f [image:npcs/frisk/engine, -5,10,1.5,1.5][wait:1].)")
+				cutscene:text("* (...Or even a[sound:fafa] [image:fafa-dialogue, -5,10,1, 1][wait:1].)")				
+			end
+		else
+			if Game:getFlag("fun") ~= 69 then
+				cutscene:text("* (It's Frisk from UNDERTALE.)")
+			else
+				cutscene:text("* (It's a sort o[sound:budabing]f [image:npcs/frisk/engine, -5,10,1.5,1.5][wait:1] or a[sound:fafa] [image:fafa-dialogue, -5,10,1, 1][wait:1].)")				
+			end
+			cutscene:text("* (Fight them?)")
+			local ch = cutscene:choicer({"Fight", "No"})
+			if ch == 1 then
+				cutscene:startEncounter("frisk", event)
+			end
+		end
     end,
     proph = function (cutscene)
         --cutscene:fadeOut(1, {music = true})

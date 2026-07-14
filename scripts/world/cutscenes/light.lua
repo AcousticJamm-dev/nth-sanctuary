@@ -461,8 +461,8 @@ return {
 		cutscene:walkToSpeed(s, s.x, 500, 3, "down")
 		cutscene:wait(0.5)
 		cutscene:setSpeaker("susie")
-		cutscene:text("* Test fucking dialogue[wait:30]", nil, s, {skip = false, auto = true})
-		cutscene:text("* Test fucking dialogue 2[wait:30]", nil, s, {skip = false, auto = true})
+		cutscene:text("* Focus, [wait:5]Susie...[wait:10]\n* It's just some glass.[wait:30]", nil, s, {skip = false, auto = true})
+		cutscene:text("* But why would it... [wait:30]", nil, s, {skip = false, auto = true})
 		cutscene:wait(function()
 			if s.y >= 500 then
 				return true
@@ -480,7 +480,9 @@ return {
 		cutscene:wait(0.5)
 		cutscene:walkTo(s, 960, 510, 0.5, "right")
 		cutscene:wait(1)
-		cutscene:text("* Test fucking Jamm Car dialogue")
+		cutscene:text("* (Strange. [wait:10]I've never seen this car before.)", "neutral_side", s)
+		cutscene:text("* (Maybe-", "neutral_side", s, {auto = true})
+		
 		cutscene:detachCamera()
         cutscene:panTo(740, 580, 1, "out-cubic")
 		cutscene.wind_sound = Music()
@@ -510,6 +512,11 @@ return {
 		s:setFacing("up")
 		Assets.playSound("thunder_instant")
 		lightningFlash()
+		cutscene:wait(1)
+		cutscene:text("* What the hell!?", "unsure", s)
+		cutscene:text("* Again!? [wait:10]But we were JUST here!", "angry_c", s)
+		cutscene:text("* ...", "angry_c", s)
+		cutscene:text("* ...", "bangs/down", s)
 		cutscene:wait(function()
 			if Input.pressed("menu") then
 				Assets.stopAndPlaySound("thunder_instant")
@@ -517,5 +524,9 @@ return {
 			end
 			return false
 		end)
+
+		
+		
+		
     end
 }

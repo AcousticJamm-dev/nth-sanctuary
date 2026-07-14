@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.10.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -9,8 +9,8 @@ return {
   height = 12,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 16,
-  nextobjectid = 72,
+  nextlayerid = 17,
+  nextobjectid = 76,
   properties = {
     ["border"] = "none",
     ["music"] = "secret_sanctuary",
@@ -63,7 +63,7 @@ return {
       objects = {
         {
           id = 55,
-          name = "glowy",
+          name = "hellglow",
           type = "",
           shape = "point",
           x = 0,
@@ -72,9 +72,28 @@ return {
           height = 0,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["from"] = "#ff530003",
+            ["speed"] = 0.25,
+            ["to"] = "#ff990000"
+          }
         }
       }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 16,
+      name = "objects_bg",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {}
     },
     {
       type = "objectgroup",
@@ -614,6 +633,7 @@ return {
       offsety = 0,
       parallaxx = 1,
       parallaxy = 1,
+      tintcolor = { 255, 0, 0 },
       properties = {},
       objects = {
         {
@@ -628,6 +648,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
+            ["color"] = "#ffff0000",
             ["spawn_rate"] = 0.25
           }
         }

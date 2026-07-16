@@ -692,6 +692,13 @@
             "width": 800,
             "x": -2200,
             "y": 4240
+        },
+        {
+            "fileName": "2_2nd_sanctuary/second_sanctum_11_ponder/second_sanctum_11_ponder.tmx",
+            "height": 480,
+            "width": 640,
+            "x": 5920,
+            "y": 12240
         }
     ],
     "onlyShowAdjacentMaps": false,

@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.10.2",
+  tiledversion = "1.12.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -12,7 +12,7 @@ return {
   nextlayerid = 17,
   nextobjectid = 76,
   properties = {
-    ["border"] = "none",
+    ["border"] = "hell",
     ["music"] = "secret_sanctuary",
     ["name"] = "Secret Sanctuary"
   },
@@ -30,18 +30,18 @@ return {
     },
     {
       name = "bg_dw_church_tileset_new",
-      firstgid = 308,
+      firstgid = 307,
       filename = "../../../tilesets/bg_dw_church_tileset_new.tsx",
       exportfilename = "../../../tilesets/bg_dw_church_tileset_new.lua"
     },
     {
       name = "bg_dw_library_tileset_new",
-      firstgid = 890,
+      firstgid = 889,
       filename = "../../../tilesets/bg_dw_library_tileset_new.tsx"
     },
     {
       name = "ExtraCarpetTiles",
-      firstgid = 1720,
+      firstgid = 1719,
       filename = "../../../tilesets/ExtraCarpetTiles.tsx",
       exportfilename = "../../../tilesets/ExtraCarpetTiles.lua"
     }
@@ -71,6 +71,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["from"] = "#ff530003",
@@ -119,6 +120,7 @@ return {
           width = 480,
           height = 1200,
           rotation = -45,
+          opacity = 1,
           gid = 299,
           visible = true,
           properties = {
@@ -136,6 +138,7 @@ return {
           width = 480,
           height = 1200,
           rotation = -45,
+          opacity = 1,
           gid = 299,
           visible = true,
           properties = {
@@ -265,6 +268,7 @@ return {
           width = 80,
           height = 160,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["idlealpha"] = 0.5,
@@ -281,6 +285,7 @@ return {
           width = 160,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["idlealpha"] = 0.5,
@@ -297,6 +302,7 @@ return {
           width = 160,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["idlealpha"] = 0.5,
@@ -313,6 +319,7 @@ return {
           width = 80,
           height = 160,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["idlealpha"] = 0.5,
@@ -345,6 +352,7 @@ return {
           width = 120,
           height = 160,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -358,6 +366,7 @@ return {
           width = 160,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -371,6 +380,7 @@ return {
           width = 120,
           height = 160,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -384,6 +394,7 @@ return {
           width = 160,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -397,6 +408,7 @@ return {
           width = 120,
           height = 160,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -410,6 +422,7 @@ return {
           width = 120,
           height = 160,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -423,6 +436,7 @@ return {
           width = 160,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -436,6 +450,7 @@ return {
           width = 160,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -465,6 +480,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -478,6 +494,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -491,6 +508,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -504,6 +522,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -517,6 +536,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -546,6 +566,7 @@ return {
           width = 80,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "secrets/secret_sanctuary",
@@ -562,6 +583,7 @@ return {
           width = 40,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "secrets/secret_sanctuary",
@@ -578,6 +600,7 @@ return {
           width = 40,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "secrets/secret_sanctuary",
@@ -594,6 +617,7 @@ return {
           width = 80,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "secrets/secret_sanctuary",
@@ -610,6 +634,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["text1"] = "* You find yourself standing on an island made of cloth.",
@@ -646,6 +671,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["color"] = "#ffff0000",
@@ -678,6 +704,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["active"] = true,

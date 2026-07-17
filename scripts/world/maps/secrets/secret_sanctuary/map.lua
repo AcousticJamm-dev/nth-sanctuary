@@ -9,9 +9,6 @@ end
 
 function map:onEnter()
 	local flag = Game:getFlag("passed_savepoint")
-	local font = Assets.getFont("goldnumbers")
-	local randvalue = Text("+"..self.rand, 20 - font:getWidth("+"..self.rand)/2, 20, SCREEN_WIDTH, 20,{font = "goldnumbers"})
-	Game.world:addChild(randvalue)
 
 	if flag == true then
 		Game.world.map:getEvent(70):remove()
@@ -44,6 +41,18 @@ function map:update()
 	self.siner = self.siner + (DTMULT/30)
 	local events = {}
 	local stars = {}
+
+	if self.rand == 5 then	
+		Game:setFlag("funni_tower_shenanigans", true)
+	else
+		Game:setFlag("funni_tower_shenanigans", false)
+	end
+
+	if self.rand >= 9 and self.rand <= 15 then	
+		Game:setFlag("spire_watcher", true)
+	else
+		Game:setFlag("spire_watcher", false)
+	end
 
 	for _, event in ipairs(self.events) do
 		if event.layer == self.layers["objects_parallax"] then
@@ -80,11 +89,26 @@ function map:onExit()
 	end
 end
 
---[[function map:draw()
-	super.draw(self)
-	love.graphics.setColor(1, 0, 0, 1)
-    love.graphics.setFont(Assets.getFont("main"))
-	love.graphics.print(self.rand, 10, 400, SCREEN_WIDTH*2, "left", 0, 0.5, 0.5)
-end]]
+function map:draw()
+    super.draw(self)
+	if Kristal.Config and Kristal.Config["showFPS"] then
+	    love.graphics.setFont(Assets.getFont("main"))
+	    local text = tostring(self.rand)
+	    local x, y = 4, -4
+
+	    Draw.setColor(0, 0, 0)
+	    for ox = -1, 1 do
+	        for oy = -1, 1 do
+	            if ox ~= 0 or oy ~= 0 then
+	                love.graphics.print("ROOM " .. text, x + (ox * 2), y + (oy * 2))
+	            end
+	        end
+	    end
+
+	    Draw.setColor(1, 1, 1)
+	    love.graphics.print("ROOM " .. text, x, y)
+	end
+	Draw.setColor(1, 1, 1, 1)
+end
 
 return map

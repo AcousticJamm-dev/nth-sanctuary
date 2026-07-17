@@ -1,7 +1,7 @@
 return {
-  version = "1.11",
+  version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.12.2",
+  tiledversion = "1.12.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -9,8 +9,8 @@ return {
   height = 12,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 17,
-  nextobjectid = 78,
+  nextlayerid = 18,
+  nextobjectid = 88,
   properties = {
     ["border"] = "hell",
     ["music"] = "secret_sanctuary",
@@ -271,8 +271,7 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["idlealpha"] = 0.5,
-            ["starthidden"] = true
+            ["idlealpha"] = 0.5
           }
         },
         {
@@ -288,8 +287,7 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["idlealpha"] = 0.5,
-            ["starthidden"] = true
+            ["idlealpha"] = 0.5
           }
         },
         {
@@ -305,8 +303,7 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["idlealpha"] = 0.5,
-            ["starthidden"] = true
+            ["idlealpha"] = 0.5
           }
         },
         {
@@ -322,8 +319,7 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["idlealpha"] = 0.5,
-            ["starthidden"] = true
+            ["idlealpha"] = 0.5
           }
         }
       }
@@ -364,7 +360,7 @@ return {
           x = 0,
           y = 280,
           width = 160,
-          height = 40,
+          height = 200,
           rotation = 0,
           opacity = 1,
           visible = true,
@@ -392,7 +388,7 @@ return {
           x = 480,
           y = 280,
           width = 160,
-          height = 40,
+          height = 200,
           rotation = 0,
           opacity = 1,
           visible = true,
@@ -432,9 +428,9 @@ return {
           type = "",
           shape = "rectangle",
           x = 480,
-          y = 160,
+          y = 0,
           width = 160,
-          height = 40,
+          height = 200,
           rotation = 0,
           opacity = 1,
           visible = true,
@@ -446,9 +442,9 @@ return {
           type = "",
           shape = "rectangle",
           x = 0,
-          y = 160,
+          y = 0,
           width = 160,
-          height = 40,
+          height = 200,
           rotation = 0,
           opacity = 1,
           visible = true,
@@ -476,7 +472,7 @@ return {
           type = "",
           shape = "point",
           x = 320,
-          y = 280,
+          y = 270,
           width = 0,
           height = 0,
           rotation = 0,
@@ -539,6 +535,39 @@ return {
           opacity = 1,
           visible = true,
           properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 17,
+      name = "controllers",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 79,
+          name = "toggle",
+          type = "toggle",
+          shape = "point",
+          x = 420,
+          y = 170,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["flag"] = "spire_watcher",
+            ["target"] = "77"
+          }
         }
       }
     },
@@ -630,7 +659,7 @@ return {
           type = "",
           shape = "rectangle",
           x = 320,
-          y = 240,
+          y = 230,
           width = 0,
           height = 0,
           rotation = 0,
@@ -661,10 +690,10 @@ return {
             ["flagcheck"] = "spire_watcher",
             ["text1"] = "* You seem to be lost.[wait:5]\n* How did you find this place?",
             ["text2"] = "* .[wait:1].[wait:1].",
-            ["text3"] = "* The scarlet spires, shifting outside of view... [wait:5]\n* Isn't it mesmerizing?",
-            ["text4"] = "* I wonder... [wait:5]\n* Just what is it that causes the spires to be so active here?",
+            ["text3"] = "* The scarlet spires, shifting in and out of view... [wait:5]\n* Isn't it mesmerizing?",
+            ["text4"] = "* I wonder... [wait:5]\n* Just what is it that causes the spires to move in such a way?",
             ["text5"] = "* So many questions...[wait:5]\n* Will I ever know their answers?",
-            ["text6"] = "* .[wait:1].[wait:1].[wait:10] ...Perhaps not."
+            ["text6"] = "...[wait:10]Perhaps not."
           }
         }
       }

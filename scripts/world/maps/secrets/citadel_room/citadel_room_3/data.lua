@@ -1,7 +1,7 @@
 return {
-  version = "1.11",
+  version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.12.2",
+  tiledversion = "1.12.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -511,7 +511,7 @@ return {
           gid = 157,
           visible = true,
           properties = {
-            ["cutscene"] = "secrets.camac",
+            ["cutscene"] = "konverge.camac",
             ["solid"] = "true",
             ["usetile"] = true
           }

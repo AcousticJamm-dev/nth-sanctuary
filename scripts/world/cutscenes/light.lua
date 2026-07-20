@@ -407,7 +407,7 @@ return {
 		cutscene:text("* What I saw in there...[wait:5]\n* It's nothing to be worried about.[wait:5] I swear.", "dejected_smile")
 		cutscene:text("* I'll meet you and Noelle at the festival tomorrow.", "sincere")
 		cutscene:wait(0.5)
-		s:setSprite("rain_windblow_1")
+		s:setSprite("rain_windblow_1", true)
 		cutscene:text("* Until then,[wait:5] try to get some rest,[wait:5] dumbass.", "small_smile")
 		Game:setFlag("hometown_raining", 1)
 		rainfx.faded_in_starting_rainsfx = true
@@ -419,9 +419,7 @@ return {
 		rainfx.rain_outdoors_sfx:setPitch(0.9)
 		rainfx.rain_outdoors_sfx:fade(1, 2)
 		s:setAnimation("rain_windblow")
-		cutscene:wait(2)
-		s.sprite.anim_speed = 0
-		cutscene:wait(2)
+		cutscene:wait(4)
 		cutscene:text("* See you tomorrow,[wait:5] Kris.", "small_smile")
 		s:setSprite("walk_look_down")
 		s:setFacing("down")
@@ -517,6 +515,32 @@ return {
 		cutscene:text("* Again!? [wait:10]But we were JUST here!", "angry_c", s)
 		cutscene:text("* ...", "angry_c", s)
 		cutscene:text("* ...", "bangs/down", s)
+		cutscene:wait(1)
+		cutscene:text("* ...[wait:10]Screw it.", "bangs/down", s)
+		
+		cutscene:walkPath(s,{{860, s.y},{860, 300}}, {speed = 10})
+		cutscene:text("* Kris! [wait:10]Kris, [wait:5]get up! [wait:10]We got ourselves a problem!", "angry_c", s)
+
+		cutscene:wait(cutscene:fadeOut(2, {music = true}))
+		cutscene:loadMap("light/hometown/torielhouse/kris_room")
+		Game.world.player.visible = false
+		Game.world.music:stop()
+        Game.world.music:play("jitterbug_muffled")
+        cutscene:fadeIn(2, {music = false})
+
+		local spr = Game.world:spawnObject(Sprite("world/kris_window_ready"))
+		spr.x, spr.y = 294, 84
+		spr:setScale(2)
+		Game.world.music:fade(0, 2)
+		cutscene:wait(3)
+		Assets.playSound("wing")
+		spr:play(1/15,false)
+		cutscene:wait(2)
+		spr:setSprite("world/kris_window_leave")
+		spr:play(1/10, false)
+		cutscene:wait(3)
+		cutscene:fadeOut(2, {music = true})
+
 		cutscene:wait(function()
 			if Input.pressed("menu") then
 				Assets.stopAndPlaySound("thunder_instant")
@@ -524,6 +548,9 @@ return {
 			end
 			return false
 		end)
+
+
+
 
 		
 		

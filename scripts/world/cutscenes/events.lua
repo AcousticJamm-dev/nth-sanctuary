@@ -238,6 +238,11 @@ return {
         Game.inventory:addItem("sound_stone")
         Game.world.music:play()
     end,
+	obscenepath = function (cutscene)
+		cutscene:text("* Oh[wait:5], this treacherous, [wait:5]crystalline path...")
+		cutscene:text("* It seduced my soul with LIES!")
+		cutscene:text("* CURSES![wait:5] A thousand CURSES upon this fractured vanity and the shadow it has cast!")
+	end,
 	seenThisMan = function (cutscene, event)
 		local flag = Game:getFlag("interacted_with_random_guy")
 		if flag==1 then

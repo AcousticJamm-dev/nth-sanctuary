@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.10.2",
+  tiledversion = "1.12.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,9 +10,9 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 18,
-  nextobjectid = 79,
+  nextobjectid = 88,
   properties = {
-    ["border"] = "none",
+    ["border"] = "hell",
     ["music"] = "secret_sanctuary",
     ["name"] = "Secret Sanctuary"
   },
@@ -30,26 +30,20 @@ return {
     },
     {
       name = "bg_dw_church_tileset_new",
-      firstgid = 308,
+      firstgid = 307,
       filename = "../../../tilesets/bg_dw_church_tileset_new.tsx",
       exportfilename = "../../../tilesets/bg_dw_church_tileset_new.lua"
     },
     {
       name = "bg_dw_library_tileset_new",
-      firstgid = 890,
+      firstgid = 889,
       filename = "../../../tilesets/bg_dw_library_tileset_new.tsx"
     },
     {
       name = "ExtraCarpetTiles",
-      firstgid = 1720,
+      firstgid = 1719,
       filename = "../../../tilesets/ExtraCarpetTiles.tsx",
       exportfilename = "../../../tilesets/ExtraCarpetTiles.lua"
-    },
-    {
-      name = "vapor_assets",
-      firstgid = 1724,
-      filename = "../../../tilesets/vapor_assets.tsx",
-      exportfilename = "../../../tilesets/vapor_assets.lua"
     }
   },
   layers = {
@@ -77,6 +71,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["from"] = "#ff530003",
@@ -99,36 +94,7 @@ return {
       parallaxx = 1,
       parallaxy = 1,
       properties = {},
-      objects = {
-        {
-          id = 77,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = -270.303,
-          y = 608.485,
-          width = 1280,
-          height = 720,
-          rotation = 0,
-          gid = 1726,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 78,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = -43,
-          y = 581,
-          width = 1280,
-          height = 720,
-          rotation = 0,
-          gid = 1726,
-          visible = true,
-          properties = {}
-        }
-      }
+      objects = {}
     },
     {
       type = "objectgroup",
@@ -136,7 +102,7 @@ return {
       id = 12,
       name = "objects_parallax",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -154,6 +120,7 @@ return {
           width = 480,
           height = 1200,
           rotation = -45,
+          opacity = 1,
           gid = 299,
           visible = true,
           properties = {
@@ -171,6 +138,7 @@ return {
           width = 480,
           height = 1200,
           rotation = -45,
+          opacity = 1,
           gid = 299,
           visible = true,
           properties = {
@@ -300,10 +268,10 @@ return {
           width = 80,
           height = 160,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
-            ["idlealpha"] = 0.5,
-            ["starthidden"] = true
+            ["idlealpha"] = 0.5
           }
         },
         {
@@ -316,10 +284,10 @@ return {
           width = 160,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
-            ["idlealpha"] = 0.5,
-            ["starthidden"] = true
+            ["idlealpha"] = 0.5
           }
         },
         {
@@ -332,10 +300,10 @@ return {
           width = 160,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
-            ["idlealpha"] = 0.5,
-            ["starthidden"] = true
+            ["idlealpha"] = 0.5
           }
         },
         {
@@ -348,10 +316,10 @@ return {
           width = 80,
           height = 160,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
-            ["idlealpha"] = 0.5,
-            ["starthidden"] = true
+            ["idlealpha"] = 0.5
           }
         }
       }
@@ -380,6 +348,7 @@ return {
           width = 120,
           height = 160,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -391,8 +360,9 @@ return {
           x = 0,
           y = 280,
           width = 160,
-          height = 40,
+          height = 200,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -406,6 +376,7 @@ return {
           width = 120,
           height = 160,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -417,8 +388,9 @@ return {
           x = 480,
           y = 280,
           width = 160,
-          height = 40,
+          height = 200,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -432,6 +404,7 @@ return {
           width = 120,
           height = 160,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -445,6 +418,7 @@ return {
           width = 120,
           height = 160,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -454,10 +428,11 @@ return {
           type = "",
           shape = "rectangle",
           x = 480,
-          y = 160,
+          y = 0,
           width = 160,
-          height = 40,
+          height = 200,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -467,10 +442,11 @@ return {
           type = "",
           shape = "rectangle",
           x = 0,
-          y = 160,
+          y = 0,
           width = 160,
-          height = 40,
+          height = 200,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -496,10 +472,11 @@ return {
           type = "",
           shape = "point",
           x = 320,
-          y = 280,
+          y = 270,
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -513,6 +490,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -526,6 +504,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -539,6 +518,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -552,8 +532,42 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 17,
+      name = "controllers",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 79,
+          name = "toggle",
+          type = "toggle",
+          shape = "point",
+          x = 420,
+          y = 170,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["flag"] = "spire_watcher",
+            ["target"] = "77"
+          }
         }
       }
     },
@@ -581,6 +595,7 @@ return {
           width = 80,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "secrets/secret_sanctuary",
@@ -597,6 +612,7 @@ return {
           width = 40,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "secrets/secret_sanctuary",
@@ -613,6 +629,7 @@ return {
           width = 40,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "secrets/secret_sanctuary",
@@ -629,6 +646,7 @@ return {
           width = 80,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "secrets/secret_sanctuary",
@@ -641,10 +659,11 @@ return {
           type = "",
           shape = "rectangle",
           x = 320,
-          y = 240,
+          y = 230,
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["text1"] = "* You find yourself standing on an island made of cloth.",
@@ -652,6 +671,29 @@ return {
             ["text3"] = "* You ponder if it's a good idea to explore here, when you remember your TRAVEL button.",
             ["text4"] = "* Maybe you'll find something of interest?",
             ["text5"] = "* With that, you're filled with the power of infinite islands."
+          }
+        },
+        {
+          id = 77,
+          name = "npc",
+          type = "",
+          shape = "point",
+          x = 420,
+          y = 200,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["actor"] = "wafer",
+            ["flagcheck"] = "spire_watcher",
+            ["text1"] = "* You seem to be lost.[wait:5]\n* How did you find this place?",
+            ["text2"] = "* .[wait:1].[wait:1].",
+            ["text3"] = "* The scarlet spires, shifting in and out of view... [wait:5]\n* Isn't it mesmerizing?",
+            ["text4"] = "* I wonder... [wait:5]\n* Just what is it that causes the spires to move in such a way?",
+            ["text5"] = "* So many questions...[wait:5]\n* Will I ever know their answers?",
+            ["text6"] = "...[wait:10]Perhaps not."
           }
         }
       }
@@ -681,6 +723,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["color"] = "#ffff0000",
@@ -713,6 +756,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["active"] = true,

@@ -520,14 +520,16 @@ return {
 		
 		cutscene:walkPath(s,{{860, s.y},{860, 300}}, {speed = 10})
 		cutscene:text("* Kris! [wait:10]Kris, [wait:5]get up! [wait:10]We got ourselves a problem!", "angry_c", s)
-
+		cutscene.wind_sound:fade(0, 2)
 		cutscene:wait(cutscene:fadeOut(2, {music = true}))
+		cutscene.wind_sound:stop()
+
 		cutscene:loadMap("light/hometown/torielhouse/kris_room")
 		Game.world.player.visible = false
 		Game.world.music:stop()
         Game.world.music:play("jitterbug_muffled")
         cutscene:fadeIn(2, {music = false})
-
+		
 		local spr = Game.world:spawnObject(Sprite("world/kris_window_ready"))
 		spr.x, spr.y = 294, 84
 		spr:setScale(2)
@@ -540,6 +542,119 @@ return {
 		spr:play(1/10, false)
 		cutscene:wait(3)
 		cutscene:fadeOut(2, {music = true})
+		cutscene:wait(2)
+		cutscene:loadMap("light/hometown/krisyard")
+		cutscene:fadeIn(2, {music = true})
+		Game.world.player.visible = true
+		Game.world.player:setPosition(150, 480)
+		local p = Game.world.player --[[ <-- My stupid ass ]]
+		p.flip_x = true
+		p:setSprite("soul_put_back")
+		cutscene:wait(2)
+		p.sprite:play(1/10, false)
+		cutscene:wait(function () return p.sprite.frame == 6 end)
+		Assets.playSound("grab")
+		Assets.playSound("hurt")
+		Game.world:spawnObject(HeartBurst(152, 460))
+		cutscene:wait(2)
+		p.flip_x = false
+		p:setPosition(p.x-14, p.y-4)
+		p:resetSprite()
+		p:shake()
+		Assets.playSound("wing")
+		p:setFacing("right")
+		cutscene:wait(1.5)
+		cutscene:wait(cutscene:walkTo(p, 340, p.y, 3))
+		p:setFacing("down")
+		cutscene:wait(1.5)
+		for i = 1, 3 do
+			p.y = p.y + 20
+			p:shake()
+			Assets.stopAndPlaySound("step2")
+			p:setSprite("walk/down_2")
+			cutscene:wait(1/5)
+			p:setSprite("walk/down_1")
+			if i ~= 3 then
+				cutscene:wait(4/5)
+			end
+		end
+		cutscene:text("* [voice:susie]Kris!!")
+		local susie = cutscene:spawnNPC("susie_lw", p.x, 825)
+		cutscene:wait(cutscene:walkTo(susie, p.x, p.y+40, 1))
+		cutscene:text("* What are you doing just standing there?", 'angry_c', susie)
+		cutscene:text("* [voice:susie]The CHURCH, [wait:10]has ANOTHER DARK WORLD.", 'angry_c', susie)
+		cutscene:wait(cutscene:walkTo(susie, p.x, p.y+20, 0.12))
+		Assets.playSound("grab")
+
+		p.visible = false
+		susie:setSprite("kris_run")
+
+		susie:setFacing("down")
+		local m = Music()
+		m:play("cultchase")
+		cutscene:wait(cutscene:walkTo(susie, susie.x, susie.y + 500, 1.65))
+		cutscene:fadeOut(1, {music = true})
+		cutscene:wait(1)
+		cutscene:loadMap("light/hometown/town_north", 'entry_north')
+		cutscene:fadeIn(1, {music = false})
+		s = cutscene:spawnNPC("susie_lw", 860, -20)
+		s:setSprite("kris_run")
+		Game.world.camera.target = s
+		p.visible = false
+		cutscene:text("* [voice:susie][noskip][func:a]I can't make this up, [wait:5]Kris.[wait:30]", {
+			auto = true,
+			functions = {
+				a =  function (text)
+				cutscene:walkPath(
+					s,
+					{
+						{860, 350},
+						{1340, 350},
+						{1340, 520}
+					},
+					{speed = 8}
+				)
+				end
+			}
+		})
+		cutscene:text("* [voice:susie][noskip]I saw it while I was on my way home.[wait:30]", {auto = true})
+		cutscene:wait(function() return s.y == 520 end)
+
+		cutscene:mapTransition("light/hometown/town_mid", 'entry_north')
+		
+		p.visible = false
+		s = cutscene:spawnNPC("susie_lw", 1660, -20)
+		s:setSprite("kris_run")
+		Game.world.camera.target = s
+		cutscene:wait(cutscene:walkTo(s,s.x, 500, 0.7))
+
+		cutscene:mapTransition("light/hometown/town_south", 'entry_north')
+
+		p.visible = false
+		s = cutscene:spawnNPC("susie_lw", 1700, -20)
+		s:setSprite("kris_run")
+		Game.world.camera.target = s
+		cutscene:wait(cutscene:walkTo(s,s.x, 500, 0.7))
+
+		cutscene:mapTransition("light/hometown/town_church", 'entry_north')
+
+		--[[	Delta's edits go here for the church part	
+			Notes for dialogue
+			Susie drags Kris down. 
+			Reset sprite before going right in front, 
+			have kris and susie walk separate.
+
+			Kris steps back and visibly shakes.
+
+			Susie says "I know, Kris. I'm a little scared too."
+			"Let's just... Get it over with quick."
+
+			Susie steps forward, opens doors. Kris follows, jumps, cue transition.
+
+			[!!!] gotoCutscene AFTER THIS!
+			Do the base sanctum intro incl. logo
+			Thanks in advance Delta :)
+		]]
 
 		cutscene:wait(function()
 			if Input.pressed("menu") then

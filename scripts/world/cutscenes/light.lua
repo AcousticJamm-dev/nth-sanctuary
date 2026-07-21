@@ -641,7 +641,7 @@ return {
 		--[[	Delta's edits go here for the church part	
 			Notes for dialogue
 			Susie drags Kris down. 
-			Reset sprite before going right in front, 
+			Reset sprite before going right in front of church doors, 
 			have kris and susie walk separate.
 
 			Kris steps back and visibly shakes.

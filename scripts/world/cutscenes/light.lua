@@ -600,7 +600,7 @@ return {
 		s = cutscene:spawnNPC("susie_lw", 860, -20)
 		s:setSprite("kris_run")
 		Game.world.camera.target = s
-		p.visible = false
+		Game.world.player:setPosition(0,0)
 		cutscene:text("* [voice:susie][noskip][func:a]I can't make this up, [wait:5]Kris.[wait:30]", {
 			auto = true,
 			functions = {
@@ -620,23 +620,34 @@ return {
 		cutscene:text("* [voice:susie][noskip]I saw it while I was on my way home.[wait:30]", {auto = true})
 		cutscene:wait(function() return s.y == 520 end)
 
-		cutscene:mapTransition("light/hometown/town_mid", 'entry_north')
+		cutscene:fadeOut(0.3, {music = false})
+		cutscene:wait(0.3)
+		cutscene:loadMap("light/hometown/town_mid", 'entry_north')
+		cutscene:fadeIn(0.3, {music = false})
 		
 		p.visible = false
 		s = cutscene:spawnNPC("susie_lw", 1660, -20)
 		s:setSprite("kris_run")
 		Game.world.camera.target = s
-		cutscene:wait(cutscene:walkTo(s,s.x, 500, 0.7))
-
-		cutscene:mapTransition("light/hometown/town_south", 'entry_north')
+		Game.world.player:setPosition(0,0)
+		cutscene:wait(cutscene:walkTo(s,s.x, 500, 1.1))
+		
+		cutscene:fadeOut(0.3, {music = false})
+		cutscene:wait(0.3)
+		cutscene:loadMap("light/hometown/town_south", 'entry_north')
+		cutscene:fadeIn(0.3, {music = false})
 
 		p.visible = false
 		s = cutscene:spawnNPC("susie_lw", 1700, -20)
 		s:setSprite("kris_run")
 		Game.world.camera.target = s
-		cutscene:wait(cutscene:walkTo(s,s.x, 500, 0.7))
+		Game.world.player:setPosition(0,0)
+		cutscene:wait(cutscene:walkTo(s,s.x, 500, 1.1))
 
-		cutscene:mapTransition("light/hometown/town_church", 'entry_north')
+				cutscene:fadeOut(0.3, {music = false})
+		cutscene:wait(0.3)
+		cutscene:loadMap("light/hometown/town_church", 'entry_north')
+		cutscene:fadeIn(0.3, {music = false})
 
 		--[[	Delta's edits go here for the church part	
 			Notes for dialogue

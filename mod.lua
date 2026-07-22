@@ -286,8 +286,8 @@ function Mod:onDrawText(text, node, state, x, y, scale, font, use_color)
         local canvas = Draw.pushCanvas(w, h, { stencil = false })
         love.graphics.print(node.character, 0, 0, 0, scale, scale)
         Draw.popCanvas()
+		local color = {ColorUtils.HSVToRGB((((state.typed_characters * 20) + (text.timer * 3)) / 255) % 1, 1, 1)}
 		if state.style == "dark" then
-			local color = {ColorUtils.HSVToRGB((((state.typed_characters * 20) + (text.timer * 3)) / 255) % 1, 1, 1)}
 			Draw.setColor(color[1] * 0.3, color[2] * 0.3, color[3] * 0.3, 1)
 			Draw.draw(canvas, x + 1, y + 1)
 		end

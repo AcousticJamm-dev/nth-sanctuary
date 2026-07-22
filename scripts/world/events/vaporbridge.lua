@@ -51,6 +51,7 @@ function VaporBridge:onPostLoad()
 			chara.ceiled_log_index = 0
 			chara.log_index = nil
 			chara.no_bridge_sprite_y = chara.sprite.y
+			chara.bridge_sprite_y = chara.sprite.y
 		end
 		self.enabled = true
 	end
@@ -93,13 +94,11 @@ function VaporBridge:update()
 	if not self.enabled then
 		return
 	end
-	local characters_on_bridge = {}
 	local max_bend_val_temp = 0
 	local apply_bend = false
 	Object.startCache()
 	for _, chara in ipairs(Game.stage:getObjects(Character)) do
 		if chara:collidesWith(self.collider) then
-			table.insert(characters_on_bridge, chara)
 			apply_bend = true
 			local log_index, chara_log_index = 1, 0
 			if self.log_dir == "horz" then
@@ -118,8 +117,7 @@ function VaporBridge:update()
 			chara.floored_log_index = math.floor(chara_log_index)
 			chara.ceiled_log_index = math.ceil(chara_log_index)
 			chara.log_index = chara_log_index
-		else
-			chara.sprite.y = MathUtils.lerp(chara.sprite.y, (chara.no_bridge_sprite_y or 0), 1 - (1 - 0.25) ^ DTMULT)
+			chara.bridge_id = self
 		end
 	end
 	Object.endCache()
@@ -140,19 +138,24 @@ function VaporBridge:update()
 		self.logs[i].bend_off = MathUtils.lerp(self.logs[i].bend_off, bend_offset, 1 - (1 - 0.25) ^ DTMULT)
 		self.logs[i].y = self.logs[i].bend_off * math.sin(-math.rad(self.bend_angle))
 	end
-	for _, chara in ipairs(characters_on_bridge) do
-		if chara.log_index then
-			local floor_log_y, ceil_log_y = 0, 0
-			if chara.floored_log_index > 0 then
-				floor_log_y = self.logs[chara.floored_log_index].y
+	for _, chara in ipairs(Game.stage:getObjects(Character)) do
+		if chara.bridge_id == self then	
+			if chara.log_index then
+				local floor_log_y, ceil_log_y = 0, 0
+				if chara.floored_log_index > 0 then
+					floor_log_y = self.logs[chara.floored_log_index].y
+				end
+				if chara.ceiled_log_index <= self.log_amount then
+					ceil_log_y = self.logs[chara.ceiled_log_index].y
+				end
+				chara.bridge_sprite_y = (chara.no_bridge_sprite_y or 0) + MathUtils.lerp(floor_log_y, ceil_log_y, chara.log_index % 1)
+				chara.floored_log_index = 0
+				chara.ceiled_log_index = 0
+				chara.log_index = nil
 			end
-			if chara.ceiled_log_index <= self.log_amount then
-				ceil_log_y = self.logs[chara.ceiled_log_index].y
-			end
-			chara.sprite.y = (chara.no_bridge_sprite_y or 0) + MathUtils.lerp(floor_log_y, ceil_log_y, chara.log_index % 1) / 2
-			chara.floored_log_index = 0
-			chara.ceiled_log_index = 0
-			chara.log_index = nil
+			chara.sprite.y = MathUtils.lerp(chara.sprite.y, chara.bridge_sprite_y or 0, 1 - (1 - 0.25) ^ DTMULT)
+		else
+			chara.sprite.y = MathUtils.lerp(chara.sprite.y, chara.no_bridge_sprite_y or 0, 1 - (1 - 0.25) ^ DTMULT)
 		end
 	end
 end
@@ -185,6 +188,11 @@ function VaporBridge:draw()
 				end
 			end
 			Draw.drawPart(self.vert_log_tex[(_log.index % 2) + 1], _log.x - 2, 20 + (loglen * 40) + _log.y, 0, 30, 11, 16, 0, 2, 2)
+		end
+	end
+	for _, chara in ipairs(Game.stage:getObjects(Character)) do
+		if chara.bridge_id then
+			chara.bridge_id = nil
 		end
 	end
 	super.draw(self)

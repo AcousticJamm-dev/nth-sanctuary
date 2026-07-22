@@ -710,7 +710,7 @@ return {
 				end
 			}
 		})
-		cutscene:text("* [voice:susie][noskip]I saw it while I was on my way home.[wait:30]", {auto = true})
+		cutscene:text("* [voice:susie][noskip]I saw it while I was on my way home.[wait:30]", {auto = true, top = true})
 		cutscene:wait(function() return s.y == 520 end)
 		cutscene:walkToSpeed(s,s.x, s.y + 100, 8)
 

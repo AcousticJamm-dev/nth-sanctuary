@@ -100,11 +100,11 @@ function VaporBridge:update()
 			apply_bend = true
 			local log_index, chara_log_index = 1, 0
 			if self.log_dir == "horz" then
-				chara_log_index = MathUtils.clamp(((chara.x - self.x) / 20) + 1, 0, self.log_amount + 1)
-				log_index = MathUtils.clamp(((chara.x - self.x) / 20) + 1, 1, self.log_amount)
-			else
 				chara_log_index = MathUtils.clamp(((chara.y - self.y) / 20) + 1, 0, self.log_amount + 1)
 				log_index = MathUtils.clamp(((chara.y - self.y) / 20) + 1, 1, self.log_amount)
+			else
+				chara_log_index = MathUtils.clamp(((chara.x - self.x) / 20) + 1, 0, self.log_amount + 1)
+				log_index = MathUtils.clamp(((chara.x - self.x) / 20) + 1, 1, self.log_amount)
 			end
 			local bend_value = self.logs[MathUtils.round(log_index)].bend_val
 			if bend_value > max_bend_val_temp then

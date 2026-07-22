@@ -343,7 +343,7 @@ return {
           visible = true,
           properties = {
             ["dir"] = "vert",
-            ["droopmax"] = 45
+            ["droop"] = 0.5
           }
         }
       }

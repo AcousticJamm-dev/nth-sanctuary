@@ -7,7 +7,7 @@ function VaporBridge:init(data)
     local properties = data.properties or {}
 	self.always_enabled = properties["always"] or false
 	self.log_dir = properties["dir"] or "horz"
-	self.bend_angle_max = properties["droopmax"] or 90
+	self.droop_amt = properties["droop"] or 1
 	self.log_amount = 0
 	self.log_amount_half = 0
 	self.log_length = 0
@@ -122,7 +122,7 @@ function VaporBridge:update()
 	end
 	Object.endCache()
 	if apply_bend then
-		self.bend_angle = MathUtils.approach(self.bend_angle, self.bend_angle_max, 5.625 * DTMULT)
+		self.bend_angle = MathUtils.approach(self.bend_angle, 90, 5.625 * DTMULT)
 	else
 		self.bend_angle = MathUtils.approach(self.bend_angle, 0, 5.625 * DTMULT)
 	end
@@ -134,7 +134,7 @@ function VaporBridge:update()
 		else
 			strength = strength - distance / (self.log_amount - self.max_bend_log_no + 1)
 		end
-		local bend_offset = self.max_bend_value * math.sin(-math.rad(90 * strength))
+		local bend_offset = (self.max_bend_value * math.sin(-math.rad(90 * strength))) / self.droop_amt
 		self.logs[i].bend_off = MathUtils.lerp(self.logs[i].bend_off, bend_offset, 1 - (1 - 0.25) ^ DTMULT)
 		self.logs[i].y = self.logs[i].bend_off * math.sin(-math.rad(self.bend_angle))
 	end
@@ -148,7 +148,7 @@ function VaporBridge:update()
 				if chara.ceiled_log_index <= self.log_amount then
 					ceil_log_y = self.logs[chara.ceiled_log_index].y
 				end
-				chara.bridge_sprite_y = (chara.no_bridge_sprite_y or 0) + MathUtils.lerp(floor_log_y, ceil_log_y, chara.log_index % 1)
+				chara.bridge_sprite_y = (chara.no_bridge_sprite_y or 0) + MathUtils.lerp(floor_log_y, ceil_log_y, chara.log_index % 1) / 2
 				chara.floored_log_index = 0
 				chara.ceiled_log_index = 0
 				chara.log_index = nil

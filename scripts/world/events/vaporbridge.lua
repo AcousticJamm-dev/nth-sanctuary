@@ -142,7 +142,7 @@ function VaporBridge:update()
 			if chara.ceiled_log_index <= self.log_amount then
 				ceil_log_y = self.logs[chara.ceiled_log_index].y
 			end
-			chara.sprite.y = MathUtils.lerp(floor_log_y, ceil_log_y, chara.log_index % 1) / 2
+			chara.sprite.y = chara.last_sprite_y + MathUtils.lerp(floor_log_y, ceil_log_y, chara.log_index % 1) / 2
 		end
 	end
 	Object.endCache()

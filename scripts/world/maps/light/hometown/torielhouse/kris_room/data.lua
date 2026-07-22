@@ -9,7 +9,7 @@ return {
   height = 12,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 10,
+  nextlayerid = 9,
   nextobjectid = 30,
   properties = {
     ["border"] = "leaves",
@@ -476,8 +476,8 @@ return {
     {
       type = "objectgroup",
       draworder = "topdown",
-      id = 9,
-      name = "objects_time_overlay",
+      id = 8,
+      name = "controllers",
       class = "",
       visible = true,
       opacity = 1,
@@ -500,23 +500,7 @@ return {
           opacity = 1,
           visible = true,
           properties = {}
-        }
-      }
-    },
-    {
-      type = "objectgroup",
-      draworder = "topdown",
-      id = 8,
-      name = "controllers",
-      class = "",
-      visible = true,
-      opacity = 1,
-      offsetx = 0,
-      offsety = 0,
-      parallaxx = 1,
-      parallaxy = 1,
-      properties = {},
-      objects = {
+        },
         {
           id = 29,
           name = "lwraineffect",

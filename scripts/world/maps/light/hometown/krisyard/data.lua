@@ -9,7 +9,7 @@ return {
   height = 21,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 16,
+  nextlayerid = 15,
   nextobjectid = 57,
   properties = {
     ["border"] = "leaves",
@@ -693,7 +693,7 @@ return {
       type = "objectgroup",
       draworder = "topdown",
       id = 7,
-      name = "objects_party",
+      name = "objects",
       class = "",
       visible = true,
       opacity = 1,
@@ -820,13 +820,13 @@ return {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 142, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 192, 141, 142, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 150, 151, 192, 141, 142, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 151, 150, 151, 150, 153, 0, 0, 0, 0, 0, 138, 141, 140, 141, 190,
-        0, 150, 151, 150, 150, 153, 0, 0, 0, 0, 0, 149, 150, 151, 152, 151,
-        0, 151, 150, 151, 150, 153, 0, 0, 0, 0, 0, 149, 151, 150, 151, 152,
-        0, 0, 0, 150, 150, 153, 0, 0, 0, 0, 0, 149, 150, 151, 152, 151,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 149, 151, 150, 151, 152,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 149, 150, 151, 150, 151
+        0, 0, 0, 192, 141, 142, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
       }
     },
     {
@@ -863,8 +863,8 @@ return {
     {
       type = "objectgroup",
       draworder = "topdown",
-      id = 15,
-      name = "objects_time_overlay",
+      id = 11,
+      name = "controllers",
       class = "",
       visible = true,
       opacity = 1,
@@ -886,28 +886,8 @@ return {
           rotation = 0,
           opacity = 1,
           visible = true,
-          properties = {
-            ["toplayers"] = {
-              "treeup"
-            }
-          }
-        }
-      }
-    },
-    {
-      type = "objectgroup",
-      draworder = "topdown",
-      id = 11,
-      name = "controllers",
-      class = "",
-      visible = true,
-      opacity = 1,
-      offsetx = 0,
-      offsety = 0,
-      parallaxx = 1,
-      parallaxy = 1,
-      properties = {},
-      objects = {
+          properties = {}
+        },
         {
           id = 55,
           name = "lwraineffect",

@@ -9,7 +9,7 @@ return {
   height = 12,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 22,
+  nextlayerid = 20,
   nextobjectid = 25,
   properties = {
     ["border"] = "leaves",
@@ -398,7 +398,7 @@ return {
       type = "objectgroup",
       draworder = "topdown",
       id = 9,
-      name = "objects_party",
+      name = "objects",
       class = "",
       visible = true,
       opacity = 1,
@@ -628,40 +628,26 @@ return {
       }
     },
     {
-      type = "objectgroup",
-      draworder = "topdown",
-      id = 19,
-      name = "controllers",
+      type = "imagelayer",
+      image = "../../../../../../assets/sprites/world/maps/hometown/graveyardover.png",
+      id = 16,
+      name = "overlay",
       class = "",
       visible = true,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
-      parallaxx = 1,
+      parallaxx = 0.9,
       parallaxy = 1,
-      properties = {},
-      objects = {
-        {
-          id = 24,
-          name = "lwraineffect",
-          type = "",
-          shape = "point",
-          x = 20,
-          y = 0,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {}
-        }
-      }
+      repeatx = false,
+      repeaty = false,
+      properties = {}
     },
     {
       type = "objectgroup",
       draworder = "topdown",
-      id = 21,
-      name = "objects_time_overlay",
+      id = 19,
+      name = "controllers",
       class = "",
       visible = true,
       opacity = 1,
@@ -683,29 +669,23 @@ return {
           rotation = 0,
           opacity = 1,
           visible = true,
-          properties = {
-            ["toplayers"] = {
-              "tree2"
-            }
-          }
+          properties = {}
+        },
+        {
+          id = 24,
+          name = "lwraineffect",
+          type = "",
+          shape = "point",
+          x = 20,
+          y = 0,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
         }
       }
-    },
-    {
-      type = "imagelayer",
-      image = "../../../../../../assets/sprites/world/maps/hometown/graveyardover.png",
-      id = 16,
-      name = "overlay",
-      class = "",
-      visible = true,
-      opacity = 1,
-      offsetx = 0,
-      offsety = 0,
-      parallaxx = 0.9,
-      parallaxy = 1,
-      repeatx = false,
-      repeaty = false,
-      properties = {}
     }
   }
 }

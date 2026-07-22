@@ -14,7 +14,10 @@ function map:onEnter()
     self.target_2:addFX(self.fx)
     self.target_3 = self:getTileLayer("tiles_glass")
     self.target_3:addFX(self.fx)
+    self.simple_bridge_layer = self:getTileLayer("tiles_simple_bridge")
+    self.simple_bridge_layer:addFX(self.fx)
 end
+
 function map:update()
     super.update(self)
     self.siner = self.siner + DT

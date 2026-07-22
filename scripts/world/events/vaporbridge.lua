@@ -26,9 +26,11 @@ function VaporBridge:setupLogs()
 	if self.log_dir == "horz" then
 		self.log_length = math.floor(self.width / 40)
 		self.log_amount = math.floor(self.height / 20)
+		self:setHitbox(20, 0, self.width - 40, self.height)
 	else
 		self.log_length = math.floor(self.height / 40)
 		self.log_amount = math.floor(self.width / 20)
+		self:setHitbox(0, 20, self.width, self.height - 40)
 	end
 	for i = 0, self.log_amount do
 		table.insert(self.logs, {index = i, x = 0 + 20 * i, y = 0, bend_off = 0, bend_val = (i < math.floor(self.log_amount * 0.5) and (i + 1) * 2 or (self.log_amount - i) * 2)})
@@ -118,6 +120,7 @@ function VaporBridge:update()
 			chara.ceiled_log_index = math.ceil(chara_log_index)
 			chara.log_index = chara_log_index
 			chara.bridge_id = self
+			chara.bridge_cancel_timer = 1
 		end
 	end
 	Object.endCache()
@@ -154,7 +157,12 @@ function VaporBridge:update()
 				chara.log_index = nil
 			end
 			chara.sprite.y = MathUtils.lerp(chara.sprite.y, chara.bridge_sprite_y or 0, 1 - (1 - 0.25) ^ DTMULT)
-		else
+			if chara.bridge_cancel_timer <= 0 then
+				chara.bridge_id = nil
+				chara.bridge_cancel_timer = 0
+			end
+			chara.bridge_cancel_timer = chara.bridge_cancel_timer - 1
+		elseif not chara.bridge_id then	
 			chara.sprite.y = MathUtils.lerp(chara.sprite.y, chara.no_bridge_sprite_y or 0, 1 - (1 - 0.25) ^ DTMULT)
 		end
 	end
@@ -188,11 +196,6 @@ function VaporBridge:draw()
 				end
 			end
 			Draw.drawPart(self.vert_log_tex[(_log.index % 2) + 1], _log.x - 2, 20 + (loglen * 40) + _log.y, 0, 30, 11, 16, 0, 2, 2)
-		end
-	end
-	for _, chara in ipairs(Game.stage:getObjects(Character)) do
-		if chara.bridge_id then
-			chara.bridge_id = nil
 		end
 	end
 	super.draw(self)

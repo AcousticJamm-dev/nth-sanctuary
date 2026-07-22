@@ -270,7 +270,7 @@ function Mod:onDrawText(text, node, state, x, y, scale, font, use_color)
         love.graphics.print(node.character, 0, 0, 0, scale, scale)
         Draw.popCanvas()
 		if state.style == "dark" then
-			Draw.setColor(0.3, (217/255) * 0.3, (89/255) * 0.3)
+			Draw.setColor(0.3, (178/255) * 0.3, (77/255) * 0.3)
 			Draw.draw(canvas, x + 1, y + 1)
 		end
 		Draw.setColor(1,1,1,1)

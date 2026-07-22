@@ -30,7 +30,7 @@ function VaporBridge:setupLogs()
 	else
 		self.log_length = math.floor(self.height / 40)
 		self.log_amount = math.floor(self.width / 20)
-		self:setHitbox(0, 20, self.width, self.height - 40)
+		self:setHitbox(0, 0, self.width, self.height - 20)
 	end
 	for i = 0, self.log_amount do
 		table.insert(self.logs, {index = i, x = 0 + 20 * i, y = 0, bend_off = 0, bend_val = (i < math.floor(self.log_amount * 0.5) and (i + 1) * 2 or (self.log_amount - i) * 2)})

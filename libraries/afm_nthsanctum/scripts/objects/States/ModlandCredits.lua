@@ -26,38 +26,38 @@ function ModlandCredits:init(menu)
                 "JARU",
                 "Leaff",
                 "Duskl1ght \"Dusk\"",
-                { "Music", COLORS.yellow },
-                "DeltaPulsar",
-                "squibles",
-                "deepdarkdepths__",
+                "freezitsu",
+                "Runius",
+                "CharacturrDreemurr",
+                "Krisp / Tamato"
             }
         },
         {
             "#th Sanctuary",
             {
-                { "Spritework", COLORS.yellow },
-                "Runius",
-                "Hyperboid",
-                "Krisp / Tamato",
-                "CuriousSpook",
-                "XoticKade",
-                "",
-                "",
-                "",
-                "",
-                ""
-            },
-            {
-                { "Borrowed Music", COLORS.yellow },
+                { "Music", COLORS.yellow },
+                "DeltaPulsar",
+                "squibles",
+                "deepdarkdepths__",
                 "obj_lily",
                 "therealaarami",
                 "AkitA",
                 "Rareblin",
                 "Lucas Pucas",
                 "",
+            },
+            {
+                { "Contributors", COLORS.yellow },
+                "CuriousSpook",
+                "XoticKade",
                 "",
                 "",
                 "",
+                "",
+                "",
+                "",
+                "",
+                ""
             }
         },
         {
@@ -78,7 +78,7 @@ function ModlandCredits:init(menu)
             {
                 { "Special Guests", {0.5, 1, 0.7} },
                 "AcousticJamm",
-                "RetroSpecter",
+                "",
                 "",
                 "",
                 "",

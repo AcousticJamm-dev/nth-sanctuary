@@ -97,6 +97,7 @@
   <object id="41" name="vaporbridge" x="600" y="480" width="120" height="240">
    <properties>
     <property name="dir" value="horz"/>
+    <property name="droop" type="float" value="0.5"/>
    </properties>
   </object>
   <object id="42" name="vaporbridge" x="120" y="960" width="120" height="80">

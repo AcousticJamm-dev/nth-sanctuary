@@ -310,7 +310,8 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["dir"] = "horz"
+            ["dir"] = "horz",
+            ["droop"] = 0.5
           }
         },
         {

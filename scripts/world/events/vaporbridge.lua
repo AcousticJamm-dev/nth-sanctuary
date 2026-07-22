@@ -134,7 +134,7 @@ function VaporBridge:update()
 		else
 			strength = strength - distance / (self.log_amount - self.max_bend_log_no + 1)
 		end
-		local bend_offset = (self.max_bend_value * math.sin(-math.rad(90 * strength))) / self.droop_amt
+		local bend_offset = (self.max_bend_value * math.sin(-math.rad(90 * strength))) * self.droop_amt
 		self.logs[i].bend_off = MathUtils.lerp(self.logs[i].bend_off, bend_offset, 1 - (1 - 0.25) ^ DTMULT)
 		self.logs[i].y = self.logs[i].bend_off * math.sin(-math.rad(self.bend_angle))
 	end

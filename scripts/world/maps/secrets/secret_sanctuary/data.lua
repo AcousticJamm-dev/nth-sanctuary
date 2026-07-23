@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.12.1",
+  tiledversion = "1.10.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -9,8 +9,8 @@ return {
   height = 12,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 18,
-  nextobjectid = 88,
+  nextlayerid = 19,
+  nextobjectid = 94,
   properties = {
     ["border"] = "hell",
     ["music"] = "secret_sanctuary",
@@ -71,7 +71,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["from"] = "#ff530003",
@@ -120,7 +119,6 @@ return {
           width = 480,
           height = 1200,
           rotation = -45,
-          opacity = 1,
           gid = 299,
           visible = true,
           properties = {
@@ -138,7 +136,6 @@ return {
           width = 480,
           height = 1200,
           rotation = -45,
-          opacity = 1,
           gid = 299,
           visible = true,
           properties = {
@@ -268,7 +265,6 @@ return {
           width = 80,
           height = 160,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["idlealpha"] = 0.5
@@ -284,7 +280,6 @@ return {
           width = 160,
           height = 80,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["idlealpha"] = 0.5
@@ -300,7 +295,6 @@ return {
           width = 160,
           height = 80,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["idlealpha"] = 0.5
@@ -316,7 +310,6 @@ return {
           width = 80,
           height = 160,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["idlealpha"] = 0.5
@@ -348,7 +341,6 @@ return {
           width = 120,
           height = 160,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -362,7 +354,6 @@ return {
           width = 160,
           height = 200,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -376,7 +367,6 @@ return {
           width = 120,
           height = 160,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -390,7 +380,6 @@ return {
           width = 160,
           height = 200,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -404,7 +393,6 @@ return {
           width = 120,
           height = 160,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -418,7 +406,6 @@ return {
           width = 120,
           height = 160,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -432,7 +419,6 @@ return {
           width = 160,
           height = 200,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -446,7 +432,6 @@ return {
           width = 160,
           height = 200,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -476,7 +461,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -490,7 +474,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -504,7 +487,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -518,7 +500,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -532,7 +513,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -562,7 +542,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["flag"] = "spire_watcher",
@@ -595,7 +574,6 @@ return {
           width = 80,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "secrets/secret_sanctuary",
@@ -612,7 +590,6 @@ return {
           width = 40,
           height = 80,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "secrets/secret_sanctuary",
@@ -629,7 +606,6 @@ return {
           width = 40,
           height = 80,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "secrets/secret_sanctuary",
@@ -646,7 +622,6 @@ return {
           width = 80,
           height = 40,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "secrets/secret_sanctuary",
@@ -663,7 +638,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["text1"] = "* You find yourself standing on an island made of cloth.",
@@ -683,7 +657,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "wafer",
@@ -694,6 +667,117 @@ return {
             ["text4"] = "* I wonder... [wait:5]\n* Just what is it that causes the spires to move in such a way?",
             ["text5"] = "* So many questions...[wait:5]\n* Will I ever know their answers?",
             ["text6"] = "...[wait:10]Perhaps not."
+          }
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 18,
+      name = "objects_above_party",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 88,
+          name = "prophecy",
+          type = "",
+          shape = "rectangle",
+          x = 280,
+          y = 80,
+          width = 80,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["alwaysvisible"] = true,
+            ["offy"] = 100,
+            ["text"] = "X2",
+            ["text_only"] = "true",
+            ["texture"] = "nil"
+          }
+        },
+        {
+          id = 90,
+          name = "prophecy",
+          type = "",
+          shape = "rectangle",
+          x = 280,
+          y = 360,
+          width = 80,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["alwaysvisible"] = true,
+            ["offy"] = 100,
+            ["text"] = "/3",
+            ["text_only"] = "true",
+            ["texture"] = "nil"
+          }
+        },
+        {
+          id = 91,
+          name = "prophecy",
+          type = "",
+          shape = "rectangle",
+          x = 520,
+          y = 200,
+          width = 80,
+          height = 80,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["alwaysvisible"] = true,
+            ["offy"] = 100,
+            ["text"] = "+7",
+            ["text_only"] = "true",
+            ["texture"] = "nil"
+          }
+        },
+        {
+          id = 92,
+          name = "prophecy",
+          type = "",
+          shape = "rectangle",
+          x = 40,
+          y = 200,
+          width = 80,
+          height = 80,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["alwaysvisible"] = true,
+            ["offy"] = 100,
+            ["text"] = "-5",
+            ["text_only"] = "true",
+            ["texture"] = "nil"
+          }
+        },
+        {
+          id = 93,
+          name = "prophecy",
+          type = "",
+          shape = "rectangle",
+          x = 280,
+          y = 200,
+          width = 80,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["alwaysvisible"] = true,
+            ["offy"] = 100,
+            ["text"] = "a",
+            ["text_only"] = "true",
+            ["texture"] = "nil"
           }
         }
       }
@@ -723,7 +807,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["color"] = "#ffff0000",
@@ -756,7 +839,6 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
-          opacity = 1,
           visible = true,
           properties = {
             ["active"] = true,

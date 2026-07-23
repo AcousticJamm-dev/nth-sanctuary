@@ -9,6 +9,20 @@ end
 
 function map:onEnter()
 	local flag = Game:getFlag("passed_savepoint")
+	local c = Game:getFlag("secret_sanctuary_calc", 0)
+	local proph = Game.world.map:getEvent(93)
+	if proph then
+		local text = tostring(c)
+		proph.text = text
+		proph.panel.texts = text
+
+		if proph.panel.text then
+			proph.panel.text:remove()
+			proph.panel.text = ProphecyText(text, 0, 0)
+			proph.panel.text.debug_select = false
+			proph.panel:addChild(proph.panel.text)
+		end
+	end
 
 	if flag == true then
 		Game.world.map:getEvent(70):remove()
@@ -84,6 +98,16 @@ end
 
 function map:onExit()
 	Game:setFlag("passed_savepoint", true)
+	if Game.world.player.x > 600 then
+		Game:addFlag("secret_sanctuary_calc", 7)
+	elseif Game.world.player.x < 100 then
+		Game:addFlag("secret_sanctuary_calc", -5)
+	elseif Game.world.player.y < 100 then
+		Game:setFlag("secret_sanctuary_calc", Game:getFlag("secret_sanctuary_calc", 0)*2)
+	elseif Game.world.player.y > 400 then
+		Game:setFlag("secret_sanctuary_calc", math.floor(Game:getFlag("secret_sanctuary_calc", 0)/3))
+	end
+	
 	if Game:getFlag("funni_tower_shenanigans") == true then
 		Game:setFlag("funni_tower_shenanigans", false)
 	end

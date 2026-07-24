@@ -1036,13 +1036,16 @@ return {
         	cutscene:text("* Found my slingshot, [wait:5]did I miss anything?", "neutral")
 			cutscene:text("* I could've sworn I heard someone scream down here...", "suspicious")
 			cutscene:setSpeaker(sus)
-        	cutscene:text("* ", "shock")
-			cutscene:text("* ", "shock_down")
-			cutscene:text("* ", "shock_nervous")
-			cutscene:text("* Uhhhhhhh", "shock")
-			cutscene:text("* Nope nothing not at all absolutely nothing happened", "shock_nervous")
+        	cutscene:text("* [sound:voice/susie]", "shock")
+			cutscene:text("* [sound:voice/susie]", "shock_down")
+			cutscene:text("* (Okay, Susie. [wait:10]You barely know this guy.)", "shock_nervous")
+			cutscene:text("* (Let's not tell him.)", "shock_nervous")
+			
+			cutscene:text("* Uhhhhhhh", "shock_down")
+			
+			cutscene:text("* No?", "shock")
 			cutscene:setSpeaker(jamm)
-			cutscene:text("* [wait:30].. Uuh[wait:3]h[wait:3]h huh.", "suspicious")
+			cutscene:text("* [wait:30]..Uuh[wait:3]h[wait:3]h huh.", "suspicious")
 			cutscene:text("* Alright then.", "look_left")
 			Game:setFlag("slingCon", 2)
 			jamm.solid = false

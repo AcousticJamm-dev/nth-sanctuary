@@ -26,22 +26,24 @@ function ShardDoor:onInteract(player, dir)
         else
             cutscene:text(self.properties.text)
         end
-        if Mod:getDarkShardCount() >= tonumber(self.properties.req) then
-            cutscene:text("* You can actually open this![wait:10] It leads to [color:yellow]"..self.mapname.."[color:white]!")
-            local choicer = cutscene:choicer({"Open", "Do not"})
-            if choicer ==1 then
-                Game.world.music:stop()
-                Game.world.fader:fadeOut(nil, {
-                    speed = 0,
-                })
-                Assets.playSound("locker")
-                cutscene:wait(1)
-                cutscene:loadMap(self.properties.map, self.marker)
-                Game.world.fader:fadeIn(nil, {
-                    speed = 0.25,
-                })
-            else
-                cutscene:text("* You doorn't.")
+        if not self.properties.restricted then
+            if Mod:getDarkShardCount() >= tonumber(self.properties.req) then
+                cutscene:text("* You can actually open this![wait:10] It leads to [color:yellow]"..self.mapname.."[color:white]!")
+                local choicer = cutscene:choicer({"Open", "Do not"})
+                if choicer ==1 then
+                    Game.world.music:stop()
+                    Game.world.fader:fadeOut(nil, {
+                        speed = 0,
+                    })
+                    Assets.playSound("locker")
+                    cutscene:wait(1)
+                    cutscene:loadMap(self.properties.map, self.marker)
+                    Game.world.fader:fadeIn(nil, {
+                        speed = 0.25,
+                    })
+                else
+                    cutscene:text("* You doorn't.")
+                end
             end
         end
     end)

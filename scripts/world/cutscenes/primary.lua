@@ -1090,18 +1090,37 @@ return {
 		Assets.playSound("wing")
 		cutscene:text("* Agh...!", "ouch")
         cutscene:setSpeaker(ral)
-		cutscene:walkTo(ral, ral.x, sus.y, 0.5)
+		local rx, ry = ral:getPosition()
+
+		cutscene:walkPath(
+			ral,
+			{
+				{ral.x, sus.y},
+				{j.x-50, j.y}
+			},
+			{speed = 8}
+		)
 		cutscene:text("* Are you okay?", "concern")
-		cutscene:wait(function () return ral.y == sus.y end)
-		cutscene:walkTo(ral, j.x-50, j.y, 1)
 		cutscene:wait(function()
 			return ral.x == j.x - 50 end)
 		sus:setAnimation("heal_charge")
         cutscene:text("* Here, [wait:5]let me", "surprise_smile", {auto = true})
 		sus:setAnimation("heal_end")
+		Assets.playSound("wing")
 		cutscene:wait(1/10)  --need to add particle later
+
+		local h = Game.world:spawnObject(Sprite("world/heal_small"))
+		h:setScale(2)
+		h:play(1/8, true)
+		h:flash()
+		h:setPosition(sus.x+10, sus.y-(sus.height)-6)
+		h.layer = WORLD_LAYERS["top"]
+		h.physics.speed_x = 0.1
+		h.physics.gravity_direction = math.rad(180)
+		h.physics.gravity = -1
 		--do particle here
-		cutscene:wait(1)
+		cutscene:wait(function () return h.x > (j.x-10) end)
+		h:remove()
 		local x, y = j:getScreenPos()
 		local dmg = DamageNumber("msg", "max",x-30, y-20,{COLORS.lime})
         Game.stage:addChild(dmg)
@@ -1145,6 +1164,7 @@ return {
 		j:setFacing("left")
 		cutscene:text("* Marcy...! [wait:10]Where is she!?[wait:5] Have you seen", "shocked", {auto = true})
 		cutscene:setSpeaker(sus)
+		local sux, suy = sus:getPosition()
 		cutscene:walkTo(sus, ral.x- 40, ral.y + 20, 1.5)
 		cutscene:text("* Woah, [wait:5]easy, [wait:5]dude!", "surprise_frown")
 		cutscene:setSpeaker(ral)
@@ -1165,7 +1185,28 @@ return {
 		cutscene:text("* I think we could all help each other out!", "surprise_neutral")
 		cutscene:setSpeaker(j)
 		cutscene:text("* ...You know what? [wait:10][face:stern]That's a good idea.", "worried")
-		j:convertToFollower()
+		j = j:convertToFollower()
+		cutscene:walkPath(
+			ral,
+			{
+				{sux, suy},
+				{rx, ry}
+			},
+			{speed = 5}
+		)
+		cutscene:walkPath(
+			sus,
+			{{sux, suy}},
+			{speed = 5}
+		)
+		cutscene:wait(cutscene:walkPath(
+			j,
+			{
+				{sux, suy},
+				{rx, ry-30}
+			},
+			{speed = 5}
+		))
         cutscene:wait(cutscene:attachFollowers())
 		cutscene:setSpeaker()
 		cutscene:text("* Jamm tried to join the party, [wait:5]but it was full.")

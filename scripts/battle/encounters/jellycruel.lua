@@ -28,7 +28,9 @@ function Jellycruel:onBattleStart()
 end
 
 function Jellycruel:onBattleEnd()
-    Game:setBorder(self.border)
+    if Kristal.Config["borders"] == "dynamic"then
+        Game:setBorder(self.border)
+    end
 end
 
 return Jellycruel

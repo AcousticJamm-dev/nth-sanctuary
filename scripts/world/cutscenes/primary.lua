@@ -1257,5 +1257,17 @@ return {
         -- cutscene:fadeIn(time)
         -- cutscene:fadeOut(time)
         -- And many more functions
-    end
+    end,
+
+	churchbell_ring = function (cutscene)
+		cutscene:enableMovement()
+		Assets.playSound("churchbell_long", 0.75, 0.5)
+		cutscene:wait(2.5)
+		Assets.playSound("churchbell_long", 0.75, 0.5)
+		cutscene:wait(2.5)
+		Assets.playSound("churchbell_long", 0.75, 0.5)
+		cutscene:wait(2.5)
+		Game:setFlag("churchbell_rung_5th", true)
+		Game.world.map:getHitbox("specblock").collidable = false
+	end
 }

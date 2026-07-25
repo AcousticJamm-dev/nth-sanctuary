@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="26" height="21" tilewidth="40" tileheight="40" infinite="0" nextlayerid="25" nextobjectid="117">
+<map version="1.10" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="26" height="21" tilewidth="40" tileheight="40" infinite="0" nextlayerid="25" nextobjectid="117">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -201,9 +201,9 @@
 394,395,396,355,394,395,396,355,0,0,0,0,0,0,0,0,0,0,0,0,355,394,395,396,355,0,
 400,401,402,361,400,401,402,361,0,0,0,0,0,0,0,0,0,0,0,0,361,400,401,402,361,0,
 406,407,408,361,406,407,408,361,0,0,0,0,0,0,0,0,0,0,0,0,361,406,407,408,361,0,
-576,576,576,367,576,576,576,367,413,413,0,0,0,0,0,0,0,413,413,413,367,576,576,576,367,0,
-73,73,73,73,73,73,73,73,73,73,434,435,435,435,437,437,438,73,73,73,73,73,73,73,73,0,
-73,73,73,73,73,73,73,73,73,73,446,447,447,447,449,449,450,73,73,73,73,73,73,73,73,0,
+576,576,576,367,576,576,576,367,413,413,413,413,413,413,413,413,413,413,413,413,367,576,576,576,367,0,
+73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,0,
+73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,0,
 79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,79,73,73,73,0,
 0,0,0,529,530,530,530,530,530,530,530,530,530,530,530,531,0,0,0,0,0,0,73,73,73,0,
 0,0,0,535,571,577,571,536,571,571,274,536,571,571,274,537,0,0,0,0,0,0,73,73,73,0,
@@ -229,8 +229,8 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,465,454,455,464,454,455,466,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,471,460,461,470,460,461,472,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,413,0,413,0,0,0,0,0,413,0,413,413,413,0,0,0,0,0,0,0,0,0,
@@ -311,9 +311,6 @@
   <object id="34" name="entry2" x="1000" y="760">
    <point/>
   </object>
-  <object id="39" name="targ" x="540" y="160">
-   <point/>
-  </object>
   <object id="110" x="540" y="580">
    <point/>
   </object>
@@ -339,18 +336,6 @@
     <property name="marker" value="entry"/>
    </properties>
   </object>
-  <object id="36" name="prophecy" x="400" y="240" width="280" height="80">
-   <properties>
-    <property name="offx" type="float" value="150"/>
-    <property name="offy" type="float" value="-100"/>
-    <property name="spr_offx" type="float" value="50"/>
-    <property name="spr_offy" type="float" value="75"/>
-    <property name="text">THE HEROES FIND THE DEOXYNN.
-THE DEOXYNN, WHO LIES ON COLD GROUND.</property>
-    <property name="texture" value="jamm"/>
-    <property name="txt_offy" type="float" value="-32"/>
-   </properties>
-  </object>
   <object id="35" name="roomglow" x="120" y="0">
    <properties>
     <property name="prophecy" type="bool" value="true"/>
@@ -370,14 +355,6 @@ THE DEOXYNN, WHO LIES ON COLD GROUND.</property>
   <object id="114" name="climbexit" x="200" y="440" width="40" height="40">
    <properties>
     <property name="target" type="object" value="112"/>
-   </properties>
-  </object>
-  <object id="116" name="cameratarget" x="400" y="240" width="280" height="80">
-   <properties>
-    <property name="lockx" type="bool" value="false"/>
-    <property name="locky" type="bool" value="true"/>
-    <property name="marker" value="targ"/>
-    <property name="time" type="float" value="0.25"/>
    </properties>
   </object>
  </objectgroup>

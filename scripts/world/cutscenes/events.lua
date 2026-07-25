@@ -321,7 +321,7 @@ return {
 		cutscene:panTo(ox, oy, 2, 'out-cubic')
 		cutscene:detachFollowers()
 		susie:setSprite("point_right")
-		Game.world.music:play("creepychase", 1)
+		Game.world.music:play("cultchase", 1)
 		cutscene:text("* HEY, [wait:5]GET BACK HERE!", "angry_e", susie)
 		susie:resetSprite()
 		cutscene:walkTo(susie, 1720, 880, 3)

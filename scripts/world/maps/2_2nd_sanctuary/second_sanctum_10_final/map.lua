@@ -4,7 +4,7 @@ local map, super = Class(Map, "second_sanctum_10_final")
 function map:init(world, data)
 	super.init(self, world, data)
 	if Game:getFlag("chase_cutscene_prog") == 1 then
-		self.music = "creepychase"
+		self.music = "cultchase"
 	else
 		self.music = "second_church"
 	end

@@ -164,52 +164,62 @@ return {
 		menu.index = 0
 		menu.y = 0
 		local skip_title = false
-		local text = Text("Skip the introduction?", 0, 220, nil, nil, {
-			align = "center"
-		})
-		text.inherit_color = true
-		menu:addChild(text)
-		local yes_text = Text("Yes", -120, 220+40, nil, nil, {
-			align = "center"
-		})
-		yes_text.inherit_color = true
-		menu:addChild(yes_text)
-		local no_text = Text("No", 120, 220+40, nil, nil, {
-			align = "center"
-		})
-		no_text.inherit_color = true
-		menu:addChild(no_text)
-		local heart = Sprite("player/heart", SCREEN_WIDTH/2-8, 220+40+8) 
-		heart.inherit_color = true
-		heart.color = COLORS.red
-		menu:addChild(heart)
-		
-		Game.world.timer:tween(0.5, menu, {alpha = 1}, 'out-sine')
-		cutscene:wait(function()
-			if Input.pressed("left") and menu.index ~= 1 then
-				Assets.playSound("ui_move")
-				menu.index = 1
-			elseif Input.pressed("right") and menu.index ~= 2 then
-				Assets.playSound("ui_move")
-				menu.index = 2
+		if love.filesystem.getInfo("saves/nth_sanctum/sanctuary.json") then
+			local data = JSON.decode(love.filesystem.read("saves/nth_sanctum/sanctuary.json"))
+			
+			if data["seen_intro"] then
+				local text = Text("Skip the introduction?", 0, 220, nil, nil, {
+					align = "center"
+				})
+				text.inherit_color = true
+				menu:addChild(text)
+				local yes_text = Text("Yes", -120, 220+40, nil, nil, {
+					align = "center"
+				})
+				yes_text.inherit_color = true
+				menu:addChild(yes_text)
+				local no_text = Text("No", 120, 220+40, nil, nil, {
+					align = "center"
+				})
+				no_text.inherit_color = true
+				menu:addChild(no_text)
+				local heart = Sprite("player/heart", SCREEN_WIDTH/2-8, 220+40+8) 
+				heart.inherit_color = true
+				heart.color = COLORS.red
+				menu:addChild(heart)
+				
+				Game.world.timer:tween(0.5, menu, {alpha = 1}, 'out-sine')
+				cutscene:wait(function()
+					if Input.pressed("left") and menu.index ~= 1 then
+						Assets.playSound("ui_move")
+						menu.index = 1
+					elseif Input.pressed("right") and menu.index ~= 2 then
+						Assets.playSound("ui_move")
+						menu.index = 2
+					end
+					if menu.index == 1 then
+						yes_text:setColor(COLORS.yellow)
+						no_text:setColor(COLORS.white)
+						heart.x = SCREEN_WIDTH/2-120-yes_text:getTextWidth()/2-32
+					elseif menu.index == 2 then
+						yes_text:setColor(COLORS.white)
+						no_text:setColor(COLORS.yellow)
+						heart.x = SCREEN_WIDTH/2+120-no_text:getTextWidth()/2-32
+					end
+					if Input.pressed("confirm") and menu.index ~= 0 then
+						Assets.playSound("ui_select")
+						skip_title = menu.index == 1 and true or false
+						return true
+					end
+					return false
+				end)
+				menu:remove()
+			else
+				skip_title = false
 			end
-			if menu.index == 1 then
-				yes_text:setColor(COLORS.yellow)
-				no_text:setColor(COLORS.white)
-				heart.x = SCREEN_WIDTH/2-120-yes_text:getTextWidth()/2-32
-			elseif menu.index == 2 then
-				yes_text:setColor(COLORS.white)
-				no_text:setColor(COLORS.yellow)
-				heart.x = SCREEN_WIDTH/2+120-no_text:getTextWidth()/2-32
-			end
-			if Input.pressed("confirm") and menu.index ~= 0 then
-				Assets.playSound("ui_select")
-				skip_title = menu.index == 1 and true or false
-				return true
-			end
-			return false
-		end)
-		menu:remove()
+		else
+			skip_title = false
+		end
 		cutscene:wait(1)
 		if skip_title then
 			local items_to_add = {"scarlixir","scarlixir","scarlixir","rhapsotea","rhapsotea","rhapsotea","ancientsweet","shadowcrystal","claimbclaws","sheetmusic"}
@@ -763,6 +773,19 @@ return {
 			Do the base sanctum intro incl. logo
 			Thanks in advance Delta :)
 		]]
+		
+		if love.filesystem.getInfo("saves/nth_sanctum/sanctuary.json") then
+			local data = JSON.decode(love.filesystem.read("saves/nth_sanctum/sanctuary.json"))
+			data["seen_intro"] = true
+			love.filesystem.createDirectory("saves")
+			love.filesystem.write("saves/nth_sanctum/sanctuary.json", JSON.encode(data))
+		else
+			data = {
+				seen_intro = true
+			}
+			love.filesystem.createDirectory("saves")
+			love.filesystem.write("saves/nth_sanctum/sanctuary.json", JSON.encode(data))
+		end
 
 		cutscene:wait(function()
 			if Input.pressed("menu") then

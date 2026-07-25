@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.12.2",
+  tiledversion = "1.12.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -13,7 +13,8 @@ return {
   nextobjectid = 298,
   properties = {
     ["border"] = "church_b",
-    ["music"] = "second_church"
+    ["music"] = "second_church",
+    ["name"] = "Second Sanctuary - Split"
   },
   tilesets = {
     {

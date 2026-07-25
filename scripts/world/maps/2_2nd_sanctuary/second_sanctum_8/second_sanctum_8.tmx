@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="32" height="20" tilewidth="40" tileheight="40" infinite="0" nextlayerid="15" nextobjectid="298">
+<map version="1.10" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="32" height="20" tilewidth="40" tileheight="40" infinite="0" nextlayerid="15" nextobjectid="298">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
  <properties>
   <property name="border" value="church_b"/>
   <property name="music" value="second_church"/>
+  <property name="name" value="Second Sanctuary - Split"/>
  </properties>
  <tileset firstgid="1" source="../../../tilesets/church_objects.tsx"/>
  <tileset firstgid="110" source="../../../tilesets/bg_dw_church_tileset_new.tsx"/>

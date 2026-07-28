@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.12.2",
+  tiledversion = "1.12.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 21,
-  nextobjectid = 330,
+  nextobjectid = 332,
   properties = {
     ["border"] = "church_b",
     ["music"] = "second_church"
@@ -564,6 +564,23 @@ return {
             ["map"] = "2_2nd_sanctuary/second_sanctum_11_ponder",
             ["marker"] = "entry"
           }
+        },
+        {
+          id = 330,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 720,
+          y = 720,
+          width = 200,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["map"] = "2_2nd_sanctuary/second_sanctum_12",
+            ["marker"] = "entry"
+          }
         }
       }
     },
@@ -839,6 +856,20 @@ return {
           shape = "point",
           x = 1240,
           y = 520,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 331,
+          name = "entry3",
+          type = "",
+          shape = "point",
+          x = 820,
+          y = 680,
           width = 0,
           height = 0,
           rotation = 0,

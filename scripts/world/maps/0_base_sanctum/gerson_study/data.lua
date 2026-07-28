@@ -906,22 +906,6 @@ return {
             ["speed"] = 0.333333333,
             ["texture"] = "effects/shine_white"
           }
-        },
-        {
-          id = 306,
-          name = "interactable",
-          type = "",
-          shape = "rectangle",
-          x = 340,
-          y = 250,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["cutscene"] = "study.unlock4th"
-          }
         }
       }
     },

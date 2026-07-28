@@ -140,7 +140,7 @@
   <object id="85" gid="725" x="1080" y="220" width="121" height="140"/>
   <object id="97" gid="731" x="800" y="240" width="80" height="120">
    <properties>
-    <property name="flagcheck" value="!4th_unlocked"/>
+    <property name="cond" value="not Mod:getDarkShard(Mod.DarkShardID.SecondSanctuary)"/>
    </properties>
   </object>
  </objectgroup>
@@ -210,9 +210,9 @@
   <object id="93" gid="705" x="760" y="200" width="40" height="30"/>
   <object id="100" name="interactable" x="800" y="200" width="80" height="40">
    <properties>
-    <property name="flagcheck" value="!4th_unlocked"/>
+    <property name="cond" value="not Mod:getDarkShard(Mod.DarkShardID.SecondSanctuary)"/>
     <property name="solid" type="bool" value="true"/>
-    <property name="text1" value="* (The door is locked with some mechanism.)"/>
+    <property name="text1" value="* (The door is sealed with some dark power.)"/>
    </properties>
   </object>
  </objectgroup>

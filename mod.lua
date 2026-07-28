@@ -1,7 +1,7 @@
 ---@enum DarkShardID
 Mod.DarkShardID = {
-    TEST_SHARD_1 = 0,
-    TEST_SHARD_2 = 1,
+    SecondSanctuary = 0,
+    FourthSanctuary = 1,
     BookShard = 2,
     LeafRoomShard = 3,
 }

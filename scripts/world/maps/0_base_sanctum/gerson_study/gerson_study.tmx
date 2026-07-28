@@ -167,11 +167,6 @@
    </properties>
    <point/>
   </object>
-  <object id="306" name="interactable" x="340" y="250" width="40" height="40">
-   <properties>
-    <property name="cutscene" value="study.unlock4th"/>
-   </properties>
-  </object>
  </objectgroup>
  <objectgroup color="#0000ff" id="3" name="collision" locked="1">
   <object id="28" x="160" y="800" width="80" height="110"/>

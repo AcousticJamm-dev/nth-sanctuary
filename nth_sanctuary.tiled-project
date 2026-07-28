@@ -6,7 +6,28 @@
     "folders": [
         "scripts/world"
     ],
-    "objectTypesFile": "",
+    "properties": [
+    ],
     "propertyTypes": [
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 1,
+            "members": [
+            ],
+            "name": "Fuck",
+            "type": "class",
+            "useAs": [
+                "property",
+                "map",
+                "layer",
+                "object",
+                "tile",
+                "tileset",
+                "wangcolor",
+                "wangset",
+                "project"
+            ]
+        }
     ]
 }

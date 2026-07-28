@@ -560,9 +560,34 @@ return {
 		cutscene:wait(1)
 		
 		cutscene:walkTo(jamm, 1400, jamm.y, 2)
+
+		local spr = Sprite("effects/shine_white")
+		spr:setOrigin(0.5)
+		spr:setScale(2)
+		Game.world:spawnObject(spr)
+		spr:setPosition(kris.x + 200, kris.y)
+		spr.alpha = 0
 		cutscene:wait(cutscene:walkTo(susie, 1400, susie.y, 2))
 		cutscene:wait(cutscene:walkTo(kris, kris.x + 100, kris.y, 1))
+		spr:fadeToSpeed(1, 2)
 		cutscene:wait(1)
+		cutscene:wait(cutscene:walkTo(
+			kris,
+			spr.x - 20,
+			spr.y,
+			1
+		))
+
+		spr:play(1/3, true)
+		cutscene:wait(1)
+		cutscene:text("* (Nobody has noticed that the enemy dropped something.)")
+		cutscene:text("* (Instinctively, [wait:5]you pick it up.)")
+		cutscene:text("* (This object was black in color. [wait:10]Like glass.)")
+		cutscene:text("* (You can't help but feel the urge to keep it.)")
+		spr:remove()
+		Mod:setDarkShard(Mod.DarkShardID.SecondSanctuary, true)
+		Assets.playSound("shard_get")
+		cutscene:text("* (You have obtained a [color:9999ff]Dark Shard.[color:white])")
 		cutscene:walkTo(kris, 1400, kris.y, 2)
 
 	end,

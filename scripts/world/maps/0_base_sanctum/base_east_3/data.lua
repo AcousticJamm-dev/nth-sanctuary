@@ -472,7 +472,7 @@ return {
           gid = 731,
           visible = true,
           properties = {
-            ["flagcheck"] = "!4th_unlocked"
+            ["cond"] = "not Mod:getDarkShard(Mod.DarkShardID.SecondSanctuary)"
           }
         }
       }
@@ -695,9 +695,9 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["flagcheck"] = "!4th_unlocked",
+            ["cond"] = "not Mod:getDarkShard(Mod.DarkShardID.SecondSanctuary)",
             ["solid"] = true,
-            ["text1"] = "* (The door is locked with some mechanism.)"
+            ["text1"] = "* (The door is sealed with some dark power.)"
           }
         }
       }

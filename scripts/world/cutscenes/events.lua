@@ -593,11 +593,55 @@ return {
 	end,
 	jamm_book = function (cutscene, event)
 		Game:setFlag("jamm_has_glasses", true)
-		cutscene:text("* Hey Kris, [wait:5]take a look at this.", "neutral", "jamm")
-		cutscene:text("* It says something [face:neutral]about a [color:yellow]TRAVEL [color:white][face:look_left]button in the menu.", "look_left", "jamm")
-		cutscene:text("* ...You got any ideas on what that means?", "neutral", "jamm")
-		Game:setFlag("unlock_travel", true)
+		if not event.talked_to then
+			cutscene:text("* Hey Kris, [wait:5]take a look at this.", "neutral", "jamm")
+			cutscene:text("* ...You got any ideas on what that means?", "look_left", "jamm")
+			event.talked_to = true
+		else
+			cutscene:text("* Why are you looking at me like a confused dog?", "neutral", "jamm")
+			cutscene:text("* Are you...[wait:10] not reading the same thing as I am?", "nervous_left", "jamm")
+		end
 		Game:setFlag("jamm_has_glasses", false)
+	end,
+	travel_unlock = function (cutscene, event)
+		Game:setFlag("unlock_travel", true)
+		local kris = cutscene:getCharacter("kris")
+		local susie = cutscene:getCharacter("susie")
+		local ralsei = cutscene:getCharacter("ralsei")
+		local jamm = cutscene:getCharacter("jamm")
+		
+		cutscene:wait(function() return jamm.state_manager.state == "WALK" end)
+		cutscene:detachFollowers()
+		cutscene:walkTo(kris, "kristo", 0.5, "down")
+		cutscene:walkTo(susie, "susieto", 0.5, "down")
+		cutscene:walkTo(ralsei, "ralseito", 0.5, "down")
+		cutscene:wait(cutscene:walkTo(jamm, "jammto", 0.5, "down"))
+		cutscene:text("* ...", "sus_nervous", "susie")
+		cutscene:look(susie, "left")
+		cutscene:look(ralsei, "left")
+		cutscene:look(jamm, "right")
+		susie.flip_x = true
+		susie.x = susie.x - 10
+		cutscene:setSprite(susie, "turn_around")
+		Assets.playSound("whip_hard")
+		susie:shake(4)
+		cutscene:wait(0.6)
+		cutscene:text("* Damn it,[wait:5] Kris![wait:10]\n* You got us trapped!", "teeth_b", "susie")
+		cutscene:text("* I'm not so sure about that,[wait:5] Susie...", "look_left", "jamm")
+		susie:resetSprite()
+		susie.flip_x = false
+		susie.x = susie.x + 10
+		cutscene:text("* ...Huh?", "nervous", "susie")
+		cutscene:wait(cutscene:walkTo(jamm, jamm.x, jamm.y + 40, 0.5, "right"))
+		cutscene:look(kris, "left")
+		cutscene:text("* Kris,[wait:5] when I was reading those books,[wait:5] I found something...", "look_left", "jamm")
+		cutscene:text("* Maybe it could be used to help get us out of here?", "neutral", "jamm")
+		cutscene:text("* Jamm gave you the [color:yellow]TRAVEL BUTTON[color:white].")
+		Assets.playSound("egg")
+		cutscene:text("* [color:yellow]TRAVEL BUTTON[color:white] has been added to your [color:yellow]MENU[color:white].")
+		cutscene:look(kris, "down")
+		cutscene:interpolateFollowers()
+		cutscene:attachFollowersImmediate()
 	end,
 	jamm_lore = function (cutscene)
 		local susie = cutscene:getCharacter("susie")

@@ -219,32 +219,33 @@ function DarkMenu:addButtons()
     })
     
     -- TRAVEL
-    self:addButton({
-        ["state"]          = "TRAVEL",
-        ["sprite"]         = Assets.getTexture("ui/menu/btn/sanctum"),
-        ["hovered_sprite"] = Assets.getTexture("ui/menu/btn/sanctum_h"),
-        ["disabled_sprite"]= Assets.getTexture("ui/menu/btn/sanctum_d"),
-        ["desc_sprite"]    = Assets.getTexture("ui/menu/desc/sanctum"),
-        ["callback"]       = function()
-            Input.clear("confirm")
-            Game.world:closeMenu()
+	if Game:getFlag("unlock_travel") then
+		self:addButton({
+			["state"]          = "TRAVEL",
+			["sprite"]         = Assets.getTexture("ui/menu/btn/sanctum"),
+			["hovered_sprite"] = Assets.getTexture("ui/menu/btn/sanctum_h"),
+			["disabled_sprite"]= Assets.getTexture("ui/menu/btn/sanctum_d"),
+			["desc_sprite"]    = Assets.getTexture("ui/menu/desc/sanctum"),
+			["callback"]       = function()
+				Input.clear("confirm")
+				Game.world:closeMenu()
 
-            self.ui_select:stop()
-            self.ui_select:play()
+				self.ui_select:stop()
+				self.ui_select:play()
 
-            Game.world:startCutscene("travel_button")
-        end,
-		["disabled"]       = function() 
-			if Game.world.map.id == "sanctum_hell/hell_1" or 
-			Game.world.map.id == "sanctum_hell/hell_unknown" or 
-			Game.world.map.id == "secrets/frisk_room" or
-            Game:getFlag("unlock_travel") ~= true or
-			StringUtils.contains(Game.world.map.id, "final_sanctuary") then
-				return true
+				Game.world:startCutscene("travel_button")
+			end,
+			["disabled"]       = function() 
+				if Game.world.map.id == "sanctum_hell/hell_1" or 
+				Game.world.map.id == "sanctum_hell/hell_unknown" or 
+				Game.world.map.id == "secrets/frisk_room" or
+				StringUtils.contains(Game.world.map.id, "final_sanctuary") then
+					return true
+				end
+				return false
 			end
-			return false
-		end
-    })
+		})
+	end
 
     -- CONFIG
     self:addButton({

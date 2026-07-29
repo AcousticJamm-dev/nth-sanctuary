@@ -1,7 +1,7 @@
 {
     "id": "nth_sanctum",
     "name": "#th Sanctuary",
-    "subtitle": "WORLDS ENTER COLLISION. THE KNIGHT IS TO NO FAULT.",
+    "subtitle": "\"It's just better if stuff just... goes on forever, right?\"",
 
     "useSaves": false,
 
@@ -21,7 +21,6 @@
          }
     },
     "namesMessages": {
-		// Characters (I guess)
 		"CAMAC": "did you mean: tobyfox?\ndiscord.gg/tobyfox",
         "RALSZOR": "hi its me",
         "RAL": "hi its still me",
@@ -29,7 +28,7 @@
         "CHERRY": "hi its me chernobyl",
         "MARCY": "Not viable.",
         "DDELTA": "No problem here.",
-        "LUCID": "Placeholder text"
+        "LUCID": "Hell no, pick something else!"
     },
     "namesDeny": [
         "MARCY"

@@ -1,5 +1,5 @@
 # nth-sanctuary
-WORLDS ENTER COLLISION. THE KNIGHT IS TO NO FAULT.
+"It's just better if stuff just... goes on forever, right?"
 
 SEVEN HEROES JOIN, AND THE RUNE BEGINS TO CHANGE....
 

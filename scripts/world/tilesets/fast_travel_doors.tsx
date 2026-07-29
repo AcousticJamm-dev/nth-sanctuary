@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.10" tiledversion="1.11.2" name="fast_travel_doors" tilewidth="80" tileheight="80" tilecount="9" columns="0">
+<tileset version="1.11" tiledversion="1.12.2" name="fast_travel_doors" tilewidth="100" tileheight="100" tilecount="10" columns="0">
  <editorsettings>
   <export target="fast_travel_doors.lua" format="lua"/>
  </editorsettings>
@@ -37,5 +37,8 @@
  </tile>
  <tile id="8">
   <image source="../../../assets/sprites/world/objects/fast_travel_doors/shard_door_maintenance.png" width="80" height="80"/>
+ </tile>
+ <tile id="9">
+  <image source="../../../assets/sprites/world/objects/fast_travel_doors/4d_entrance.png" width="100" height="100"/>
  </tile>
 </tileset>

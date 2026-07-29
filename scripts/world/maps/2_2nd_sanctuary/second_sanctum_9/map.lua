@@ -28,7 +28,7 @@ function map:update()
 	if Game.world.player.x >= 1360 and Game:getFlag("chasepass") ~= true then
 		for _, bullet in ipairs(Game.world.bullets) do
 			if bullet.id == "gravitybullet" then
-				bullet.x = bullet.x - 400
+				bullet.x = bullet.x - 480
 			end
 		end
 

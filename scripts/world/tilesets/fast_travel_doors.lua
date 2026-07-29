@@ -1,11 +1,11 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.12.2",
   name = "fast_travel_doors",
   class = "",
-  tilewidth = 80,
-  tileheight = 80,
+  tilewidth = 100,
+  tileheight = 100,
   spacing = 0,
   margin = 0,
   columns = 0,
@@ -23,7 +23,7 @@ return {
   },
   properties = {},
   wangsets = {},
-  tilecount = 9,
+  tilecount = 10,
   tiles = {
     {
       id = 0,
@@ -100,6 +100,12 @@ return {
       image = "../../../assets/sprites/world/objects/fast_travel_doors/shard_door_maintenance.png",
       width = 80,
       height = 80
+    },
+    {
+      id = 9,
+      image = "../../../assets/sprites/world/objects/fast_travel_doors/4d_entrance.png",
+      width = 100,
+      height = 100
     }
   }
 }

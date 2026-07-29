@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.12.1",
+  tiledversion = "1.12.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -9,8 +9,8 @@ return {
   height = 16,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 11,
-  nextobjectid = 19,
+  nextlayerid = 18,
+  nextobjectid = 50,
   properties = {
     ["border"] = "church_b",
     ["music"] = "second_church"
@@ -31,9 +31,256 @@ return {
       name = "bg_dw_church_library_2_tileset",
       firstgid = 781,
       filename = "../../../tilesets/bg_dw_church_library_2_tileset.tsx"
+    },
+    {
+      name = "church_objects",
+      firstgid = 1041,
+      filename = "../../../tilesets/church_objects.tsx",
+      exportfilename = "../../../tilesets/church_objects.lua"
+    },
+    {
+      name = "bg_dw_church_c_tileset",
+      firstgid = 1150,
+      filename = "../../../tilesets/bg_dw_church_c_tileset.tsx"
+    },
+    {
+      name = "light_areas",
+      firstgid = 1429,
+      filename = "../../../tilesets/light_areas.tsx"
     }
   },
   layers = {
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 16,
+      name = "objects_bg_3",
+      class = "",
+      visible = true,
+      opacity = 0.54,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 0.2,
+      parallaxy = 0.2,
+      properties = {},
+      objects = {
+        {
+          id = 46,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 640,
+          y = -80,
+          width = 320,
+          height = 800,
+          rotation = 225,
+          opacity = 1,
+          gid = 1045,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 12,
+      name = "objects_bg_2",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 0.2,
+      parallaxy = 0.2,
+      properties = {},
+      objects = {
+        {
+          id = 32,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 240,
+          y = 520,
+          width = 200,
+          height = 289,
+          rotation = 0,
+          opacity = 1,
+          gid = 1041,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 34,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 440,
+          y = 520,
+          width = 200,
+          height = 289,
+          rotation = 0,
+          opacity = 1,
+          gid = 1041,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 37,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = -160,
+          y = 520,
+          width = 200,
+          height = 289,
+          rotation = 0,
+          opacity = 1,
+          gid = 1041,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 38,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 40,
+          y = 520,
+          width = 200,
+          height = 289,
+          rotation = 0,
+          opacity = 1,
+          gid = 1041,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 11,
+      name = "objects_bg_1",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 0.3,
+      parallaxy = 0.3,
+      properties = {},
+      objects = {
+        {
+          id = 27,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = -560,
+          y = 840,
+          width = 640,
+          height = 1600,
+          rotation = 30,
+          opacity = 1,
+          gid = 1045,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 13,
+      name = "Object Layer 10",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {}
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 9,
+      name = "objects_osc",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 16,
+          name = "texturescroller",
+          type = "",
+          shape = "point",
+          x = 80,
+          y = 0,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["base_tex"] = "backgrounds/glow_purple_tile_oscillate",
+            ["scroll_tex"] = "backgrounds/perlin_noise_purple_looping",
+            ["type"] = "library"
+          }
+        },
+        {
+          id = 39,
+          name = "tile_oscillate",
+          type = "",
+          shape = "rectangle",
+          x = 80,
+          y = 80,
+          width = 202.143,
+          height = 283,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 40,
+          name = "tile_oscillate",
+          type = "",
+          shape = "rectangle",
+          x = 880,
+          y = 320,
+          width = 160,
+          height = 120,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 41,
+          name = "texturescroller",
+          type = "",
+          shape = "point",
+          x = 80,
+          y = -40,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["type"] = "hsv"
+          }
+        }
+      }
+    },
     {
       type = "tilelayer",
       x = 0,
@@ -54,15 +301,15 @@ return {
       data = {
         0, 0, 10, 10, 10, 10, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 10, 10, 10, 10, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 10, 10, 10, 10, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 10, 10, 10, 10, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 10, 10, 10, 10, 10, 87, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 10, 10, 10, 10, 10, 96, 87, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 10, 10, 10, 10, 10, 105, 96, 87, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 10, 10, 10, 10, 10, 114, 105, 96, 87, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 10, 10, 10, 10, 10, 0, 114, 105, 96, 87, 0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10,
-        0, 0, 10, 10, 10, 10, 10, 0, 0, 114, 105, 96, 87, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10,
-        0, 0, 10, 10, 10, 10, 10, 0, 0, 0, 114, 105, 96, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10,
+        0, 0, 34, 35, 36, 10, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 43, 44, 45, 5, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 52, 53, 6, 14, 15, 87, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 5, 6, 169, 170, 171, 96, 87, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 14, 177, 178, 179, 180, 105, 96, 87, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 10, 186, 187, 188, 189, 114, 105, 96, 87, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 2, 3, 196, 197, 198, 0, 114, 105, 96, 87, 0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 7, 8, 9, 10,
+        0, 0, 11, 12, 10, 13, 10, 0, 0, 114, 105, 96, 87, 10, 10, 10, 10, 10, 10, 10, 10, 10, 16, 17, 18, 10,
+        0, 0, 10, 14, 25, 10, 19, 0, 0, 0, 114, 105, 96, 10, 10, 10, 10, 10, 10, 10, 10, 10, 25, 26, 27, 10,
         0, 0, 649, 649, 649, 649, 649, 0, 0, 0, 0, 114, 105, 10, 10, 10, 10, 10, 10, 10, 10, 10, 649, 649, 649, 649,
         0, 0, 613, 865, 866, 867, 613, 0, 0, 0, 0, 0, 114, 10, 10, 10, 10, 10, 10, 10, 10, 10, 865, 866, 867, 613,
         0, 0, 619, 875, 876, 877, 619, 0, 0, 0, 0, 0, 0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 875, 876, 877, 619,
@@ -145,8 +392,8 @@ return {
     {
       type = "objectgroup",
       draworder = "topdown",
-      id = 9,
-      name = "objects_osc",
+      id = 17,
+      name = "objects_onefuckingnpc",
       class = "",
       visible = true,
       opacity = 1,
@@ -157,46 +404,64 @@ return {
       properties = {},
       objects = {
         {
-          id = 16,
-          name = "texturescroller",
+          id = 20,
+          name = "npc",
           type = "",
           shape = "point",
-          x = 80,
-          y = 0,
+          x = 700,
+          y = 140,
           width = 0,
           height = 0,
           rotation = 0,
           opacity = 1,
           visible = true,
           properties = {
-            ["base_tex"] = "backgrounds/glow_purple_tile_oscillate",
-            ["scroll_tex"] = "backgrounds/perlin_noise_purple_looping",
-            ["type"] = "library"
-          }
-        },
-        {
-          id = 17,
-          name = "texturescroller",
-          type = "",
-          shape = "point",
-          x = 120,
-          y = 0,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["type"] = "hsv"
+            ["actor"] = "balthizard"
           }
         }
+      }
+    },
+    {
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 26,
+      height = 16,
+      id = 14,
+      name = "Tile Layer 4",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      encoding = "lua",
+      data = {
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 649, 649, 649, 649, 649, 649, 649, 649, 649, 1330, 1331, 1331, 1332,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 127, 129, 130, 128, 129, 130, 128, 129, 127, 1339, 1340, 1340, 1341,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 136, 138, 139, 137, 138, 139, 137, 138, 136, 1339, 1340, 1340, 1341,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 172, 147, 148, 146, 147, 148, 146, 147, 172, 1339, 1340, 1340, 1341,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 154, 156, 157, 155, 156, 157, 155, 156, 154, 1339, 1340, 1340, 1341,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 172, 165, 166, 164, 165, 166, 164, 165, 172, 1339, 1340, 1340, 1341,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 154, 165, 166, 164, 165, 166, 164, 165, 154, 1339, 1340, 1340, 1341,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 163, 174, 175, 173, 174, 175, 173, 174, 163, 1348, 1349, 1349, 1350,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
       }
     },
     {
       type = "objectgroup",
       draworder = "topdown",
       id = 4,
-      name = "objects",
+      name = "objects_party",
       class = "",
       visible = true,
       opacity = 1,
@@ -238,6 +503,92 @@ return {
           properties = {
             ["map"] = "2_2nd_sanctuary/second_sanctum_13",
             ["marker"] = "entry"
+          }
+        },
+        {
+          id = 26,
+          name = "interactable",
+          type = "",
+          shape = "rectangle",
+          x = 620,
+          y = 280,
+          width = 160,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["text1"] = "[speed:0.2]* T a k e   a   b r e a t h e r ."
+          }
+        },
+        {
+          id = 49,
+          name = "window_glow",
+          type = "",
+          shape = "point",
+          x = 430,
+          y = 150,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 15,
+      name = "objects_lightarea",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 43,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 880,
+          y = 760,
+          width = 160,
+          height = 720,
+          rotation = 0,
+          opacity = 1,
+          gid = 1430,
+          visible = true,
+          properties = {
+            ["light"] = true,
+            ["light_alpha"] = 1,
+            ["light_color"] = "#ffffffff",
+            ["light_type"] = 1
+          }
+        },
+        {
+          id = 47,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 280,
+          y = 760,
+          width = 160,
+          height = 720,
+          rotation = 0,
+          opacity = 1,
+          gid = 1430,
+          visible = true,
+          properties = {
+            ["light"] = true,
+            ["light_alpha"] = 1,
+            ["light_color"] = "#ffffffff",
+            ["light_type"] = 1
           }
         }
       }

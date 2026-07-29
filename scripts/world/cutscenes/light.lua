@@ -742,38 +742,111 @@ return {
 		cutscene.church_door = ChurchDoorDarkness(566, 528)
 		cutscene.church_door:setLayer(WORLD_LAYERS["above_events"])
 		Game.world:addChild(cutscene.church_door)
-		cutscene.church_darkness = ChurchDarknessVFX(0, 0)
-		cutscene.church_darkness:setLayer(Game.world:parseLayer("objects"))
-		Game.world:addChild(cutscene.church_darkness)
-		cutscene.church_darkness.bg_active = true
-		cutscene.church_darkness.window_active = true
 		cutscene.church_door:setFrame(2)
 		cutscene.wind_sound = Music()
 		cutscene.wind_sound:play("wind_highplace", 0, 1.5)
 		cutscene.wind_sound:fade(1, 1)
-		cutscene:wait(cutscene:walkToSpeed(s,s.x, 620, 8))
+		cutscene:wait(cutscene:walkToSpeed(s,810, 710, 8))
 		cutscene.church_door:setLayer(Game.world:parseLayer("objects"))
 		Assets.playSound("thunder_instant")
 		lightningFlash()
-		cutscene.lightning_loop = true
-		--[[	Delta's edits go here for the church part	
-			Notes for dialogue
-			Susie drags Kris down. 
-			Reset sprite before going right in front of church doors, 
-			have kris and susie walk separate.
+		cutscene.lightning_loop = false
 
-			Kris steps back and visibly shakes.
+		cutscene.rainfx = Game.stage:getObjects(LightRainEffect)[1]
+		if not cutscene.rainfx then
+			cutscene.rainfx = LightRainEffect()
+			Game.world:addChild(cutscene.rainfx)
+		end
 
-			Susie says "I know, Kris. I'm a little scared too."
-			"Let's just... Get it over with quick."
+		s:setActor("susie_lw")
+		local k = Game.world.player
+		k.visible = true
+		k:setPosition(s:getPosition())
+		cutscene:walkTo(
+			s,
+			600, 695,
+			1,
+			'up'
+		)
+		cutscene:walkTo(
+			k,
+			570, 715,
+			1,
+			'up'
+		)
 
-			Susie steps forward, opens doors. Kris follows, jumps, cue transition.
+		cutscene:text("* Here it is, [wait:5]Kris...")
+		k:shake()
+		Assets.playSound("wing")
+		cutscene:wait(cutscene:walkTo(
+			k,
+			k.x,
+			k.y+20,
+			1,
+			'up',
+			true
+		))
 
-			[!!!] gotoCutscene AFTER THIS!
-			Do the base sanctum intro incl. logo
-			Thanks in advance Delta :)
-		]]
+
+		cutscene:wait(1)
+		cutscene:text("* I know, [wait:5]I know...[wait:10]\n* I'm a little scared too.", "bangs/down", "susie")
+		cutscene:text("* Let's just... [wait:5]Make it quick.", "bangs/down", "susie")
+		cutscene:wait(cutscene:walkTo(s, s.x, s.y - 10, 1))
+		cutscene:wait(2)
+		cutscene:text("* Screw it.", "bangs/down", "susie")
+		cutscene:detachCamera()
+		s:setSprite("kick")
+		cutscene:wait(0.2)
+		cutscene.wind_sound:fade(0, 0.5)
+		for i = 1,3 do
+			s.sprite:setFrame(i)
+			cutscene:wait(1/10)
+		end
+		Assets.playSound("locker", 1, 0.9)
+		Game.world.camera:shake(5, 0)
 		
+		cutscene.rainfx:remove()
+		m:stop()
+		cutscene.church_door:setFrame(3)
+		cutscene.wind_sound:stop()
+		cutscene.church_darkness = nil
+		for i = 4,6 do
+			s.sprite:setFrame(i)
+			cutscene:wait(1/10)
+		end
+		s:resetSprite()
+		s:setFacing("up")
+		cutscene:wait(cutscene:walkTo(s, s.x,640, 1))
+		s:fadeOutAndRemove(0.5)
+
+		local d = DarkTransition(500, {skiprunback = true})
+		k.visible = false
+		Game.stage:addChild(d)
+
+		cutscene:wait(function() 
+			return d.con == 32 
+		end)
+		d.timer = -99999
+
+		local s = Sprite("party/susie/dark_transition/dark")
+		s:setScale(2)
+		s:setParallax(0)
+		Game.stage:addChild(s)
+		s:setPosition(200, 500)
+		s:play(1/7, true)
+		cutscene:slideTo(s, s.x, 0, 10, 'out-circ')
+		cutscene:wait(1)
+		local rect = Rectangle(0,0,999,999)
+		rect:setColor(COLORS.black)
+		rect:setParallax(0)
+		rect.alpha = 0
+		Game.stage:addChild(rect)
+		Game.world.timer:tween(3, rect, {alpha = 1})
+		cutscene:wait(4)
+		d:remove()
+		s:remove()
+
+
 		if love.filesystem.getInfo("saves/nth_sanctum/sanctuary.json") then
 			local data = JSON.decode(love.filesystem.read("saves/nth_sanctum/sanctuary.json"))
 			data["seen_intro"] = true
@@ -787,18 +860,11 @@ return {
 			love.filesystem.write("saves/nth_sanctum/sanctuary.json", JSON.encode(data))
 		end
 
-		cutscene:wait(function()
-			if Input.pressed("menu") then
-				Assets.stopAndPlaySound("thunder_instant")
-				lightningFlash()
-			end
-			return false
-		end)
-
-
-
-
-		
+		Game:addPartyMember("susie")
+		Game:addPartyMember("ralsei")
+		cutscene:loadMap("0_base_sanctum/base_center")
+		rect:remove()
+		cutscene:gotoCutscene("primary.intro")
 		
 		
     end

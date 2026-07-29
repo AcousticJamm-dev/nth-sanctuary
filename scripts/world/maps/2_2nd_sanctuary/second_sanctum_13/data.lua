@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.12.1",
+  tiledversion = "1.12.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -9,8 +9,8 @@ return {
   height = 50,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 10,
-  nextobjectid = 22,
+  nextlayerid = 16,
+  nextobjectid = 45,
   properties = {
     ["border"] = "church_b",
     ["music"] = "second_church"
@@ -36,9 +36,223 @@ return {
       firstgid = 1075,
       filename = "../../../tilesets/longslides.tsx",
       exportfilename = "../../../tilesets/longslides.lua"
+    },
+    {
+      name = "fast_travel_doors",
+      firstgid = 1129,
+      filename = "../../../tilesets/fast_travel_doors.tsx",
+      exportfilename = "../../../tilesets/fast_travel_doors.lua"
+    },
+    {
+      name = "church_objects",
+      firstgid = 1139,
+      filename = "../../../tilesets/church_objects.tsx",
+      exportfilename = "../../../tilesets/church_objects.lua"
     }
   },
   layers = {
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 15,
+      name = "objects_bg_2",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 0.6,
+      parallaxy = 0.45,
+      properties = {},
+      objects = {
+        {
+          id = 44,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 560,
+          y = 1280,
+          width = 200,
+          height = 1240,
+          rotation = 0,
+          opacity = 0.7,
+          gid = 1140,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 10,
+      name = "objects_bg",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 0.7,
+      parallaxy = 0.4,
+      properties = {},
+      objects = {
+        {
+          id = 32,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 280,
+          y = 1200,
+          width = 640,
+          height = 1600,
+          rotation = 0,
+          opacity = 1,
+          gid = 1143,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 14,
+      name = "objects_bg_high",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 40,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 0,
+          y = 2000,
+          width = 200,
+          height = 289,
+          rotation = 0,
+          opacity = 1,
+          gid = 1232,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 41,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 200,
+          y = 2000,
+          width = 200,
+          height = 289,
+          rotation = 0,
+          opacity = 1,
+          gid = 1232,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 42,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 400,
+          y = 2000,
+          width = 200,
+          height = 289,
+          rotation = 0,
+          opacity = 1,
+          gid = 1232,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 43,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 600,
+          y = 2000,
+          width = 200,
+          height = 289,
+          rotation = 0,
+          opacity = 1,
+          gid = 1232,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 8,
+      name = "objects_osc",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 19,
+          name = "texturescroller",
+          type = "",
+          shape = "point",
+          x = 80,
+          y = 0,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["base_tex"] = "backgrounds/glow_purple_tile_oscillate",
+            ["scroll_tex"] = "backgrounds/perlin_noise_purple_looping",
+            ["type"] = "library"
+          }
+        },
+        {
+          id = 20,
+          name = "texturescroller",
+          type = "",
+          shape = "point",
+          x = 120,
+          y = 0,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["type"] = "hsv"
+          }
+        },
+        {
+          id = 30,
+          name = "tile_oscillate",
+          type = "",
+          shape = "rectangle",
+          x = 160,
+          y = 320,
+          width = 560,
+          height = 200,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
     {
       type = "tilelayer",
       x = 0,
@@ -65,11 +279,11 @@ return {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 0, 0,
-        10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 0, 0,
-        10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 0, 0,
-        28, 28, 28, 28, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 0, 0,
-        131, 131, 131, 131, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 0, 0,
+        10, 10, 10, 10, 10, 34, 2147483653, 2147483683, 2147483682, 132, 133, 134, 135, 34, 35, 5, 10, 10, 0, 0,
+        10, 10, 10, 10, 19, 43, 2147483672, 2147483692, 2147483691, 141, 142, 143, 144, 43, 44, 24, 45, 10, 0, 0,
+        10, 10, 10, 10, 10, 52, 2147483701, 2147483701, 2147483700, 150, 151, 152, 153, 52, 53, 53, 54, 10, 0, 0,
+        28, 28, 28, 28, 10, 10, 7, 8, 9, 159, 160, 161, 162, 7, 8, 9, 10, 10, 0, 0,
+        131, 131, 131, 131, 10, 10, 16, 17, 18, 7, 7, 7, 7, 16, 17, 18, 10, 10, 0, 0,
         0, 0, 0, 0, 28, 28, 28, 0, 0, 248, 248, 248, 248, 0, 0, 28, 28, 28, 0, 0,
         0, 0, 0, 0, 131, 131, 131, 0, 0, 258, 258, 258, 258, 0, 0, 131, 131, 131, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 268, 268, 268, 268, 0, 0, 0, 0, 0, 0, 0,
@@ -182,56 +396,6 @@ return {
     {
       type = "objectgroup",
       draworder = "topdown",
-      id = 8,
-      name = "objects_osc",
-      class = "",
-      visible = true,
-      opacity = 1,
-      offsetx = 0,
-      offsety = 0,
-      parallaxx = 1,
-      parallaxy = 1,
-      properties = {},
-      objects = {
-        {
-          id = 19,
-          name = "texturescroller",
-          type = "",
-          shape = "point",
-          x = 80,
-          y = 0,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["base_tex"] = "backgrounds/glow_purple_tile_oscillate",
-            ["scroll_tex"] = "backgrounds/perlin_noise_purple_looping",
-            ["type"] = "library"
-          }
-        },
-        {
-          id = 20,
-          name = "texturescroller",
-          type = "",
-          shape = "point",
-          x = 120,
-          y = 0,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["type"] = "hsv"
-          }
-        }
-      }
-    },
-    {
-      type = "objectgroup",
-      draworder = "topdown",
       id = 3,
       name = "objects",
       class = "",
@@ -289,6 +453,71 @@ return {
           opacity = 1,
           visible = true,
           properties = {}
+        },
+        {
+          id = 22,
+          name = "window_glow",
+          type = "",
+          shape = "point",
+          x = 280,
+          y = 280,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["big"] = "true"
+          }
+        },
+        {
+          id = 23,
+          name = "window_glow",
+          type = "",
+          shape = "point",
+          x = 600,
+          y = 280,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["big"] = "true"
+          }
+        },
+        {
+          id = 28,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 340,
+          y = 320,
+          width = 200,
+          height = 200,
+          rotation = 0,
+          opacity = 1,
+          gid = 1138,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 29,
+          name = "interactable",
+          type = "",
+          shape = "rectangle",
+          x = 360,
+          y = 280,
+          width = 160,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["text1_1"] = "* (It is a massive door with veins across it.)",
+            ["text1_2"] = "* (...[wait:5]Well, [wait:5]it's just that.)[wait:10]\n* (The developers haven't added anything yet.)",
+            ["text2_1"] = "* (Useless door.)"
+          }
         }
       }
     },
@@ -375,6 +604,20 @@ return {
           opacity = 1,
           visible = true,
           properties = {}
+        },
+        {
+          id = 24,
+          name = "spawn",
+          type = "",
+          shape = "point",
+          x = 80,
+          y = 400,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
         }
       }
     },
@@ -384,7 +627,7 @@ return {
       id = 5,
       name = "collision",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -501,6 +744,83 @@ return {
           height = 320,
           rotation = 0,
           opacity = 1,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 11,
+      name = "objects_over_party",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1.6,
+      properties = {},
+      objects = {
+        {
+          id = 35,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 40,
+          y = 1280,
+          width = 960,
+          height = 100,
+          rotation = 30,
+          opacity = 1,
+          gid = 1171,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 37,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 880,
+          y = 1440,
+          width = 960,
+          height = 100,
+          rotation = 150,
+          opacity = 1,
+          gid = 1171,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 12,
+      name = "objects_overer_party",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 2,
+      properties = {},
+      objects = {
+        {
+          id = 39,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1480,
+          y = 1560,
+          width = 1920,
+          height = 200,
+          rotation = 180,
+          opacity = 1,
+          gid = 1171,
           visible = true,
           properties = {}
         }

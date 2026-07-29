@@ -36,6 +36,11 @@ function spell:onCast(user, target)
 	if target.boss then
 		damage = math.floor((((user.chara:getStat("attack") * 130) / 20) - 3 * (target.defense)) * 1.7)
 	end
+	
+	-- Special Case for Mad Dummy
+	if (target.id == "mad_dummy") and target.the_true_fight then
+		damage = math.floor((((user.chara:getStat("attack") * 40) / 10) - 0.3 * (target.defense)) * 1.3)
+	end
 
 	local function generateSlash(scale_x)
 		local cutAnim = Sprite("effects/attack/sling")
@@ -71,6 +76,11 @@ function spell:onLightCast(user, target)
 	local damage = math.floor((((user.chara:getStat("attack") * 40) / 10) - 3 * (target.defense)) * 1.3)
 	if target.boss then
 		damage = math.floor((((user.chara:getStat("attack") * 13) / 10) - 3 * (target.defense)) * 1.7)
+	end
+	
+	-- Special Case for Mad Dummy
+	if (target.id == "mad_dummy") and target.the_true_fight then
+		damage = math.floor((((user.chara:getStat("attack") * 40) / 10) - 0.3 * (target.defense)) * 1.3)
 	end
 
 	local function generateSlash(scale_x)

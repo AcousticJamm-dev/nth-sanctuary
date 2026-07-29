@@ -76,8 +76,10 @@ function MadDummy:getEncounterText()
     elseif self.dialogue_index == 4 then
         return "[facec:susie/smile][voice:susie]* (Or you can just use my\nRUDE BUSTER, because it's\ncooler.)"
     elseif self.dialogue_index == 5 then
-        return "* You tell Mad Dummy that there is no such thing as a \"barrier\" here."
+        return "[facec:jamm/sling_ready][voice:jamm]* (You could pair it with my\nDARKSLING in the same turn!)"
     elseif self.dialogue_index == 6 then
+        return "* You tell Mad Dummy that there is no such thing as a \"barrier\" here."
+    elseif self.dialogue_index == 7 then
         return "* You are filled with the power of\nnot knowing what you're talking\nabout."
     end
 
@@ -136,6 +138,9 @@ function MadDummy:triggerTrueBattle(cause, noact)
     elseif self.trigger_cause == "ralsei action" then
         first_line = {"[float:2]YOU!!", "[float:2]Letting that\nfluffy boy\ndrag on\nforever!!", "[float:2]He's boring\nme to\nDEATH!!"}
         middle_line_1 = {"[float:2]I'm a ghost,\nand even I\nwant to\nbe free!!", "[float:2]Free from your\n\"GOAT\" FRIEND'S\nSPEECHES!"}
+    elseif self.trigger_cause == "jamm action" then
+        first_line = {"[float:2]YOU!!", "[float:2]And your\nknow-it-all\nbuddy's\nRUNNING MOUTH!!", "[float:2]Doesn't he\nknow when to\nSHUT UP!?!?"}
+        middle_line_1 = {"[float:2]He doesn't\neven know his\nplace!!", "[float:2]Who even is\nthe leader here,[wait:5]\nanyways!?"}
     elseif self.trigger_cause == "fight" then
         first_line = {"[float:2]YOU!!", "[float:2]Attacking a\ndefenseless\ntraining \"tool\"?!", "[float:2]Ghosts have\nfeelings too!", "[float:2]Coward.\nCoward!\nCOWARD!!"}
         middle_line_2 = {"[float:2]The way\nyou swing\nthat weapon...!", "[float:2]DREADFUL!!\nABHORRENT!!\nSTUPID!!"}
@@ -145,7 +150,8 @@ function MadDummy:triggerTrueBattle(cause, noact)
         first_line,
         {"[float:2]What?\nWhat?!\nWHAT?!?", "[float:2]What magic attacks?[wait:5]\nNo magic attacks\ncan hurt me!", "[float:2]These are all lies...!"},
         {"[float:2]You know what\nwould've been\nmillion times\nbetter?", "[float:2]If I'd spooked\naway your SOUL\nall by myself!"},
-        {"[float:2]That's right!\nAll by myself!", "[float:2]For I to cross\nthe BARRIER and\nbe free!"},
+        {"[float:2]That's right!\nAll by myself!"},
+		{"[float:2]For I to cross\nthe BARRIER and\nbe free!"},
         {"[float:2]WHAT?!\nWHAT DO YOU\nMEAN \"THERE'S\nNO BARRIER\"?!?", "[float:2]Foolish.\nFoolish!\nFOOLISH!!"},
         {"[float:2]I've spent\neons in this\nstupid room!", "[float:2]Waiting for\na fool like\nYOU!!", "[float:2]Waiting for\na PURPOSE!"},
         middle_line_1,

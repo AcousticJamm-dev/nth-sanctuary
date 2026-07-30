@@ -845,7 +845,10 @@ return {
 		cutscene:wait(4)
 		d:remove()
 		s:remove()
-
+		Game:addPartyMember("susie")
+		Game:addPartyMember("ralsei")
+		cutscene:loadMap("0_base_sanctum/base_center")
+		cutscene:gotoCutscene("primary.intro", nil, rect)
 
 		if love.filesystem.getInfo("saves/nth_sanctum/sanctuary.json") then
 			local data = JSON.decode(love.filesystem.read("saves/nth_sanctum/sanctuary.json"))
@@ -859,13 +862,6 @@ return {
 			love.filesystem.createDirectory("saves")
 			love.filesystem.write("saves/nth_sanctum/sanctuary.json", JSON.encode(data))
 		end
-
-		Game:addPartyMember("susie")
-		Game:addPartyMember("ralsei")
-		cutscene:loadMap("0_base_sanctum/base_center")
-		rect:remove()
-		cutscene:gotoCutscene("primary.intro")
-		
 		
     end
 }

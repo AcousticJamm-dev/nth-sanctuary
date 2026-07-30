@@ -1,5 +1,5 @@
 return {
-    intro = function (cutscene, should_skip_entire_intro)
+    intro = function (cutscene, should_skip_entire_intro, fader)
 		local susie, ralsei, kris = cutscene:getCharacter("susie"),cutscene:getCharacter("ralsei"),cutscene:getCharacter("kris")
 		if not should_skip_entire_intro then
 			Kristal.hideBorder(0)
@@ -24,6 +24,7 @@ return {
             save.visible = false
         end
 		Game.world.music:stop()
+		local f = fader
         cutscene:fadeOut(0)
         susie.x = 550
         kris.x = 630
@@ -43,6 +44,7 @@ return {
 		cutscene:detachFollowers()
 		if not skip_title then
 			cutscene:wait(3)
+			f:remove()
 			Assets.playSound("ch4_first_intro", MUSIC_VOLUME, 1)
 			local remove = {}
 			local sum = 85

@@ -29,12 +29,16 @@
         "MARCY": "Not viable.",
         "MARCI": "Also not viable.",
         "DDELTA": "No problem here.",
-        "LUCID": "Hell no, pick something else!"
+        "LUCID": "Hell no, pick something else!",
+        "GARBAG": "Add an \"E\" to it",
+        "GARBAGE": "Fat chud"
     },
     "namesDeny": [
         "MARCY",
         "MARCI",
-        "LUCID"
+        "LUCID",
+        "GARBAG",
+        "GARBAGE"
     ],
     
     "hardReset": false,

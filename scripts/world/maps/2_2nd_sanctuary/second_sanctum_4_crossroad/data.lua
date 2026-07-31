@@ -13,7 +13,8 @@ return {
   nextobjectid = 257,
   properties = {
     ["border"] = "church_b",
-    ["music"] = "second_church"
+    ["music"] = "second_church",
+    ["name"] = "Second Sanctuary - Split"
   },
   tilesets = {
     {
@@ -1884,7 +1885,7 @@ return {
             ["actor"] = "organik",
             ["sprite"] = "c",
             ["text1"] = "* Ah... [wait:5]the Flooded Sanctum.[wait:5]\n* A tomb of salt and silence.",
-            ["text2"] = "* Some say it's filled with the glitter of oasis... [wait:5]others[wait:5], the sea of sins",
+            ["text2"] = "* Some say it's filled with the glitter of oasis... [wait:5]others[wait:5], the sea of sins.",
             ["text3"] = "* But none truly knew the depths.[wait:5]\n* Down there,[wait:5] the memory drowns."
           }
         },

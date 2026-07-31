@@ -6,6 +6,7 @@
  <properties>
   <property name="border" value="church_b"/>
   <property name="music" value="second_church"/>
+  <property name="name" value="Second Sanctuary - Split"/>
  </properties>
  <tileset firstgid="1" source="../../../tilesets/bg_dw_church_2_tileset.tsx"/>
  <tileset firstgid="199" source="../../../tilesets/bg_dw_church_tileset_new.tsx"/>
@@ -688,7 +689,7 @@ YET BURNING WITH PROMISE.</property>
     <property name="sprite" value="c"/>
     <property name="text1">* Ah... [wait:5]the Flooded Sanctum.[wait:5]
 * A tomb of salt and silence.</property>
-    <property name="text2" value="* Some say it's filled with the glitter of oasis... [wait:5]others[wait:5], the sea of sins"/>
+    <property name="text2" value="* Some say it's filled with the glitter of oasis... [wait:5]others[wait:5], the sea of sins."/>
     <property name="text3">* But none truly knew the depths.[wait:5]
 * Down there,[wait:5] the memory drowns.</property>
    </properties>

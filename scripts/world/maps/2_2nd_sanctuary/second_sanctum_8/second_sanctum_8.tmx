@@ -6,7 +6,7 @@
  <properties>
   <property name="border" value="church_b"/>
   <property name="music" value="second_church"/>
-  <property name="name" value="Second Sanctuary - Split"/>
+  <property name="name" value="Second Sanctuary - Split 2"/>
  </properties>
  <tileset firstgid="1" source="../../../tilesets/church_objects.tsx"/>
  <tileset firstgid="110" source="../../../tilesets/bg_dw_church_tileset_new.tsx"/>

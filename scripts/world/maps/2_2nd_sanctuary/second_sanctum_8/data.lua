@@ -14,7 +14,7 @@ return {
   properties = {
     ["border"] = "church_b",
     ["music"] = "second_church",
-    ["name"] = "Second Sanctuary - Split"
+    ["name"] = "Second Sanctuary - Split 2"
   },
   tilesets = {
     {

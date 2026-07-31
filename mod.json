@@ -27,11 +27,14 @@
         "MERG": "What's up guys, today we are\nplaying Deltarune: #th Sanctuary, \netc etc...",
         "CHERRY": "hi its me chernobyl",
         "MARCY": "Not viable.",
+        "MARCI": "Also not viable.",
         "DDELTA": "No problem here.",
         "LUCID": "Hell no, pick something else!"
     },
     "namesDeny": [
-        "MARCY"
+        "MARCY",
+        "MARCI",
+        "LUCID"
     ],
     
     "hardReset": false,

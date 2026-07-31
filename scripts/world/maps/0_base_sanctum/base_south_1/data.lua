@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 21,
-  nextobjectid = 135,
+  nextobjectid = 138,
   properties = {
     ["music"] = "homebase"
   },
@@ -1246,25 +1246,6 @@ return {
           }
         },
         {
-          id = 132,
-          name = "cameratarget",
-          type = "",
-          shape = "rectangle",
-          x = 960,
-          y = 600,
-          width = 280,
-          height = 80,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["lockx"] = false,
-            ["locky"] = true,
-            ["marker"] = "targ",
-            ["time"] = 0.25
-          }
-        },
-        {
           id = 134,
           name = "prophecy",
           type = "",
@@ -1277,6 +1258,8 @@ return {
           opacity = 1,
           visible = true,
           properties = {
+            ["fade_edges"] = true,
+            ["no_back"] = true,
             ["offx"] = 150,
             ["offy"] = -100,
             ["spr_offx"] = 50,
@@ -1284,6 +1267,22 @@ return {
             ["text"] = "THE HEROES FIND THE DEOXYNN.\nTHE DEOXYNN, WHO LIES ON COLD GROUND.",
             ["texture"] = "jamm",
             ["txt_offy"] = -32
+          }
+        },
+        {
+          id = 137,
+          name = "roomglow",
+          type = "",
+          shape = "point",
+          x = 160,
+          y = 0,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["prophecy"] = true
           }
         }
       }
@@ -1379,20 +1378,6 @@ return {
           shape = "point",
           x = 320,
           y = 990,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 133,
-          name = "targ",
-          type = "",
-          shape = "point",
-          x = 1100,
-          y = 520,
           width = 0,
           height = 0,
           rotation = 0,
@@ -1680,8 +1665,8 @@ return {
           name = "filter",
           type = "",
           shape = "point",
-          x = 40,
-          y = 40,
+          x = 200,
+          y = 0,
           width = 0,
           height = 0,
           rotation = 0,

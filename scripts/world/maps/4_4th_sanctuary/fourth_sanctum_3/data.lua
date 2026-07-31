@@ -14,7 +14,7 @@ return {
   properties = {
     ["border"] = "church_d",
     ["music"] = "fourth_church",
-    ["name"] = "4th Sanctuary - Room 2\n"
+    ["name"] = "4th Sanctuary - Room 2"
   },
   tilesets = {
     {

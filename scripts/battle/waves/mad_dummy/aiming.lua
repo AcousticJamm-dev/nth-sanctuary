@@ -66,62 +66,111 @@ function Aiming:onStart()
 
             local old_update = bullet.update
             bullet.update = function(b)
+                local old_x, old_y = b.x, b.y
+            
                 old_update(b)
+            
+                local new_x, new_y = b.x, b.y
                 local arena = Game.battle.arena
-                
+            
+                local is_inside = b.x > arena:getLeft() + 8
+                    and b.x < arena:getRight() - 8
+                    and b.y > arena:getTop() + 8
+                    and b.y < arena:getBottom() - 8
+            
+                if b.bounce_state == 0 then
+                    if is_inside then
+                        b.bounce_state = 1
+                    end
+                elseif b.bounce_state == 1 and not is_inside then
+                    b.bounce_state = 2
+                end
+            
                 if b.bounce_state == 2 then
                     for _, enemy in ipairs(self:getAttackers()) do
                         if enemy.enemy_hitbox and b:collidesWith(enemy.enemy_hitbox) then
                             local dmg = math.floor(enemy.max_health / 50) + math.random(-6, 12)
-                            
+            
                             enemy:hurt(math.max(1, dmg), Game.battle.party[1], nil, COLORS.white)
                             Assets.stopAndPlaySound("damage")
-                            
+            
                             enemy:shake(6, 0)
                             b:remove()
                             return
                         end
                     end
-                end
-
-                local is_inside = b.x > arena:getLeft() + 8 and b.x < arena:getRight() - 8 and 
-                                 b.y > arena:getTop() + 8 and b.y < arena:getBottom() - 8
-
-                if b.bounce_state == 0 then
-                    if is_inside then b.bounce_state = 1 end
-                elseif b.bounce_state == 1 then
-                    if not is_inside then b.bounce_state = 2 end
-                elseif b.bounce_state == 2 then
-                    local can_bounce = true
-                    if b.x >= arena:getRight() - 12 and arena.right_side_alpha <= 0 then
-                        can_bounce = false
-                    end
-
-                    if can_bounce then
+            
+                    local distance = MathUtils.dist(old_x, old_y, new_x, new_y)
+                    local steps = math.max(1, math.ceil(distance / 4))
+                    local hit_line = nil
+            
+                    for i = 1, steps do
+                        local amount = i / steps
+            
+                        b.x = old_x + (new_x - old_x) * amount
+                        b.y = old_y + (new_y - old_y) * amount
+            
                         for _, line in ipairs(arena.collider.colliders) do
-                            if b:collidesWith(line) and b.prev_line ~= line then
-                                Assets.stopAndPlaySound("bump")
-                                local vx, vy = Vector.fromPolar(b.physics.direction, b.physics.speed)
-                                
-                                local is_horizontal = math.abs(line.x - line.x2) > math.abs(line.y - line.y2)
-                                if is_horizontal then
-                                    arena.y = (vy < 0) and arena.y - 2 or arena.y + 2
-                                else
-                                    arena.x = (vx < 0) and arena.x - 2 or arena.x + 2
-                                    if math.max(line.x, line.x2) >= arena.width - 2 then
-                                        arena.right_side_alpha = math.max(0, arena.right_side_alpha - 0.05)
-                                    end
-                                end
-
-                                local nvx, nvy = Vector.mirror(vx, vy, line.x - line.x2, line.y - line.y2)
-                                b.physics.direction = Vector.toPolar(nvx, nvy)
-                                b.rotation = b.physics.direction
-                                b.prev_line = line
+                            local is_right_side =
+                                math.abs(line.x - line.x2) < 0.1
+                                and math.max(line.x, line.x2) >= arena.width - 2
+            
+                            if not (is_right_side and arena.right_side_alpha <= 0)
+                                and b.prev_line ~= line
+                                and b:collidesWith(line)
+                            then
+                                hit_line = line
                                 break
                             end
                         end
+            
+                        if hit_line then
+                            break
+                        end
                     end
-                    
+            
+                    if hit_line then
+                        Assets.stopAndPlaySound("bump")
+            
+                        local vx, vy = Vector.fromPolar(
+                            b.physics.direction,
+                            b.physics.speed
+                        )
+            
+                        local is_horizontal =
+                            math.abs(hit_line.x - hit_line.x2)
+                            > math.abs(hit_line.y - hit_line.y2)
+            
+                        if is_horizontal then
+                            arena.y = (vy < 0)
+                                and arena.y - 2
+                                or arena.y + 2
+                        else
+                            arena.x = (vx < 0)
+                                and arena.x - 2
+                                or arena.x + 2
+            
+                            if math.max(hit_line.x, hit_line.x2) >= arena.width - 2 then
+                                arena.right_side_alpha =
+                                    math.max(0, arena.right_side_alpha - 0.05)
+                            end
+                        end
+            
+                        local nvx, nvy = Vector.mirror(
+                            vx,
+                            vy,
+                            hit_line.x - hit_line.x2,
+                            hit_line.y - hit_line.y2
+                        )
+            
+                        b.physics.direction = Vector.toPolar(nvx, nvy)
+                        b.rotation = b.physics.direction
+                        b.prev_line = hit_line
+                    else
+                        b.x = new_x
+                        b.y = new_y
+                    end
+            
                     if not b:collidesWith(arena.collider) then
                         b.prev_line = nil
                     end

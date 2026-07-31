@@ -6,12 +6,14 @@ function Basic:init()
     super.init(self)
     self.g = Game.battle.enemies[1].sprite
     self.time = 11
+    self.siner = 0
 end
 
 function Basic:onStart()
     self.timer:tween(1, self.g.hand, {alpha = 0}, 'linear')
     self.timer:tween(1, self.g.hand3, {alpha = 0}, 'linear')
-    
+    self.arena_start_x = Game.battle.arena.x
+    self.arena_start_y = Game.battle.arena.y
     -- Every 0.33 seconds...
     self.timer:script(function (wait)
         local hand = Sprite("enemies/creature_a/hand")
@@ -44,14 +46,16 @@ function Basic:onStart()
         wait(0.25)
         Assets.playSound("heavyswing", 1.5)
         self.timer:tween(0.2, hand2, {x = hand2.x + 50}, "out-circ", function() 
-            self.timer:tween(0.5, hand2, {x = Game.battle.arena.right}, 'in-expo', function()
+            self.timer:tween(0.5, hand2, {x = Game.battle.arena.right + 30}, 'in-expo', function()
                 Game.battle.arena:shake(10, 0, 0.5, 1/30)
                 Assets.playSound("impact", 1, 0.9)
             end)
         end)
-        self.timer:tween(0.5, Game.battle.arena, {x = Game.battle.arena.right + 50}, 'in-expo', function()
-        end)
-        wait(1)
+        -- self.timer:tween(0.5, Game.battle.arena, {x = Game.battle.arena.right + 50}, 'in-expo', function()
+        -- end)
+        self.moving = true
+        wait(0.6)
+        self.moving = false
         local x1, x2 = 0, Game.battle.arena.width
         self.timer:every(1/7, function()
             local p = love.math.random(x1, x2)
@@ -71,7 +75,11 @@ end
 
 function Basic:update()
     -- Code here gets called every frame
-
+    if self.moving then
+        self.siner = self.siner + DT
+        local offset = math.sin(self.siner * 1.5) * 60
+        Game.battle.arena:setPosition(self.arena_start_x + offset, self.arena_start_y)
+    end
     super.update(self)
 end
 

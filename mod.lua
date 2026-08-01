@@ -22,6 +22,10 @@ function Mod:isWeird()
     return (Game:getFlag("route") == 3)
 end
 
+function Mod:shouldGoToHell()
+    return Game:getFlag("unlock_travel")
+end
+
 function Mod:increaseIndoct(amt)
     local amount = amt or 1
     local flag = Game:getFlag("indoct-con")

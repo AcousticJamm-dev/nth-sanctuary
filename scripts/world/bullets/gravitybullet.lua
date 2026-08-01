@@ -4,18 +4,8 @@ function TestBullet:init(x, y)
     super.init(self, x, y, "world/bullets/tinystar")
 
     self:setOrigin(0.5)
-    self.sprite:setOrigin(0.5)
 
-    self.sprite.graphics.spin = 0.2
-
-    if flip then
-        self.flip_x = true
-        self.physics.direction = math.pi
-    end
-    if flip2 then
-        self.physics.direction = math.rad(90)
-        self.rotation = math.rad(90)
-    end
+    self.graphics.spin = 0.2
 
     self.damage = 20
 

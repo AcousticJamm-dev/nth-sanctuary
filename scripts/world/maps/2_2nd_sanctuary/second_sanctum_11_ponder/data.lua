@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 13,
-  nextobjectid = 30,
+  nextobjectid = 32,
   properties = {
     ["border"] = "church_b",
     ["music"] = "second_church"
@@ -251,6 +251,20 @@ return {
           opacity = 1,
           visible = true,
           properties = {}
+        },
+        {
+          id = 30,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 160,
+          y = 0,
+          width = 320,
+          height = 80,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
         }
       }
     },
@@ -376,6 +390,24 @@ return {
           properties = {
             ["idlealpha"] = 0
           }
+        },
+        {
+          id = 31,
+          name = "interactable",
+          type = "",
+          shape = "rectangle",
+          x = 440,
+          y = 120,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          gid = 2147484429,
+          visible = true,
+          properties = {
+            ["cutscene"] = "events.moss3",
+            ["usetile"] = "true"
+          }
         }
       }
     },
@@ -393,24 +425,6 @@ return {
       parallaxy = 1,
       properties = {},
       objects = {
-        {
-          id = 5,
-          name = "interactable",
-          type = "",
-          shape = "rectangle",
-          x = 440,
-          y = 120,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          gid = 2147484429,
-          visible = true,
-          properties = {
-            ["cutscene"] = "events.moss3",
-            ["usetile"] = "true"
-          }
-        },
         {
           id = 27,
           name = "transition",

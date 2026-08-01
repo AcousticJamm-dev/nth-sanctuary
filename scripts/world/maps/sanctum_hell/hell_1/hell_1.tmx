@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="24" tilewidth="40" tileheight="40" infinite="0" nextlayerid="19" nextobjectid="123">
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="30" height="24" tilewidth="40" tileheight="40" infinite="0" nextlayerid="19" nextobjectid="124">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -203,13 +203,6 @@
    </properties>
    <point/>
   </object>
-  <object id="116" name="enemy" x="1040" y="585">
-   <properties>
-    <property name="actor" value="leech"/>
-    <property name="encounter" value="leech_spawn"/>
-   </properties>
-   <point/>
-  </object>
   <object id="107" name="enemy" x="640" y="120">
    <properties>
     <property name="actor" value="leech"/>
@@ -259,6 +252,15 @@
     <property name="marker" value="hell"/>
    </properties>
   </object>
+  <object id="123" name="npc" x="740" y="490">
+   <properties>
+    <property name="actor" value="organik"/>
+    <property name="cond" value="not Game:getFlag(&quot;unlock_travel&quot;)"/>
+    <property name="sprite" value="br"/>
+    <property name="text1" value="* (Immobilized by fear.)"/>
+   </properties>
+   <point/>
+  </object>
  </objectgroup>
  <objectgroup color="#ff0000" id="5" name="collision">
   <object id="67" x="0" y="320" width="80" height="120"/>
@@ -281,7 +283,7 @@
   <object id="119" x="440" y="840" width="760" height="120"/>
  </objectgroup>
  <objectgroup id="3" name="markers">
-  <object id="4" name="spawn" x="660" y="510">
+  <object id="4" name="spawn" x="640" y="520">
    <point/>
   </object>
   <object id="51" name="frisk_room_exit" x="40" y="280">
@@ -303,34 +305,6 @@
    <point/>
   </object>
  </objectgroup>
- <layer id="17" name="tile_party" width="30" height="24" parallaxx="1.1">
-  <data encoding="csv">
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,559,560,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,559,560,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,559,560,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,559,560,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,559,560,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,559,560,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,559,560,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,559,560,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,559,560,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,559,560,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,559,560,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,559,560,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,559,560,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,559,560,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,559,560,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,559,560,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,559,560,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,559,560,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,559,560,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,559,560,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,559,560,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,559,560,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,559,560,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,559,560,0,0,0,0,0,0,0,0,0,0,0,0
-</data>
- </layer>
  <objectgroup id="2" name="objects_overlay">
   <object id="105" name="roomglow" x="120" y="0">
    <properties>

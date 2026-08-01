@@ -1,7 +1,7 @@
 return {
   version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.12.1",
+  tiledversion = "1.12.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 13,
-  nextobjectid = 93,
+  nextobjectid = 98,
   properties = {
     ["border"] = "church_b",
     ["music"] = "second_church",
@@ -925,23 +925,6 @@ return {
           }
         },
         {
-          id = 71,
-          name = "script",
-          type = "",
-          shape = "rectangle",
-          x = 0,
-          y = 320,
-          width = 40,
-          height = 80,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["cutscene"] = "events.postchase",
-            ["once"] = "true"
-          }
-        },
-        {
           id = 84,
           name = "window_glow",
           type = "",
@@ -1015,21 +998,20 @@ return {
           properties = {}
         },
         {
-          id = 41,
-          name = "savepoint",
+          id = 97,
+          name = "script",
           type = "",
           shape = "rectangle",
-          x = 240,
-          y = 280,
+          x = 0,
+          y = 320,
           width = 40,
-          height = 40,
+          height = 80,
           rotation = 0,
           opacity = 1,
           visible = true,
           properties = {
-            ["cond"] = "Game:getFlag(\"chase_cutscene_prog\", 0) >= 2",
-            ["text1"] = "* (Despite the tense battle,[wait:5] when everything looked hopeless...)",
-            ["text2"] = "* (You are filled with the power of courage burning the dark away.)"
+            ["cutscene"] = "events.postchase",
+            ["once"] = "true"
           }
         }
       }

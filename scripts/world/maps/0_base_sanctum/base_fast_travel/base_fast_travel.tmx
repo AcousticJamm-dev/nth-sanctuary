@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="27" height="48" tilewidth="40" tileheight="40" infinite="0" nextlayerid="11" nextobjectid="140">
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="27" height="48" tilewidth="40" tileheight="40" infinite="0" nextlayerid="11" nextobjectid="142">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
  <properties>
   <property name="border" value="blank"/>
   <property name="music" value="fast-travel"/>
+  <property name="name" value="??? - Fast Travel"/>
  </properties>
  <tileset firstgid="1" source="../../../tilesets/bg_dw_church_library_2_tileset.tsx"/>
  <tileset firstgid="261" source="../../../tilesets/church_objects.tsx"/>
@@ -438,23 +439,12 @@
   <object id="113" name="entry_debug" x="440" y="1000">
    <point/>
   </object>
-  <object id="114" name="npc" x="760" y="1000">
-   <properties>
-    <property name="actor" value="bibliox_npc"/>
-    <property name="text1">* Mumble,[wait:5] mumble...[wait:5]
-* The [color:yellow]TRAVEL[color:reset] button...</property>
-    <property name="text2">* Mumble...[wait:5] mumble...[wait:5]
-* It's somewhere in the menu...</property>
-    <property name="text3" value="* Where does it lead?"/>
-    <property name="text4" value="* Oh,[wait:5] I don't remember..."/>
-   </properties>
-   <point/>
-  </object>
   <object id="120" name=" " gid="965" x="360" y="1600" width="160" height="160"/>
   <object id="134" gid="972" x="200" y="1600" width="160" height="160"/>
   <object id="138" x="370.545" y="1414.55">
    <polyline points="0,0 -40,40 -40.3333,21 -39.6667,39.6667 -17,39.6667"/>
   </object>
+  <object id="141" name="savepoint" x="760" y="1000"/>
  </objectgroup>
  <objectgroup id="7" name="objects_lightarea" visible="0">
   <object id="28" gid="372" x="40" y="2040" width="160" height="1980">

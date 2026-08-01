@@ -309,7 +309,6 @@ return {
                 cutscene:wait(0.75)
                 text:advance()
                 cutscene:wait(function () return text:isDone() end)
-                Game.stage:removeChild(text)
                 cutscene:wait(0.75)
             else
                 --[[ cutscene:wait(waitfor)
@@ -333,7 +332,6 @@ return {
                     end
                 end)
                 cutscene:wait(function () return fade >= 1 end)
-                Game.stage:removeChild(text)
                 cutscene:wait(0.75)
             end
         end
@@ -344,8 +342,12 @@ return {
         Game.world.music:play("snd_plorgius_next", 1.25, 0.65)
         Game.stage:addFX(CrtFX(), "vhsfx")
         cutscene:wait(1)
-        texter("Insert The[wait:80]\nBelch.Plorgius.[wait:120]")
+        texter("Insert The[wait:80]\nBelch.Plorgius.[wait:120]", nil, nil)
+        Mod.inserted_plorgius = nil
+        cutscene:wait(function() return Mod.inserted_plorgius ~= nil end)
         Game.stage:removeFX("vhsfx")
+
+        
         Game:setFlag("belch4", true)
         Game:saveQuick()
         Game:gameOver(SCREEN_WIDTH/2, SCREEN_HEIGHT/2)

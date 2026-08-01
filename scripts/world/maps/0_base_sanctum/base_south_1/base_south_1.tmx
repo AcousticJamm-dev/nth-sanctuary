@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="43" height="41" tilewidth="40" tileheight="40" infinite="0" nextlayerid="21" nextobjectid="138">
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="43" height="41" tilewidth="40" tileheight="40" infinite="0" nextlayerid="21" nextobjectid="139">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -332,6 +332,7 @@
    <polygon points="0,0 160,-160 160,0"/>
   </object>
   <object id="131" x="160" y="0" width="360" height="280"/>
+  <object id="138" x="240" y="1200" width="160" height="40"/>
  </objectgroup>
  <objectgroup id="15" name="objects_magicglass">
   <object id="54" name="churchmagicglass" x="800" y="1160" width="80" height="480">

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="34" height="18" tilewidth="40" tileheight="40" infinite="0" nextlayerid="13" nextobjectid="93">
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="34" height="18" tilewidth="40" tileheight="40" infinite="0" nextlayerid="13" nextobjectid="98">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -201,12 +201,6 @@
     <property name="marker" value="entry2"/>
    </properties>
   </object>
-  <object id="71" name="script" x="0" y="320" width="40" height="80">
-   <properties>
-    <property name="cutscene" value="events.postchase"/>
-    <property name="once" value="true"/>
-   </properties>
-  </object>
   <object id="84" name="window_glow" x="100" y="220">
    <point/>
   </object>
@@ -225,11 +219,10 @@
   <object id="89" name="window_glow" x="1260" y="220">
    <point/>
   </object>
-  <object id="41" name="savepoint" x="240" y="280" width="40" height="40">
+  <object id="97" name="script" x="0" y="320" width="40" height="80">
    <properties>
-    <property name="cond" value="Game:getFlag(&quot;chase_cutscene_prog&quot;, 0) &gt;= 2"/>
-    <property name="text1" value="* (Despite the tense battle,[wait:5] when everything looked hopeless...)"/>
-    <property name="text2" value="* (You are filled with the power of courage burning the dark away.)"/>
+    <property name="cutscene" value="events.postchase"/>
+    <property name="once" value="true"/>
    </properties>
   </object>
  </objectgroup>

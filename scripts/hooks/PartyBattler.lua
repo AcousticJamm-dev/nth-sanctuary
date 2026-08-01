@@ -54,17 +54,15 @@ end
 function PartyBattler:update()
     super.update(self)
     for i, battler in ipairs(Game.party) do
-        if battler.id == self.chara.id and self.y > SCREEN_HEIGHT then
+        if battler.id == self.chara.id and self.y > SCREEN_HEIGHT and StringUtils.contains(self.chara.id, "cuptain") and self.chara.health < 0 then
             Mod.libs["midbattleparty"]:removePartyBattler(i)
             table.remove(Game.party, i)
-            if self.chara.health < 0 then
                 self.chara.health = self.chara:getStat("health")
-            end
-            self:remove()
-            break
+                self:remove()
         end
     end
 end
+
 function PartyBattler:removeAssistHealth(amount, swoon)
     if (self.chara:getAssistHealth() <= 0) then
         amount = MathUtils.round(amount / 4)

@@ -582,7 +582,7 @@ return {
 		cutscene:wait(1)
 		cutscene:text("* (Nobody has noticed that the enemy dropped something.)")
 		cutscene:text("* (Instinctively, [wait:5]you pick it up.)")
-		cutscene:text("* (This object was black in color. [wait:10]Like glass.)")
+		cutscene:text("* (This object was black in color. [wait:10]Like tinted glass.)")
 		cutscene:text("* (You can't help but feel the urge to keep it.)")
 		spr:remove()
 		Mod:setDarkShard(Mod.DarkShardID.SecondSanctuary, true)

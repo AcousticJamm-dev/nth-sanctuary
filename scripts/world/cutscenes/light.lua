@@ -222,7 +222,7 @@ return {
 		end
 		cutscene:wait(1)
 		if skip_title then
-			local items_to_add = {"scarlixir","scarlixir","scarlixir","rhapsotea","rhapsotea","rhapsotea","ancientsweet","shadowcrystal","claimbclaws","sheetmusic"}
+			local items_to_add = {"scarlixir","scarlixir","scarlixir","rhapsotea","rhapsotea","rhapsotea","ancientsweet","claimbclaws","sheetmusic"}
 			Game:addPartyMember("susie")
 			Game:addPartyMember("ralsei")
 			cutscene:detachCamera()
@@ -238,7 +238,7 @@ return {
 			Game:getPartyMember("susie"):setArmor(2, "shadowmantle")
 			Game:getPartyMember("ralsei"):setWeapon("scarfmark")
 			Game:getPartyMember("ralsei"):setArmor(1, "princessrbn")
-			Game:getPartyMember("ralsei"):setArmor(2, nil)
+			Game:getPartyMember("ralsei"):setArmor(2, "mysticband")
 			Kristal.hideBorder(0)
 			cutscene:gotoCutscene("primary.intro", true)
 			return
@@ -834,7 +834,7 @@ return {
 		Game.stage:addChild(s)
 		s:setPosition(200, 500)
 		s:play(1/7, true)
-		cutscene:slideTo(s, s.x, 0, 10, 'out-circ')
+		cutscene:slideTo(s, s.x, 100, 10, 'out-circ')
 		cutscene:wait(1)
 		local rect = Rectangle(0,0,999,999)
 		rect:setColor(COLORS.black)
@@ -848,6 +848,24 @@ return {
 		Game:addPartyMember("susie")
 		Game:addPartyMember("ralsei")
 		cutscene:loadMap("0_base_sanctum/base_center")
+
+			local items_to_add = {"scarlixir","scarlixir","scarlixir","rhapsotea","rhapsotea","rhapsotea","ancientsweet","claimbclaws","sheetmusic"}
+			cutscene:detachCamera()
+
+			for _, item in ipairs(items_to_add) do
+				Game.inventory:addItem(item)
+			end
+			Game:getPartyMember("kris"):setWeapon("winglade")
+			Game:getPartyMember("kris"):setArmor(1, "waferguard")
+			Game:getPartyMember("kris"):setArmor(2, "tennatie")
+			Game:getPartyMember("susie"):setWeapon("absorbax")
+			Game:getPartyMember("susie"):setArmor(1, "spikeband")
+			Game:getPartyMember("susie"):setArmor(2, "shadowmantle")
+			Game:getPartyMember("ralsei"):setWeapon("scarfmark")
+			Game:getPartyMember("ralsei"):setArmor(1, "princessrbn")
+			Game:getPartyMember("ralsei"):setArmor(2, "mysticband")
+			Kristal.hideBorder(0)
+
 		cutscene:gotoCutscene("primary.intro", nil, rect)
 
 		if love.filesystem.getInfo("saves/nth_sanctum/sanctuary.json") then

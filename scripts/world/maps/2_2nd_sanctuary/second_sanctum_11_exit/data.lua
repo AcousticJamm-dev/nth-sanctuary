@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.12.1",
+  tiledversion = "1.12.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 21,
-  nextobjectid = 332,
+  nextobjectid = 334,
   properties = {
     ["border"] = "church_b",
     ["music"] = "second_church"
@@ -580,6 +580,24 @@ return {
           properties = {
             ["map"] = "2_2nd_sanctuary/second_sanctum_12",
             ["marker"] = "entry"
+          }
+        },
+        {
+          id = 332,
+          name = "savepoint",
+          type = "",
+          shape = "rectangle",
+          x = 820,
+          y = 160,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["text1"] = "* Limitless spires span the horizon.",
+            ["text2"] = "* You can't help but feel small with how big some of them are.",
+            ["text3"] = "* The power of literature shines within you."
           }
         }
       }

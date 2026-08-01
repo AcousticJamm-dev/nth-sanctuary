@@ -4,9 +4,19 @@ local map, super = Class(Map, "second_sanctum_9")
 function map:init(world, data)
 	super.init(self, world, data)
 	self.go_con = 0
+	if Game:getFlag("chase_cutscene_prog") == 1 then
+		self.music = "cultchase"
+	else
+		self.music = "second_church"
+	end
 end
 
 function map:onEnter()
+	if Game:getFlag("chase_cutscene_prog", 0) == 1 then
+		for _, f in ipairs(Game.world.followers) do
+			f.visible = false
+		end
+	end
 end
 
 function map:update()

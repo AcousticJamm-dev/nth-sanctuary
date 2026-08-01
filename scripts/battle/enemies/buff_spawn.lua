@@ -55,7 +55,12 @@ function Dummy:init()
     end
 
     -- Register act called "Smile"
-    self:registerAct("Steroids", "Juice\nup", "susie")
+    self:registerAct("Steroids", "Big Gain,\nBig Pain", "susie")
+
+    self:registerAct("BigBain", "Think!\nThink!\nThink!", "ralsei")
+    
+    self:registerAct("ArmUp", "Throw\nhands", "jamm", 32)
+    
     
     -- Register party act with Ralsei called "Tell Story"
     -- (second argument is description, usually empty

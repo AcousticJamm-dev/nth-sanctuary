@@ -1,7 +1,7 @@
 return {
   version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.12.1",
+  tiledversion = "1.12.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 20,
-  nextobjectid = 67,
+  nextobjectid = 70,
   properties = {
     ["border"] = "base_sanctum",
     ["ft_whitelist"] = true,
@@ -1166,6 +1166,44 @@ return {
           visible = true,
           properties = {
             ["text1"] = "* (You saw your reflection in the shards of glass.)"
+          }
+        },
+        {
+          id = 68,
+          name = "npc",
+          type = "",
+          shape = "point",
+          x = 600,
+          y = 240,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["actor"] = "organik",
+            ["cond"] = "not Game:getFlag(\"unlock_travel\")",
+            ["sprite"] = "br",
+            ["text1"] = "* (They don't look like they'll be moving any time soon.)"
+          }
+        },
+        {
+          id = 69,
+          name = "npc",
+          type = "",
+          shape = "point",
+          x = 920,
+          y = 420,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["actor"] = "organik",
+            ["cond"] = "not Game:getFlag(\"unlock_travel\")",
+            ["sprite"] = "c",
+            ["text1"] = "* (This one won't budge either.)"
           }
         }
       }

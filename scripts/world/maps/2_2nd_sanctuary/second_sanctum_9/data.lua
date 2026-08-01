@@ -1,5 +1,5 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
   tiledversion = "1.12.2",
   class = "",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 21,
-  nextobjectid = 1072,
+  nextobjectid = 1076,
   properties = {
     ["border"] = "church_b",
     ["music"] = "second_church"
@@ -393,7 +393,7 @@ return {
           shape = "rectangle",
           x = 200,
           y = 840,
-          width = 1480,
+          width = 1400,
           height = 80,
           rotation = 0,
           opacity = 1,
@@ -991,6 +991,23 @@ return {
           opacity = 1,
           visible = true,
           properties = {}
+        },
+        {
+          id = 1075,
+          name = "quicksave",
+          type = "",
+          shape = "rectangle",
+          x = 1640,
+          y = 820,
+          width = 40,
+          height = 120,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["cond"] = "Game:getFlag(\"chase_cutscene_prog\", 0) < 2",
+            ["marker"] = "entry2"
+          }
         }
       }
     },

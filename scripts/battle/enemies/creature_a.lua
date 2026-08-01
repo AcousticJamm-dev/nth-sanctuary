@@ -36,7 +36,8 @@ function Dummy:init()
         "creatures/guei/basic",
         "creatures/guei/guei_fire",
         "creatures/guei/box_grab_rain",
-        
+        "creatures/guei/suckstar",
+        "creatures/guei/guei_inf",
 
     }
 
@@ -69,6 +70,11 @@ end
 
 function Dummy:getHealthDisplay()
     return "???"
+end
+
+function Dummy:selectWave(battler)
+    self.selected_wave = self.waves[((Game.battle.turn_count - 1) % #self.waves) + 1]
+    return self.selected_wave
 end
 
 function Dummy:update()

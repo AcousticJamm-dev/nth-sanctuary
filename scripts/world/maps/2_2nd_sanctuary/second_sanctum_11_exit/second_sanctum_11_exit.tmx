@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="32" height="18" tilewidth="40" tileheight="40" infinite="0" nextlayerid="21" nextobjectid="332">
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="32" height="18" tilewidth="40" tileheight="40" infinite="0" nextlayerid="21" nextobjectid="334">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -182,6 +182,13 @@
    <properties>
     <property name="map" value="2_2nd_sanctuary/second_sanctum_12"/>
     <property name="marker" value="entry"/>
+   </properties>
+  </object>
+  <object id="332" name="savepoint" x="820" y="160">
+   <properties>
+    <property name="text1" value="* Limitless spires span the horizon."/>
+    <property name="text2" value="* You can't help but feel small with how big some of them are."/>
+    <property name="text3" value="* The power of literature shines within you."/>
    </properties>
   </object>
  </objectgroup>

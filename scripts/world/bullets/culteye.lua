@@ -5,12 +5,13 @@ function TestBullet:init(x, y, flip, flip2)
     self.alpha = 0
     self:fadeToSpeed(1, 0.1)
     self:setOrigin(0.5)
-    self.sprite:setOrigin(0.5)
+
+    self.graphics.spin = 0.2
     
     self:setParallax(0)
-    self.sprite.graphics.spin = 0.1
-    self.sprite:setScale(4)
-    self.sprite.graphics.grow = -0.1
+    self.graphics.spin = 0.1
+    self:setScale(4)
+    self.graphics.grow = -0.1
     self.timer = Timer()
     self.timer:after(1, function()
             self:remove()

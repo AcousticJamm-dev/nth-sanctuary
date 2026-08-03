@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="70" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="11" nextobjectid="25">
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="70" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="11" nextobjectid="27">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -24,11 +24,6 @@
   <object id="20" gid="1703" x="160" y="560" width="200" height="289"/>
   <object id="21" gid="1703" x="360" y="560" width="200" height="289"/>
   <object id="22" gid="1703" x="-40" y="560" width="200" height="289"/>
- </objectgroup>
- <objectgroup id="7" name="markers">
-  <object id="5" name="spawn" x="2740" y="443">
-   <point/>
-  </object>
  </objectgroup>
  <objectgroup id="8" name="collision">
   <object id="6" x="0" y="448" width="2840" height="40"/>
@@ -77,6 +72,12 @@
     <property name="color" type="color" value="#ffffffff"/>
    </properties>
   </object>
+  <object id="25" name="transition" x="-40" y="320" width="40" height="120">
+   <properties>
+    <property name="map" value="4_4th_sanctuary/fourth_sanctum_10"/>
+    <property name="marker" value="entry"/>
+   </properties>
+  </object>
  </objectgroup>
  <layer id="1" name="Tile Layer 1" width="70" height="12">
   <data encoding="csv">
@@ -110,6 +111,14 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
+ <objectgroup id="7" name="markers">
+  <object id="5" name="spawn" x="2740" y="443">
+   <point/>
+  </object>
+  <object id="26" name="entry2" x="81.0909" y="443">
+   <point/>
+  </object>
+ </objectgroup>
  <objectgroup id="10" name="objects_under_overlay">
   <object id="1" name="churchfog" x="0" y="0">
    <point/>

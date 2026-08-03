@@ -22,7 +22,7 @@ function actor:init()
     -- Path to this actor's sprites (defaults to "")
     self.path = "enemies/cultist"
     -- This actor's default sprite or animation, relative to the path (defaults to "")
-    self.default = "idle_static"
+    self.default = "idle"
 
     -- Sound to play when this actor speaks (optional)
     self.voice = nil
@@ -49,6 +49,7 @@ function actor:init()
         -- Since the width and height is the idle sprite size, the offset is 0,0
         ["idle"] = {0, 0},
     }
+    
 end
 
 return actor

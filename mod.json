@@ -48,7 +48,7 @@
 
     "config": {
         "kristal": {
-            "targetSystem": true,
+            "targetSystem": false,
 			"newChoicers": true
         },
         "afilemenu": {

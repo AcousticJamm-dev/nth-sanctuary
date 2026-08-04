@@ -25,6 +25,7 @@ function Dummy:init()
     self.waves = {
         "basic",
         "aiming",
+        "movingarena"
     }
 
     -- Dialogue randomly displayed in the enemy's speech bubble
@@ -66,7 +67,7 @@ function Dummy:selectWave(battler)
     if self.chosen_party_member then
         self.current_target = self.chosen_party_member
         self.chosen_party_member = nil
-        self.selected_wave = "movingarena"
+        self.selected_wave = "apathy/risestar"
         return self.selected_wave
     end
     return super.selectWave(self, battler)

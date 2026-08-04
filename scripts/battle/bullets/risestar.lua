@@ -2,7 +2,7 @@ local SmallBullet, super = Class(Bullet)
 
 function SmallBullet:init(x, y, dir, speed)
     -- Last argument = sprite path
-    super.init(self, x, y, "world/bullets/risestar")
+    super.init(self, x, y, "world/bullets/tinystar")
 
     -- Move the bullet in dir radians (0 = right, pi = left, clockwise rotation)
     self.physics.direction = dir
@@ -10,8 +10,10 @@ function SmallBullet:init(x, y, dir, speed)
     self.physics.speed = speed
     self:setOrigin(0.5)
     self.graphics.spin = 0.2
-    self.physics.speed_y = -1
+    self.physics.speed_y = -0.75
+    self.physics.friction = -0.35
     self.remove_offscreen = true
+    self:setScale(1)
 end
 
 function SmallBullet:update()

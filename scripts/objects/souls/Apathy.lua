@@ -3,7 +3,7 @@ local Apathy, super = Class(Soul)
 function Apathy:init(x, y)
     super.init(self, x, y, {237/255, 232/255, 208/255})
 
-    self.apathy_collider = CircleCollider(self, 0, 0, 25)
+    self.apathy_collider = CircleCollider(self, 0, 0, 30)
 
     self.graze_collider = CircleCollider(self, 0, 0, 15 * self.graze_size_factor)
 	self.graze_sprite:setScale(0.6)

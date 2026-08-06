@@ -368,7 +368,13 @@ return {
 		g:setLayer(rect.layer + 1)
 		g:addFX(ColorMaskFX(COLORS.white))
 		cutscene:wait(20/30)
-		for i = 1, 15 do
+		local slash_delay = 12/30
+		local total_damage = 0
+		local waw = DamageNumber("damage", total_damage, g.x, g.y - 20)
+		waw.font = Assets.getFont("damage-cult")
+		waw.layer = g.layer + 3
+		Game.world:addChild(waw)
+		for i = 1, 30 do
 			local spr = Sprite("effects/attack/red_slash")
 			spr:setOrigin(0, 0.5)
 			spr:setPosition(g.x, g.y - g.height)
@@ -376,13 +382,22 @@ return {
 			spr.layer = g.layer + 1
 			spr.rotation = math.rad(i * 78)
 			spr:play(1/15, false, function() spr:remove() g:shake() end)
-			local waw = DamageNumber("damage", love.math.random(400, 999), g.x, g.y - (20 * (i-1)))
-			waw.font = Assets.getFont("damage-cult")
-       		waw.layer = g.layer + 3
-       		Game.world:addChild(waw)
-			Assets.playSound("bigcut", 1, 2 - (i / 15))
-			cutscene:wait(3/30)
+			local damage_scale = 1 + ((i - 1) / 14) * 4
+			total_damage = total_damage + love.math.random(
+				math.floor(50 * damage_scale),
+				math.floor(100 * damage_scale)
+			)
+			waw.amount = total_damage
+			waw.text = tostring(total_damage)
+			waw.width = waw.font:getWidth(waw.text)
+			waw.kill_timer = 0
+			waw.killing = false
+			waw.kill = 0
+			Assets.playSound("bigcut", 1, 2 - (i / 30))
+			cutscene:wait(slash_delay)
+			slash_delay = math.max(1/60, slash_delay * 0.82)
 		end
+
 		cutscene:wait(2)
 		rect:remove()
 		g:removeFX(ColorMaskFX())

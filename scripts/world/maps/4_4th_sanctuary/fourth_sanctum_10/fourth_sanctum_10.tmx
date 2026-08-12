@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="20" height="40" tilewidth="40" tileheight="40" infinite="0" nextlayerid="17" nextobjectid="89">
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="20" height="40" tilewidth="40" tileheight="40" infinite="0" nextlayerid="17" nextobjectid="90">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -189,6 +189,9 @@
   <object id="88" name="entry" x="760" y="1440">
    <point/>
   </object>
+  <object id="89" name="entry2" x="420" y="50">
+   <point/>
+  </object>
  </objectgroup>
  <objectgroup color="#55ffff" id="9" name="climbing" class="objects">
   <object id="20" type="climbarea" x="400" y="440" width="40" height="200"/>
@@ -286,7 +289,7 @@
   </object>
   <object id="87" name="transition" x="360" y="-40" width="120" height="40">
    <properties>
-    <property name="map" value="4_4th_sanctuary/fouth_sanctum_11"/>
+    <property name="map" value="4_4th_sanctuary/fourth_sanctum_11"/>
     <property name="marker" value="entry"/>
    </properties>
   </object>

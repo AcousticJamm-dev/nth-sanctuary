@@ -1,4 +1,12 @@
 return {
+    flaf = function (cutscene, event)
+        cutscene:text("* Hey! [wait:10]I'm Flafchef! [wait:10]Everybody loves me![react:1]", {
+            reactions = {
+                {"Like Nubert", "rightmid","bottom"}
+            }
+        })
+        
+    end,
     boid = function (cutscene)
         local boid = cutscene:getCharacter("boid")
         if Kristal.PluginLoader and next(Kristal.PluginLoader.plugin_scripts) ~= nil then

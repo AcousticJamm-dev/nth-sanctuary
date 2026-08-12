@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 9,
-  nextobjectid = 58,
+  nextobjectid = 59,
   properties = {
     ["border"] = "tvworld",
     ["music"] = "greenroom_detune",
@@ -700,6 +700,23 @@ return {
           visible = true,
           properties = {
             ["Solid"] = true
+          }
+        },
+        {
+          id = 58,
+          name = "npc",
+          type = "",
+          shape = "point",
+          x = 1080,
+          y = 280,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["actor"] = "flafchef",
+            ["cutscene"] = "konverge.flaf"
           }
         }
       }

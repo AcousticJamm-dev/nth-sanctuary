@@ -874,12 +874,14 @@ return {
 			cutscene:text("[speed:0.78][shake:0.52]* ...")
 			cutscene:text("[speed:0.78][shake:0.52]* ...[wait:5] Why?")
 			cutscene:text("[speed:0.78][shake:0.52]* Why would you come here?")
-			cutscene:text("[speed:0.78][shake:0.52]* Were you always like this,[wait:5] Kris?")
 			cutscene:wait(2.5)
 			
-			cutscene:text("[speed:0.78][shake:0.52]* ...[wait:5] You're never leaving me in peace,[wait:5] are you.")
-			cutscene:text("[speed:0.78][shake:0.52]* You've never stopped looking.")
-			cutscene:text("[speed:0.78][shake:0.52]* You've never changed,[wait:5] Kris.")
+			cutscene:text("[speed:0.78][shake:0.52]* Why me? [wait:5]Why not.. [wait:10]Susie? [wait:5]Or Catti?")
+			cutscene:text("[speed:0.78][shake:0.52]* Why exactly me?")
+			cutscene:wait(2)
+			cutscene:text("[speed:0.78][shake:0.52]* You've changed, [wait:5]Kris.")
+			cutscene:text("[speed:0.78][shake:0.52]* Changed... [wait:10]Differently.")
+			
 			cutscene:wait(4)
 			
 			Game.world.music:play("findher", 1, .4)
@@ -888,7 +890,7 @@ return {
 			cutscene:text("[speed:0.78][shake:0.52]* When the lights wouldn't turn on.")
 			cutscene:text("[speed:0.78][shake:0.52]* I saw it sitting there.")
 			cutscene:text("[speed:0.78][shake:0.52]* That box.")
-			cutscene:text("[speed:0.78][shake:0.52]* ... It looked at me.")
+			cutscene:text("[speed:0.78][shake:0.52]* ...[wait:5]It looked at me.")
 			cutscene:text("[speed:0.78][shake:0.52]* It winked.")
 			cutscene:text("[speed:0.78][shake:0.52]* And I screamed.")
 			cutscene:wait(2.5)
@@ -896,22 +898,22 @@ return {
 			cutscene:text("[speed:0.78][shake:0.52]* Or the heart pillows.")
 			cutscene:text("[speed:0.78][shake:0.52]* You remember those,[wait:5] right?")
 			cutscene:text("[speed:0.78][shake:0.52]* You'd grab one and run at me.")
-			cutscene:text("[speed:0.78][shake:0.52]* Saying you ripped your heart out.")
-			cutscene:text("[speed:0.78][shake:0.52]* ... I laughed.")
+			cutscene:text("[speed:0.78][shake:0.52]* Saying you \"ripped your heart out\".")
+			cutscene:text("[speed:0.78][shake:0.52]* ...I laughed.")
 			cutscene:text("[speed:0.78][shake:0.52]* I think I did.")
 			cutscene:text("[speed:0.78][shake:0.52]* But it didn't feel like a joke.")
-			cutscene:text("[speed:0.78][shake:0.52]* I didn't feel like I was smiling.")
+			cutscene:text("[speed:0.78][shake:0.52]* I didn't feel like I was the one smiling.")
 			cutscene:wait(2.5)
 			
 			cutscene:text("[speed:0.78][shake:0.52]* And that place...")
 			cutscene:text("[speed:0.78][shake:0.52]* The quiet one.")
 			cutscene:text("[speed:0.78][shake:0.52]* Where everything felt... wrong.")
-			cutscene:text("[speed:0.78][shake:0.52]* Like something was...[wait:5] leading us?")
+			cutscene:text("[speed:0.78][shake:0.52]* Like something was...[wait:5] leading us.")
 			cutscene:wait(2)
 			
-			cutscene:text("[speed:0.78][shake:0.52]* And you didn't care.")
 			cutscene:text("[speed:0.78][shake:0.52]* You just kept going.")
-			cutscene:text("[speed:0.78][shake:0.52]* Looking inside.")
+			cutscene:text("[speed:0.78][shake:0.52]* Looking inside. [wait:10]\n* Proceeding without caring.")
+			
 			
 			cutscene:wait(2)
 			local img = Sprite("misc/rose_bloom")
@@ -923,12 +925,12 @@ return {
 			Game.world.music:stop()
             cutscene:wait(2)
 			
-			cutscene:text("[voice:none][speed:0.75][shake:0.52]* ... You've ruined it.")
+			cutscene:text("[voice:none][speed:0.75][shake:0.52]* ...You've ruined it.")
 			cutscene:text("[voice:none][speed:0.75][shake:0.52]* The part where I didn't have to know.")
 			cutscene:text("[voice:none][speed:0.63][shake:0.62]* But maybe that's what I needed.")
-			cutscene:text("[voice:none][speed:0.63][shake:0.62]* To finally see it.")
+			cutscene:text("[voice:none][speed:0.63][shake:0.62]* To finally break.")
 			cutscene:wait(1)
-			cutscene:text("[voice:none][speed:0.51][shake:0.72]* ... All of it.")
+			cutscene:text("[voice:none][speed:0.51][shake:0.72]* ...Break my loop.")
 			cutscene:text("[voice:none][speed:0.51][shake:0.72]* Everything you showed me.")
 			cutscene:text("[voice:none][speed:0.45][shake:0.72]* Everything I couldn't ignore anymore.")
 			
@@ -1271,5 +1273,193 @@ return {
 		cutscene:wait(2.5)
 		Game:setFlag("churchbell_rung_5th", true)
 		Game.world.map:getHitbox("specblock").collidable = false
+	end,
+
+	apathy_intro = function (cutscene)
+		local a = cutscene:getCharacter("cultist1")
+		local k = cutscene:getCharacter("kris")
+		local s = cutscene:getCharacter("susie")
+		local r = cutscene:getCharacter("ralsei")
+		local j = cutscene:getCharacter("jamm")
+
+		cutscene:detachFollowers()
+		
+		r:shake()
+		s:shake()
+		Assets.playSound("wing")
+		s:setSprite("shock_down_flip_1")
+		r:setSprite("shocked_behind")
+		cutscene:text("* Wait,[wait:5] Kris...![wait:10]\nHide...!", "shock", r)
+		
+		r:resetSprite()
+		s:resetSprite()
+		cutscene:walkPath(
+			r,
+			{
+				{340, 530},
+				{160, 500}
+			},
+			{speed =  8, facing = "down"}
+		)
+		
+		cutscene:walkPath(
+			s,
+			{
+				{340, 530},
+				{200, 516}
+			},
+			{speed =  8}
+		)
+
+		cutscene:walkPath(
+			j,
+			{
+				{340, 530},
+				{120, 516}
+			},
+			{speed =  8, facing = "right"}
+		)
+
+		cutscene:wait(
+			cutscene:walkTo(k, 160, 540, 1.25, "up")
+		)
+
+		
+		
+
+		cutscene:text("* Dude, [wait:5]you okay? [wait:10]I've never seen you get all jumpy like this", "surprise_frown", s, {auto = true})
+		cutscene:text("* Shhh...![wait:10] It's them...", "unsure", r)
+		cutscene:detachCamera()
+		local ae = Game.world.camera.y
+		cutscene:wait(cutscene:panTo(a.x, a.y, 3, "linear"))
+
+		cutscene:text("* [voice:ralsei]They're that person...", {top = false})
+		cutscene:text("* [voice:ralsei][shake:0.6][speed:0.7]The one who made the fountain inside that Darkner.", {top = false})
+		cutscene:attachCamera()
+		cutscene:wait(cutscene:panTo(Game.world.camera.x, ae, 2, "out-circ"))
+		
+
+		cutscene:wait(1/2)
+		cutscene:text("* So then, [wait:5]how are we gonna do this?", "look_left", j)
+		cutscene:text("* Well.. [wait:10]They look a little busy...", "disappointed_side", r)
+		cutscene:text("* I think we can just... [wait:10][face:disappointed]Put them to sleep?", "disappointed_side", r)
+
+		cutscene:text("* ...", "bangs/down", s)
+		
+		local function doThis()
+			cutscene:walkPath(
+				s,
+				{
+					{340, s.y},
+					{340, 285}
+				},
+				{speed = 7}
+			)
+		end
+
+		cutscene:text("* O-[wait:5]Or... [wait:10]Corner them, [wait:5]and ask[func:b] why they did that..?", "disappointed", r, {
+			functions = {
+				b = function()
+					doThis()
+				end
+			}
+		})
+
+		cutscene:text("* I... [face:disappointed_down]Really don't know what do do her", "disappointed", r, {auto = true})
+
+		r:setSprite("shocked_right")
+		r:shake()
+		s:setSprite("point_up")
+		cutscene:text("* [voice:susie]HEY, [wait:7]YOU!")
+		cutscene:wait(cutscene:panTo(s.x, s.y, 1.5, "out-cubic"))
+		s:resetSprite()
+		cutscene:text("* You've got some explaining to do. [wait:10]First-", "annoyed", s, {auto = true, top = false})
+		
+		Game.world.music:stop()
+		cutscene:text("* [voice:none]Silence.", {top = false})
+		a:setSprite("turn")
+		r:resetSprite()
+		cutscene:walkPath(
+			r,
+			{
+				{300, r.y},
+				{300, 290},
+			},
+			{speed = 8}
+		)
+		
+		cutscene:walkPath(
+			j,
+			{
+				{380, j.y},
+				{380, 290},
+			},
+			{speed = 8}
+		)
+		
+		cutscene:wait(cutscene:walkPath(
+			k,
+			{
+				{340, k.y},
+				{340, 335},
+			},
+			{speed = 8}
+		))
+
+		cutscene:text("* [voice:none]I see you've all come in one piece...", {top = false})
+		cutscene:text("* [voice:none]Seems the Imbued was not strong enough.", {top = false})
+
+		cutscene:text("[image:face/ralsei/disappointed,-10, 42, 2, 2][voice:susral]* Imbued...?", "dejected_scared", s)
+		cutscene:text("* Imbued... [wait:5]With what?", "neutral", j)
+
+		cutscene:wait(1)
+		a.sprite:set("walk")
+		Assets.playSound("wing")
+		a:setFacing("down")
+		cutscene:wait(1)
+		cutscene:walkTo(a, a.x, a.y+40, 2, "down", true)
+		cutscene:walkTo(s, s.x, s.y+20, 2, "up", true)
+		cutscene:walkTo(k, k.x, k.y+20, 2, "up", true)
+		cutscene:walkTo(j, j.x, j.y+20, 2, "up", true)
+		cutscene:walkTo(r, r.x, r.y+20, 2, "up", true)
+		
+		cutscene:text("* [voice:none]I want you all to think.", {top = false})
+		cutscene:text("* [voice:none]This, [wait:5]is a Dark World.", {top = false})
+		cutscene:text("[voice:none][instant]* This, is a Dark World.[stopinstant]\nAnd what gives life to such?", {top = false})
+		
+		cutscene:text("[speed:0.7][shake:0.52]* Dark Fountains.. [wait:10][speed:0.5]You don't mean..?", "roaring", r)
+		cutscene:text("* [voice:none]You, [wait:5]especially, [wait:5]would know that. ", {top = false})
+		
+		cutscene:text("* [voice:none]When one makes a Dark Fountain,", {top = false})
+		cutscene:text("[instant]* [voice:none]When one makes a Dark Fountain, [stopinstant]and their target is a living entity...", {top = false})
+		cutscene:text("* [voice:none]They become [color:9999ff]\"Imbued\" [color:white]with the newly made fountain's energy.", {top = false})
+
+		cutscene:wait(1)
+		a:setSprite("turn")
+		Assets.playSound("wing")
+		cutscene:wait(1/6)
+		a.sprite:set("walk")
+		a:setFacing("up")
+		cutscene:wait(1)
+
+		cutscene:text("* [voice:none]They become a thrall bound to the user's will.", {top = false})
+		cutscene:text("* [voice:none]In my case, the \"will\" was to stop you.", {top = false})
+
+		cutscene:text("* [voice:none]I should not be telling you that, by the Order's word.", {top = false})
+		cutscene:text("* [voice:none]But I do not care.", {top = false})
+		
+		a:setSprite("turn")
+		Assets.playSound("wing")
+		cutscene:wait(1/6)
+		a.sprite:set("walk")
+		a:setFacing("down")
+		
+		cutscene:text("* [voice:none]For these will be the last words you will hear.", {top = false})
+
+		cutscene:startEncounter("apathy_test", true, a)
+
+
+		
+		
 	end
 }

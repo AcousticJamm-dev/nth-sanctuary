@@ -1365,13 +1365,16 @@ return {
 			}
 		})
 
-		cutscene:text("* I... [face:disappointed_down]Really don't know what do do her", "disappointed", r, {auto = true})
+		cutscene:text("[noskip]* I... [face:disappointed_down]Really don't know what do do here...", "disappointed", r)
+		cutscene:text("[noskip]* Yeah,[wait:5] this situation [wait:3]IS [wait:3]a little--", "look_left", j, {auto = true})
 
 		r:setSprite("shocked_right")
 		r:shake()
+		j:setSprite("trip")
+		j:shake()
 		s:setSprite("point_up")
-		cutscene:text("* [voice:susie]HEY, [wait:7]YOU!")
-		cutscene:wait(cutscene:panTo(s.x, s.y, 1.5, "out-cubic"))
+		cutscene:text("[noskip]* [voice:susie]HEY, [wait:7]YOU!")
+		cutscene:wait(cutscene:panTo(s, 1.5))
 		s:resetSprite()
 		cutscene:text("* You've got some explaining to do. [wait:10]First-", "annoyed", s, {auto = true, top = false})
 		
@@ -1379,6 +1382,7 @@ return {
 		cutscene:text("* [voice:none]Silence.", {top = false})
 		a:setSprite("turn")
 		r:resetSprite()
+		j:resetSprite()
 		cutscene:walkPath(
 			r,
 			{
@@ -1423,7 +1427,7 @@ return {
 		cutscene:walkTo(j, j.x, j.y+20, 2, "up", true)
 		cutscene:walkTo(r, r.x, r.y+20, 2, "up", true)
 		
-		cutscene:text("* [voice:none]I want you all to think.", {top = false})
+		cutscene:text("[noskip]* [voice:none]I want you all to think.", {top = false})
 		cutscene:text("* [voice:none]This, [wait:5]is a Dark World.", {top = false})
 		cutscene:text("[voice:none][instant]* This, is a Dark World.[stopinstant]\nAnd what gives life to such?", {top = false})
 		
@@ -1458,8 +1462,223 @@ return {
 
 		cutscene:startEncounter("apathy_test", true, a)
 
-
+		cutscene:wait(1)
+		Assets.playSound("wing")
+		a:shake(4)
+		cutscene:wait(0.75)
+		Assets.playSound("wing")
+		a:shake(4)
+		-- TODO: Downed sprite
 		
+		cutscene:wait(0.5)
 		
+		cutscene:walkToSpeed(j, j.x, j.y-20, 2, "down", true)
+		
+		cutscene:wait(cutscene:walkPath(
+			k,
+			{
+				{443, 286},
+				{417, 189},
+			},
+			{speed = 4}
+		))
+		
+		j:setFacing("up")
+		
+		k.flip_x = true
+		Assets.playSound("weaponpull_fast")
+		cutscene:wait(cutscene:setAnimation(k, "battle/intro"))
+		cutscene:setAnimation(k, "battle/idle")
+		
+		cutscene:text("* [voice:none]...", {top = false})
+		cutscene:text("* [voice:none]...So.", {top = false})
+		cutscene:text("* [voice:none]You have me at bladepoint.", {top = false})
+		cutscene:text("[speed:0.25]* [voice:none]Make it quick.", {top = false})
+		
+		cutscene:text("* We have questions,[wait:5] dude.", "annoyed", s, {top = false})
+		cutscene:text("* We're not letting you go until we have our answers.", "annoyed", s, {top = false})
+		
+		cutscene:text("* [voice:none]So be it.", {top = false})
+		cutscene:text("* [voice:none]But I will only answer one for each of you.", {top = false})
+		
+		cutscene:text("* I can make that work.", "teeth_smile", s, {top = false})
+		
+		cutscene:wait(cutscene:walkToSpeed(s, 346, 240, 4))
+		
+		cutscene:text("* ...", "sus_nervous", s, {top = false})
+		cutscene:text("* Why are you doing this?", "nervous", s, {top = false})
+		
+		cutscene:text("* [voice:none]We have a goal.", {top = false})
+		cutscene:text("* [voice:none]Our goal,[wait:5] to call our God.", {top = false})
+		cutscene:text("* [voice:none]And to do so,[wait:5] we desecrate every church by following their doing.", {top = false})
+		cutscene:text("* [voice:none]Your church is but one of the many others we've stopped by.", {top = false})
+		
+		cutscene:text("* (So a bunch of criminals.)", "sus_nervous", s, {top = false})
+		cutscene:text("* ...Got it.", "annoyed", s, {top = false})
+		
+		s:setFacing("down")
+		
+		cutscene:text("* Ralsei, you're up.", "neutral", s, {top = false})
+		
+		cutscene:walkToSpeed(s, 178, 240, 4, "right")
+		cutscene:wait(0.25)
+		cutscene:wait(cutscene:walkToSpeed(r, 346, 240, 4))
+		
+		cutscene:text("* ...How...[wait:7] did you make this happen?", "unsure", r, {top = false})
+		
+		cutscene:text("* [voice:none]Ah hah hah...[wait:5] I didn't make this happen.[wait:10] Not alone.", {top = false})
+		cutscene:text("* [voice:none]We together made it happen.[wait:10]\n* Me,[wait:5] and my fellows.", {top = false})
+		cutscene:text("* [voice:none]And we plan to keep moving forward until we have our goal fulfilled.", {top = false})
+		cutscene:text("* [voice:none]...", {top = false})
+		cutscene:text("* [voice:none]These [wait:5]\"rules\"[wait:5] you believe you must follow...", {top = false})
+		cutscene:text("* [voice:none]Do you honestly think everybody should follow them?", {top = false})
+		
+		cutscene:text("* ...", "roaring", r, {top = false})
+		
+		r:setFacing("down")
+		
+		cutscene:text("* My turn.", "stern", j, {top = false})
+		
+		cutscene:walkToSpeed(r, 522, 240, 4, "left")
+		cutscene:wait(0.25)
+		cutscene:wait(cutscene:walkToSpeed(j, 346, 240, 4))
+		
+		cutscene:text("* Where is she?", "stern", j, {top = false})
+		
+		cutscene:text("* [voice:none]Oh,[wait:5] [color:yellow]her[color:white]?", {top = false})
+		cutscene:text("* [voice:none]Maybe your rude friend knows that better than I do.", {top = false})
+		
+		cutscene:wait(2)
+		
+		j.actor.default = "walk_shadowed"
+		j:resetSprite()
+		j:setFacing("left")
+		
+		cutscene:text("* ...What?", "insane_neutral", j, {top = false})
+		
+		s.actor.default = "walk_unhappy"
+		s:resetSprite()
+		
+		cutscene:text("* Uh...[wait:10] Jamm?", "sad_frown", s, {top = false})
+		
+		cutscene:wait(cutscene:walkToSpeed(j, 250, 240, 4))
+		
+		cutscene:text("* Jamm,[wait:5] hold on![wait:10]\n* They're--", "sad", s, {auto = true, top = false})
+		
+		cutscene:text("[shake:1]* I don't want to hear it.", "insane_neutral", j, {top = false})
+		cutscene:text("[shake:1]* This...[wait:10] is all some sick joke to you,[wait:5] isn't it?", "insane_neutral", j, {top = false})
+		cutscene:text("[shake:1]* Because of you,[wait:5] Marcy is...", "insane_frown", j, {top = false})
+		j:setAnimation({"shadowed_pissed_left", 1/4, true})
+		cutscene:text("[shake:1]* ...Give me...[wait:10] One good reason...", "insane", j, {top = false})
+		
+		local function doThat()
+			j:setSprite("threaten")
+			r:setSprite("shocked_left")
+			r:shake(2)
+		end
+		
+		cutscene:text("[noskip][shake:2]* ...Not to shoot you[func:b] in the GOD[wait:4] DAMN[wait:4] EYE!", "insane_pissed", j, {top = false,
+			functions = {
+				b = function()
+					doThat()
+				end
+			}
+		})
+		
+		r:resetSprite()
+		
+		cutscene:text("* Jamm,[wait:5] stop!", "scared", r, {top = false})
+		
+		r.flip_x = true
+		Assets.playSound("spellcast")
+		cutscene:wait(cutscene:setAnimation(r, "battle/spell"))
+		
+		local mask = ColorMaskFX({0,1,0}, 1)
+		j:addFX(mask)
+		Game.world.timer:tween(1, mask, {amount = 0}, "linear", function()
+			j:removeFX(mask)
+		end)
+		
+		r:resetSprite()
+		r.flip_x = false
+		
+		cutscene:wait(1.5)
+		
+		j:shake(2)
+		Assets.playSound("wing")
+		cutscene:wait(1.2)
+		j:shake(2)
+		Assets.playSound("wing")
+		cutscene:wait(2.1)
+		j:setSprite("landed_1")
+		Assets.playSound("noise")
+		j:shake(2)
+		cutscene:wait(1)
+		
+		cutscene:text("* They...[wait:10] weren't talking about your daughter.", "disappointed", r, {top = false})
+		
+		cutscene:text("* ...Wh...[wait:10] what?", "shaded_neutral", j, {top = false})
+		
+		cutscene:text("* When you lost your slingshot...", "disappointed", r, {top = false})
+		cutscene:text("* ...We found Noelle cornered by two darkners.", "disappointed", r, {top = false})
+		cutscene:text("* Susie hit one with her Rude Buster,[wait:5] and...", "disappointed", r, {top = false})
+		
+		cutscene:text("* ...She fell.", "sad_frown", s, {top = false})
+		
+		cutscene:text("* ...", "shaded_neutral", j, {top = false})
+		
+		j:resetSprite()
+		j:setFacing("down")
+		j:shake(2)
+		Assets.playSound("wing")
+		
+		cutscene:wait(1)
+		
+		cutscene:wait(cutscene:walkToSpeed(j, 280, 190, 2, "right", true))
+		
+		cutscene:text("* ...If you know what's good for you...", "shaded_neutral", j, {top = false})
+		j.flip_x = true
+		j:setSprite("threaten")
+		cutscene:text("* You're going to tell me what I want to know.", "shaded_neutral", j, {top = false})
+		cutscene:text("* Where.[wait:10] Is.[wait:10] My.[wait:10] Daughter?", "shaded_pissed", j, {top = false})
+		
+		cutscene:text("* [voice:none]...", {top = false})
+		cutscene:text("* [voice:none]I have no idea who you're talking about.", {top = false})
+		cutscene:text("* [voice:none]I know not of your daughter,[wait:5] or the fact she was present.", {top = false})
+		cutscene:text("* [voice:none]Believe me or not,[wait:5] but I speak truth.", {top = false})
+		
+		j.flip_x = false
+		j:resetSprite()
+		cutscene:text("* ...", "shaded_neutral", j, {top = false})
+		
+		cutscene:wait(cutscene:walkToSpeed(j, 280, 100, 2))
+		
+		cutscene:text("* [voice:none]...And what about you,[wait:5] with the sword?", {top = false})
+		cutscene:text("* [voice:none]Is there any curiosity in your mind?", {top = false})
+		
+		if Game:getFlag("route") == 3 then
+			-- TODO: Side B shenanigans
+		else
+			local choice = cutscene:choicer({"Name", "Allies", "Truce", "Location"})
+			
+			if choice == 1 then
+				cutscene:text("* [voice:none]Useless information.[wait:10]\n* If you desire it,[wait:5] so be it.", {top = false})
+				cutscene:text("* [voice:none]Karma.", {top = false})
+			elseif choice == 2 then
+				cutscene:text("* [voice:none]We are eight.", {top = false})
+				cutscene:text("* [voice:none]Eight fellows,[wait:5] with magnitudes more around the globe.", {top = false})
+				cutscene:text("* [voice:none]My loss is only fodder.", {top = false})
+			elseif choice == 3 then
+				cutscene:text("* [voice:none]A truce?[wait:10] Me,[wait:5] you?", {top = false})
+				cutscene:text("* [voice:none]...My allegiance is with the Order.", {top = false})
+			elseif choice == 4 then
+				cutscene:text("* [voice:none]We do not have a \"base\", persay.", {top = false})
+				cutscene:text("* [voice:none]We move in groups,[wait:5] forming one unit.", {top = false})
+				cutscene:text("* [voice:none]Each unit consisting of its own commandant,[wait:5] and support.", {top = false})
+			end
+			
+			cutscene:text("* [voice:none]...", {top = false})
+			cutscene:text("* [voice:none]Are we done here?", {top = false})
+		end
 	end
 }

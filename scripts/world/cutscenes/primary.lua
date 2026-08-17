@@ -1431,12 +1431,15 @@ return {
 		cutscene:text("* [voice:none]This, [wait:5]is a Dark World.", {top = false})
 		cutscene:text("[voice:none][instant]* This, is a Dark World.[stopinstant]\nAnd what gives life to such?", {top = false})
 		
-		cutscene:text("[speed:0.7][shake:0.52]* Dark Fountains.. [wait:10][speed:0.5]You don't mean..?", "roaring", r)
+		cutscene:text("[speed:0.7][shake:0.52]* Dark Fountains.. [wait:10][speed:0.5]You don't mean..?", "roaring", r, {top = false})
 		cutscene:text("* [voice:none]You, [wait:5]especially, [wait:5]would know that. ", {top = false})
 		
+		Game.world.music:play("wind_highplace", 0, 1)
+		Game.world.music:fade(1, 2)
+
 		cutscene:text("* [voice:none]When one makes a Dark Fountain,", {top = false})
 		cutscene:text("[instant]* [voice:none]When one makes a Dark Fountain, [stopinstant]and their target is a living entity...", {top = false})
-		cutscene:text("* [voice:none]They become [color:9999ff]\"Imbued\" [color:white]with the newly made fountain's energy.", {top = false})
+		cutscene:text("* [voice:none]They become [wait:5][color:9999ff]\"Imbued\" [wait:5][color:white]with the newly made fountain's energy.", {top = false})
 
 		cutscene:wait(1)
 		a:setSprite("turn")
@@ -1447,7 +1450,7 @@ return {
 		cutscene:wait(1)
 
 		cutscene:text("* [voice:none]They become a thrall bound to the user's will.", {top = false})
-		cutscene:text("* [voice:none]In my case, the \"will\" was to stop you.", {top = false})
+		cutscene:text("* [voice:none]In my case, [wait:5]the [wait:5]\"will\" [wait:5]was to stop you.", {top = false})
 
 		cutscene:text("* [voice:none]I should not be telling you that, by the Order's word.", {top = false})
 		cutscene:text("* [voice:none]But I do not care.", {top = false})
@@ -1458,6 +1461,8 @@ return {
 		a.sprite:set("walk")
 		a:setFacing("down")
 		
+		Game.world.music:stop()
+
 		cutscene:text("* [voice:none]For these will be the last words you will hear.", {top = false})
 
 		cutscene:startEncounter("apathy_test", true, a)
@@ -1560,6 +1565,8 @@ return {
 		s:resetSprite()
 		
 		cutscene:text("* Uh...[wait:10] Jamm?", "sad_frown", s, {top = false})
+
+		Game.world.music:play("imminent_death")
 		
 		cutscene:wait(cutscene:walkToSpeed(j, 250, 240, 4))
 		
@@ -1580,7 +1587,7 @@ return {
 		cutscene:text("[noskip][shake:2]* ...Not to shoot you[func:b] in the GOD[wait:4] DAMN[wait:4] EYE!", "insane_pissed", j, {top = false,
 			functions = {
 				b = function()
-					doThat()
+					doThat() --[[   <-- The evil doThis() :jellycruel:    ]]
 				end
 			}
 		})
@@ -1590,6 +1597,7 @@ return {
 		cutscene:text("* Jamm,[wait:5] stop!", "scared", r, {top = false})
 		
 		r.flip_x = true
+		Game.world.music:stop()
 		Assets.playSound("spellcast")
 		cutscene:wait(cutscene:setAnimation(r, "battle/spell"))
 		
@@ -1623,7 +1631,7 @@ return {
 		cutscene:text("* ...We found Noelle cornered by two darkners.", "disappointed", r, {top = false})
 		cutscene:text("* Susie hit one with her Rude Buster,[wait:5] and...", "disappointed", r, {top = false})
 		
-		cutscene:text("* ...She fell.", "sad_frown", s, {top = false})
+		cutscene:text("* ...She fell.", "annoyed_down_alt", s, {top = false})
 		
 		cutscene:text("* ...", "shaded_neutral", j, {top = false})
 		
@@ -1657,13 +1665,177 @@ return {
 		cutscene:text("* [voice:none]Is there any curiosity in your mind?", {top = false})
 		
 		if Game:getFlag("route") == 3 then
-			-- TODO: Side B shenanigans
+			local box = Game.world:addChild(LockingChoicer(4, 76, 346, 529, 103, false, {color = {
+				[1] = COLORS.white,
+				[2] = COLORS.white,
+				[3] = COLORS.white,
+				[4] = COLORS.red
+				}
+			}))
+			box:addChoice("Name") 
+			box:addChoice("Allies")
+			box:addChoice("Truce") 
+			box:addChoice("Help Me")
+
+			box.layer = WORLD_LAYERS["ui"]+1
+			cutscene:wait(function () return box.done end)
+
+			if box.selected_choice == 1 then
+				Assets.playSound("splat")
+			elseif box.selected_choice == 2 then
+				Assets.playSound("splat")
+			elseif box.selected_choice == 3 then
+				Assets.playSound("splat")
+			elseif box.selected_choice == 4 then
+
+				cutscene:wait(1)
+
+				local rect = Rectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)
+				rect:setColor(COLORS.black)
+				rect:setParallax(0)
+				rect.layer = WORLD_LAYERS["ui"] - 2
+
+				local origlayers = {a.layer, k.layer}
+				a.layer = rect.layer + 1
+				k.layer = a.layer
+				Game.world:addChild(rect)
+				Kristal.hideBorder(0)
+				
+				local fxx = OutlineFX(COLORS.red, {cutout = true})
+				local soul = Sprite("player/heart")
+				soul:setColor(COLORS.red)
+				Game.world:addChild(soul)
+				soul:setOrigin(0.5)
+				soul.layer = k.layer + 1
+				soul:setPosition(435, 160)
+				k:addFX(fxx)
+				k.alpha = 0.4
+				Assets.playSound("noise")
+				cutscene:wait(3)
+				Game.world.music:play("me", 1, 0.8)
+				cutscene:text("[shake:0.55][voice:none]* (Something's different.)", {top = false})
+				cutscene:text("[shake:0.55][voice:none]* (That voice. [wait:10]It spoke through me.)", {top = false})
+				cutscene:text("[voice:none][shake:0.7]* (This is not a child. [wait:10]No, [wait:5]this is something else entirely.)", {top = false})
+				cutscene:text("[voice:none][shake:0.7]* (Something far more than what we anticipated.)", {top = false})
+					
+				local spr
+				local function JustDoIt()
+					spr = Sprite("misc/rose_bloom")
+					Game.world:addChild(spr)
+					spr:setScale(2)
+					spr.x,spr.y = 225, 40
+					spr.alpha = 0
+					spr:setLayer(a.layer - 0.1)
+					Game.world.timer:tween(3, spr, {alpha = 1}, 'in-expo')
+				end
+				cutscene:text("[voice:none][shake:0.7][speed:0.5][noskip]* (Something BETTER than what we anticipated. [wait:10][func:nike]Just. [wait:20]Look. [wait:20]Calm", {
+					top = false, 
+					auto = true,
+					functions = {
+						nike = function()
+							JustDoIt() --[[  :jellywide: ]]
+						end
+					}
+				})
+				k:removeFX(fxx)
+				soul:remove()
+				spr:remove()
+				Game.world.music:stop()
+				k.layer = origlayers[2]
+				
+				local slash = Sprite("effects/attack/blue_slash")
+				a:addFX(ColorMaskFX(COLORS.white))
+				slash:setScale(2)
+				slash:setOrigin(0.5)
+				slash:setPosition(a.x, a.y - (slash.height/2))
+				Game.world:addChild(slash)
+				slash.layer = a.layer + 1
+				slash:setFrame(1)
+				cutscene:wait(1/7)
+				slash:setFrame(2)
+				cutscene:wait(1/7)
+				slash:setFrame(3)
+				cutscene:wait(1/7)
+
+				a.visible = false
+
+				Assets.playSound("heavydamage")
+				Assets.playSound("indoct_break1")
+				
+
+				local waw = DamageNumber("damage", love.math.random(3300, 3900), a.x+20, a.y - 20)
+				waw.font = Assets.getFont("damage-cult")
+				waw.layer = a.layer + 0.09
+				Game.world:addChild(waw)
+
+				local spr1 = Sprite("culthalf_1")
+				Game.world:addChild(spr1)
+				spr1:setLayer(a.layer + 0.1)
+				spr1:setOrigin(0.5, 1)
+				spr1:setScale(2)
+				spr1:setPosition(a.x, a.y-(a.height/2))
+
+				local spr2 = Sprite("culthalf_2")
+				Game.world:addChild(spr2)
+				spr2:setLayer(a.layer + 0.1)
+				spr2:setOrigin(0.5, 1)
+				spr2:setScale(2)
+				spr2:setPosition(a.x, a.y)
+
+				spr1:addFX(ColorMaskFX(COLORS.white))
+				spr2:addFX(ColorMaskFX(COLORS.white))
+				
+
+				spr1.physics.direction = math.rad(-80)
+				spr1.physics.speed = 4
+				spr1.physics.friction = 0.15
+
+				spr2.physics.direction = math.rad(100)
+				spr2.physics.speed = 4
+				spr2.physics.friction = 0.15
+
+				slash:setFrame(4)
+				cutscene:wait(1/8)
+				slash:setFrame(5)
+				cutscene:wait(1/8)
+				slash:setFrame(6)
+				cutscene:wait(1/8)
+				slash:remove()
+				cutscene:wait(1)
+				local posx, posy = spr1:getPosition()
+				local death = FatalEffect(spr1:getTexture(), posx-spr1.width+2, posy-spr1.height-28, function() spr1:remove() end)
+				spr1.visible = false
+				death:addFX(ColorMaskFX(COLORS.white))
+				death:setScale(spr1:getScale())
+				Game.world:addChild(death)
+				death:setLayer(spr1.layer)
+
+				local posx, posy = spr2:getPosition()
+				local death = FatalEffect(spr2:getTexture(), posx-spr2.width, posy-spr2.height-14, function() spr2:remove() end)
+				spr2.visible = false
+				death:addFX(ColorMaskFX(COLORS.white))
+				death:setScale(spr2:getScale())
+				Game.world:addChild(death)
+				death:setLayer(spr2.layer)
+
+				
+				
+
+				
+				
+				
+				cutscene:wait(100)
+				
+				rect:remove()
+				a.layer = origlayers[1]
+				Game.world.music:stop()
+			end
 		else
 			local choice = cutscene:choicer({"Name", "Allies", "Truce", "Location"})
 			
 			if choice == 1 then
 				cutscene:text("* [voice:none]Useless information.[wait:10]\n* If you desire it,[wait:5] so be it.", {top = false})
-				cutscene:text("* [voice:none]Karma.", {top = false})
+				cutscene:text("* [voice:none]Kaleise.", {top = false})
 			elseif choice == 2 then
 				cutscene:text("* [voice:none]We are eight.", {top = false})
 				cutscene:text("* [voice:none]Eight fellows,[wait:5] with magnitudes more around the globe.", {top = false})

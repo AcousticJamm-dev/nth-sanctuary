@@ -9,14 +9,14 @@
  </properties>
  <tileset firstgid="1" source="../../../tilesets/bg_dw_library_tileset_new.tsx"/>
  <tileset firstgid="831" source="../../../tilesets/church_objects.tsx"/>
- <objectgroup id="12" name="objects_bg2" opacity="0.7" parallaxy="0.2">
+ <objectgroup id="12" name="objects_bg2" visible="0" opacity="0.7" parallaxy="0.2">
   <object id="32" gid="832" x="520" y="800" width="200" height="1240">
    <properties>
     <property name="color" type="color" value="#ff6f6f6f"/>
    </properties>
   </object>
  </objectgroup>
- <objectgroup id="11" name="objects_bg" parallaxy="0.4">
+ <objectgroup id="11" name="objects_bg" visible="0" parallaxy="0.4">
   <object id="30" gid="923" x="-60" y="890" width="400" height="578"/>
   <object id="31" gid="923" x="340" y="890" width="400" height="578"/>
  </objectgroup>
@@ -98,7 +98,7 @@
     <property name="item" value="tensionband"/>
    </properties>
   </object>
-  <object id="27" name="transition" x="280" y="1290" width="120" height="40">
+  <object id="27" name="transition" x="280" y="1280" width="120" height="40">
    <properties>
     <property name="map" value="4_4th_sanctuary/fourth_sanctum_10"/>
     <property name="marker" value="entry2"/>

@@ -11,7 +11,7 @@
  <tileset firstgid="199" source="../../../tilesets/bg_dw_church_tileset_new.tsx"/>
  <tileset firstgid="781" source="../../../tilesets/church_objects.tsx"/>
  <tileset firstgid="890" source="../../../tilesets/bg_dw_library_tileset_new.tsx"/>
- <objectgroup id="14" name="objects_bg_higher" parallaxx="0.1" parallaxy="0.4">
+ <objectgroup id="14" name="objects_bg_higher" visible="0" parallaxx="0.1" parallaxy="0.4">
   <object id="81" gid="781" x="-360" y="840" width="400" height="578">
    <properties>
     <property name="color" type="color" value="#ff686868"/>
@@ -28,10 +28,10 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup id="15" name="objects_bg_2" parallaxx="0.2" parallaxy="0.4">
+ <objectgroup id="15" name="objects_bg_2" visible="0" parallaxx="0.2" parallaxy="0.4">
   <object id="85" gid="813" x="-120" y="40" width="960" height="100" rotation="30"/>
  </objectgroup>
- <objectgroup id="12" name="objects_bg" parallaxx="0.3" parallaxy="0.6">
+ <objectgroup id="12" name="objects_bg" visible="0" parallaxx="0.3" parallaxy="0.6">
   <object id="80" gid="785" x="120" y="1320" width="640" height="1600">
    <properties>
     <property name="color" type="color" value="#ff838383"/>

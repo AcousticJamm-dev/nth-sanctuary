@@ -13,13 +13,13 @@
  <tileset firstgid="1075" source="../../../tilesets/longslides.tsx"/>
  <tileset firstgid="1129" source="../../../tilesets/fast_travel_doors.tsx"/>
  <tileset firstgid="1139" source="../../../tilesets/church_objects.tsx"/>
- <objectgroup id="15" name="objects_bg_2" parallaxx="0.6" parallaxy="0.45">
+ <objectgroup id="15" name="objects_bg_2" visible="0" parallaxx="0.6" parallaxy="0.45">
   <object id="44" gid="1140" x="560" y="1280" width="200" height="1240" opacity="0.7"/>
  </objectgroup>
- <objectgroup id="10" name="objects_bg" parallaxx="0.7" parallaxy="0.4">
+ <objectgroup id="10" name="objects_bg" visible="0" parallaxx="0.7" parallaxy="0.4">
   <object id="32" gid="1143" x="280" y="1200" width="640" height="1600"/>
  </objectgroup>
- <objectgroup id="14" name="objects_bg_high">
+ <objectgroup id="14" name="objects_bg_high" visible="0">
   <object id="40" gid="1232" x="0" y="2000" width="200" height="289"/>
   <object id="41" gid="1232" x="200" y="2000" width="200" height="289"/>
   <object id="42" gid="1232" x="400" y="2000" width="200" height="289"/>
@@ -215,11 +215,11 @@
   <object id="7" x="720" y="320" width="80" height="200"/>
   <object id="8" x="0" y="0" width="800" height="320"/>
  </objectgroup>
- <objectgroup id="11" name="objects_over_party" parallaxy="1.6">
+ <objectgroup id="11" name="objects_over_party" visible="0" parallaxy="1.6">
   <object id="35" gid="1171" x="40" y="1280" width="960" height="100" rotation="30"/>
   <object id="37" gid="1171" x="880" y="1440" width="960" height="100" rotation="150"/>
  </objectgroup>
- <objectgroup id="12" name="objects_overer_party" parallaxy="2">
+ <objectgroup id="12" name="objects_overer_party" visible="0" parallaxy="2">
   <object id="39" gid="1171" x="1480" y="1560" width="1920" height="200" rotation="180"/>
  </objectgroup>
  <objectgroup id="9" name="objects_darkness">

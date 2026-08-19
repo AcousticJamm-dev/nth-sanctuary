@@ -9,6 +9,11 @@ function character:init()
         defense = 2,
         magic = 0
     }
+
+    self.max_stats = {
+        health = 300,
+        attack = 22
+    }
 end
 
 return character

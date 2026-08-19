@@ -3,8 +3,21 @@ local character, super = Class("noelle", true)
 function character:init()
     super.init(self)
 	
-    self.level = 3
+    self.level = 2
     self.title = "Mistletoe\nThings got\nserious today."
+
+    self.stats = {
+        health = 170,
+        attack = 4,
+        defense = 2,
+        magic = 13
+    }
+
+    self.max_stats = {
+        health = 999,
+        attack = 12,
+        magic = 20
+    }
 end
 
 function character:getTitle()

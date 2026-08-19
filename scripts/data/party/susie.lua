@@ -5,6 +5,12 @@ function character:init()
 
     self:removeSpell("ok_heal")
     self:addSpell("better_heal")
+
+    self.max_stats = {
+        health = 380,
+        attack = 30,
+        magic = 6
+    }
 end
 
 function character:drawPowerStat(index, x, y, menu)

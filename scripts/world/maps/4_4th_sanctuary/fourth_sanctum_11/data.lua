@@ -9,8 +9,8 @@ return {
   height = 32,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 15,
-  nextobjectid = 46,
+  nextlayerid = 16,
+  nextobjectid = 50,
   properties = {
     ["border"] = "church_d",
     ["music"] = "tiling"
@@ -210,6 +210,40 @@ return {
         0, 0, 0, 0, 778, 0, 0, 0, 0, 0, 0, 0, 778, 0, 0, 0, 0,
         0, 0, 0, 0, 788, 0, 0, 0, 0, 0, 0, 0, 788, 0, 0, 0, 0,
         0, 0, 0, 0, 801, 0, 0, 0, 0, 0, 0, 0, 801, 0, 0, 0, 0
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 15,
+      name = "objects_under_party",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 49,
+          name = "churchmagicglass",
+          type = "",
+          shape = "rectangle",
+          x = 600,
+          y = 80,
+          width = 80,
+          height = 80,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["hiddenalpha"] = 0.01,
+            ["idlealpha"] = 0.01,
+            ["starthidden"] = false
+          }
+        }
       }
     },
     {
@@ -636,7 +670,7 @@ return {
           shape = "rectangle",
           x = 80,
           y = 40,
-          width = 520,
+          width = 600,
           height = 40,
           rotation = 0,
           opacity = 1,
@@ -663,9 +697,9 @@ return {
           type = "",
           shape = "rectangle",
           x = 600,
-          y = 40,
+          y = 160,
           width = 40,
-          height = 1000,
+          height = 880,
           rotation = 0,
           opacity = 1,
           visible = true,
@@ -750,6 +784,20 @@ return {
           y = 310,
           width = 212.5,
           height = 170,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 46,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 640,
+          y = 160,
+          width = 40,
+          height = 40,
           rotation = 0,
           opacity = 1,
           visible = true,

@@ -1511,7 +1511,7 @@ return {
 		cutscene:wait(cutscene:walkToSpeed(s, 346, 240, 4))
 		
 		cutscene:text("* ...", "sus_nervous", s, {top = false})
-		cutscene:text("* Why are you doing this?", "nervous", s, {top = false})
+		cutscene:text("* Why are you doing this?", "annoyed", s, {top = false})
 		
 		cutscene:text("* [voice:none]We have a goal.", {top = false})
 		cutscene:text("* [voice:none]Our goal,[wait:5] to call our God.", {top = false})
@@ -1570,6 +1570,8 @@ return {
 		
 		cutscene:wait(cutscene:walkToSpeed(j, 250, 240, 4))
 		
+		s:shake(2)
+		s:setSprite("surprise_step")
 		cutscene:text("* Jamm,[wait:5] hold on![wait:10]\n* They're--", "sad", s, {auto = true, top = false})
 		
 		cutscene:text("[shake:1]* I don't want to hear it.", "insane_neutral", j, {top = false})
@@ -1621,6 +1623,7 @@ return {
 		j:setSprite("landed_1")
 		Assets.playSound("noise")
 		j:shake(2)
+		s:resetSprite()
 		cutscene:wait(1)
 		
 		cutscene:text("* They...[wait:10] weren't talking about your daughter.", "disappointed", r, {top = false})
@@ -1738,7 +1741,7 @@ return {
 					}
 				})
 				k:removeFX(fxx)
-				soul:remove()
+				soul.visible = false
 				spr:remove()
 				Game.world.music:stop()
 				k.layer = origlayers[2]
@@ -1761,6 +1764,7 @@ return {
 
 				Assets.playSound("heavydamage")
 				Assets.playSound("indoct_break1")
+				Game.world.camera:shake(10, 0, 1, 1/15)
 				
 
 				local waw = DamageNumber("damage", love.math.random(3300, 3900), a.x+20, a.y - 20)
@@ -1793,6 +1797,9 @@ return {
 				spr2.physics.direction = math.rad(100)
 				spr2.physics.speed = 4
 				spr2.physics.friction = 0.15
+				Game.world.timer:tween(1, spr1, {rotation = math.rad(15)}, 'out-cubic')
+				Game.world.timer:tween(1, spr2, {rotation = math.rad(-15)}, 'out-cubic')
+
 
 				slash:setFrame(4)
 				cutscene:wait(1/8)
@@ -1803,32 +1810,179 @@ return {
 				slash:remove()
 				cutscene:wait(1)
 				local posx, posy = spr1:getPosition()
-				local death = FatalEffect(spr1:getTexture(), posx-spr1.width+2, posy-spr1.height-28, function() spr1:remove() end)
+				local death = FatalEffect(spr1:getTexture(), posx-5, posy-spr1.height-32, function() spr1:remove() end)
 				spr1.visible = false
 				death:addFX(ColorMaskFX(COLORS.white))
 				death:setScale(spr1:getScale())
 				Game.world:addChild(death)
 				death:setLayer(spr1.layer)
+				death.rotation = spr1.rotation
 
 				local posx, posy = spr2:getPosition()
-				local death = FatalEffect(spr2:getTexture(), posx-spr2.width, posy-spr2.height-14, function() spr2:remove() end)
+				local death = FatalEffect(spr2:getTexture(), posx-spr2.width-7, posy-spr2.height-9, function() spr2:remove() end)
 				spr2.visible = false
 				death:addFX(ColorMaskFX(COLORS.white))
 				death:setScale(spr2:getScale())
 				Game.world:addChild(death)
 				death:setLayer(spr2.layer)
+				death.rotation = spr2.rotation
+
+				k.alpha = 1
+
+				cutscene:wait(2)
+				soul.visible = not soul.visible --true
+				Assets.playSound("noise")
+
+				cutscene:wait(1)
+				local man = Game.world:spawnNPC("lobbyman_party", 570, 135)
+				man:setFacing("up")
+				
+				for i = 1, 8 do
+					cutscene:wait(1/15)
+					rect.visible = not rect.visible
+					if i == 1 then
+						man:setPosition(465, 165)
+						man:setSprite("shaded")
+					end
+					if i%2 == 1 then
+						Assets.playSound("noise", 0.2 + (i/10), 1)
+					end
+				end
+
+				cutscene:wait(1.5)
+				man:resetSprite()
+				Assets.playSound("noise")
+				soul:remove() --No more side B :(
+
+				r:shake() j:shake() s:shake()
+
+				k:resetSprite()
+				k:setFacing("right")
+
+				r:setSprite("shocked_left")
+				s:setSprite("surprise_step")
+				j:setSprite("trip")
 
 				
-				
 
-				
-				
-				
-				cutscene:wait(100)
-				
+				man:setPosition(570, 135)
+				local glass = Game.world.map:getEvent("churchmagicglass")
+				glass.idlealpha = 0.5
+				glass.hiddenalpha = 0.5
+				glass.should_light_up =  true
+				cutscene:walkTo(man, 800, man.y, 1)
 				rect:remove()
-				a.layer = origlayers[1]
-				Game.world.music:stop()
+				a:remove()
+				k.layer = origlayers[2]
+
+				cutscene:wait(1)
+
+
+				cutscene:text("[shake:0.6]* What... [wait:10]What was that...?", "terrified_down", r)
+				cutscene:text("* I don't know. [wait:10]But it would be great if it [face:nervous_left]didn't [wait:5]happen [wait:10]again.", "speechless", j)
+				
+				cutscene:wait(1)
+
+				r:shake() j:shake() s:shake()
+				j.actor.default = "walk_serious"
+				r:resetSprite() j:resetSprite() s:resetSprite()
+				j:setFacing("down")
+
+				cutscene:wait(1)
+				
+
+				
+		
+				cutscene:text("* Hey, [wait:5]wait.", "neutral_side", s)
+				cutscene:text("* Did that glass always appear there?", "neutral_side", s)
+
+				k.flip_x = false
+				k:setPosition(k.x + 16, k.y)
+				k:setFacing("right")
+
+				j:setFacing("right")
+				
+				r:setFacing("right")
+				
+
+				Game:setFlag("disable_travel", true)
+				Game.world.music:play("tiling")
+
+				cutscene:wait(1)
+				glass.should_light_up =  false
+				
+				cutscene:walkTo(j, 340, 140, 1)
+				cutscene:text("* We don't really have a choice.", "disappointed", r)
+				cutscene:text("* I'm going to see if it's safe...", "disappointed_down", r)
+
+				cutscene:wait(cutscene:walkTo(r, 580, 120, 1))
+				cutscene:wait(1)
+				cutscene:wait(cutscene:walkTo(r, 700, 120, 2))
+
+				j:setFacing("down")
+				cutscene:text("* I think I'm going to go after.", "look_left", j)
+				cutscene:text("* You have each others back for now, [wait:5]I have Ralsei's.", "look_left", j)
+	
+				cutscene:wait(cutscene:walkPath(
+					j,
+					{
+						{580, 120},
+						{700, 120},
+					},
+					{speed = 6}
+				))
+
+				j.actor.default = "walk"
+				cutscene:wait(2)
+
+
+				local spr = Sprite("effects/shine_white")
+				spr:setOrigin(0.5)
+				spr:setScale(2)
+				Game.world:spawnObject(spr)
+				spr:play(1/3, true)
+				spr:setPosition(340, -20)
+				cutscene:wait(cutscene:slideTo(spr, 340, 140, 3))
+				Assets.playSound("noise")
+				Assets.playSound("spell_pacify", 0.9, 0.5)
+				cutscene:wait(2)
+				cutscene:text("* ...What is that?", "sus_nervous", s)
+
+				cutscene:walkTo(s, 320, 140, 2)
+				cutscene:wait(cutscene:walkTo(k, 390, 140, 2))
+				k:setFacing("left")
+
+				s:setSprite("heal_kneel")
+				cutscene:wait(1)
+
+				cutscene:text("* ...It, [wait:5]kinda looks like glass.", "suspicious", s)
+				cutscene:text("* Kinda reminds me of the Knight's... [wait:5]Y'know. [wait:10]Their sword.", "sus_nervous", s)
+				
+				spr:remove()
+				Mod:setDarkShard(Mod.DarkShardID.FourthSanctuary, true)
+				Assets.playSound("shard_get")
+				cutscene:text("* (Susie obtained a [color:9999ff]Dark Shard.[color:white])")
+				cutscene:wait(1)
+
+				Assets.playSound("wing")
+				s:shake(2)
+				s.actor.default = "walk"
+				s:resetSprite()
+
+				cutscene:wait(1)
+
+				cutscene:text("* We should, [wait:5]uh. [wait:10][face:neutral_side]\nGet going.", "neutral", s)
+				s.following = true
+
+				cutscene:wait(cutscene:walkPath(
+					k,
+					{
+						{580, 120},
+						{800, 120},
+					},
+					{speed = 6}
+				))
+				
 			end
 		else
 			local choice = cutscene:choicer({"Name", "Allies", "Truce", "Location"})

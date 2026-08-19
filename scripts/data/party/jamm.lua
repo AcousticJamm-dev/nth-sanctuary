@@ -39,6 +39,15 @@ function character:init()
         magic = 7
     }
 
+    self.max_stats = {
+        health = 315,
+		assist_health = 100,
+        attack = 18,
+        defense = 6,
+        magic = 10
+    }
+
+
     self.weapon_icon = "ui/menu/equip/sling"
 
     self:setWeapon("basic_sling")

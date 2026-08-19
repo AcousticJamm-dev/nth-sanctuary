@@ -16,6 +16,7 @@ function ChurchMagicGlass:init(data)
 	self.idlealpha = properties["idlealpha"] or 0.2
 	self.starthidden = properties["starthidden"] or false
 	self.hiddenalpha = properties["hiddenalpha"] or 0.2
+    self.should_light_up = false
     for i = 1, self.tiles_x do
         for j = 1, self.tiles_y do
             local hitbox = Hitbox(self, (i - 1) * 80, (j - 1) * 80, 80, 80)
@@ -39,7 +40,7 @@ function ChurchMagicGlass:update()
             end
         end
 		local targalpha = self.idlealpha
-        if any_collided then
+        if any_collided or self.should_light_up then
             self.tile_alphas[i] = MathUtils.lerp(self.tile_alphas[i], 0.8, 0.125 * DTMULT)
 			if self.starthidden and self.tile_alphas[i] >= 0.79 then
 				self.tile_idlealphas[i] = self.hiddenalpha

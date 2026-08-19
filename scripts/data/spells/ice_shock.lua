@@ -46,6 +46,7 @@ function spell:onCast(user, target)
     local x, y = target:getRelativePos(target.width/2, target.height/2, Game.battle)
 
     if user:hasStatus("compelled") and (user.statuses["compelled"].statcon.amplifier == 6) then
+        user.chara:addFlag("max_iceshocks_used", 1)
         Game.battle.timer:after(1/3, function()
             Game.battle:addChild(FrostcryptController(target.x, target.y-target.height, function()
                 local damage = math.floor(user.chara:getStat("magic") * 10)

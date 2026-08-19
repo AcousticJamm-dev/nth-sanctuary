@@ -6,7 +6,7 @@ function Dummy:init()
     -- Text displayed at the bottom of the screen at the start of the encounter
     self.text = [==[
 * Apathy constricts you...
-* ([color:yellow]Movement[color:reset] reduced outside of [color:red]???[color:reset])
+* ([color:yellow]Movement[color:reset] restricted outside of [color:red]DANGER[color:reset])
 ]==]
 
     -- Battle music ("battle" is rude buster)

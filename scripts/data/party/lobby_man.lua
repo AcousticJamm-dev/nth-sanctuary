@@ -6,6 +6,10 @@ function character:init()
     -- Display name
     self.name = "Lobby Man"
 
+    self.flags = {
+        ["influence"] = 25
+    }
+
     -- Actor (handles sprites)
     self:setActor("lobbyman_party")
 
@@ -132,8 +136,8 @@ function character:drawPowerStat(index, x, y, menu)
         local icon = Assets.getTexture("ui/menu/icon/magic")
         Draw.draw(icon, x-26, y+6, 0, 2, 2)
         love.graphics.print("Influence", x, y, 0, 0.8, 1)
-
-        love.graphics.print("25", x+130, y)
+        local influencecount = self:getFlag("influence") + (Game:getPartyMember("noelle"):getFlag("max_iceshocks_used", 0)  * 2)
+        love.graphics.print(influencecount, x+130, y)
         return true
     elseif index == 3 then
         local icon = Assets.getTexture("ui/menu/icon/armor")

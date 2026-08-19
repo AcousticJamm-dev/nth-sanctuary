@@ -27,5 +27,9 @@ return function(cutscene)
     Game.world.fader:fadeIn(nil, {
         speed = 0.25,
     })
+    if not Game:getFlag("firsttravel") then
+        Game:setFlag("firsttravel", true)
+        cutscene:gotoCutscene("primary.firsttravel")
+    end
 end
 

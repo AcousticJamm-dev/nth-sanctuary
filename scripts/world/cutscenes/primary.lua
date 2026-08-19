@@ -1241,12 +1241,20 @@ return {
     end,
 
 	firsttravel = function (cutscene)
-		local susie, ralsei, kris = cutscene:getCharacter("susie"),cutscene:getCharacter("ralsei"),cutscene:getCharacter("kris")
+		local kris = cutscene:getCharacter("kris")
+		local susie = cutscene:getCharacter("susie")
+		local ralsei = cutscene:getCharacter("ralsei")
+		local jamm = cutscene:getCharacter("jamm")
+
+		cutscene:detachFollowers()
+		cutscene:walkTo(kris, "kristo", 0, "down")
+		cutscene:walkTo(susie, "susieto", 0.5, "right")
+		cutscene:walkTo(ralsei, "ralseito", 0.5, "left")
+		cutscene:wait(cutscene:walkTo(jamm, "jammto", 0.5, "up"))
 		
-		cutscene:setSpeaker(susie)
-		cutscene:text("* This is a new cutscene!")
-		cutscene:setSpeaker(ralsei)
-		cutscene:text("* It's great to have new adventures!")
+		cutscene:wait(2)
+		cutscene:text("* ...", "sus_nervous", "susie")
+		cutscene:text("* ...So THAT'S what it does.", "look_left", "jamm")
 	end,
 
     splitpath = function(cutscene)
@@ -1256,15 +1264,6 @@ return {
         cutscene:text("* This is a new cutscene!")
         cutscene:setSpeaker(ralsei)
         cutscene:text("* It's great to have new adventures!")
-        
-        -- Add your cutscene logic here
-        -- You can use functions like:
-        -- cutscene:text("dialogue")
-        -- cutscene:wait(time)
-        -- cutscene:walkTo(character, x, y, speed)
-        -- cutscene:fadeIn(time)
-        -- cutscene:fadeOut(time)
-        -- And many more functions
     end,
 
 	churchbell_ring = function (cutscene)

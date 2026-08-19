@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 11,
-  nextobjectid = 143,
+  nextobjectid = 153,
   properties = {
     ["border"] = "blank",
     ["music"] = "fast-travel",
@@ -1217,20 +1217,19 @@ return {
           properties = {}
         },
         {
-          id = 142,
-          name = "script",
+          id = 148,
+          name = "interactable",
           type = "",
           shape = "rectangle",
-          x = 560,
-          y = 1600,
-          width = 80,
-          height = 80,
+          x = 590,
+          y = 1640,
+          width = 20,
+          height = 20,
           rotation = 0,
           opacity = 1,
           visible = true,
           properties = {
-            ["cutscene"] = "primary.firsttravel",
-            ["once"] = true
+            ["cutscene"] = "primary.firsttravel"
           }
         }
       }
@@ -1698,6 +1697,62 @@ return {
           text = "temporary jellycruel colored placeholder door text",
           wrap = true,
           color = { 255, 0, 0 },
+          properties = {}
+        },
+        {
+          id = 149,
+          name = "kristo",
+          type = "",
+          shape = "point",
+          x = 600,
+          y = 1610,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 150,
+          name = "susieto",
+          type = "",
+          shape = "point",
+          x = 520,
+          y = 1640,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 151,
+          name = "ralseito",
+          type = "",
+          shape = "point",
+          x = 680,
+          y = 1640,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 152,
+          name = "jammto",
+          type = "",
+          shape = "point",
+          x = 600,
+          y = 1680,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
           properties = {}
         }
       }

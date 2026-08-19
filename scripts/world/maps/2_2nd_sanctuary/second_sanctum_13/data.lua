@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 16,
-  nextobjectid = 45,
+  nextobjectid = 50,
   properties = {
     ["border"] = "church_b",
     ["music"] = "second_church"
@@ -397,7 +397,7 @@ return {
       type = "objectgroup",
       draworder = "topdown",
       id = 3,
-      name = "objects",
+      name = "objects_party",
       class = "",
       visible = true,
       opacity = 1,
@@ -413,7 +413,7 @@ return {
           type = "",
           shape = "rectangle",
           x = 280,
-          y = 1840,
+          y = 1800,
           width = 320,
           height = 40,
           rotation = 0,
@@ -518,6 +518,25 @@ return {
             ["text1_2"] = "* (...[wait:5]Well, [wait:5]it's just that.)[wait:10]\n* (The developers haven't added anything yet.)",
             ["text2_1"] = "* (Useless door.)"
           }
+        },
+        {
+          id = 47,
+          name = "cameratarget",
+          type = "",
+          shape = "rectangle",
+          x = 360,
+          y = 640,
+          width = 160,
+          height = 1080,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["lockx"] = true,
+            ["locky"] = false,
+            ["marker"] = "targ",
+            ["time"] = 0.5
+          }
         }
       }
     },
@@ -612,6 +631,20 @@ return {
           shape = "point",
           x = 80,
           y = 400,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 45,
+          name = "targ",
+          type = "",
+          shape = "point",
+          x = 440,
+          y = 1440,
           width = 0,
           height = 0,
           rotation = 0,

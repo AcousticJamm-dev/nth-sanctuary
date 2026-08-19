@@ -1239,19 +1239,23 @@ return {
         Game:addPartyMember("jamm", #Game.party+1)
         Game.world.music:play()
     end,
+
+	firsttravel = function (cutscene)
+		local susie, ralsei, kris = cutscene:getCharacter("susie"),cutscene:getCharacter("ralsei"),cutscene:getCharacter("kris")
+		
+		cutscene:setSpeaker(susie)
+		cutscene:text("* This is a new cutscene!")
+		cutscene:setSpeaker(ralsei)
+		cutscene:text("* It's great to have new adventures!")
+	end,
+
     splitpath = function(cutscene)
         local susie, ralsei, kris = cutscene:getCharacter("susie"),cutscene:getCharacter("ralsei"),cutscene:getCharacter("kris")
         
         cutscene:setSpeaker(susie)
         cutscene:text("* This is a new cutscene!")
-        cutscene:wait(1)
-        
         cutscene:setSpeaker(ralsei)
         cutscene:text("* It's great to have new adventures!")
-        cutscene:wait(1)
-        
-        cutscene:setSpeaker(kris)
-        cutscene:text("* ...test dialogue.")
         
         -- Add your cutscene logic here
         -- You can use functions like:

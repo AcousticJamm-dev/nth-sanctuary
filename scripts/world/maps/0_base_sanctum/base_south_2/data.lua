@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.12.1",
+  tiledversion = "1.12.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -12,6 +12,7 @@ return {
   nextlayerid = 15,
   nextobjectid = 46,
   properties = {
+    ["border"] = "base_sanctum",
     ["music"] = "homebase"
   },
   tilesets = {

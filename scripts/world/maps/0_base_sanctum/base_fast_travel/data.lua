@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 11,
-  nextobjectid = 142,
+  nextobjectid = 143,
   properties = {
     ["border"] = "blank",
     ["music"] = "fast-travel",
@@ -1215,6 +1215,23 @@ return {
           opacity = 1,
           visible = true,
           properties = {}
+        },
+        {
+          id = 142,
+          name = "script",
+          type = "",
+          shape = "rectangle",
+          x = 560,
+          y = 1600,
+          width = 80,
+          height = 80,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["cutscene"] = "primary.firsttravel",
+            ["once"] = true
+          }
         }
       }
     },

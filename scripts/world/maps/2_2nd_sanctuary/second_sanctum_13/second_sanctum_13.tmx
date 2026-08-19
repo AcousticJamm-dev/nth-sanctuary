@@ -163,13 +163,13 @@
    </properties>
   </object>
   <object id="16" name="slidearea" x="360" y="520" width="160" height="1240"/>
-  <object id="22" name="window_glow" x="280" y="280">
+  <object id="22" name="window_glow" x="280" y="220">
    <properties>
     <property name="big" value="true"/>
    </properties>
    <point/>
   </object>
-  <object id="23" name="window_glow" x="600" y="280">
+  <object id="23" name="window_glow" x="600" y="220">
    <properties>
     <property name="big" value="true"/>
    </properties>

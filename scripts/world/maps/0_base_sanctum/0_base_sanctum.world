@@ -54,14 +54,14 @@
             "height": 1640,
             "width": 1720,
             "x": 480,
-            "y": 1040
+            "y": 1000
         },
         {
             "fileName": "base_south_2/base_south_2.tmx",
             "height": 1040,
             "width": 640,
             "x": -240,
-            "y": 2200
+            "y": 2160
         },
         {
             "fileName": "gerson_study/gerson_study.tmx",

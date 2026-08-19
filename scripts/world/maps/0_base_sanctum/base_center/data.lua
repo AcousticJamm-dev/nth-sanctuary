@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 20,
-  nextobjectid = 70,
+  nextobjectid = 73,
   properties = {
     ["border"] = "base_sanctum",
     ["ft_whitelist"] = true,
@@ -1204,6 +1204,44 @@ return {
             ["cond"] = "not Game:getFlag(\"unlock_travel\")",
             ["sprite"] = "c",
             ["text1"] = "* (This one won't budge either.)"
+          }
+        },
+        {
+          id = 71,
+          name = "npc",
+          type = "",
+          shape = "point",
+          x = 840,
+          y = 340,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["actor"] = "organik",
+            ["cond"] = "Game:getFlag(\"unlock_travel\")",
+            ["sprite"] = "c",
+            ["text1"] = "* (This one won't budge either.)"
+          }
+        },
+        {
+          id = 72,
+          name = "npc",
+          type = "",
+          shape = "point",
+          x = 780,
+          y = 340,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["actor"] = "organik",
+            ["cond"] = "Game:getFlag(\"unlock_travel\")",
+            ["sprite"] = "br",
+            ["text1"] = "* (They don't look like they'll be moving any time soon.)"
           }
         }
       }

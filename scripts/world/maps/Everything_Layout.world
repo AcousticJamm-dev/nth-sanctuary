@@ -699,6 +699,41 @@
             "width": 640,
             "x": 5920,
             "y": 12480
+        },
+        {
+            "fileName": "noelle_indoct_test/noelle_indoct_test.tmx",
+            "height": 480,
+            "width": 600,
+            "x": -7600,
+            "y": -5160
+        },
+        {
+            "fileName": "4_4th_sanctuary/fourth_sanctum_10/fourth_sanctum_10.tmx",
+            "height": 1600,
+            "width": 800,
+            "x": 10600,
+            "y": -6560
+        },
+        {
+            "fileName": "4_4th_sanctuary/fourth_sanctum_11/fourth_sanctum_11.tmx",
+            "height": 1280,
+            "width": 680,
+            "x": 10680,
+            "y": -7920
+        },
+        {
+            "fileName": "2_2nd_sanctuary/second_sanctum_12/second_sanctum_12.tmx",
+            "height": 640,
+            "width": 1040,
+            "x": 5200,
+            "y": 13120
+        },
+        {
+            "fileName": "2_2nd_sanctuary/second_sanctum_13/second_sanctum_13.tmx",
+            "height": 2000,
+            "width": 800,
+            "x": 6320,
+            "y": 13120
         }
     ],
     "onlyShowAdjacentMaps": false,

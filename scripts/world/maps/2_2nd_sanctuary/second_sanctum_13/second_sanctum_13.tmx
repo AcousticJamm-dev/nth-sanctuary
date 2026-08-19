@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="20" height="50" tilewidth="40" tileheight="40" infinite="0" nextlayerid="16" nextobjectid="45">
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="20" height="50" tilewidth="40" tileheight="40" infinite="0" nextlayerid="16" nextobjectid="50">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -13,13 +13,13 @@
  <tileset firstgid="1075" source="../../../tilesets/longslides.tsx"/>
  <tileset firstgid="1129" source="../../../tilesets/fast_travel_doors.tsx"/>
  <tileset firstgid="1139" source="../../../tilesets/church_objects.tsx"/>
- <objectgroup id="15" name="objects_bg_2" parallaxx="0.6" parallaxy="0.45">
+ <objectgroup id="15" name="objects_bg_2" visible="0" parallaxx="0.6" parallaxy="0.45">
   <object id="44" gid="1140" x="560" y="1280" width="200" height="1240" opacity="0.7"/>
  </objectgroup>
- <objectgroup id="10" name="objects_bg" parallaxx="0.7" parallaxy="0.4">
+ <objectgroup id="10" name="objects_bg" visible="0" parallaxx="0.7" parallaxy="0.4">
   <object id="32" gid="1143" x="280" y="1200" width="640" height="1600"/>
  </objectgroup>
- <objectgroup id="14" name="objects_bg_high">
+ <objectgroup id="14" name="objects_bg_high" visible="0">
   <object id="40" gid="1232" x="0" y="2000" width="200" height="289"/>
   <object id="41" gid="1232" x="200" y="2000" width="200" height="289"/>
   <object id="42" gid="1232" x="400" y="2000" width="200" height="289"/>
@@ -150,8 +150,8 @@
 0,0,0,0,0,0,0,208,208,208,208,208,208,208,208,0,0,0,0,0
 </data>
  </layer>
- <objectgroup id="3" name="objects">
-  <object id="9" name="script" x="280" y="1840" width="320" height="40">
+ <objectgroup id="3" name="objects_party">
+  <object id="9" name="script" x="280" y="1800" width="320" height="40">
    <properties>
     <property name="cutscene" value="events.travel_unlock"/>
    </properties>
@@ -163,13 +163,13 @@
    </properties>
   </object>
   <object id="16" name="slidearea" x="360" y="520" width="160" height="1240"/>
-  <object id="22" name="window_glow" x="280" y="280">
+  <object id="22" name="window_glow" x="280" y="220">
    <properties>
     <property name="big" value="true"/>
    </properties>
    <point/>
   </object>
-  <object id="23" name="window_glow" x="600" y="280">
+  <object id="23" name="window_glow" x="600" y="220">
    <properties>
     <property name="big" value="true"/>
    </properties>
@@ -182,6 +182,14 @@
     <property name="text1_2">* (...[wait:5]Well, [wait:5]it's just that.)[wait:10]
 * (The developers haven't added anything yet.)</property>
     <property name="text2_1" value="* (Useless door.)"/>
+   </properties>
+  </object>
+  <object id="47" name="cameratarget" x="360" y="640" width="160" height="1080">
+   <properties>
+    <property name="lockx" type="bool" value="true"/>
+    <property name="locky" type="bool" value="false"/>
+    <property name="marker" value="targ"/>
+    <property name="time" type="float" value="0.5"/>
    </properties>
   </object>
  </objectgroup>
@@ -204,6 +212,9 @@
   <object id="24" name="spawn" x="80" y="400">
    <point/>
   </object>
+  <object id="45" name="targ" x="440" y="1440">
+   <point/>
+  </object>
  </objectgroup>
  <objectgroup id="5" name="collision" visible="0" locked="1">
   <object id="1" x="0" y="440" width="160" height="1560"/>
@@ -215,11 +226,11 @@
   <object id="7" x="720" y="320" width="80" height="200"/>
   <object id="8" x="0" y="0" width="800" height="320"/>
  </objectgroup>
- <objectgroup id="11" name="objects_over_party" parallaxy="1.6">
+ <objectgroup id="11" name="objects_over_party" visible="0" parallaxy="1.6">
   <object id="35" gid="1171" x="40" y="1280" width="960" height="100" rotation="30"/>
   <object id="37" gid="1171" x="880" y="1440" width="960" height="100" rotation="150"/>
  </objectgroup>
- <objectgroup id="12" name="objects_overer_party" parallaxy="2">
+ <objectgroup id="12" name="objects_overer_party" visible="0" parallaxy="2">
   <object id="39" gid="1171" x="1480" y="1560" width="1920" height="200" rotation="180"/>
  </objectgroup>
  <objectgroup id="9" name="objects_darkness">

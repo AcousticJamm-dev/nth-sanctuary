@@ -1354,7 +1354,7 @@ return {
       id = 10,
       name = "objects_lightarea",
       class = "",
-      visible = false,
+      visible = true,
       opacity = 1,
       offsetx = 0,
       offsety = 0,

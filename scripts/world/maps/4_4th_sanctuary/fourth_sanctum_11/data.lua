@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 16,
-  nextobjectid = 50,
+  nextobjectid = 53,
   properties = {
     ["border"] = "church_d",
     ["music"] = "tiling"
@@ -308,7 +308,10 @@ return {
           properties = {
             ["actor"] = "cultist1",
             ["flagcheck"] = "!fought_apathy",
-            ["sprite"] = "walk/up"
+            ["sprite"] = "walk/up",
+            ["text1_1"] = "* (...)",
+            ["text2_1"] = "* (Red robes.)",
+            ["text3_1"] = "* (No longer of interest.)"
           }
         },
         {
@@ -325,6 +328,23 @@ return {
           visible = true,
           properties = {
             ["cutscene"] = "primary.apathy_intro"
+          }
+        },
+        {
+          id = 50,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 680,
+          y = 40,
+          width = 40,
+          height = 160,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["map"] = "4_4th_sanctuary/fourth_sanctum_12_final",
+            ["marker"] = "entry"
           }
         }
       }
@@ -434,6 +454,20 @@ return {
           shape = "point",
           x = 340,
           y = 530,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 52,
+          name = "plorgentry",
+          type = "",
+          shape = "point",
+          x = 640,
+          y = 120,
           width = 0,
           height = 0,
           rotation = 0,

@@ -1337,7 +1337,7 @@ return {
 		cutscene:wait(cutscene:panTo(a.x, a.y, 3, "linear"))
 
 		cutscene:text("* [voice:ralsei]They're that person...", {top = false})
-		cutscene:text("* [voice:ralsei][shake:0.6][speed:0.7]The one who made the fountain inside that Darkner.", {top = false})
+		cutscene:text("* [voice:ralsei][speed:0.7]The one who made the fountain inside that Darkner.", {top = false})
 		cutscene:attachCamera()
 		cutscene:wait(cutscene:panTo(Game.world.camera.x, ae, 2, "out-circ"))
 		
@@ -1345,7 +1345,7 @@ return {
 		cutscene:wait(1/2)
 		cutscene:text("* So then, [wait:5]how are we gonna do this?", "look_left", j)
 		cutscene:text("* Well.. [wait:10]They look a little busy...", "disappointed_side", r)
-		cutscene:text("* I think we can just... [wait:10][face:disappointed]Put them to sleep?", "disappointed_side", r)
+		cutscene:text("* I think I can just... [wait:10][face:disappointed]Pacify them?", "disappointed_side", r)
 
 		cutscene:text("* ...", "bangs/down", s)
 		
@@ -1360,7 +1360,7 @@ return {
 			)
 		end
 
-		cutscene:text("* O-[wait:5]Or... [wait:10]Corner them, [wait:5]and ask[func:b] why they did that..?", "disappointed", r, {
+		cutscene:text("* O-[wait:5]Or... [wait:10]we can corner them, [wait:5]and ask[func:b] why they did that..?", "disappointed", r, {
 			functions = {
 				b = function()
 					doThis()
@@ -1475,8 +1475,8 @@ return {
 		a:shake(4)
 		cutscene:wait(0.75)
 		Assets.playSound("wing")
+		a:setSprite("downed")
 		a:shake(4)
-		-- TODO: Downed sprite
 		
 		cutscene:wait(0.5)
 		
@@ -1685,13 +1685,19 @@ return {
 
 			box.layer = WORLD_LAYERS["ui"]+1
 			cutscene:wait(function () return box.done end)
-
 			if box.selected_choice == 1 then
-				Assets.playSound("splat")
+				cutscene:text("* [voice:none]Useless information.[wait:10]\n* If you desire it,[wait:5] so be it.", {top = false})
+				cutscene:text("* [voice:none]Kaleise.", {top = false})
+				goto postdialogue
 			elseif box.selected_choice == 2 then
-				Assets.playSound("splat")
+				cutscene:text("* [voice:none]We are eight.", {top = false})
+				cutscene:text("* [voice:none]Eight fellows,[wait:5] with magnitudes more around the globe.", {top = false})
+				cutscene:text("* [voice:none]My loss is only fodder.", {top = false})
+				goto postdialogue
 			elseif box.selected_choice == 3 then
-				Assets.playSound("splat")
+				cutscene:text("* [voice:none]A truce?[wait:10] Me,[wait:5] you?", {top = false})
+				cutscene:text("* [voice:none]...My allegiance is with the Order.", {top = false})
+				goto postdialogue
 			elseif box.selected_choice == 4 then
 
 				cutscene:wait(1)
@@ -1845,6 +1851,9 @@ return {
 					rect.visible = not rect.visible
 					if i == 1 then
 						man:setPosition(465, 165)
+						man:setSprite("shaded_down")
+					end
+					if i == 7 then
 						man:setSprite("shaded")
 					end
 					if i%2 == 1 then
@@ -1873,6 +1882,7 @@ return {
 				glass.idlealpha = 0.5
 				glass.hiddenalpha = 0.5
 				glass.should_light_up =  true
+				man:addFX(ColorMaskFX(COLORS.black))
 				cutscene:walkTo(man, 800, man.y, 1)
 				rect:remove()
 				a:remove()
@@ -1886,6 +1896,7 @@ return {
 				
 				cutscene:wait(1)
 
+				Assets.playSound("wing")
 				r:shake() j:shake() s:shake()
 				j.actor.default = "walk_serious"
 				r:resetSprite() j:resetSprite() s:resetSprite()
@@ -1918,7 +1929,7 @@ return {
 				cutscene:text("* We don't really have a choice.", "disappointed", r)
 				cutscene:text("* I'm going to see if it's safe...", "disappointed_down", r)
 
-				cutscene:wait(cutscene:walkTo(r, 580, 120, 1))
+				cutscene:wait(cutscene:walkTo(r, 580, 120, 1, "right"))
 				cutscene:wait(1)
 				cutscene:wait(cutscene:walkTo(r, 700, 120, 2))
 
@@ -1975,7 +1986,14 @@ return {
 				cutscene:wait(1)
 
 				cutscene:text("* We should, [wait:5]uh. [wait:10][face:neutral_side]\nGet going.", "neutral", s)
-				s.following = true
+				cutscene:walkPath(
+					s,
+					{
+						{580, 120},
+						{800, 120},
+					},
+					{speed = 6}
+				)
 
 				cutscene:wait(cutscene:walkPath(
 					k,
@@ -1985,7 +2003,7 @@ return {
 					},
 					{speed = 6}
 				))
-				
+				return
 			end
 		else
 			local choice = cutscene:choicer({"Name", "Allies", "Truce", "Location"})
@@ -2005,9 +2023,143 @@ return {
 				cutscene:text("* [voice:none]We move in groups,[wait:5] forming one unit.", {top = false})
 				cutscene:text("* [voice:none]Each unit consisting of its own commandant,[wait:5] and support.", {top = false})
 			end
-			
-			cutscene:text("* [voice:none]...", {top = false})
-			cutscene:text("* [voice:none]Are we done here?", {top = false})
 		end
+
+		::postdialogue::
+		cutscene:text("* [voice:none]...", {top = false})
+		cutscene:text("* [voice:none]Are we done here?", {top = false})
+
+		cutscene:wait(2)
+		j:setFacing("down")
+		j.actor.default = "walk_serious"
+		j:resetSprite()
+		cutscene:text("* What should we do with this guy, [wait:5]Kris?", "stern", j, {top = false})
+		cutscene:text("* We exhausted our answers.", "stern", j, {top = false})
+
+		local ch = cutscene:choicer({"Knock Out", "Pacify"})
+
+		if ch == 1 then
+			k.flip_x = false
+			k:resetSprite()
+			cutscene:wait(cutscene:walkTo(k, k.x - 20, k.y))
+			k:shake(2)
+			Assets.playSound("wing")
+			k.flip_x = true
+			k:setSprite("battle/attackready")
+			cutscene:fadeOut(1, {music = true})
+			cutscene:wait(2)
+			local m = Sprite("effects/attack/cut")
+			m:setPosition(300, 145)
+			m.flip_x = true
+			m:setScale(2)
+			m:setOrigin(0.5)
+			Game.world:spawnObject(m)
+			m.layer = 99999
+			cutscene:playSound("damage_echo")
+			local waw = DamageNumber("damage", love.math.random(300, 400), a.x+20, a.y - 20)
+			waw:setColor(Game.party[1].color)
+			waw.layer = m.layer - 1
+			Game.world:addChild(waw)
+			m:setFrame(1)
+			cutscene:wait(1/7)
+			m:setFrame(2)
+
+			cutscene:wait(1/7)
+			m:setFrame(3)
+			cutscene:wait(1/7)
+			m:remove()
+			cutscene:wait(2)
+			Game.world.music:play("tiling")
+			k.flip_x = false
+			a:setSprite("fallen")
+			k:resetSprite()
+			cutscene:fadeIn(1, {music = true})
+		else
+			cutscene:wait(1)
+			r.flip_x = true
+			Assets.playSound("spellcast")
+			cutscene:wait(cutscene:setAnimation(r, "battle/spell"))
+			
+			local mask = ColorMaskFX({0,1,0}, 1)
+			a:addFX(mask)
+			Game.world.timer:tween(1, mask, {amount = 0}, "linear", function()
+				a:removeFX(mask)
+			end)
+
+			r:resetSprite()
+			r.flip_x = false
+
+			cutscene:wait(1.5)
+			a:shake(2)
+			Assets.playSound("wing")
+			cutscene:wait(1)
+			a:shake(4)
+			k.flip_x = false
+			k:resetSprite()
+			k:setPosition(k.x + 16, k.y)
+			k:setFacing("left")
+			Assets.playSound("noise")
+			a:setSprite("fallen")
+		end
+
+		cutscene:wait(2)
+
+		local spr = Sprite("effects/shine_white")
+		spr:setOrigin(0.5)
+		spr:setScale(2)
+		Game.world:spawnObject(spr)
+		spr:play(1/3, true)
+		spr:setPosition(325, 190)
+		if ch == 2 then
+			cutscene:text("* That takes care of that...", "disappointed", r)
+		else
+			cutscene:text("* That takes care of that.[react:1]", "exhausted_smile", s,{
+				reactions = {
+					{"Did you really have to \nhit that hard?", "rightmid", "bottommid", "nervous_left", "jamm"}
+				}
+			})
+		end
+
+		cutscene:text("* Kris! [wait:10]It looks like they dropped something...", "small_smile_side_b", r)
+		
+		cutscene:wait(cutscene:walkTo(k, 350, 198))
+		cutscene:wait(1)
+		cutscene:text("* (The object that the enemy dropped looks like glass.)")
+		cutscene:text("* (And,[wait:5] tinted in color.)")
+		cutscene:text("* (Instinctively, [wait:10]you pocket it.)")
+		spr:remove()
+		Mod:setDarkShard(Mod.DarkShardID.FourthSanctuary, true)
+		Assets.playSound("shard_get")
+		cutscene:text("* (You have obtained a [color:9999ff]Dark Shard.[color:white])")
+		cutscene:wait(cutscene:walkTo(j, 275, 193, 1, "right"))
+		
+		cutscene:text("* Huh. [wait:10]You think these are related to the doors in the Travel area?", "look_left", "jamm")
+		
+		
+		local glass = Game.world.map:getEvent("churchmagicglass")
+		glass.hiddenalpha = 0.5
+		if not Game.world.music:isPlaying() then
+			Game.world.music:play("tiling")
+		end
+		glass.should_light_up =  true
+		cutscene:wait(1)
+		cutscene:text("* ...[wait:10]Hey, [wait:5][face:neutral]Kris.\n[wait:10]* That glass always been there?", "neutral_side", s)
+		k.flip_x = false
+		k:setFacing("right")
+		j:setFacing("right")
+		
+		r:setFacing("right")
+		cutscene:wait(1)
+		glass.should_light_up = false
+		cutscene:wait(1)
+		cutscene:text("* It looks like a way out.", "look_left", j)
+		cutscene:text("* We don't really have a choice...", "disappointed", r)
+		
+		cutscene:alignFollowers()
+		cutscene:wait(cutscene:attachFollowers())
+		a.solid = false
+		cutscene:text("* Whenever you're ready, [wait:5]Kris.", "small_smile_side_b", r)
+		k:setFacing("down")
+			
 	end
 }

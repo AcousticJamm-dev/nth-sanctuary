@@ -9,9 +9,12 @@ return {
   height = 16,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 10,
-  nextobjectid = 39,
-  properties = {},
+  nextlayerid = 13,
+  nextobjectid = 47,
+  properties = {
+    ["border"] = "church_d",
+    ["music"] = "tiling"
+  },
   tilesets = {
     {
       name = "bg_dw_library_tileset_new",
@@ -38,6 +41,117 @@ return {
   },
   layers = {
     {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 12,
+      name = "objects_bg2",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 0.2,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 44,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 200,
+          y = 1280,
+          width = 640,
+          height = 1600,
+          rotation = 0,
+          opacity = 1,
+          gid = 881,
+          visible = true,
+          properties = {
+            ["color"] = "#ffc927ff"
+          }
+        },
+        {
+          id = 45,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 560,
+          y = 1280,
+          width = 200,
+          height = 1240,
+          rotation = 0,
+          opacity = 1,
+          gid = 878,
+          visible = true,
+          properties = {
+            ["color"] = "#ffc927ff"
+          }
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 10,
+      name = "objects_bg1",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 0.5,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 39,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = -240,
+          y = 1000,
+          width = 400,
+          height = 578,
+          rotation = 0,
+          opacity = 1,
+          gid = 877,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 40,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 160,
+          y = 1000,
+          width = 400,
+          height = 578,
+          rotation = 0,
+          opacity = 1,
+          gid = 877,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 41,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 560,
+          y = 1000,
+          width = 400,
+          height = 578,
+          rotation = 0,
+          opacity = 1,
+          gid = 877,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
       type = "tilelayer",
       x = 0,
       y = 0,
@@ -61,10 +175,10 @@ return {
         0, 0, 0, 0, 0, 0, 0, 769, 770, 769, 770, 769, 770, 769, 770, 769, 770, 769, 770, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 789, 790, 789, 790, 789, 790, 789, 790, 789, 790, 789, 790, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 819, 820, 819, 820, 819, 820, 819, 820, 819, 820, 819, 820, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 829, 830, 829, 830, 829, 830, 829, 830, 829, 830, 829, 830, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 748, 748, 748, 748, 748, 748, 748, 748, 748, 748, 748, 748, 748, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 748, 748, 748, 748, 748, 748, 748, 748, 748, 748, 748, 748, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 748, 748, 748, 748, 748, 748, 748, 748, 748, 748, 748, 748, 0, 0, 0, 0, 0, 0, 0,
+        779, 780, 779, 780, 779, 780, 0, 829, 830, 829, 830, 829, 830, 829, 830, 829, 830, 829, 830, 0, 0, 0, 0, 0, 0, 0,
+        779, 780, 779, 780, 779, 780, 748, 748, 748, 748, 748, 748, 748, 748, 748, 748, 748, 748, 748, 0, 0, 0, 0, 0, 0, 0,
+        779, 780, 779, 780, 779, 780, 0, 748, 748, 748, 748, 748, 748, 748, 748, 748, 748, 748, 748, 0, 0, 0, 0, 0, 0, 0,
+        789, 789, 789, 790, 789, 790, 0, 748, 748, 748, 748, 748, 748, 748, 748, 748, 748, 748, 748, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -276,6 +390,20 @@ return {
           opacity = 1,
           visible = true,
           properties = {}
+        },
+        {
+          id = 46,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 623,
+          y = 190,
+          width = 110,
+          height = 110,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
         }
       }
     },
@@ -340,7 +468,7 @@ return {
         },
         {
           id = 35,
-          name = "",
+          name = "interactable",
           type = "",
           shape = "rectangle",
           x = 600,
@@ -352,7 +480,10 @@ return {
           gid = 980,
           visible = true,
           properties = {
-            ["color"] = "#ffffe100"
+            ["color"] = "#ffffe100",
+            ["cutscene"] = "breaks.one",
+            ["solid"] = true,
+            ["usetile"] = true
           }
         }
       }

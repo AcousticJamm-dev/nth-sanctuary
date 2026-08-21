@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 13,
-  nextobjectid = 47,
+  nextobjectid = 53,
   properties = {
     ["border"] = "church_d",
     ["music"] = "tiling"
@@ -404,6 +404,62 @@ return {
           opacity = 1,
           visible = true,
           properties = {}
+        },
+        {
+          id = 47,
+          name = "",
+          type = "",
+          shape = "point",
+          x = 400,
+          y = 440,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 48,
+          name = "",
+          type = "",
+          shape = "point",
+          x = 480,
+          y = 440,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 49,
+          name = "",
+          type = "",
+          shape = "point",
+          x = 560,
+          y = 440,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 50,
+          name = "",
+          type = "",
+          shape = "point",
+          x = 640,
+          y = 440,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
         }
       }
     },
@@ -484,6 +540,22 @@ return {
             ["cutscene"] = "breaks.one",
             ["solid"] = true,
             ["usetile"] = true
+          }
+        },
+        {
+          id = 52,
+          name = "interactable",
+          type = "",
+          shape = "rectangle",
+          x = 960,
+          y = 280,
+          width = 80,
+          height = 240,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["cutscene"] = "finale.demoend"
           }
         }
       }

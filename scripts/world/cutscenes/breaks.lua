@@ -28,7 +28,7 @@ return {
             cutscene:text("* (And it shall remain unsitted...)")
             return
         end
-
+        breakFlagTrue("one")
         local k = cutscene:getCharacter("kris")
         local r = cutscene:getCharacter("ralsei")
         local s = cutscene:getCharacter("susie")
@@ -56,7 +56,7 @@ return {
         r:setSprite("walk_unhappy")
         r:setFacing("down")
         r:setPosition(430, 295)
-        Game.world.camera:setPosition(525, 400)
+        Game.world.camera:setPosition(525, 340)
         cutscene:wait(cutscene:fadeIn(1))
         Game.world.music:stop()
         Game.world.music:play()
@@ -177,7 +177,7 @@ return {
                 table.insert(tabel, s)
 			end
        end
-       cutscene:text("[voice:jamm]* So maybe... [wait:10]This part got [func:a]lost to time.", {
+       cutscene:text("[voice:jamm]* So maybe... [wait:10]This part got [wait:10][func:a]lost [wait:10]to time.", {
             functions = {
                 a = function()
                     dothis()
@@ -289,76 +289,26 @@ return {
         r:setFacing("right")
         cutscene:text("* Kris! [wait:10]Do you feel better?", "pleased", r)
         cutscene:text("* (Dude, [wait:5]you missed Jamm acting like a total dad.)", "small_smile", s)
-        
-        cutscene:wait(2)
-        cutscene:text("* Oh! [wait:10]Kris! [wait:10]Can we do the thing...?", "blush", r)
-        cutscene:text("* Huh?[wait:10]\n[face:nervous_left]\"The thing\"?", "nervous", j)
         s:shake(2)
+        Assets.playSound("wing")
         cutscene:wait(1/15)
         s:resetSprite()
         cutscene:walkTo(s, s.x, 330)
-        cutscene:text("* Let's do it.", "smile", s)
-        cutscene:text("* Just... Get in a line.", "closed_grin_fixed", s)
-
-        cutscene:walkTo(k, 400, 440,2, 'down')
-        cutscene:walkTo(s, 480, 440,2, 'down')
-        cutscene:walkTo(r, 560, 440,2, 'down')
         cutscene:wait(3)
-        cutscene:text("* ...", "nervous_left", j)
+
+        cutscene:text("* Also looks like we reached the end of the line.", "look_left", j)
+
+        cutscene:wait(cutscene:panTo(720, Game.world.camera.y))
+        cutscene:wait(1)
+        cutscene:wait(cutscene:attachCamera())
+        cutscene:text("* (Remember you can use the [color:yellow]TRAVEL BUTTON [color:white]if there's no exit!)", "wink", r)
+        Assets.playSound("wing")
         j:shake()
         j:resetSprite()
-        Assets.playSound("wing")
-        cutscene:walkTo(j, 640, 440,3, 'down')
-        cutscene:wait(4)
+        cutscene:interpolateFollowers()
+		cutscene:wait(cutscene:attachFollowers())
 
-        cutscene:text("* Now just relax, [wait:10]think of nothing, [wait:5]and...", "wink", r)
-        cutscene:wait(2)
-
-        local tabll = TableUtils.mergeMany({Game.world.player}, Game.world.followers)
-        local dirs = {
-            "right",
-            "up",
-            "left",
-            "down"
-        }
-        Assets.playSound("ui_cancel_small")
-        for i = 1, 4 do
-            for _, e in ipairs(tabll) do
-                e:setFacing(dirs[i])
-            end
-            cutscene:wait(1/12)
-        end
-        Assets.playSound("bell")
-        local mask = ColorMaskFX({1,1,1}, 1)
-		j:addFX(mask)
-		s:addFX(mask)
-		r:addFX(mask)
-		k:addFX(mask)
-
-        k:setSprite("pose")
-        j:setSprite("bs_win")
-        s:setSprite("pose")
-        r:setSprite("pose")
-		
-		Game.world.timer:tween(1, mask, {amount = 0}, "out-expo", function()
-			j:removeFX(mask)
-			s:removeFX(mask)
-			r:removeFX(mask)
-			k:removeFX(mask)
-		end)
-        cutscene:wait(1)
-        j:shake(4)
-        j:setSprite("trip")
-        Assets.playSound("wing")
-        cutscene:wait(0.5)
-        j:shake(4)
-        j:setSprite("sit")
-        Assets.playSound("noise")
-        cutscene:wait(2)
-
-        cutscene:text("* Oof.", "ouch", j)
         
-            
-
+        k:setFacing("down")
     end
 }

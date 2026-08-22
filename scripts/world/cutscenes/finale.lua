@@ -15,6 +15,20 @@ return {
             cutscene:walkTo(Game.world.player, Game.world.player.x, Game.world.player.y+80, 1)
         end
     end,
+    demoend = function(cutscene)
+        cutscene:text("* (The end of the road.)")
+        cutscene:text("* (...In the distance, [wait:5]you can see a blue Ralsei waving.)")
+        cutscene:text("* (They hold out a sign, [wait:5]and it reads...)")
+        
+        cutscene:text("\"Thank you for playing this demo!\"")
+        cutscene:text("\"#th Sanctuary is a passion project and this is but [color:yellow]10% [color:white]of the story we have planned!\"")
+        cutscene:text("\"This couldn't have been done without your support!\"")
+        
+        cutscene:wait(2)
+
+        cutscene:text("* (The blue Ralsei slowly vanished.)")
+        Game.world.player:setFacing("down")
+    end,
     intro = function (cutscene)
         cutscene:fadeIn(0, {music = true})
         local g = Game.world.music

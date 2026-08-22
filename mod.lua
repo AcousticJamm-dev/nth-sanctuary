@@ -556,7 +556,7 @@ function Mod:onShadowCrystal(item, light)
     end
 end
 
-function Mod:load(data)
+function Mod:load(data, new_file, index)
     ---@type [int, int, int, int, int, int, int]
     self.dark_shards = {
         0, 0, 0, 0,
@@ -719,3 +719,11 @@ function Mod:postDraw()
     love.graphics.line(points)
 end
 ]]
+
+function Mod:postLoad(new_file)
+	if not new_file then
+		if Game.playtime > 5 and (not Game:getFlag("version_info")) then
+			Game.world:startCutscene("incompatible.legacy")
+		end
+	end
+end

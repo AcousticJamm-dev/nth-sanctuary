@@ -31,7 +31,8 @@
         "DDELTA": "No problem here.",
         "LUCID": "Hell no, pick something else!",
         "GARBAG": "Add an \"E\" to it",
-        "GARBAGE": "Fat chud"
+        "GARBAGE": "Fat chud",
+	    "JAMM": "As in that asshat who\nmade 16 bits of canned\nspam!?",
     },
     "namesDeny": [
         "MARCY",
@@ -66,5 +67,7 @@
         "afm_nthsanctuary": {
             "one_file": true
         }
-    }
+    },
+	
+	"version_info": 1
 }

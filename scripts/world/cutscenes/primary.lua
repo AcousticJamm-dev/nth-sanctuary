@@ -459,6 +459,7 @@ return {
 			susie:setColor(COLORS.white)
 			ripple_fx:remove()
 		end
+		Game:setFlag("version_info", Mod.info.version_info)
         Assets.playSound("him_quick")
         cutscene:fadeIn(1)
 		Kristal.showBorder(1)

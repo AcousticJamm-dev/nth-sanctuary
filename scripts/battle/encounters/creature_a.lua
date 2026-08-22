@@ -37,6 +37,10 @@ end
 function ImbuedGuei:getDialogueCutscene()
     if self.g.health <= 1000 then
         return function(cutscene, battler)
+            local ralsei = Game.battle:getPartyBattler("ralsei")
+            if ralsei.chara.health <= 0 then
+                ralsei:heal(-ralsei.chara.health + 26)
+            end
             Game.battle.music:fade(0, 2)
             
             self.g.layer = BATTLE_LAYERS["ui"]
@@ -108,36 +112,48 @@ function ImbuedGuei:getDialogueCutscene()
             Game.battle.timer:tween(3, aura, {scale_x = 10, scale_y = 10, alpha = 0}, 'out-cubic', function() aura:remove() end)
             Game.battle.timer:tween(1.5, self.fakefade, {alpha = 0}, 'out-cubic')
             -- cutscene:wait(3)
-            Game.battle.timer:every(1/30, function()
-                for Kristal = 1, 2 do --                    <-- Evil moniey deletr
-                    local a = self.g.x + ((love.math.random() * self.g.width) - (self.g.width / 2)) * 2
-                    local b = self.g.y - (love.math.random() * self.g.height) * 2
-                    local sparkle = HealSparkle(a, b)
-                    sparkle:setLayer(WORLD_LAYERS["below_ui"])
-                    sparkle:setColor(137/255, 157/255, 254/255, 1)
-                    Game.battle:addChild(sparkle)
-                end
-            end, 4)
-            --cutscene:wait(1)
-            Assets.playSound("creature_heal")
-            self.g:statusMessage("damage", "4000", {0.5, 0.6, 1})
-            local ralsei = Game.battle:getPartyBattler("ralsei")
+            
             local susie = Game.battle:getPartyBattler("susie")
             local jamm = Game.battle:getPartyBattler("jamm")
+            local kris = Game.battle:getPartyBattler("kris")
+
             ralsei:shake()
             ralsei:setSprite("shocked_right")
+            cutscene:battlerText(ralsei, "Wait!--", {auto = true, right = true})
+            
+            local beam = Sprite("bullets/beam")
+            beam:setOrigin(1, 0.5)
+            beam:setLayer(WORLD_LAYERS["below_ui"])
+            Game.battle:addChild(beam)
+
+            beam:setScale(2, 0)
+            beam.rotation = math.rad(-5)
+            beam:setPosition(535, 115)
+            Assets.playSound("beam_pow")
+            Assets.playSound("gigapunch")
+            
+
+            Game.battle.timer:tween(1, beam, {scale_y = 11}, 'out-expo') 
+            Game.battle.camera:shake(20, 0, 1)
             cutscene:wait(2)
-            cutscene:text("[shake:0.62][speed:0.5]* No... [wait:10]W-[wait:5]Wait...","concern_smile", ralsei)
-            cutscene:text("[shake:0.62][speed:0.5]* It... [wait:10]Healed itself...","concern_smile", ralsei)            
-            cutscene:text("[shake:0.62][speed:0.5]* This is hopeless. [wait:10][face:down_alt]It's just like the titan...","down", ralsei)
-            cutscene:text("* Ralsei, [wait:10]that doesn't matter right now!", "pissed", jamm)
-            cutscene:text("* Focus on this thing! [wait:10]Kris, [wait:5]can you still hold on?", "bangs/nervous_b", susie)
-            cutscene:text("[shake:0.62][speed:0.5]* ...","roaring", ralsei)
-            cutscene:text("[shake:0.62][speed:0.5]* ...","roaring", ralsei)
-            cutscene:text("[shake:0.62][speed:0.5]* ...[wait:5]Kris, [wait:5]Susie, [wait:5]I...","roaring", ralsei)
-            cutscene:text("[shake:0.62][speed:0.5]* ...","down", ralsei)
-            cutscene:text("[shake:0.7][speed:0.75]* I won't back down like before..!", "determined", ralsei)
+             for _, p in ipairs(Game.battle.party) do
+                 if p.chara.health > 1 then
+                     if p.chara.id == "ralsei" then
+                         p:hurt(p.chara.health - 1, true)
+                     else
+                         p:hurt(love.math.random(300, 600), true)
+                     end
+                 end
+             end
+            ralsei:setSprite("shocked_right_landed_2")
+             
+            cutscene:wait(2)
+            Game.battle.timer:tween(2, beam, {scale_y = 0}, 'out-circ', function() beam:remove() end) 
+            
             cutscene:gotoCutscene("imbued", "ralseicast")
+        
+            
+            
             --Assets.playSound("chargeshot_fire", 1, 0.7)
             --Assets.playSound("dtrans_square", 1, 0.7)
             --Assets.playSound("board_bomb", 1, 1)

@@ -1,6 +1,10 @@
 return {
     ralseicast = function(cutscene, battler, enemy)
         local ral = cutscene:getCharacter("ralsei")
+        ral:shake()
+        Assets.playSound("wing")
+--        cutscene:battlerText(ral, "[shake]Oww...")
+        
         ral:resetSprite()
         local radius_points = {}
         local particles = {}

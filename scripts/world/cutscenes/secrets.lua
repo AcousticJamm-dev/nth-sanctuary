@@ -13,11 +13,6 @@ return {
 			else
 				cutscene:text("* (It's a sort o[sound:budabing]f [image:npcs/frisk/engine, -5,10,1.5,1.5][wait:1] or a[sound:fafa] [image:fafa-dialogue, -5,10,1, 1][wait:1].)")				
 			end
-			cutscene:text("* (Fight them?)")
-			local ch = cutscene:choicer({"Fight", "No"})
-			if ch == 1 then
-				cutscene:startEncounter("frisk", event)
-			end
 		end
     end,
     proph = function (cutscene)

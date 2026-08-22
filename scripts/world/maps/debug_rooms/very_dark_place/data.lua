@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.12.1",
+  tiledversion = "1.12.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -34,7 +34,7 @@ return {
     },
     {
       name = "bg_dw_dither_overlay_tileset",
-      firstgid = 946,
+      firstgid = 952,
       filename = "../../../tilesets/bg_dw_dither_overlay_tileset.tsx"
     }
   },
@@ -170,21 +170,6 @@ return {
           y = 520,
           width = 120,
           height = 1200,
-          rotation = 270,
-          opacity = 1,
-          gid = 851,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 19,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = -80,
-          y = 520,
-          width = 120,
-          height = 160,
           rotation = 270,
           opacity = 1,
           gid = 851,

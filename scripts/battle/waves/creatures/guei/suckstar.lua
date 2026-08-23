@@ -16,11 +16,11 @@ function SuckStar:onStart()
         spr.x, spr.y = arena:getCenter()
         spr.alpha = 0
         Assets.playSound("alert")
-        Game.battle.timer:tween(3, spr, {alpha = 1}, "out-cubic")
+        Game.battle.timer:tween(1, spr, {alpha = 1}, "out-cubic")
         spr:setOrigin(0.5, 0.5)
         spr:setScale(3)
         self:addChild(spr)
-        wait(3.1)
+        wait(1.5)
         self.moving = true
         self.spr_startx = spr.x
             self.spr_starty = spr.y

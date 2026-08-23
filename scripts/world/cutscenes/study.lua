@@ -115,122 +115,59 @@ return {
 		local flag = Game:getFlag("readCount")
 		local books = {
 			[1] = {
-				"* \"Our recent mission to bring forth our God had a minor setback.\"",
-				"* \"The church we desecrated had spread word to its inhabitants,\"",
-				"* \"And they came with their magic and weapons.\"",
-				"* \"We sent our seven strongest acolytes to shield us.\"",
-				"* \"They had the idea of enclosing the offendors in a mountain, and raise a barrier.\"",
-				"* \"We all agreed.\"",
-				"* \"Any second now, [wait:5]Shade rises.\""
+				"* \"We sought another power when the old rites yielded nothing.\"",
+				"* \"One of our acolytes returned from a small town bearing transcripts and polaroids.\"",
+				"* \"The writings described darkness made manifest.\"",
+				"* \"Not an absence of light, [wait:5]but a place given form.\"",
+				"* \"The photographs should have been impossible.\"",
+				"* \"Rooms stretched beyond the walls which contained them.\"",
+				"* \"Someone in that town discovered this before us.\"",
+				"* \"They studied it. [wait:10]We shall give it purpose.\"",
 			},
 			[2] = {
-				"* \"They call us heretics.\"",
-				"* \"Blasphemers.[wait:10] Monsters.\"",
-				"* \"...Yet they pray to silence.\"",
-				"* \"And we answer.\"",
-				"* \"Shadows do not forget.\""
+				"* \"The transcripts explained the wound, [wait:5]but not the hand which must inflict it.\"",
+				"* \"Six blades broke. [wait:5]Three rooms remained ordinary.\"",
+				"* \"On the seventh attempt, [wait:5]the floor answered.\"",
+				"* \"Darkness poured upward like blood flowing in reverse.\"",
+				"* \"When we returned, [wait:5]the chamber was no longer a chamber.\"",
+				"* \"One acolyte had remained too close.\"",
+				"* \"They emerged changed, [wait:5]obedient, [wait:5]and filled with strength that was not their own.\"",
+				"* \"We intended to create a world. [wait:10]Instead, [wait:5]we learned darkness could create servants.\"",
 			},
 			[3] = {
-				"* \"The Order has tasked me with aiding them. [wait:10]I uphold their will.\"",
-				"* \"Their recent church has its people fighting back. And I, [wait:5]will enter this war.\"",
-				"* \"I will seal them with my fellows in hand. [wait:10]Let the Order prosper.\""
+				"* \"The first sanctuary belonged to a god whose name is no longer important.\"",
+				"* \"We repeated their prayers exactly.\"",
+				"* \"We rang their bells, [wait:5]lit their candles, [wait:5]and knelt before their altar.\"",
+				"* \"Then we opened the Fountain beneath it.\"",
+				"* \"Their painted saints became kings, [wait:5]beasts, [wait:5]and jesters.\"",
+				"* \"Their congregation fled from what their own devotion had created.\"",
+				"* \"They called it desecration.\"",
+				"* \"We called it the first prayer that had ever been answered.\"",
 			},
 			[4] = {
-				"* \"The seven remain at their posts.\"",
-				"* \"Each bound to their role.\"",
-				"* \"Each bound to the barrier.\"",
-				"* \"They do not speak anymore.\"",
-				"* \"...Not to us.\"",
-				"* \"But sometimes, [wait:5]we still hear them.\"",
-				"* \"Through the stone.\""
+				"* \"The fourth sanctuary offered no resistance.\"",
+				"* \"By then, [wait:5]we knew where the darkness preferred to gather.\"",
+				"* \"Beneath altars. [wait:5]Behind icons. [wait:5]Within objects made sacred by repetition.\"",
+				"* \"Every faith leaves a hollow place for its god.\"",
+				"* \"We need only fill it.\"",
+				"* \"One Fountain is a whisper. [wait:10]Several become a hymn.\"",
+				"* \"When the sky is dark enough, [wait:5]the Angel will hear us.\"",
+				"* \"When the world begins to roar, [wait:5]the Angel will descend.\"",
+				"* \"Those who survive shall receive its blessing.\"",
 			},
 			[5] = {
-				"* \"The barrier still stands.\"",
-				"* \"Even now, it hums with their resistance.\"",
-				"* \"But time erodes all things.\"",
-				"* \"Even faith.\"",
-				"* \"Even mountains.\"",
-				"* \"We wait. [wait:10]And we listen.\"",
-				"* \"For the moment it cracks.\""
+				"* \"Our acolyte has finally named the place from which the transcripts were taken.\"",
+				"* \"Hometown.\"",
+				"* \"A quiet settlement with a school, [wait:5]a graveyard, [wait:5]and a church.\"",
+				"* \"The people there have lived beside the darkness without understanding its grace.\"",
+				"* \"We departed when the bell next rang.\"",
+				"* \"Their church yielded beautifully.\"",
+				"* \"The town which gave us darkness became the place from which we shall call the Angel.\"",
+				"* \"We named our work the Grand Sanctum.\"",
+				"* \"A splinter of its birth has been preserved with this record.\"",
+				"* \"A memento of the making of our greatest prayer.\"",
 			},
-			[6] = {
-				"* \"It doesn't matter if it breaks. [wait:10]We aren't specifically targeting them.\"",
-				"* \"To Hell with it, [wait:5]quantity over quality.\"",
-				"* \"Both take the same amount of time.\"",
-				"* \"Next.\""
-			},
-			[7] = {
-				"* \"We found a new point of interest.\"",
-				"* \"A 'home town' of sorts. [wait:10]We're in the process of gauging activity.\"",
-				"* \"In fact, [wait:5]we don't even need our ritual items.\"",
-				"* \"One of our acolytes went to attend and see the interior.\"",
-				"* \"It's larger than our usual churches.\"",
-				"* \"We'll call everyone for this place.\""
-			},
-			[8] = {
-				"* \"It was easy to get in.\"",
-				"* \"Fragile windows, [wait:5]yet sharp. [wait:10]Good to open a fountain.\"",
-				"* \"...Or more.\"",
-				"* \"We'll stand in a circle and let one in the middle make links to all.\"",
-				"* \"Let Him make the [color:yellow]Grand Sanctum [color:white]and bind us.\"",
-				"* \"Make it darker.\""
-			},
-			[9] = {
-				"* \"Yet darker. [wait:10]Through it, [wait:5]I see color.\"",
-				"* \"Vivid, [wait:5]dull, [wait:5]and saturated color.\"",
-				"* \"A byproduct of this, [wait:5]though... [wait:10]The windows became part, [wait:5]too.\"",
-				"* \"It's as if their color became where we are now.\"",
-				"* \"And thus, [wait:5]turning those colored shards dark.\"",
-				"* \"The shadows cut deeper than expected.\"",
-			},
-			[10] = Game:getFlag("route") ~= 3 and {
-				"* (Wait, [wait:5]this passage feels like it was just written.)",
-				"* \"Project Dusk is going very smoothly.\"",
-				"* \"A shame I've to be the undercover one.\"",
-				"* \"Oh well. [wait:10]Beggars can't be choosers.\"",
-				"* \"If I want to climb, [wait:5]then I will do so.\"",
-				"* \"...By coordinating the fresh bodies that stepped right in.\"",
-				"* \"The one with the sword looks like the best candidate.\"",
-				"* \"I can feel their aura. [wait:10]It's so strong...\"",
-				"* \"It\"s as if their heart is the ark which guides them.\"",
-				"* \"The girl looks tough. [wait:10]With an axe and wits,[wait:5] she may be last.\"",
-				"* \"We break her down until her hope is the least of her worries.\"",
-				"* \"The other girl looks innocent. [wait:10]She may be the first.\"",
-				"* \"A dependant, [wait:5]lost girl.\"",
-				"* \"Yet she possesses magical prowess more than the one with a robe.\"",
-				"* \"That one. [wait:10]A fake. [wait:10]No aura. [wait:10]It's different.\"",
-				"* \"We can always throw him to the pit.\"",
-				"* \"It pains me to be the face that appears everywhere.\"",
-				"* \"I digress. [wait:10]Long Prosper.\"",
-				"* (For a moment, [wait:5]you felt like you were being watched.)",
-			} or {
-				"* (Wait, [wait:5]this passage feels like it was just written.)",
-				"* \"Project Dusk is no longer a projection.\"",
-				"* \"It's happening.\"",
-				"* \"Faster than anticipated.\"",
-				"* \"The one with the sword is no longer a candidate.\"",
-				"* \"They've already begun to bend.\"",
-				"* \"The girl with the axe fought longer than expected.[wait:10] And still is.\"",
-				"* \"She will break. [wait:10]They always do.\"",
-				"* \"The other girl...\"",
-				"* \"Interesting.\"",
-				"* \"And the 'fake'...\"",
-				"* \"Still empty.\"",
-				"* \"Still wrong.\"",
-				"* \"Yet even that hollow thing moves when pulled.\"",
-				"* \"What does that make the first?\"",
-				"* \"Guide?\"",
-				"* \"God?\"",
-				"* \"Or just another pair of hands.\"",
-				"* \"It seems I won't need to coordinate anything.\"",
-				"* \"Something made this efficient.\"",
-				"* \"Cleaner.\"",
-				"* \"Worse.\"",
-				"* \"...Better.\"",
-				"* \"Long Prosper.\"",
-				"* (For a moment, [wait:5]you feel something looking back.)",
-			}
-			--^ Add more passages in blanks. Ref Undertale or smth^--
+			
 		}
 		if not flag then
 			cutscene:text("* (It's a book.[wait:10] It has the...)")
@@ -239,7 +176,7 @@ return {
 			cutscene:text("* (...and 6 triangles all pointed to a star in the center,[wait:10] on the shield.)")
 			Game:setFlag("readCount", 0)
 		end
-		if Game:getFlag("readCount", 0) >= 10 then
+		if Game:getFlag("readCount", 0) >= 5 then
 			if Game:getFlag("fun") == 66 and love.math.random(1, 10) == 10 then
 				cutscene:gotoCutscene("study.gaster")
 			end
@@ -260,7 +197,7 @@ return {
 			flag = Game:getFlag("readCount")
 			for i = 1, #books[flag] do
 				cutscene:text(books[flag])
-				if flag == 10 then
+				if flag == 5 then
 					cutscene:text("* (As you put the book back, [wait:5]you see something glinting behind.)")
 					cutscene:text("* (You reach behind with your free hand...)")
 					cutscene:text("* (And when you pull back, [wait:5]you find yourself holding a [color:9999ff]Dark Shard.[color:white])")

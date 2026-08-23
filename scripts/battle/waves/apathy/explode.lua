@@ -3,7 +3,7 @@ local Explode, super = Class(Wave)
 function Explode:init()
     super.init(self)
     self.time = 15
-    
+    self:setSoulPosition(320, 270)
 end
 
 function Explode:onStart()
@@ -15,17 +15,15 @@ function Explode:onStart()
     Game.battle.arena:addChild(star)
     star:setScale(2,2)
     star:setOrigin(0.5,0.5)
-    soul.y = Game.battle.arena.bottom + 30
     self.timer:every(1, function()
-        Game.battle.timer:tween(2, star, {rotation = star.rotation + math.rad(180)}, "linear")
+        self.timer:tween(1, star, {rotation = star.rotation + math.rad(70)}, "out-circ")
         Assets.playSound("rocket")
-        self.timer:tween(0.1, star, {scale_x=4,scale_y=4}, "out-sine", function()
+        self.timer:tween(0.01, star, {scale_x=4,scale_y=4}, "out-sine", function()
             self.timer:tween(0.2, star, {scale_x=2,scale_y=2}, "in-sine")
         end)
-        for i=1, 16 do
-            local bullet = self:spawnBulletTo(arena, "smallstar", star.x, star.y, Utils.random(math.rad(0),math.rad(360)), math.random(6,8))
-            local scale = math.random(1,2)
-            bullet:setScale(scale,scale)
+        for i=1, 8 do
+            local bullet = self:spawnBulletTo(arena, "smallstar", star.x, star.y, star.rotation - math.rad(45 * i), 0.1)
+            bullet.physics.friction = -0.25
         end
     end)
     local bottom = function()

@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 11,
-  nextobjectid = 153,
+  nextobjectid = 160,
   properties = {
     ["border"] = "blank",
     ["music"] = "fast-travel",
@@ -485,10 +485,6 @@ return {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 724, 0, 0, 724, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 730, 0, 0, 730, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 736, 0, 0, 736, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 742, 0, 0, 742, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -496,7 +492,11 @@ return {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 201, 202, 202, 202, 202, 202, 202, 202, 202, 202, 202, 203, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 724, 0, 0, 724, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 730, 0, 0, 730, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 736, 0, 0, 736, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 742, 202, 202, 742, 202, 202, 202, 202, 202, 202, 202, 203, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -738,7 +738,7 @@ return {
           name = " ",
           type = "",
           shape = "rectangle",
-          x = 40,
+          x = 200,
           y = 1600,
           width = 160,
           height = 160,
@@ -753,7 +753,7 @@ return {
           name = " ",
           type = "",
           shape = "rectangle",
-          x = 200,
+          x = 360,
           y = 1600,
           width = 160,
           height = 160,
@@ -768,7 +768,7 @@ return {
           name = "shard_door",
           type = "",
           shape = "rectangle",
-          x = 60,
+          x = 220,
           y = 1570,
           width = 120,
           height = 30,
@@ -778,35 +778,13 @@ return {
           properties = {
             ["map"] = "4_4th_sanctuary/fourth_sanctum_1",
             ["map_name"] = "Fourth Sanctuary",
-            ["req"] = "1",
+            ["req"] = "2",
             ["solid"] = true,
-            ["text"] = "* A door. [wait:5]It needs [color:9999ff]1 Dark Shard[color:white] to open."
+            ["text"] = "* A door. [wait:5]It needs [color:9999ff]2 Dark Shards[color:white] to open."
           }
         },
         {
           id = 26,
-          name = "shard_door",
-          type = "",
-          shape = "rectangle",
-          x = 220,
-          y = 1570,
-          width = 120,
-          height = 30,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["map"] = "5_5th_sanctuary/fifth_sanctum_1",
-            ["map_name"] = "Fifth Sanctuary",
-            ["marker"] = "entry",
-            ["req"] = "3",
-            ["restricted"] = true,
-            ["solid"] = true,
-            ["text"] = "* A door. [wait:10]It needs [color:9999ff]3 Dark Shards[color:white] to open.[wait:10] However,[wait:5] it seems the door has been blocked off..."
-          }
-        },
-        {
-          id = 27,
           name = "shard_door",
           type = "",
           shape = "rectangle",
@@ -818,75 +796,13 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["map"] = "vapor_sanctum/vapor_sanctum_0_ripple",
-            ["map_name"] = "Vapor Sanctuary",
+            ["map"] = "5_5th_sanctuary/fifth_sanctum_1",
+            ["map_name"] = "Fifth Sanctuary",
             ["marker"] = "entry",
-            ["req"] = "5",
-            ["solid"] = true
-          }
-        },
-        {
-          id = 48,
-          name = " ",
-          type = "",
-          shape = "rectangle",
-          x = 680,
-          y = 1600,
-          width = 160,
-          height = 160,
-          rotation = 0,
-          opacity = 1,
-          gid = 964,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 49,
-          name = " ",
-          type = "",
-          shape = "rectangle",
-          x = 880,
-          y = 1600,
-          width = 160,
-          height = 160,
-          rotation = 0,
-          opacity = 1,
-          gid = 964,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 50,
-          name = "shard_door",
-          type = "",
-          shape = "rectangle",
-          x = 700,
-          y = 1570,
-          width = 120,
-          height = 30,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["req"] = "7",
-            ["solid"] = true
-          }
-        },
-        {
-          id = 51,
-          name = "shard_door",
-          type = "",
-          shape = "rectangle",
-          x = 900,
-          y = 1570,
-          width = 120,
-          height = 30,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["req"] = "10",
-            ["solid"] = true
+            ["req"] = "4",
+            ["restricted"] = true,
+            ["solid"] = true,
+            ["text"] = "* A door. [wait:10]It needs [color:9999ff]3 Dark Shards[color:white] to open.[wait:10] However,[wait:5] it seems the door has been blocked off..."
           }
         },
         {
@@ -923,70 +839,6 @@ return {
           }
         },
         {
-          id = 74,
-          name = " ",
-          type = "",
-          shape = "rectangle",
-          x = 680,
-          y = 1280,
-          width = 160,
-          height = 160,
-          rotation = 0,
-          opacity = 1,
-          gid = 964,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 75,
-          name = " ",
-          type = "",
-          shape = "rectangle",
-          x = 880,
-          y = 1280,
-          width = 160,
-          height = 160,
-          rotation = 0,
-          opacity = 1,
-          gid = 964,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 76,
-          name = "shard_door",
-          type = "",
-          shape = "rectangle",
-          x = 700,
-          y = 1250,
-          width = 120,
-          height = 30,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["req"] = "7",
-            ["solid"] = true
-          }
-        },
-        {
-          id = 77,
-          name = "shard_door",
-          type = "",
-          shape = "rectangle",
-          x = 900,
-          y = 1250,
-          width = 120,
-          height = 30,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["req"] = "10",
-            ["solid"] = true
-          }
-        },
-        {
           id = 91,
           name = " ",
           type = "",
@@ -1006,8 +858,8 @@ return {
           name = " ",
           type = "",
           shape = "rectangle",
-          x = 200,
-          y = 1280,
+          x = 40,
+          y = 1600,
           width = 160,
           height = 160,
           rotation = 0,
@@ -1021,7 +873,7 @@ return {
           name = " ",
           type = "",
           shape = "rectangle",
-          x = 360,
+          x = 200,
           y = 1280,
           width = 160,
           height = 160,
@@ -1056,6 +908,26 @@ return {
           name = "shard_door",
           type = "",
           shape = "rectangle",
+          x = 60,
+          y = 1570,
+          width = 120,
+          height = 30,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["map"] = "2_2nd_sanctuary/second_sanctum_1",
+            ["map_name"] = "Second Sanctuary",
+            ["req"] = "1",
+            ["solid"] = true,
+            ["text"] = "* A door. [wait:5]It needs [color:9999ff]1 Dark Shard[color:white] to open."
+          }
+        },
+        {
+          id = 96,
+          name = "shard_door",
+          type = "",
+          shape = "rectangle",
           x = 220,
           y = 1250,
           width = 120,
@@ -1064,25 +936,11 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["req"] = "9999",
-            ["solid"] = true
-          }
-        },
-        {
-          id = 96,
-          name = "shard_door",
-          type = "",
-          shape = "rectangle",
-          x = 380,
-          y = 1250,
-          width = 120,
-          height = 30,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["req"] = "9999",
-            ["solid"] = true
+            ["map"] = "3_flooded_sanctuary/flooded_1",
+            ["map_name"] = "Flooded Sanctuary",
+            ["req"] = "3",
+            ["solid"] = true,
+            ["text"] = "* A watery door. [wait:5]It needs [color:9999ff]3 Dark Shards[color:white] to open."
           }
         },
         {
@@ -1103,41 +961,6 @@ return {
           }
         },
         {
-          id = 111,
-          name = " ",
-          type = "",
-          shape = "rectangle",
-          x = 360,
-          y = 960,
-          width = 160,
-          height = 160,
-          rotation = 0,
-          opacity = 1,
-          gid = 964,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 112,
-          name = "shard_door",
-          type = "",
-          shape = "rectangle",
-          x = 380,
-          y = 930,
-          width = 120,
-          height = 30,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["map"] = "debug_rooms/filter_test",
-            ["map_name"] = "the debug rooms",
-            ["req"] = "0",
-            ["solid"] = true,
-            ["text"] = "* A door. [wait:5]It needs [color:9999ff]no Dark Shards[color:white] to open."
-          }
-        },
-        {
           id = 113,
           name = "entry_debug",
           type = "",
@@ -1152,26 +975,11 @@ return {
           properties = {}
         },
         {
-          id = 120,
-          name = " ",
-          type = "",
-          shape = "rectangle",
-          x = 360,
-          y = 1600,
-          width = 160,
-          height = 160,
-          rotation = 0,
-          opacity = 1,
-          gid = 965,
-          visible = true,
-          properties = {}
-        },
-        {
           id = 134,
           name = "",
           type = "",
           shape = "rectangle",
-          x = 200,
+          x = 360,
           y = 1600,
           width = 160,
           height = 160,
@@ -1230,6 +1038,115 @@ return {
           visible = true,
           properties = {
             ["cutscene"] = "primary.firsttravel"
+          }
+        },
+        {
+          id = 153,
+          name = "interactable",
+          type = "",
+          shape = "rectangle",
+          x = 680,
+          y = 1280,
+          width = 160,
+          height = 160,
+          rotation = 0,
+          opacity = 1,
+          gid = 964,
+          visible = true,
+          properties = {
+            ["text"] = "* (Locked.)",
+            ["usetile"] = "yes"
+          }
+        },
+        {
+          id = 155,
+          name = "interactable",
+          type = "",
+          shape = "rectangle",
+          x = 680,
+          y = 1600,
+          width = 160,
+          height = 160,
+          rotation = 0,
+          opacity = 1,
+          gid = 964,
+          visible = true,
+          properties = {
+            ["text"] = "* (Locked.)",
+            ["usetile"] = "yes"
+          }
+        },
+        {
+          id = 156,
+          name = "interactable",
+          type = "",
+          shape = "rectangle",
+          x = 880,
+          y = 1600,
+          width = 160,
+          height = 160,
+          rotation = 0,
+          opacity = 1,
+          gid = 964,
+          visible = true,
+          properties = {
+            ["text"] = "* (Locked.)",
+            ["usetile"] = "yes"
+          }
+        },
+        {
+          id = 157,
+          name = "interactable",
+          type = "",
+          shape = "rectangle",
+          x = 360,
+          y = 960,
+          width = 160,
+          height = 160,
+          rotation = 0,
+          opacity = 1,
+          gid = 964,
+          visible = true,
+          properties = {
+            ["text"] = "* (Locked.)",
+            ["usetile"] = "yes"
+          }
+        },
+        {
+          id = 158,
+          name = "shard_door_vapor",
+          type = "",
+          shape = "rectangle",
+          x = 880,
+          y = 1280,
+          width = 160,
+          height = 160,
+          rotation = 0,
+          opacity = 1,
+          gid = 965,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 159,
+          name = "shard_door",
+          type = "",
+          shape = "rectangle",
+          x = 900,
+          y = 1250,
+          width = 120,
+          height = 30,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["map"] = "5_5th_sanctuary/fifth_sanctum_1",
+            ["map_name"] = "Fifth Sanctuary",
+            ["marker"] = "entry",
+            ["req"] = "4",
+            ["restricted"] = true,
+            ["solid"] = true,
+            ["text"] = "* A neon door. [wait:10]When you tried to open it, [wait:5]a hatted figure pushed you back from beyond."
           }
         }
       }
@@ -1442,7 +1359,7 @@ return {
           name = "entry_fifth",
           type = "",
           shape = "point",
-          x = 280,
+          x = 440,
           y = 1640,
           width = 0,
           height = 0,
@@ -1456,8 +1373,8 @@ return {
           name = "",
           type = "",
           shape = "text",
-          x = 200,
-          y = 1280,
+          x = 40,
+          y = 1600,
           width = 160,
           height = 40,
           rotation = 0,
@@ -1477,7 +1394,7 @@ return {
           name = "",
           type = "",
           shape = "text",
-          x = 360,
+          x = 200,
           y = 1280,
           width = 160,
           height = 40,
@@ -1536,32 +1453,11 @@ return {
           properties = {}
         },
         {
-          id = 125,
-          name = "",
-          type = "",
-          shape = "text",
-          x = 360,
-          y = 1600,
-          width = 160,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          text = "Vapor",
-          fontfamily = "Times New Roman",
-          pixelsize = 32,
-          wrap = true,
-          color = { 255, 85, 0 },
-          halign = "center",
-          valign = "center",
-          properties = {}
-        },
-        {
           id = 126,
           name = "",
           type = "",
           shape = "text",
-          x = 40,
+          x = 200,
           y = 1600,
           width = 160,
           height = 40,
@@ -1582,7 +1478,7 @@ return {
           name = "",
           type = "",
           shape = "text",
-          x = 200,
+          x = 360,
           y = 1600,
           width = 160,
           height = 40,

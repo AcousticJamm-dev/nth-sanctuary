@@ -131,7 +131,7 @@ return {
 				"* \"Darkness poured upward like blood flowing in reverse.\"",
 				"* \"When we returned, [wait:5]the chamber was no longer a chamber.\"",
 				"* \"One acolyte had remained too close.\"",
-				"* \"They emerged changed, [wait:5]obedient, [wait:5]and filled with strength that was not their own.\"",
+				"* \"They emerged obedient, [wait:5]and filled with strength that was not their own.\"",
 				"* \"We intended to create a world. [wait:10]Instead, [wait:5]we learned darkness could create servants.\"",
 			},
 			[3] = {

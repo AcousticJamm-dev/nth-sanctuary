@@ -1,5 +1,5 @@
 return {
-  version = "1.11",
+  version = "1.10",
   luaversion = "5.1",
   tiledversion = "1.12.2",
   class = "",
@@ -921,6 +921,143 @@ return {
     {
       type = "objectgroup",
       draworder = "topdown",
+      id = 17,
+      name = "paths",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 106,
+          name = "enemy",
+          type = "",
+          shape = "polygon",
+          x = 700,
+          y = 140,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          polygon = {
+            { x = 0, y = 0 },
+            { x = 0, y = 80 },
+            { x = 80, y = 80 },
+            { x = 80, y = 0 }
+          },
+          properties = {}
+        },
+        {
+          id = 154,
+          name = "enemy_2",
+          type = "",
+          shape = "polygon",
+          x = 700,
+          y = 300,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          polygon = {
+            { x = 0, y = 0 },
+            { x = 0, y = 80 },
+            { x = 80, y = 80 },
+            { x = 80, y = 0 }
+          },
+          properties = {}
+        },
+        {
+          id = 126,
+          name = "enemo",
+          type = "",
+          shape = "polygon",
+          x = 580,
+          y = 20,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          polygon = {
+            { x = 0, y = 0 },
+            { x = 100, y = 100 },
+            { x = 160, y = 160 },
+            { x = 160, y = 0 },
+            { x = 0, y = 0 }
+          },
+          properties = {}
+        },
+        {
+          id = 159,
+          name = "enemy_4",
+          type = "",
+          shape = "polygon",
+          x = 1020,
+          y = 260,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          polygon = {
+            { x = 0, y = 0 },
+            { x = 0, y = 160 },
+            { x = 160, y = 0 }
+          },
+          properties = {}
+        },
+        {
+          id = 168,
+          name = "enemy_3",
+          type = "",
+          shape = "polygon",
+          x = 860,
+          y = 300,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          polygon = {
+            { x = 0, y = 0 },
+            { x = 0, y = 120 },
+            { x = 80, y = 120 },
+            { x = 80, y = 0 },
+            { x = 0, y = 0 }
+          },
+          properties = {}
+        },
+        {
+          id = 169,
+          name = "enemy_5",
+          type = "",
+          shape = "polygon",
+          x = 700,
+          y = 140,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          polygon = {
+            { x = 0, y = 0 },
+            { x = 0, y = 240 },
+            { x = 240, y = 240 },
+            { x = 240, y = 0 }
+          },
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
       id = 3,
       name = "objects_party",
       class = "",
@@ -1003,7 +1140,7 @@ return {
         },
         {
           id = 118,
-          name = "climbenemy",
+          name = "pathclimbenemy",
           type = "",
           shape = "rectangle",
           x = 680,
@@ -1020,7 +1157,7 @@ return {
         },
         {
           id = 119,
-          name = "climbenemy",
+          name = "pathclimbenemy",
           type = "",
           shape = "rectangle",
           x = 720,
@@ -1037,7 +1174,7 @@ return {
         },
         {
           id = 153,
-          name = "climbenemy",
+          name = "pathclimbenemy",
           type = "",
           shape = "rectangle",
           x = 720,
@@ -1054,7 +1191,7 @@ return {
         },
         {
           id = 171,
-          name = "climbenemy",
+          name = "pathclimbenemy",
           type = "",
           shape = "rectangle",
           x = 800,
@@ -1071,7 +1208,7 @@ return {
         },
         {
           id = 161,
-          name = "climbenemy",
+          name = "pathclimbenemy",
           type = "",
           shape = "rectangle",
           x = 1040,
@@ -1088,7 +1225,7 @@ return {
         },
         {
           id = 121,
-          name = "climbenemy",
+          name = "pathclimbenemy",
           type = "",
           shape = "rectangle",
           x = 880,
@@ -1106,7 +1243,7 @@ return {
         },
         {
           id = 170,
-          name = "climbenemy",
+          name = "pathclimbenemy",
           type = "",
           shape = "rectangle",
           x = 800,
@@ -1124,7 +1261,7 @@ return {
         },
         {
           id = 160,
-          name = "climbenemy",
+          name = "pathclimbenemy",
           type = "",
           shape = "rectangle",
           x = 1080,
@@ -1354,7 +1491,7 @@ return {
       id = 10,
       name = "objects_lightarea",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -1639,7 +1776,7 @@ return {
       id = 2,
       name = "collision",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -1932,147 +2069,10 @@ return {
     {
       type = "objectgroup",
       draworder = "topdown",
-      id = 17,
-      name = "paths",
-      class = "",
-      visible = true,
-      opacity = 1,
-      offsetx = 0,
-      offsety = 0,
-      parallaxx = 1,
-      parallaxy = 1,
-      properties = {},
-      objects = {
-        {
-          id = 106,
-          name = "enemy",
-          type = "",
-          shape = "polygon",
-          x = 700,
-          y = 140,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          polygon = {
-            { x = 0, y = 0 },
-            { x = 0, y = 80 },
-            { x = 80, y = 80 },
-            { x = 80, y = 0 }
-          },
-          properties = {}
-        },
-        {
-          id = 154,
-          name = "enemy_2",
-          type = "",
-          shape = "polygon",
-          x = 700,
-          y = 300,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          polygon = {
-            { x = 0, y = 0 },
-            { x = 0, y = 80 },
-            { x = 80, y = 80 },
-            { x = 80, y = 0 }
-          },
-          properties = {}
-        },
-        {
-          id = 126,
-          name = "enemo",
-          type = "",
-          shape = "polygon",
-          x = 580,
-          y = 20,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          polygon = {
-            { x = 0, y = 0 },
-            { x = 100, y = 100 },
-            { x = 160, y = 160 },
-            { x = 160, y = 0 },
-            { x = 0, y = 0 }
-          },
-          properties = {}
-        },
-        {
-          id = 159,
-          name = "enemy_4",
-          type = "",
-          shape = "polygon",
-          x = 1020,
-          y = 260,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          polygon = {
-            { x = 0, y = 0 },
-            { x = 0, y = 160 },
-            { x = 160, y = 0 }
-          },
-          properties = {}
-        },
-        {
-          id = 168,
-          name = "enemy_3",
-          type = "",
-          shape = "polygon",
-          x = 860,
-          y = 300,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          polygon = {
-            { x = 0, y = 0 },
-            { x = 0, y = 120 },
-            { x = 80, y = 120 },
-            { x = 80, y = 0 },
-            { x = 0, y = 0 }
-          },
-          properties = {}
-        },
-        {
-          id = 169,
-          name = "enemy_5",
-          type = "",
-          shape = "polygon",
-          x = 700,
-          y = 140,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          polygon = {
-            { x = 0, y = 0 },
-            { x = 0, y = 240 },
-            { x = 240, y = 240 },
-            { x = 240, y = 0 }
-          },
-          properties = {}
-        }
-      }
-    },
-    {
-      type = "objectgroup",
-      draworder = "topdown",
       id = 6,
       name = "objects_fog",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -2102,7 +2102,7 @@ return {
       id = 5,
       name = "objects_overlay",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,

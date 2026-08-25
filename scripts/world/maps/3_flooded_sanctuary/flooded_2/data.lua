@@ -1,5 +1,5 @@
 return {
-  version = "1.11",
+  version = "1.10",
   luaversion = "5.1",
   tiledversion = "1.12.2",
   class = "",
@@ -9,8 +9,8 @@ return {
   height = 32,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 33,
-  nextobjectid = 362,
+  nextlayerid = 34,
+  nextobjectid = 375,
   properties = {
     ["border"] = "church_flooded_dynamic",
     ["music"] = "floodedsanctuary"
@@ -1610,7 +1610,7 @@ return {
       id = 2,
       name = "collision",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -2921,136 +2921,8 @@ return {
       properties = {},
       objects = {
         {
-          id = 246,
-          name = "pathenemyturner",
-          type = "",
-          shape = "point",
-          x = 1700,
-          y = 780,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["dir"] = 3
-          }
-        },
-        {
-          id = 245,
-          name = "pathenemyturner",
-          type = "",
-          shape = "point",
-          x = 1380,
-          y = 780,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["dir"] = 0
-          }
-        },
-        {
-          id = 233,
-          name = "pathenemyturner",
-          type = "",
-          shape = "point",
-          x = 1380,
-          y = 940,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["dir"] = 1
-          }
-        },
-        {
-          id = 232,
-          name = "pathenemyturner",
-          type = "",
-          shape = "point",
-          x = 1700,
-          y = 940,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["dir"] = 2
-          }
-        },
-        {
-          id = 236,
-          name = "pathenemyturner",
-          type = "",
-          shape = "point",
-          x = 1420,
-          y = 900,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["dir"] = 1
-          }
-        },
-        {
-          id = 235,
-          name = "pathenemyturner",
-          type = "",
-          shape = "point",
-          x = 1660,
-          y = 900,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["dir"] = 2
-          }
-        },
-        {
-          id = 242,
-          name = "pathenemyturner",
-          type = "",
-          shape = "point",
-          x = 1660,
-          y = 820,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["dir"] = 3
-          }
-        },
-        {
-          id = 241,
-          name = "pathenemyturner",
-          type = "",
-          shape = "point",
-          x = 1420,
-          y = 820,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["dir"] = 0
-          }
-        },
-        {
           id = 239,
-          name = "pathenemynum",
+          name = "pathclimbenemy",
           type = "",
           shape = "rectangle",
           x = 1640,
@@ -3061,15 +2933,13 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["bounds"] = { id = 252 },
-            ["dir"] = 2,
-            ["movetype"] = 3,
-            ["speed"] = 9
+            ["path"] = "enemy_2",
+            ["progress"] = 0.75
           }
         },
         {
           id = 260,
-          name = "pathenemynum",
+          name = "pathclimbenemy",
           type = "",
           shape = "rectangle",
           x = 1840,
@@ -3080,15 +2950,12 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["bounds"] = { id = 252 },
-            ["dir"] = 0,
-            ["movetype"] = 3,
-            ["speed"] = 6
+            ["path"] = "enemy_5"
           }
         },
         {
           id = 261,
-          name = "pathenemynum",
+          name = "pathclimbenemy",
           type = "",
           shape = "rectangle",
           x = 1880,
@@ -3099,143 +2966,12 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["bounds"] = { id = 252 },
-            ["dir"] = 0,
-            ["movetype"] = 3,
-            ["speed"] = 9
-          }
-        },
-        {
-          id = 268,
-          name = "pathenemyturner",
-          type = "",
-          shape = "point",
-          x = 1860,
-          y = 1180,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["dir"] = 1
-          }
-        },
-        {
-          id = 269,
-          name = "pathenemyturner",
-          type = "",
-          shape = "point",
-          x = 1900,
-          y = 1140,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["dir"] = 1
-          }
-        },
-        {
-          id = 270,
-          name = "pathenemyturner",
-          type = "",
-          shape = "point",
-          x = 2100,
-          y = 1180,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["dir"] = 2
-          }
-        },
-        {
-          id = 271,
-          name = "pathenemyturner",
-          type = "",
-          shape = "point",
-          x = 2060,
-          y = 1140,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["dir"] = 2
-          }
-        },
-        {
-          id = 272,
-          name = "pathenemyturner",
-          type = "",
-          shape = "point",
-          x = 2100,
-          y = 940,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["dir"] = 3
-          }
-        },
-        {
-          id = 273,
-          name = "pathenemyturner",
-          type = "",
-          shape = "point",
-          x = 2060,
-          y = 990,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["dir"] = 3
-          }
-        },
-        {
-          id = 274,
-          name = "pathenemyturner",
-          type = "",
-          shape = "point",
-          x = 1860,
-          y = 940,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["dir"] = 0
-          }
-        },
-        {
-          id = 275,
-          name = "pathenemyturner",
-          type = "",
-          shape = "point",
-          x = 1900,
-          y = 980,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["dir"] = 0
+            ["path"] = "enemy_6"
           }
         },
         {
           id = 280,
-          name = "pathenemynum",
+          name = "pathclimbenemy",
           type = "",
           shape = "rectangle",
           x = 2000,
@@ -3246,15 +2982,13 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["bounds"] = { id = 252 },
-            ["dir"] = 1,
-            ["movetype"] = 3,
-            ["speed"] = 9
+            ["path"] = "enemy_6",
+            ["progress"] = 0.6666666666666666
           }
         },
         {
           id = 281,
-          name = "pathenemynum",
+          name = "pathclimbenemy",
           type = "",
           shape = "rectangle",
           x = 2040,
@@ -3265,15 +2999,13 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["bounds"] = { id = 252 },
-            ["dir"] = 2,
-            ["movetype"] = 3,
-            ["speed"] = 9
+            ["path"] = "enemy_6",
+            ["progress"] = 0.5
           }
         },
         {
           id = 282,
-          name = "pathenemynum",
+          name = "pathclimbenemy",
           type = "",
           shape = "rectangle",
           x = 1920,
@@ -3284,15 +3016,13 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["bounds"] = { id = 252 },
-            ["dir"] = 3,
-            ["movetype"] = 3,
-            ["speed"] = 9
+            ["path"] = "enemy_6",
+            ["progress"] = 0.16666666666666666
           }
         },
         {
           id = 283,
-          name = "pathenemynum",
+          name = "pathclimbenemy",
           type = "",
           shape = "rectangle",
           x = 2000,
@@ -3303,15 +3033,13 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["bounds"] = { id = 252 },
-            ["dir"] = 1,
-            ["movetype"] = 3,
-            ["speed"] = 6
+            ["path"] = "enemy_5",
+            ["progress"] = 0.6666666666666666
           }
         },
         {
           id = 284,
-          name = "pathenemynum",
+          name = "pathclimbenemy",
           type = "",
           shape = "rectangle",
           x = 2080,
@@ -3322,15 +3050,13 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["bounds"] = { id = 252 },
-            ["dir"] = 2,
-            ["movetype"] = 3,
-            ["speed"] = 6
+            ["path"] = "enemy_5",
+            ["progress"] = 0.5
           }
         },
         {
           id = 285,
-          name = "pathenemynum",
+          name = "pathclimbenemy",
           type = "",
           shape = "rectangle",
           x = 1920,
@@ -3341,15 +3067,13 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["bounds"] = { id = 252 },
-            ["dir"] = 3,
-            ["movetype"] = 3,
-            ["speed"] = 6
+            ["path"] = "enemy_5",
+            ["progress"] = 0.16666666666666666
           }
         },
         {
           id = 287,
-          name = "pathenemynum",
+          name = "pathclimbenemy",
           type = "",
           shape = "rectangle",
           x = 1400,
@@ -3360,15 +3084,13 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["bounds"] = { id = 252 },
-            ["dir"] = 0,
-            ["movetype"] = 3,
-            ["speed"] = 9
+            ["path"] = "enemy_2",
+            ["progress"] = 0.25
           }
         },
         {
           id = 288,
-          name = "pathenemynum",
+          name = "pathclimbenemy",
           type = "",
           shape = "rectangle",
           x = 1520,
@@ -3379,15 +3101,13 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["bounds"] = { id = 252 },
-            ["dir"] = 1,
-            ["movetype"] = 3,
-            ["speed"] = 6
+            ["path"] = "enemy_1",
+            ["progress"] = 0.5
           }
         },
         {
           id = 289,
-          name = "pathenemynum",
+          name = "pathclimbenemy",
           type = "",
           shape = "rectangle",
           x = 1520,
@@ -3398,15 +3118,12 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["bounds"] = { id = 252 },
-            ["dir"] = 3,
-            ["movetype"] = 3,
-            ["speed"] = 6
+            ["path"] = "enemy_1"
           }
         },
         {
           id = 290,
-          name = "pathenemynum",
+          name = "pathclimbenemy",
           type = "",
           shape = "rectangle",
           x = 1520,
@@ -3417,15 +3134,13 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["bounds"] = { id = 252 },
-            ["dir"] = 1,
-            ["movetype"] = 3,
-            ["speed"] = 9
+            ["path"] = "enemy_2",
+            ["progress"] = 0.5
           }
         },
         {
           id = 291,
-          name = "pathenemynum",
+          name = "pathclimbenemy",
           type = "",
           shape = "rectangle",
           x = 1520,
@@ -3436,15 +3151,12 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["bounds"] = { id = 252 },
-            ["dir"] = 3,
-            ["movetype"] = 3,
-            ["speed"] = 9
+            ["path"] = "enemy_2"
           }
         },
         {
           id = 303,
-          name = "pathenemynum",
+          name = "pathclimbenemy",
           type = "",
           shape = "rectangle",
           x = 1520,
@@ -3455,15 +3167,12 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["bounds"] = { id = 252 },
-            ["dir"] = 3,
-            ["movetype"] = 3,
-            ["speed"] = 6
+            ["path"] = "enemy_3"
           }
         },
         {
           id = 306,
-          name = "pathenemynum",
+          name = "pathclimbenemy",
           type = "",
           shape = "rectangle",
           x = 1520,
@@ -3474,143 +3183,13 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["bounds"] = { id = 252 },
-            ["dir"] = 1,
-            ["movetype"] = 3,
-            ["speed"] = 6
-          }
-        },
-        {
-          id = 307,
-          name = "pathenemyturner",
-          type = "",
-          shape = "point",
-          x = 1700,
-          y = 1020,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["dir"] = 3
-          }
-        },
-        {
-          id = 308,
-          name = "pathenemyturner",
-          type = "",
-          shape = "point",
-          x = 1380,
-          y = 1020,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["dir"] = 0
-          }
-        },
-        {
-          id = 309,
-          name = "pathenemyturner",
-          type = "",
-          shape = "point",
-          x = 1380,
-          y = 1180,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["dir"] = 1
-          }
-        },
-        {
-          id = 310,
-          name = "pathenemyturner",
-          type = "",
-          shape = "point",
-          x = 1700,
-          y = 1180,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["dir"] = 2
-          }
-        },
-        {
-          id = 311,
-          name = "pathenemyturner",
-          type = "",
-          shape = "point",
-          x = 1420,
-          y = 1140,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["dir"] = 1
-          }
-        },
-        {
-          id = 312,
-          name = "pathenemyturner",
-          type = "",
-          shape = "point",
-          x = 1660,
-          y = 1140,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["dir"] = 2
-          }
-        },
-        {
-          id = 313,
-          name = "pathenemyturner",
-          type = "",
-          shape = "point",
-          x = 1660,
-          y = 1060,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["dir"] = 3
-          }
-        },
-        {
-          id = 314,
-          name = "pathenemyturner",
-          type = "",
-          shape = "point",
-          x = 1420,
-          y = 1060,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["dir"] = 0
+            ["path"] = "enemy_3",
+            ["progress"] = 0.5
           }
         },
         {
           id = 315,
-          name = "pathenemynum",
+          name = "pathclimbenemy",
           type = "",
           shape = "rectangle",
           x = 1520,
@@ -3621,15 +3200,13 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["bounds"] = { id = 252 },
-            ["dir"] = 1,
-            ["movetype"] = 3,
-            ["speed"] = 9
+            ["path"] = "enemy_4",
+            ["progress"] = 0.5
           }
         },
         {
           id = 316,
-          name = "pathenemynum",
+          name = "pathclimbenemy",
           type = "",
           shape = "rectangle",
           x = 1520,
@@ -3640,15 +3217,12 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["bounds"] = { id = 252 },
-            ["dir"] = 3,
-            ["movetype"] = 3,
-            ["speed"] = 9
+            ["path"] = "enemy_4"
           }
         },
         {
           id = 317,
-          name = "pathenemynum",
+          name = "pathclimbenemy",
           type = "",
           shape = "rectangle",
           x = 1640,
@@ -3659,15 +3233,13 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["bounds"] = { id = 252 },
-            ["dir"] = 2,
-            ["movetype"] = 3,
-            ["speed"] = 9
+            ["path"] = "enemy_4",
+            ["progress"] = 0.75
           }
         },
         {
           id = 318,
-          name = "pathenemynum",
+          name = "pathclimbenemy",
           type = "",
           shape = "rectangle",
           x = 1400,
@@ -3678,15 +3250,13 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["bounds"] = { id = 252 },
-            ["dir"] = 0,
-            ["movetype"] = 3,
-            ["speed"] = 9
+            ["path"] = "enemy_4",
+            ["progress"] = 0.25
           }
         },
         {
           id = 319,
-          name = "pathenemynum",
+          name = "pathclimbenemy",
           type = "",
           shape = "rectangle",
           x = 2000,
@@ -3697,15 +3267,13 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["bounds"] = { id = 252 },
-            ["dir"] = 3,
-            ["movetype"] = 3,
-            ["speed"] = 9
+            ["path"] = "enemy_6",
+            ["progress"] = 0.3333333333333333
           }
         },
         {
           id = 320,
-          name = "pathenemynum",
+          name = "pathclimbenemy",
           type = "",
           shape = "rectangle",
           x = 2000,
@@ -3716,15 +3284,13 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["bounds"] = { id = 252 },
-            ["dir"] = 3,
-            ["movetype"] = 3,
-            ["speed"] = 6
+            ["path"] = "enemy_5",
+            ["progress"] = 0.3333333333333333
           }
         },
         {
           id = 321,
-          name = "pathenemynum",
+          name = "pathclimbenemy",
           type = "",
           shape = "rectangle",
           x = 1920,
@@ -3735,15 +3301,13 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["bounds"] = { id = 252 },
-            ["dir"] = 1,
-            ["movetype"] = 3,
-            ["speed"] = 9
+            ["path"] = "enemy_6",
+            ["progress"] = 0.8333333333333334
           }
         },
         {
           id = 322,
-          name = "pathenemynum",
+          name = "pathclimbenemy",
           type = "",
           shape = "rectangle",
           x = 1920,
@@ -3754,10 +3318,8 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["bounds"] = { id = 252 },
-            ["dir"] = 1,
-            ["movetype"] = 3,
-            ["speed"] = 6
+            ["path"] = "enemy_5",
+            ["progress"] = 0.8333333333333334
           }
         }
       }
@@ -3974,7 +3536,134 @@ return {
       parallaxx = 1,
       parallaxy = 1,
       properties = {},
-      objects = {}
+      objects = {
+        {
+          id = 373,
+          name = "enemy_5",
+          type = "",
+          shape = "polygon",
+          x = 1860,
+          y = 1060,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          polygon = {
+            { x = 0, y = 0 },
+            { x = 0, y = -120 },
+            { x = 240, y = -120 },
+            { x = 240, y = 120 },
+            { x = 0, y = 120 }
+          },
+          properties = {}
+        },
+        {
+          id = 374,
+          name = "enemy_6",
+          type = "",
+          shape = "polygon",
+          x = 1900,
+          y = 1060,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          polygon = {
+            { x = 0, y = 0 },
+            { x = 0, y = -80 },
+            { x = 160, y = -80 },
+            { x = 160, y = 80 },
+            { x = 0, y = 80 }
+          },
+          properties = {}
+        },
+        {
+          id = 369,
+          name = "enemy_1",
+          type = "",
+          shape = "polygon",
+          x = 1540,
+          y = 780,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          polygon = {
+            { x = 0, y = 0 },
+            { x = 160, y = 0 },
+            { x = 160, y = 160 },
+            { x = -160, y = 160 },
+            { x = -160, y = 0 }
+          },
+          properties = {}
+        },
+        {
+          id = 370,
+          name = "enemy_2",
+          type = "",
+          shape = "polygon",
+          x = 1540,
+          y = 820,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          polygon = {
+            { x = 0, y = 0 },
+            { x = 120, y = 0 },
+            { x = 120, y = 80 },
+            { x = -120, y = 80 },
+            { x = -120, y = 0 }
+          },
+          properties = {}
+        },
+        {
+          id = 371,
+          name = "enemy_3",
+          type = "",
+          shape = "polygon",
+          x = 1540,
+          y = 1020,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          polygon = {
+            { x = 0, y = 0 },
+            { x = 160, y = 0 },
+            { x = 160, y = 160 },
+            { x = -160, y = 160 },
+            { x = -160, y = 0 }
+          },
+          properties = {}
+        },
+        {
+          id = 372,
+          name = "enemy_4",
+          type = "",
+          shape = "polygon",
+          x = 1540,
+          y = 1060,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          polygon = {
+            { x = 0, y = 0 },
+            { x = 120, y = 0 },
+            { x = 120, y = 80 },
+            { x = -120, y = 80 },
+            { x = -120, y = 0 }
+          },
+          properties = {}
+        }
+      }
     },
     {
       type = "objectgroup",

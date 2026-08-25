@@ -8,7 +8,7 @@ function Pews:init()
         self.pewcount = self.pewcount + 1
       end
     end
-    self:setArenaSize(100 * self.pewcount, 150)
+    self:setArenaSize(100 * self.pewcount, 190)
     self.rectangles = {}
     self.benches = {}
     self.time = 15
@@ -16,7 +16,7 @@ end
 
 function Pews:onStart()
     for i = 1, self.pewcount-1 do
-        local rectangle = Rectangle(100*i, 0, 5, 150)
+        local rectangle = Rectangle(100*i, 0, 5, 190)
         table.insert(self.rectangles, rectangle)
         rectangle:setColor(0,0.25,0)
         rectangle.alpha = 0
@@ -25,7 +25,7 @@ function Pews:onStart()
         self.timer:tween(1, rectangle, {alpha = 1})
     end
     for i = 1, self.pewcount do
-        local bench = Sprite("bullets/bench", 100*(i-1), 150)
+        local bench = Sprite("bullets/bench", 100*(i-1), 190)
         bench:setOrigin(0,1)
         bench.alpha = 0
         Game.battle.arena:addChild(bench)

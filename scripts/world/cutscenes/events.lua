@@ -401,7 +401,9 @@ return {
 		cutscene:wait(2)
 		rect:remove()
 		g:removeFX(ColorMaskFX())
-		local snd = Assets.playSound("imbue_hit", 2.5, 1)
+		Assets.playSound("snd_closet_impact", 1, 1)
+		Assets.playSound("imbue_hit", 1, 1)
+		
 		local sm = SmokeFx(g.x-10, g.y - g.height/2, 2, 1.5)
 		Game.world:spawnObject(sm)
 		g.layer = origlayer

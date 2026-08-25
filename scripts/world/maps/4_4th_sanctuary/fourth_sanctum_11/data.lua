@@ -343,6 +343,7 @@ return {
           opacity = 1,
           visible = true,
           properties = {
+            ["flagcheck"] = "fought_apathy",
             ["map"] = "4_4th_sanctuary/fourth_sanctum_12_final",
             ["marker"] = "entry"
           }

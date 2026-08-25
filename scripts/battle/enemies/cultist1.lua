@@ -12,20 +12,20 @@ function Dummy:init()
     self.max_health = 6000
     self.health = 6000
     -- Enemy attack (determines bullet damage)
-    self.attack = 16
+    self.attack = 17
     -- Enemy defense (usually 0)
     self.defense = 3
     -- Enemy reward
     self.money = 0
 
     -- Mercy given when sparing this enemy before its spareable (20% for basic enemies)
-    self.spare_points = 20
+    self.spare_points = 0
 
     -- List of possible wave ids, randomly picked each turn
     self.waves = {
-        "basic",
-        "aiming",
-        "movingarena"
+        "apathy/spining",
+        "apathy/explode",
+        "apathy/spinchase"
     }
 
     -- Dialogue randomly displayed in the enemy's speech bubble
@@ -43,19 +43,21 @@ function Dummy:init()
         "* ...",
     }
     -- Text displayed at the bottom of the screen when the enemy has low health
-    self.low_health_text = "* The dummy looks like it's\nabout to fall over."
+    self.low_health_text = "* The enemy's movements became sluggish."
+
+    self.tired_percentage = -999
+    self.low_health_percentage = 0.25
+    
 
     -- Register act called "Smile"
-    self:registerAct("Smile")
     -- Register party act with Ralsei called "Tell Story"
     -- (second argument is description, usually empty)
-    self:registerAct("Tell Story", "", {"ralsei"})
     
     self.chosen_party_member = nil
 end
 
 function Dummy:getEncounterText()
-    local rand = love.math.random(1, 10)
+    local rand = love.math.random(1, 7)
     if rand == 10 then
         self.chosen_party_member = love.math.random(1, #Game.battle.party)
         return "* The enemy stares at "..Game.battle.party[self.chosen_party_member].chara:getName().."."
@@ -70,7 +72,43 @@ function Dummy:selectWave(battler)
         self.selected_wave = "apathy/risestar"
         return self.selected_wave
     end
+
+    if Game.battle.turn_count == 1 then
+        self.selected_wave = "basic-apathy"
+        return self.selected_wave
+    end
     return super.selectWave(self, battler)
+end
+
+function Dummy:defeat(reason, violent)
+    self.done_state = reason or "DEFEATED"
+
+    if violent then
+        if self:isRecruitable() and self:getRecruitStatus() ~= false then
+            if Game:getConfig("enableRecruits") and self.done_state ~= "FROZEN" then
+                self:recruitMessage("lost")
+            end
+            self:setRecruitStatus(false)
+        end
+    end
+
+    if self:isRecruitable() and type(self:getRecruitStatus()) == "number" and (self.done_state == "PACIFIED" or self.done_state == "SPARED") then
+        self:setRecruitStatus(self:getRecruitStatus() + 1)
+        if Game:getConfig("enableRecruits") then
+            local counter = self:recruitMessage("recruit")
+            counter.first_number = self:getRecruitStatus()
+            counter.second_number = Game:getRecruit(self.id):getRecruitAmount()
+            Assets.playSound("sparkle_gem")
+        end
+        if self:getRecruitStatus() >= Game:getRecruit(self.id):getRecruitAmount() then
+            self:setRecruitStatus(true)
+        end
+    end
+
+    Game.battle.money = Game.battle.money + self.money
+    Game.battle.xp = Game.battle.xp + self.experience
+
+    Game.battle:removeEnemy(self, true)
 end
 
 function Dummy:onAct(battler, name)
@@ -79,43 +117,7 @@ function Dummy:onAct(battler, name)
             "* CULTIST - AT [image:world/culteye,0,0,2,2] DF [image:world/culteye,0,0,2,2]\n* It radiates with apathy.",
             "* Your [color:yellow]GRAZE AREA [color:white]is reduced."
         }
-    elseif name == "Smile" then
-        -- Give the enemy 100% mercy
-        self:addMercy(100)
-        -- Change this enemy's dialogue for 1 turn
-        self.dialogue_override = "... ^^"
-        -- Act text (since it's a list, multiple textboxes)
-        return {
-            "* You smile.[wait:5]\n* The dummy smiles back.",
-            "* It seems the dummy just wanted\nto see you happy."
-        }
-
-    elseif name == "Tell Story" then
-        -- Loop through all enemies
-        for _, enemy in ipairs(Game.battle.enemies) do
-            -- Make the enemy tired
-            enemy:setTired(true)
-        end
-        return "* You and Ralsei told the dummy\na bedtime story.\n* The enemies became [color:blue]TIRED[color:reset]..."
-
-    elseif name == "Standard" then --X-Action
-        -- Give the enemy 50% mercy
-        self:addMercy(50)
-        if battler.chara.id == "ralsei" then
-            -- R-Action text
-            return "* Ralsei bowed politely.\n* The dummy spiritually bowed\nin return."
-        elseif battler.chara.id == "susie" then
-            -- S-Action: start a cutscene (see scripts/battle/cutscenes/dummy.lua)
-            Game.battle:startActCutscene("dummy", "susie_punch")
-            return
-        else
-            -- Text for any other character (like Noelle)
-            return "* "..battler.chara:getName().." straightened the\ndummy's hat."
-        end
     end
-
-    -- If the act is none of the above, run the base onAct function
-    -- (this handles the Check act)
     return super.onAct(self, battler, name)
 end
 

@@ -310,5 +310,6 @@ return {
 
         
         k:setFacing("down")
+        Game:setFlag("disable_travel", false)
     end
 }

@@ -9,8 +9,8 @@ return {
   height = 16,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 13,
-  nextobjectid = 53,
+  nextlayerid = 14,
+  nextobjectid = 57,
   properties = {
     ["border"] = "church_d",
     ["music"] = "tiling"
@@ -146,6 +146,36 @@ return {
           rotation = 0,
           opacity = 1,
           gid = 877,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 13,
+      name = "markers",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 54,
+          name = "entry",
+          type = "",
+          shape = "point",
+          x = 50,
+          y = 440,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -404,62 +434,6 @@ return {
           opacity = 1,
           visible = true,
           properties = {}
-        },
-        {
-          id = 47,
-          name = "",
-          type = "",
-          shape = "point",
-          x = 400,
-          y = 440,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 48,
-          name = "",
-          type = "",
-          shape = "point",
-          x = 480,
-          y = 440,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 49,
-          name = "",
-          type = "",
-          shape = "point",
-          x = 560,
-          y = 440,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 50,
-          name = "",
-          type = "",
-          shape = "point",
-          x = 640,
-          y = 440,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {}
         }
       }
     },
@@ -556,6 +530,23 @@ return {
           visible = true,
           properties = {
             ["cutscene"] = "finale.demoend"
+          }
+        },
+        {
+          id = 55,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = -40,
+          y = 360,
+          width = 40,
+          height = 160,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["map"] = "4_4th_sanctuary/fourth_sanctum_11",
+            ["marker"] = "plorgentry"
           }
         }
       }

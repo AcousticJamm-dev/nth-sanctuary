@@ -4,6 +4,8 @@ function Dummy:init()
     super.init(self)
 
     -- Text displayed at the bottom of the screen at the start of the encounter
+
+    self.no_end_message = true
     self.text = [==[
 * Apathy constricts you...
 * ([color:yellow]Movement[color:reset] restricted outside of [color:red]DANGER[color:reset])
@@ -46,13 +48,3 @@ function Dummy:createBackground()
 end
 
 return Dummy
-
---[[    WAVE PLAN
-for later
-
-tall arena (100, 300)
-soul appear center X, top of arena.
-Cue culteye fading in at the bottom of the arena. wide, spinning.
-Shoots up bullets that split into multiple --> Those rain down
-
-]]

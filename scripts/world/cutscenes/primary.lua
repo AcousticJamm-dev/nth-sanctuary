@@ -1961,11 +1961,11 @@ return {
 				Assets.playSound("noise")
 				Assets.playSound("spell_pacify", 0.9, 0.5)
 				cutscene:wait(2)
+				k:setFacing("left")
 				cutscene:text("* ...What is that?", "sus_nervous", s)
 
 				cutscene:walkTo(s, 320, 140, 2)
-				cutscene:wait(cutscene:walkTo(k, 390, 140, 2))
-				k:setFacing("left")
+				cutscene:wait(cutscene:walkTo(k, 390, 140, 2, 'left', true))
 
 				s:setSprite("heal_kneel")
 				cutscene:wait(1)
@@ -2004,6 +2004,7 @@ return {
 					},
 					{speed = 6}
 				))
+				cutscene:mapTransition("4_4th_sanctuary/fourth_sanctum_12_final", "entry")
 				return
 			end
 		else
@@ -2161,6 +2162,19 @@ return {
 		a.solid = false
 		cutscene:text("* Whenever you're ready, [wait:5]Kris.", "small_smile_side_b", r)
 		k:setFacing("down")
+
+		local trans = Transition(
+			680, 
+			40,
+			{40, 160},
+			{
+				map = "4_4th_sanctuary/fourth_sanctum_12_final",
+				marker = "entry"
+			}
+		)
+
+		Game.world:addChild(trans)
+		Game:setFlag("fought_apathy", true)
 			
 	end
 }

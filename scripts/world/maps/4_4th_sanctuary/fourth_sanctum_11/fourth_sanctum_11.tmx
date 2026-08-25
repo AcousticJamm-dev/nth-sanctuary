@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="17" height="32" tilewidth="40" tileheight="40" infinite="0" nextlayerid="16" nextobjectid="53">
  <editorsettings>
-  <export format="lua"/>
+  <export target="data.lua" format="lua"/>
  </editorsettings>
  <properties>
   <property name="border" value="church_d"/>
@@ -131,6 +131,7 @@
   </object>
   <object id="50" name="transition" x="680" y="40" width="40" height="160">
    <properties>
+    <property name="flagcheck" value="fought_apathy"/>
     <property name="map" value="4_4th_sanctuary/fourth_sanctum_12_final"/>
     <property name="marker" value="entry"/>
    </properties>

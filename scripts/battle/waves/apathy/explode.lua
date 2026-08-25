@@ -4,6 +4,7 @@ function Explode:init()
     super.init(self)
     self.time = 15
     self:setSoulPosition(320, 270)
+    self:setArenaSize(260)
 end
 
 function Explode:onStart()
@@ -27,32 +28,40 @@ function Explode:onStart()
         end
     end)
     local bottom = function()
-        local x = SCREEN_WIDTH + 80
+        local x = Game.battle.arena.right
         local y = Game.battle.arena.bottom
         local angle = math.rad(180)
         local bullet = self:spawnBullet("smallstar", x, y, angle, 8)
-        bullet.remove_offscreen = false    
+        bullet.remove_offscreen = true
+        bullet.tp = 0
+        bullet.grazed = true
     end
     local left = function()
         local angle = math.rad(270)
         local x = Game.battle.arena.left
-        local y = 520
+        local y = Game.battle.arena.bottom
         local bullet = self:spawnBullet("smallstar", x, y, angle, 8)
-        bullet.remove_offscreen = false
+        bullet.remove_offscreen = true
+        bullet.tp = 0
+        bullet.grazed = true
     end
     local top = function()
         local angle = math.rad(0)
-        local x = 0 - 80
+        local x = Game.battle.arena.left
         local y = Game.battle.arena.top
         local bullet = self:spawnBullet("smallstar", x, y, angle, 8)
-        bullet.remove_offscreen = false
+        bullet.remove_offscreen = true
+        bullet.tp = 0
+        bullet.grazed = true
     end
     local right = function()
         local angle = math.rad(90)
         local x = Game.battle.arena.right
-        local y = 0 - 80
+        local y = Game.battle.arena.top
         local bullet = self:spawnBullet("smallstar", x, y, angle, 8)
-        bullet.remove_offscreen = false
+        bullet.remove_offscreen = true
+        bullet.tp = 0
+        bullet.grazed = true
     end
     self.timer:every(0.1, function()
         bottom()

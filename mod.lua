@@ -110,6 +110,9 @@ function Mod:init()
     Game:registerEvent("vaporsun", function(data)
         return VaporSun(data.center_x, data.center_y)
     end)
+    Game:registerEvent("pathclimbenemy", function(data)
+        return PathClimbEnemy(data.x, data.y, data.properties)
+    end)
     TableUtils.copyInto(MUSIC_VOLUMES, {
         second_church = 0.8
     })

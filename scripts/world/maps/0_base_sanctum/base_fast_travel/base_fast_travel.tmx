@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="27" height="48" tilewidth="40" tileheight="40" infinite="0" nextlayerid="11" nextobjectid="160">
+<map version="1.10" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="27" height="48" tilewidth="40" tileheight="40" infinite="0" nextlayerid="11" nextobjectid="162">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -14,6 +14,7 @@
  <tileset firstgid="380" source="../../../tilesets/tiles_moss.tsx"/>
  <tileset firstgid="382" source="../../../tilesets/bg_dw_church_tileset_new.tsx"/>
  <tileset firstgid="964" source="../../../tilesets/fast_travel_doors.tsx"/>
+ <tileset firstgid="974" source="../../../tilesets/bg_dw_church_2_tileset.tsx"/>
  <layer id="9" name="tile_osc_optimize" width="27" height="48" locked="1">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -141,7 +142,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,171,163,173,174,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,171,173,182,174,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,171,173,199,174,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,181,199,199,174,0,0,0,0,0,0,0,0,0,0,
+0,0,1166,0,0,0,0,0,0,0,0,0,0,181,199,199,174,0,0,0,0,0,0,0,0,0,0,
 0,201,202,202,202,202,202,202,202,202,202,202,203,171,173,173,174,202,202,202,202,202,202,202,202,203,0,
 0,171,173,173,173,173,173,173,189,199,199,173,173,163,173,173,173,163,173,173,173,173,199,198,189,174,0,
 0,171,173,173,219,199,173,173,173,173,173,192,173,163,212,173,173,173,193,173,173,173,173,173,182,174,0,
@@ -287,6 +288,10 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,724,0,0,724,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,730,0,0,730,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,736,0,0,736,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,742,202,202,742,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -294,11 +299,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,724,0,0,724,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,730,0,0,730,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,736,0,0,736,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,742,202,202,742,202,202,202,202,202,202,202,203,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,202,202,202,202,202,202,202,203,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -326,9 +327,9 @@
   <object id="118" x="0" y="0" width="520" height="960"/>
  </objectgroup>
  <objectgroup id="4" name="objects_party">
-  <object id="22" name=" " gid="964" x="200" y="1600" width="160" height="160"/>
+  <object id="22" name=" " gid="964" x="200" y="1280" width="160" height="160"/>
   <object id="23" name=" " gid="964" x="360" y="1600" width="160" height="160"/>
-  <object id="25" name="shard_door" x="220" y="1570" width="120" height="30">
+  <object id="25" name="shard_door" x="220" y="1251" width="120" height="30">
    <properties>
     <property name="map" value="4_4th_sanctuary/fourth_sanctum_1"/>
     <property name="map_name" value="Fourth Sanctuary"/>
@@ -339,8 +340,8 @@
   </object>
   <object id="26" name="shard_door" x="380" y="1570" width="120" height="30">
    <properties>
-    <property name="map" value="5_5th_sanctuary/fifth_sanctum_1"/>
-    <property name="map_name" value="Fifth Sanctuary"/>
+    <property name="map" value="1_dark_sanctuary/dark_sanctum_1"/>
+    <property name="map_name" value="Dark Sanctuary"/>
     <property name="marker" value="entry"/>
     <property name="req" value="4"/>
     <property name="restricted" type="bool" value="true"/>
@@ -360,8 +361,8 @@
    </properties>
   </object>
   <object id="91" name=" " gid="964" x="200" y="960" width="160" height="160"/>
-  <object id="92" name=" " gid="971" x="40" y="1600" width="160" height="160"/>
-  <object id="93" name=" " gid="966" x="200" y="1280" width="160" height="160"/>
+  <object id="92" name=" " gid="971" x="360" y="1280" width="160" height="160"/>
+  <object id="93" name=" " gid="966" x="200" y="1600" width="160" height="160"/>
   <object id="94" name="shard_door" x="220" y="930" width="120" height="30">
    <properties>
     <property name="map" value="secrets/citadel_room/citadel_room_1"/>
@@ -371,7 +372,7 @@
     <property name="text" value="* A door. [wait:5]It needs [color:9999ff]no Dark Shards[color:white] to open."/>
    </properties>
   </object>
-  <object id="95" name="shard_door" x="60" y="1570" width="120" height="30">
+  <object id="95" name="shard_door" x="380" y="1250" width="120" height="30">
    <properties>
     <property name="map" value="2_2nd_sanctuary/second_sanctum_1"/>
     <property name="map_name" value="Second Sanctuary"/>
@@ -380,7 +381,7 @@
     <property name="text" value="* A door. [wait:5]It needs [color:9999ff]1 Dark Shard[color:white] to open."/>
    </properties>
   </object>
-  <object id="96" name="shard_door" x="220" y="1250" width="120" height="30">
+  <object id="96" name="shard_door" x="220" y="1570" width="120" height="30">
    <properties>
     <property name="map" value="3_flooded_sanctuary/flooded_1"/>
     <property name="map_name" value="Flooded Sanctuary"/>
@@ -399,9 +400,6 @@
    <point/>
   </object>
   <object id="134" gid="972" x="360" y="1600" width="160" height="160"/>
-  <object id="138" x="370.545" y="1414.55">
-   <polyline points="0,0 -40,40 -40.3333,21 -39.6667,39.6667 -17,39.6667"/>
-  </object>
   <object id="141" name="savepoint" x="760" y="1000"/>
   <object id="148" name="interactable" x="590" y="1640" width="20" height="20">
    <properties>
@@ -442,6 +440,12 @@
     <property name="restricted" type="bool" value="true"/>
     <property name="solid" type="bool" value="true"/>
     <property name="text" value="* A neon door. [wait:10]When you tried to open it, [wait:5]a hatted figure pushed you back from beyond."/>
+   </properties>
+  </object>
+  <object id="161" name="interactable" x="40" y="1560" width="120" height="40">
+   <properties>
+    <property name="text1" value="* It seems like a lock for something."/>
+    <property name="text2" value="* Unfortunately, it doesn't seem like you have a key."/>
    </properties>
   </object>
  </objectgroup>
@@ -507,13 +511,10 @@
   <object id="90" name="entry_citadel" x="280" y="1000">
    <point/>
   </object>
-  <object id="97" name="entry_fifth" x="440" y="1640">
-   <point/>
-  </object>
-  <object id="121" x="40" y="1600" width="160" height="40">
+  <object id="121" x="360" y="1280" width="160" height="40">
    <text fontfamily="Times New Roman" pixelsize="32" wrap="1" color="#ff0004" halign="center" valign="center">2nd</text>
   </object>
-  <object id="122" x="200" y="1280" width="160" height="40">
+  <object id="122" x="200" y="1600" width="160" height="40">
    <text fontfamily="Times New Roman" pixelsize="32" wrap="1" color="#ff0004" halign="center" valign="center">Flooded</text>
   </object>
   <object id="123" x="680" y="1280" width="160" height="40">
@@ -522,11 +523,15 @@
   <object id="124" x="880" y="1280" width="160" height="40">
    <text fontfamily="Times New Roman" pixelsize="32" wrap="1" color="#ff0004" halign="center" valign="center">???</text>
   </object>
-  <object id="126" x="200" y="1600" width="160" height="40">
+  <object id="126" x="200" y="1280" width="160" height="40">
    <text fontfamily="Times New Roman" pixelsize="32" wrap="1" color="#aaff00" halign="center" valign="center">4th</text>
   </object>
+  <object id="160" x="40" y="1600" width="160" height="80">
+   <text fontfamily="Times New Roman" pixelsize="32" wrap="1" color="#aaff00" halign="center" valign="center">2nd Floor
+Entrance</text>
+  </object>
   <object id="127" x="360" y="1600" width="160" height="40">
-   <text fontfamily="Times New Roman" pixelsize="32" wrap="1" color="#ff5500" halign="center" valign="center">5th</text>
+   <text fontfamily="Times New Roman" pixelsize="32" wrap="1" color="#ff5500" halign="center" valign="center">Dark</text>
   </object>
   <object id="128" x="680" y="1600" width="160" height="40">
    <text fontfamily="Times New Roman" pixelsize="32" wrap="1" color="#ff0004" halign="center" valign="center">???</text>
@@ -539,9 +544,6 @@
   </object>
   <object id="131" x="200" y="960" width="160" height="40">
    <text fontfamily="Times New Roman" pixelsize="32" wrap="1" color="#ffaa00" halign="center" valign="center">Citadel</text>
-  </object>
-  <object id="135" x="73.3333" y="1396" width="367" height="19">
-   <text wrap="1" color="#ff0000">temporary jellycruel colored placeholder door text</text>
   </object>
   <object id="149" name="kristo" x="600" y="1610">
    <point/>

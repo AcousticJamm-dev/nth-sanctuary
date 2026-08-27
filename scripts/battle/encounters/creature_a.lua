@@ -134,8 +134,15 @@ function ImbuedGuei:getDialogueCutscene()
             
 
             Game.battle.timer:tween(1, beam, {scale_y = 11}, 'out-expo') 
+            local siner = 0
             Game.battle.camera:shake(20, 0, 1)
-            cutscene:wait(2)
+            cutscene:wait(1)
+            cutscene:during(function()
+                siner = siner + DT*4
+                beam.scale_y = 11 + (math.sin(siner)/2)
+            end)
+            cutscene:wait(1)
+            
              for _, p in ipairs(Game.battle.party) do
                  if p.chara.health > 1 then
                      if p.chara.id == "ralsei" then
@@ -148,6 +155,7 @@ function ImbuedGuei:getDialogueCutscene()
             ralsei:setSprite("shocked_right_landed_2")
              
             cutscene:wait(2)
+            cutscene:during(function() end, true)
             Game.battle.timer:tween(2, beam, {scale_y = 0}, 'out-circ', function() beam:remove() end) 
             
             cutscene:gotoCutscene("imbued", "ralseicast")

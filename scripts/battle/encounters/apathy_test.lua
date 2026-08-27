@@ -30,6 +30,8 @@ function Dummy:init()
         img:setColor(COLORS.red)
         self.c:addChild(img)
     end)
+
+    self.parried = false
 end
 
 function Dummy:createSoul(x, y, color)

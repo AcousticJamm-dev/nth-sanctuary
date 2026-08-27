@@ -51,21 +51,29 @@ return {
            		    -- end
            		-- end
         	end, true)
-        	for i = 1, 30 do
-                local h = Sprite("effects/darksmoke")
-                local offset = TableUtils.pick(radius_points)
-        		h:addFX(OutlineFX(COLORS.white))
-                h:setPosition(x + offset[1], y + offset[2])
-                h:setOrigin(0.5, 0.5)
-                Game.battle:addChild(h)
-                h.layer = aura.layer + 1
-                h.physics.gravity = 0.2
-                h.physics.gravity_direction = MathUtils.angle(h.x, h.y, x, y)
-        		h:fadeOutAndRemove(1, 0)
-                table.insert(particles, h)
-                cutscene:wait(1/15)
-            end
-        	cutscene:wait(1)
+        	Game.battle.timer:every(1/15, function()
+                if charging then
+                    local h = Sprite("effects/darksmoke")
+                    local offset = TableUtils.pick(radius_points)
+        		    h:addFX(OutlineFX(COLORS.white))
+                    h:setPosition(x + offset[1], y + offset[2])
+                    h:setOrigin(0.5, 0.5)
+                    Game.battle:addChild(h)
+                    h.layer = aura.layer + 1
+                    h.physics.gravity = 0.2
+                    h.physics.gravity_direction = MathUtils.angle(h.x, h.y, x, y)
+        		    h:fadeOutAndRemove(1, 0)
+                    table.insert(particles, h)
+                end
+            end)
+        	cutscene:wait(3)
+            cutscene:battlerText(ral, "[noskip][speed:0.6]What is this...?", {right = true, x = ral.x + 30, y = ral.y - 30})
+            cutscene:battlerText(ral, "[noskip][speed:0.6]How am I--?", {right = true, x = ral.x + 30, y = ral.y - 30})
+            cutscene:battlerText(ral, "[noskip]...", {right = true, x = ral.x + 30, y = ral.y - 30})
+            cutscene:wait(1)
+            cutscene:battlerText(ral, "[noskip][speed:0.6][voice:echoral](It's like an instinct...)", {right = true, x = ral.x + 30, y = ral.y - 30})
+            cutscene:battlerText(ral, "[noskip][speed:0.6][voice:echoral][shake:0.51](I don't think I\ncan hold onto it\nmuch longer.)", {right = true, x = ral.x + 30, y = ral.y - 30})
+            cutscene:wait(1)
         	charging = false
         	snd:stop()
         	Assets.playSound("bigcut")

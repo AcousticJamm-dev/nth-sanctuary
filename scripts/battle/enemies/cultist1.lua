@@ -58,7 +58,7 @@ end
 
 function Dummy:getEncounterText()
     local rand = love.math.random(1, 7)
-    if rand == 10 then
+    if rand == 7 then
         self.chosen_party_member = love.math.random(1, #Game.battle.party)
         return "* The enemy stares at "..Game.battle.party[self.chosen_party_member].chara:getName().."."
     end
@@ -66,7 +66,7 @@ function Dummy:getEncounterText()
 end
 
 function Dummy:selectWave(battler)
-    if self.chosen_party_member then
+    if self.chosen_party_member and not Game.battle.encounter.parried then
         self.current_target = self.chosen_party_member
         self.chosen_party_member = nil
         self.selected_wave = "apathy/risestar"

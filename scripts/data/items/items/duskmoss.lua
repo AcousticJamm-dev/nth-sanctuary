@@ -55,7 +55,7 @@ function item:getHealAmount(id)
 end
 
 function item:onBattleUse(user, target)
-    super.onBattleUse(target)
+    --super.onBattleUse(self, user, target)
 
     -- Heal Kris too when used on Noelle
     target.chara:addStatBuff("defense", 10)

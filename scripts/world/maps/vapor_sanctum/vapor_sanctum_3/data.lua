@@ -1,5 +1,5 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
   tiledversion = "1.12.2",
   class = "",
@@ -9,8 +9,8 @@ return {
   height = 30,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 18,
-  nextobjectid = 54,
+  nextlayerid = 20,
+  nextobjectid = 56,
   properties = {
     ["border"] = "church_vapor",
     ["music"] = "vapor_sanct_wip"
@@ -30,6 +30,68 @@ return {
     }
   },
   layers = {
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 18,
+      name = "objects_starfield2",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 0.005,
+      parallaxy = 0.005,
+      properties = {},
+      objects = {
+        {
+          id = 55,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = -661,
+          y = 196,
+          width = 1280,
+          height = 720,
+          rotation = 0,
+          opacity = 0.5,
+          gid = 804,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 19,
+      name = "objects_starfield",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 0.01,
+      parallaxy = 0.01,
+      properties = {},
+      objects = {
+        {
+          id = 54,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = -660,
+          y = 194,
+          width = 1280,
+          height = 720,
+          rotation = 0,
+          opacity = 1,
+          gid = 803,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
     {
       type = "objectgroup",
       draworder = "topdown",

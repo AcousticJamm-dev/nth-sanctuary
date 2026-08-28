@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="20" height="30" tilewidth="40" tileheight="40" infinite="0" nextlayerid="18" nextobjectid="54">
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="20" height="30" tilewidth="40" tileheight="40" infinite="0" nextlayerid="20" nextobjectid="56">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -9,6 +9,12 @@
  </properties>
  <tileset firstgid="1" source="../../../tilesets/vapor_sanctum_wip.tsx"/>
  <tileset firstgid="801" source="../../../tilesets/vapor_assets.tsx"/>
+ <objectgroup id="18" name="objects_starfield2" parallaxx="0.005" parallaxy="0.005">
+  <object id="55" gid="804" x="-661" y="196" width="1280" height="720" opacity="0.5"/>
+ </objectgroup>
+ <objectgroup id="19" name="objects_starfield" parallaxx="0.01" parallaxy="0.01">
+  <object id="54" gid="803" x="-660" y="194" width="1280" height="720"/>
+ </objectgroup>
  <objectgroup id="5" name="objects_parallax3" visible="0" parallaxx="0.1" parallaxy="0.1">
   <object id="2" name="vaporsun" gid="801" x="120" y="280" width="400" height="278"/>
  </objectgroup>

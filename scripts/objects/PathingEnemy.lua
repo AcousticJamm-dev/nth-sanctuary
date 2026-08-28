@@ -38,7 +38,7 @@ function PathingEnemy:init(x, y, properties)
     self.speed = properties["speed"] or 12
     self.progress = (properties["progress"] or 0) % 1
     self.reverse_progress = false
-	self.inv_timer = 1
+	self.inv_timer = 40
 	self.enemy_collision = true
 	self.alpha = 0
 	self.sprite.visible = false
@@ -128,7 +128,7 @@ function PathingEnemy:onDamage(soul)
 			self.damage = math.max(MathUtils.round(self.damage * 0.8), 0)
 		end
         self.world:hurtParty(self.damage)
-        soul.inv_timer = self.inv_timer
+        Game.inv_frames = self.inv_timer
 		self.hit = 1
 		self.damage = remdam
     end

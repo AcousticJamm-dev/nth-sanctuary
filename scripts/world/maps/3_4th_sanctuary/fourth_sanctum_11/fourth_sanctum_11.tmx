@@ -6,6 +6,7 @@
  <properties>
   <property name="border" value="church_d"/>
   <property name="music" value="tiling"/>
+  <property name="name" value="Fourth Sanctuary - Precipice"/>
  </properties>
  <tileset firstgid="1" source="../../../tilesets/bg_dw_library_tileset_new.tsx"/>
  <tileset firstgid="831" source="../../../tilesets/church_objects.tsx"/>

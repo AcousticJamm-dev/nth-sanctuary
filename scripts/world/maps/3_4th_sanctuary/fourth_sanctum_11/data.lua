@@ -13,7 +13,8 @@ return {
   nextobjectid = 56,
   properties = {
     ["border"] = "church_d",
-    ["music"] = "tiling"
+    ["music"] = "tiling",
+    ["name"] = "Fourth Sanctuary - Precipice"
   },
   tilesets = {
     {

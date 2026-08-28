@@ -2159,6 +2159,16 @@ return {
 		
 		cutscene:alignFollowers()
 		cutscene:wait(cutscene:attachFollowers())
+		if ch == 1 then
+			cutscene:text("* (For some reason, [wait:10]when you knocked out the Cultist...)")
+			Assets.playSound("dtrans_lw", 1, 2)
+			cutscene:text("* (Everyone felt a little stronger.)")
+			Game.level_up_count = Game.level_up_count+1
+			for _, party in ipairs(Game.party) do
+				party:onLevelUp(Game.level_up_count)
+			end
+		end
+		cutscene:wait(1)
 		a.solid = false
 		cutscene:text("* Whenever you're ready, [wait:5]Kris.", "small_smile_side_b", r)
 		k:setFacing("down")

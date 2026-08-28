@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 21,
-  nextobjectid = 1076,
+  nextobjectid = 1078,
   properties = {
     ["border"] = "church_b",
     ["music"] = "second_church"
@@ -1007,6 +1007,24 @@ return {
           properties = {
             ["cond"] = "Game:getFlag(\"chase_cutscene_prog\", 0) < 2",
             ["marker"] = "entry2"
+          }
+        },
+        {
+          id = 1077,
+          name = "chaselooper",
+          type = "chaselooper",
+          shape = "rectangle",
+          x = 1360,
+          y = 760,
+          width = 120,
+          height = 240,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["doneflag"] = "chasepass",
+            ["warpcount"] = 9,
+            ["warpx"] = -480
           }
         }
       }

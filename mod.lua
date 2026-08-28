@@ -113,6 +113,9 @@ function Mod:init()
     Game:registerEvent("pathclimbenemy", function(data)
         return PathClimbEnemy(data.x, data.y, data.properties)
     end)
+    Game:registerEvent("chaselooper", function(data)
+        return ChaseLooper(data.x, data.y, data.width, data.height, data.properties)
+    end)
     TableUtils.copyInto(MUSIC_VOLUMES, {
         second_church = 0.8
     })

@@ -1,4 +1,4 @@
-	---@class Map.dark_place : Map
+	---@class Map.second_sanctum_9 : Map
 local map, super = Class(Map, "second_sanctum_9")
 
 function map:init(world, data)
@@ -33,20 +33,5 @@ function map:doBullets()
 	end)
 end
 
-function map:update()
-	super.update(self)
-	if Game.world.player.x >= 1360 and Game:getFlag("chasepass") ~= true then
-		for _, bullet in ipairs(Game.world.bullets) do
-			if bullet.id == "gravitybullet" then
-				bullet.x = bullet.x - 480
-			end
-		end
 
-		Game.world.player.x = Game.world.player.x - 480
-		if self.go_con > 9 then
-			Game:setFlag("chasepass", true)
-		end
-		self.go_con = self.go_con+1
-	end
-end
 return map

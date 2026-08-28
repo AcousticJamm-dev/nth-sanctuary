@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.10.2",
+  tiledversion = "1.12.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -85,6 +85,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["alwaysvisible"] = true,
@@ -92,10 +93,10 @@ return {
             ["no_back"] = true,
             ["offx"] = 0,
             ["offy"] = 0,
-            ["panel_h"] = 140,
-            ["panel_w"] = 160,
-            ["spr_offx"] = 16,
-            ["spr_offy"] = 60,
+            ["panel_h"] = 70,
+            ["panel_w"] = 80,
+            ["spr_offx"] = 12,
+            ["spr_offy"] = 96,
             ["texture"] = "uz"
           }
         }
@@ -125,6 +126,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -154,6 +156,7 @@ return {
           width = 640,
           height = 480,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -167,6 +170,7 @@ return {
           width = 80,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -180,6 +184,7 @@ return {
           width = 40,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -193,6 +198,7 @@ return {
           width = 40,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -206,6 +212,7 @@ return {
           width = 80,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }

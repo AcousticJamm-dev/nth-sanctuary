@@ -313,7 +313,7 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["map"] = "debug_rooms/horizontal_tower_test",
+            ["map"] = "debug_rooms/piano_light_test",
             ["marker"] = "entry2"
           }
         }

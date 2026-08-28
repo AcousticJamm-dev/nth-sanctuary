@@ -98,7 +98,7 @@
   </object>
   <object id="14" name="transition" x="-40" y="240" width="40" height="120">
    <properties>
-    <property name="map" value="debug_rooms/horizontal_tower_test"/>
+    <property name="map" value="debug_rooms/piano_light_test"/>
     <property name="marker" value="entry2"/>
    </properties>
   </object>

@@ -13,6 +13,7 @@
  <tileset firstgid="971" source="../../../tilesets/bg_dw_church_2_tileset.tsx"/>
  <tileset firstgid="1169" source="../../../tilesets/longslides.tsx"/>
  <tileset firstgid="1223" source="../../../tilesets/bg_dw_church_library_2_tileset.tsx"/>
+ <tileset firstgid="1483" source="../../../tilesets/castle.tsx"/>
  <objectgroup id="17" name="objects_parallax_4" visible="0" parallaxx="0.2" parallaxy="0.62">
   <object id="1050" gid="92" x="-1200" y="416" width="2880" height="100">
    <properties>
@@ -273,7 +274,7 @@
    <point/>
   </object>
  </objectgroup>
- <objectgroup id="20" name="battleareas" visible="0">
+ <objectgroup id="20" name="battleareas">
   <object id="1055" name="battlearea" x="440" y="840" width="1240" height="80"/>
  </objectgroup>
  <objectgroup color="#ff00ff" id="3" name="objects_party">
@@ -318,7 +319,7 @@
    <properties>
     <property name="doneflag" value="chasepass"/>
     <property name="warpcount" type="int" value="9"/>
-    <property name="warpx" type="int" value="-480"/>
+    <property name="warpx" type="int" value="-400"/>
    </properties>
   </object>
  </objectgroup>

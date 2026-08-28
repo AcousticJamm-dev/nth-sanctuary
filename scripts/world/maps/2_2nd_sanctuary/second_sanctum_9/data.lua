@@ -48,6 +48,12 @@ return {
       name = "bg_dw_church_library_2_tileset",
       firstgid = 1223,
       filename = "../../../tilesets/bg_dw_church_library_2_tileset.tsx"
+    },
+    {
+      name = "castle",
+      firstgid = 1483,
+      filename = "../../../tilesets/castle.tsx",
+      exportfilename = "../../../tilesets/castle.lua"
     }
   },
   layers = {
@@ -845,7 +851,7 @@ return {
       id = 20,
       name = "battleareas",
       class = "",
-      visible = false,
+      visible = true,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -1024,7 +1030,7 @@ return {
           properties = {
             ["doneflag"] = "chasepass",
             ["warpcount"] = 9,
-            ["warpx"] = -480
+            ["warpx"] = -400
           }
         }
       }

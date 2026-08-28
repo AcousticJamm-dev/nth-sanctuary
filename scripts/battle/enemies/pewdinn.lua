@@ -157,8 +157,11 @@ function Pewdinn:onAct(battler, name)
             -- R-Action text
             return "* Ralsei burned some incense!"
         elseif battler.chara.id == "susie" then
-            -- S-Action: start a cutscene (see scripts/battle/cutscenes/dummy.lua)
+            -- S-Action text
             return "* "..battler.chara:getName().." lights an old book on fire!"
+        elseif battler.chara.id == "jamm" then
+            -- J-Action text
+            return "* "..battler.chara:getName().." lit a candle with Pewdinn!"
         else
             -- Text for any other character (like Noelle)
             return "* "..battler.chara:getName().." added paper to the fire."

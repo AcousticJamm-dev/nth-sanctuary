@@ -1,9 +1,12 @@
-local PathingEnemy, super = Class(WorldBullet)
+---@class PathingEnemy : WorldBullet
+---@overload fun(x: number, y: number, properties: table?): PathingEnemy
+local PathingEnemy, super = Class(WorldBullet, "PathingEnemy")
 
+---@param properties table?
 function PathingEnemy:init(x, y, properties)
     super.init(self, x, y, "world/events/climbenemy/enemy_40")
 	self:setScale(1)
-    local properties = properties or {}
+    properties = properties or {}
 	self.buffer = 0
 	self:setHitbox(2, 2, 36, 36)
 	self.damagecon = 0

@@ -114,7 +114,7 @@ function PathingEnemyGenerator:update()
 	self.timer = self.timer + DTMULT
 	if self.spawnamount > 0 then
 		if self.timer >= self.rate then
-		local bullet = self.world:spawnBullet("pathingenemy", self.x, self.y, {
+		local bullet = self.world:spawnBullet(PathingEnemy(self.x, self.y, {
 			damage = self.damage,
 			movetype = self.movetype,
 			movevistype = self.movevistype,
@@ -131,7 +131,7 @@ function PathingEnemyGenerator:update()
 			progress = self.progress,
 			onscreen = self.onscreen,
 			bounds = self.bounds,
-		})
+		}))
 		bullet:setLayer(self.layer)
 		self.timer = 0
 	end

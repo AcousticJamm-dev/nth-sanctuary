@@ -28,7 +28,7 @@ function PathingEnemySpawnNum:postLoad()
 	local world = Game.world
 	if self.spawnamount > 0 then
 		for i=1, self.spawnamount do
-			local bullet = world:spawnBullet("pathingenemy", self.x + 20, self.y + 20, {
+			local bullet = world:spawnBullet(PathingEnemy(self.x + 20, self.y + 20, {
 				damage = self.damage,
 				movetype = self.movetype,
 				movevistype = self.movevistype,
@@ -45,7 +45,7 @@ function PathingEnemySpawnNum:postLoad()
 				progress = (i-1)/self.spawnamount,
 				onscreen = self.onscreen,
 				bounds = self.bounds,
-			})
+			}))
 			bullet:setLayer(self.layer)
 		end
 	end

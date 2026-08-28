@@ -731,5 +731,7 @@ function Mod:postLoad(new_file)
 		if Game.playtime > 5 and (not Game:getFlag("version_info")) then
 			Game.world:startCutscene("incompatible.legacy")
 		end
+    else
+        Game:setFlag("version_info", Mod.info.version_info)
 	end
 end

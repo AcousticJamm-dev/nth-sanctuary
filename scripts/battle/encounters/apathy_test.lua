@@ -40,9 +40,9 @@ end
 
 function Dummy:update()
     super.update(self)
-    self.siner = self.siner + DTMULT
+    self.siner = self.siner + (DT*30)
 
-    self.c.y = self.c.y + math.sin(self.siner/10)/2
+    self.c.y = self.c.y + (math.sin(self.siner/10)/2)*DTMULT
 end
 
 function Dummy:createBackground()

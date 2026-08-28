@@ -29,7 +29,7 @@ function SmallStar:init(x, y, dir, speed, spinfactor)
 end
 
 function SmallStar:update()
-    self.rotation = self.rotation + math.rad(self.spinfactor)
+    self.rotation = self.rotation + (math.rad(self.spinfactor)*DTMULT)
     super.update(self)
 end
 

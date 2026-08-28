@@ -11,7 +11,7 @@ function Basic:onStart()
     local x, y = Game.battle.arena:getCenter()
     local g = self:spawnBullet("bigeye", x, y, 0, 0, 0)
 
-    self.timer:tween(5, g, {spinfactor = 4}, 'in-sine')
+    self.timer:tween(5, g, {spinfactor = 4})
 end
 
 function Basic:update()

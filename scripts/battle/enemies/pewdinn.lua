@@ -59,7 +59,6 @@ function Pewdinn:init()
     self.low_health_text = "* Pewdinn's flame is weak."
 
     -- Register act called "Smile"
-    self:registerAct("Smile")
     -- Register party act with Ralsei called "Tell Story"
     -- (second argument is description, usually empty)
     self:registerAct("FanFlame", "60% &\nHeat up", {"ralsei"})
@@ -122,18 +121,7 @@ function Pewdinn:getNextWaves()
 end
 
 function Pewdinn:onAct(battler, name)
-    if name == "Smile" then
-        -- Give the enemy 100% mercy
-        self:addMercy(100)
-        -- Change this enemy's dialogue for 1 turn
-        self.dialogue_override = "... ^^"
-        -- Act text (since it's a list, multiple textboxes)
-        return {
-            "* You smile.[wait:5]\n* The dummy smiles back.",
-            "* It seems the dummy just wanted\nto see you happy."
-        }
-
-    elseif name == "FanFlame" then
+    if name == "FanFlame" then
         -- Loop through all enemies
         self:addMercy(60)
         Game.battle:startActCutscene(function(cutscene)
@@ -167,14 +155,13 @@ function Pewdinn:onAct(battler, name)
 			Game.battle.timer:tween(1, Game.battle.encounter, {heat_wave_mag_bg = math.min(Game.battle.encounter.heat_wave_mag_bg + 1, 6)})
 			Game.battle.encounter.heat_wave_mag = math.min(Game.battle.encounter.heat_wave_mag + 1, 6)
             -- R-Action text
-            return "* Ralsei bowed politely.\n* The dummy spiritually bowed\nin return."
+            return "* Ralsei burned some incense!"
         elseif battler.chara.id == "susie" then
             -- S-Action: start a cutscene (see scripts/battle/cutscenes/dummy.lua)
-            Game.battle:startActCutscene("dummy", "susie_punch")
-            return
+            return "* "..battler.chara:getName().." lights an old book on fire!"
         else
             -- Text for any other character (like Noelle)
-            return "* "..battler.chara:getName().." straightened the\ndummy's hat."
+            return "* "..battler.chara:getName().." added paper to the fire."
         end
     elseif name == "CharcoalShot" then
         Game.battle:startActCutscene(function (cutscene, battler)

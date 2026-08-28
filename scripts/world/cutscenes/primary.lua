@@ -2210,6 +2210,7 @@ return {
 		)
 
 		Game.world:addChild(trans)
+		cutscene:attachCamera()
 		Game:setFlag("fought_apathy", true)
 			
 	end

@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 16,
-  nextobjectid = 53,
+  nextobjectid = 56,
   properties = {
     ["border"] = "church_d",
     ["music"] = "tiling"
@@ -346,6 +346,24 @@ return {
             ["flagcheck"] = "fought_apathy",
             ["map"] = "3_4th_sanctuary/fourth_sanctum_12_final",
             ["marker"] = "entry"
+          }
+        },
+        {
+          id = 55,
+          name = "savepoint",
+          type = "",
+          shape = "rectangle",
+          x = 160,
+          y = 920,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["text1"] = "* (That same sense of finality came back.)",
+            ["text2"] = "* (This time, [wait:5]with a layer of dread.)",
+            ["text3"] = "* (The power of persistence even in utmost danger shines within.)"
           }
         }
       }

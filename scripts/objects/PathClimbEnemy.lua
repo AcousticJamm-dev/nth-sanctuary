@@ -58,7 +58,7 @@ function PathClimbEnemy:update()
 	if self.path and self.world.map.paths[self.path] then
 		local path = self.world.map.paths[self.path]
 
-		self.progress = self.progress + (4 / path.length) * DTMULT
+		self.progress = self.progress + (self.speed / path.length) * DTMULT
 		if path.closed then
 			self.progress = self.progress % 1
 		end

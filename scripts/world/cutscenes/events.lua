@@ -509,6 +509,7 @@ return {
 		Game:setFlag("chase_cutscene_prog", 2)
 		Game:setFlag("imbued_battle_fading", true)
 		cutscene:startEncounter("creature_a", nil)
+		Game:setFlag("creature_a_defeat", true)
 		jamm:setPosition(jamm.x, jamm.y + 40)
 		g:remove()
 		spr:remove()
@@ -626,6 +627,7 @@ return {
 		Assets.playSound("shard_get")
 		cutscene:text("* (You have obtained a [color:9999ff]Dark Shard.[color:white])")
 		cutscene:wait(cutscene:walkTo(kris, 1400, kris.y, 2))
+		cutscene:wait(cutscene:mapTransition("1_2nd_sanctuary/second_sanctum_11_exit", "entry"))
 		Game.party[1].health = 1
 
 		for i = 2, 4 do

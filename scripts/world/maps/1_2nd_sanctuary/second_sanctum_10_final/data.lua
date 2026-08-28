@@ -1,5 +1,5 @@
 return {
-  version = "1.11",
+  version = "1.10",
   luaversion = "5.1",
   tiledversion = "1.12.2",
   class = "",
@@ -979,6 +979,7 @@ return {
           opacity = 1,
           visible = true,
           properties = {
+            ["flagcheck"] = "creature_a_defeat",
             ["map"] = "1_2nd_sanctuary/second_sanctum_11_exit",
             ["marker"] = "entry"
           }

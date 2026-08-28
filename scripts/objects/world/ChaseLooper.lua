@@ -15,6 +15,9 @@ function ChaseLooper:init(x, y, width, height, properties)
 end
 
 function ChaseLooper:onEnter(player)
+    if not player:includes(Player) then
+        return
+    end
     if Game:getFlag(self.done_flag) then
         return
     end

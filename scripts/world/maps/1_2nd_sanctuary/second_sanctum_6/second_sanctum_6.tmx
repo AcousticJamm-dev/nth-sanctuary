@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="48" height="32" tilewidth="40" tileheight="40" infinite="0" nextlayerid="13" nextobjectid="244">
+ <editorsettings>
+  <export target="data.lua" format="lua"/>
+ </editorsettings>
+ <properties>
+  <property name="border" value="church_b"/>
+  <property name="music" value="second_church"/>
+ </properties>
+ <tileset firstgid="1" source="../../../tilesets/church_objects.tsx"/>
+ <tileset firstgid="110" source="../../../tilesets/bg_dw_church_tileset_new.tsx"/>
+ <tileset firstgid="692" source="../../../tilesets/bg_dw_church_c_tileset.tsx"/>
+ <tileset firstgid="971" source="../../../tilesets/bg_dw_church_2_tileset.tsx"/>
+ <tileset firstgid="1169" source="../../../tilesets/longslides.tsx"/>
+ <tileset firstgid="1223" source="../../../tilesets/bg_dw_church_library_2_tileset.tsx"/>
+ <layer id="8" name="tile_osc_optimize" width="48" height="32">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1482,1482,1482,1482,1482,1482,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1482,1482,1482,1482,1482,1482,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,1482,1482,1482,1482,1482,1482,1482,1482,1482,0,0,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,
+0,0,0,0,0,0,0,0,0,0,0,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,0,1482,1482,1482,1482,1482,1482,1482,
+0,0,0,0,0,0,0,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,0,1482,1482,1482,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,0,0,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,0,0,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,0,0,0,0,0,0,0,0,0,0,0,1482,1482,1482,1482,1482,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,0,0,0,0,0,0,0,0,0,0,0,1482,1482,1482,1482,1482,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,1482,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,1482,1482,1482,1482,1482,1482,1482,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,1482,1482,1482,1482,1482,1482,1482,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,1482,1482,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,1482,1482,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,1482,1482,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,1482,1482,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,1482,1482,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,1482,1482,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,1482,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup color="#93ffed" id="9" name="objects_osc">
+  <object id="32" name="texturescroller" x="80" y="0">
+   <properties>
+    <property name="base_tex" value="backgrounds/glow_purple_tile_oscillate"/>
+    <property name="scroll_tex" value="backgrounds/perlin_noise_purple_looping"/>
+    <property name="type" value="library"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="33" name="tile_oscillate" x="1480" y="320" width="440" height="80">
+   <properties>
+    <property name="type" value="library"/>
+   </properties>
+  </object>
+  <object id="149" name="tile_oscillate" x="920" y="240" width="80" height="480">
+   <properties>
+    <property name="type" value="library"/>
+   </properties>
+  </object>
+  <object id="150" name="tile_oscillate" x="1000" y="160" width="480" height="560">
+   <properties>
+    <property name="type" value="library"/>
+   </properties>
+  </object>
+  <object id="151" name="tile_oscillate" x="560" y="200" width="360" height="480">
+   <properties>
+    <property name="type" value="library"/>
+   </properties>
+  </object>
+  <object id="152" name="tile_oscillate" x="280" y="400" width="160" height="480">
+   <properties>
+    <property name="type" value="library"/>
+   </properties>
+  </object>
+  <object id="153" name="tile_oscillate" x="440" y="680" width="320" height="200">
+   <properties>
+    <property name="type" value="library"/>
+   </properties>
+  </object>
+  <object id="154" name="tile_oscillate" x="760" y="680" width="80" height="120">
+   <properties>
+    <property name="type" value="library"/>
+   </properties>
+  </object>
+  <object id="202" name="tile_oscillate" x="360" y="880" width="280" height="80">
+   <properties>
+    <property name="type" value="library"/>
+   </properties>
+  </object>
+  <object id="203" name="tile_oscillate" x="480" y="960" width="80" height="320">
+   <properties>
+    <property name="type" value="library"/>
+   </properties>
+  </object>
+  <object id="205" name="tile_oscillate" x="440" y="240" width="120" height="440">
+   <properties>
+    <property name="type" value="library"/>
+   </properties>
+  </object>
+  <object id="206" name="tile_oscillate" x="1280" y="720" width="200" height="80">
+   <properties>
+    <property name="type" value="library"/>
+   </properties>
+  </object>
+  <object id="207" name="tile_oscillate" x="1120" y="80" width="240" height="80">
+   <properties>
+    <property name="type" value="library"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <layer id="7" name="Tile Layer 2" width="48" height="32">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="1" name="Tile Layer 1" width="48" height="32">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1393,1420,1440,1421,1411,1416,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1413,1411,1430,1430,1421,1406,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1393,1395,1405,1394,1405,1385,1411,1440,1440,1430,1420,1406,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,1393,1420,1394,1395,1385,1394,1414,1395,1406,0,0,1393,1405,1395,1405,1405,1394,1420,1411,1430,1420,1431,1416,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,1413,1430,1441,1441,1421,1394,1385,1395,1395,1414,1404,1394,1385,1414,1395,1394,1404,1405,1404,1405,1411,1420,1411,1410,1411,1396,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,1403,1411,1430,1411,1411,1395,1404,1405,1384,1395,1385,1414,1414,1405,1394,1410,1421,1431,1394,1395,1430,1431,1421,1441,1430,1406,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,1413,1430,1431,1440,1421,1395,1414,1404,1394,1414,1394,1394,1394,1414,1430,1411,1420,1430,1431,1404,1394,1405,1395,1385,1404,1404,1394,1385,1394,1414,1414,1395,1414,1385,1385,1007,1008,
+0,0,0,0,0,0,0,0,0,0,0,1393,1431,1421,1431,1440,1414,1394,1385,1385,1405,1404,1404,1404,1421,1420,1440,1420,1420,1421,1431,1414,1385,1395,1404,1394,1394,1404,1394,1414,1394,1385,1395,1405,1395,1395,1025,1026,
+0,0,0,0,0,0,0,1413,1404,1385,1394,1394,1394,1405,1414,1385,1385,1404,1395,1405,1385,1405,1385,1414,1431,1411,1430,1430,1440,1440,1440,1405,1405,1414,1404,1414,1416,1443,1444,1444,1444,1444,1444,1444,1444,1444,1034,1036,
+0,0,0,0,0,0,0,1393,1394,1385,1394,1405,1395,1395,1394,1414,1395,1395,1395,1431,1385,1405,1385,1385,1405,1440,1411,1431,1411,1421,1395,1395,1405,1385,1394,1394,1396,0,0,0,0,0,0,0,0,0,1043,1045,
+0,0,0,0,0,0,0,1413,1394,1404,1440,1411,1440,1414,1385,1414,1394,1421,1411,1421,1430,1431,1405,1385,1394,1395,1421,1440,1431,1414,1404,1395,1395,1395,1405,1394,1396,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,1413,1395,1385,1421,1440,1411,1385,1404,1404,1385,1431,1440,1431,1440,1431,1385,1404,1385,1394,1385,1414,1420,1421,1420,1420,1411,1411,1420,1405,1396,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,1403,1395,1395,1410,1411,1440,1384,1395,1404,1394,1411,1431,1420,1410,1430,1395,1405,1415,1404,1395,1411,1411,1440,1440,1440,1431,1440,1430,1420,1406,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,1393,1385,1414,1421,1420,1411,1394,1404,1405,1404,1394,1394,1430,1405,1395,1405,1395,1414,1385,1394,1421,1420,1430,1421,1440,1411,1430,1440,1420,1416,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,1393,1440,1440,1430,1394,1394,1414,1404,1394,1394,1395,1394,1411,1411,1443,1445,1405,1395,1394,1404,1395,1441,1411,1420,1420,1420,1411,1431,1404,1396,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,1413,1430,1420,1420,1404,1405,1394,1394,1395,1385,1394,1404,1411,1416,0,0,1413,1394,1385,1395,1395,1404,1414,1395,1404,1411,1431,1420,1411,1416,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,1393,1411,1411,1411,1421,1420,1394,1405,1385,1395,1414,1430,1440,1431,1421,1406,0,0,1444,1444,1444,1444,1444,1444,1444,1444,1445,1393,1430,1440,1411,1416,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,1403,1411,1421,1421,1440,1431,1385,1394,1395,1405,1414,1430,1430,1430,1430,1416,0,0,0,0,0,0,0,0,0,0,0,1413,1394,1404,1414,1416,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,1413,1431,1441,1410,1420,1440,1395,1405,1404,1404,1405,1440,1421,1406,1443,1445,0,0,0,0,0,0,0,0,0,0,0,1443,1444,1444,1444,1445,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,1403,1431,1430,1430,1430,1431,1405,1405,1394,1384,1414,1431,1421,1396,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,1443,1444,1444,1445,1393,1394,1395,1385,1414,1404,1406,1443,1444,1445,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,1403,1395,1384,1404,1405,1394,1416,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,1443,1444,1445,1403,1416,1443,1445,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,1403,1396,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,1393,1396,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,1393,1406,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,1403,1416,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,1393,1396,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,1403,1416,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,1393,1396,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup id="4" name="collision">
+  <object id="10" x="1480" y="280" width="440" height="40"/>
+  <object id="35" x="1480" y="400" width="440" height="40"/>
+  <object id="39" x="1480" y="160" width="40" height="120"/>
+  <object id="40" x="1480" y="440" width="40" height="360"/>
+  <object id="41" x="920" y="720" width="360" height="80"/>
+  <object id="42" x="1000" y="80" width="120" height="80"/>
+  <object id="45" x="920" y="160" width="80" height="80"/>
+  <object id="47" x="400" y="240" width="40" height="160"/>
+  <object id="48" x="280" y="360" width="120" height="40"/>
+  <object id="49" x="200" y="400" width="80" height="320"/>
+  <object id="50" x="640" y="880" width="120" height="80"/>
+  <object id="51" x="760" y="800" width="80" height="80"/>
+  <object id="52" x="840" y="640" width="80" height="160"/>
+  <object id="186" x="160" y="720" width="40" height="160"/>
+  <object id="191" x="560" y="160" width="360" height="40"/>
+  <object id="193" x="440" y="200" width="120" height="40"/>
+  <object id="196" x="200" y="880" width="160" height="80"/>
+  <object id="197" x="1280" y="800" width="200" height="40"/>
+  <object id="199" x="1120" y="40" width="240" height="40"/>
+  <object id="200" x="1360" y="80" width="120" height="80"/>
+  <object id="201" x="360" y="960" width="120" height="40"/>
+  <object id="208" x="560" y="1000" width="40" height="280"/>
+  <object id="211" x="400" y="1000" width="40" height="280"/>
+  <object id="226" x="560" y="960" width="80" height="40"/>
+  <object id="231" x="440" y="1240" width="40" height="40"/>
+ </objectgroup>
+ <objectgroup id="6" name="objects">
+  <object id="234" name="magicglass" x="440" y="1000" width="40" height="240">
+   <properties>
+    <property name="new" value="true"/>
+   </properties>
+  </object>
+  <object id="240" name="sprite" x="461.667" y="1221.33">
+   <properties>
+    <property name="speed" type="float" value="0.333333333"/>
+    <property name="texture" value="effects/shine_white_1"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="241" name="sprite" x="471.5" y="1157.75">
+   <properties>
+    <property name="speed" type="float" value="0.333333333"/>
+    <property name="texture" value="effects/shine_white_1"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="242" name="sprite" x="446.75" y="1115">
+   <properties>
+    <property name="speed" type="float" value="0.333333333"/>
+    <property name="texture" value="effects/shine_white_1"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="243" name="sprite" x="469.25" y="1049.5">
+   <properties>
+    <property name="speed" type="float" value="0.333333333"/>
+    <property name="texture" value="effects/shine_white_1"/>
+   </properties>
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup id="5" name="markers">
+  <object id="22" name="entry" x="1880" y="360">
+   <point/>
+  </object>
+  <object id="23" name="spawn" x="1660" y="360">
+   <point/>
+  </object>
+  <object id="230" name="entry2" x="520" y="1240">
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup id="11" name="objects_belowparty">
+  <object id="229" name="bellplayable" x="1640" y="260" width="40" height="40">
+   <properties>
+    <property name="interactable" type="bool" value="true"/>
+    <property name="script" value="respawn_bookshelves_secsanct"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="3" name="objects_party">
+  <object id="18" name="transition" x="1920" y="320" width="40" height="80">
+   <properties>
+    <property name="map" value="1_2nd_sanctuary/second_sanctum_5"/>
+    <property name="marker" value="entry2"/>
+   </properties>
+  </object>
+  <object id="38" name="remotepianomove" x="1160" y="160" width="80" height="80"/>
+  <object id="58" name="bookshelf_destructable" x="440" y="240" width="80" height="160"/>
+  <object id="59" name="bookshelf_destructable" x="520" y="240" width="80" height="160"/>
+  <object id="61" name="bookshelf_destructable" x="680" y="240" width="80" height="160"/>
+  <object id="63" name="bookshelf_destructable" x="520" y="320" width="80" height="160"/>
+  <object id="64" name="bookshelf_destructable" x="600" y="320" width="80" height="160"/>
+  <object id="65" name="bookshelf_destructable" x="680" y="320" width="80" height="160"/>
+  <object id="66" name="bookshelf_destructable" x="440" y="400" width="80" height="160"/>
+  <object id="67" name="bookshelf_destructable" x="520" y="400" width="80" height="160"/>
+  <object id="69" name="bookshelf_destructable" x="680" y="400" width="80" height="160"/>
+  <object id="71" name="bookshelf_destructable" x="520" y="480" width="80" height="160"/>
+  <object id="72" name="bookshelf_destructable" x="600" y="480" width="80" height="160"/>
+  <object id="73" name="bookshelf_destructable" x="680" y="480" width="80" height="160"/>
+  <object id="74" name="bookshelf_destructable" x="440" y="560" width="80" height="160"/>
+  <object id="75" name="bookshelf_destructable" x="520" y="560" width="80" height="160"/>
+  <object id="76" name="bookshelf_destructable" x="600" y="560" width="80" height="160"/>
+  <object id="77" name="bookshelf_destructable" x="680" y="560" width="80" height="160"/>
+  <object id="78" name="bookshelf_destructable" x="440" y="640" width="80" height="160"/>
+  <object id="79" name="bookshelf_destructable" x="520" y="640" width="80" height="160"/>
+  <object id="80" name="bookshelf_destructable" x="600" y="640" width="80" height="160"/>
+  <object id="81" name="bookshelf_destructable" x="680" y="640" width="80" height="160"/>
+  <object id="82" name="bookshelf_destructable" x="440" y="720" width="80" height="160"/>
+  <object id="85" name="bookshelf_destructable" x="680" y="720" width="80" height="160"/>
+  <object id="227" name="bookshelf_destructable" x="480" y="1000" width="80" height="160"/>
+  <object id="87" name="bookshelf_destructable" x="760" y="480" width="80" height="160"/>
+  <object id="88" name="bookshelf_destructable" x="760" y="560" width="80" height="160"/>
+  <object id="89" name="bookshelf_destructable" x="760" y="640" width="80" height="160"/>
+  <object id="95" name="bookshelf_destructable" x="920" y="320" width="80" height="160"/>
+  <object id="96" name="bookshelf_destructable" x="920" y="400" width="80" height="160"/>
+  <object id="99" name="bookshelf_destructable" x="1000" y="320" width="80" height="160"/>
+  <object id="100" name="bookshelf_destructable" x="1000" y="400" width="80" height="160"/>
+  <object id="101" name="bookshelf_destructable" x="1000" y="480" width="80" height="160"/>
+  <object id="102" name="bookshelf_destructable" x="1080" y="240" width="80" height="160"/>
+  <object id="103" name="bookshelf_destructable" x="1080" y="320" width="80" height="160"/>
+  <object id="105" name="bookshelf_destructable" x="1080" y="480" width="80" height="160"/>
+  <object id="107" name="bookshelf_destructable" x="1160" y="320" width="80" height="160"/>
+  <object id="109" name="bookshelf_destructable" x="1160" y="480" width="80" height="160"/>
+  <object id="111" name="bookshelf_destructable" x="1240" y="320" width="80" height="160"/>
+  <object id="112" name="bookshelf_destructable" x="1240" y="400" width="80" height="160"/>
+  <object id="113" name="bookshelf_destructable" x="1240" y="480" width="80" height="160"/>
+  <object id="115" name="bookshelf_destructable" x="1320" y="320" width="80" height="160"/>
+  <object id="116" name="bookshelf_destructable" x="1320" y="400" width="80" height="160"/>
+  <object id="119" name="bookshelf_destructable" x="1400" y="320" width="80" height="160"/>
+  <object id="121" name="bookshelf_destructable" x="1400" y="480" width="80" height="160"/>
+  <object id="122" name="bookshelf_destructable" x="1400" y="160" width="80" height="160"/>
+  <object id="125" name="bookshelf_destructable" x="1320" y="160" width="80" height="160"/>
+  <object id="126" name="bookshelf_destructable" x="1240" y="80" width="80" height="160"/>
+  <object id="128" name="bookshelf_destructable" x="1240" y="160" width="80" height="160"/>
+  <object id="130" name="bookshelf_destructable" x="1080" y="80" width="80" height="160"/>
+  <object id="131" name="bookshelf_destructable" x="1000" y="80" width="80" height="160"/>
+  <object id="133" name="bookshelf_destructable" x="920" y="160" width="80" height="160"/>
+  <object id="134" name="bookshelf_destructable" x="1000" y="160" width="80" height="160"/>
+  <object id="135" name="bookshelf_destructable" x="1080" y="160" width="80" height="160"/>
+  <object id="138" name="bookshelf_destructable" x="920" y="560" width="80" height="160"/>
+  <object id="139" name="bookshelf_destructable" x="1000" y="560" width="80" height="160"/>
+  <object id="140" name="bookshelf_destructable" x="1080" y="560" width="80" height="160"/>
+  <object id="141" name="bookshelf_destructable" x="1160" y="560" width="80" height="160"/>
+  <object id="142" name="bookshelf_destructable" x="1240" y="560" width="80" height="160"/>
+  <object id="143" name="bookshelf_destructable" x="1320" y="560" width="80" height="160"/>
+  <object id="144" name="bookshelf_destructable" x="1400" y="560" width="80" height="160"/>
+  <object id="155" name="bookshelf_destructable" x="440" y="160" width="80" height="160"/>
+  <object id="156" name="bookshelf_destructable" x="520" y="160" width="80" height="160"/>
+  <object id="157" name="bookshelf_destructable" x="600" y="160" width="80" height="160"/>
+  <object id="158" name="bookshelf_destructable" x="680" y="160" width="80" height="160"/>
+  <object id="159" name="bookshelf_destructable" x="760" y="320" width="80" height="160"/>
+  <object id="166" name="bookshelf_destructable" x="840" y="480" width="80" height="160"/>
+  <object id="167" name="bookshelf_destructable" x="840" y="480" width="80" height="160"/>
+  <object id="168" name="bookshelf_destructable" x="840" y="400" width="80" height="160"/>
+  <object id="169" name="bookshelf_destructable" x="840" y="320" width="80" height="160"/>
+  <object id="170" name="bookshelf_destructable" x="840" y="240" width="80" height="160"/>
+  <object id="171" name="bookshelf_destructable" x="760" y="160" width="80" height="160"/>
+  <object id="172" name="bookshelf_destructable" x="840" y="160" width="80" height="160"/>
+  <object id="174" name="bookshelf_destructable" x="280" y="320" width="80" height="160"/>
+  <object id="175" name="bookshelf_destructable" x="280" y="400" width="80" height="160"/>
+  <object id="176" name="bookshelf_destructable" x="280" y="480" width="80" height="160"/>
+  <object id="177" name="bookshelf_destructable" x="280" y="560" width="80" height="160"/>
+  <object id="178" name="bookshelf_destructable" x="280" y="640" width="80" height="160"/>
+  <object id="180" name="bookshelf_destructable" x="360" y="320" width="80" height="160"/>
+  <object id="181" name="bookshelf_destructable" x="360" y="400" width="80" height="160"/>
+  <object id="182" name="bookshelf_destructable" x="360" y="480" width="80" height="160"/>
+  <object id="183" name="bookshelf_destructable" x="360" y="560" width="80" height="160"/>
+  <object id="184" name="bookshelf_destructable" x="360" y="640" width="80" height="160"/>
+  <object id="189" name="bookshelf_destructable" x="200" y="640" width="80" height="160"/>
+  <object id="228" name="interactable" x="480" y="1080" width="80" height="40">
+   <properties>
+    <property name="text1" value="* (Despite all of your efforts...)"/>
+    <property name="text2" value="* (It is still in your way.)"/>
+    <property name="text3" value="* (Though... [wait:10]There is some stagnant dust next to the bookshelf.)"/>
+   </properties>
+  </object>
+  <object id="187" name="bookshelf_destructable" x="200" y="720" width="80" height="160"/>
+  <object id="232" name="transition" x="480" y="1280" width="80" height="40">
+   <properties>
+    <property name="map" value="1_2nd_sanctuary/second_sanctum_7"/>
+    <property name="marker" value="entry"/>
+   </properties>
+  </object>
+  <object id="233" name="interactable" x="480" y="1120" width="80" height="40">
+   <properties>
+    <property name="text1" value="* (Despite all of your efforts...)"/>
+    <property name="text2" value="* (It is no longer in your way.)"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="10" name="objects_fog">
+  <object id="1" name="churchfog" x="40" y="0">
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup id="2" name="objects_top">
+  <object id="2" name="filter" x="0" y="0">
+   <properties>
+    <property name="type" value="hsv"/>
+   </properties>
+   <point/>
+  </object>
+ </objectgroup>
+</map>

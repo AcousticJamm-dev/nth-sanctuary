@@ -781,7 +781,7 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["map"] = "4_4th_sanctuary/fourth_sanctum_1",
+            ["map"] = "3_4th_sanctuary/fourth_sanctum_1",
             ["map_name"] = "Fourth Sanctuary",
             ["req"] = "2",
             ["solid"] = true,
@@ -921,7 +921,7 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["map"] = "2_2nd_sanctuary/second_sanctum_1",
+            ["map"] = "1_2nd_sanctuary/second_sanctum_1",
             ["map_name"] = "Second Sanctuary",
             ["req"] = "1",
             ["solid"] = true,
@@ -941,7 +941,7 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["map"] = "3_flooded_sanctuary/flooded_1",
+            ["map"] = "2_flooded_sanctuary/flooded_1",
             ["map_name"] = "Flooded Sanctuary",
             ["req"] = "3",
             ["solid"] = true,
@@ -1124,7 +1124,7 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["map"] = "5_5th_sanctuary/fifth_sanctum_1",
+            ["map"] = "4_5th_sanctuary/fifth_sanctum_1",
             ["map_name"] = "Fifth Sanctuary",
             ["marker"] = "entry",
             ["req"] = "4",

@@ -168,7 +168,7 @@
   </object>
   <object id="57" name="transition" x="800" y="180" width="80" height="40">
    <properties>
-    <property name="map" value="4_4th_sanctuary/fourth_sanctum_1"/>
+    <property name="map" value="3_4th_sanctuary/fourth_sanctum_1"/>
     <property name="marker" value="entry"/>
    </properties>
   </object>

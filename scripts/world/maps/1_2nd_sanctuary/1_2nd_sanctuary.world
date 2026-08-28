@@ -1,0 +1,139 @@
+{
+    "maps": [
+        {
+            "fileName": "../0_base_sanctum/base_south_2/base_south_2.tmx",
+            "height": 1040,
+            "width": 640,
+            "x": 0,
+            "y": -2040
+        },
+        {
+            "fileName": "second_sanctum_0_ripple/second_sanctum_0_ripple.tmx",
+            "height": 1520,
+            "width": 2320,
+            "x": -2320,
+            "y": -2520
+        },
+        {
+            "fileName": "second_sanctum_0_ripple_post/second_sanctum_0_ripple_post.tmx",
+            "height": 960,
+            "width": 1680,
+            "x": -2120,
+            "y": -920
+        },
+        {
+            "fileName": "second_sanctum_1/second_sanctum_1.tmx",
+            "height": 1120,
+            "width": 920,
+            "x": -2080,
+            "y": 920
+        },
+        {
+            "fileName": "second_sanctum_1_winglade/second_sanctum_1_winglade.tmx",
+            "height": 720,
+            "width": 1040,
+            "x": -2040,
+            "y": 120
+        },
+        {
+            "fileName": "second_sanctum_2/second_sanctum_2.tmx",
+            "height": 1120,
+            "width": 1200,
+            "x": -1080,
+            "y": 1000
+        },
+        {
+            "fileName": "second_sanctum_3/second_sanctum_3.tmx",
+            "height": 1280,
+            "width": 1680,
+            "x": 200,
+            "y": 640
+        },
+        {
+            "fileName": "second_sanctum_4_crossroad/second_sanctum_4_crossroad.tmx",
+            "height": 1720,
+            "width": 1720,
+            "x": 1960,
+            "y": 680
+        },
+        {
+            "fileName": "second_sanctum_5/second_sanctum_5.tmx",
+            "height": 2400,
+            "width": 2400,
+            "x": 1280,
+            "y": 2480
+        },
+        {
+            "fileName": "second_sanctum_6/second_sanctum_6.tmx",
+            "height": 1280,
+            "width": 1920,
+            "x": -720,
+            "y": 4360
+        },
+        {
+            "fileName": "second_sanctum_7/second_sanctum_7.tmx",
+            "height": 2800,
+            "width": 800,
+            "x": -600,
+            "y": 5720
+        },
+        {
+            "fileName": "second_sanctum_8/second_sanctum_8.tmx",
+            "height": 800,
+            "width": 1280,
+            "x": -840,
+            "y": 8600
+        },
+        {
+            "fileName": "second_sanctum_9/second_sanctum_9.tmx",
+            "height": 1280,
+            "width": 1680,
+            "x": 520,
+            "y": 8600
+        },
+        {
+            "fileName": "second_sanctum_10_final/second_sanctum_10_final.tmx",
+            "height": 720,
+            "width": 1360,
+            "x": 2280,
+            "y": 9120
+        },
+        {
+            "fileName": "second_sanctum_11_exit/second_sanctum_11_exit.tmx",
+            "height": 720,
+            "width": 1280,
+            "x": 3720,
+            "y": 8960
+        },
+        {
+            "fileName": "second_sanctum_11_ponder/second_sanctum_11_ponder.tmx",
+            "height": 480,
+            "width": 640,
+            "x": 5080,
+            "y": 9120
+        },
+        {
+            "fileName": "second_sanctum_12/second_sanctum_12.tmx",
+            "height": 640,
+            "width": 1040,
+            "x": 4360,
+            "y": 9760
+        },
+        {
+            "fileName": "second_sanctum_13/second_sanctum_13.tmx",
+            "height": 2000,
+            "width": 800,
+            "x": 5480,
+            "y": 9760
+        },
+        {
+            "fileName": "../2_flooded_sanctuary/flooded_0_between/flooded_0_between.tmx",
+            "height": 960,
+            "width": 640,
+            "x": 3760,
+            "y": 1240
+        }
+    ],
+    "onlyShowAdjacentMaps": false,
+    "type": "world"
+}

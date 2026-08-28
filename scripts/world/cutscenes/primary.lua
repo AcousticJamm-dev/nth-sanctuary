@@ -2004,7 +2004,7 @@ return {
 					},
 					{speed = 6}
 				))
-				cutscene:mapTransition("4_4th_sanctuary/fourth_sanctum_12_final", "entry")
+				cutscene:mapTransition("3_4th_sanctuary/fourth_sanctum_12_final", "entry")
 				return
 			end
 		else
@@ -2178,7 +2178,7 @@ return {
 			40,
 			{40, 160},
 			{
-				map = "4_4th_sanctuary/fourth_sanctum_12_final",
+				map = "3_4th_sanctuary/fourth_sanctum_12_final",
 				marker = "entry"
 			}
 		)

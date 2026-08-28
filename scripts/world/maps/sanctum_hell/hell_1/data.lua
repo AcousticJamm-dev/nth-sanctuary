@@ -520,7 +520,7 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["map"] = "3_flooded_sanctuary/flooded_1_hellentrance",
+            ["map"] = "2_flooded_sanctuary/flooded_1_hellentrance",
             ["marker"] = "spawn"
           }
         },
@@ -597,7 +597,7 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["map"] = "4_4th_sanctuary/fourth_sanctum_5",
+            ["map"] = "3_4th_sanctuary/fourth_sanctum_5",
             ["marker"] = "hell"
           }
         },
@@ -614,7 +614,7 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["map"] = "2_2nd_sanctuary/second_sanctum_3",
+            ["map"] = "1_2nd_sanctuary/second_sanctum_3",
             ["marker"] = "hell"
           }
         },

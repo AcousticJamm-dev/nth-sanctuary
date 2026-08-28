@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="32" height="18" tilewidth="40" tileheight="40" infinite="0" nextlayerid="21" nextobjectid="334">
+ <editorsettings>
+  <export target="data.lua" format="lua"/>
+ </editorsettings>
+ <properties>
+  <property name="border" value="church_b"/>
+  <property name="music" value="second_church"/>
+ </properties>
+ <tileset firstgid="1" source="../../../tilesets/church_objects.tsx"/>
+ <tileset firstgid="110" source="../../../tilesets/bg_dw_church_tileset_new.tsx"/>
+ <tileset firstgid="692" source="../../../tilesets/bg_dw_church_c_tileset.tsx"/>
+ <tileset firstgid="971" source="../../../tilesets/bg_dw_church_2_tileset.tsx"/>
+ <tileset firstgid="1169" source="../../../tilesets/longslides.tsx"/>
+ <tileset firstgid="1223" source="../../../tilesets/bg_dw_church_library_2_tileset.tsx"/>
+ <tileset firstgid="1483" source="../../../tilesets/bg_dw_dither_overlay_tileset.tsx"/>
+ <tileset firstgid="1529" source="../../../tilesets/bg_dw_library_tileset_new.tsx"/>
+ <tileset firstgid="2359" source="../../../tilesets/light_areas.tsx"/>
+ <objectgroup id="14" name="objects_parallax" visible="0" parallaxx="0.5" parallaxy="0.9">
+  <object id="281" gid="3221225477" x="120" y="640" width="640" height="1600"/>
+  <object id="287" gid="5" x="80" y="880" width="640" height="1600" rotation="45"/>
+ </objectgroup>
+ <layer id="8" name="tile_osc_optimize" width="32" height="18">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,1482,1482,1482,1482,1482,1482,0,0,0,0,0,1482,1482,1482,1482,1482,1482,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,1482,1482,1482,1482,1482,1482,0,0,0,0,0,1482,1482,1482,1482,1482,1482,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,1482,1482,1482,1482,1482,1482,0,0,0,0,0,1482,1482,1482,1482,1482,1482,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,0,0,0,0,0,0,0,0,
+1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,1164,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1164,1164,1164,1164,1164,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1164,1164,1164,1164,1164,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1164,1164,1164,1164,1164,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1164,1164,1164,1164,1164,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup color="#93ffed" id="9" name="objects_osc">
+  <object id="32" name="texturescroller" x="80" y="0">
+   <properties>
+    <property name="base_tex" value="backgrounds/glow_purple_tile_oscillate"/>
+    <property name="scroll_tex" value="backgrounds/perlin_noise_purple_looping"/>
+    <property name="type" value="library"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="312" name="texturescroller" x="120" y="0">
+   <properties>
+    <property name="type" value="hsv"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="316" name="tile_oscillate" x="0" y="480" width="960" height="80"/>
+  <object id="317" name="tile_oscillate" x="720" y="560" width="200" height="160"/>
+  <object id="319" name="tile_oscillate" x="520" y="200" width="200" height="120">
+   <properties>
+    <property name="type" value="library"/>
+   </properties>
+  </object>
+  <object id="320" name="tile_oscillate" x="920" y="200" width="200" height="120">
+   <properties>
+    <property name="type" value="library"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <layer id="13" name="tiles3" width="32" height="18">
+  <data encoding="csv">
+1106,1125,1126,1127,1106,1125,1126,1127,1106,0,0,0,1234,1235,1236,1237,1238,1239,1306,1317,1318,1319,1306,1234,1235,1236,1237,1238,1239,0,0,0,
+1115,1125,1126,1127,1115,1125,1126,1127,1115,0,0,0,1244,1245,1246,1247,1248,1249,1316,1327,1328,1329,1316,1244,1245,1246,1247,1248,1249,0,0,0,
+1124,1134,1135,1136,1124,1134,1135,1136,1124,0,0,0,1234,1235,1236,1237,1238,1239,1326,1337,1338,1339,1326,1234,1235,1236,1237,1238,1239,0,0,0,
+1133,685,685,685,1133,685,685,685,1133,0,0,0,1244,1245,1246,1247,1248,1249,1336,1347,1348,1349,1336,1244,1245,1246,1247,1248,1249,0,0,0,
+1106,648,648,648,1106,648,648,648,1106,0,0,0,1254,1255,1256,1257,1258,1259,1424,1357,1358,1359,1424,1254,1255,1256,1257,1258,1259,0,0,0,
+1106,1098,1099,1100,1106,1098,1099,1100,1106,0,0,0,1403,1395,1395,1395,1395,1441,1340,1341,1341,1341,1342,1395,1385,1395,1431,1395,1396,0,0,0,
+1106,1107,1108,1109,1106,1107,1108,1109,1106,0,0,0,1413,1395,1411,1395,1414,1395,1350,1351,1351,1351,1352,1385,1394,1394,1395,1404,1416,0,0,0,
+1106,1116,1117,1118,1106,1116,1117,1118,1106,0,0,0,1393,1414,1420,1430,1395,1395,1360,1361,1361,1361,1362,1395,1395,1415,1414,1385,1406,0,0,0,
+1106,1125,1126,1127,1106,1125,1126,1127,1106,0,0,0,1443,1444,1444,1444,1444,1445,1579,1579,1579,1579,1579,1443,1444,1444,1444,1444,1445,0,0,0,
+1115,1125,1126,1127,1115,1125,1126,1127,1115,0,0,0,1234,1238,1235,1238,1235,1236,1589,1589,1589,1589,1589,1237,1238,1235,1238,1235,1239,0,0,0,
+1124,1134,1135,1136,1124,1134,1135,1136,1124,0,0,0,1244,1248,1245,1248,1245,1246,1579,1579,1579,1579,1579,1247,1248,1245,1248,1245,1249,0,0,0,
+1133,1143,1144,1145,1133,1143,1144,1145,1133,1144,1144,1144,1254,1258,1255,1258,1255,1256,1589,1589,1589,1589,1589,1247,1248,1245,1248,1245,1249,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1248,1245,1248,1245,1249,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1248,1245,1248,1245,1249,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1248,1245,1248,1245,1249,0,0,0,
+242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,0,0,0,0,0,1247,1248,1245,1248,1245,1249,0,0,0,
+242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,0,0,0,0,0,1247,1248,1245,1248,1245,1249,0,0,0,
+242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,0,0,0,0,0,1247,1248,1245,1248,1245,1249,0,0,0
+</data>
+ </layer>
+ <objectgroup id="18" name="objects_fade">
+  <object id="321" gid="9" x="1280" y="720" width="240" height="360.33" rotation="270"/>
+ </objectgroup>
+ <layer id="16" name="tiles2" width="32" height="18">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1346,0,0,0,1346,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1424,1425,0,0,0,0,0,0,1424,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+1001,980,980,990,991,972,973,980,989,980,1013,994,1015,989,1139,1140,1156,1157,1158,1159,984,975,1104,1001,0,0,0,0,0,0,0,0,
+993,992,980,999,1000,981,982,984,980,975,1022,1023,1024,1147,1148,1149,1165,1166,1167,1168,980,1111,1112,993,0,0,0,0,0,0,0,0,
+998,998,998,998,998,998,998,998,998,998,998,998,998,998,998,998,998,998,974,980,980,1120,1121,998,0,0,0,0,0,0,0,0,
+590,591,592,593,545,590,591,592,593,545,590,591,592,593,545,590,591,0,980,980,983,1129,1130,0,0,0,0,0,0,0,0,0,
+596,597,598,599,551,596,597,598,599,551,596,597,598,599,551,596,597,598,976,980,990,991,1001,0,0,0,0,0,0,0,0,0,
+602,603,604,605,551,602,603,604,605,551,602,603,604,605,551,602,603,604,992,1001,999,1000,993,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup id="17" name="objects_under_party">
+  <object id="294" gid="104" x="500" y="240" width="160" height="80"/>
+  <object id="309" name="churchmagicglass" x="960" y="480" width="320" height="80">
+   <properties>
+    <property name="idlealpha" type="float" value="0"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="3" name="objects_party">
+  <object id="18" name="transition" x="-40" y="480" width="40" height="80">
+   <properties>
+    <property name="map" value="1_2nd_sanctuary/second_sanctum_10_final"/>
+    <property name="marker" value="entry2"/>
+   </properties>
+  </object>
+  <object id="299" name="npc" x="558" y="232">
+   <properties>
+    <property name="actor" value="susie"/>
+    <property name="sprite" value="sit-couch"/>
+    <property name="text1" value="[face:annoyed_down_alt]* Some guy, [wait:5]huh?"/>
+    <property name="text2" value="[face:smile]* We totally got out alive because of me."/>
+   </properties>
+   <point/>
+  </object>
+  <object id="300" name="npc" x="605" y="232">
+   <properties>
+    <property name="actor" value="ralsei"/>
+    <property name="sprite" value="sit-couch"/>
+    <property name="text1" value="[voice:default]* (He looks deep in thought.)"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="301" name="npc" x="1060" y="230">
+   <properties>
+    <property name="actor" value="jamm"/>
+    <property name="cond" value="Game:hasPartyMember(&quot;jamm&quot;)"/>
+    <property name="cutscene" value="events.jamm_book"/>
+    <property name="facing" value="up"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="310" name="interactable" x="920" y="160" width="120" height="40">
+   <properties>
+    <property name="text1" value="* (This book has schematics of various locations.)"/>
+    <property name="text2" value="* (You recognize the Base Sanctum's floorwork on one of the pages.)"/>
+    <property name="text3" value="* (...And another page, has this very area.)"/>
+    <property name="text4" value="* (Part of it seems to be scratched out.)"/>
+   </properties>
+  </object>
+  <object id="325" name="window_glow" x="100" y="380">
+   <point/>
+  </object>
+  <object id="327" name="window_glow" x="260" y="380">
+   <point/>
+  </object>
+  <object id="328" name="transition" x="1280" y="480" width="40" height="80">
+   <properties>
+    <property name="map" value="1_2nd_sanctuary/second_sanctum_11_ponder"/>
+    <property name="marker" value="entry"/>
+   </properties>
+  </object>
+  <object id="330" name="transition" x="720" y="720" width="200" height="40">
+   <properties>
+    <property name="map" value="1_2nd_sanctuary/second_sanctum_12"/>
+    <property name="marker" value="entry"/>
+   </properties>
+  </object>
+  <object id="332" name="savepoint" x="820" y="160">
+   <properties>
+    <property name="text1" value="* Limitless spires span the horizon."/>
+    <property name="text2" value="* You can't help but feel small with how big some of them are."/>
+    <property name="text3" value="* The power of literature shines within you."/>
+   </properties>
+  </object>
+ </objectgroup>
+ <layer id="1" name="tiles1" width="32" height="18">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,1306,1344,1344,1344,1306,0,0,0,0,0,0,0,1306,1344,1344,1344,1306,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,1316,1307,1308,1309,1316,0,0,0,0,0,0,0,1316,1307,1308,1309,1316,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,1316,1317,1318,1319,1316,0,0,0,0,0,0,0,1316,1317,1318,1319,1316,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,1316,1327,1328,1329,1316,0,0,0,0,0,0,0,1316,1327,1328,1329,1316,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,1316,1337,1338,1339,1316,0,0,0,0,0,0,0,1316,1337,1338,1339,1316,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,1326,1347,1348,1349,1326,0,0,0,0,0,0,0,1326,1347,1348,1349,1326,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,1336,1347,1348,1349,1336,0,0,0,0,0,0,0,1336,1347,1348,1349,1336,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,1346,1357,1358,1359,1346,1425,0,0,0,0,0,1423,1346,1357,1358,1359,1346,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup color="#ff0000" id="4" name="collision">
+  <object id="302" x="0" y="320" width="720" height="160"/>
+  <object id="303" x="480" y="160" width="40" height="160"/>
+  <object id="304" x="520" y="160" width="600" height="40"/>
+  <object id="305" x="1120" y="160" width="40" height="160"/>
+  <object id="306" x="920" y="320" width="360" height="160"/>
+  <object id="307" x="920" y="560" width="360" height="160"/>
+  <object id="308" x="0" y="560" width="720" height="160"/>
+ </objectgroup>
+ <objectgroup id="6" name="objects"/>
+ <objectgroup id="19" name="objects_lightarea">
+  <object id="322" gid="1073744184" x="500" y="480" width="160" height="720">
+   <properties>
+    <property name="light" type="bool" value="true"/>
+    <property name="light_alpha" type="float" value="0"/>
+    <property name="light_color" type="color" value="#ffffffff"/>
+    <property name="light_type" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="323" gid="1073744184" x="980" y="480" width="160" height="720">
+   <properties>
+    <property name="light" type="bool" value="true"/>
+    <property name="light_alpha" type="float" value="0"/>
+    <property name="light_color" type="color" value="#ffffffff"/>
+    <property name="light_type" type="int" value="1"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="5" name="markers">
+  <object id="22" name="entry" x="40" y="520">
+   <point/>
+  </object>
+  <object id="230" name="spawn" x="80" y="520">
+   <point/>
+  </object>
+  <object id="329" name="entry2" x="1240" y="520">
+   <point/>
+  </object>
+  <object id="331" name="entry3" x="820" y="680">
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup id="20" name="objects_darkness">
+  <object id="324" name="darkness" x="160" y="0">
+   <properties>
+    <property name="alpha" type="float" value="0.23"/>
+    <property name="highlight" type="bool" value="true"/>
+   </properties>
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup id="10" name="objects_fog">
+  <object id="1" name="churchfog" x="40" y="0">
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup id="2" name="objects_top">
+  <object id="2" name="filter" x="0" y="0">
+   <properties>
+    <property name="type" value="hsv"/>
+   </properties>
+   <point/>
+  </object>
+ </objectgroup>
+</map>

@@ -547,7 +547,7 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["map"] = "4_4th_sanctuary/fourth_sanctum_1",
+            ["map"] = "3_4th_sanctuary/fourth_sanctum_1",
             ["marker"] = "entry"
           }
         },

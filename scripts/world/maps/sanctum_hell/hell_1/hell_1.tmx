@@ -225,7 +225,7 @@
   </object>
   <object id="61" name="transition" x="1120" y="-40" width="40" height="40">
    <properties>
-    <property name="map" value="3_flooded_sanctuary/flooded_1_hellentrance"/>
+    <property name="map" value="2_flooded_sanctuary/flooded_1_hellentrance"/>
     <property name="marker" value="spawn"/>
    </properties>
   </object>
@@ -242,13 +242,13 @@
   </object>
   <object id="109" name="transition" x="1200" y="760" width="40" height="80">
    <properties>
-    <property name="map" value="4_4th_sanctuary/fourth_sanctum_5"/>
+    <property name="map" value="3_4th_sanctuary/fourth_sanctum_5"/>
     <property name="marker" value="hell"/>
    </properties>
   </object>
   <object id="117" name="transition" x="1200" y="520" width="40" height="80">
    <properties>
-    <property name="map" value="2_2nd_sanctuary/second_sanctum_3"/>
+    <property name="map" value="1_2nd_sanctuary/second_sanctum_3"/>
     <property name="marker" value="hell"/>
    </properties>
   </object>

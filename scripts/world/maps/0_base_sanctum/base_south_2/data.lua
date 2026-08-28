@@ -356,7 +356,7 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["map"] = "2_2nd_sanctuary/second_sanctum_1_winglade"
+            ["map"] = "1_2nd_sanctuary/second_sanctum_1_winglade"
           }
         },
         {

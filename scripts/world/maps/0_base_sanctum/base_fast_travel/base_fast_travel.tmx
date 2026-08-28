@@ -331,7 +331,7 @@
   <object id="23" name=" " gid="964" x="360" y="1600" width="160" height="160"/>
   <object id="25" name="shard_door" x="220" y="1251" width="120" height="30">
    <properties>
-    <property name="map" value="4_4th_sanctuary/fourth_sanctum_1"/>
+    <property name="map" value="3_4th_sanctuary/fourth_sanctum_1"/>
     <property name="map_name" value="Fourth Sanctuary"/>
     <property name="req" value="2"/>
     <property name="solid" type="bool" value="true"/>
@@ -374,7 +374,7 @@
   </object>
   <object id="95" name="shard_door" x="380" y="1250" width="120" height="30">
    <properties>
-    <property name="map" value="2_2nd_sanctuary/second_sanctum_1"/>
+    <property name="map" value="1_2nd_sanctuary/second_sanctum_1"/>
     <property name="map_name" value="Second Sanctuary"/>
     <property name="req" value="1"/>
     <property name="solid" type="bool" value="true"/>
@@ -383,7 +383,7 @@
   </object>
   <object id="96" name="shard_door" x="220" y="1570" width="120" height="30">
    <properties>
-    <property name="map" value="3_flooded_sanctuary/flooded_1"/>
+    <property name="map" value="2_flooded_sanctuary/flooded_1"/>
     <property name="map_name" value="Flooded Sanctuary"/>
     <property name="req" value="3"/>
     <property name="solid" type="bool" value="true"/>
@@ -433,7 +433,7 @@
   <object id="158" name="shard_door_vapor" gid="965" x="880" y="1280" width="160" height="160"/>
   <object id="159" name="shard_door" x="900" y="1250" width="120" height="30">
    <properties>
-    <property name="map" value="5_5th_sanctuary/fifth_sanctum_1"/>
+    <property name="map" value="4_5th_sanctuary/fifth_sanctum_1"/>
     <property name="map_name" value="Fifth Sanctuary"/>
     <property name="marker" value="entry"/>
     <property name="req" value="4"/>

@@ -282,6 +282,37 @@ function LeechSpawn:onDefeat(damage, battler)
     self:onDefeatFatal(damage, battler)
 end
 
+function LeechSpawn:defeat(reason, violent)
+    self.done_state = reason or "DEFEATED"
+
+    if violent then
+        if self:isRecruitable() and self:getRecruitStatus() ~= false then
+            if Game:getConfig("enableRecruits") and self.done_state ~= "FROZEN" then
+                self:recruitMessage("lost")
+            end
+            self:setRecruitStatus(false)
+        end
+    end
+
+    if self:isRecruitable() and type(self:getRecruitStatus()) == "number" and (self.done_state == "PACIFIED" or self.done_state == "SPARED") then
+        self:setRecruitStatus(self:getRecruitStatus() + 1)
+        if Game:getConfig("enableRecruits") then
+            local counter = self:recruitMessage("recruit")
+            counter.first_number = self:getRecruitStatus()
+            counter.second_number = Game:getRecruit(self.id):getRecruitAmount()
+            Assets.playSound("sparkle_gem")
+        end
+        if self:getRecruitStatus() >= Game:getRecruit(self.id):getRecruitAmount() then
+            self:setRecruitStatus(true)
+        end
+    end
+
+    Game.battle.money = Game.battle.money + self.money
+    Game.battle.xp = Game.battle.xp + self.experience
+
+    Game.battle:removeEnemy(self, true)
+end
+
 function LeechSpawn:freeze()
     self:onDefeat()
 end

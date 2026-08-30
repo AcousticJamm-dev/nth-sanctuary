@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.10.2",
+  tiledversion = "1.12.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 7,
-  nextobjectid = 18,
+  nextobjectid = 20,
   properties = {
     ["border"] = "tvworld",
     ["music"] = "greenroom_detune"
@@ -117,6 +117,7 @@ return {
           width = 640,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -130,6 +131,7 @@ return {
           width = 640,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -143,6 +145,7 @@ return {
           width = 80,
           height = 280,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -156,6 +159,21 @@ return {
           width = 80,
           height = 80,
           rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 18,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 720,
+          y = 0,
+          width = 40,
+          height = 520,
+          rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -185,6 +203,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -198,6 +217,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -222,11 +242,12 @@ return {
           name = "",
           type = "",
           shape = "rectangle",
-          x = 440,
+          x = 880,
           y = 160,
           width = 240,
           height = 160,
           rotation = 0,
+          opacity = 1,
           gid = 264,
           visible = true,
           properties = {}
@@ -257,6 +278,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "ral",
@@ -276,6 +298,7 @@ return {
           width = 40,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["cutscene"] = "events.scarlet_tree",
@@ -288,11 +311,12 @@ return {
           name = "interactable",
           type = "",
           shape = "rectangle",
-          x = 520,
+          x = 960,
           y = 120,
           width = 80,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["solid"] = "true",
@@ -305,11 +329,12 @@ return {
           name = "transition",
           type = "",
           shape = "rectangle",
-          x = 720,
+          x = 1160,
           y = 120,
           width = 120,
           height = 360,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "secrets/citadel_room/titren_room"

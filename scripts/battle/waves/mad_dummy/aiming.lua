@@ -112,9 +112,9 @@ function Aiming:onStart()
             
                         for _, line in ipairs(arena.collider.colliders) do
                             local is_right_side =
-                                math.abs(line.x - line.x2) < 0.1
-                                and math.max(line.x, line.x2) >= arena.width - 2
-            
+                                math.abs(line.x1 - line.x2) < 0.1
+                                and math.max(line.x1, line.x2) >= arena.width - 2
+                        
                             if not (is_right_side and arena.right_side_alpha <= 0)
                                 and b.prev_line ~= line
                                 and b:collidesWith(line)
@@ -137,10 +137,7 @@ function Aiming:onStart()
                             b.physics.speed
                         )
             
-                        local is_horizontal =
-                            math.abs(hit_line.x - hit_line.x2)
-                            > math.abs(hit_line.y - hit_line.y2)
-            
+                        local is_horizontal = math.abs(hit_line.x1 - hit_line.x2) > math.abs(hit_line.y1 - hit_line.y2)
                         if is_horizontal then
                             arena.y = (vy < 0)
                                 and arena.y - 2
@@ -150,17 +147,16 @@ function Aiming:onStart()
                                 and arena.x - 2
                                 or arena.x + 2
             
-                            if math.max(hit_line.x, hit_line.x2) >= arena.width - 2 then
-                                arena.right_side_alpha =
-                                    math.max(0, arena.right_side_alpha - 0.05)
+                            if math.max(hit_line.x1, hit_line.x2) >= arena.width - 2 then
+                                arena.right_side_alpha = math.max(0, arena.right_side_alpha - 0.05)
                             end
                         end
             
                         local nvx, nvy = Vector.mirror(
                             vx,
                             vy,
-                            hit_line.x - hit_line.x2,
-                            hit_line.y - hit_line.y2
+                            hit_line.x1 - hit_line.x2,
+                            hit_line.y1 - hit_line.y2
                         )
             
                         b.physics.direction = Vector.toPolar(nvx, nvy)

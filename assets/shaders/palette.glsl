@@ -6,7 +6,7 @@ uniform highp int palette_id;
 uniform ivec2 palette_tex_size;
 
 highp vec4 fetch_from_palette_tex(ivec2 location_texel) {
-    return texelFetch(palette_tex, location_texel, 0);
+    return Texel(palette_tex, vec2((float(location_texel.x) + 0.5) / float(palette_tex_size.x), (float(location_texel.y) + 0.5) / float(palette_tex_size.y)));
 }
 
 highp vec4 find_alt_color(vec4 in_color)

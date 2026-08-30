@@ -222,8 +222,7 @@ function HometownDayNight:draw()
 			love.graphics.setShader(self.palette_shader)
 			self.palette_shader:send("palette_tex", self.palette_tex)
 			local palw, palh = self.palette_tex:getWidth(), self.palette_tex:getHeight()
-			self.palette_shader:send("palette_uvs", {(1.0 / palw) * 0.5, (1.0 / palh) * 0.5, 1, 1})
-			self.palette_shader:send("pixel_size", {1.0 / palw, 1.0 / palh})
+			self.palette_shader:send("palette_tex_size", {palw, palh})
 			self.palette_shader:send("palette_id", self.night)
 		end
     elseif Game:getFlag("hometown_time", "day") == "morning" or Game:getFlag("hometown_time", "day") == "evening" then

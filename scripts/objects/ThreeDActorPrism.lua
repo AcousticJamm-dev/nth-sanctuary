@@ -80,7 +80,7 @@ function ThreeDActorPrism:update()
 		self.timer = self.timer + MathUtils.lerp((10 * Game.battle.encounter.rage_anim_speed), 0, self.slow_timer/60) * DTMULT
 		local y_offset = math.sin((self.timer / 10) * 0.1) * 10
 		self.model:setRotation(math.rad(90), 0, math.rad(self.timer))
-		self.model:setTranslation(160/4, 380, -(200 - y_offset))
+		self.model:setTranslation(160, 320, 120 + y_offset)
 	end
     Draw.pushCanvas(self.canvas)
 	love.graphics.setMeshCullMode("back")
@@ -98,9 +98,8 @@ function ThreeDActorPrism:draw()
     self.actor:preSpriteDraw(self)
     self.actor:onSpriteDraw(self)
 	Draw.popCanvas()
-	
-    local offset_height = 60
-	Draw.drawCanvas(canvas, 0, offset_height, 0, 1, -1, 0, offset_height)
+
+	Draw.draw(canvas, -75, -70, 0, 1.25, 1.25)
 	if DEBUG_RENDER then
 		love.graphics.setFont(Assets.getFont("main"))
 		Draw.setColor(COLORS.red, 1)

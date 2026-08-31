@@ -58,7 +58,7 @@ function Basic:reachedStar()
                     Game.battle.encounter.parried = true
                     Assets.playSound("damage")
                     Assets.playSound("break2")
-                    g1:hurt(700)
+                    g1:hurt(math.min(700, g1.health-1))
                     Game.battle.timer:tween(2/30, g1, {x = g1.x + 20, y = g1.y - 40}, 'linear', function()
                         Game.battle.timer:tween(0.5, g1, {x = g1.x - 20, y = g1.y + 40}, 'out-cubic')
                     end)

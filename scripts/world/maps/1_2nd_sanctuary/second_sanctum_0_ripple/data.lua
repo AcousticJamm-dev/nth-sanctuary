@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.12.1",
+  tiledversion = "1.12.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 20,
-  nextobjectid = 178,
+  nextobjectid = 179,
   properties = {
     ["border"] = "church_b",
     ["music"] = "none"
@@ -736,6 +736,20 @@ return {
           opacity = 1,
           visible = true,
           properties = {}
+        },
+        {
+          id = 178,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1720,
+          y = 1520,
+          width = 160,
+          height = 80,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
         }
       }
     },
@@ -1053,23 +1067,6 @@ return {
           properties = {
             ["cutscene"] = "primary.ripple2nd",
             ["once"] = false
-          }
-        },
-        {
-          id = 177,
-          name = "transition",
-          type = "",
-          shape = "rectangle",
-          x = 1760,
-          y = 1520,
-          width = 80,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["map"] = "0_base_sanctum/base_south_2",
-            ["marker"] = "kpoint"
           }
         }
       }

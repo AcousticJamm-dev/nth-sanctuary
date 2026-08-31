@@ -8,11 +8,11 @@ function Spinning:onStart()
     Assets.playSound("boost")
     local arena = Game.battle.arena
     local soul = Game.battle.soul
-    self.timer:every(0.5, function()
+    self.timer:every(0.75, function()
         Assets.stopAndPlaySound("ui_cancel_small")
         local x, y = Utils.pick({Game.battle.arena.left,Game.battle.arena.right}), Utils.pick({SCREEN_HEIGHT, 0})
         local angle = MathUtils.angle(x, y, Game.battle.soul.x, Game.battle.soul.y)
-        self:spawnBullet("smallstar", x, y, angle, 9)
+        self:spawnBullet("smallstar", x, y, angle, 6)
     end)
 end
 function Spinning:update()

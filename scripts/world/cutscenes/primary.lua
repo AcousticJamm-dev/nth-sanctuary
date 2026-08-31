@@ -1565,7 +1565,7 @@ return {
 		cutscene:text("* [voice:none]And we plan to keep moving forward until we have our goal fulfilled.", {top = false})
 		cutscene:text("* [voice:none]...", {top = false})
 		cutscene:text("* [voice:none]These [wait:5]\"rules\"[wait:5] you believe you must follow...", {top = false})
-		cutscene:text("* [voice:none]Do you honestly think everybody should follow them?", {top = false})
+		cutscene:text("* [voice:none]Do you honestly think everybody is bound by them?", {top = false})
 		
 		cutscene:text("* ...", "roaring", r, {top = false})
 		

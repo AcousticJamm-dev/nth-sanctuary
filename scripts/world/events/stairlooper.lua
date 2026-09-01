@@ -17,7 +17,7 @@ function CutsceneStairLooper:init(data)
 	self.ypoint = properties["ypoint"] or 0
     self.cutscene = properties["cutscene"]
 	self.con = 0
-	self.preventmenu = properties["preventmenu"] ~= false
+	self.preventmenu = false
     self.set_flag = properties["setflag"]
     self.set_value = properties["setvalue"]
     self.once = properties["once"] ~= false

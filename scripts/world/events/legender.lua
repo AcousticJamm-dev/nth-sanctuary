@@ -31,6 +31,7 @@ function ChurchLegender:init(data)
 	self.textx = properties["textx"] or -40
 	self.textstartwait = properties["textstartwait"] or 90
 	self.textendwait = properties["textendwait"] or 90
+	self.preventmenu = properties["preventmenu"] ~= false
 	self.xx = self.relx
 	self.yy = self.rely
 	self.maxlines = #self.prophecy_text
@@ -80,9 +81,20 @@ function ChurchLegender:update()
 		end
 	end
 	if self.show then
+		if self.preventmenu then
+			if self.world.can_open_menu then
+				self.world.can_open_menu = false
+			end
+			self.world:closeMenu()
+		end
 		self.alpha = MathUtils.lerp(self.alpha, 1, 1 - (1 - 0.25) ^ DTMULT)
 		self.activetimer = self.activetimer + DTMULT
-	else
+	else	
+		if self.preventmenu then
+			if not self.world.can_open_menu then
+				self.world.can_open_menu = true
+			end	
+		end
 		self.alpha = MathUtils.lerp(self.alpha, 0, 1 - (1 - 0.25) ^ DTMULT)
 	end
 	if self.image_only then

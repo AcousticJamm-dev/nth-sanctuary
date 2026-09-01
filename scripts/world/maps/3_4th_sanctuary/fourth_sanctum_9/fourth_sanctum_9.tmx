@@ -61,7 +61,6 @@
    <properties>
     <property name="cutscene" value="events.jamm_lore"/>
     <property name="flagcheck" value="!jamm_lore_done"/>
-    <property name="preventmenu" type="bool" value="true"/>
     <property name="xback" type="float" value="-800"/>
     <property name="xpoint" type="float" value="960"/>
     <property name="yback" type="float" value="0"/>

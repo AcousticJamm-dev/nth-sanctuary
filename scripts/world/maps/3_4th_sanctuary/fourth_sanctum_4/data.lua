@@ -1243,6 +1243,7 @@ return {
           visible = true,
           properties = {
             ["flagcheck"] = "!stairslegend1",
+            ["preventmenu"] = true,
             ["setflag"] = "stairslegend1",
             ["setvalue"] = true,
             ["text1_1"] = "THEIR ENDEAVOR LASTED",
@@ -1268,7 +1269,6 @@ return {
           visible = true,
           properties = {
             ["flagcheck"] = "!stairslegend1",
-            ["preventmenu"] = true,
             ["xpoint"] = 1200
           }
         },

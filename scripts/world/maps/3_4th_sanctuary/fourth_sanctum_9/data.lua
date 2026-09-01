@@ -362,7 +362,6 @@ return {
           properties = {
             ["cutscene"] = "events.jamm_lore",
             ["flagcheck"] = "!jamm_lore_done",
-            ["preventmenu"] = true,
             ["xback"] = -800,
             ["xpoint"] = 960,
             ["yback"] = 0

@@ -41,6 +41,8 @@
         "GARBAG",
         "GARBAGE"
     ],
+	
+	"dev": false,
     
     "hardReset": false,
     "hidden": false,

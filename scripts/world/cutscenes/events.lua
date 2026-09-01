@@ -137,6 +137,10 @@ return {
         Game.lock_movement = false
     end,
     prism = function (cutscene)
+		if Game:getFlag("won_prism_1") then
+			cutscene:text("* He seems to be completely still.")
+			return
+		end
         local dd = cutscene:getCharacter("ddelta")
 		local dd_y = dd.y
         cutscene:setSpeaker(dd)
@@ -237,6 +241,7 @@ return {
 		Assets.stopSound("eb_keyitem")
         Game.inventory:addItem("sound_stone")
         Game.world.music:play()
+		Game:setFlag("won_prism_1", true)
     end,
 	obscenepath = function (cutscene)
 		cutscene:text("* Oh[wait:5], this treacherous, [wait:5]crystalline path...")

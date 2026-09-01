@@ -138,7 +138,9 @@ return {
     end,
     prism = function (cutscene)
 		if Game:getFlag("won_prism_1") then
-			cutscene:text("* He seems to be completely still.")
+			cutscene:text("* what?[wait:5]\nyou want to fight the prism again?")
+			cutscene:text("* uh,[wait:5] too bad![wait:5]\n* i'm never doing that again!")
+			cutscene:text("* (after all,[wait:5] this is just a placeholder cutscene!)")
 			return
 		end
         local dd = cutscene:getCharacter("ddelta")

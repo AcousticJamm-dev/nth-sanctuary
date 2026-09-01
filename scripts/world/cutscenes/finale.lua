@@ -20,9 +20,9 @@ return {
         cutscene:text("* (...In the distance, [wait:5]you can see a blue Ralsei waving.)")
         cutscene:text("* (They hold out a sign, [wait:5]and it reads...)")
         
-        cutscene:text("\"Thank you for playing this demo!\"")
-        cutscene:text("\"#th Sanctuary is a passion project and this is but [color:yellow]10% [color:white]of the story we have planned!\"")
-        cutscene:text("\"This couldn't have been done without your support!\"")
+        cutscene:text("* \"Thank you for playing this demo!\"")
+        cutscene:text("* \"#th Sanctuary is a passion project and this is but [color:yellow]10% [color:white]of the story we have planned!\"")
+        cutscene:text("* \"This couldn't have been done without your support!\"")
         
         cutscene:wait(2)
 

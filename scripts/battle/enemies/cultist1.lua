@@ -54,6 +54,8 @@ function Dummy:init()
     -- (second argument is description, usually empty)
     
     self.chosen_party_member = nil
+	
+	self.boss = true
 end
 
 function Dummy:getEncounterText()
@@ -109,6 +111,10 @@ function Dummy:defeat(reason, violent)
     Game.battle.xp = Game.battle.xp + self.experience
 
     Game.battle:removeEnemy(self, true)
+end
+
+function Dummy:onDefeatRun(damage, battler)
+    self:defeat("VIOLENCED", true)
 end
 
 function Dummy:onAct(battler, name)

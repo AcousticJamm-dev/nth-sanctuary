@@ -80,7 +80,7 @@ function ChurchLanternShrinking:update()
 			end
 		end
 		if amon then
-			self.timer = MathUtils.clamp(MathUtils.round(MathUtils.lerp(self.timer, self.maxtimer + self.timebuffer + 1, 0.25 * DTMULT)), 0, self.maxtimer + self.timebuffer)
+			self.timer = MathUtils.clamp(MathUtils.round(MathUtils.lerp(self.timer, self.maxtimer + self.timebuffer + 1, 1 - (1 - 0.25) ^ DTMULT)), 0, self.maxtimer + self.timebuffer)
 		else
 			self.timer = self.timer - DTMULT
 		end

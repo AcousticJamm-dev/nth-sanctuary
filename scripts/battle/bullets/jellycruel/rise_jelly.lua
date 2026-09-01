@@ -25,7 +25,7 @@ function SmallBullet:update()
 	end
     self.siner = self.siner + (1 / 6) * DTMULT
     self.x = self.start_x + (math.sin(self.siner * 0.5)) * 1
-	self.scale_y = MathUtils.lerp(self.scale_y, 0.6, 0.2 * DTMULT)
+	self.scale_y = MathUtils.lerp(self.scale_y, 0.6, 1 - (1 - 0.2) ^ DTMULT)
 	if self.alpha < 1 and not self.removing then
 		self.alpha = self.alpha + 0.1 * DTMULT
 	end

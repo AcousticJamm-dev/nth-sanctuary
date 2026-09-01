@@ -386,7 +386,7 @@ function ChurchPiano:draw()
 	if self.con == 1 and not self.dontdrawmenu then
 		alphtarg = 1
 	end
-	self.drawalpha = MathUtils.lerp(self.drawalpha, alphtarg, 0.1*DTMULT)
+	self.drawalpha = MathUtils.lerp(self.drawalpha, alphtarg, 1 - (1 - 0.1) ^ DTMULT)
 	self.drawspace = 18
 	local drawx = 0 + self.width/2
 	local drawy = 0 - 80

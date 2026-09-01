@@ -11,7 +11,7 @@ end
 function ChurchFloodedBorder:draw()
     super.draw(self)
 	if Game.world.map.hell_border_alpha then
-		self.hell_border_alpha = MathUtils.lerp(self.hell_border_alpha, Game.world.map.hell_border_alpha, 0.5*DTMULT)
+		self.hell_border_alpha = MathUtils.lerp(self.hell_border_alpha, Game.world.map.hell_border_alpha, 1 - (1 - 0.5) ^ DTMULT)
 		Game:setFlag("floodedChurchBorderLastAlpha", self.hell_border_alpha)
 	end
     love.graphics.setColor(1, 1, 1, self.hell_border_alpha * BORDER_ALPHA)

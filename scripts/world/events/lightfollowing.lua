@@ -31,8 +31,8 @@ function ChurchLightFollowing:update()
 		end
 		if self.followtype == 2 then
 			local x, y = self.target:getRelativePos(0, 0)
-			self.x = MathUtils.lerp(self.x, x + self.xoff, self.lerpstrength * DTMULT)
-			self.y = MathUtils.lerp(self.y, y + self.yoff, self.lerpstrength * DTMULT)			
+			self.x = MathUtils.lerp(self.x, x + self.xoff, 1 - (1 - self.lerpstrength) ^ DTMULT)
+			self.y = MathUtils.lerp(self.y, y + self.yoff, 1 - (1 - self.lerpstrength) ^ DTMULT)
 		end
 	end
 end

@@ -1,7 +1,7 @@
 return {
   version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.12.2",
+  tiledversion = "1.12.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -1268,6 +1268,7 @@ return {
           visible = true,
           properties = {
             ["flagcheck"] = "!stairslegend1",
+            ["preventmenu"] = true,
             ["xpoint"] = 1200
           }
         },

@@ -2,7 +2,7 @@
 #define TOLERANCE 0.004
 #define MAX_COLORS 256
 uniform sampler2D palette_tex;
-uniform highp int palette_id;
+uniform highp float palette_id;
 uniform ivec2 palette_tex_size;
 
 highp vec4 fetch_from_palette_tex(ivec2 location_texel) {
@@ -22,7 +22,7 @@ highp vec4 find_alt_color(vec4 in_color)
 		dist = distance(test_color, in_color);
 
 		if (dist < TOLERANCE) {
-            return fetch_from_palette_tex(ivec2(palette_id, i));
+            return mix(fetch_from_palette_tex(ivec2(floor(palette_id), i)), fetch_from_palette_tex(ivec2(floor(palette_id + 1.0), i)), fract(palette_id));
 		}
     }
     return in_color;

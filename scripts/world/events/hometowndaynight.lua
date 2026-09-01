@@ -248,7 +248,7 @@ function HometownDayNight:draw()
 						love.graphics.applyTransform(value.parent:getFullTransform())
 						transformed = true
 					end
-					value:fullDraw()
+					value:drawSelf()
 				end
 			end
 			Draw.popShader()

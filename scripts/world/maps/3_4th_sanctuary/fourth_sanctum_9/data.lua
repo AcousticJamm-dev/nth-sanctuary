@@ -1,7 +1,7 @@
 return {
   version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.12.2",
+  tiledversion = "1.12.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -362,6 +362,7 @@ return {
           properties = {
             ["cutscene"] = "events.jamm_lore",
             ["flagcheck"] = "!jamm_lore_done",
+            ["preventmenu"] = true,
             ["xback"] = -800,
             ["xpoint"] = 960,
             ["yback"] = 0

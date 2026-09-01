@@ -312,8 +312,8 @@ function MadDummy:update()
             self.siner = self.siner + DTMULT
             local y_offset = math.sin(self.siner * self.y_speed) * self.radius
             local x_offset = math.sin(self.siner * self.x_speed) * (self.radius/4)
-            local lerp_x = MathUtils.lerp(self.x, self.old_x + x_offset, 0.1 * DTMULT)
-            local lerp_y = MathUtils.lerp(self.y, self.old_y + y_offset, 0.1 * DTMULT)
+            local lerp_x = MathUtils.lerp(self.x, self.old_x + x_offset, 1 - (1 - 0.1) ^ DTMULT)
+            local lerp_y = MathUtils.lerp(self.y, self.old_y + y_offset, 1 - (1 - 0.1) ^ DTMULT)
             self:setPosition(lerp_x, lerp_y)
         end
         if self.bubble then

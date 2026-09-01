@@ -19,10 +19,10 @@ function RemotePianoMoveUI:draw()
 		if piano.engaged then
 			alphatarg = 1
 		end
-		piano.drawalpha = MathUtils.lerp(piano.drawalpha, alphatarg, 0.1*DTMULT)
+		piano.drawalpha = MathUtils.lerp(piano.drawalpha, alphatarg, 1 - (1 - 0.1) ^ DTMULT)
 		piano.drawspace = 18
-		piano.drawx = MathUtils.lerp(piano.drawx, piano.x + 40, 0.6*DTMULT)
-		piano.drawy = MathUtils.lerp(piano.drawy, piano.y - 70, 0.6*DTMULT)
+		piano.drawx = MathUtils.lerp(piano.drawx, piano.x + 40, 1 - (1 - 0.6) ^ DTMULT)
+		piano.drawy = MathUtils.lerp(piano.drawy, piano.y - 70, 1 - (1 - 0.6) ^ DTMULT)
 		love.graphics.setColor(0,0,0,piano.drawalpha*0.5)
 		love.graphics.circle("fill", piano.drawx, yy + piano.drawy, 44 + math.sin(piano.siner / 64) * 2)
 		local sprangle = 0

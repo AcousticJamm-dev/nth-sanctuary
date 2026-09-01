@@ -162,10 +162,10 @@ function WingladeActorSprite:update()
             self.eye_target_y = 0
         end
         local eye_start_x, eye_start_y = self.eye_default_position[1], self.eye_default_position[2]
-        self.eye_white.x = MathUtils.lerp(self.eye_white.x, eye_start_x + self.eye_target_x / 5, 0.2 * DTMULT)
-        self.eye_white.y = MathUtils.lerp(self.eye_white.y, eye_start_y + self.eye_target_y / 5, 0.2 * DTMULT)
-        self.eye_pupil.x = MathUtils.lerp(self.eye_pupil.x, eye_start_x + self.eye_target_x, 0.2 * DTMULT)
-        self.eye_pupil.y = MathUtils.lerp(self.eye_pupil.y, eye_start_y + self.eye_target_y, 0.2 * DTMULT)
+        self.eye_white.x = MathUtils.lerp(self.eye_white.x, eye_start_x + self.eye_target_x / 5, 1 - (1 - 0.2) ^ DTMULT)
+        self.eye_white.y = MathUtils.lerp(self.eye_white.y, eye_start_y + self.eye_target_y / 5, 1 - (1 - 0.2) ^ DTMULT)
+        self.eye_pupil.x = MathUtils.lerp(self.eye_pupil.x, eye_start_x + self.eye_target_x, 1 - (1 - 0.2) ^ DTMULT)
+        self.eye_pupil.y = MathUtils.lerp(self.eye_pupil.y, eye_start_y + self.eye_target_y, 1 - (1 - 0.2) ^ DTMULT)
     end
 
     if anim == 'spared' then
@@ -217,10 +217,10 @@ function WingladeActorSprite:update()
         local eye_start_x, eye_start_y = self.eye_default_position[1], self.eye_default_position[2]
         self.eye_target_x = math.cos(eye_angle) * 2
         self.eye_target_y = math.sin(eye_angle) * 2
-        self.eye_white.x = MathUtils.lerp(self.eye_white.x, eye_start_x + self.eye_target_x / 5, 0.2 * DTMULT)
-        self.eye_white.y = MathUtils.lerp(self.eye_white.y, eye_start_y + self.eye_target_y / 5, 0.2 * DTMULT)
-        self.eye_pupil.x = MathUtils.lerp(self.eye_pupil.x, eye_start_x + self.eye_target_x, 0.2 * DTMULT)
-        self.eye_pupil.y = MathUtils.lerp(self.eye_pupil.y, eye_start_y + self.eye_target_y, 0.2 * DTMULT)
+        self.eye_white.x = MathUtils.lerp(self.eye_white.x, eye_start_x + self.eye_target_x / 5, 1 - (1 - 0.2) ^ DTMULT)
+        self.eye_white.y = MathUtils.lerp(self.eye_white.y, eye_start_y + self.eye_target_y / 5, 1 - (1 - 0.2) ^ DTMULT)
+        self.eye_pupil.x = MathUtils.lerp(self.eye_pupil.x, eye_start_x + self.eye_target_x, 1 - (1 - 0.2) ^ DTMULT)
+        self.eye_pupil.y = MathUtils.lerp(self.eye_pupil.y, eye_start_y + self.eye_target_y, 1 - (1 - 0.2) ^ DTMULT)
     end
 end
 

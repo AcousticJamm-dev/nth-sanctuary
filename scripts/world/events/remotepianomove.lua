@@ -58,6 +58,15 @@ function RemotePianoMove:init(data)
 	self.last_dust_timer = self.dust_timer
 	self.start_layer = self.layer
 	self.ignore_layer_set = false
+    -- 1px movement increments
+    self.partial_x = (self.x % 1)
+    self.partial_y = (self.y % 1)
+
+    self.last_collided_x = false
+    self.last_collided_y = false
+
+    self.x = math.floor(self.x)
+    self.y = math.floor(self.y)
 end
 
 function RemotePianoMove:onAdd(parent)
@@ -258,6 +267,148 @@ function RemotePianoMove:getSortPosition()
     return self:getRelativePos(self.width / 2, self.height - 22)
 end
 
+function RemotePianoMove:moveX(amount)
+    local last_collided = self.last_collided_x and (MathUtils.sign(amount) == self.last_collided_x)
+
+    if amount == 0 then
+        return not last_collided, true
+    end
+
+    self.partial_x = self.partial_x + amount
+
+    local move = math.floor(self.partial_x)
+    self.partial_x = self.partial_x % 1
+
+    if move ~= 0 then
+        local moved = self:moveXExact(move)
+        return moved
+    else
+        return not last_collided
+    end
+end
+
+function RemotePianoMove:moveY(amount)
+    local last_collided = self.last_collided_y and (MathUtils.sign(amount) == self.last_collided_y)
+
+    if amount == 0 then
+        return not last_collided, true
+    end
+
+    self.partial_y = self.partial_y + amount
+
+    local move = math.floor(self.partial_y)
+    self.partial_y = self.partial_y % 1
+
+    if move ~= 0 then
+        local moved = self:moveYExact(move)
+        return moved
+    else
+        return not last_collided
+    end
+end
+
+function RemotePianoMove:moveXExact(amount)
+	local mywidth = 80
+	local myheight = 80
+    local sign = MathUtils.sign(amount)
+    for i = sign, amount, sign do
+        local last_x = self.x
+        local last_y = self.y
+
+        self.x = self.x + sign
+		local collider = nil
+		local collided = false
+        if not self.noclip then
+			Object.uncache(self)
+			Object.startCache()
+			local bound_check = Hitbox(self.world, self.x, self.y, mywidth, myheight)
+			for _, collider in ipairs(Game.world.map.block_collision) do
+				if collider:meetsCollider(bound_check) then
+					collided = true
+					break
+				end
+			end
+			if not collided then
+				Object.uncache(self)
+				self.collidable = false
+				collided, collider = self.world:checkCollision(bound_check)
+				if collider and collider.solid_breakable then
+					collided = false
+				end
+				self.collidable = true
+			end
+			Object.endCache()
+		end
+		if collided then
+			self.x = last_x
+			self.y = last_y
+			self.x = MathUtils.round(self.x / 40) * 40
+			self.y = MathUtils.round(self.y / 40) * 40
+			Assets.playSound("bomb")
+			if amount ~= 0 then
+				self.shakex = 8
+			end
+			self.con = 2
+            self.last_collided_x = sign
+            return false, target
+        end
+    end
+    self.last_collided_x = 0
+    return true
+end
+
+function RemotePianoMove:moveYExact(amount)
+	local mywidth = 80
+	local myheight = 80
+    local sign = MathUtils.sign(amount)
+    for i = sign, amount, sign do
+        local last_x = self.x
+        local last_y = self.y
+
+        self.y = self.y + sign
+
+		local collider = nil
+		local collided = false
+        if not self.noclip then
+			Object.uncache(self)
+			Object.startCache()
+			local bound_check = Hitbox(self.world, self.x, self.y, mywidth, myheight)
+			for _, collider in ipairs(Game.world.map.block_collision) do
+				if collider:meetsCollider(bound_check) then
+					collided = true
+					break
+				end
+			end
+			if not collided then
+				Object.uncache(self)
+				self.collidable = false
+				collided, collider = self.world:checkCollision(bound_check)
+				if collider and collider.solid_breakable then
+					collided = false
+				end
+				self.collidable = true
+			end
+			Object.endCache()
+		end
+		if collided then
+			self.x = last_x
+			self.y = last_y
+			self.x = MathUtils.round(self.x / 40) * 40
+			self.y = MathUtils.round(self.y / 40) * 40
+			Assets.playSound("bomb")
+			if amount ~= 0 then
+				self.shakey = 8
+			end
+			self.con = 2
+			
+            self.last_collided_y = sign
+            return false, target
+        end
+    end
+    self.last_collided_y = 0
+    return true
+end
+
 function RemotePianoMove:update()
 	super.update(self)
 	self.dust_timer = self.dust_timer + DTMULT
@@ -398,9 +549,9 @@ function RemotePianoMove:update()
 			Object.startCache()
 			local collider = nil
 			local collided = false
-			local bound_check = Hitbox(self.world, self.x + 1 + px * 40, self.y + 1 + py * 40, mywidth - 2, myheight - 2)
+			local bound_check = Hitbox(self.world, self.x + px * 40, self.y + py * 40, mywidth, myheight)
 			for _, collider in ipairs(Game.world.map.block_collision) do
-				if collider:collidesWith(bound_check) then
+				if collider:meetsCollider(bound_check) then
 					collided = true
 					break
 				end
@@ -444,16 +595,16 @@ function RemotePianoMove:update()
 	if self.con == 3 then
 		local maxspeed = 28
 		if self.myhspeed ~= 0 then
-			self.myhspeed = MathUtils.lerp(math.abs(self.myhspeed), maxspeed, 0.25*DTMULT) * MathUtils.sign(self.myhspeed)
+			self.myhspeed = MathUtils.lerp(math.abs(self.myhspeed), maxspeed, 1 - (1 - 0.25) ^ DTMULT) * MathUtils.sign(self.myhspeed)
 		end
 		if self.myvspeed ~= 0 then
-			self.myvspeed = MathUtils.lerp(math.abs(self.myvspeed), maxspeed, 0.25*DTMULT) * MathUtils.sign(self.myvspeed)
+			self.myvspeed = MathUtils.lerp(math.abs(self.myvspeed), maxspeed, 1 - (1 - 0.25) ^ DTMULT) * MathUtils.sign(self.myvspeed)
 		end	
 		local stoppingpoint = false
 		Object.startCache()
-		local trigger_check = Hitbox(self.world, self.x + 1, self.y + 1, 80 - 2, 80 - 2)
+		local trigger_check = Hitbox(self.world, self.x, self.y, 80, 80)
 		for _, jumppoint in ipairs(Game.world.map:getEvents("pianomovetrigger")) do
-			if trigger_check:collidesWith(jumppoint.collider) then
+			if trigger_check:meetsObject(jumppoint) then
 				if jumppoint.extflag == "jump" then
 					self.con = 4
 					Assets.playSound("motor_upper_2")
@@ -474,27 +625,6 @@ function RemotePianoMove:update()
 				end
 			end
 		end
-		local collider = nil
-		local collided = false
-		local bound_check = Hitbox(self.world, self.x + 1 + self.myhspeed * DTMULT, self.y + 1 + self.myvspeed * DTMULT, mywidth - 2, myheight - 2)
-		for _, collider in ipairs(Game.world.map.block_collision) do
-			if collider:collidesWith(bound_check) then
-				collided = true
-				break
-			end
-		end
-		if not collided then
-			self.collidable = false
-			collided, collider = self.world:checkCollision(bound_check)
-			if collider and collider.solid_breakable then
-				collided = false
-			end
-			self.collidable = true
-		end
-		Object.endCache()
-		if collided then
-			stoppingpoint = true
-		end
 		if self.dust_timer >= self.last_dust_timer + 2 then
 			local xoffset = 0.5
 			local yoffset = MathUtils.random(0.6) + 0.2
@@ -513,64 +643,18 @@ function RemotePianoMove:update()
 			self.dust_timer = (Kristal.getTime()*30) % 2
 			self.last_dust_timer = self.dust_timer
 		end
-		if stoppingpoint then
-			self.myhspeed = MathUtils.round(self.myhspeed)
-			self.myvspeed = MathUtils.round(self.myvspeed)
-			self.x = MathUtils.round(self.x)
-			self.y = MathUtils.round(self.y)
-			Object.startCache()
-			local endloop = false
-			for i = 0, (math.max(math.abs(self.myhspeed), math.abs(self.myvspeed)) + 1) do
-				if not endloop then
-					local collided = false
-					local bound_check = Hitbox(self.world, self.x + 1 + self.myhspeed * DTMULT, self.y + 1 + self.myvspeed * DTMULT, mywidth - 2, myheight - 2)
-					for _, collider in ipairs(Game.world.map.block_collision) do
-						if collider:collidesWith(bound_check) then
-							collided = true
-							break
-						end
-					end
-					if not collided then
-						self.collidable = false
-						collided = self.world:checkCollision(bound_check)
-						self.collidable = true
-					end
-					if collided then
-						if self.myhspeed ~= 0 then
-							self.myhspeed = (math.abs(self.myhspeed * DTMULT) - 1) * MathUtils.sign(self.myhspeed * DTMULT)
-						end
-						if self.myvspeed ~= 0 then
-							self.myvspeed = (math.abs(self.myvspeed * DTMULT) - 1) * MathUtils.sign(self.myvspeed * DTMULT)
-						end
-					else
-						endloop = true
-						self.x = self.x + self.myhspeed * DTMULT
-						self.y = self.y + self.myvspeed * DTMULT
-					end
-				end
-			end
-			Object.endCache()
-			self.x = MathUtils.round(self.x / 40) * 40
-			self.y = MathUtils.round(self.y / 40) * 40
-			Assets.playSound("bomb")
-			if self.myhspeed ~= 0 then
-				self.shakex = 8
-			else
-				self.shakey = 8
-			end
-			self.con = 2
-		elseif self.hitstop <= 0 then
-			self.x = self.x + MathUtils.round(self.myhspeed * DTMULT)
-			self.y = self.y + MathUtils.round(self.myvspeed * DTMULT)
+		if self.hitstop <= 0 then
+			self:moveX(self.myhspeed)
+			self:moveY(self.myvspeed)
 		else
 			self.hitstop = self.hitstop - DTMULT
 		end
 	end	
 	if self.con == 4 then
 		Object.startCache()
-		local trigger_check = Hitbox(self.world, self.x + 1, self.y + 1, 80 - 2, 80 - 2)
+		local trigger_check = Hitbox(self.world, self.x, self.y, 80, 80)
 		for _, jumppoint in ipairs(Game.world.map:getEvents("pianomovetrigger")) do
-			if trigger_check:collidesWith(jumppoint.collider) then
+			if trigger_check:meetsObject(jumppoint) then
 				if jumppoint.extflag == "explode" then
 					self.con = 400
 					self.timer = 0
@@ -580,10 +664,10 @@ function RemotePianoMove:update()
 		Object.endCache()
 		local maxspeed = 16
 		if self.myhspeed ~= 0 then
-			self.myhspeed = MathUtils.lerp(math.abs(self.myhspeed), maxspeed, 0.25*DTMULT) * MathUtils.sign(self.myhspeed)
+			self.myhspeed = MathUtils.lerp(math.abs(self.myhspeed), maxspeed, 1 - (1 - 0.25) ^ DTMULT) * MathUtils.sign(self.myhspeed)
 		end
 		if self.myvspeed ~= 0 then
-			self.myvspeed = MathUtils.lerp(math.abs(self.myvspeed), maxspeed, 0.25*DTMULT) * MathUtils.sign(self.myvspeed)
+			self.myvspeed = MathUtils.lerp(math.abs(self.myvspeed), maxspeed, 1 - (1 - 0.25) ^ DTMULT) * MathUtils.sign(self.myvspeed)
 		end	
 		self.x = self.x + MathUtils.round(self.myhspeed * DTMULT)
 		self.y = self.y + MathUtils.round(self.myvspeed * DTMULT)
@@ -672,10 +756,10 @@ function RemotePianoMove:update()
 		local explodedelay = 26
 		local maxspeed = 16
 		if self.myhspeed ~= 0 then
-			self.myhspeed = MathUtils.lerp(math.abs(self.myhspeed), maxspeed, 0.25*DTMULT) * MathUtils.sign(self.myhspeed)
+			self.myhspeed = MathUtils.lerp(math.abs(self.myhspeed), maxspeed, 1 - (1 - 0.25) ^ DTMULT) * MathUtils.sign(self.myhspeed)
 		end
 		if self.myvspeed ~= 0 then
-			self.myvspeed = MathUtils.lerp(math.abs(self.myvspeed), maxspeed, 0.25*DTMULT) * MathUtils.sign(self.myvspeed)
+			self.myvspeed = MathUtils.lerp(math.abs(self.myvspeed), maxspeed, 1 - (1 - 0.25) ^ DTMULT) * MathUtils.sign(self.myvspeed)
 		end	
 		self.x = self.x + MathUtils.round(self.myhspeed) * DTMULT
 		self.y = self.y + MathUtils.round(self.myvspeed) * DTMULT
@@ -881,9 +965,9 @@ function RemotePianoMove:stepTwo()
 		if self.camcon == 2 then
 			local plcamx = MathUtils.clamp(Game.world.player.x, min_x, max_x)
 			local plcamy = MathUtils.clamp(Game.world.player.y, min_y, max_y)
-			self.camstrength = MathUtils.lerp(self.camstrength, 4, 0.010101010101010102 * DTMULT)
-			self.camx = MathUtils.lerp(camx, plcamx, (self.camstrength / 8) * DTMULT)
-			self.camy = MathUtils.lerp(camy, plcamy, (self.camstrength / 8) * DTMULT)
+			self.camstrength = MathUtils.lerp(self.camstrength, 4, 1 - (1 - 0.010101010101010102) ^ DTMULT)
+			self.camx = MathUtils.lerp(camx, plcamx, 1 - (1 - (self.camstrength / 8)) ^ DTMULT)
+			self.camy = MathUtils.lerp(camy, plcamy, 1 - (1 - (self.camstrength / 8)) ^ DTMULT)
 			if MathUtils.dist(plcamx, plcamy, self.camx, self.camy) < 2 then
 				self.camcon = 3
 				self.camcontrol = false

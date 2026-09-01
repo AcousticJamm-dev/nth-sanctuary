@@ -295,7 +295,7 @@ return {
 			panel.ignore_onscreen_rules = true
 			panel_container:addChild(panel)
 			Game.world.timer:during(10/30, function()
-				panel.panel_alpha = MathUtils.lerp(panel.panel_alpha, 1.2, DTMULT*0.1)
+				panel.panel_alpha = MathUtils.lerp(panel.panel_alpha, 1.2, 1 - (1 - 0.1) ^ DTMULT)
 			end)
 			Game.world.timer:tween(10/30, panel_container, {y = 250}, "linear")
 			cutscene:wait(10/30)

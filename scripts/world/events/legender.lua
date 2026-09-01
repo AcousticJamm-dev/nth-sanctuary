@@ -80,10 +80,10 @@ function ChurchLegender:update()
 		end
 	end
 	if self.show then
-		self.alpha = MathUtils.lerp(self.alpha, 1, 0.25 * DTMULT)
+		self.alpha = MathUtils.lerp(self.alpha, 1, 1 - (1 - 0.25) ^ DTMULT)
 		self.activetimer = self.activetimer + DTMULT
 	else
-		self.alpha = MathUtils.lerp(self.alpha, 0, 0.25 * DTMULT)	
+		self.alpha = MathUtils.lerp(self.alpha, 0, 1 - (1 - 0.25) ^ DTMULT)
 	end
 	if self.image_only then
 		return
@@ -139,8 +139,8 @@ function ChurchLegender:draw()
     super.draw(self)
 	love.graphics.push()
 	love.graphics.translate(-self.x, -self.y)
-	self.xx = MathUtils.lerp(self.xx, self.world.camera.x - SCREEN_WIDTH/2 + self.relx, 0.4 * DTMULT)
-	self.yy = MathUtils.lerp(self.yy, self.world.camera.y - SCREEN_HEIGHT/2 + self.rely, 0.4 * DTMULT)
+	self.xx = MathUtils.lerp(self.xx, self.world.camera.x - SCREEN_WIDTH/2 + self.relx, 1 - (1 - 0.4) ^ DTMULT)
+	self.yy = MathUtils.lerp(self.yy, self.world.camera.y - SCREEN_HEIGHT/2 + self.rely, 1 - (1 - 0.4) ^ DTMULT)
 	local xsin = 0
 	local ysin = math.cos(self.siner / 12) * 4
 	Draw.setColor(self.color, self.alpha)

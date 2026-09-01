@@ -43,7 +43,7 @@ function OrganNoteDisplay:draw()
     super.draw(self)
 	local col_def = ColorUtils.hexToRGB("#2DADC0FF")
 	local col_sel = ColorUtils.hexToRGB("#CAFFE4FF")
-	self.display_alpha = MathUtils.lerp(self.display_alpha, self.target.engaged_alpha, 0.125 * DTMULT)
+	self.display_alpha = MathUtils.lerp(self.display_alpha, self.target.engaged_alpha, 1 - (1 - 0.125) ^ DTMULT)
 	self.siner = self.siner + 1 * DTMULT
 	local yy = 40
 	local bgcol = COLORS.black

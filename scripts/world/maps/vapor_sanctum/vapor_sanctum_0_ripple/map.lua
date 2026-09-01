@@ -152,13 +152,9 @@ end
 function map:onFootstep(char, num)
     if not char.is_player or num ~= 1 or self.finished then return end
     local x, y = char:getRelativePos(18/2, 72/2)
-    local running = (Input.down("cancel") or Game.world.player.force_run) and not Game.world.player.force_walk
-    if Kristal.Config["autoRun"] and not Game.world.player.force_run and not Game.world.player.force_walk then
-        running = not running
-    end
-
-    local px = Game.world.player.moving_x * Game.world.player:getCurrentSpeed(running)
-    local py = Game.world.player.moving_y * Game.world.player:getCurrentSpeed(running)
+    local running = Game.world.player:checkRunningInput()
+    local px = Game.world.player.moving_x
+    local py = Game.world.player.moving_y
     if Game.world.player.last_collided_x then px = 0 end
     if Game.world.player.last_collided_y then py = 0 end
     

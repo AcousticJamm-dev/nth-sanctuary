@@ -127,6 +127,11 @@ function CultistApathy:onDefeatRun(damage, battler)
     self:defeat("VIOLENCED", true)
 end
 
+function CultistApathy:spare(pacify)
+    self:defeat(pacify and "PACIFIED" or "SPARED", false)
+    self:onSpared()
+end
+
 function CultistApathy:onSpared()
     Game.battle.music:stop()
 end

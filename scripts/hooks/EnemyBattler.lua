@@ -52,4 +52,31 @@ function EnemyBattler:freezeCompel()
     self:defeat("FROZEN", true)
 end
 
+function EnemyBattler:getSpareText(battler, success)
+    if success then
+        return "* " .. battler.chara:getName() .. " spared " .. self.name .. "!"
+    else
+        local text = "* " .. battler.chara:getName() .. " spared " .. self.name .. "!\n* But MERCY was not 100%!"
+        if self.tired then
+            local found_spell = nil
+            for _, party in ipairs(Game.battle.party) do
+                for _, spell in ipairs(party.chara:getSpells()) do
+                    if spell:hasTag("spare_tired") then
+                        found_spell = spell
+                        break
+                    end
+                end
+                if found_spell then
+                    text = { text, "* (Try using " .. party.chara:getName() .. "'s [color:blue]" .. found_spell:getCastName() .. "[color:reset]!)" }
+                    break
+                end
+            end
+            if not found_spell then
+                text = { text, "* (Try using [color:blue]ACTs[color:reset]!)" }
+            end
+        end
+        return text
+    end
+end
+
 return EnemyBattler

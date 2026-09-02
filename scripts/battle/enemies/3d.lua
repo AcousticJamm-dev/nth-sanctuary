@@ -145,8 +145,7 @@ function ThreeDPrism:onAct(battler, name)
 			self.comment = "(Furious)"
 			self.attack = 40
 			self:removeAct("Challenge")
-			local beg_for_mercy_name = #Game.battle.party >= 4 and "Beg4Mercy" or "BegForMercy"
-			self:registerAct(beg_for_mercy_name, "Revert\ndifficulty", "all", 8)
+			self:registerAct("BegForMercy", "Revert\ndifficulty", "all", 8)
 			self.last_mercy = self.mercy
 			self.mercy = 0
 			self.disable_mercy = true
@@ -158,7 +157,7 @@ function ThreeDPrism:onAct(battler, name)
 			self:getAct("Check").description = "Analyze\nDEFENSE"
 			Game.battle.encounter.raged = true
 		end)
-	elseif name == "BegForMercy" or name == "Beg4Mercy" then
+	elseif name == "BegForMercy" then
         battler:setAnimation("act")
         Game.battle:startActCutscene(function(cutscene)
 			self.disable_mercy = false
@@ -209,7 +208,6 @@ function ThreeDPrism:onAct(battler, name)
 			elseif self.progress == 8 then
 				self.progress = 3
 			end
-			self:removeAct("Beg4Mercy")
 			self:removeAct("BegForMercy")
 			self:registerAct("Challenge", "Still a\nterrible\nidea", "susie")
 		end)

@@ -160,7 +160,7 @@ end
 function Dummy:onAct(battler, name)
     if name == "Standard" then
         Game.battle:startActCutscene(function(cutscene)
-            cutscene:text("* "..battler.chara:getName().." tried to \"[color:yellow]ACT[color:reset]\"...\n* But, the enemy couldn't understand!")
+            cutscene:text("* "..battler.chara:getName().." tried to \"[color:yellow]ACT[color:reset]\"...\n* But, the enemy refused to listen!")
         end)
         return
     elseif name == "Check" then
@@ -176,7 +176,7 @@ function Dummy:onAct(battler, name)
 end
 
 function Dummy:getSpareText(battler, success)
-    return "* But,[wait:20] it was not something that\ncan understand MERCY."
+    return "* But,[wait:20] it was something that\nwouldn't accept MERCY anymore."
 end
 
 return Dummy

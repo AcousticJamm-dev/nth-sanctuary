@@ -122,13 +122,15 @@ function BattleUI:draw()
 end
 
 function BattleUI:drawState()
-	super.drawState(self)
     if Game.battle.state == "MENUSELECT" then
         local page = math.ceil(Game.battle.current_menu_y / 3) - 1
         local max_page = math.ceil(#Game.battle.menu_items / 6) - 1
 
         local x = 0
         local y = 0
+        Draw.setColor(Game.battle.encounter:getSoulColor())
+        Draw.draw(self.heart_sprite, 5 + ((Game.battle.current_menu_x - 1) * 230), 30 + ((Game.battle.current_menu_y - (page * 3)) * 30))
+
         local font = Assets.getFont("main")
         love.graphics.setFont(font)
 
@@ -189,7 +191,9 @@ function BattleUI:drawState()
             else
                 Draw.setColor(COLORS.gray)
             end
-            love.graphics.print(item.name, text_offset + 30 + (x * 230), 50 + (y * 30))
+			local name_width = math.max(1, font:getWidth(item.name))
+			local name_xscale = Game.battle.state_reason == "ACT" and MathUtils.clamp((206 - text_offset) / name_width, 0.5, 1) or 1
+            love.graphics.print(item.name, text_offset + 30 + (x * 230), 50 + (y * 30), 0, name_xscale, 1)
             text_offset = text_offset + font:getWidth(item.name)
 			love.graphics.setShader()
 
@@ -215,110 +219,144 @@ function BattleUI:drawState()
                 y = y + 1
             end
         end
-	elseif Game.battle.state == "ENEMYSELECT" then 
-		local enemies = Game.battle.enemies_index
-        local page = math.ceil(Game.battle.current_menu_y / 3) - 1
-        local max_page = math.ceil(#enemies / 3) - 1
-        local page_offset = page * 3
+		
+        -- Print information about currently selected item
+        local current_item = Game.battle.menu_items[Game.battle:getItemIndex()]
+        if current_item then
+            local tp_offset, _ = 0, nil --initialize placeholdder variable so it doenst go in global scope
+            if current_item.description then
+                Draw.setColor(COLORS.gray)
+                love.graphics.print(current_item.description, 260 + 240, 50)
+                Draw.setColor(1, 1, 1, 1)
+                _, tp_offset = current_item.description:gsub('\n', '\n')
+                tp_offset = tp_offset + 1
+            end
+
+            if current_item.tp and current_item.tp ~= 0 then
+                Draw.setColor(Game.battle and Game.battle:hasReducedTension() and PALETTE["tension_desc_reduced"] or PALETTE["tension_desc"])
+                love.graphics.print(
+                    math.floor((current_item.tp / Game:getMaxTension()) * 100) .. "% " .. Game:getConfig("tpName"), 260 + 240, 50 + (tp_offset * 32)
+                )
+                Game:setTensionPreview(current_item.tp)
+            else
+                Game:setTensionPreview(0)
+            end
+        end
+
         Draw.setColor(1, 1, 1, 1)
-        local font = Assets.getFont("main")
-        love.graphics.setFont(font)
-        local draw_mercy = Game:getConfig("mercyBar")
-        local draw_percents = Game:getConfig("enemyBarPercentages")
-        for index = page_offset + 1, math.min(page_offset + 3, #enemies) do
-            local enemy = enemies[index]
-            local y_off = (index - page_offset - 1) * 30
+        if page < max_page then
+            Draw.draw(self.arrow_sprite, 470, 120 + (math.sin(Kristal.getTime() * 6) * 2))
+        end
+        if page > 0 then
+            Draw.draw(self.arrow_sprite, 470, 70 - (math.sin(Kristal.getTime() * 6) * 2), 0, 1, -1)
+        end
+	else
+		super.drawState(self)
+		if Game.battle.state == "ENEMYSELECT" then 
+			local enemies = Game.battle.enemies_index
+			local page = math.ceil(Game.battle.current_menu_y / 3) - 1
+			local max_page = math.ceil(#enemies / 3) - 1
+			local page_offset = page * 3
+			Draw.setColor(1, 1, 1, 1)
+			local font = Assets.getFont("main")
+			love.graphics.setFont(font)
+			local draw_mercy = Game:getConfig("mercyBar")
+			local draw_percents = Game:getConfig("enemyBarPercentages")
+			for index = page_offset + 1, math.min(page_offset + 3, #enemies) do
+				local enemy = enemies[index]
+				local y_off = (index - page_offset - 1) * 30
 
-            if enemy then
-                if Game.battle.state_reason == "XACT" then
-					if Game.battle.party[Game.battle.current_selecting].chara.id == "lobby_man" then
-						Draw.setColor(COLORS.white)
-						local static_shader = Assets.getShader("static_bullet")
-						static_shader:send("time", Kristal.getTime())
-						static_shader:send("brightness", 0.3)
-						love.graphics.setShader(static_shader)
+				if enemy then
+					if Game.battle.state_reason == "XACT" then
+						if Game.battle.party[Game.battle.current_selecting].chara.id == "lobby_man" then
+							Draw.setColor(COLORS.white)
+							local static_shader = Assets.getShader("static_bullet")
+							static_shader:send("time", Kristal.getTime())
+							static_shader:send("brightness", 0.3)
+							love.graphics.setShader(static_shader)
+						else
+							Draw.setColor(Game.battle.party[Game.battle.current_selecting].chara:getXActColor())					
+						end
+						if Game.battle.selected_xaction.id == 0 then
+							love.graphics.print(enemy:getXAction(Game.battle.party[Game.battle.current_selecting]), self.xact_x_pos, 50 + y_off)
+						else
+							love.graphics.print(Game.battle.selected_xaction.name, self.xact_x_pos, 50 + y_off)
+						end
+						love.graphics.setShader()
 					else
-						Draw.setColor(Game.battle.party[Game.battle.current_selecting].chara:getXActColor())					
+						local hp_percent = enemy.health / enemy.max_health
+
+						local hp_x = draw_mercy and 420 or 510
+
+						if enemy.selectable and enemy.static_hp then
+							-- Draw the enemy's HP
+							Draw.setColor(COLORS.dkgray)
+							love.graphics.rectangle("fill", hp_x, 55 + y_off, 81, 16)
+
+							Draw.setColor(COLORS.white)
+							local static_shader = Assets.getShader("static_bullet")
+							static_shader:send("time", Kristal.getTime())
+							static_shader:send("brightness", 1)
+							love.graphics.setShader(static_shader)
+							love.graphics.rectangle("fill", hp_x, 55 + y_off, math.ceil(hp_percent * 81), 16)
+							love.graphics.setShader()
+
+							if draw_percents then
+								love.graphics.stencil(function()
+									local last_shader = love.graphics.getShader()
+									love.graphics.setShader(Kristal.Shaders["Mask"])
+									love.graphics.rectangle("fill", hp_x, 55 + y_off, math.ceil(hp_percent * 81), 16)
+									love.graphics.setShader(last_shader)
+								end, "replace", 1)
+								love.graphics.setStencilTest("greater", 0)
+								Draw.setColor(COLORS.black)
+								love.graphics.print(enemy:getHealthDisplay(), hp_x + 4, 55 + y_off, 0, 1, 0.5)
+								love.graphics.setStencilTest("less", 1)
+								Draw.setColor(COLORS.white)
+								love.graphics.print(enemy:getHealthDisplay(), hp_x + 4, 55 + y_off, 0, 1, 0.5)
+								love.graphics.setStencilTest()
+							end
+						end
 					end
-                    if Game.battle.selected_xaction.id == 0 then
-                        love.graphics.print(enemy:getXAction(Game.battle.party[Game.battle.current_selecting]), self.xact_x_pos, 50 + y_off)
-                    else
-                        love.graphics.print(Game.battle.selected_xaction.name, self.xact_x_pos, 50 + y_off)
-                    end
+				end
+			end
+		elseif Game.battle.state == "PARTYSELECT" then
+			local page = math.ceil(Game.battle.current_menu_y / 3) - 1
+			local max_page = math.ceil(#Game.battle.party / 3) - 1
+			local page_offset = page * 3
+
+			local font = Assets.getFont("main")
+			love.graphics.setFont(font)
+
+			for index = page_offset + 1, math.min(page_offset + 3, #Game.battle.party) do
+				if Game.battle.party[index].chara.id == "lobby_man" then
+					Draw.setColor(COLORS.dkgray)
+					love.graphics.rectangle("fill", 400, 55 + ((index - page_offset - 1) * 30), 101, 16)
+
+					local percentage = Game.battle.party[index].chara:getHealth() / Game.battle.party[index].chara:getStat("health")
+					-- Chapter 3 introduces this lower limit, but all chapters in Kristal might as well have it
+					-- Swooning is the only time you can ever see it this low
+					percentage = math.max(-1, percentage)
+					Draw.setColor(COLORS.white)
+					local static_shader = Assets.getShader("static_bullet")
+					static_shader:send("time", Kristal.getTime())
+					static_shader:send("brightness", 1)
+					love.graphics.setShader(static_shader)
+					love.graphics.rectangle("fill", 400, 55 + ((index - page_offset - 1) * 30), math.ceil(percentage * 101), 16)
 					love.graphics.setShader()
-				else
-                    local hp_percent = enemy.health / enemy.max_health
-
-                    local hp_x = draw_mercy and 420 or 510
-
-                    if enemy.selectable and enemy.static_hp then
-                        -- Draw the enemy's HP
-                        Draw.setColor(COLORS.dkgray)
-                        love.graphics.rectangle("fill", hp_x, 55 + y_off, 81, 16)
-
-                        Draw.setColor(COLORS.white)
-						local static_shader = Assets.getShader("static_bullet")
-						static_shader:send("time", Kristal.getTime())
-						static_shader:send("brightness", 1)
-                        love.graphics.setShader(static_shader)
-                        love.graphics.rectangle("fill", hp_x, 55 + y_off, math.ceil(hp_percent * 81), 16)
-                        love.graphics.setShader()
-
-                        if draw_percents then
-							love.graphics.stencil(function()
-								local last_shader = love.graphics.getShader()
-								love.graphics.setShader(Kristal.Shaders["Mask"])
-								love.graphics.rectangle("fill", hp_x, 55 + y_off, math.ceil(hp_percent * 81), 16)
-								love.graphics.setShader(last_shader)
-							end, "replace", 1)
-							love.graphics.setStencilTest("greater", 0)
-                            Draw.setColor(COLORS.black)
-                            love.graphics.print(enemy:getHealthDisplay(), hp_x + 4, 55 + y_off, 0, 1, 0.5)
-							love.graphics.setStencilTest("less", 1)
-                            Draw.setColor(COLORS.white)
-                            love.graphics.print(enemy:getHealthDisplay(), hp_x + 4, 55 + y_off, 0, 1, 0.5)
-							love.graphics.setStencilTest()
-                        end
-                    end
-                end
+				end
+				if Game.battle.party[index].chara:hasAssist() then
+					Draw.setColor(PALETTE["action_health_bg"])
+					love.graphics.rectangle("fill", 400, 55 + ((index - page_offset - 1) * 30), 101, 8)
+					
+					local percentage = Game.battle.party[index].chara:getAssistHealth() / Game.battle.party[index].chara:getStat("assist_health")
+					percentage = math.max(-1, percentage)
+					Draw.setColor(Game.battle.party[index].chara.assist_color)
+					love.graphics.rectangle("fill", 400, 55 + ((index - page_offset - 1) * 30), math.ceil(percentage * 101), 8)
+				end
 			end
-        end
-    elseif Game.battle.state == "PARTYSELECT" then
-        local page = math.ceil(Game.battle.current_menu_y / 3) - 1
-        local max_page = math.ceil(#Game.battle.party / 3) - 1
-        local page_offset = page * 3
-
-        local font = Assets.getFont("main")
-        love.graphics.setFont(font)
-
-        for index = page_offset + 1, math.min(page_offset + 3, #Game.battle.party) do
-            if Game.battle.party[index].chara.id == "lobby_man" then
-				Draw.setColor(COLORS.dkgray)
-				love.graphics.rectangle("fill", 400, 55 + ((index - page_offset - 1) * 30), 101, 16)
-
-				local percentage = Game.battle.party[index].chara:getHealth() / Game.battle.party[index].chara:getStat("health")
-				-- Chapter 3 introduces this lower limit, but all chapters in Kristal might as well have it
-				-- Swooning is the only time you can ever see it this low
-				percentage = math.max(-1, percentage)
-				Draw.setColor(COLORS.white)
-				local static_shader = Assets.getShader("static_bullet")
-				static_shader:send("time", Kristal.getTime())
-				static_shader:send("brightness", 1)
-				love.graphics.setShader(static_shader)
-				love.graphics.rectangle("fill", 400, 55 + ((index - page_offset - 1) * 30), math.ceil(percentage * 101), 16)
-				love.graphics.setShader()
-			end
-			if Game.battle.party[index].chara:hasAssist() then
-				Draw.setColor(PALETTE["action_health_bg"])
-				love.graphics.rectangle("fill", 400, 55 + ((index - page_offset - 1) * 30), 101, 8)
-				
-				local percentage = Game.battle.party[index].chara:getAssistHealth() / Game.battle.party[index].chara:getStat("assist_health")
-				percentage = math.max(-1, percentage)
-				Draw.setColor(Game.battle.party[index].chara.assist_color)
-				love.graphics.rectangle("fill", 400, 55 + ((index - page_offset - 1) * 30), math.ceil(percentage * 101), 8)
-			end
-        end
-    end
+		end
+	end
 end
 
 return BattleUI

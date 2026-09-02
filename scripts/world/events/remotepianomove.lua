@@ -644,8 +644,8 @@ function RemotePianoMove:update()
 			self.last_dust_timer = self.dust_timer
 		end
 		if self.hitstop <= 0 then
-			self:moveX(self.myhspeed)
-			self:moveY(self.myvspeed)
+			self:moveX(self.myhspeed * DTMULT)
+			self:moveY(self.myvspeed * DTMULT)
 		else
 			self.hitstop = self.hitstop - DTMULT
 		end

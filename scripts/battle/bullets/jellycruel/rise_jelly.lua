@@ -38,7 +38,6 @@ end
 
 
 function SmallBullet:onDamage(soul)
-	super.onDamage(self, soul)
 	local target = self:getTarget()
     if isClass(target) and target:includes(PartyBattler) then
 		if MathUtils.randomInt(0, 3) <= Game.battle.encounter.poison_chance and not target:hasStatus("poison") then
@@ -51,6 +50,7 @@ function SmallBullet:onDamage(soul)
 			Game.battle.encounter.poison_chance = Game.battle.encounter.poison_chance + 1
 		end
 	end
+	super.onDamage(self, soul)
 end
 
 return SmallBullet

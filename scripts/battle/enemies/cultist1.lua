@@ -128,6 +128,7 @@ function CultistApathy:onDefeatRun(damage, battler)
 end
 
 function CultistApathy:spare(pacify)
+    self:flash()
     self:defeat(pacify and "PACIFIED" or "SPARED", false)
     self:onSpared()
 end

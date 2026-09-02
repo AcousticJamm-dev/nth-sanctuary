@@ -46,6 +46,7 @@ function CultistApathy:init()
 
     self.tired_percentage = -999
     self.low_health_percentage = 0.25
+	self.exit_on_defeat = false
     
     self.chosen_party_member = nil
 	
@@ -122,14 +123,14 @@ function CultistApathy:defeat(reason, violent)
     Game.battle:removeEnemy(self, true)
 end
 
-function CultistApathy:onDefeatRun(damage, battler)
+function CultistApathy:onDefeat(damage, battler)
     Game.battle.music:stop()
-    self:defeat("VIOLENCED", true)
 end
 
 function CultistApathy:spare(pacify)
+    Game.battle.spare_sound:stop()
+    Game.battle.spare_sound:play()
     self:flash()
-    self:defeat(pacify and "PACIFIED" or "SPARED", false)
     self:onSpared()
 end
 

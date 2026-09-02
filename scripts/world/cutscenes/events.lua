@@ -137,15 +137,15 @@ return {
         Game.lock_movement = false
     end,
     prism = function (cutscene)
+        local dd = cutscene:getCharacter("ddelta")
+        cutscene:setSpeaker(dd)
 		if Game:getFlag("won_prism_1") then
 			cutscene:text("* what?[wait:5]\nyou want to fight the prism again?")
 			cutscene:text("* uh,[wait:5] too bad![wait:5]\n* i'm never doing that again!")
 			cutscene:text("* (after all,[wait:5] this is just a placeholder cutscene!)")
 			return
 		end
-        local dd = cutscene:getCharacter("ddelta")
 		local dd_y = dd.y
-        cutscene:setSpeaker(dd)
         if Game:getFlag("prism_quick") ~= true then
 			cutscene:text("* delta warriors...[wait:5]\n* you finally arrived")
 			cutscene:text("* this is the one and only \"Your Sanctuary\" location")

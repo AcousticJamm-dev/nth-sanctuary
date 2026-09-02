@@ -47,7 +47,6 @@ function SmallBullet:onDamage(soul)
 				Assets.playSound("statuseffect", 1-(not_poisoned_members)*0.08, sndpitch)
 				sndpitch = sndpitch - 0.1
 				battler:inflictStatus("poison")
-				battler.hit_count = battler.hit_count + 1
 				battler:statusMessage("msg", "poisoned")
 			else
 				Game.battle.encounter.poison_chance = Game.battle.encounter.poison_chance + 1

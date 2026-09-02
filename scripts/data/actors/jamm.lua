@@ -85,7 +85,7 @@ function actor:init()
         ["walk_serious/up"] = {0, 0},
         ["walk_serious/down"] = {0, 0},
 
-        ["slide"] = {0, 0},
+        ["slide"] = {-4, -3},
 
         -- Battle offsets
         ["battle/idle"] = {-5, 0},

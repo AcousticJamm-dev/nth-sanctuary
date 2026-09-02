@@ -393,46 +393,6 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup id="6" name="objects_party">
-  <object id="1" name="transition" x="80" y="-40" width="80" height="40">
-   <properties>
-    <property name="map" value="0_base_sanctum/base_center"/>
-    <property name="marker" value="entry_south"/>
-   </properties>
-  </object>
-  <object id="29" name="transition" x="-40" y="1240" width="40" height="80">
-   <properties>
-    <property name="map" value="0_base_sanctum/base_south_2"/>
-    <property name="marker" value="entry"/>
-   </properties>
-  </object>
-  <object id="51" name="transition" x="800" y="1640" width="80" height="40">
-   <properties>
-    <property name="map" value="sanctum_hell/hell_1"/>
-    <property name="marker" value="base_exit"/>
-   </properties>
-  </object>
-  <object id="134" name="prophecy" x="960" y="600" width="280" height="80">
-   <properties>
-    <property name="fade_edges" type="bool" value="true"/>
-    <property name="no_back" type="bool" value="true"/>
-    <property name="offx" type="float" value="150"/>
-    <property name="offy" type="float" value="-100"/>
-    <property name="spr_offx" type="float" value="50"/>
-    <property name="spr_offy" type="float" value="75"/>
-    <property name="text">THE HEROES FIND THE DEOXYNN.
-THE DEOXYNN, WHO LIES ON COLD GROUND.</property>
-    <property name="texture" value="jamm"/>
-    <property name="txt_offy" type="float" value="-32"/>
-   </properties>
-  </object>
-  <object id="137" name="roomglow" x="160" y="0">
-   <properties>
-    <property name="prophecy" type="bool" value="true"/>
-   </properties>
-   <point/>
-  </object>
- </objectgroup>
  <layer id="21" name="roomglow_dark" width="43" height="41" visible="0">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,955,955,955,955,955,955,955,955,955,955,955,955,955,955,955,955,955,955,955,955,955,955,955,955,955,955,955,955,955,955,955,955,955,955,
@@ -478,6 +438,46 @@ THE DEOXYNN, WHO LIES ON COLD GROUND.</property>
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
+ <objectgroup id="6" name="objects_party">
+  <object id="1" name="transition" x="80" y="-40" width="80" height="40">
+   <properties>
+    <property name="map" value="0_base_sanctum/base_center"/>
+    <property name="marker" value="entry_south"/>
+   </properties>
+  </object>
+  <object id="29" name="transition" x="-40" y="1240" width="40" height="80">
+   <properties>
+    <property name="map" value="0_base_sanctum/base_south_2"/>
+    <property name="marker" value="entry"/>
+   </properties>
+  </object>
+  <object id="51" name="transition" x="800" y="1640" width="80" height="40">
+   <properties>
+    <property name="map" value="sanctum_hell/hell_1"/>
+    <property name="marker" value="base_exit"/>
+   </properties>
+  </object>
+  <object id="134" name="prophecy" x="960" y="600" width="280" height="80">
+   <properties>
+    <property name="fade_edges" type="bool" value="true"/>
+    <property name="no_back" type="bool" value="true"/>
+    <property name="offx" type="float" value="150"/>
+    <property name="offy" type="float" value="-100"/>
+    <property name="spr_offx" type="float" value="50"/>
+    <property name="spr_offy" type="float" value="75"/>
+    <property name="text">THE HEROES FIND THE DEOXYNN.
+THE DEOXYNN, WHO LIES ON COLD GROUND.</property>
+    <property name="texture" value="jamm"/>
+    <property name="txt_offy" type="float" value="-32"/>
+   </properties>
+  </object>
+  <object id="137" name="roomglow" x="160" y="0">
+   <properties>
+    <property name="prophecy" type="bool" value="true"/>
+   </properties>
+   <point/>
+  </object>
+ </objectgroup>
  <objectgroup id="9" name="markers">
   <object id="22" name="entry" x="120" y="40">
    <point/>

@@ -158,8 +158,8 @@ function map:onFootstep(char, num)
     if Game.world.player.last_collided_x then px = 0 end
     if Game.world.player.last_collided_y then py = 0 end
     
-    self.ripple_fx:makeRipple(x, y, 60, ColorUtils.hexToRGB("#4A91F6"), 220, 1, 18, 1999000, px * 1.05, py * 1.05)
-    self.ripple_fx:makeRipple(x, y, 60, ColorUtils.hexToRGB("#4A91F6"), 140, 1, 15, 1999000, px * 1.05, py * 1.05)
+    self.ripple_fx:makeRipple(x, y, 60, ColorUtils.hexToRGB("#4A91F6"), 220, 1, 18, 1999000, px * 1.05, py * 1.05, nil, nil, false)
+    self.ripple_fx:makeRipple(x, y, 60, ColorUtils.hexToRGB("#4A91F6"), 140, 1, 15, 1999000, px * 1.05, py * 1.05, nil, nil, false)
 end
 
 return map

@@ -16,6 +16,10 @@ function SmallBullet:onDamage(soul)
     local damage = self:getDamage()
     if damage > 0 then
         local target = self:getTarget()
+		last_hit_counts = {}
+		for _, battler in ipairs(Game.battle.party) do
+			last_hit_counts[battler.chara.id] = battler.hit_count
+		end
         local battlers = Game.battle:hurt(damage, false, target, self:shouldSwoon(damage, target, soul))
 
         local inv_frames = self:getInvulnFrames()
@@ -39,6 +43,9 @@ function SmallBullet:onDamage(soul)
 				Assets.playSound("statuseffect", 1-(not_poisoned_members)*0.08, sndpitch)
 				sndpitch = sndpitch - 0.1
 				battler:inflictStatus("poison")
+				if battler.hit_count == last_hit_counts[battler.chara.id] then
+					battler.hit_count = battler.hit_count + 1
+				end
 				battler:statusMessage("msg", "poisoned")
 			else
 				Game.battle.encounter.poison_chance = Game.battle.encounter.poison_chance + 1

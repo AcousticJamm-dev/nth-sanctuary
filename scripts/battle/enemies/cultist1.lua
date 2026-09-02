@@ -136,11 +136,12 @@ function CultistApathy:onTurnStart()
         self.atk_down = false
         self:statusMessage("damage", "+10", {1, 0.25, 0})
         self.attack = 17
-    end
-	self.tired_amt = MathUtils.approach(self.tired_amt, 100, 2)
-	if self.tired_amt >= 100 then
-		self:setTired(true)
-	end	
+    else
+		self.tired_amt = MathUtils.approach(self.tired_amt, 100, 2)
+		if self.tired_amt >= 100 then
+			self:setTired(true)
+		end	
+	end
 end
 
 function CultistApathy:onAct(battler, name)

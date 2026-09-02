@@ -280,15 +280,15 @@ function CultistApathy:onAct(battler, name)
 				self:statusMessage("damage", "-10", {1, 0.25, 0})
 				self.attack = 7
 				self.atk_down = true
-				self.tired_amt = MathUtils.approach(self.tired_amt, 100, 6)
+				self.tired_amt = MathUtils.approach(self.tired_amt, 100, 8)
 				if self.tired_amt >= 100 then
 					self:setTired(true)
 				else
-					self:statusMessage("damage", "+6%", { 0, 0.7, 1 })
+					self:statusMessage("damage", "+8%", { 0, 0.7, 1 })
 				end
 				hastranquilized = true
 			end)
-			if self.tired_amt >= 94 then
+			if self.tired_amt >= 92 then
 				cutscene:text("* Ralsei and Jamm cast TRANQUILIZE![wait:5]\n* The Cultist became fully [color:blue]TIRED[color:reset] and its ATTACK went down this turn!")
 			else
 				cutscene:text("* Ralsei and Jamm cast TRANQUILIZE![wait:5]\n* The Cultist became more [color:blue]TIRED[color:reset] and its ATTACK went down this turn!")

@@ -66,10 +66,12 @@ function Basic:onStart()
 							Assets.playSound("statuseffect", 1-(not_poisoned_members)*0.08, sndpitch)
 							sndpitch = sndpitch - 0.1
 							battler:inflictStatus("poison")
-							if battler.hit_count == last_hit_count then
-								battler.hit_count = battler.hit_count + 1
-							end
-							battler:statusMessage("msg", "poisoned")
+							Game.battle.timer:after(1/30, function()
+								if battler.hit_count == last_hit_count then
+									battler.hit_count = battler.hit_count + 1
+								end
+								battler:statusMessage("msg", "poisoned")
+							end)
 						end
                     end
 					Assets.playSound("mercy_down")

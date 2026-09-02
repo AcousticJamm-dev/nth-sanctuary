@@ -1010,7 +1010,7 @@ return {
         },
         {
           id = 148,
-          name = "interactable",
+          name = "script",
           type = "",
           shape = "rectangle",
           x = 590,

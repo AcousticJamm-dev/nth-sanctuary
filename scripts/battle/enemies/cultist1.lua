@@ -329,7 +329,7 @@ function CultistApathy:onAct(battler, name)
 				cutscene:text("* Jamm's will is changing...\n* [color:#FFBF7F]J-ACTION[color:reset] became [color:yellow]TRANQUILIZE[color:reset]!" .. spell_moved_text)
 				battler.chara.default_has_xact = battler.chara.has_xact
 				battler.chara.has_xact = false 
-				self:registerAct("Tranquilize", "TIRE &\nlower DMG", {"ralsei", "jamm"}, 40)
+				self:registerAct("Tranquilize", "TIRE &\nlower DMG", {"ralsei", "jamm"}, 32)
 			else
 				cutscene:text("* But they wouldn't listen.")
 			end

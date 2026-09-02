@@ -5,8 +5,8 @@ function actor:init()
 
     self.name = "Organikk"
 
-    self.width = 38
-    self.height = 61
+    self.width = 44
+    self.height = 62
     self.hitbox = {2, 22, 29, 38}
 
     self.color = {0, 0, 1}

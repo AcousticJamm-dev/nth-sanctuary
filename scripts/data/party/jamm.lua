@@ -55,11 +55,11 @@ function character:init()
     self.lw_weapon_default = "light/rope_sling"
     self.lw_armor_default = "light/bandage"
 
-    self.color = {1, 1, 0}
-    self.dmg_color = nil
-    self.attack_bar_color = {0.5, 0.5, 0}
-    self.attack_box_color = {127/255, 106/255, 0}
-    self.xact_color = nil
+    self.color = {1, 0.625, 0.25}
+    self.dmg_color = ColorUtils.hexToRGB("#FFB366")
+    self.attack_bar_color = ColorUtils.hexToRGB("#DB9F11FF")
+    self.attack_box_color = {0.5, 0.5, 0}
+    self.xact_color = ColorUtils.hexToRGB("#FFBF7FFF")
 	-- highlight color A
     self.highlight_color = ColorUtils.hexToRGB("#DB9F11FF")
 		-- highlight color B

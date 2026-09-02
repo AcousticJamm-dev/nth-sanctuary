@@ -79,7 +79,7 @@ return {
         j:setOrigin(0.5, 0.5)
         j.x, j.y = SCREEN_WIDTH/2+k.width*6, SCREEN_HEIGHT/2
         j:setScale(2)
-        j:addFX(ColorMaskFX({1,200/255,0}))
+        j:addFX(ColorMaskFX({1,0.625,0.25}))
         Game.stage:addChild(n)
         Game.stage:addChild(j)
         cutscene:wait(3.9)

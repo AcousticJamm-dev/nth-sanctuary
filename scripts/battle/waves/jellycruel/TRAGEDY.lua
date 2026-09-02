@@ -65,7 +65,6 @@ function Basic:onStart()
 							Assets.playSound("statuseffect", 1-(not_poisoned_members)*0.08, sndpitch)
 							sndpitch = sndpitch - 0.1
 							battler:inflictStatus("poison")
-							battler.hit_count = battler.hit_count + 1
 							battler:statusMessage("msg", "poisoned")
 						end
                     end

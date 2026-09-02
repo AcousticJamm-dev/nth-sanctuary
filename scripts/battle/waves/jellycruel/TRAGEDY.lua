@@ -50,7 +50,7 @@ function Basic:onStart()
         Assets.playSound("snd_closet_fall")
         self.timer:tween(3, Game.battle.arena, {y = Game.battle.arena.y + 700, rotation = fliprot}, "in-cubic", function()
 			FRAMERATE = self.last_framerate
-            if Game.battle.soul.y > SCREEN_HEIGHT + 19 then
+            if Game.battle.soul.y > SCREEN_HEIGHT + 16 then
 				Game.battle.soul.active = false
                 Assets.playSound("error", 1.2)
                 self.timer:after(1, function()

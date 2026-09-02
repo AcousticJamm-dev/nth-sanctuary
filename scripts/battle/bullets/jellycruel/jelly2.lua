@@ -20,21 +20,42 @@ function SmallBullet:update()
     super.update(self)
 end
 
-
 function SmallBullet:onDamage(soul)
-	local target = self:getTarget()
-    if isClass(target) and target:includes(PartyBattler) then
-		if MathUtils.randomInt(0, 3) <= Game.battle.encounter.poison_chance and not target:hasStatus("poison") then
-			Game.battle.encounter.poison_chance = 0
-			Assets.stopAndPlaySound("statuseffect")
-			target:inflictStatus("poison")
-			target.hit_count = target.hit_count + 1
-			target:statusMessage("msg", "poisoned")
-		else
-			Game.battle.encounter.poison_chance = Game.battle.encounter.poison_chance + 1
+    local damage = self:getDamage()
+    if damage > 0 then
+        local target = self:getTarget()
+        local battlers = Game.battle:hurt(damage, false, target, self:shouldSwoon(damage, target, soul))
+
+        local inv_frames = self:getInvulnFrames()
+
+        if target ~= "ALL" then
+            inv_frames = Game:applyInvulnBonuses(inv_frames)
+        end
+
+        Game:setInvulnFrames(inv_frames)
+
+        soul:onDamage(self, damage)
+		
+		local sndpitch = 1
+		local not_poisoned_members = 0
+		for _, battler in ipairs(battlers) do
+			if not battler:hasStatus("poison") then
+				not_poisoned_members = not_poisoned_members + 1
+			end
+			if MathUtils.randomInt(0, 3) <= Game.battle.encounter.poison_chance and not battler:hasStatus("poison") then
+				Game.battle.encounter.poison_chance = 0
+				Assets.playSound("statuseffect", 1-(not_poisoned_members)*0.08, sndpitch)
+				sndpitch = sndpitch - 0.1
+				battler:inflictStatus("poison")
+				battler.hit_count = battler.hit_count + 1
+				battler:statusMessage("msg", "poisoned")
+			else
+				Game.battle.encounter.poison_chance = Game.battle.encounter.poison_chance + 1
+			end
 		end
-	end
-	super.onDamage(self, soul)
+        return battlers
+    end
+	return {}
 end
 
 return SmallBullet

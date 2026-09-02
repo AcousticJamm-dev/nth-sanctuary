@@ -515,6 +515,8 @@ return {
 		cutscene:wait(cutscene:slideTo(spr, 1231, 197, 2, 'in-out-cubic'))
 		Game:setFlag("chase_cutscene_prog", 2)
 		Game:setFlag("imbued_battle_fading", true)
+		Game:getPartyMember("susie"):setFlag("serious", true)
+		Game:getPartyMember("jamm"):setFlag("serious", true)
 		cutscene:startEncounter("creature_a", nil)
 		Game:setFlag("creature_a_defeat", true)
 		jamm:setPosition(jamm.x, jamm.y + 40)
@@ -523,6 +525,8 @@ return {
 		cutscene:fadeIn(0.01, {music = false})
 
 		----Post battle
+		Game:getPartyMember("susie"):setFlag("serious", false)
+		Game:getPartyMember("jamm"):setFlag("serious", false)
 		kris:setSprite("battle/defeat")
 		jamm:setSprite("battle/defeat")
 		susie:setSprite("battle/defeat")

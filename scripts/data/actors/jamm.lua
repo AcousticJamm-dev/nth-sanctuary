@@ -71,7 +71,26 @@ function actor:init()
 		["sit"]               			= {"sit", 4/30, true},
         ["pirouette"]                   = {"pirouette", 4/30, true},
     }
+    -- Alternate animations to use for Jamm without a smile
+    self.animations_serious = {
+        ["battle/idle"]         = {"battle_serious/idle", 0.2, true},
 
+        ["battle/attack"]       = {"battle_serious/attack", 1/15, false},
+        ["battle/act"]          = {"battle_serious/act", 1/15, false},
+        ["battle/item"]         = {"battle_serious/item", 1/15, false, next="battle/idle"},
+        ["battle/spell"]        = {"battle_serious/act", 1/15, false},
+
+        ["battle/attack_ready"] = {"battle_serious/attack_ready", 0.2, true},
+        ["battle/act_ready"]    = {"battle_serious/act_ready", 0.2, true},
+        ["battle/spell_ready"]  = {"battle_serious/act_ready", 0.2, true},
+        ["battle/item_ready"]   = {"battle_serious/item_ready", 0.2, true},
+        ["battle/defend_ready"] = {"battle_serious/defend", 1/15, false},
+		
+        ["battle/act_end"]      = {"battle_serious/act_end", 1/15, false, next="battle/idle"},
+		
+        ["battle/intro"]        = {"battle_serious/intro", 1/15, true},
+        ["battle/victory"]      = {"battle_serious/victory", 1/10, true},
+    }
     -- Table of sprite offsets (indexed by sprite name)
     self.offsets = {
         -- Movement offsets
@@ -112,6 +131,21 @@ function actor:init()
         ["battle/tactic_freeze"] = {-5, 0},
         ["battle/tactic_freeze_shiny"] = {-5, 0},
 		
+        -- Battle offsets (serious)
+        ["battle_serious/idle"] = {-5, 0},
+
+        ["battle_serious/attack"] = {-5, 1},
+        ["battle_serious/attack_ready"] = {-5, 0},
+        ["battle_serious/act"] = {-4, 0},
+        ["battle_serious/act_end"] = {-4, 0},
+        ["battle_serious/act_ready"] = {-4, 0},
+        ["battle_serious/item"] = {-4, 0},
+        ["battle_serious/item_ready"] = {-4, 1},
+        ["battle_serious/defend"] = {-4, 1},
+		
+        ["battle_serious/intro"] = {-9, 0},
+        ["battle_serious/victory"] = {-10, 0},
+		
 		["sit"] = {4, 0},
 		
 		["ball"] = {0, 18},
@@ -138,16 +172,29 @@ function actor:init()
     }
 
     self.mirror_sprites = {
-        ["walk/down"] = "walk_shadowed/up",
-        ["walk/up"] = "walk_shadowed/down",
-        ["walk/left"] = "walk_shadowed/left",
-        ["walk/right"] = "walk_shadowed/right",
+        ["walk/down"] = "walk/up",
+        ["walk/up"] = "walk/down",
+        ["walk/left"] = "walk/left",
+        ["walk/right"] = "walk/right",
 		
-        ["walk_serious/down"] = "walk_shadowed/up",
-        ["walk_serious/up"] = "walk_shadowed/down",
-        ["walk_serious/left"] = "walk_shadowed/left",
-        ["walk_serious/right"] = "walk_shadowed/right",
+        ["walk_serious/down"] = "walk_serious/up",
+        ["walk_serious/up"] = "walk_serious/down",
+        ["walk_serious/left"] = "walk_serious/left",
+        ["walk_serious/right"] = "walk_serious/right",
+		
+        ["walk_shadowed/down"] = "walk_shadowed/up",
+        ["walk_shadowed/up"] = "walk_shadowed/down",
+        ["walk_shadowed/left"] = "walk_shadowed/left",
+        ["walk_shadowed/right"] = "walk_shadowed/right",
     }
+end
+
+function actor:getAnimation(anim)
+	if Game:getPartyMember("jamm"):getFlag("serious", false) and self.animations_serious[anim] ~= nil then
+        return self.animations_serious[anim] or nil
+    else
+        return super.getAnimation(self, anim)
+    end
 end
 
 return actor

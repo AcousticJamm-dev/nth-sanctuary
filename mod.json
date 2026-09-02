@@ -42,7 +42,7 @@
         "GARBAGE"
     ],
 	
-	"dev": false,
+	"dev": true,
     
     "hardReset": false,
     "hidden": false,

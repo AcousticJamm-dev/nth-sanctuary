@@ -1494,8 +1494,12 @@ return {
 
 		cutscene:text("* [voice:none]For these will be the last words you will hear.", {top = false})
 
+		Game:getPartyMember("susie"):setFlag("serious", true)
+		Game:getPartyMember("jamm"):setFlag("serious", true)
 		cutscene:startEncounter("apathy_test", true, a)
-
+		Game:getPartyMember("susie"):setFlag("serious", false)
+		Game:getPartyMember("jamm"):setFlag("serious", false)
+		
 		cutscene:wait(1)
 		Assets.playSound("wing")
 		a:shake(4)

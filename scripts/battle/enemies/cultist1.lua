@@ -56,6 +56,10 @@ function Dummy:init()
     self.chosen_party_member = nil
 	
 	self.boss = true
+	
+	self.s_acted = false
+	self.r_acted = false
+	self.j_acted = false
 end
 
 function Dummy:getEncounterText()
@@ -123,6 +127,12 @@ function Dummy:onAct(battler, name)
             "* CULTIST - AT [image:world/culteye,0,0,2,2] DF [image:world/culteye,0,0,2,2]\n* It radiates with apathy.",
             "* Your [color:yellow]GRAZE AREA [color:white]is reduced."
         }
+	elseif name == "Standard" then
+		Game.battle:startActCutscene(function(cutscene)
+			cutscene:text("* "..battler.chara:getName().." tried to talk to the Cultist...")
+			-- TODO: Specific dialogues for the characters.
+			cutscene:text("* But they wouldn't listen.")
+		end)
     end
     return super.onAct(self, battler, name)
 end

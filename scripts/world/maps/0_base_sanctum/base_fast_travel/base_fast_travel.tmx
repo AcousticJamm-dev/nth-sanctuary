@@ -401,7 +401,7 @@
   </object>
   <object id="134" gid="972" x="360" y="1600" width="160" height="160"/>
   <object id="141" name="savepoint" x="760" y="1000"/>
-  <object id="148" name="interactable" x="590" y="1640" width="20" height="20">
+  <object id="148" name="script" x="590" y="1640" width="20" height="20">
    <properties>
     <property name="cutscene" value="primary.firsttravel"/>
    </properties>

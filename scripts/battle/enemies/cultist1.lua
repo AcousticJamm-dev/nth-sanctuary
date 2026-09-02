@@ -123,7 +123,12 @@ function CultistApathy:defeat(reason, violent)
 end
 
 function CultistApathy:onDefeatRun(damage, battler)
+    Game.battle.music:stop()
     self:defeat("VIOLENCED", true)
+end
+
+function CultistApathy:onSpared()
+    Game.battle.music:stop()
 end
 
 function CultistApathy:onTurnStart()

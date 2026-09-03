@@ -264,7 +264,6 @@ function CultistApathy:onAct(battler, name)
         return
     elseif name == "Tranquilize" then 
         Game.battle:startActCutscene(function(cutscene)
-            local susie = Game.battle:getPartyBattler("susie")
             local ralsei = Game.battle:getPartyBattler("ralsei")
             local jamm = Game.battle:getPartyBattler("jamm")
             local canproceed = false
@@ -272,7 +271,6 @@ function CultistApathy:onAct(battler, name)
             Game.battle.timer:after(10 / 30, function()
                 Assets.playSound("boost")
                 battler:flash()
-                susie:flash()
                 ralsei:flash()
                 jamm:flash()
                 local bx, by = Game.battle:getSoulLocation()
@@ -283,15 +281,13 @@ function CultistApathy:onAct(battler, name)
                 Game.battle:addChild(soul)
             end)
             Game.battle.timer:after(20 / 30, function()
-                susie:setAnimation("battle/spell_ready")
                 ralsei:setAnimation("battle/spell_ready")
                 jamm:setAnimation("battle/act_ready")
                 canproceed = true
             end)
-            cutscene:text("* Your SOUL shined its power on\nthe entire party!")
+            cutscene:text("* Your SOUL shined its power on\nJAMM and RALSEI!")
             cutscene:wait(function() return canproceed == true end)
             jamm:setAnimation("battle/act", function() jamm:setAnimation("battle/idle") end)
-            susie:setAnimation("battle/spell", function() susie:setAnimation("battle/idle") end)
             ralsei:setAnimation("battle/spell", function() 
 				Assets.playSound("hypnosis")
 				ralsei:setAnimation("battle/idle")
@@ -300,23 +296,23 @@ function CultistApathy:onAct(battler, name)
 					self:statusMessage("damage", "-10", {1, 0.25, 0})
 					self.attack = 7
 				end
-				self.atk_down_turns = 3
-				self.tired_amt = MathUtils.approach(self.tired_amt, 100, 16)
+				self.atk_down_turns = 2
+				self.tired_amt = MathUtils.approach(self.tired_amt, 100, 12)
 				if self.tired_amt >= 100 then
 					self:setTired(true)
 				else
-					self:statusMessage("damage", "+16%", { 0, 0.7, 1 })
+					self:statusMessage("damage", "+12%", { 0, 0.7, 1 })
 				end
 				hastranquilized = true
 			end)
-			local atk_down_msg = "* ATTACK down for three turns!"
+			local atk_down_msg = "* ATTACK down for two turns!"
 			if self.atk_down_turns > 0 then
-				atk_down_msg = "* ATTACK remains down for 3 turns!"
+				atk_down_msg = "* ATTACK remains down for 2 turns!"
 			end
-			if self.tired_amt >= 92 then
-				cutscene:text("* Everyone cast TRANQUILIZE![wait:5]\n* The Cultist became fully [color:blue]TIRED[color:reset]!\n" .. atk_down_msg)
+			if self.tired_amt >= 88 then
+				cutscene:text("* Jamm and Ralsei cast TRANQUILIZE![wait:5]\n* The Cultist became fully [color:blue]TIRED[color:reset]!\n" .. atk_down_msg)
 			else
-				cutscene:text("* Everyone cast TRANQUILIZE![wait:5]\n* The Cultist became more [color:blue]TIRED[color:reset]!\n" .. atk_down_msg)
+				cutscene:text("* Jamm and Ralsei cast TRANQUILIZE![wait:5]\n* The Cultist became more [color:blue]TIRED[color:reset]!\n" .. atk_down_msg)
 			end
             cutscene:wait(function() return hastranquilized == true end)
 		end)
@@ -364,7 +360,7 @@ function CultistApathy:onAct(battler, name)
 				cutscene:text("* Jamm's will is changing...\n* [color:#FFBF7F]J-ACTION[color:reset] became [color:yellow]TRANQUILIZE[color:reset]!" .. spell_moved_text)
 				battler.chara.default_has_xact = battler.chara.has_xact
 				battler.chara.has_xact = false 
-				self:registerAct("Tranquilize", "TIRE &\nlower DMG", {"susie", "ralsei", "jamm"}, 40)
+				self:registerAct("Tranquilize", "TIRE &\nlower DMG", {"ralsei", "jamm"}, 40)
 			else
 				cutscene:text("* But they wouldn't listen.")
 			end

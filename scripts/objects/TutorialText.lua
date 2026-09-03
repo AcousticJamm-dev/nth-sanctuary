@@ -39,6 +39,10 @@ function TutorialText:init(type, target)
 		table.insert(self.instruction_lines, {line = "Move Piano", but = "confirm"})
 		table.insert(self.instruction_lines, {line = "Exit", but = "cancel", hold = true, cancel = true})
 	end
+	if self.instruction_type == 5 then
+		self.line_count = 1
+		table.insert(self.instruction_lines, {line = "Charge Jump", but = "confirm", hold = true})
+	end
 end
 
 function TutorialText:onAdd(parent)

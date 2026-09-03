@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 35,
-  nextobjectid = 423,
+  nextobjectid = 427,
   properties = {
     ["border"] = "church_b",
     ["music"] = "second_church",
@@ -585,9 +585,9 @@ return {
         0, 0, 0, 0, 0, 727, 728, 728, 734, 734, 734, 734, 897, 897, 894, 894, 894, 735, 733, 894, 735, 0, 0, 0, 0, 0, 727, 734, 729, 0, 0, 733, 735, 0, 727, 734, 734, 735, 0, 733, 734, 734,
         0, 0, 0, 0, 0, 733, 894, 894, 894, 894, 894, 741, 0, 0, 896, 894, 734, 741, 733, 734, 735, 0, 0, 0, 0, 0, 733, 894, 894, 729, 727, 894, 894, 728, 734, 894, 734, 741, 0, 733, 734, 735,
         0, 0, 0, 0, 0, 733, 894, 735, 733, 734, 735, 0, 0, 896, 891, 894, 895, 0, 733, 734, 735, 0, 0, 0, 0, 0, 739, 734, 894, 894, 740, 740, 894, 734, 734, 894, 735, 0, 727, 734, 734, 741,
-        0, 0, 0, 0, 0, 733, 478, 735, 0, 733, 894, 729, 0, 0, 896, 894, 735, 0, 733, 894, 735, 0, 0, 0, 0, 0, 0, 733, 894, 741, 0, 727, 734, 734, 734, 894, 741, 0, 739, 734, 735, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 733, 734, 735, 0, 890, 734, 894, 735, 0, 733, 734, 735, 0, 0, 0, 0, 0, 727, 734, 735, 0, 727, 894, 894, 734, 735, 741, 0, 0, 0, 739, 741, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 733, 894, 734, 728, 734, 894, 734, 735, 0, 733, 734, 735, 0, 0, 0, 0, 0, 733, 894, 894, 729, 733, 734, 894, 894, 734, 729, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 733, 478, 735, 0, 733, 894, 729, 0, 0, 896, 894, 735, 0, 733, 894, 735, 0, 0, 0, 0, 0, 0, 733, 894, 741, 0, 727, 734, 734, 734, 734, 741, 0, 739, 734, 735, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 733, 734, 735, 0, 890, 734, 894, 735, 0, 733, 734, 735, 0, 0, 0, 0, 0, 727, 734, 735, 0, 727, 894, 894, 734, 734, 895, 0, 0, 0, 739, 741, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 733, 894, 734, 728, 734, 894, 734, 735, 0, 733, 734, 735, 0, 0, 0, 0, 0, 733, 894, 894, 729, 733, 734, 894, 894, 734, 895, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 733, 734, 894, 894, 894, 734, 741, 0, 733, 894, 735, 0, 0, 0, 0, 0, 733, 735, 893, 734, 894, 734, 894, 741, 739, 894, 729, 0, 0, 0, 727, 729,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 727, 894, 734, 734, 734, 894, 735, 0, 0, 733, 894, 735, 0, 0, 0, 0, 0, 733, 734, 894, 734, 894, 734, 894, 729, 727, 894, 735, 0, 0, 727, 894, 734,
         0, 0, 0, 0, 0, 733, 894, 735, 0, 733, 734, 741, 739, 894, 894, 735, 0, 0, 733, 478, 735, 0, 0, 0, 0, 0, 739, 740, 894, 734, 894, 894, 734, 734, 734, 734, 741, 0, 0, 733, 894, 734,
@@ -1851,20 +1851,6 @@ return {
           properties = {}
         },
         {
-          id = 285,
-          name = "",
-          type = "climbarea",
-          shape = "rectangle",
-          x = 1400,
-          y = 280,
-          width = 40,
-          height = 120,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {}
-        },
-        {
           id = 287,
           name = "",
           type = "climbarea",
@@ -1982,7 +1968,7 @@ return {
           type = "climbarea",
           shape = "rectangle",
           x = 1400,
-          y = 480,
+          y = 280,
           width = 40,
           height = 80,
           rotation = 0,
@@ -2297,6 +2283,20 @@ return {
           opacity = 1,
           visible = true,
           properties = {}
+        },
+        {
+          id = 426,
+          name = "",
+          type = "climbarea",
+          shape = "rectangle",
+          x = 1400,
+          y = 400,
+          width = 40,
+          height = 160,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
         }
       }
     },
@@ -2333,7 +2333,7 @@ return {
             ["timelimit"] = 5,
             ["timer"] = 75,
             ["waittime"] = 30,
-            ["waterfallingtimer"] = 16,
+            ["waterfallingtimer"] = 34,
             ["watermoverate"] = 6,
             ["watertilelimit"] = 32
           }
@@ -2357,7 +2357,7 @@ return {
             ["timelimit"] = 5,
             ["timer"] = 20,
             ["waittime"] = 30,
-            ["waterfallingtimer"] = 16,
+            ["waterfallingtimer"] = 34,
             ["watermoverate"] = 6,
             ["watertilelimit"] = 32
           }
@@ -2381,7 +2381,7 @@ return {
             ["timelimit"] = 5,
             ["timer"] = 65,
             ["waittime"] = 30,
-            ["waterfallingtimer"] = 16,
+            ["waterfallingtimer"] = 34,
             ["watermoverate"] = 6,
             ["watertilelimit"] = 32
           }
@@ -2405,7 +2405,7 @@ return {
             ["timelimit"] = 5,
             ["timer"] = 10,
             ["waittime"] = 30,
-            ["waterfallingtimer"] = 16,
+            ["waterfallingtimer"] = 48,
             ["watermoverate"] = 6,
             ["watertilelimit"] = 32
           }
@@ -2429,7 +2429,7 @@ return {
             ["timelimit"] = 5,
             ["timer"] = 55,
             ["waittime"] = 30,
-            ["waterfallingtimer"] = 16,
+            ["waterfallingtimer"] = 48,
             ["watermoverate"] = 6,
             ["watertilelimit"] = 32
           }
@@ -2504,7 +2504,7 @@ return {
           type = "",
           shape = "rectangle",
           x = 1400,
-          y = 560,
+          y = 380,
           width = 40,
           height = 40,
           rotation = 0,
@@ -2579,10 +2579,10 @@ return {
             ["generate"] = true,
             ["spawnrate"] = 25,
             ["timelimit"] = 5,
-            ["timer"] = 75,
-            ["waittime"] = 30,
+            ["timer"] = 8,
+            ["waittime"] = 12,
             ["waterfallingtimer"] = 34,
-            ["watermoverate"] = 6,
+            ["watermoverate"] = 4,
             ["watertilelimit"] = 32
           }
         },
@@ -2605,7 +2605,7 @@ return {
             ["timelimit"] = 5,
             ["timer"] = 20,
             ["waittime"] = 30,
-            ["waterfallingtimer"] = 16,
+            ["waterfallingtimer"] = 34,
             ["watermoverate"] = 6,
             ["watertilelimit"] = 32
           }
@@ -2629,7 +2629,7 @@ return {
             ["timelimit"] = 5,
             ["timer"] = 65,
             ["waittime"] = 30,
-            ["waterfallingtimer"] = 16,
+            ["waterfallingtimer"] = 34,
             ["watermoverate"] = 6,
             ["watertilelimit"] = 32
           }
@@ -2653,7 +2653,7 @@ return {
             ["timelimit"] = 5,
             ["timer"] = 10,
             ["waittime"] = 30,
-            ["waterfallingtimer"] = 16,
+            ["waterfallingtimer"] = 24,
             ["watermoverate"] = 6,
             ["watertilelimit"] = 32
           }
@@ -2677,7 +2677,7 @@ return {
             ["timelimit"] = 5,
             ["timer"] = 55,
             ["waittime"] = 30,
-            ["waterfallingtimer"] = 16,
+            ["waterfallingtimer"] = 28,
             ["watermoverate"] = 6,
             ["watertilelimit"] = 32
           }

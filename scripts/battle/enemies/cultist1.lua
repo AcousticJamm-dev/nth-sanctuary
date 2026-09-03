@@ -292,8 +292,10 @@ function CultistApathy:onAct(battler, name)
 				Assets.playSound("hypnosis")
 				ralsei:setAnimation("battle/idle")
 				self:flash()
-				self:statusMessage("damage", "-10", {1, 0.25, 0})
-				self.attack = 7
+				if self.atk_down_turns <= 0 then
+					self:statusMessage("damage", "-10", {1, 0.25, 0})
+					self.attack = 7
+				end
 				self.atk_down_turns = 3
 				self.tired_amt = MathUtils.approach(self.tired_amt, 100, 16)
 				if self.tired_amt >= 100 then
@@ -303,10 +305,14 @@ function CultistApathy:onAct(battler, name)
 				end
 				hastranquilized = true
 			end)
+			local atk_down_msg = "* ATTACK down for three turns!"
+			if self.atk_down_turns > 0 then
+				atk_down_msg = "* ATTACK remains down for 3 turns!"
+			end
 			if self.tired_amt >= 92 then
-				cutscene:text("* Everyone cast TRANQUILIZE![wait:5]\n* The Cultist became fully [color:blue]TIRED[color:reset]!\n* ATTACK down for three turns!")
+				cutscene:text("* Everyone cast TRANQUILIZE![wait:5]\n* The Cultist became fully [color:blue]TIRED[color:reset]!\n" .. atk_down_msg)
 			else
-				cutscene:text("* Everyone cast TRANQUILIZE![wait:5]\n* The Cultist became more [color:blue]TIRED[color:reset]!\n* ATTACK down for three turns!")
+				cutscene:text("* Everyone cast TRANQUILIZE![wait:5]\n* The Cultist became more [color:blue]TIRED[color:reset]!\n" .. atk_down_msg)
 			end
             cutscene:wait(function() return hastranquilized == true end)
 		end)

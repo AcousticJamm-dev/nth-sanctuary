@@ -9,8 +9,8 @@ return {
   height = 32,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 34,
-  nextobjectid = 418,
+  nextlayerid = 35,
+  nextobjectid = 423,
   properties = {
     ["border"] = "church_b",
     ["music"] = "second_church",
@@ -1383,6 +1383,51 @@ return {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 34,
+      name = "objects_camera",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 422,
+          name = "cameraclamper",
+          type = "",
+          shape = "polygon",
+          x = 200,
+          y = 200,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          polygon = {
+            { x = 0, y = 0 },
+            { x = 0, y = 200 },
+            { x = 160, y = 200 },
+            { x = 160, y = 520 },
+            { x = 480, y = 520 },
+            { x = 480, y = 400 },
+            { x = 640, y = 400 },
+            { x = 640, y = 0 }
+          },
+          properties = {
+            ["clampheight"] = 1080,
+            ["clampwidth"] = 1680,
+            ["clampx"] = 0,
+            ["clampy"] = 120
+          }
+        }
       }
     },
     {

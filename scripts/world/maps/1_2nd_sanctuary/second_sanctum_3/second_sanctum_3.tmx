@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="42" height="32" tilewidth="40" tileheight="40" infinite="0" nextlayerid="34" nextobjectid="418">
+<map version="1.11" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="42" height="32" tilewidth="40" tileheight="40" infinite="0" nextlayerid="35" nextobjectid="423">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -393,6 +393,17 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
+ <objectgroup color="#00aa00" id="34" name="objects_camera">
+  <object id="422" name="cameraclamper" x="200" y="200">
+   <properties>
+    <property name="clampheight" type="int" value="1080"/>
+    <property name="clampwidth" type="int" value="1680"/>
+    <property name="clampx" type="int" value="0"/>
+    <property name="clampy" type="int" value="120"/>
+   </properties>
+   <polygon points="0,0 0,200 160,200 160,520 480,520 480,400 640,400 640,0"/>
+  </object>
+ </objectgroup>
  <objectgroup color="#00ffff" id="23" name="climbing" class="objects">
   <object id="125" type="climbarea" x="240" y="320" width="40" height="40"/>
   <object id="148" type="climbarea" x="240" y="280" width="200" height="40"/>

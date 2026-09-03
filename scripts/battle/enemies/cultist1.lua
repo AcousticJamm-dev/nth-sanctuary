@@ -55,7 +55,7 @@ function CultistApathy:init()
 	self.s_acted = false
 	self.r_acted = false
 	self.j_acted = false
-    self.atk_down = false
+    self.atk_down_turns = 0
 	self.dualhealcount = 0
 	self.tired_amt = -2
 end
@@ -139,10 +139,12 @@ function CultistApathy:onSpared()
 end
 
 function CultistApathy:onTurnStart()
-    if self.atk_down then
-        self.atk_down = false
-        self:statusMessage("damage", "+10", {1, 0.25, 0})
-        self.attack = 17
+    if self.atk_down_turns > 0 then
+		self.atk_down_turns = self.atk_down_turns - 1
+		if self.atk_down_turns <= 0 then
+			self:statusMessage("damage", "+10", {1, 0.25, 0})
+			self.attack = 17
+		end
     else
 		self.tired_amt = MathUtils.approach(self.tired_amt, 100, 2)
 		if self.tired_amt >= 100 then
@@ -292,7 +294,7 @@ function CultistApathy:onAct(battler, name)
 				self:flash()
 				self:statusMessage("damage", "-10", {1, 0.25, 0})
 				self.attack = 7
-				self.atk_down = true
+				self.atk_down_turns = 3
 				self.tired_amt = MathUtils.approach(self.tired_amt, 100, 8)
 				if self.tired_amt >= 100 then
 					self:setTired(true)
@@ -302,9 +304,9 @@ function CultistApathy:onAct(battler, name)
 				hastranquilized = true
 			end)
 			if self.tired_amt >= 92 then
-				cutscene:text("* Ralsei and Jamm cast TRANQUILIZE![wait:5]\n* The Cultist became fully [color:blue]TIRED[color:reset] and its ATTACK went down this turn!")
+				cutscene:text("* Ralsei and Jamm cast TRANQUILIZE![wait:5]\n* The Cultist became fully [color:blue]TIRED[color:reset]!\n* ATTACK down for three turns!")
 			else
-				cutscene:text("* Ralsei and Jamm cast TRANQUILIZE![wait:5]\n* The Cultist became more [color:blue]TIRED[color:reset] and its ATTACK went down this turn!")
+				cutscene:text("* Ralsei and Jamm cast TRANQUILIZE![wait:5]\n* The Cultist became more [color:blue]TIRED[color:reset]!\n* ATTACK down for three turns!")
 			end
             cutscene:wait(function() return hastranquilized == true end)
 		end)
@@ -352,7 +354,7 @@ function CultistApathy:onAct(battler, name)
 				cutscene:text("* Jamm's will is changing...\n* [color:#FFBF7F]J-ACTION[color:reset] became [color:yellow]TRANQUILIZE[color:reset]!" .. spell_moved_text)
 				battler.chara.default_has_xact = battler.chara.has_xact
 				battler.chara.has_xact = false 
-				self:registerAct("Tranquilize", "TIRE &\nlower DMG", {"ralsei", "jamm"}, 36)
+				self:registerAct("Tranquilize", "TIRE &\nlower DMG", {"susie", "ralsei", "jamm"}, 32)
 			else
 				cutscene:text("* But they wouldn't listen.")
 			end

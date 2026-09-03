@@ -54,7 +54,7 @@ function map:onEnter()
     Game.world.map.timer:script(function(wait)
         wait(10/30)
         self.con = 1
-        Game.world.music:play("second_church", 0.7, 1)
+        Game.world.music:play("second_church")
 
         local beat_times = {0, 95.25, 190.5, 285.75, 381, 476.25, 571.5, 666.75}
         local current_beat = 1

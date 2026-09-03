@@ -295,11 +295,11 @@ function CultistApathy:onAct(battler, name)
 				self:statusMessage("damage", "-10", {1, 0.25, 0})
 				self.attack = 7
 				self.atk_down_turns = 3
-				self.tired_amt = MathUtils.approach(self.tired_amt, 100, 8)
+				self.tired_amt = MathUtils.approach(self.tired_amt, 100, 16)
 				if self.tired_amt >= 100 then
 					self:setTired(true)
 				else
-					self:statusMessage("damage", "+8%", { 0, 0.7, 1 })
+					self:statusMessage("damage", "+16%", { 0, 0.7, 1 })
 				end
 				hastranquilized = true
 			end)
@@ -354,7 +354,7 @@ function CultistApathy:onAct(battler, name)
 				cutscene:text("* Jamm's will is changing...\n* [color:#FFBF7F]J-ACTION[color:reset] became [color:yellow]TRANQUILIZE[color:reset]!" .. spell_moved_text)
 				battler.chara.default_has_xact = battler.chara.has_xact
 				battler.chara.has_xact = false 
-				self:registerAct("Tranquilize", "TIRE &\nlower DMG", {"susie", "ralsei", "jamm"}, 32)
+				self:registerAct("Tranquilize", "TIRE &\nlower DMG", {"susie", "ralsei", "jamm"}, 40)
 			else
 				cutscene:text("* But they wouldn't listen.")
 			end

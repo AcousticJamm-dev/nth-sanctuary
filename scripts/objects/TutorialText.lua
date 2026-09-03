@@ -145,7 +145,7 @@ function TutorialText:draw()
 					local spritexpos = 720 - easelerp * 100 - MathUtils.round(strwidth) - 28 - 8
 					local spriteypos = yloc + (space * i) + 3
 					Draw.setColor(1,1,1,lines.holdvalue / 8)
-					Draw.draw(self.timer_tex[1 + math.floor(MathUtils.clamp((28 - ((self.holdvalue / self.holdvaluelimit) * 28)), 0, 28))], spritexpos, spriteypos, 0, 2, 2)
+					Draw.draw(self.timer_tex[1 + math.floor(MathUtils.clamp((28 - ((lines.holdvalue / lines.holdvaluelimit) * 28)), 0, 28))], spritexpos, spriteypos, 0, 2, 2)
 				end
 				Draw.setColor(1,1,1,1)
 			end

@@ -345,7 +345,7 @@ function CultistApathy:onAct(battler, name)
 				self.j_acted = true
 			    cutscene:text("* Look,[wait:5] I don't know what you're trying to do...", "", "jamm")
 			    cutscene:text("* But it's clearly putting these kids in danger.", "", "jamm")
-			    cutscene:text("*	We're both adults.[wait:5]\n* Can't we talk this out as such?", "", "jamm")
+			    cutscene:text("* We're both adults.[wait:5]\n* Can't we talk this out as such?", "", "jamm")
 			    cutscene:text("* ...", "", "jamm")
 			    cutscene:text("* ... No dice,[wait:5] huh?", "", "jamm")
 			    cutscene:text("* Well,[wait:5] guess we'll do this the hard way, then.", "", "jamm")

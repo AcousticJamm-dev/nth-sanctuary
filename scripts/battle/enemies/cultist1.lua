@@ -285,7 +285,7 @@ function CultistApathy:onAct(battler, name)
                 jamm:setAnimation("battle/act_ready")
                 canproceed = true
             end)
-            cutscene:text("* Your SOUL shined its power on\nRALSEI and JAMM!")
+            cutscene:text("* Your SOUL shined its power on\nthe entire party!")
             cutscene:wait(function() return canproceed == true end)
             jamm:setAnimation("battle/act", function() jamm:setAnimation("battle/idle") end)
             ralsei:setAnimation("battle/spell", function() 
@@ -304,9 +304,9 @@ function CultistApathy:onAct(battler, name)
 				hastranquilized = true
 			end)
 			if self.tired_amt >= 92 then
-				cutscene:text("* Ralsei and Jamm cast TRANQUILIZE![wait:5]\n* The Cultist became fully [color:blue]TIRED[color:reset]!\n* ATTACK down for three turns!")
+				cutscene:text("* Everyone cast TRANQUILIZE![wait:5]\n* The Cultist became fully [color:blue]TIRED[color:reset]!\n* ATTACK down for three turns!")
 			else
-				cutscene:text("* Ralsei and Jamm cast TRANQUILIZE![wait:5]\n* The Cultist became more [color:blue]TIRED[color:reset]!\n* ATTACK down for three turns!")
+				cutscene:text("* Everyone cast TRANQUILIZE![wait:5]\n* The Cultist became more [color:blue]TIRED[color:reset]!\n* ATTACK down for three turns!")
 			end
             cutscene:wait(function() return hastranquilized == true end)
 		end)

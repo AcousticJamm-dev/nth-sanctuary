@@ -319,14 +319,24 @@ function CultistApathy:onAct(battler, name)
 			end
 			if battler.chara.id == "susie" then
 				self.s_acted = true
-				cutscene:text("* But they wouldn't listen.")
+			    cutscene:battlerText("susie", "Hey.", {right = true})
+			    cutscene:battlerText("susie", "If you don't stop what\nyou're doing,[wait:5] I'm going to\nthrash your ass.", {right = true})
+			    cutscene:battlerText("susie", "...", {right = true})
+			    cutscene:battlerText("susie", "You've got nothing\nto say,[wait:5] huh?", {right = true})
+			    cutscene:battlerText("susie", "Well,[wait:5] let me\ntell you something.", {right = true})
+			    cutscene:battlerText("susie", "Quiet people piss me off.", {right = true})
 				cutscene:text("* Susie's will is changing...\n* [color:#FF80FF]S-ACTION[color:reset] became [color:yellow]DARK BUSTER[color:reset]!" .. spell_moved_text)
 				battler.chara.default_has_xact = battler.chara.has_xact
 				battler.chara.has_xact = false
 				self:registerAct("DarkBuster", "Dark\ndamage", {"susie", "jamm"}, 60)
 			elseif battler.chara.id == "ralsei" then
 				self.r_acted = true
-				cutscene:text("* But they wouldn't listen.")
+			    cutscene:battlerText("ralsei", "Please,[wait:5] stop!", {right = true})
+			    cutscene:battlerText("ralsei", "If you keep going like\nthis,[wait:5] then...", {right = true})
+			    cutscene:battlerText("ralsei", "It'll start the Roaring!", {right = true})
+			    cutscene:battlerText("ralsei", "If you don't stop,[wait:5]\nboth worlds will\nbe destroyed!", {right = true})
+			    cutscene:battlerText("ralsei", "...", {right = true})
+			    cutscene:battlerText("ralsei", "People like you...[wait:5]\ncan't be reasoned with,[wait:5]\ncan they...?", {right = true})
 				cutscene:text("* Ralsei's will is changing...\n* [color:#80FF80]R-ACTION[color:reset] became [color:yellow]DUAL HEAL[color:reset]!" .. spell_moved_text)
 				battler.chara.default_has_xact = battler.chara.has_xact
 				battler.chara.has_xact = false
@@ -336,7 +346,7 @@ function CultistApathy:onAct(battler, name)
 			    cutscene:battlerText("jamm", "Look,[wait:5] I don't know\nwhat you're trying\nto do...", {right = true})
 			    cutscene:battlerText("jamm", "But it's clearly putting\nthese kids in danger.", {right = true})
 			    cutscene:battlerText("jamm", "We're both adults.[wait:5]\nCan't we talk this\nout as such?", {right = true})
-				cutscene:text("* But they wouldn't listen.")
+			    cutscene:battlerText("jamm", "...", {right = true})
 			    cutscene:battlerText("jamm", "... No dice,[wait:5] huh?", {right = true})
 			    cutscene:battlerText("jamm", "Well,[wait:5] guess we'll do\nthis the hard way, then.", {right = true})
 				cutscene:text("* Jamm's will is changing...\n* [color:#FFBF7F]J-ACTION[color:reset] became [color:yellow]TRANQUILIZE[color:reset]!" .. spell_moved_text)

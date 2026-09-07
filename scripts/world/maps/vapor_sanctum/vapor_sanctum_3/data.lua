@@ -1,7 +1,7 @@
 return {
   version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.12.2",
+  tiledversion = "1.12.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -516,7 +516,7 @@ return {
           shape = "rectangle",
           x = 0,
           y = 120,
-          width = 600,
+          width = 720,
           height = 120,
           rotation = 0,
           opacity = 1,

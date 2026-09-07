@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="20" height="30" tilewidth="40" tileheight="40" infinite="0" nextlayerid="20" nextobjectid="56">
+<map version="1.11" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="20" height="30" tilewidth="40" tileheight="40" infinite="0" nextlayerid="20" nextobjectid="56">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -165,7 +165,7 @@
 </data>
  </layer>
  <objectgroup id="12" name="objects_reflection">
-  <object id="31" name="vaporreflect" x="0" y="120" width="600" height="120"/>
+  <object id="31" name="vaporreflect" x="0" y="120" width="720" height="120"/>
   <object id="33" name="vaporreflect" x="600" y="480" width="120" height="120"/>
   <object id="34" name="vaporreflect" x="120" y="720" width="600" height="240"/>
   <object id="35" name="vaporreflect" x="120" y="1040" width="120" height="120"/>

@@ -2715,10 +2715,10 @@ return {
             ["generate"] = true,
             ["spawnrate"] = 25,
             ["timelimit"] = 5,
-            ["timer"] = 75,
-            ["waittime"] = 30,
+            ["timer"] = 8,
+            ["waittime"] = 12,
             ["waterfallingtimer"] = 16,
-            ["watermoverate"] = 6,
+            ["watermoverate"] = 4,
             ["watertilelimit"] = 32
           }
         },

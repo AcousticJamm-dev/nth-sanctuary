@@ -10,6 +10,10 @@ function actor:init()
         ["run"] = {"run", 3/30, true}
     })
     self.animations["slide"] = {"slide_animated", 4/30, true}
+    TableUtils.merge(self.offsets, {
+        ["pirouette"] = {-7, -1},
+        ["piano"] = {-6, -1},
+	})
 end
 
 return actor

@@ -625,6 +625,7 @@ function RemotePianoMove:update()
 				end
 			end
 		end
+		Object.endCache()
 		if self.dust_timer >= self.last_dust_timer + 2 then
 			local xoffset = 0.5
 			local yoffset = MathUtils.random(0.6) + 0.2

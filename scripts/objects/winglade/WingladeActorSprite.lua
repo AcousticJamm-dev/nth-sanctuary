@@ -121,7 +121,7 @@ function WingladeActorSprite:update()
 
     local anim = self.anim or 'idle'
 
-    if not Game.world.menu then
+    if Game.world.player and Game.world.player:isMovementEnabled() then
         if anim == 'spin' or anim == "spin2" then
             self:setOriginExact(26, 24)
             self.x = 52/2   

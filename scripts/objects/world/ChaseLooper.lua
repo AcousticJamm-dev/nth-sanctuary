@@ -48,6 +48,9 @@ function ChaseLooper:onEnter(player)
         if bullet.id == "gravitybullet" then
             bullet.x = bullet.x + self.warp_x
         end
+        if bullet.id == "darkshape" then
+            bullet.y = bullet.y + self.warp_x
+        end
     end
     for _, obj in ipairs(Game.stage:getObjects(DamageNumber)) do
         obj.x = obj.x + self.warp_x

@@ -11,9 +11,9 @@
     "chapter": 4,
     "map": "fileselect",
     "party": ["kris"],
-    "inventory": {
+    "lightInventory": {
         "items": [],
-        "key_items": ["cell_phone"]
+        "key_items": []
     },
     "equipment": {
          "kris": {

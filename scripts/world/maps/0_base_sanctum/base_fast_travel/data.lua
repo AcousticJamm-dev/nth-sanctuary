@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.12.2",
+  tiledversion = "1.12.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -30,29 +30,29 @@ return {
     },
     {
       name = "light_areas",
-      firstgid = 370,
+      firstgid = 371,
       filename = "../../../tilesets/light_areas.tsx"
     },
     {
       name = "tiles_moss",
-      firstgid = 380,
+      firstgid = 381,
       filename = "../../../tilesets/tiles_moss.tsx"
     },
     {
       name = "bg_dw_church_tileset_new",
-      firstgid = 382,
+      firstgid = 383,
       filename = "../../../tilesets/bg_dw_church_tileset_new.tsx",
       exportfilename = "../../../tilesets/bg_dw_church_tileset_new.lua"
     },
     {
       name = "fast_travel_doors",
-      firstgid = 964,
+      firstgid = 965,
       filename = "../../../tilesets/fast_travel_doors.tsx",
       exportfilename = "../../../tilesets/fast_travel_doors.lua"
     },
     {
       name = "bg_dw_church_2_tileset",
-      firstgid = 974,
+      firstgid = 975,
       filename = "../../../tilesets/bg_dw_church_2_tileset.tsx"
     }
   },
@@ -88,7 +88,7 @@ return {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 260, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 260, 260, 260, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 260, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 482, 0, 260, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 483, 0, 260, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 260, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 260, 260, 260, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 260, 260, 260, 260, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -295,7 +295,7 @@ return {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 171, 163, 173, 174, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 171, 173, 182, 174, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 171, 173, 199, 174, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 1166, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 181, 199, 199, 174, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 1167, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 181, 199, 199, 174, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 201, 202, 202, 202, 202, 202, 202, 202, 202, 202, 202, 203, 171, 173, 173, 174, 202, 202, 202, 202, 202, 202, 202, 202, 203, 0,
         0, 171, 173, 173, 173, 173, 173, 173, 189, 199, 199, 173, 173, 163, 173, 173, 173, 163, 173, 173, 173, 173, 199, 198, 189, 174, 0,
         0, 171, 173, 173, 219, 199, 173, 173, 173, 173, 173, 192, 173, 163, 212, 173, 173, 173, 193, 173, 173, 173, 173, 173, 182, 174, 0,
@@ -435,7 +435,7 @@ return {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3221225852, 1073742204, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3221225853, 1073742205, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -490,10 +490,10 @@ return {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 724, 0, 0, 724, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 730, 0, 0, 730, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 736, 0, 0, 736, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 742, 202, 202, 742, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 725, 0, 0, 725, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 731, 0, 0, 731, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 737, 0, 0, 737, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 743, 202, 202, 743, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -749,7 +749,7 @@ return {
           height = 160,
           rotation = 0,
           opacity = 1,
-          gid = 964,
+          gid = 965,
           visible = true,
           properties = {}
         },
@@ -764,7 +764,7 @@ return {
           height = 160,
           rotation = 0,
           opacity = 1,
-          gid = 964,
+          gid = 965,
           visible = true,
           properties = {}
         },
@@ -854,7 +854,7 @@ return {
           height = 160,
           rotation = 0,
           opacity = 1,
-          gid = 964,
+          gid = 965,
           visible = true,
           properties = {}
         },
@@ -869,7 +869,7 @@ return {
           height = 160,
           rotation = 0,
           opacity = 1,
-          gid = 971,
+          gid = 972,
           visible = true,
           properties = {}
         },
@@ -884,7 +884,7 @@ return {
           height = 160,
           rotation = 0,
           opacity = 1,
-          gid = 966,
+          gid = 967,
           visible = true,
           properties = {}
         },
@@ -990,7 +990,7 @@ return {
           height = 160,
           rotation = 0,
           opacity = 1,
-          gid = 972,
+          gid = 973,
           visible = true,
           properties = {}
         },
@@ -1009,22 +1009,6 @@ return {
           properties = {}
         },
         {
-          id = 148,
-          name = "script",
-          type = "",
-          shape = "rectangle",
-          x = 590,
-          y = 1640,
-          width = 20,
-          height = 20,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["cutscene"] = "primary.firsttravel"
-          }
-        },
-        {
           id = 153,
           name = "interactable",
           type = "",
@@ -1035,7 +1019,7 @@ return {
           height = 160,
           rotation = 0,
           opacity = 1,
-          gid = 964,
+          gid = 965,
           visible = true,
           properties = {
             ["text"] = "* (Locked.)",
@@ -1053,7 +1037,7 @@ return {
           height = 160,
           rotation = 0,
           opacity = 1,
-          gid = 964,
+          gid = 965,
           visible = true,
           properties = {
             ["text"] = "* (Locked.)",
@@ -1071,7 +1055,7 @@ return {
           height = 160,
           rotation = 0,
           opacity = 1,
-          gid = 964,
+          gid = 965,
           visible = true,
           properties = {
             ["text"] = "* (Locked.)",
@@ -1089,7 +1073,7 @@ return {
           height = 160,
           rotation = 0,
           opacity = 1,
-          gid = 964,
+          gid = 965,
           visible = true,
           properties = {
             ["text"] = "* (Locked.)",
@@ -1107,7 +1091,7 @@ return {
           height = 160,
           rotation = 0,
           opacity = 1,
-          gid = 965,
+          gid = 966,
           visible = true,
           properties = {}
         },
@@ -1177,7 +1161,7 @@ return {
           height = 1980,
           rotation = 0,
           opacity = 1,
-          gid = 372,
+          gid = 373,
           visible = true,
           properties = {
             ["light"] = true,
@@ -1197,7 +1181,7 @@ return {
           height = 1980,
           rotation = 0,
           opacity = 1,
-          gid = 372,
+          gid = 373,
           visible = true,
           properties = {
             ["light"] = true,
@@ -1217,7 +1201,7 @@ return {
           height = 1980,
           rotation = 0,
           opacity = 1,
-          gid = 2147484020,
+          gid = 2147484021,
           visible = true,
           properties = {
             ["light"] = true,
@@ -1254,7 +1238,7 @@ return {
           height = 1980,
           rotation = 0,
           opacity = 1,
-          gid = 372,
+          gid = 373,
           visible = true,
           properties = {
             ["light"] = true,
@@ -1274,7 +1258,7 @@ return {
           height = 1980,
           rotation = 0,
           opacity = 1,
-          gid = 2147484020,
+          gid = 2147484021,
           visible = true,
           properties = {
             ["light"] = true,

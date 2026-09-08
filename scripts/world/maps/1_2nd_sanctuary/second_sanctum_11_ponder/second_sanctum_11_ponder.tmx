@@ -11,7 +11,7 @@
  <tileset firstgid="199" source="../../../tilesets/bg_dw_church_tileset_new.tsx"/>
  <tileset firstgid="781" source="../../../tilesets/tiles_moss.tsx"/>
  <tileset firstgid="783" source="../../../tilesets/church_objects.tsx"/>
- <tileset firstgid="892" source="../../../tilesets/bg_dw_church_library_2_tileset.tsx"/>
+ <tileset firstgid="893" source="../../../tilesets/bg_dw_church_library_2_tileset.tsx"/>
  <objectgroup id="16" name="objects_parallax3" visible="0" parallaxx="0.3" parallaxy="0.82"/>
  <objectgroup id="15" name="objects_parallax2" visible="0" parallaxx="0.4" parallaxy="0.85">
   <object id="34" gid="795" x="-230" y="570" width="640" height="200">
@@ -49,8 +49,8 @@
   <object id="32" gid="787" x="-1060" y="980" width="639" height="1600" rotation="45"/>
   <object id="33" gid="1073742611" x="20" y="440" width="639" height="1600" rotation="45"/>
  </objectgroup>
- <objectgroup id="17" name="objects_fade">
-  <object id="45" gid="791" x="640" y="480" width="280" height="640.33" rotation="270"/>
+ <objectgroup id="17" name="objects_fade" visible="0">
+  <object id="45" gid="791" x="640" y="560" width="360" height="640.33" rotation="270"/>
  </objectgroup>
  <layer id="13" name="tiles_osc_optimize" width="16" height="12">
   <data encoding="csv">
@@ -94,10 +94,10 @@
  <layer id="1" name="Tile Layer 1" width="16" height="12">
   <data encoding="csv">
 0,559,470,470,470,559,604,605,605,606,559,470,470,470,559,0,
-0,893,894,895,476,565,774,774,774,774,565,476,896,897,898,0,
-0,903,904,905,169,8,9,14,14,19,8,9,906,907,908,0,
-0,913,914,915,179,17,18,14,14,16,17,187,916,917,918,0,
-0,923,924,925,197,26,27,2,3,25,196,179,926,927,928,0,
+0,894,895,896,476,565,774,774,774,774,565,476,897,898,899,0,
+0,904,905,906,169,8,9,14,14,19,8,9,907,908,909,0,
+0,914,915,916,179,17,18,14,14,16,17,187,917,918,919,0,
+0,924,925,926,197,26,27,2,3,25,196,179,927,928,929,0,
 0,28,28,28,28,28,22,11,12,23,28,28,28,28,28,0,
 0,0,0,0,0,0,28,28,28,28,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,

@@ -17,6 +17,26 @@ end
 
 function map:update()
 	super.update(self)
+	local wave_dist = {6, 4, 2}
+	local offset = {0, 0, 0}
+	local a4 = 0
+	for _, event in ipairs(self.events) do
+		if event.layer == self.layers["objects_parallax"] then
+			a4 = ((event.init_y + wave_dist[1]) - event.init_y) * 0.5
+			event.y = event.init_y + a4 + (math.sin(((Kristal.getTime() + (2 * (offset[1] * 0.11))) / 2) * (2 * math.pi)) * a4)
+			offset[1] = offset[1] + 1
+		end
+		if event.layer == self.layers["objects_parallax2"] then
+			a4 = ((event.init_y + wave_dist[2]) - event.init_y) * 0.5
+			event.y = event.init_y + a4 + (math.sin(((Kristal.getTime() + (2 * (offset[2] * 0.11))) / 2) * (2 * math.pi)) * a4)
+			offset[2] = offset[2] + 1
+		end
+		if event.layer == self.layers["objects_parallax3"] then
+			a4 = ((event.init_y + wave_dist[3]) - event.init_y) * 0.5
+			event.y = event.init_y + a4 + (math.sin(((Kristal.getTime() + (2 * (offset[3] * 0.11))) / 2) * (2 * math.pi)) * a4)
+			offset[3] = offset[3] + 1
+		end
+	end
 	local player = Game.world.player
 	for _, piano in ipairs(self:getEvents("remotepianomove")) do
 		if piano and piano.engaged then

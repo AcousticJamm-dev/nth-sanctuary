@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="23" height="28" tilewidth="40" tileheight="40" infinite="0" parallaxoriginx="-320" parallaxoriginy="-240" nextlayerid="18" nextobjectid="152">
+<map version="1.11" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="23" height="28" tilewidth="40" tileheight="40" infinite="0" parallaxoriginx="-320" parallaxoriginy="-240" nextlayerid="18" nextobjectid="153">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -44,7 +44,7 @@
   </object>
  </objectgroup>
  <objectgroup id="8" name="objects_parallax2" visible="0" parallaxx="0.4" parallaxy="0.85">
-  <object id="33" gid="793" x="-200" y="240" width="640" height="200" rotation="-90">
+  <object id="33" gid="793" x="-200" y="240" width="640" height="200">
    <properties>
     <property name="color" type="color" value="#ff2525ba"/>
    </properties>
@@ -69,8 +69,8 @@
   <object id="29" gid="785" x="-240" y="1120" width="640" height="1600" rotation="-315"/>
   <object id="65" gid="785" x="880" y="1080" width="640" height="1600" rotation="-45"/>
  </objectgroup>
- <objectgroup id="9" name="objects_shadow" visible="0">
-  <object id="37" gid="789" x="920" y="1120" width="900" height="920" rotation="270"/>
+ <objectgroup id="9" name="objects_shadow">
+  <object id="37" gid="789" x="920" y="1460" width="1240" height="920" rotation="270"/>
  </objectgroup>
  <layer id="15" name="Tile Layer 2" width="23" height="28" tintcolor="#999999">
   <data encoding="csv">

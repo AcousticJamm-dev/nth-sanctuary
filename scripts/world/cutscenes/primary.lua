@@ -1281,6 +1281,8 @@ return {
 
 		cutscene:alignFollowers()
 		cutscene:attachFollowers()
+		
+		Game:setFlag("fastTravelVisited", true)
 	end,
 
     splitpath = function(cutscene)

@@ -1,7 +1,7 @@
 return {
   version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.12.2",
+  tiledversion = "1.12.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -9,8 +9,8 @@ return {
   height = 32,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 13,
-  nextobjectid = 244,
+  nextlayerid = 17,
+  nextobjectid = 341,
   properties = {
     ["border"] = "church_b",
     ["music"] = "second_church"
@@ -24,33 +24,1591 @@ return {
     },
     {
       name = "bg_dw_church_tileset_new",
-      firstgid = 110,
+      firstgid = 111,
       filename = "../../../tilesets/bg_dw_church_tileset_new.tsx",
       exportfilename = "../../../tilesets/bg_dw_church_tileset_new.lua"
     },
     {
       name = "bg_dw_church_c_tileset",
-      firstgid = 692,
+      firstgid = 693,
       filename = "../../../tilesets/bg_dw_church_c_tileset.tsx"
     },
     {
       name = "bg_dw_church_2_tileset",
-      firstgid = 971,
+      firstgid = 972,
       filename = "../../../tilesets/bg_dw_church_2_tileset.tsx"
     },
     {
       name = "longslides",
-      firstgid = 1169,
+      firstgid = 1170,
       filename = "../../../tilesets/longslides.tsx",
       exportfilename = "../../../tilesets/longslides.lua"
     },
     {
       name = "bg_dw_church_library_2_tileset",
-      firstgid = 1223,
+      firstgid = 1224,
       filename = "../../../tilesets/bg_dw_church_library_2_tileset.tsx"
     }
   },
   layers = {
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 16,
+      name = "objects_parallax3",
+      class = "",
+      visible = false,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 0.3,
+      parallaxy = 0.82,
+      properties = {},
+      objects = {
+        {
+          id = 292,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = -140,
+          y = 90,
+          width = 60,
+          height = 80,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff2b2b2b"
+          }
+        },
+        {
+          id = 293,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 70,
+          y = 20,
+          width = 60,
+          height = 80,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff2b2b2b"
+          }
+        },
+        {
+          id = 294,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 400,
+          y = 120,
+          width = 60,
+          height = 80,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff2b2b2b"
+          }
+        },
+        {
+          id = 295,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 390,
+          y = 460,
+          width = 60,
+          height = 80,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff2b2b2b"
+          }
+        },
+        {
+          id = 296,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 170,
+          y = 370,
+          width = 60,
+          height = 80,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff2b2b2b"
+          }
+        },
+        {
+          id = 297,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 130,
+          y = 700,
+          width = 60,
+          height = 80,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff2b2b2b"
+          }
+        },
+        {
+          id = 298,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 380,
+          y = 650,
+          width = 60,
+          height = 80,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff2b2b2b"
+          }
+        },
+        {
+          id = 299,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 280,
+          y = 560,
+          width = 60,
+          height = 80,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff2b2b2b"
+          }
+        },
+        {
+          id = 300,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = -80,
+          y = 560,
+          width = 60,
+          height = 80,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff2b2b2b"
+          }
+        },
+        {
+          id = 301,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 120,
+          y = 910,
+          width = 60,
+          height = 80,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff2b2b2b"
+          }
+        },
+        {
+          id = 302,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 580,
+          y = 960,
+          width = 60,
+          height = 80,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff2b2b2b"
+          }
+        },
+        {
+          id = 303,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 420,
+          y = 1150,
+          width = 60,
+          height = 80,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff2b2b2b"
+          }
+        },
+        {
+          id = 304,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 180,
+          y = 1160,
+          width = 60,
+          height = 80,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff2b2b2b"
+          }
+        },
+        {
+          id = 305,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = -70,
+          y = 1010,
+          width = 60,
+          height = 80,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff2b2b2b"
+          }
+        },
+        {
+          id = 306,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 740,
+          y = 780,
+          width = 60,
+          height = 80,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff2b2b2b"
+          }
+        },
+        {
+          id = 307,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 610,
+          y = 610,
+          width = 60,
+          height = 80,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff2b2b2b"
+          }
+        },
+        {
+          id = 308,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 720,
+          y = 80,
+          width = 60,
+          height = 80,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff2b2b2b"
+          }
+        },
+        {
+          id = 309,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 930,
+          y = 160,
+          width = 60,
+          height = 80,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff2b2b2b"
+          }
+        },
+        {
+          id = 310,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 990,
+          y = 470,
+          width = 60,
+          height = 80,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff2b2b2b"
+          }
+        },
+        {
+          id = 311,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 930,
+          y = 1020,
+          width = 60,
+          height = 80,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff2b2b2b"
+          }
+        },
+        {
+          id = 312,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1060,
+          y = 740,
+          width = 60,
+          height = 80,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff2b2b2b"
+          }
+        },
+        {
+          id = 313,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1070,
+          y = 1090,
+          width = 60,
+          height = 80,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff2b2b2b"
+          }
+        },
+        {
+          id = 314,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1220,
+          y = 500,
+          width = 60,
+          height = 80,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff2b2b2b"
+          }
+        },
+        {
+          id = 315,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1260,
+          y = 840,
+          width = 60,
+          height = 80,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff2b2b2b"
+          }
+        },
+        {
+          id = 316,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 390,
+          y = 910,
+          width = 60,
+          height = 80,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff2b2b2b"
+          }
+        },
+        {
+          id = 317,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 650,
+          y = 270,
+          width = 60,
+          height = 80,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff2b2b2b"
+          }
+        },
+        {
+          id = 321,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1270,
+          y = 660,
+          width = 60,
+          height = 80,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff2b2b2b"
+          }
+        },
+        {
+          id = 323,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1420,
+          y = 1040,
+          width = 60,
+          height = 80,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff2b2b2b"
+          }
+        },
+        {
+          id = 324,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1620,
+          y = 610,
+          width = 60,
+          height = 80,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff2b2b2b"
+          }
+        },
+        {
+          id = 325,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1370,
+          y = 1220,
+          width = 60,
+          height = 80,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff2b2b2b"
+          }
+        },
+        {
+          id = 326,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 2030,
+          y = 140,
+          width = 60,
+          height = 80,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff2b2b2b"
+          }
+        },
+        {
+          id = 327,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1780,
+          y = 420,
+          width = 60,
+          height = 80,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff2b2b2b"
+          }
+        },
+        {
+          id = 328,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1470,
+          y = 130,
+          width = 60,
+          height = 80,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff2b2b2b"
+          }
+        },
+        {
+          id = 329,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1200,
+          y = -60,
+          width = 60,
+          height = 80,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff2b2b2b"
+          }
+        },
+        {
+          id = 333,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 2020,
+          y = 1040,
+          width = 60,
+          height = 80,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff2b2b2b"
+          }
+        },
+        {
+          id = 335,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 270,
+          y = -140,
+          width = 60,
+          height = 80,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff2b2b2b"
+          }
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 15,
+      name = "objects_parallax2",
+      class = "",
+      visible = false,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 0.4,
+      parallaxy = 0.85,
+      properties = {},
+      objects = {
+        {
+          id = 268,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 150,
+          y = 510,
+          width = 84,
+          height = 112,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff333333"
+          }
+        },
+        {
+          id = 270,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 270,
+          y = 230,
+          width = 84,
+          height = 112,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff333333"
+          }
+        },
+        {
+          id = 271,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 450,
+          y = 440,
+          width = 84,
+          height = 112,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff333333"
+          }
+        },
+        {
+          id = 272,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = -80,
+          y = 370,
+          width = 84,
+          height = 112,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff333333"
+          }
+        },
+        {
+          id = 273,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = -110,
+          y = 740,
+          width = 84,
+          height = 112,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff333333"
+          }
+        },
+        {
+          id = 274,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 170,
+          y = 880,
+          width = 84,
+          height = 112,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff333333"
+          }
+        },
+        {
+          id = 275,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 420,
+          y = 740,
+          width = 84,
+          height = 112,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff333333"
+          }
+        },
+        {
+          id = 276,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 650,
+          y = 570,
+          width = 84,
+          height = 112,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff333333"
+          }
+        },
+        {
+          id = 277,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 900,
+          y = 620,
+          width = 84,
+          height = 112,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff333333"
+          }
+        },
+        {
+          id = 278,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 820,
+          y = 20,
+          width = 84,
+          height = 112,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff333333"
+          }
+        },
+        {
+          id = 279,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1050,
+          y = 280,
+          width = 84,
+          height = 112,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff333333"
+          }
+        },
+        {
+          id = 280,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = -50,
+          y = 1110,
+          width = 84,
+          height = 112,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff333333"
+          }
+        },
+        {
+          id = 281,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 460,
+          y = 1120,
+          width = 84,
+          height = 112,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff333333"
+          }
+        },
+        {
+          id = 282,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 770,
+          y = 1060,
+          width = 84,
+          height = 112,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff333333"
+          }
+        },
+        {
+          id = 283,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1160,
+          y = 810,
+          width = 84,
+          height = 112,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff333333"
+          }
+        },
+        {
+          id = 284,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1330,
+          y = 470,
+          width = 84,
+          height = 112,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff333333"
+          }
+        },
+        {
+          id = 285,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1500,
+          y = 1030,
+          width = 84,
+          height = 112,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff333333"
+          }
+        },
+        {
+          id = 286,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1550,
+          y = 50,
+          width = 84,
+          height = 112,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff333333"
+          }
+        },
+        {
+          id = 287,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1540,
+          y = 360,
+          width = 84,
+          height = 112,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff333333"
+          }
+        },
+        {
+          id = 288,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 570,
+          y = 200,
+          width = 84,
+          height = 112,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff333333"
+          }
+        },
+        {
+          id = 289,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1640,
+          y = 760,
+          width = 84,
+          height = 112,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff333333"
+          }
+        },
+        {
+          id = 290,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1750,
+          y = 1190,
+          width = 84,
+          height = 112,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff333333"
+          }
+        },
+        {
+          id = 291,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = -170,
+          y = 60,
+          width = 84,
+          height = 112,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff333333"
+          }
+        },
+        {
+          id = 318,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 730,
+          y = 360,
+          width = 84,
+          height = 112,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff333333"
+          }
+        },
+        {
+          id = 319,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 350,
+          y = 1030,
+          width = 84,
+          height = 112,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff333333"
+          }
+        },
+        {
+          id = 320,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = -40,
+          y = 930,
+          width = 84,
+          height = 112,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff333333"
+          }
+        },
+        {
+          id = 330,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1860,
+          y = 630,
+          width = 84,
+          height = 112,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff333333"
+          }
+        },
+        {
+          id = 331,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 2010,
+          y = 840,
+          width = 84,
+          height = 112,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff333333"
+          }
+        },
+        {
+          id = 332,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1830,
+          y = 340,
+          width = 84,
+          height = 112,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff333333"
+          }
+        },
+        {
+          id = 334,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 360,
+          y = -70,
+          width = 84,
+          height = 112,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff333333"
+          }
+        },
+        {
+          id = 337,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 2020,
+          y = 510,
+          width = 84,
+          height = 112,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff333333"
+          }
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 13,
+      name = "objects_parallax",
+      class = "",
+      visible = false,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 0.5,
+      parallaxy = 0.9,
+      properties = {},
+      objects = {
+        {
+          id = 246,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 50,
+          y = 240,
+          width = 120,
+          height = 160,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff7f7f7f"
+          }
+        },
+        {
+          id = 247,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 250,
+          y = 180,
+          width = 120,
+          height = 160,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff7f7f7f"
+          }
+        },
+        {
+          id = 248,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 120,
+          y = 500,
+          width = 120,
+          height = 160,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff7f7f7f"
+          }
+        },
+        {
+          id = 249,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 0,
+          y = 720,
+          width = 120,
+          height = 160,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff7f7f7f"
+          }
+        },
+        {
+          id = 250,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 100,
+          y = 1170,
+          width = 120,
+          height = 160,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff7f7f7f"
+          }
+        },
+        {
+          id = 252,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 670,
+          y = 1250,
+          width = 120,
+          height = 160,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff7f7f7f"
+          }
+        },
+        {
+          id = 253,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 980,
+          y = 1030,
+          width = 120,
+          height = 160,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff7f7f7f"
+          }
+        },
+        {
+          id = 254,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1200,
+          y = 1240,
+          width = 120,
+          height = 160,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff7f7f7f"
+          }
+        },
+        {
+          id = 255,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1480,
+          y = 1150,
+          width = 120,
+          height = 160,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff7f7f7f"
+          }
+        },
+        {
+          id = 256,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1610,
+          y = 670,
+          width = 120,
+          height = 160,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff7f7f7f"
+          }
+        },
+        {
+          id = 257,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1760,
+          y = 990,
+          width = 120,
+          height = 160,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff7f7f7f"
+          }
+        },
+        {
+          id = 258,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1600,
+          y = 220,
+          width = 120,
+          height = 160,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff7f7f7f"
+          }
+        },
+        {
+          id = 259,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1820,
+          y = 90,
+          width = 120,
+          height = 160,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff7f7f7f"
+          }
+        },
+        {
+          id = 260,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 650,
+          y = 70,
+          width = 120,
+          height = 160,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff7f7f7f"
+          }
+        },
+        {
+          id = 261,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 790,
+          y = 780,
+          width = 120,
+          height = 160,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff7f7f7f"
+          }
+        },
+        {
+          id = 262,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1030,
+          y = 610,
+          width = 120,
+          height = 160,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff7f7f7f"
+          }
+        },
+        {
+          id = 263,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 380,
+          y = 870,
+          width = 120,
+          height = 160,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff7f7f7f"
+          }
+        },
+        {
+          id = 265,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 570,
+          y = 450,
+          width = 120,
+          height = 160,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff7f7f7f"
+          }
+        },
+        {
+          id = 267,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1170,
+          y = 230,
+          width = 120,
+          height = 160,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff7f7f7f"
+          }
+        },
+        {
+          id = 336,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1350,
+          y = -50,
+          width = 120,
+          height = 160,
+          rotation = 0,
+          opacity = 1,
+          gid = 110,
+          visible = true,
+          properties = {
+            ["color"] = "#ff7f7f7f"
+          }
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 14,
+      name = "objects_fade",
+      class = "",
+      visible = false,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 244,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1920,
+          y = 1400,
+          width = 720,
+          height = 1920,
+          rotation = 270,
+          opacity = 1,
+          gid = 9,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
     {
       type = "tilelayer",
       x = 0,
@@ -71,35 +1629,35 @@ return {
       data = {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1482, 1482, 1482, 1482, 1482, 1482, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1482, 1482, 1482, 1482, 1482, 1482, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 0, 0, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 0, 1482, 1482, 1482, 1482, 1482, 1482, 1482,
-        0, 0, 0, 0, 0, 0, 0, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 0, 1482, 1482, 1482, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 0, 0, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 0, 0, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1482, 1482, 1482, 1482, 1482, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1482, 1482, 1482, 1482, 1482, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 1482, 1482, 1482, 1482, 1482, 1482, 1482, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1482, 1482, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1482, 1482, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1482, 1482, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1482, 1482, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1482, 1482, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1482, 1482, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1482, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1483, 1483, 1483, 1483, 1483, 1483, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1483, 1483, 1483, 1483, 1483, 1483, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 0, 0, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 0, 1483, 1483, 1483, 1483, 1483, 1483, 1483,
+        0, 0, 0, 0, 0, 0, 0, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 0, 1483, 1483, 1483, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 0, 0, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 0, 0, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1483, 1483, 1483, 1483, 1483, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1483, 1483, 1483, 1483, 1483, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 1483, 1483, 1483, 1483, 1483, 1483, 1483, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1483, 1483, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1483, 1483, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1483, 1483, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1483, 1483, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1483, 1483, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1483, 1483, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1483, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
       }
     },
@@ -350,13 +1908,13 @@ return {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1359, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1359, 0, 0, 0, 1359, 0, 0, 0, 1359, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1359, 0, 0, 0, 1359, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 1359, 0, 0, 1359, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -399,38 +1957,38 @@ return {
       properties = {},
       encoding = "lua",
       data = {
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1393, 1420, 1440, 1421, 1411, 1416, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1413, 1411, 1430, 1430, 1421, 1406, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1393, 1395, 1405, 1394, 1405, 1385, 1411, 1440, 1440, 1430, 1420, 1406, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1393, 1420, 1394, 1395, 1385, 1394, 1414, 1395, 1406, 0, 0, 1393, 1405, 1395, 1405, 1405, 1394, 1420, 1411, 1430, 1420, 1431, 1416, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1413, 1430, 1441, 1441, 1421, 1394, 1385, 1395, 1395, 1414, 1404, 1394, 1385, 1414, 1395, 1394, 1404, 1405, 1404, 1405, 1411, 1420, 1411, 1410, 1411, 1396, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1403, 1411, 1430, 1411, 1411, 1395, 1404, 1405, 1384, 1395, 1385, 1414, 1414, 1405, 1394, 1410, 1421, 1431, 1394, 1395, 1430, 1431, 1421, 1441, 1430, 1406, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1413, 1430, 1431, 1440, 1421, 1395, 1414, 1404, 1394, 1414, 1394, 1394, 1394, 1414, 1430, 1411, 1420, 1430, 1431, 1404, 1394, 1405, 1395, 1385, 1404, 1404, 1394, 1385, 1394, 1414, 1414, 1395, 1414, 1385, 1385, 1007, 1008,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1393, 1431, 1421, 1431, 1440, 1414, 1394, 1385, 1385, 1405, 1404, 1404, 1404, 1421, 1420, 1440, 1420, 1420, 1421, 1431, 1414, 1385, 1395, 1404, 1394, 1394, 1404, 1394, 1414, 1394, 1385, 1395, 1405, 1395, 1395, 1025, 1026,
-        0, 0, 0, 0, 0, 0, 0, 1413, 1404, 1385, 1394, 1394, 1394, 1405, 1414, 1385, 1385, 1404, 1395, 1405, 1385, 1405, 1385, 1414, 1431, 1411, 1430, 1430, 1440, 1440, 1440, 1405, 1405, 1414, 1404, 1414, 1416, 1443, 1444, 1444, 1444, 1444, 1444, 1444, 1444, 1444, 1034, 1036,
-        0, 0, 0, 0, 0, 0, 0, 1393, 1394, 1385, 1394, 1405, 1395, 1395, 1394, 1414, 1395, 1395, 1395, 1431, 1385, 1405, 1385, 1385, 1405, 1440, 1411, 1431, 1411, 1421, 1395, 1395, 1405, 1385, 1394, 1394, 1396, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1043, 1045,
-        0, 0, 0, 0, 0, 0, 0, 1413, 1394, 1404, 1440, 1411, 1440, 1414, 1385, 1414, 1394, 1421, 1411, 1421, 1430, 1431, 1405, 1385, 1394, 1395, 1421, 1440, 1431, 1414, 1404, 1395, 1395, 1395, 1405, 1394, 1396, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 1413, 1395, 1385, 1421, 1440, 1411, 1385, 1404, 1404, 1385, 1431, 1440, 1431, 1440, 1431, 1385, 1404, 1385, 1394, 1385, 1414, 1420, 1421, 1420, 1420, 1411, 1411, 1420, 1405, 1396, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 1403, 1395, 1395, 1410, 1411, 1440, 1384, 1395, 1404, 1394, 1411, 1431, 1420, 1410, 1430, 1395, 1405, 1415, 1404, 1395, 1411, 1411, 1440, 1440, 1440, 1431, 1440, 1430, 1420, 1406, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 1393, 1385, 1414, 1421, 1420, 1411, 1394, 1404, 1405, 1404, 1394, 1394, 1430, 1405, 1395, 1405, 1395, 1414, 1385, 1394, 1421, 1420, 1430, 1421, 1440, 1411, 1430, 1440, 1420, 1416, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 1393, 1440, 1440, 1430, 1394, 1394, 1414, 1404, 1394, 1394, 1395, 1394, 1411, 1411, 1443, 1445, 1405, 1395, 1394, 1404, 1395, 1441, 1411, 1420, 1420, 1420, 1411, 1431, 1404, 1396, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 1413, 1430, 1420, 1420, 1404, 1405, 1394, 1394, 1395, 1385, 1394, 1404, 1411, 1416, 0, 0, 1413, 1394, 1385, 1395, 1395, 1404, 1414, 1395, 1404, 1411, 1431, 1420, 1411, 1416, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 1393, 1411, 1411, 1411, 1421, 1420, 1394, 1405, 1385, 1395, 1414, 1430, 1440, 1431, 1421, 1406, 0, 0, 1444, 1444, 1444, 1444, 1444, 1444, 1444, 1444, 1445, 1393, 1430, 1440, 1411, 1416, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 1403, 1411, 1421, 1421, 1440, 1431, 1385, 1394, 1395, 1405, 1414, 1430, 1430, 1430, 1430, 1416, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1413, 1394, 1404, 1414, 1416, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 1413, 1431, 1441, 1410, 1420, 1440, 1395, 1405, 1404, 1404, 1405, 1440, 1421, 1406, 1443, 1445, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1443, 1444, 1444, 1444, 1445, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 1403, 1431, 1430, 1430, 1430, 1431, 1405, 1405, 1394, 1384, 1414, 1431, 1421, 1396, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 1443, 1444, 1444, 1445, 1393, 1394, 1395, 1385, 1414, 1404, 1406, 1443, 1444, 1445, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 1403, 1395, 1384, 1404, 1405, 1394, 1416, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 1443, 1444, 1445, 1403, 1416, 1443, 1445, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1403, 1396, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1393, 1396, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1393, 1406, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1403, 1416, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1393, 1396, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1403, 1416, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1393, 1396, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        0, 0, 0, 0, 0, 0, 0, 1347, 1358, 1360, 1347, 1270, 1271, 1273, 1307, 1308, 1309, 1310, 1307, 1308, 1309, 1310, 1307, 1270, 1273, 1308, 1310, 1317, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1307, 1308, 1309, 1310, 1307, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 1394, 1396, 1385, 1417, 1280, 1282, 1283, 1317, 1318, 1319, 1320, 1317, 1318, 1319, 1320, 1317, 1280, 1283, 1318, 1320, 1327, 1424, 1425, 1425, 1425, 1425, 1426, 0, 0, 0, 0, 0, 1317, 1318, 1319, 1320, 1317, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 1404, 1386, 1406, 1397, 1238, 1239, 1240, 1327, 1328, 1329, 1330, 1327, 1328, 1329, 1330, 1327, 1238, 1240, 1328, 1330, 1337, 1394, 1421, 1441, 1422, 1412, 1417, 0, 0, 0, 0, 0, 1317, 1328, 1329, 1330, 1317, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 1394, 1416, 1415, 1407, 1248, 1249, 1250, 1337, 1348, 1349, 1350, 1337, 1348, 1349, 1350, 1337, 1248, 1250, 1358, 1360, 1347, 1414, 1412, 1431, 1431, 1422, 1407, 1425, 1425, 1426, 0, 0, 1317, 1338, 1339, 1340, 1317, 0, 0, 0, 1329,
+        0, 0, 0, 0, 0, 0, 0, 1444, 1445, 1445, 1446, 1245, 1246, 1247, 1347, 1358, 1359, 1360, 1347, 1358, 1359, 1360, 1347, 1245, 1247, 1394, 1396, 1406, 1395, 1406, 1386, 1412, 1441, 1441, 1431, 1421, 1407, 0, 0, 1327, 1338, 1339, 1340, 1327, 0, 0, 0, 1339,
+        0, 0, 0, 0, 0, 0, 0, 1307, 1308, 1310, 1307, 1255, 1256, 1257, 1394, 1421, 1395, 1396, 1386, 1395, 1415, 1396, 1407, 1255, 1257, 1394, 1406, 1396, 1406, 1406, 1395, 1421, 1412, 1431, 1421, 1432, 1417, 0, 0, 1327, 1338, 1339, 1340, 1327, 0, 0, 0, 1339,
+        0, 0, 0, 0, 0, 0, 0, 1317, 1318, 1320, 1317, 1414, 1431, 1442, 1442, 1422, 1395, 1386, 1396, 1396, 1415, 1405, 1395, 1386, 1415, 1396, 1395, 1405, 1406, 1405, 1406, 1412, 1421, 1412, 1411, 1412, 1397, 0, 0, 1337, 1348, 1349, 1350, 1337, 0, 0, 0, 1349,
+        0, 0, 0, 0, 0, 0, 0, 1327, 1328, 1330, 1327, 1404, 1412, 1431, 1412, 1412, 1396, 1405, 1406, 1385, 1396, 1386, 1415, 1415, 1406, 1395, 1411, 1422, 1432, 1395, 1396, 1431, 1432, 1422, 1442, 1431, 1407, 1425, 1425, 1347, 1358, 1359, 1360, 1347, 1425, 1425, 1425, 1425,
+        0, 0, 0, 0, 0, 0, 0, 1337, 1348, 1350, 1337, 1414, 1431, 1432, 1441, 1422, 1396, 1415, 1405, 1395, 1415, 1395, 1395, 1395, 1415, 1431, 1412, 1421, 1431, 1432, 1405, 1395, 1406, 1396, 1386, 1405, 1405, 1395, 1386, 1395, 1415, 1415, 1396, 1415, 1386, 1386, 1008, 1009,
+        0, 0, 0, 0, 0, 0, 0, 1347, 1358, 1360, 1347, 1394, 1432, 1422, 1432, 1441, 1415, 1395, 1386, 1386, 1406, 1405, 1405, 1405, 1422, 1421, 1441, 1421, 1421, 1422, 1432, 1415, 1386, 1396, 1405, 1395, 1395, 1405, 1395, 1415, 1395, 1386, 1396, 1406, 1396, 1396, 1026, 1027,
+        0, 0, 0, 0, 0, 0, 0, 1414, 1405, 1386, 1395, 1395, 1395, 1406, 1415, 1386, 1386, 1405, 1396, 1406, 1386, 1406, 1386, 1415, 1432, 1412, 1431, 1431, 1441, 1441, 1441, 1406, 1406, 1415, 1405, 1415, 1417, 1444, 1445, 1445, 1445, 1445, 1445, 1445, 1445, 1445, 1035, 1037,
+        0, 0, 0, 0, 0, 0, 0, 1394, 1395, 1386, 1395, 1406, 1396, 1396, 1395, 1415, 1396, 1396, 1396, 1432, 1386, 1406, 1386, 1386, 1406, 1441, 1412, 1432, 1412, 1422, 1396, 1396, 1406, 1386, 1395, 1395, 1397, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1044, 1046,
+        0, 0, 0, 0, 0, 0, 0, 1414, 1395, 1405, 1441, 1412, 1441, 1415, 1386, 1415, 1395, 1422, 1412, 1422, 1431, 1432, 1406, 1386, 1395, 1396, 1422, 1441, 1432, 1415, 1405, 1396, 1396, 1396, 1406, 1395, 1397, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 1414, 1396, 1386, 1422, 1441, 1412, 1386, 1405, 1405, 1386, 1432, 1441, 1432, 1441, 1432, 1386, 1405, 1386, 1395, 1386, 1415, 1421, 1422, 1421, 1421, 1412, 1412, 1421, 1406, 1397, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 1404, 1396, 1396, 1411, 1412, 1441, 1385, 1396, 1405, 1395, 1412, 1432, 1421, 1411, 1431, 1396, 1406, 1416, 1405, 1396, 1412, 1412, 1441, 1441, 1441, 1432, 1441, 1431, 1421, 1407, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 1394, 1386, 1415, 1422, 1421, 1412, 1395, 1405, 1406, 1405, 1395, 1395, 1431, 1406, 1396, 1406, 1396, 1415, 1386, 1395, 1422, 1421, 1431, 1422, 1441, 1412, 1431, 1441, 1421, 1417, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 1394, 1441, 1441, 1431, 1395, 1395, 1415, 1405, 1395, 1395, 1396, 1395, 1412, 1412, 1444, 1446, 1406, 1396, 1395, 1405, 1396, 1442, 1412, 1421, 1421, 1421, 1412, 1432, 1405, 1397, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 1424, 1425, 1414, 1431, 1421, 1421, 1405, 1406, 1395, 1395, 1396, 1386, 1395, 1405, 1412, 1417, 0, 0, 1414, 1395, 1386, 1396, 1396, 1405, 1415, 1396, 1405, 1412, 1432, 1421, 1412, 1417, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 1394, 1412, 1412, 1412, 1422, 1421, 1395, 1406, 1386, 1396, 1415, 1431, 1441, 1432, 1422, 1407, 0, 0, 1445, 1445, 1445, 1445, 1445, 1445, 1445, 1445, 1446, 1394, 1431, 1441, 1412, 1417, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 1404, 1412, 1422, 1422, 1441, 1432, 1386, 1395, 1396, 1406, 1415, 1431, 1431, 1431, 1431, 1417, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1414, 1395, 1405, 1415, 1417, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 1414, 1432, 1442, 1411, 1421, 1441, 1396, 1406, 1405, 1405, 1406, 1441, 1422, 1407, 1444, 1446, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1444, 1445, 1445, 1445, 1446, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 1404, 1432, 1431, 1431, 1431, 1432, 1406, 1406, 1395, 1385, 1415, 1432, 1422, 1397, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 1444, 1445, 1445, 1446, 1394, 1395, 1396, 1386, 1415, 1405, 1407, 1444, 1445, 1446, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 1404, 1396, 1385, 1405, 1406, 1395, 1417, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 1444, 1445, 1446, 1404, 1417, 1444, 1446, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1404, 1397, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1394, 1397, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1394, 1407, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1404, 1417, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1394, 1397, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1404, 1417, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1394, 1397, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
       }
     },
     {
@@ -2287,7 +3845,7 @@ return {
       id = 2,
       name = "objects_top",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,

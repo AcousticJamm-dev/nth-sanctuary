@@ -271,12 +271,12 @@ function CultistApathy:onAct(battler, name)
 					self:statusMessage("damage", "-10", {1, 0.25, 0})
 					self.attack = 7
 				end
-				self.atk_down_turns = 2
+				self.atk_down_turns = 3
 				hastranquilized = true
 			end)
-			local atk_down_msg = "* ATTACK down for two turns!"
+			local atk_down_msg = "* ATTACK down for three turns!"
 			if self.atk_down_turns > 0 then
-				atk_down_msg = "* ATTACK remains down for 2 turns!"
+				atk_down_msg = "* ATTACK remains down for 3 turns!"
 			end
 			if self.tired_amt >= 88 then
 				cutscene:text("* Jamm and Ralsei cast TRANQUILIZE![wait:5]\n" .. atk_down_msg)

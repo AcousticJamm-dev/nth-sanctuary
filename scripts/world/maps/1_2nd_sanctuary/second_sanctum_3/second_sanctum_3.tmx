@@ -122,7 +122,7 @@
   <object id="113" gid="785" x="1400" y="-800" width="640" height="1600" rotation="225"/>
   <object id="118" gid="785" x="-440" y="880" width="640" height="1600" rotation="45"/>
  </objectgroup>
- <objectgroup id="29" name="objects_parallax_fade" visible="0">
+ <objectgroup id="29" name="objects_parallax_fade" visible="0" locked="1">
   <object id="327" gid="789" x="1680" y="1720" width="960" height="1680" rotation="270"/>
  </objectgroup>
  <layer id="26" name="Tile Layer 3" width="42" height="32">

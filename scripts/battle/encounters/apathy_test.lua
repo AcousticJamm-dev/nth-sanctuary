@@ -30,7 +30,6 @@ function CultistApathy:init()
     end)
 
     self.parried = false
-	self.draw_tired_bar = true
 end
 
 function CultistApathy:onBattleEnd()

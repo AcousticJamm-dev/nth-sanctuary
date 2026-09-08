@@ -57,15 +57,6 @@ function CultistApathy:init()
 	self.j_acted = false
     self.atk_down_turns = 0
 	self.dualhealcount = 0
-	self.tired_amt = -2
-end
-
-function CultistApathy:getTiredDisplayPercentage()
-    return self.tired_amt
-end
-
-function CultistApathy:getMercyDisplay()    
-    return MathUtils.round(self.tired_amt).."%"
 end
 
 function CultistApathy:getEncounterText()
@@ -127,17 +118,6 @@ function CultistApathy:onDefeat(damage, battler)
     Game.battle.music:stop()
 end
 
-function CultistApathy:spare(pacify)
-    Game.battle.spare_sound:stop()
-    Game.battle.spare_sound:play()
-    self:flash()
-    self:onSpared()
-end
-
-function CultistApathy:onSpared()
-    Game.battle.music:stop()
-end
-
 function CultistApathy:onTurnStart()
     if self.atk_down_turns > 0 then
 		self.atk_down_turns = self.atk_down_turns - 1
@@ -145,11 +125,6 @@ function CultistApathy:onTurnStart()
 			self:statusMessage("damage", "+10", {1, 0.25, 0})
 			self.attack = 17
 		end
-    else
-		self.tired_amt = MathUtils.approach(self.tired_amt, 100, 2)
-		if self.tired_amt >= 100 then
-			self:setTired(true)
-		end	
 	end
 end
 
@@ -297,12 +272,6 @@ function CultistApathy:onAct(battler, name)
 					self.attack = 7
 				end
 				self.atk_down_turns = 2
-				self.tired_amt = MathUtils.approach(self.tired_amt, 100, 12)
-				if self.tired_amt >= 100 then
-					self:setTired(true)
-				else
-					self:statusMessage("damage", "+12%", { 0, 0.7, 1 })
-				end
 				hastranquilized = true
 			end)
 			local atk_down_msg = "* ATTACK down for two turns!"
@@ -310,9 +279,9 @@ function CultistApathy:onAct(battler, name)
 				atk_down_msg = "* ATTACK remains down for 2 turns!"
 			end
 			if self.tired_amt >= 88 then
-				cutscene:text("* Jamm and Ralsei cast TRANQUILIZE![wait:5]\n* The Cultist became fully [color:blue]TIRED[color:reset]!\n" .. atk_down_msg)
+				cutscene:text("* Jamm and Ralsei cast TRANQUILIZE![wait:5]\n" .. atk_down_msg)
 			else
-				cutscene:text("* Jamm and Ralsei cast TRANQUILIZE![wait:5]\n* The Cultist became more [color:blue]TIRED[color:reset]!\n" .. atk_down_msg)
+				cutscene:text("* Jamm and Ralsei cast TRANQUILIZE![wait:5]\n" .. atk_down_msg)
 			end
             cutscene:wait(function() return hastranquilized == true end)
 		end)

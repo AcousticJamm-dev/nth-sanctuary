@@ -721,5 +721,8 @@ return {
     camac = function (cutscene)
         cutscene:text("[noskip]* [sound:camac117]camac [wait:18]one hundred [wait:5]and [wait:9]seven[wait:5]teen")
         cutscene:text("[noskip]* [sound:bigballsmetalgear]big balls [wait:25]metal [wait:4]gear")
+    end,
+    kay = function (cutscene)
+        cutscene:text("* TEST FUCKING DIALOGUE HOLY FUCKING SHIT BALLS MAN IDK")
     end
 }

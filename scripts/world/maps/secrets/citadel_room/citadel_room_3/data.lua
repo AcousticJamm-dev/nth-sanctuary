@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.12.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 8,
-  nextobjectid = 30,
+  nextobjectid = 32,
   properties = {
     ["border"] = "tvworld",
     ["music"] = "greenroom_detune"
@@ -93,6 +93,7 @@ return {
           width = 40,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -106,6 +107,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["type"] = "hsv"
@@ -205,6 +207,7 @@ return {
           width = 1040,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -218,6 +221,7 @@ return {
           width = 1040,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -231,6 +235,7 @@ return {
           width = 40,
           height = 200,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -244,6 +249,7 @@ return {
           width = 40,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -257,6 +263,7 @@ return {
           width = 80,
           height = 280,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -270,6 +277,7 @@ return {
           width = 80,
           height = 160,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -299,6 +307,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -312,6 +321,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -325,6 +335,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -349,11 +360,12 @@ return {
           name = "npc",
           type = "",
           shape = "rectangle",
-          x = 840,
-          y = 200,
+          x = 960,
+          y = 480,
           width = 40,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "spamton",
@@ -370,6 +382,7 @@ return {
           width = 40,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "secrets/citadel_room/citadel_room_1",
@@ -377,31 +390,16 @@ return {
           }
         },
         {
-          id = 10,
-          name = "npc",
-          type = "",
-          shape = "rectangle",
-          x = 573.321,
-          y = 183.133,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["actor"] = "ral",
-            ["cutscene"] = "konverge.ralszor"
-          }
-        },
-        {
           id = 12,
           name = "npc",
           type = "",
           shape = "point",
-          x = 193.321,
-          y = 203.133,
+          x = 200,
+          y = 260,
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "mason",
@@ -413,11 +411,12 @@ return {
           name = "npc",
           type = "",
           shape = "point",
-          x = 393.321,
-          y = 203.133,
+          x = 520,
+          y = 260,
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "ddelta",
@@ -429,11 +428,12 @@ return {
           name = "npc",
           type = "",
           shape = "point",
-          x = 729.321,
-          y = 201.133,
+          x = 840,
+          y = 260,
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "mangle",
@@ -450,6 +450,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "waferr",
@@ -468,6 +469,7 @@ return {
           width = 40,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["cutscene"] = "events.scarlet_tree",
@@ -480,17 +482,52 @@ return {
           name = "interactable",
           type = "",
           shape = "rectangle",
-          x = 720,
-          y = 400,
+          x = 960,
+          y = 280,
           width = 120,
           height = 120,
           rotation = 0,
+          opacity = 1,
           gid = 157,
           visible = true,
           properties = {
             ["cutscene"] = "konverge.camac",
             ["solid"] = "true",
             ["usetile"] = true
+          }
+        },
+        {
+          id = 30,
+          name = "npc",
+          type = "",
+          shape = "point",
+          x = 680,
+          y = 260,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["actor"] = "ral",
+            ["cutscene"] = "konverge.ralszor"
+          }
+        },
+        {
+          id = 31,
+          name = "npc",
+          type = "",
+          shape = "point",
+          x = 360,
+          y = 260,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["actor"] = "kay",
+            ["cutscene"] = "konverge.kay"
           }
         }
       }

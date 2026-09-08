@@ -6,7 +6,7 @@ function TitanSpawnPurifySoul:draw()
     if self.t >= 450 then
         if self.enemymovecon == 2 then
             for _, enemy in ipairs(Game.battle:getActiveEnemies()) do
-                if enemy.id == "leech_spawn" then
+                if enemy.id == "leech_spawn" or enemy.id == "spawn_something" then
                     enemy.x = enemy.x + 300
                 end
             end
@@ -17,7 +17,7 @@ function TitanSpawnPurifySoul:draw()
     if self.t >= 500 then
         if self.enemysparecon == 2 then
             for _, enemy in ipairs(Game.battle:getActiveEnemies()) do
-                if enemy.id == "leech_spawn" then
+                if enemy.id == "leech_spawn" or enemy.id == "spawn_something" then
                     enemy:spare()
                 end
             end

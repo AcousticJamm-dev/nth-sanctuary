@@ -1,7 +1,7 @@
 return {
   version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.12.2",
+  tiledversion = "1.12.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 21,
-  nextobjectid = 1078,
+  nextobjectid = 1080,
   properties = {
     ["border"] = "church_b",
     ["music"] = "second_church"
@@ -280,7 +280,23 @@ return {
       parallaxx = 0.675,
       parallaxy = 0.9,
       properties = {},
-      objects = {}
+      objects = {
+        {
+          id = 1079,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 540,
+          y = 690,
+          width = 640,
+          height = 1600,
+          rotation = -45,
+          opacity = 1,
+          gid = 1073741829,
+          visible = true,
+          properties = {}
+        }
+      }
     },
     {
       type = "tilelayer",

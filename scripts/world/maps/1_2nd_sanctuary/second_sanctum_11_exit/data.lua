@@ -1,7 +1,7 @@
 return {
   version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.12.2",
+  tiledversion = "1.12.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -9,8 +9,8 @@ return {
   height = 18,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 21,
-  nextobjectid = 334,
+  nextlayerid = 24,
+  nextobjectid = 342,
   properties = {
     ["border"] = "church_b",
     ["music"] = "second_church"
@@ -69,10 +69,144 @@ return {
     {
       type = "objectgroup",
       draworder = "topdown",
+      id = 23,
+      name = "objects_parallax3",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 0.3,
+      parallaxy = 0.82,
+      properties = {},
+      objects = {
+        {
+          id = 338,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 200,
+          y = -50,
+          width = 416,
+          height = 130,
+          rotation = 90,
+          opacity = 1,
+          gid = 13,
+          visible = true,
+          properties = {
+            ["color"] = "#ff00007f"
+          }
+        },
+        {
+          id = 339,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 200,
+          y = 366,
+          width = 416,
+          height = 130,
+          rotation = 90,
+          opacity = 1,
+          gid = 13,
+          visible = true,
+          properties = {
+            ["color"] = "#ff00007f"
+          }
+        },
+        {
+          id = 340,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1000,
+          y = -60,
+          width = 416,
+          height = 130,
+          rotation = 90,
+          opacity = 1,
+          gid = 13,
+          visible = true,
+          properties = {
+            ["color"] = "#ff00007f"
+          }
+        },
+        {
+          id = 341,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1000,
+          y = 356,
+          width = 416,
+          height = 130,
+          rotation = 90,
+          opacity = 1,
+          gid = 13,
+          visible = true,
+          properties = {
+            ["color"] = "#ff00007f"
+          }
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 22,
+      name = "objects_parallax2",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 0.4,
+      parallaxy = 0.85,
+      properties = {},
+      objects = {
+        {
+          id = 334,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = -240,
+          y = 480,
+          width = 640,
+          height = 200,
+          rotation = 0,
+          opacity = 1,
+          gid = 13,
+          visible = true,
+          properties = {
+            ["color"] = "#ff2525ba"
+          }
+        },
+        {
+          id = 335,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 400,
+          y = 480,
+          width = 640,
+          height = 200,
+          rotation = 0,
+          opacity = 1,
+          gid = 13,
+          visible = true,
+          properties = {
+            ["color"] = "#ff2525ba"
+          }
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
       id = 14,
       name = "objects_parallax",
       class = "",
-      visible = false,
+      visible = true,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -102,11 +236,57 @@ return {
           shape = "rectangle",
           x = 80,
           y = 880,
-          width = 640,
+          width = 639,
           height = 1600,
           rotation = 45,
           opacity = 1,
           gid = 5,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 336,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 20,
+          y = 640,
+          width = 640,
+          height = 1600,
+          rotation = -45,
+          opacity = 1,
+          gid = 1073741829,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 18,
+      name = "objects_fade",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 321,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1280,
+          y = 720,
+          width = 240,
+          height = 360.33,
+          rotation = 270,
+          opacity = 1,
+          gid = 9,
           visible = true,
           properties = {}
         }
@@ -296,37 +476,6 @@ return {
         242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 0, 0, 0, 0, 0, 1247, 1248, 1245, 1248, 1245, 1249, 0, 0, 0,
         242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 0, 0, 0, 0, 0, 1247, 1248, 1245, 1248, 1245, 1249, 0, 0, 0,
         242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 0, 0, 0, 0, 0, 1247, 1248, 1245, 1248, 1245, 1249, 0, 0, 0
-      }
-    },
-    {
-      type = "objectgroup",
-      draworder = "topdown",
-      id = 18,
-      name = "objects_fade",
-      class = "",
-      visible = true,
-      opacity = 1,
-      offsetx = 0,
-      offsety = 0,
-      parallaxx = 1,
-      parallaxy = 1,
-      properties = {},
-      objects = {
-        {
-          id = 321,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 1280,
-          y = 720,
-          width = 240,
-          height = 360.33,
-          rotation = 270,
-          opacity = 1,
-          gid = 9,
-          visible = true,
-          properties = {}
-        }
       }
     },
     {

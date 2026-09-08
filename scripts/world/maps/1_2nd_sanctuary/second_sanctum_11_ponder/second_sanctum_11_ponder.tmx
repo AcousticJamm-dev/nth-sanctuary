@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="16" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="13" nextobjectid="32">
+<map version="1.11" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="16" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="13" nextobjectid="32">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -11,21 +11,8 @@
  <tileset firstgid="199" source="../../../tilesets/bg_dw_church_tileset_new.tsx"/>
  <tileset firstgid="781" source="../../../tilesets/tiles_moss.tsx"/>
  <tileset firstgid="783" source="../../../tilesets/church_objects.tsx"/>
- <objectgroup id="10" name="objects_arch" visible="0" opacity="0.6" tintcolor="#b3b3b3">
-  <object id="22" gid="783" x="0" y="760" width="397.232" height="574">
-   <properties>
-    <property name="color" type="color" value="#ffadadad"/>
-   </properties>
-  </object>
-  <object id="23" gid="783" x="400" y="760" width="397.232" height="574">
-   <properties>
-    <property name="color" type="color" value="#ffadadad"/>
-   </properties>
-  </object>
- </objectgroup>
- <objectgroup id="9" name="objects_towers" visible="0">
-  <object id="21" gid="787" x="-720" y="960" width="640" height="1600" rotation="45"/>
- </objectgroup>
+ <objectgroup id="10" name="objects_arch" opacity="0.6" tintcolor="#b3b3b3"/>
+ <objectgroup id="9" name="objects_towers"/>
  <objectgroup id="7" name="objects_osc">
   <object id="9" name="texturescroller" x="0" y="0">
    <properties>

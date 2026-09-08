@@ -1,7 +1,7 @@
 return {
   version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.12.2",
+  tiledversion = "1.12.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -46,7 +46,7 @@ return {
       id = 10,
       name = "objects_arch",
       class = "",
-      visible = false,
+      visible = true,
       opacity = 0.6,
       offsetx = 0,
       offsety = 0,
@@ -54,42 +54,7 @@ return {
       parallaxy = 1,
       tintcolor = { 179, 179, 179 },
       properties = {},
-      objects = {
-        {
-          id = 22,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 0,
-          y = 760,
-          width = 397.232,
-          height = 574,
-          rotation = 0,
-          opacity = 1,
-          gid = 783,
-          visible = true,
-          properties = {
-            ["color"] = "#ffadadad"
-          }
-        },
-        {
-          id = 23,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 400,
-          y = 760,
-          width = 397.232,
-          height = 574,
-          rotation = 0,
-          opacity = 1,
-          gid = 783,
-          visible = true,
-          properties = {
-            ["color"] = "#ffadadad"
-          }
-        }
-      }
+      objects = {}
     },
     {
       type = "objectgroup",
@@ -97,30 +62,14 @@ return {
       id = 9,
       name = "objects_towers",
       class = "",
-      visible = false,
+      visible = true,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
       parallaxx = 1,
       parallaxy = 1,
       properties = {},
-      objects = {
-        {
-          id = 21,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = -720,
-          y = 960,
-          width = 640,
-          height = 1600,
-          rotation = 45,
-          opacity = 1,
-          gid = 787,
-          visible = true,
-          properties = {}
-        }
-      }
+      objects = {}
     },
     {
       type = "objectgroup",

@@ -1,5 +1,5 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
   tiledversion = "1.12.1",
   class = "",
@@ -181,7 +181,7 @@ return {
           y = 240,
           width = 640,
           height = 200,
-          rotation = 0,
+          rotation = -90,
           opacity = 1,
           gid = 793,
           visible = true,

@@ -72,7 +72,7 @@ return {
       id = 23,
       name = "objects_parallax3",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -156,7 +156,7 @@ return {
       id = 22,
       name = "objects_parallax2",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -206,7 +206,7 @@ return {
       id = 14,
       name = "objects_parallax",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -256,37 +256,6 @@ return {
           rotation = -45,
           opacity = 1,
           gid = 1073741829,
-          visible = true,
-          properties = {}
-        }
-      }
-    },
-    {
-      type = "objectgroup",
-      draworder = "topdown",
-      id = 18,
-      name = "objects_fade",
-      class = "",
-      visible = true,
-      opacity = 1,
-      offsetx = 0,
-      offsety = 0,
-      parallaxx = 1,
-      parallaxy = 1,
-      properties = {},
-      objects = {
-        {
-          id = 321,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 1280,
-          y = 720,
-          width = 240,
-          height = 360.33,
-          rotation = 270,
-          opacity = 1,
-          gid = 9,
           visible = true,
           properties = {}
         }
@@ -476,6 +445,37 @@ return {
         242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 0, 0, 0, 0, 0, 1247, 1248, 1245, 1248, 1245, 1249, 0, 0, 0,
         242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 0, 0, 0, 0, 0, 1247, 1248, 1245, 1248, 1245, 1249, 0, 0, 0,
         242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 242, 0, 0, 0, 0, 0, 1247, 1248, 1245, 1248, 1245, 1249, 0, 0, 0
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 18,
+      name = "objects_fade",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 321,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1280,
+          y = 720,
+          width = 240,
+          height = 360.33,
+          rotation = 270,
+          opacity = 1,
+          gid = 9,
+          visible = true,
+          properties = {}
+        }
       }
     },
     {

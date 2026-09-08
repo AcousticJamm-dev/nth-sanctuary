@@ -16,7 +16,7 @@
  <tileset firstgid="1483" source="../../../tilesets/bg_dw_dither_overlay_tileset.tsx"/>
  <tileset firstgid="1529" source="../../../tilesets/bg_dw_library_tileset_new.tsx"/>
  <tileset firstgid="2359" source="../../../tilesets/light_areas.tsx"/>
- <objectgroup id="23" name="objects_parallax3" parallaxx="0.3" parallaxy="0.82">
+ <objectgroup id="23" name="objects_parallax3" visible="0" parallaxx="0.3" parallaxy="0.82">
   <object id="338" gid="13" x="200" y="-50" width="416" height="130" rotation="90">
    <properties>
     <property name="color" type="color" value="#ff00007f"/>
@@ -38,7 +38,7 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup id="22" name="objects_parallax2" parallaxx="0.4" parallaxy="0.85">
+ <objectgroup id="22" name="objects_parallax2" visible="0" parallaxx="0.4" parallaxy="0.85">
   <object id="334" gid="13" x="-240" y="480" width="640" height="200">
    <properties>
     <property name="color" type="color" value="#ff2525ba"/>
@@ -50,13 +50,10 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup id="14" name="objects_parallax" parallaxx="0.5" parallaxy="0.9">
+ <objectgroup id="14" name="objects_parallax" visible="0" parallaxx="0.5" parallaxy="0.9">
   <object id="281" gid="3221225477" x="120" y="640" width="640" height="1600"/>
   <object id="287" gid="5" x="80" y="880" width="639" height="1600" rotation="45"/>
   <object id="336" gid="1073741829" x="20" y="640" width="640" height="1600" rotation="-45"/>
- </objectgroup>
- <objectgroup id="18" name="objects_fade">
-  <object id="321" gid="9" x="1280" y="720" width="240" height="360.33" rotation="270"/>
  </objectgroup>
  <layer id="8" name="tile_osc_optimize" width="32" height="18">
   <data encoding="csv">
@@ -130,6 +127,9 @@
 242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,0,0,0,0,0,1247,1248,1245,1248,1245,1249,0,0,0
 </data>
  </layer>
+ <objectgroup id="18" name="objects_fade">
+  <object id="321" gid="9" x="1280" y="720" width="240" height="360.33" rotation="270"/>
+ </objectgroup>
  <layer id="16" name="tiles2" width="32" height="18">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,

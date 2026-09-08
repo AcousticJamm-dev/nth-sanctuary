@@ -248,11 +248,7 @@ function CultistApathy:onAct(battler, name)
 			if self.atk_down_turns > 0 then
 				atk_down_msg = "* ATTACK remains down for 3 turns!"
 			end
-			if self.tired_amt >= 88 then
-				cutscene:text("* Jamm and Ralsei cast TRANQUILIZE![wait:5]\n" .. atk_down_msg)
-			else
-				cutscene:text("* Jamm and Ralsei cast TRANQUILIZE![wait:5]\n" .. atk_down_msg)
-			end
+			cutscene:text("* Jamm and Ralsei cast TRANQUILIZE![wait:5]\n" .. atk_down_msg)
             cutscene:wait(function() return hastranquilized == true end)
 		end)
 		return

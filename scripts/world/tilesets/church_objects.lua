@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.12.2",
+  tiledversion = "1.12.1",
   name = "church_objects",
   class = "",
   tilewidth = 2880,
@@ -23,7 +23,7 @@ return {
   },
   properties = {},
   wangsets = {},
-  tilecount = 102,
+  tilecount = 103,
   tiles = {
     {
       id = 0,
@@ -812,6 +812,12 @@ return {
       image = "../../../assets/sprites/world/objects/churchb_door_closed.png",
       width = 40,
       height = 60
+    },
+    {
+      id = 109,
+      image = "../../../assets/sprites/world/parallax/bookshelf.png",
+      width = 120,
+      height = 160
     }
   }
 }

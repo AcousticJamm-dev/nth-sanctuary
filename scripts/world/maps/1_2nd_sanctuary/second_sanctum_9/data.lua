@@ -9,8 +9,8 @@ return {
   height = 32,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 21,
-  nextobjectid = 1080,
+  nextlayerid = 22,
+  nextobjectid = 1081,
   properties = {
     ["border"] = "church_b",
     ["music"] = "second_church"
@@ -277,7 +277,7 @@ return {
       opacity = 1,
       offsetx = 0,
       offsety = 0,
-      parallaxx = 0.675,
+      parallaxx = 0.5,
       parallaxy = 0.9,
       properties = {},
       objects = {
@@ -293,6 +293,37 @@ return {
           rotation = -45,
           opacity = 1,
           gid = 1073741829,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 21,
+      name = "objects_fade",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 1080,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1680,
+          y = 880,
+          width = 210,
+          height = 1280,
+          rotation = 270,
+          opacity = 1,
+          gid = 9,
           visible = true,
           properties = {}
         }

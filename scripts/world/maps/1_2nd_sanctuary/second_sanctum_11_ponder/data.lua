@@ -9,8 +9,8 @@ return {
   height = 12,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 13,
-  nextobjectid = 32,
+  nextlayerid = 18,
+  nextobjectid = 47,
   properties = {
     ["border"] = "church_b",
     ["music"] = "second_church"
@@ -37,30 +37,198 @@ return {
       firstgid = 783,
       filename = "../../../tilesets/church_objects.tsx",
       exportfilename = "../../../tilesets/church_objects.lua"
+    },
+    {
+      name = "bg_dw_church_library_2_tileset",
+      firstgid = 892,
+      filename = "../../../tilesets/bg_dw_church_library_2_tileset.tsx"
     }
   },
   layers = {
     {
       type = "objectgroup",
       draworder = "topdown",
-      id = 10,
-      name = "objects_arch",
+      id = 16,
+      name = "objects_parallax3",
       class = "",
-      visible = true,
-      opacity = 0.6,
+      visible = false,
+      opacity = 1,
       offsetx = 0,
       offsety = 0,
-      parallaxx = 1,
-      parallaxy = 1,
-      tintcolor = { 179, 179, 179 },
+      parallaxx = 0.3,
+      parallaxy = 0.82,
       properties = {},
       objects = {}
     },
     {
       type = "objectgroup",
       draworder = "topdown",
-      id = 9,
-      name = "objects_towers",
+      id = 15,
+      name = "objects_parallax2",
+      class = "",
+      visible = false,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 0.4,
+      parallaxy = 0.85,
+      properties = {},
+      objects = {
+        {
+          id = 34,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = -230,
+          y = 570,
+          width = 640,
+          height = 200,
+          rotation = 0,
+          opacity = 1,
+          gid = 795,
+          visible = true,
+          properties = {
+            ["color"] = "#ff2525ba"
+          }
+        },
+        {
+          id = 38,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = -150,
+          y = -190,
+          width = 416,
+          height = 130,
+          rotation = 90,
+          opacity = 1,
+          gid = 795,
+          visible = true,
+          properties = {
+            ["color"] = "#ff00007f"
+          }
+        },
+        {
+          id = 39,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 220,
+          y = -190,
+          width = 416,
+          height = 130,
+          rotation = 90,
+          opacity = 1,
+          gid = 795,
+          visible = true,
+          properties = {
+            ["color"] = "#ff00007f"
+          }
+        },
+        {
+          id = 40,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = -150,
+          y = 226,
+          width = 416,
+          height = 130,
+          rotation = 90,
+          opacity = 1,
+          gid = 795,
+          visible = true,
+          properties = {
+            ["color"] = "#ff00007f"
+          }
+        },
+        {
+          id = 41,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 220,
+          y = 226,
+          width = 416,
+          height = 130,
+          rotation = 90,
+          opacity = 1,
+          gid = 795,
+          visible = true,
+          properties = {
+            ["color"] = "#ff00007f"
+          }
+        },
+        {
+          id = 42,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = -230,
+          y = 40,
+          width = 640,
+          height = 200,
+          rotation = 0,
+          opacity = 1,
+          gid = 795,
+          visible = true,
+          properties = {
+            ["color"] = "#ff2525ba"
+          }
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 14,
+      name = "objects_parallax",
+      class = "",
+      visible = false,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 0.5,
+      parallaxy = 0.9,
+      properties = {},
+      objects = {
+        {
+          id = 32,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = -1060,
+          y = 980,
+          width = 639,
+          height = 1600,
+          rotation = 45,
+          opacity = 1,
+          gid = 787,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 33,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 20,
+          y = 440,
+          width = 639,
+          height = 1600,
+          rotation = 45,
+          opacity = 1,
+          gid = 1073742611,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 17,
+      name = "objects_fade",
       class = "",
       visible = true,
       opacity = 1,
@@ -69,7 +237,55 @@ return {
       parallaxx = 1,
       parallaxy = 1,
       properties = {},
-      objects = {}
+      objects = {
+        {
+          id = 45,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 640,
+          y = 480,
+          width = 280,
+          height = 640.33,
+          rotation = 270,
+          opacity = 1,
+          gid = 791,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 16,
+      height = 12,
+      id = 13,
+      name = "tiles_osc_optimize",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      encoding = "lua",
+      data = {
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 194, 194, 194, 194, 194, 194, 194, 194, 0, 0, 0, 0,
+        0, 0, 0, 0, 194, 194, 194, 194, 194, 194, 194, 194, 0, 0, 0, 0,
+        0, 0, 0, 0, 194, 194, 194, 194, 194, 194, 194, 194, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 194, 194, 194, 194, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+      }
     },
     {
       type = "objectgroup",
@@ -280,12 +496,12 @@ return {
       properties = {},
       encoding = "lua",
       data = {
-        0, 481, 482, 483, 470, 470, 470, 470, 470, 470, 470, 470, 481, 482, 483, 0,
-        0, 487, 488, 489, 476, 476, 476, 476, 476, 476, 476, 476, 487, 488, 489, 0,
-        0, 493, 494, 495, 7, 8, 9, 14, 14, 7, 8, 9, 493, 494, 495, 0,
-        0, 499, 500, 501, 16, 17, 18, 14, 14, 16, 17, 18, 499, 500, 501, 0,
-        0, 505, 506, 507, 25, 26, 27, 2, 3, 25, 26, 27, 505, 506, 507, 0,
-        0, 28, 28, 28, 28, 28, 14, 11, 12, 14, 28, 28, 28, 28, 28, 0,
+        0, 559, 470, 470, 470, 559, 604, 605, 605, 606, 559, 470, 470, 470, 559, 0,
+        0, 893, 894, 895, 476, 565, 774, 774, 774, 774, 565, 476, 896, 897, 898, 0,
+        0, 903, 904, 905, 169, 8, 9, 14, 14, 19, 8, 9, 906, 907, 908, 0,
+        0, 913, 914, 915, 179, 17, 18, 14, 14, 16, 17, 187, 916, 917, 918, 0,
+        0, 923, 924, 925, 197, 26, 27, 2, 3, 25, 196, 179, 926, 927, 928, 0,
+        0, 28, 28, 28, 28, 28, 22, 11, 12, 23, 28, 28, 28, 28, 28, 0,
         0, 0, 0, 0, 0, 0, 28, 28, 28, 28, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -308,22 +524,6 @@ return {
       parallaxy = 1,
       properties = {},
       objects = {
-        {
-          id = 25,
-          name = "churchmagicglass",
-          type = "",
-          shape = "rectangle",
-          x = 240,
-          y = 240,
-          width = 160,
-          height = 160,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["idlealpha"] = 0
-          }
-        },
         {
           id = 26,
           name = "churchmagicglass",
@@ -356,6 +556,22 @@ return {
           properties = {
             ["cutscene"] = "events.moss3",
             ["usetile"] = "true"
+          }
+        },
+        {
+          id = 46,
+          name = "churchmagicglass",
+          type = "",
+          shape = "rectangle",
+          x = 240,
+          y = 240,
+          width = 160,
+          height = 160,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["idlealpha"] = 0
           }
         }
       }

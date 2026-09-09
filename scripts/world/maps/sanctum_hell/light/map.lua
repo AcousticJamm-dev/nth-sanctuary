@@ -1,5 +1,5 @@
----@class Map.hell_1 : Map
-local map, super = Class(Map, "hell_1")
+---@class Map.light : Map
+local map, super = Class(Map)
 
 function map:init(world, data)
     super.init(self, world, data)
@@ -11,29 +11,10 @@ function map:onEnter()
 	self.ripple_fx = RippleEffect()
 	self.ripple_fx.layer = WORLD_LAYERS["bottom"]
 	Game.world:addChild(self.ripple_fx)
-	if Game:getFlag("belch3") and not Game:getFlag("hellmason_foundout") then
-        local mason = Game.world:getCharacter("mason")
-        mason:setSprite("goner")
-    elseif Game:getFlag("hellmason_foundout") then
-		local mason = Game.world:getCharacter("mason")
-		mason:remove()
-	end
-	
-	if Game:hasPartyMember("ralsei") then
-		Game:removePartyMember("ralsei")
-	end
-	
-	if Game.world.followers[2].actor.id == "ralsei" then
-		local r = Game.world:removeFollower("ralsei")
-		r:remove()
-	end
 end
 
 function map:update(world, data)
 	self.siner = self.siner + DT
-	local a = self:getTileLayer("Tile Layer 3")
-	a.alpha = 0.1 + math.sin(self.siner)/10
-	--print(a.alpha)
 	for _,enemy in ipairs(Game.stage:getObjects(ChaserEnemy)) do
 		for _,ripplefloor in ipairs(Game.world.map:getEvents("ripplefloor")) do
 			if enemy:collidesWith(ripplefloor.collider) and self.riptimer >= 120 then

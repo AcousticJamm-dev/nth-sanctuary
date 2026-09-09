@@ -23,16 +23,18 @@ function MovingArena:onStart()
 end
 
 function MovingArena:update()
-    -- Increment timer for arena movement
-    self.siner = self.siner + DT
+	if not self.paused_stuff then
+		-- Increment timer for arena movement
+		self.siner = self.siner + DT
 
-    -- Calculate the arena Y offset
-    local offset = math.sin(self.siner * 1.5) * 60
+		-- Calculate the arena Y offset
+		local offset = math.sin(self.siner * 1.5) * 60
 
-    -- Move the arena
-    Game.battle.arena:setPosition(self.arena_start_x, self.arena_start_y + offset)
+		-- Move the arena
+		Game.battle.arena:setPosition(self.arena_start_x, self.arena_start_y + offset)
 
-    super.update(self)
+		super.update(self)
+	end
 end
 
 return MovingArena

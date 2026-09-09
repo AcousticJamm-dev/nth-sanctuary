@@ -38,4 +38,10 @@ function Bullet:onDamage(soul)
     return {}
 end
 
+function Bullet:update()
+	if not self.paused_stuff then
+		super.update(self)
+	end
+end
+
 return Bullet

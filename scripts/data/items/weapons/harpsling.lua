@@ -1,10 +1,10 @@
-local item, super = Class(Item, "basic_sling")
+local item, super = Class(Item, "harpsling")
 
 function item:init()
     super.init(self)
 
     -- Display name
-    self.name = "Basic Sling"
+    self.name = "HarpSling"
 
     -- Item type (item, key, weapon, armor)
     self.type = "weapon"
@@ -16,10 +16,10 @@ function item:init()
     -- Shop description
     self.shop = ""
     -- Menu description
-    self.description = "A weak slingshot. It's so overused, you have to hold it together."
+    self.description = "A slingshot with multiple harp strings. Plays a few notes when shot."
 
     -- Default shop price (sell price is halved)
-    self.price = 100
+    self.price = 1000
     -- Whether the item can be sold
     self.can_sell = true
 
@@ -34,7 +34,7 @@ function item:init()
 
     -- Equip bonuses (for weapons and armor)
     self.bonuses = {
-        attack = 0,
+        attack = 8,
     }
     -- Bonus name and icon (displayed in equip menu)
     self.bonus_name = nil
@@ -47,18 +47,25 @@ function item:init()
 
     -- Character reactions
     self.reactions = {
-        susie = "What is this, a chew toy?",
-        ralsei = "U-um... No thanks.",
-        noelle = "O-oh, you just... Ow, my eye!",
-		jamm = "I guess it works...?"
+        susie = "Don't wanna cut the strings...",
+        ralsei = "(It's made of gold...!)",
+        noelle = "(How does this even work?)",
+		jamm = "A calming melody..."
     }
 end
 
 function item:getAttackSound(battler, enemy, points)
-    local crit = points == 150
-    if crit then
-        return "crit-jamm"
-    end
+    return "harpnoise"
+end
+
+function item:onAttackHit(battler, enemy, damage)
+	if damage > 0 then
+		for k,v in ipairs(Game.battle.enemies) do
+			if v.musical then
+				v:addMercy(25)
+			end
+		end
+	end
 end
 
 return item

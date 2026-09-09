@@ -1,25 +1,25 @@
-local item, super = Class(Item, "basic_sling")
+local item, super = Class(Item, "holyring")
 
 function item:init()
     super.init(self)
 
     -- Display name
-    self.name = "Basic Sling"
+    self.name = "HolyRing"
 
     -- Item type (item, key, weapon, armor)
     self.type = "weapon"
     -- Item icon (for equipment)
-    self.icon = "ui/menu/icon/sling"
+    self.icon = "ui/menu/icon/ring"
 
     -- Battle description
     self.effect = ""
     -- Shop description
     self.shop = ""
     -- Menu description
-    self.description = "A weak slingshot. It's so overused, you have to hold it together."
+    self.description = "A ring with a cross on it.\nNot much to the eye, but..."
 
     -- Default shop price (sell price is halved)
-    self.price = 100
+    self.price = 1000
     -- Whether the item can be sold
     self.can_sell = true
 
@@ -34,7 +34,8 @@ function item:init()
 
     -- Equip bonuses (for weapons and armor)
     self.bonuses = {
-        attack = 0,
+        attack = 6,
+        magic = 8,
     }
     -- Bonus name and icon (displayed in equip menu)
     self.bonus_name = nil
@@ -42,23 +43,16 @@ function item:init()
 
     -- Equippable characters (default true for armors, false for weapons)
     self.can_equip = {
-        jamm = true,
+        noelle = true,
     }
 
     -- Character reactions
     self.reactions = {
-        susie = "What is this, a chew toy?",
-        ralsei = "U-um... No thanks.",
-        noelle = "O-oh, you just... Ow, my eye!",
-		jamm = "I guess it works...?"
+        susie = "Damn, it's sturdy...",
+        ralsei = "Reminds me of something...",
+        noelle = "It... looks nice, at least.",
+		jamm = "This is some fine craftsmanship."
     }
-end
-
-function item:getAttackSound(battler, enemy, points)
-    local crit = points == 150
-    if crit then
-        return "crit-jamm"
-    end
 end
 
 return item

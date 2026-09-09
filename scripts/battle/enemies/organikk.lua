@@ -6,6 +6,8 @@ function Organikk:init()
     self:registerAct("Harmonize", "Musical,\ntouch\nGREEN", {"jamm"})
 	
 	self.mus_scale = 1
+	
+	self.musical = true
 end
 
 function Organikk:onAct(battler, name)

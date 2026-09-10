@@ -49,7 +49,7 @@ function spell:onCast(user, target)
         user.chara:addFlag("max_iceshocks_used", 1)
         Game.battle.timer:after(1/3, function()
             Game.battle:addChild(FrostcryptController(target.x, target.y-target.height, function()
-                local damage = math.floor(user.chara:getStat("magic") * 30)
+                local damage = math.floor(user.chara:getStat("magic") * 10)
 
                 target:hurt(damage, user, function() target:freezeCompel() end)
                 if target.health > 0 then
@@ -101,6 +101,7 @@ end
 
 function spell:getDamage(user, target)
     local min_magic = MathUtils.clamp(user.chara:getStat("magic") - 10, 1, 999)
+
     return math.ceil((min_magic * 30) + 90 + MathUtils.random(10))
 end
 

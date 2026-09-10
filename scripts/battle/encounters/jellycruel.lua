@@ -7,7 +7,7 @@ function Jellycruel:init()
     self.text = "* A strong aura emanates from the jellycruel."
 
     -- Battle music ("battle" is rude buster)
-    self.music = "jellycruel"
+    self.music = "battle_vapor"
     -- Enables the purple grid battle background
     self.background = true
 

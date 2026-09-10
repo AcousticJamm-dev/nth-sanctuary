@@ -57,15 +57,12 @@ function character:init()
     self.stronger_absent = {"kris","susie","ralsei"}
 
     -- Weapon icon in equip menu
-    self.weapon_icon = "ui/menu/equip/scarf"
+    self.weapon_icon = "ui/menu/equip/darkshard"
 
     -- Equipment (saved to the save file)
-    self:setWeapon("red_scarf")
-    if Game.chapter >= 2 then
-        self:setArmor(1, "amber_card")
-        self:setArmor(2, "white_ribbon")
-    end
-
+    self:setWeapon("darkshard")
+    self:setArmor(1, "deftcloak")
+    
     -- Default light world equipment item IDs (saves current equipment)
     self.lw_weapon_default = "light/pencil"
     self.lw_armor_default = "light/bandage"
@@ -93,11 +90,11 @@ function character:init()
     self.name_sprite = "party/lobby_man/name"
 
     -- Effect shown above enemy after attacking it
-    self.attack_sprite = "effects/attack/slap_r"
+    self.attack_sprite = "effects/attack/lobbyslah"
     -- Sound played when this character attacks
     self.attack_sound = "laz_c"
     -- Pitch of the attack sound
-    self.attack_pitch = 1.15
+    self.attack_pitch = 1
 
     -- Battle position offset (optional)
     self.battle_offset = {2, 6}
@@ -123,6 +120,29 @@ function character:getTitle()
     end
     return prefix..msg 
 
+end
+
+function character:canEquip(item, slot_type, slot_index)
+    if slot_type ~= "armor" or slot_index ~= 2 then
+        return false
+    end
+
+    return super.canEquip(self, item, slot_type, slot_index)
+end
+
+function character:getReaction(item, user)
+    local menu = Game.world and Game.world.menu
+    local equip_menu = menu and menu.box
+
+    local changing_own_equipment =
+        user.id == self.id
+        and equip_menu
+        and equip_menu.state == "ITEMS"
+    if changing_own_equipment and equip_menu.selected_slot ~= 3 then
+        return "You will not take what is mine."
+    end
+
+    return super.getReaction(self, item, user)
 end
 
 function character:drawPowerStat(index, x, y, menu)

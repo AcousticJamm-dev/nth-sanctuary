@@ -3,10 +3,10 @@ local WingladeActorSprite, super = Class(ActorSprite)
 function WingladeActorSprite:init(actor)
     super.init(self, actor)
 
-    self.horn = Sprite(self:getTexturePath("horn"), 18, 0)
-    self.horn.debug_select = false
-    self.horn:setScaleOrigin(0.5, 1)
-    self:addChild(self.horn)
+    self.top_bit = Sprite(self:getTexturePath("top_bit"), 18, 0)
+    self.top_bit.debug_select = false
+    self.top_bit:setScaleOrigin(0.5, 1)
+    self:addChild(self.top_bit)
 
     self.sword = Sprite(self:getTexturePath("sword"), 18, 22)
     self.sword.debug_select = false
@@ -108,7 +108,7 @@ function WingladeActorSprite:setAnimation(anim, callback, ignore_actor_callback)
 
         if anim == 'spared' then
             self.eye_pupil.visible = false
-            self.eye_white:setSprite(self:getTexturePath("eye_white_spare"))
+            self.eye_white:setSprite(self:getTexturePath("eye_pupil_spare"))
         end
     end
     super.setAnimation(self, anim, callback, ignore_actor_callback)
@@ -170,13 +170,13 @@ function WingladeActorSprite:update()
 
     if anim == 'spared' then
         self.eye_pupil.visible = false
-        self.eye_white:setSprite(self:getTexturePath("eye_white_spare"))
+        self.eye_white:setSprite(self:getTexturePath("eye_pupil_spare"))
     end
 
     if anim == 'retract' or anim == 'retract_shoot' then
         self.retract_timer = self.retract_timer + DTMULT
 
-        self.horn.scale_y = MathUtils.clamp(1 - self.retract_timer / 10, 0, 1)
+        self.top_bit.scale_y = MathUtils.clamp(1 - self.retract_timer / 10, 0, 1)
         self.sword.scale_y = MathUtils.clamp(1 - self.retract_timer / 10, 0, 1)
 
         self:addColorMask(self.left_wing, COLORS.black, 0.5, 'colormask')
@@ -188,7 +188,7 @@ function WingladeActorSprite:update()
         self:addColorMask(self.eye_pupil, COLORS.white, 0, 'colormaskwhite')
     else
         self.retract_timer = MathUtils.clamp(self.retract_timer - DTMULT, 0, 10)
-        self.horn.scale_y = MathUtils.clamp(1 - self.retract_timer / 10, 0, 1)
+        self.top_bit.scale_y = MathUtils.clamp(1 - self.retract_timer / 10, 0, 1)
         self.sword.scale_y = MathUtils.clamp(1 - self.retract_timer / 10, 0, 1)
         if self.retract_timer == 0 then
             if self.left_wing:getFX('colormask') then self.left_wing:removeFX('colormask') end

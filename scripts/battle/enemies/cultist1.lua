@@ -85,7 +85,7 @@ end
 
 function CultistApathy:onDefeat(damage, battler)
     Game.battle.music:stop()
-	super.onDefeat(self, damage, battler)
+    self:defeat(nil, false)
 end
 
 function CultistApathy:onTurnStart()

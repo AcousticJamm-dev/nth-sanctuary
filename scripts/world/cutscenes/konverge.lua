@@ -346,6 +346,7 @@ return {
 
         local rect = Game.stage:addChild(Rectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT))
         rect:setLayer(100)
+        Kristal.hideBorder()
         rect:setColor(COLORS.black)
         Game.world.music:play("snd_plorgius_next", 1.25, 0.65)
         Game.stage:addFX(CrtFX(), "vhsfx")

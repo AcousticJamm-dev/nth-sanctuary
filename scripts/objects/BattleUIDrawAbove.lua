@@ -22,7 +22,7 @@ function BattleUIDrawAbove:draw()
 		end
 	end
 	if self.adraw > 0 then
-        Draw.setColor(0,0,0,self.adraw-0.6)
+        Draw.setColor(0,0,0,self.adraw*0.6)
         Draw.rectangle("fill",0,0,SCREEN_WIDTH, (#Game.battle.party * 30)+ 13)
 		local health_canvas = Draw.pushCanvas(SCREEN_WIDTH, SCREEN_HEIGHT)
         for k, party in ipairs(Game.battle.party) do

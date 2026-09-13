@@ -1,9 +1,9 @@
-local LeechSpawn, super = Class(Encounter)
+local SpawnSomething, super = Class(Encounter)
 
-function LeechSpawn:init()
+function SpawnSomething:init()
     super.init(self)
 
-    self.text = "*          constricts you...\n* [color:yellow]TP[color:reset] Gain reduced outside of [color:green]???[shake:0] [color:reset]"
+    self.text = "*          constricts you...\n* [color:yellow]TP[color:reset] Gain reduced outside of [color:green]COURAGE[color:reset]"
 
     self.music = "titan_spawn2"
     self.background = true
@@ -14,11 +14,11 @@ function LeechSpawn:init()
     self.reduced_tension = true
 	self.light_radius = 48
 	self.difficulty = 1
-	self.unleash_threshold = 50
+	self.unleash_threshold = 64
     self.offset = 0
 end
 
-function LeechSpawn:drawBackground(fade)
+function SpawnSomething:drawBackground(fade)
     Draw.setColor(0, 0, 0, fade)
     love.graphics.rectangle("fill", 0, 0, 640, 480)
 
@@ -51,10 +51,25 @@ function LeechSpawn:drawBackground(fade)
     end
 end
 
-function LeechSpawn:onTurnEnd()
+function SpawnSomething:onTurnEnd()
     super.onTurnEnd(self)
 	self.light_radius = 48
     self.difficulty = self.difficulty + 1
 end
 
-return LeechSpawn
+function SpawnSomething:onBattleStart(battler)
+	if Game:hasPartyMember("kris") then
+		self.default_xactions = false
+		for _,battler in ipairs(Game.battle.party) do
+			if battler.chara.id == "susie" then
+				Game.battle:registerXAction("susie", "WakeKris", "Revive\nKris", 16)
+			elseif battler.chara.id == "ralsei" then
+				Game.battle:registerXAction("ralsei", "ReviveKris", "Revive\nKris", 16)
+			elseif battler.chara.id == "jamm" then
+				Game.battle:registerXAction("jamm", "RaiseKris", "Revive\nKris", 16)
+			end
+		end
+	end
+end
+
+return SpawnSomething

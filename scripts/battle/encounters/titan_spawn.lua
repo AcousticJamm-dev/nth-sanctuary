@@ -3,7 +3,7 @@ local TitanSpawn, super = Class(Encounter)
 function TitanSpawn:init()
     super.init(self)
 
-    self.text = "* Darkness constricts you...\n* [color:yellow]TP[color:reset] Gain reduced outside of [color:green]???[color:reset]"
+    self.text = "* Darkness constricts you...\n* [color:yellow]TP[color:reset] Gain reduced outside of [color:green]COURAGE[color:reset]"
 
     self.music = "titan_spawn"
     self.background = true
@@ -54,6 +54,8 @@ function TitanSpawn:onBattleStart(battler)
 				Game.battle:registerXAction("susie", "WakeKris", "Revive\nKris", 16)
 			elseif battler.chara.id == "ralsei" then
 				Game.battle:registerXAction("ralsei", "ReviveKris", "Revive\nKris", 16)
+			elseif battler.chara.id == "jamm" then
+				Game.battle:registerXAction("jamm", "RaiseKris", "Revive\nKris", 16)
 			end
 		end
 	end

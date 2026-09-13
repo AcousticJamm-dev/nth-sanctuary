@@ -7,6 +7,7 @@ function LeechShape:init(x, y)
     self.speed_max = self.speed_max * 1.5
     self.can_do_pushback = false	
 	self.updateimageangle = true
+    self.inv_frames = Game:getDefaultInvulnFrames() / 3
 end
 
 function LeechShape:update()
@@ -27,7 +28,11 @@ function LeechShape:onDamage(soul)
 		Assets.playSound("break1")
         local target = self:getTarget()
         local battlers = Game.battle:hurt(damage, false, target, self:shouldSwoon(damage, target, soul))
-        soul.inv_timer = self.inv_timer
+        local inv_frames = self:getInvulnFrames()
+        if target ~= "ALL" then
+            inv_frames = Game:applyInvulnBonuses(inv_frames)
+        end
+		Game:setInvulnFrames(inv_frames)
         soul:onDamage(self, damage)
 		local spin_amt = 0.1+(Game:getTension()/Game:getMaxTension())*0.1
 		self.wave.spinfactor = self.wave.spinfactor + spin_amt*math.min((1-self.light)+0.25, 1)

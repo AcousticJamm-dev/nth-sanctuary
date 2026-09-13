@@ -5,8 +5,6 @@ function SmallStarFading:init(x, y, dir, speed, fade_in)
     self.physics.direction = dir
     self.physics.speed = speed
 	self.removing = false
-	self.was_in_arena = false
-	self.remove_outside_arena = false
 	if fade_in then
 		self.alpha = 0
 		self.collidable = false

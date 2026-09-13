@@ -7,7 +7,11 @@ function BattleUI:draw()
     love.graphics.translate(0,30)
     if Game.battle.state == "DEFENDING" then
         self.adraw2 = self.adraw2 + 4*DT
-        self.adraw2 = MathUtils.clamp(self.adraw2, 0, 1)
+    else
+        self.adraw2 = self.adraw2 - 4*DT
+    end
+    self.adraw2 = MathUtils.clamp(self.adraw2, 0, 1)
+    if self.adraw2 > 0 then
         for e, party in ipairs(Game.battle.party) do
             if e > 3 then
                 local col = (e - 4) % 5        -- 0,1,2,3,4, 0,1,2,3,4...
@@ -48,21 +52,23 @@ function BattleUI:draw()
                 love.graphics.print(party.chara.health.."/"..party.chara.stats.health, x + tex:getWidth() + 5, y + 10)
             end
         end
-    else
-        self.adraw2 = 0
-    end
+	end
 
     love.graphics.origin()
     if Input.down("showhealth") then
         self.adraw = self.adraw + 4*DT
-        self.adraw = MathUtils.clamp(self.adraw, 0, 1)
-		if self.animate_out then
-			if not self.animation_done then
-				self.adraw = self.adraw * (1 - (self.animation_timer / 12))
-			else
-				self.adraw = 0
-			end
+	else
+        self.adraw = self.adraw - 4*DT
+	end
+    self.adraw = MathUtils.clamp(self.adraw, 0, 1)
+	if self.animate_out then
+		if not self.animation_done then
+			self.adraw = self.adraw * (1 - (self.animation_timer / 12))
+		else
+			self.adraw = 0
 		end
+	end
+	if self.adraw > 0 then
         Draw.setColor(0,0,0,self.adraw-0.6)
         Draw.rectangle("fill",0,0,SCREEN_WIDTH, (#Game.battle.party * 30)+ 13)
 		local health_canvas = Draw.pushCanvas(SCREEN_WIDTH, SCREEN_HEIGHT)
@@ -145,8 +151,6 @@ function BattleUI:draw()
 		Draw.popCanvas()
 		Draw.setColor(1,1,1,self.adraw)
 		Draw.draw(health_canvas)
-    else
-        self.adraw = 0
     end
 end
 

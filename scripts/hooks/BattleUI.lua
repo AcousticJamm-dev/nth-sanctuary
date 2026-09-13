@@ -49,7 +49,7 @@ function BattleUI:draw()
 
                 Draw.setColor(color)
                 love.graphics.setFont(Assets.getFont("smallnumbers"))
-                love.graphics.print(party.chara.health.."/"..party.chara.stats.health, x + tex:getWidth() + 5, y + 10)
+                love.graphics.print(party.chara.health.."/"..party.chara.stats.health, x + tex:getWidth() + 5, y + 8)
             end
         end
 	end

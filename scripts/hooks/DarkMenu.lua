@@ -42,23 +42,28 @@ function DarkMenu:draw()
             local x_text  = MathUtils.rangeMap(self.y, -80, 0, -100, 60  + col * 150)
             local y_pos   = 90 + 30 * row
 
-            Draw.setColor(1, 1, 1, 1)
+            Draw.setColor(0,0,0,1)
+            local a = Assets.getTexture(party:getHeadIcons().."/head_alpha") or Assets.getTexture(party:getHeadIcons().."/head")
+            Draw.draw(a, x_head + 2, y_pos + 2)
 			if party.id == "lobby_man" then
 				local static_shader = Assets.getShader("static_bullet")
 				static_shader:send("time", Kristal.getTime())
 				static_shader:send("brightness", 0.5)
 				love.graphics.setShader(static_shader)
 			end
-            local a = Assets.getTexture(party:getHeadIcons().."/head_alpha") or Assets.getTexture(party:getHeadIcons().."/head")
+            Draw.setColor(1,1,1,1)
             Draw.draw(a, x_head, y_pos)
+			love.graphics.setShader()
 
             local health = (party:getHealth() / party:getStat("health")) * 100
 			local health_bg_col = PALETTE["action_health_bg"]
 			if party.id == "lobby_man" then
 				health_bg_col = COLORS.dkgray
 			end
+            Draw.setColor(0,0,0,1)
+            Draw.rectangle("fill", x_bar + 2, y_pos + 16, 100, 10)
             Draw.setColor(health_bg_col)
-            Draw.rectangle("fill", x_bar, y_pos + 10, 100, 10)
+            Draw.rectangle("fill", x_bar, y_pos + 14, 100, 10)
             Draw.setColor(party:getColor())
 			if party.id == "lobby_man" then
 				Draw.setColor(COLORS.white)
@@ -67,7 +72,7 @@ function DarkMenu:draw()
 				static_shader:send("brightness", 1)
 				love.graphics.setShader(static_shader)
 			end
-            Draw.rectangle("fill", x_bar, y_pos + 10, math.ceil(health), 10)
+            Draw.rectangle("fill", x_bar, y_pos + 14, math.ceil(health), 10)
 			love.graphics.setShader()
 
             love.graphics.setFont(Assets.getFont("smallnumbers"))
@@ -84,6 +89,7 @@ function DarkMenu:draw()
                     love.graphics.print(party:getHealth().."/"..party:getStat("health"), x_text + x, y_pos + y)
                 end
             end
+            love.graphics.print(party:getHealth().."/"..party:getStat("health"), x_text + 2, y_pos + 2)
             Draw.setColor(color)
             love.graphics.print(party:getHealth().."/"..party:getStat("health"), x_text, y_pos)
         end

@@ -1,17 +1,19 @@
 local SmallStarFading, super = Class(Bullet)
 
-function SmallStarFading:init(x, y, dir, speed)
+function SmallStarFading:init(x, y, dir, speed, fade_in)
     super.init(self, x, y, "world/bullets/outlinestar")
     self.physics.direction = dir
     self.physics.speed = speed
 	self.removing = false
 	self.was_in_arena = false
 	self.remove_outside_arena = false
-	self.alpha = 0
-    self.collidable = false
-	self:fadeToSpeed(1, 0.2, function()
-        self.collidable = true
-	end)
+	if fade_in then
+		self.alpha = 0
+		self.collidable = false
+		self:fadeToSpeed(1, 0.2, function()
+			self.collidable = true
+		end)
+	end
 end
 
 function SmallStarFading:update()

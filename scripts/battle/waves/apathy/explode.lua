@@ -31,7 +31,7 @@ function Explode:onStart()
         local x = Game.battle.arena.right + 8*5
         local y = Game.battle.arena.bottom
         local angle = math.rad(180)
-        local bullet = self:spawnBullet("smallstarfading", x, y, angle, 8)
+        local bullet = self:spawnBullet("smallstarfading", x, y, angle, 8, true)
         bullet.remove_offscreen = true
         bullet.tp = 0
         bullet.grazed = true
@@ -40,7 +40,7 @@ function Explode:onStart()
         local angle = math.rad(270)
         local x = Game.battle.arena.left
         local y = Game.battle.arena.bottom + 8*5
-        local bullet = self:spawnBullet("smallstarfading", x, y, angle, 8)
+        local bullet = self:spawnBullet("smallstarfading", x, y, angle, 8, true)
         bullet.remove_offscreen = true
         bullet.tp = 0
         bullet.grazed = true
@@ -49,7 +49,7 @@ function Explode:onStart()
         local angle = math.rad(0)
         local x = Game.battle.arena.left - 8*5
         local y = Game.battle.arena.top
-        local bullet = self:spawnBullet("smallstarfading", x, y, angle, 8)
+        local bullet = self:spawnBullet("smallstarfading", x, y, angle, 8, true)
         bullet.remove_offscreen = true
         bullet.tp = 0
         bullet.grazed = true
@@ -58,7 +58,7 @@ function Explode:onStart()
         local angle = math.rad(90)
         local x = Game.battle.arena.right
         local y = Game.battle.arena.top - 8*5
-        local bullet = self:spawnBullet("smallstarfading", x, y, angle, 8)
+        local bullet = self:spawnBullet("smallstarfading", x, y, angle, 8, true)
         bullet.remove_offscreen = true
         bullet.tp = 0
         bullet.grazed = true

@@ -125,6 +125,8 @@ function BattleUI:draw()
             love.graphics.print(party.chara:getStat("health"), (280 + health_offset), h)
         end
 		Draw.popCanvas()
+		Draw.setColor(0,0,0,self.adraw)
+		Draw.draw(health_canvas, 1, 1)
 		Draw.setColor(1,1,1,self.adraw)
 		Draw.draw(health_canvas)
     else

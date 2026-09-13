@@ -247,8 +247,6 @@ end
 function NymphSpawn:getEncounterText()
     if Game:getTension() >= 64 then
 		return "* The atmosphere feels tense...\n* (You can use [color:yellow]UNLEASH[color:reset]!)"
-    elseif MathUtils.randomInt(100) < 4 then
-		return "* Smells like adrenaline."
 	else
 		return super.getEncounterText(self)
 	end

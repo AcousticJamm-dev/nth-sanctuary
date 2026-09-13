@@ -123,9 +123,16 @@ function BattleUI:draw()
             local health_offset = (#tostring(party.chara:getHealth()) - 1) * 8
 
             Draw.setColor(0, 0, 0, 1)
+			local string_width = g:getWidth(tostring(party.chara:getStat("health")))
+            for x = -1, 1 do
+                for y = -1, 1 do				
+					love.graphics.print(party.chara:getHealth(), 250 + x, h + y)
+					love.graphics.print("/", (260+x+health_offset), h + y)
+					love.graphics.print(party.chara:getStat("health"), (280 + x + health_offset), h + y)
+				end
+			end
             love.graphics.print(party.chara:getHealth(), 252, h + 2)
             love.graphics.print("/", (262+health_offset), h + 2)
-            local string_width = g:getWidth(tostring(party.chara:getStat("health")))
             love.graphics.print(party.chara:getStat("health"), (282 + health_offset), h + 2)
 			
             Draw.setColor(color[1], color[2], color[3])

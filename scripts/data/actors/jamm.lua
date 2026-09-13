@@ -69,7 +69,7 @@ function actor:init()
 		-- Cutscene animations
         ["jump_ball"]                   = {"ball", 1/15, true},
 		["sit"]               			= {"sit", 4/30, true},
-        ["pirouette"]                   = {"pirouette", 4/30, true},
+        ["pirouette"]                   = {"pirouette", 3/30, true},
     }
     -- Alternate animations to use for Jamm without a smile
     self.animations_serious = {

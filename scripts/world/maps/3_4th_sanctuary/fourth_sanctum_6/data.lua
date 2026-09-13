@@ -1,7 +1,7 @@
 return {
   version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.12.2",
+  tiledversion = "1.12.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -35,7 +35,7 @@ return {
     },
     {
       name = "light_areas",
-      firstgid = 890,
+      firstgid = 891,
       filename = "../../../tilesets/light_areas.tsx"
     }
   },
@@ -838,7 +838,7 @@ return {
             ["chasemax"] = 100,
             ["chasespeed"] = 1,
             ["chasetype"] = "multiplier",
-            ["encounter"] = "alt_encounters/scented_candles",
+            ["encounter"] = "special/scented_candles",
             ["pacetype"] = "horizontalswing",
             ["swinglength"] = 80
           }
@@ -1030,7 +1030,7 @@ return {
           height = 920,
           rotation = 0,
           opacity = 1,
-          gid = 890,
+          gid = 891,
           visible = true,
           properties = {
             ["light"] = true,
@@ -1051,7 +1051,7 @@ return {
           height = 920,
           rotation = 0,
           opacity = 1,
-          gid = 2147484538,
+          gid = 2147484539,
           visible = true,
           properties = {
             ["light"] = true,

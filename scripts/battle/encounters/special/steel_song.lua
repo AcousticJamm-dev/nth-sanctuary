@@ -1,18 +1,18 @@
-local Cacophony, super = Class(Encounter)
+local SteelSong, super = Class(Encounter)
 
-function Cacophony:init()
+function SteelSong:init()
     super.init(self)
 
-    self.text = "* It's a cacophony!"
+    self.text = "* Steel clangs in a song."
 
     self.music = "ch4_battle"
     self.background = true
 
-    self.organikk = self:addEnemy("organikk", 550, 182)
-    self.wicabel = self:addEnemy("wicabel", 526, 284)
+    self.winglade = self:addEnemy("winglade", 531, 158)
+    self.organikk = self:addEnemy("organikk", 527, 306)
 end
 
-function Cacophony:getPartyPosition(index)
+function SteelSong:getPartyPosition(index)
     if #Game.battle.party > 3 then return super.getPartyPosition(self, index) end
 
     local krloc = {94, 50}
@@ -37,4 +37,4 @@ function Cacophony:getPartyPosition(index)
     end
 end
 
-return Cacophony
+return SteelSong

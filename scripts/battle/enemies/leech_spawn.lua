@@ -91,8 +91,6 @@ end
 function LeechSpawn:getEncounterText()
     if Game:getTension() >= 50 then
 		return "* The atmosphere feels tense...\n* (You can use [color:yellow]BANISH[color:reset]!)"
-    elseif MathUtils.randomInt(100) < 4 then
-		return "* Smells like adrenaline."
 	else
 		return super.getEncounterText(self)
 	end

@@ -7,7 +7,7 @@ function SmallStar:init(x, y, dir, speed)
 end
 
 function SmallStar:update()
-    self.rotation = self.rotation + 0.1
+    self.rotation = self.rotation + 0.1 * DTMULT
     super.update(self)
 end
 

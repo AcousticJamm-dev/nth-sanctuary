@@ -8,7 +8,7 @@ end
 
 function map:update()
     super.update(self)
-
+	if Game:getFlag("noellefall", false) then return end
     if not self.jamm_slingshot_done and Game.world and Game.world.player and Game:hasPartyMember("jamm") then
         local player = Game.world.player
 
@@ -20,7 +20,8 @@ function map:update()
 
                 Assets.playSound("wing")
                 jamm:shake(4)
-                Game.party[4]:setWeapon(nil)
+				Game:setFlag("lastJammWeapon", Game:getPartyMember("jamm"):getWeapon())
+                Game:getPartyMember("jamm"):setWeapon(nil)
 
                 local slingshot = Sprite("world/objects/slingshot", jamm.x - 7, jamm.y - 6)
                 slingshot:setScale(2)

@@ -139,6 +139,10 @@ end
 function map:onExit()
 	Game:setFlag("ripple2nd", false)
     self.world.color = COLORS.white
+	if not self.finished and not Game:getFlag("noellefall", false) then
+		Game:setFlag("lastJammWeapon", Game:getPartyMember("jamm"):getWeapon())
+		Game:getPartyMember("jamm"):setWeapon(nil)
+	end
 end
 
 function map:onFootstep(char, num)

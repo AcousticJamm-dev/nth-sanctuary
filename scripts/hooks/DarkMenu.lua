@@ -8,16 +8,27 @@ function DarkMenu:init()
 end
 
 function DarkMenu:draw()
-    super.draw(self)
-    if not self.description_box.visible then
-		Draw.setColor(COLORS.black)
-		love.graphics.rectangle("fill",510, 10, 100, 60)
-		Draw.setColor(COLORS.white)
-        love.graphics.print(Game:getConfig("darkCurrencyShort") .. " " .. Game.money, 520, 10)
-        Draw.draw(self.shard_sprite, 520, 46, 0, 2, 2)
-	    local shards = tostring(Mod:getDarkShardCount())
-        love.graphics.print(shards, 554, 41)
+    Draw.setColor(PALETTE["world_fill"])
+    love.graphics.rectangle("fill", 0, 0, 640, 80)
+
+    Draw.setColor(1, 1, 1, 1)
+    if self.buttons[self.selected_submenu].desc_sprite then
+        Draw.draw(self.buttons[self.selected_submenu].desc_sprite, 20, 24, 0, 2, 2)
     end
+
+    for i = 1, #self.buttons do
+        self:drawButton(i, 120 + ((i - 1) * self:getButtonSpacing()), 20)
+    end
+    Draw.setColor(1, 1, 1)
+	
+    love.graphics.setFont(self.font)
+    love.graphics.print(Game:getConfig("darkCurrencyShort") .. " " .. Game.money, 520, 10)
+    Draw.draw(self.shard_sprite, 520, 46, 0, 2, 2)
+	local shards = tostring(Mod:getDarkShardCount())
+    love.graphics.print(shards, 554, 41)
+	
+    super.super.draw(self)
+	
     if self.box then return end --scary
     love.graphics.push("all")
     love.graphics.origin()
@@ -38,7 +49,7 @@ function DarkMenu:draw()
 				static_shader:send("brightness", 0.5)
 				love.graphics.setShader(static_shader)
 			end
-            local a = Assets.getTexture(party:getHeadIcons().."/head")
+            local a = Assets.getTexture(party:getHeadIcons().."/head_alpha") or Assets.getTexture(party:getHeadIcons().."/head")
             Draw.draw(a, x_head, y_pos)
 
             local health = (party:getHealth() / party:getStat("health")) * 100

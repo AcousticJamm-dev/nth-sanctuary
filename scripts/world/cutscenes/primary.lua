@@ -746,6 +746,7 @@ return {
 		Game:setFlag("ripple2nd", true)
 	end,
     prefall = function (cutscene)
+		if Game:getFlag("noellefall", false) then return end
 		if Game:getFlag("route") == 3 then
 			local no = cutscene:getCharacter("noelle")
 			no:setSprite("walk_look_up/left_1")
@@ -774,6 +775,9 @@ return {
             jamm.following = false
 			jamm:setPosition(200, 85)
 			jamm:setFacing("up")
+			local i = Game:getPartyIndex("jamm")
+			Game:removePartyMember("jamm")
+			Game:setFlag("jammPartyIndex", i)
 			cutscene:attachFollowers()
         end
     end,
@@ -1012,13 +1016,11 @@ return {
 		Assets.playSound("laz_c")
 		cutscene:wait(0.7)
         cutscene:text("* Then you're gonna fight someone your own size!", "bangs/teeth_angry")
-		local i = Game:getPartyIndex("jamm")
-		Game:removePartyMember("jamm")
 		local w, e = cutscene:startEncounter("guei_hurt", true, {g1, g2}, {wait=false})
 		g1:remove()
 		g2:remove()
 		cutscene:wait(w)
-		Game:addPartyMember("jamm", i)
+		Game:addPartyMember("jamm", Game:getFlag("jammPartyIndex", 4))
         cutscene:wait(1)
         sus:resetSprite()
 		sus:shake(2)
@@ -1054,7 +1056,7 @@ return {
 			cutscene:text("* Alright then.", "look_left")
 			Game:setFlag("slingCon", 2)
 			jamm.solid = false
-			jam:setWeapon("basic_sling")
+			jam:setWeapon(Game:getFlag("lastJammWeapon", "basic_sling"))
         end
 		
         cutscene:interpolateFollowers()

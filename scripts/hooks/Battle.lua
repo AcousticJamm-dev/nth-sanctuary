@@ -1,5 +1,10 @@
 local Battle, super = HookSystem.hookScript(Battle)
 
+function Battle:createUI()
+	super.createUI(self)
+    self.battle_ui_above = self:addChild(BattleUIDrawAbove())
+end
+
 function Battle:createPartyBattlers()
     for i = 1, #Game.party do
         local party_member = Game.party[i]

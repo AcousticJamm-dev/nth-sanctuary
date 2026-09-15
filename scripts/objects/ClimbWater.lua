@@ -1,7 +1,7 @@
 ---@class Chapter4Lib.ClimbWater : Object
 local ClimbWater, super = Class(Object)
 
-function ClimbWater:init(x, y, watertype, movetimer, moverate, tilelimit, fallingtimer, falldir, spawnrate, activetime)
+function ClimbWater:init(x, y, watertype, movetimer, moverate, tilelimit, fallingtimer, falldir, spawnrate, activetime, waterbad, waterdmg)
     super.init(self, x, y)
 	self.waterheight = 0
 	self.moverate = 4
@@ -9,8 +9,8 @@ function ClimbWater:init(x, y, watertype, movetimer, moverate, tilelimit, fallin
 	self.fallingtimer = 10
 	self.tilecount = 0
 	self.timelimit = 12
-	self.bad = 0
-	self.damage = 0
+	self.bad = waterbad
+	self.damage = waterdmg
 	self.sndplayed = false
 	self.drawx = 0
 	self.drawy = 0
@@ -24,6 +24,7 @@ function ClimbWater:init(x, y, watertype, movetimer, moverate, tilelimit, fallin
 	self.triggered = false
 	self.animindex = 0
 	self.watertile_top = Assets.getFrames("world/events/climbwater/dw_church_watertile_top")
+	self.lavatile_top = Assets.getFrames("world/events/climbwater/dw_church_lavatile_top")
 	self.scaley = 1
 	self.watertype = watertype
 	self.movetimer = movetimer
@@ -75,7 +76,7 @@ function ClimbWater:update()
 		self.drawx = 0
 		self.drawy = 0
 		self.tilecount = self.tilecount + 1
-		if self.watertype == 1 or self.watertype == 2 then
+		if self.watertype == 1 or self.watertype == 2 or self.watertype == 3 then
 			if self.y > self.endy + 10 then
 				self:remove()
 			end
@@ -110,6 +111,9 @@ function ClimbWater:update()
                         direction = self.falldir,
                     })
 					self.triggered = true
+					if self.bad then
+						Game.world:hurtParty(self.damage)
+					end
 					if not self.sndplayed then
 						self.sndplayed = true
 						Assets.playSound("motor_upper_2")
@@ -126,7 +130,7 @@ end
 
 function ClimbWater:initWater()
 	if not self.waterinit then
-		if self.watertype == 1 or self.watertype == 2 then
+		if self.watertype == 1 or self.watertype == 2 or self.watertype == 3 then
 			self.beginy = self.y
 			self.scaley = 1 * (self.activetime / self.spawnrate)
 			self.waterheight = self.scaley
@@ -316,6 +320,46 @@ function ClimbWater:draw()
 			Draw.draw(self.watertile_top[colindex], xx, boty - 8, 0, xscale, -2, 0, 8)
 		end
 		Draw.setColor(ColorUtils.mergeColor({0,0,0,1}, watcol, alph))
+		Draw.draw(Assets.getTexture("bubbles/fill"),  xx, topy, 0, 20 * xscale, (boty - topy) + offset)
+		Draw.setColor(1,1,1,1)
+		love.graphics.setBlendMode("alpha")
+	end
+	if self.watertype == 3 then
+		local watcol = ColorUtils.hexToRGB("EBA800FF")
+		local topy = MathUtils.clamp(yy + self.drawy, self.starty + 10, self.endy)
+		local boty = MathUtils.clamp(yy - 40 + (self.scaley * 40) + self.drawy, self.starty + 20, self.endy)
+		local alph = MathUtils.clamp(self.animindex + (math.sin(self.animindex * 4) * 0.25), 0, 0.8)
+		self.animindex = self.animindex + 0.25
+		self.col = {ColorUtils.hexToRGB("EBA800FF"),
+		ColorUtils.hexToRGB("EBA800FF"),
+		ColorUtils.hexToRGB("E9C40EFF"),
+		ColorUtils.hexToRGB("E99E00FF"),
+		ColorUtils.hexToRGB("EBA800FF")}
+		local darkcol = {ColorUtils.hexToRGB("EB0000FF"),
+		ColorUtils.hexToRGB("EB0000FF"),
+		ColorUtils.hexToRGB("EC0000FF"),
+		ColorUtils.hexToRGB("E90000FF"),
+		ColorUtils.hexToRGB("EB0000FF")}
+		local colindex = (math.floor(self.animindex) % 4) + 1
+		local watcol = self.col[colindex]
+		local darkwatcol = darkcol[colindex]
+		local offset = -8
+		if self.ending then
+			offset = 0
+			alph = alph * MathUtils.clamp((boty - topy) / 20, 0, 1)
+		end
+		love.graphics.setBlendMode("add")
+		Draw.setColor(ColorUtils.mergeColor({0,0,0,1}, darkwatcol, alph))
+		Draw.draw(self.lavatile_top[colindex], xx, topy, 0, xscale, 2, 0, 8)
+		if not self.ending then
+			Draw.draw(self.lavatile_top[colindex], xx, boty - 8, 0, xscale, -2, 0, 8)
+		end
+		Draw.draw(Assets.getTexture("bubbles/fill"),  xx, topy, 0, 20 * xscale, (boty - topy) + offset)
+		Draw.setColor(ColorUtils.mergeColor({0,0,0,1}, watcol, alph))
+		Draw.draw(self.lavatile_top[colindex], xx, topy, 0, xscale, 2, 0, 8)
+		if not self.ending then
+			Draw.draw(self.lavatile_top[colindex], xx, boty - 8, 0, xscale, -2, 0, 8)
+		end
 		Draw.draw(Assets.getTexture("bubbles/fill"),  xx, topy, 0, 20 * xscale, (boty - topy) + offset)
 		Draw.setColor(1,1,1,1)
 		love.graphics.setBlendMode("alpha")

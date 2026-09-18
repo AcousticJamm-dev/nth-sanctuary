@@ -11,10 +11,12 @@ function CameraClamper:init(data)
 	self.clampw = data.properties["clampwidth"] or self.width
 	self.clamph = data.properties["clampheight"] or self.height
 	self.lerpstrength = data.properties["lerp"] or nil
+	self.climb_only = data.properties["climb"] or false
 end
 
 function CameraClamper:update()
     super.update(self)
+	if self.climb_only then return end
 	if not self.world.player:isClimbing() then
 		Object.startCache()
 		if self.world.player:meetsObject(self) then

@@ -20,6 +20,19 @@ function PlayerClimbState:updateClimbCamera()
 		if self.player:meetsObject(nudger) then
 			xnudge = nudger.xnudge
 			ynudge = nudger.ynudge
+			if nudger.extmode == "gradleft" then
+				xnudge = MathUtils.lerp(0, nudger.xnudge, 1 - MathUtils.clamp(((self.player.x - self.player.width/2) - nudger.x) / nudger.width, 0, 1))
+				ynudge = MathUtils.lerp(0, nudger.ynudge, 1 - MathUtils.clamp(((self.player.x - self.player.width/2) - nudger.x) / nudger.width, 0, 1))
+			elseif nudger.extmode == "gradright" then
+				xnudge = MathUtils.lerp(0, nudger.xnudge, MathUtils.clamp(((self.player.x - self.player.width/2) - nudger.x) / nudger.width, 0, 1))
+				ynudge = MathUtils.lerp(0, nudger.ynudge, MathUtils.clamp(((self.player.x - self.player.width/2) - nudger.x) / nudger.width, 0, 1))
+			elseif nudger.extmode == "gradtop" then
+				xnudge = MathUtils.lerp(0, nudger.xnudge, 1 - MathUtils.clamp(((self.player.y - self.player.height) - nudger.y) / nudger.height, 0, 1))
+				ynudge = MathUtils.lerp(0, nudger.ynudge, 1 - MathUtils.clamp(((self.player.y - self.player.height) - nudger.y) / nudger.height, 0, 1))
+			elseif nudger.extmode == "gradbottom" then
+				xnudge = MathUtils.lerp(0, nudger.xnudge, MathUtils.clamp(((self.player.y - self.player.height) - nudger.y) / nudger.height, 0, 1))
+				ynudge = MathUtils.lerp(0, nudger.ynudge, MathUtils.clamp(((self.player.y - self.player.height) - nudger.y) / nudger.height, 0, 1))
+			end
 			if nudger.lerpstrength then
 				camera_lerp_speed = nudger.lerpstrength
 			end

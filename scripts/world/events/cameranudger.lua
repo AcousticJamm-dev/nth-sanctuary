@@ -9,6 +9,8 @@ function CameraNudger:init(data)
 	self.xnudge = data.properties["xnudge"] or 0
 	self.ynudge = data.properties["ynudge"] or 0
 	self.lerpstrength = data.properties["lerp"] or nil
+	self.extmode = data.properties["mode"] or nil
+	self.climb_only = data.properties["climb"] or false
 end
 
 return CameraNudger

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="42" height="32" tilewidth="40" tileheight="40" infinite="0" nextlayerid="35" nextobjectid="427">
+<map version="1.11" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="42" height="32" tilewidth="40" tileheight="40" infinite="0" nextlayerid="35" nextobjectid="431">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -400,6 +400,7 @@
     <property name="clampwidth" type="int" value="1680"/>
     <property name="clampx" type="int" value="0"/>
     <property name="clampy" type="int" value="120"/>
+    <property name="climb" type="bool" value="true"/>
    </properties>
    <polygon points="0,0 0,200 160,200 160,520 480,520 480,400 640,400 640,0"/>
   </object>

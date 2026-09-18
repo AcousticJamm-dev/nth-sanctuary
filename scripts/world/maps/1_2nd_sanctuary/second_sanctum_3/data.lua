@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 35,
-  nextobjectid = 427,
+  nextobjectid = 431,
   properties = {
     ["border"] = "church_b",
     ["music"] = "second_church",
@@ -1425,7 +1425,8 @@ return {
             ["clampheight"] = 1080,
             ["clampwidth"] = 1680,
             ["clampx"] = 0,
-            ["clampy"] = 120
+            ["clampy"] = 120,
+            ["climb"] = true
           }
         }
       }

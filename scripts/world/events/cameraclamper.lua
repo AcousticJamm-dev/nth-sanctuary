@@ -15,13 +15,17 @@ end
 
 function CameraClamper:update()
     super.update(self)
-	Object.startCache()	
-	if self.world.player:meetsObject(self) then
-		self.world.camera:setBounds(self.clampx, self.clampy, self.clampw, self.clamph)
+	if not self.world.player:isClimbing() then
+		Object.startCache()
+		if self.world.player:meetsObject(self) then
+			self.world.camera:setBounds(self.clampx, self.clampy, self.clampw, self.clamph)
+		else
+			self.world.camera:setBounds()
+		end
+		Object.endCache()
 	else
-		self.world.camera:setBounds()	
+		self.world.camera:setBounds()
 	end
-	Object.endCache()
 end
 
 return CameraClamper

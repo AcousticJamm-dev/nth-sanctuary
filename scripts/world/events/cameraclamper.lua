@@ -11,6 +11,7 @@ function CameraClamper:init(data)
 	self.clampw = data.properties["clampwidth"] or self.width
 	self.clamph = data.properties["clampheight"] or self.height
 	self.lerpstrength = data.properties["lerp"] or nil
+	self.walk_only = data.properties["walk"] or false
 	self.climb_only = data.properties["climb"] or false
 end
 

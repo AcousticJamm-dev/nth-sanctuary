@@ -17,7 +17,7 @@ function PlayerClimbState:updateClimbCamera()
 	
 	Object.startCache()	
 	for _, nudger in ipairs(Game.world:getEvents("cameranudger")) do
-		if self.player:meetsObject(nudger) then
+		if self.player:meetsObject(nudger) and not nudger.walk_only then
 			xnudge = nudger.xnudge
 			ynudge = nudger.ynudge
 			if nudger.extmode == "gradleft" then
@@ -39,7 +39,7 @@ function PlayerClimbState:updateClimbCamera()
 		end
 	end
 	for _, clamper in ipairs(Game.world:getEvents("cameraclamper")) do
-		if self.player:meetsObject(clamper) then
+		if self.player:meetsObject(clamper) and not clamper.walk_only then
 			camera_min_x = clamper.clampx + (camera.width / camera.zoom_x) / 2
 			camera_min_y = clamper.clampy + (camera.height / camera.zoom_y) / 2
 			camera_max_x = clamper.clampx + clamper.clampw - (camera.width / camera.zoom_x) / 2

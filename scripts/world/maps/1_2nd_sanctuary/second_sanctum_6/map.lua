@@ -50,44 +50,46 @@ function map:update()
 end
 
 function map:outOfBoundsFailsafe()
+	Mod.logger:debug("Piano went out of bounds, resetting everything...")
+	Assets.playSound("churchbell_short", 0.8, 1)
+	Assets.playSound("churchbell_short", 0.8, 0.6)
+	Assets.playSound("churchbell_short", 0.8, 0.2)
+	Game.world.fader:fadeIn(nil, {color = ColorUtils.hexToRGB("#00b3ea"), speed = 15/30, alpha = 1})
+	for _, piano in ipairs(self:getEvents("remotepianomove")) do
+		if piano then
+			piano:setPosition(piano.init_x, piano.init_y)
+			piano:setFlag("last_x", piano.x)
+			piano:setFlag("last_y", piano.y)
+			piano.camcontrol = false
+			piano.camcon = 0
+			piano.engaged = false
+			piano.show_instructions = false
+			piano.ubuff = 0
+			piano.dbuff = 0
+			piano.lbuff = 0
+			piano.rbuff = 0
+			piano.xbuff = 0
+			piano.zbuff = 0
+			piano.timer = 0
+			piano.con = 0
+		end
+	end
+	Game.lock_movement = false
+	local xx, yy = self:getMarker("spawn")
+	Game.world.player:setPosition(xx, yy)
+	Game.world.player:resetSprite()
+	Game.world.player:setFacing("down")
+	Game.world.player.layer = Game.world.map.object_layer
+	for _, follower in ipairs(Game.world.followers) do
+		follower:setPosition(xx, yy)
+		follower:resetSprite()
+		follower:setFacing("down")
+		follower.layer = Game.world.map.object_layer
+	end
+	Game.world.player:interpolateFollowers()
+	Game.world:attachFollowersImmediate()
+	Assets.playSound("ghostappear", 0.6, 1.4)
 	if self.bookshelf_pos then
-		Assets.playSound("churchbell_short", 0.8, 1)
-		Assets.playSound("churchbell_short", 0.8, 0.6)
-		Assets.playSound("churchbell_short", 0.8, 0.2)
-		Game.world.fader:fadeIn(nil, {color = ColorUtils.hexToRGB("#00b3ea"), speed = 15/30, alpha = 1})
-		for _, piano in ipairs(self:getEvents("remotepianomove")) do
-			if piano then
-				piano:setPosition(piano.init_x, piano.init_y)
-				piano:setFlag("last_x", piano.x)
-				piano:setFlag("last_y", piano.y)
-				piano.camcontrol = false
-				piano.camcon = 0
-				piano.engaged = false
-				piano.show_instructions = false
-				piano.ubuff = 0
-				piano.dbuff = 0
-				piano.lbuff = 0
-				piano.rbuff = 0
-				piano.xbuff = 0
-				piano.zbuff = 0
-				piano.timer = 0
-				piano.con = 0
-			end
-		end
-		Game.lock_movement = false
-		local xx, yy = self:getMarker("spawn")
-		Game.world.player:setPosition(xx, yy)
-		Game.world.player:resetSprite()
-		Game.world.player:setFacing("down")
-		Game.world.player.layer = Game.world.map.object_layer
-		for _, follower in ipairs(Game.world.followers) do
-			follower:setPosition(xx, yy)
-			follower:resetSprite()
-			follower:setFacing("down")
-			follower.layer = Game.world.map.object_layer
-		end
-		Game.world.player:interpolateFollowers()
-		Game.world:attachFollowersImmediate()
 		for _, shelf in ipairs(Game.stage:getObjects(BookshelfDestructable)) do
 			if shelf then
 				shelf:remove()
@@ -103,7 +105,6 @@ function map:outOfBoundsFailsafe()
 				end
 			end
 		end
-		Assets.playSound("ghostappear", 0.6, 1.4)
 		Assets.playSound("ghostappear", 0.6, 0.8)
 		Assets.playSound("ghostappear", 0.6, 0.4)
 		for i, pos in ipairs(self.bookshelf_pos) do
@@ -116,6 +117,8 @@ function map:outOfBoundsFailsafe()
 			end
 			Game.world:addChild(shelf)
 		end
+	else
+		Mod.logger:warn("Starting bookshelf data isn't defined!")
 	end
 end
 

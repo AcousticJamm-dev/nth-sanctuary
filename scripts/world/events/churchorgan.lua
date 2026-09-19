@@ -1,6 +1,6 @@
-local BigChurchPiano, super = Class(Event, "pianobig")
+local ChurchOrgan, super = Class(Event, "churchorgan")
 
-function BigChurchPiano:init(data)
+function ChurchOrgan:init(data)
     super.init(self, data)
 	
     local properties = data.properties or {}
@@ -16,7 +16,7 @@ function BigChurchPiano:init(data)
 	self.forceend = false
 	self.timer = 0
 	self.resetlight = false
-	self.instrument = "bigpiano"
+	self.instrument = "krispiano"
 	self.buffer = 0
 	self.soundtoplay = -1
 	self.difficulty = 1
@@ -30,6 +30,8 @@ function BigChurchPiano:init(data)
 	self.drawalpha = 0
 	self.memvolume = -1
 	self.endlessplaylog = ""
+	self.debugendlessplaylog = ""
+	self.debugplaylogoverflow = 0
 	self.solution = properties["solution"] or "aoamcdbaaoaebcdeeeeeacbnaaocdeeeeefghgfecaoamcdbaklji"
 	self.oct = false
 	self.cutscene = properties["cutscene"] or nil
@@ -39,7 +41,7 @@ function BigChurchPiano:init(data)
 	self.show_instructions = false
 end
 
-function BigChurchPiano:onAdd(parent)
+function ChurchOrgan:onAdd(parent)
     super.onAdd(self,parent)
     if not Game.stage:getObjects(TutorialText)[1] then
 		local tuttext = TutorialText(2, self)
@@ -126,7 +128,7 @@ local function scr_piano_determinepitch(sound)
 	return a, passentry
 end
 
-function BigChurchPiano:onInteract(player, dir)
+function ChurchOrgan:onInteract(player, dir)
 	if self.con == 0 and self.buffer <= 0 then
 		self.endlessplaylog = ""
 		if Game.stage:getObjects(TutorialText)[1] then
@@ -185,7 +187,7 @@ function BigChurchPiano:onInteract(player, dir)
 	end
 end
 
-function BigChurchPiano:update()
+function ChurchOrgan:update()
 	super.update(self)
 	if self.buffer > 0 then
 		self.buffer = self.buffer - 1 * DTMULT
@@ -213,6 +215,15 @@ function BigChurchPiano:update()
 		if self.canceltimer >= self.canceltime or self.forceend then
 			self.con = 4
 			self.show_instructions = false
+			if self.debugendlessplaylog ~= "" then
+				local overflow_text = ""
+				if self.debugplaylogoverflow > 0 then
+					overflow_text = " (truncated "..self.debugplaylogoverflow.." time"..(self.debugplaylogoverflow ~= 1 and "s" or "")..")"
+				end
+				Mod.logger:debug("Last piano log recorded: "..self.debugendlessplaylog..overflow_text)
+				self.debugplaylogoverflow = 0
+			end
+			self.debugendlessplaylog = ""
 			Game.world.player:resetSprite()
 			local cutscene = self.world:startCutscene(function(cutscene)
 				cutscene:detachCamera()
@@ -273,71 +284,142 @@ function BigChurchPiano:update()
 			self.notesplayed = true
 			self.buffer = 0
 			self.endlessplaylog = self.endlessplaylog..passkey
+			self.debugendlessplaylog = self.debugendlessplaylog..passkey
+			if StringUtils.len(self.debugendlessplaylog) >= 200 then
+				self.debugendlessplaylog = StringUtils.sub(self.debugendlessplaylog, 2, StringUtils.len(self.debugendlessplaylog))
+				self.debugplaylogoverflow = self.debugplaylogoverflow + 1
+			end
+			Mod.logger:debug("Key pressed: "..passkey)
 			local i = 1
 			while i <= utf8.len(self.endlessplaylog) do
 
                 --solution
 				if StringUtils.sub(self.endlessplaylog, i, utf8.len(self.endlessplaylog)) == self.solution then
+					Mod.logger:debug("Played solution song ("..self.solution..")")
 					Assets.playSound("bell")
 					self.endlessplaylog = ""
 					break
 					
                 --His Theme
 				elseif StringUtils.sub(self.endlessplaylog, i, utf8.len(self.endlessplaylog)) == "mbamooamamooa" then
+					Mod.logger:debug("Played His Theme (mbamooamamooa)")
 					self.endlessplaylog = ""
-					Game.world:startCutscene("bigpiano.histheme")
+					Game.world:startCutscene("churchorgan.histheme")
 					break
 
                 --Your Best Friend
 				elseif StringUtils.sub(self.endlessplaylog, i, utf8.len(self.endlessplaylog)) == "ccdecddebm" then
+					Mod.logger:debug("Played Your Best Friend (ccdecddebm)")
 					Input.clear("menu", true)
 					self.endlessplaylog = ""
-					Game.world:startCutscene("bigpiano.yourbestfriend")
+					Game.world:startCutscene("churchorgan.yourbestfriend")
 					break
 
-                --Unknown "Annoying" Song
+                --Your Dad's Best Friend
 				elseif StringUtils.sub(self.endlessplaylog, i, utf8.len(self.endlessplaylog)) == "adefddcdbadedcdd" then
+					Mod.logger:debug("Played Your Dad's Best Friend (adefddcdbadedcdd)")
 					self.endlessplaylog = ""
-					Game.world:startCutscene("bigpiano.annoying")
+					Game.world:startCutscene("churchorgan.annoying")
 					break
 
+				--The Legend
+				elseif StringUtils.sub(self.endlessplaylog, i, utf8.len(self.endlessplaylog)) == "nachgebc" then
+					Mod.logger:debug("Played The Legend (nachgebc)")
+					self.endlessplaylog = ""
+					Game.world:startCutscene("churchorgan.legend")
+					break
+
+				--Don't Forget
+				elseif StringUtils.sub(self.endlessplaylog, i, utf8.len(self.endlessplaylog)) == "cdeeeeeacbbbbbbcbaaaaaaghgec" then
+					Mod.logger:debug("Played Don't Forget (cdeeeeeacbbbbbbcbaaaaaaghgec)")
+					self.endlessplaylog = ""
+					Game.world:startCutscene("churchorgan.dontforget")
+					break
+
+				--Lost Girl
+				elseif StringUtils.sub(self.endlessplaylog, i, utf8.len(self.endlessplaylog)) == "nacghecfoaeoa" then
+					Mod.logger:debug("Played Lost Girl (nacghecfoaeoa)")
+					self.endlessplaylog = ""
+					Game.world:startCutscene("churchorgan.lostgirl")
+					break
+
+                --Rouxls Kaard
+				elseif StringUtils.sub(self.endlessplaylog, i, utf8.len(self.endlessplaylog)) == "caonnfedcbabc" then
+					Mod.logger:debug("Played Rouxls Kaard (caonnfedcbabc)")
+					self.endlessplaylog = ""
+					Game.world:startCutscene("churchorgan.rouxls")
+					break
+
+                --Spear/Hammer of Justice Motif
+				elseif StringUtils.sub(self.endlessplaylog, i, utf8.len(self.endlessplaylog)) == "edbcab" then
+					Mod.logger:debug("Played Hammer of Justice (edbcab)")
+					self.endlessplaylog = ""
+					Game.world:startCutscene("churchorgan.hammerofjustice")
+					break
+
+                --Heartache
+				elseif StringUtils.sub(self.endlessplaylog, i, utf8.len(self.endlessplaylog)) == "naoannoaec" then
+					Mod.logger:debug("Played Heartache (naoannoaec)")
+					self.endlessplaylog = ""
+					Game.world:startCutscene("churchorgan.heartache")
+					break
+
+                --You've Got A Friend in Me/Chopsticks/Heart & Soul/DEOXYNN Title
+				elseif StringUtils.sub(self.endlessplaylog, i, utf8.len(self.endlessplaylog)) == "cecfeafhfhe" then
+					Mod.logger:debug("Played You've Got A Friend in Me (cecfeafhfhe)")
+					self.endlessplaylog = ""
+					Game.world:startCutscene("churchorgan.misc")
+					break
+				elseif StringUtils.sub(self.endlessplaylog, i, utf8.len(self.endlessplaylog)) == "ddddddddccccccccgggggfghhhhgf" then
+					Mod.logger:debug("Played Chopsticks (ddddddddccccccccgggggfghhhhgf)")
+					self.endlessplaylog = ""
+					Game.world:startCutscene("churchorgan.annoying")
+					break
+				elseif StringUtils.sub(self.endlessplaylog, i, utf8.len(self.endlessplaylog)) == "aaaaonoabccccbabcd" then
+					Mod.logger:debug("Played Heart & Soul (aaaaonoabccccbabcd)")
+					self.endlessplaylog = ""
+					Game.world:startCutscene("churchorgan.misc")
+					break
+				elseif StringUtils.sub(self.endlessplaylog, i, utf8.len(self.endlessplaylog)) == "klncae" then
+					Mod.logger:debug("Played DEOXYNN Title (klncae)")
+					self.endlessplaylog = ""
+					Game.world:startCutscene("churchorgan.deox")
+					break
+					
+                --Once Upon a Time/Undertale
+				elseif StringUtils.sub(self.endlessplaylog, i, utf8.len(self.endlessplaylog)) == "mebaem" then
+					Mod.logger:debug("Played Once Upon a Time/Undertale (mebaem)")
+					Input.clear("menu", true)
+					self.endlessplaylog = ""
+					Game.world:startCutscene("churchorgan.undertale")
+					break
+
+                --Dark Sanctuary
+				elseif StringUtils.sub(self.endlessplaylog, i, utf8.len(self.endlessplaylog)) == "naebababebab" then
+					Mod.logger:debug("Played Dark Sanctuary (naebababebab)")
+					self.endlessplaylog = ""
+					Game.world:startCutscene("churchorgan.sanctuary")
+					break
+				
                 --MEGALOVANIA
 				elseif StringUtils.sub(self.endlessplaylog, i, utf8.len(self.endlessplaylog)) == "nnfc" then
+					Mod.logger:debug("Played MEGALOVANIA (nnfc)")
 					self.endlessplaylog = ""
-					Game.world:startCutscene("bigpiano.megalovania")
+					Game.world:startCutscene("churchorgan.megalovania", self)
 					break
 					
                 --Penumbra Phantasm
                 elseif StringUtils.sub(self.endlessplaylog, i, utf8.len(self.endlessplaylog)) == "dceccd" then
+					Mod.logger:debug("Played Penumbra Phantasm (dceccd)")
                     self.endlessplaylog = ""
-                    Game.world:startCutscene("bigpiano.megalovania")
+                    Game.world:startCutscene("churchorgan.penumbra", self)
                     break
-					
-                --You've Got A Friend in Me/Chopsticks/Heart & Soul
-				elseif StringUtils.sub(self.endlessplaylog, i, utf8.len(self.endlessplaylog)) == "cecfeafhfhe" then
-					self.endlessplaylog = ""
-					Game.world:startCutscene("bigpiano.misc")
-					break
-				elseif StringUtils.sub(self.endlessplaylog, i, utf8.len(self.endlessplaylog)) == "ddddddddccccccccgggggfghhhhgf" then
-					self.endlessplaylog = ""
-					Game.world:startCutscene("bigpiano.annoying")
-					break
-				elseif StringUtils.sub(self.endlessplaylog, i, utf8.len(self.endlessplaylog)) == "aaaaonoabccccbabcd" then
-					self.endlessplaylog = ""
-					Game.world:startCutscene("bigpiano.misc")
-					break
-				elseif StringUtils.sub(self.endlessplaylog, i, utf8.len(self.endlessplaylog)) == "klncae" then
-					self.endlessplaylog = ""
-					Game.world:startCutscene("bigpiano.deox")
-					break
 				end
 				i = i + 1
 			end
 			if StringUtils.len(self.endlessplaylog) >= 200 then
-				self.endlessplaylog = StringUtils.sub(self.endlessplaylog, 1, StringUtils.len(self.endlessplaylog) - 1)
+				self.endlessplaylog = StringUtils.sub(self.endlessplaylog, 2, StringUtils.len(self.endlessplaylog))
 			end
-			print(self.endlessplaylog)
-			Kristal.Console:log(self.endlessplaylog)
 		end
 	end
 	
@@ -354,7 +436,7 @@ function BigChurchPiano:update()
 	end
 end
 
-function BigChurchPiano:draw()
+function ChurchOrgan:draw()
 	super.draw(self)
 	
 	self.siner = self.siner + 1 * DTMULT
@@ -367,4 +449,4 @@ function BigChurchPiano:draw()
 	end
 end
 
-return BigChurchPiano
+return ChurchOrgan

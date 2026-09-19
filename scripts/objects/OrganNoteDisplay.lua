@@ -3,6 +3,8 @@ local OrganNoteDisplay, super = Class(Object)
 
 function OrganNoteDisplay:init(target)
     super.init(self)
+	self.draw_children_below = -1
+	self.draw_children_above = 1
 	self.target = target or nil
     self:setPosition(0,0)
     self:setParallax(0,0)
@@ -82,7 +84,7 @@ function OrganNoteDisplay:draw()
 					which = unit.htex
 				end
                 local note = Sprite(which, myx, myy)
-				note.layer = self.layer - 1
+				note:setLayer(-1)
                 note:setColor(col)
 				note:setScale(2,2)
 				note:setOriginExact(10, 10)
@@ -115,8 +117,7 @@ function OrganNoteDisplay:draw()
 				which = unit.htex
 			end
             local note = Sprite(which, myx, myy)
-			note.layer = self.layer + 1
-			note:setParallax(0,0)
+			note:setLayer(1)
             note:setColor(col)
 			note:setScale(2,2)
 			note.alpha = 1 * self.display_alpha
@@ -125,7 +126,7 @@ function OrganNoteDisplay:draw()
 			Game.world.timer:tween((2+MathUtils.round((i-1) / 2))/30, note, {alpha = 0}, 'out-quad', function()
 				note:remove()
 			end)
-			Game.world:addChild(note)
+			self:addChild(note)
 			love.graphics.setColor(col[1], col[2], col[3], self.display_alpha * 2)
 			if outline then
 				Draw.draw(Assets.getTexture(unit.htex), myx, myy, math.rad(-90 * unit.rot), 2, 2, 10, 10)

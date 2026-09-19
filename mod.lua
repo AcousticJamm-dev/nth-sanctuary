@@ -94,7 +94,8 @@ end
 
 function Mod:init()
     self.sound_timer = 0
-    print("Loaded "..self.info.name.."!")
+    Mod.logger = Logger("#th Sanctuary", ConsoleFormats.BLUE)
+    Mod.logger:info("Loaded " .. self.info.name .. "!")
     Game:registerEvent("squeak", function(data)
         return Squeak(data.x, data.y, {data.width, data.height, data.polygon})
     end)
@@ -134,8 +135,8 @@ function Mod:init()
         if ok then
            return result
         elseif id ~= "dogcheck/dogcheck" then
-			print("Dogcheck triggered due to following error:\n" .. result)
-           return Registry.createMap("dogcheck", ...)
+			Mod.logger:warn("Dogcheck triggered due to following error:\n" .. result)
+			return Registry.createMap("dogcheck", ...)
         else
            error("Attempt to create non existent map \"" .. tostring(id) .. "\"")
        end

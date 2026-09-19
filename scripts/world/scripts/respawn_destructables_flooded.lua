@@ -9,7 +9,7 @@ return function(script)
 		for i, pos in ipairs(map.destructableblockpos) do
 			local climb = FallingClimbArea(pos.x, pos.y, pos.shape, {dont_break = pos.dont_break, breaks_on_leave = pos.breaks_on_leave, fall_time = pos.fall_time, timed = pos.timed, no_unsafe_area = pos.no_unsafe_area})
 			climb.data = pos.data
-			climb:applyTileObject(climb.data, Game.world.map)
+			climb:applyTileObject(climb.data, map)
 			climb.alpha = 0
 			climb.layer = pos.layer
 			Game.world:addChild(climb)
@@ -21,6 +21,12 @@ return function(script)
 			Game.world.timer:after(lifetime/30, function()
 				climb:removeFX(climb.color_mask)
 			end)
+		end
+	else
+		if not map then
+			error("This script cannot be called when there is no active map.")
+		else
+			Mod.logger:warn("Starting falling climbing area data isn't defined!")
 		end
 	end
 end

@@ -47,10 +47,12 @@ function character:init()
         magic = 10
     }
 
-
     self.weapon_icon = "ui/menu/equip/sling"
+	
+	self.equipped["ammo"] = nil
 
     self:setWeapon("basic_sling")
+    self:setAmmo("rubber_pellet")
 
     self.lw_weapon_default = "light/rope_sling"
     self.lw_armor_default = "light/bandage"
@@ -88,6 +90,132 @@ function character:init()
 	self.flee_text = {
 		"[voice:jamm][facec:jamm/nervous]Nope! I'm out!"
 	}
+end
+
+function PartyMember:saveEquipment()
+    local result = { weapon = nil, ammo = nil, armor = {} }
+    if self.equipped.weapon then
+        result.weapon = self.equipped.weapon:save()
+    end
+    if self.equipped.ammo then
+        result.ammo = self.equipped.ammo:save()
+    end
+    for i = 1, 2 do
+        if self.equipped.armor[i] then
+            result.armor[tostring(i)] = self.equipped.armor[i]:save()
+        end
+    end
+    return result
+end
+
+function character:loadEquipment(data)
+    self:setWeapon(nil)
+    if data.weapon then
+        if type(data.weapon) == "table" then
+            if Registry.getItem(data.weapon.id) then
+                local weapon = Registry.createItem(data.weapon.id)
+                if weapon then
+                    weapon:load(data.weapon)
+                    self:setWeapon(weapon)
+                else
+                    Logging.errorNotify("Could not load weapon \"" .. data.weapon.id .. "\"")
+                end
+            else
+                Logging.errorNotify("Could not load weapon \"" .. data.weapon.id .. "\"")
+            end
+        else
+            if Registry.getItem(data.weapon) then
+                self:setWeapon(data.weapon)
+            else
+                Logging.errorNotify("Could not load weapon \"" .. (data.weapon or "nil") .. "\"")
+            end
+        end
+    end
+    self:setAmmo(nil)
+    if data.ammo then
+        if type(data.ammo) == "table" then
+            if Registry.getItem(data.ammo.id) then
+                local ammo = Registry.createItem(data.ammo.id)
+                if ammo then
+                    ammo:load(data.ammo)
+                    self:setAmmo(ammo)
+                else
+                    Logging.errorNotify("Could not load ammo \"" .. data.ammo.id .. "\"")
+                end
+            else
+                Logging.errorNotify("Could not load ammo \"" .. data.ammo.id .. "\"")
+            end
+        else
+            if Registry.getItem(data.ammo) then
+                self:setAmmo(data.ammo)
+            else
+                Logging.errorNotify("Could not load ammo \"" .. (data.ammo or "nil") .. "\"")
+            end
+        end
+    end
+    for i = 1, 2 do
+        self:setArmor(i, nil)
+    end
+    if data.armor then
+        for k, v in pairs(data.armor) do
+            if type(v) == "table" then
+                if Registry.getItem(v.id) then
+                    local armor = Registry.createItem(v.id)
+                    if armor then
+                        armor:load(v)
+                        self:setArmor(tonumber(k), armor)
+                    else
+                        Logging.errorNotify("Could not load armor \"" .. v.id .. "\"")
+                    end
+                else
+                    Logging.errorNotify("Could not load armor \"" .. v.id .. "\"")
+                end
+            else
+                if Registry.getItem(v) then
+                    self:setArmor(tonumber(k), v)
+                else
+                    Logging.errorNotify("Could not load armor \"" .. (v or "nil") .. "\"")
+                end
+            end
+        end
+    end
+end
+
+function character:getAmmo()
+    return self.equipped.ammo
+end
+
+function character:setAmmo(item)
+    if type(item) == "string" then
+        item = Registry.createItem(item)
+    end
+    self.equipped.ammo = item
+end
+
+function character:checkAmmo(id)
+    return self:getAmmo() and self:getAmmo().id == id or false
+end
+
+function character:canEquip(item, slot_type, slot_index)
+    if item then
+        return item:canEquip(self, slot_type, slot_index)
+    else
+        return (slot_type ~= "weapon") and (slot_type ~= "ammo")
+    end
+end
+
+function character:getEquipment()
+    local result = {}
+    if self.equipped.weapon then
+        table.insert(result, self.equipped.weapon)
+    end
+    if self.equipped.ammo then
+        table.insert(result, self.equipped.ammo)
+    end
+    if self.equipped.armor[1] then
+        table.insert(result, self.equipped.armor[1])
+    end
+    return result
 end
 
 function character:onTurnStart(battler)

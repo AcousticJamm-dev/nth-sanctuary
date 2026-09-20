@@ -29,6 +29,7 @@ function MouseHole:init()
     self.sell_options_text["items"]   = "[friend]* Let's see what you got."
     self.sell_options_text["weapons"] = "[friend]* Let's see what you got."
     self.sell_options_text["armors"]  = "[friend]* Let's see what you got."
+    self.sell_options_text["ammo"] 	  = "[friend]* Let's see what you got."
     self.sell_options_text["storage"] = "[friend]* Let's see what you got."
 
     self.background = "shops/mousehole_background"

@@ -27,6 +27,7 @@ function TossFountain:init()
     self.sell_options_text["items"]   = "Select an\nITEM\nto toss."
     self.sell_options_text["weapons"] = "Select a\nWEAPON\nto toss."
     self.sell_options_text["armors"]  = "Select an\nARMOR\nto toss."
+    self.sell_options_text["ammo"] 	  = "Select an\nAMMO\nto toss."
     self.sell_options_text["storage"] = "Select an\nITEM\nto toss."
 
 	self.shop_music = nil

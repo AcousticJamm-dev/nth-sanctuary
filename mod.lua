@@ -6,6 +6,12 @@ Mod.DarkShardID = {
     LeafRoomShard = 3,
 }
 
+function Mod:createDarkInventory(inventory)
+  inventory.storages["ammo"] = {id = "ammo", max = 48, name = "AMMO"}
+  
+  inventory.storage_for_type["ammo"] = "ammo"
+end
+
 ---@param plugin TypeGenPlugin.MainScript
 function Mod:onTiledTypegen(plugin)
     plugin:addEnumType({
@@ -731,9 +737,19 @@ end
 ]]
 
 function Mod:postLoad(new_file)
+	local jamm = Game:getPartyMember("jamm")
+	
+	if not jamm:getAmmo() then jamm:setAmmo("rubber_pellet") end
+	
 	if not new_file then
 		if Game.playtime > 5 and (not Game:getFlag("version_info")) then
 			Game.world:startCutscene("incompatible.legacy")
+		end
+		
+		if jamm:getArmor(2) then
+			Game.inventory:addItem(jamm:getArmor(2))
+			jamm:getArmor(2):unequip(false, nil)
+			jamm:setArmor(2, nil)
 		end
     else
         Game:setFlag("version_info", Mod.info.version_info)

@@ -427,6 +427,7 @@ return {
 			end
 			arch:remove()
 		end	
+		Game:getPartyMember("jamm"):setAmmo("rubber_pellet")
 		kris.x = kris_x + 10
 		kris.y = kris_y
 		susie.x = susie_x + 10

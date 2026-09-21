@@ -348,15 +348,6 @@
  <tile id="103">
   <image source="../../../assets/sprites/world/objects/couch.png" width="78" height="40"/>
  </tile>
- <tile id="104">
-  <image source="../../../assets/sprites/world/events/climbtiles/brittlebrick.png" width="20" height="20"/>
- </tile>
- <tile id="105">
-  <image source="../../../assets/sprites/world/events/climbtiles/brittlewall.png" width="20" height="20"/>
- </tile>
- <tile id="106">
-  <image source="../../../assets/sprites/world/events/climbtiles/brittlewallred.png" width="20" height="20"/>
- </tile>
  <tile id="107">
   <image source="../../../assets/sprites/world/objects/warning_dogmarriage.png" width="120" height="80"/>
  </tile>
@@ -365,5 +356,14 @@
  </tile>
  <tile id="109">
   <image source="../../../assets/sprites/world/parallax/bookshelf.png" width="120" height="160"/>
+ </tile>
+ <tile id="106">
+  <image source="../../../assets/sprites/world/events/climbtiles/brittlewallred.png" width="20" height="20"/>
+ </tile>
+ <tile id="105">
+  <image source="../../../assets/sprites/world/events/climbtiles/brittlewall.png" width="20" height="20"/>
+ </tile>
+ <tile id="104">
+  <image source="../../../assets/sprites/world/events/climbtiles/brittlebrick.png" width="20" height="20"/>
  </tile>
 </tileset>

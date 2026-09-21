@@ -667,42 +667,42 @@
     <property name="generate" type="bool" value="false"/>
    </properties>
   </object>
-  <object id="346" name="climbcoin" x="480" y="360" width="40" height="40">
+  <object id="346" name="coinbowl" x="480" y="360" width="40" height="40">
    <properties>
     <property name="value" type="int" value="10"/>
    </properties>
   </object>
-  <object id="348" name="climbcoin" x="760" y="300" width="40" height="40">
+  <object id="348" name="coinbowl" x="760" y="300" width="40" height="40">
    <properties>
     <property name="value" type="int" value="5"/>
    </properties>
   </object>
-  <object id="383" name="climbcoin" x="1200" y="1020" width="40" height="40">
+  <object id="383" name="coinbowl" x="1200" y="1020" width="40" height="40">
    <properties>
     <property name="value" type="int" value="5"/>
    </properties>
   </object>
-  <object id="349" name="climbcoin" x="760" y="420" width="40" height="40">
+  <object id="349" name="coinbowl" x="760" y="420" width="40" height="40">
    <properties>
     <property name="value" type="int" value="5"/>
    </properties>
   </object>
-  <object id="351" name="climbcoin" x="700" y="240" width="40" height="40">
+  <object id="351" name="coinbowl" x="700" y="240" width="40" height="40">
    <properties>
     <property name="value" type="int" value="5"/>
    </properties>
   </object>
-  <object id="352" name="climbcoin" x="1600" y="240" width="40" height="40">
+  <object id="352" name="coinbowl" x="1600" y="240" width="40" height="40">
    <properties>
     <property name="value" type="int" value="5"/>
    </properties>
   </object>
-  <object id="353" name="climbcoin" x="1600" y="320" width="40" height="40">
+  <object id="353" name="coinbowl" x="1600" y="320" width="40" height="40">
    <properties>
     <property name="value" type="int" value="5"/>
    </properties>
   </object>
-  <object id="355" name="climbcoin" x="1600" y="400" width="40" height="40">
+  <object id="355" name="coinbowl" x="1600" y="400" width="40" height="40">
    <properties>
     <property name="value" type="int" value="5"/>
    </properties>

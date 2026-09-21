@@ -1,7 +1,7 @@
 return {
   version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.12.2",
+  tiledversion = "1.12.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -36,7 +36,7 @@ return {
     },
     {
       name = "ExtraClimbingTiles",
-      firstgid = 890,
+      firstgid = 891,
       filename = "../../../tilesets/ExtraClimbingTiles.tsx"
     }
   },
@@ -1741,7 +1741,7 @@ return {
         },
         {
           id = 123,
-          name = "climbcoin",
+          name = "coinbowl",
           type = "",
           shape = "rectangle",
           x = 560,
@@ -1757,7 +1757,7 @@ return {
         },
         {
           id = 125,
-          name = "climbcoin",
+          name = "coinbowl",
           type = "",
           shape = "rectangle",
           x = 560,
@@ -1773,7 +1773,7 @@ return {
         },
         {
           id = 126,
-          name = "climbcoin",
+          name = "coinbowl",
           type = "",
           shape = "rectangle",
           x = 480,
@@ -1789,7 +1789,7 @@ return {
         },
         {
           id = 133,
-          name = "climbcoin",
+          name = "coinbowl",
           type = "",
           shape = "rectangle",
           x = 480,

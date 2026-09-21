@@ -1,5 +1,5 @@
 ---@class Event.climbcoin : Event
-local ClimbCoin, super = Class(Event, "ClimbCoin")
+--[[local ClimbCoin, super = Class(Event, "ClimbCoin")
 
 function ClimbCoin:init(data)
     super.init(self, data)
@@ -97,4 +97,4 @@ function ClimbCoin:draw()
     super.draw(self)
 end
 
-return ClimbCoin
+return ClimbCoin]]

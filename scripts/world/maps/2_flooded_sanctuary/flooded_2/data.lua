@@ -1742,7 +1742,7 @@ return {
         },
         {
           id = 197,
-          name = "climbcoin",
+          name = "coinbowl",
           type = "",
           shape = "rectangle",
           x = 820,
@@ -1758,7 +1758,7 @@ return {
         },
         {
           id = 199,
-          name = "climbcoin",
+          name = "coinbowl",
           type = "",
           shape = "rectangle",
           x = 1120,
@@ -1771,28 +1771,6 @@ return {
           properties = {
             ["value"] = 10
           }
-        },
-        {
-          id = 252,
-          name = "screenbounds",
-          type = "",
-          shape = "polygon",
-          x = 2560,
-          y = 475.294,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = false,
-          polygon = {
-            { x = 0, y = 84.7059 },
-            { x = -1395.79, y = 84.7059 },
-            { x = -1395.79, y = 338.824 },
-            { x = -1560, y = 338.824 },
-            { x = -1560, y = 804.706 },
-            { x = 0, y = 804.706 }
-          },
-          properties = {}
         }
       }
     },

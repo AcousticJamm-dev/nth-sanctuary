@@ -784,24 +784,6 @@ return {
       height = 40
     },
     {
-      id = 104,
-      image = "../../../assets/sprites/world/events/climbtiles/brittlebrick.png",
-      width = 20,
-      height = 20
-    },
-    {
-      id = 105,
-      image = "../../../assets/sprites/world/events/climbtiles/brittlewall.png",
-      width = 20,
-      height = 20
-    },
-    {
-      id = 106,
-      image = "../../../assets/sprites/world/events/climbtiles/brittlewallred.png",
-      width = 20,
-      height = 20
-    },
-    {
       id = 107,
       image = "../../../assets/sprites/world/objects/warning_dogmarriage.png",
       width = 120,
@@ -818,6 +800,24 @@ return {
       image = "../../../assets/sprites/world/parallax/bookshelf.png",
       width = 120,
       height = 160
+    },
+    {
+      id = 106,
+      image = "../../../assets/sprites/world/events/climbtiles/brittlewallred.png",
+      width = 20,
+      height = 20
+    },
+    {
+      id = 105,
+      image = "../../../assets/sprites/world/events/climbtiles/brittlewall.png",
+      width = 20,
+      height = 20
+    },
+    {
+      id = 104,
+      image = "../../../assets/sprites/world/events/climbtiles/brittlebrick.png",
+      width = 20,
+      height = 20
     }
   }
 }

@@ -1,7 +1,7 @@
 return {
   version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.12.2",
+  tiledversion = "1.12.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 17,
-  nextobjectid = 90,
+  nextobjectid = 98,
   properties = {
     ["border"] = "church_d",
     ["music"] = "fourth_church"
@@ -35,8 +35,14 @@ return {
     },
     {
       name = "bg_dw_library_tileset_new",
-      firstgid = 890,
+      firstgid = 891,
       filename = "../../../tilesets/bg_dw_library_tileset_new.tsx"
+    },
+    {
+      name = "fallingclimbareas",
+      firstgid = 1721,
+      filename = "../../../tilesets/climbtileobjects.tsx",
+      exportfilename = "../../../tilesets/climbtileobjects.lua"
     }
   },
   layers = {
@@ -193,23 +199,23 @@ return {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 1660, 314, 1660, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 1670, 0, 1670, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 1680, 0, 1690, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 1690, 0, 1690, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 1690, 0, 1690, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 1690, 0, 1690, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 1690, 0, 1690, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 1690, 0, 1690, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 1700, 0, 1690, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1690, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1690, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1690, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1690, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1690, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1690, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1690, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1700, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 1661, 314, 1661, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 1671, 0, 1671, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 1681, 0, 1691, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 1691, 0, 1691, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 1691, 0, 1691, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 1691, 0, 1691, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 1691, 0, 1691, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 1691, 0, 1691, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 1701, 0, 1691, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1691, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1691, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1691, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1691, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1691, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1691, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1691, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1701, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -249,10 +255,10 @@ return {
       properties = {},
       encoding = "lua",
       data = {
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 1644, 1645, 1646, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 1644, 1645, 1646, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 1644, 1645, 1646, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 1654, 1655, 1656, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 1645, 1646, 1647, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 1645, 1646, 1647, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 1645, 1646, 1647, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 1655, 1656, 1657, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 730, 737, 732, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 736, 737, 738, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 736, 737, 738, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -688,6 +694,66 @@ return {
           opacity = 1,
           visible = true,
           properties = {}
+        },
+        {
+          id = 94,
+          name = "fallingclimbarea",
+          type = "",
+          shape = "rectangle",
+          x = 360,
+          y = 760,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          gid = 1723,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 95,
+          name = "fallingclimbarea",
+          type = "",
+          shape = "rectangle",
+          x = 360,
+          y = 720,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          gid = 1723,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 96,
+          name = "fallingclimbarea",
+          type = "",
+          shape = "rectangle",
+          x = 360,
+          y = 680,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          gid = 1723,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 97,
+          name = "fallingclimbarea",
+          type = "",
+          shape = "rectangle",
+          x = 360,
+          y = 640,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          gid = 1723,
+          visible = true,
+          properties = {}
         }
       }
     },
@@ -705,70 +771,6 @@ return {
       parallaxy = 1,
       properties = {},
       objects = {
-        {
-          id = 1,
-          name = "destructableclimbarea",
-          type = "",
-          shape = "rectangle",
-          x = 360,
-          y = 720,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["sprite"] = "world/events/climbtiles/brittlebrick"
-          }
-        },
-        {
-          id = 2,
-          name = "destructableclimbarea",
-          type = "",
-          shape = "rectangle",
-          x = 360,
-          y = 680,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["sprite"] = "world/events/climbtiles/brittlebrick"
-          }
-        },
-        {
-          id = 3,
-          name = "destructableclimbarea",
-          type = "",
-          shape = "rectangle",
-          x = 360,
-          y = 640,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["sprite"] = "world/events/climbtiles/brittlebrick"
-          }
-        },
-        {
-          id = 4,
-          name = "destructableclimbarea",
-          type = "",
-          shape = "rectangle",
-          x = 360,
-          y = 600,
-          width = 40,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["sprite"] = "world/events/climbtiles/brittlebrick"
-          }
-        },
         {
           id = 42,
           name = "climbexit",

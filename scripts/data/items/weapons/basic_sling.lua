@@ -57,7 +57,11 @@ end
 function item:getAttackSound(battler, enemy, points)
     local crit = points == 150
     if crit then
-        return "crit-jamm"
+		if Game:getPartyMember("jamm"):getFlag("serious", false) then
+			return "crit-jamm_serious"
+		else
+			return "crit-jamm"
+		end
     end
 end
 

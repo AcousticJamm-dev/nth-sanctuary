@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.12.2",
+  tiledversion = "1.12.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 10,
-  nextobjectid = 108,
+  nextobjectid = 112,
   properties = {
     ["border"] = "church_a",
     ["music"] = "climb"
@@ -47,6 +47,12 @@ return {
       firstgid = 1115,
       filename = "../../../tilesets/church_objects.tsx",
       exportfilename = "../../../tilesets/church_objects.lua"
+    },
+    {
+      name = "climbtileobjects",
+      firstgid = 1225,
+      filename = "../../../tilesets/climbtileobjects.tsx",
+      exportfilename = "../../../tilesets/climbtileobjects.lua"
     }
   },
   layers = {
@@ -267,7 +273,7 @@ return {
         },
         {
           id = 43,
-          name = "climbcoin",
+          name = "coinbowl",
           type = "",
           shape = "rectangle",
           x = 660,
@@ -283,7 +289,7 @@ return {
         },
         {
           id = 44,
-          name = "climbcoin",
+          name = "coinbowl",
           type = "",
           shape = "rectangle",
           x = 760,
@@ -585,7 +591,7 @@ return {
           properties = {}
         },
         {
-          id = 98,
+          id = 108,
           name = "fallingclimbarea",
           type = "",
           shape = "rectangle",
@@ -595,12 +601,12 @@ return {
           height = 40,
           rotation = 0,
           opacity = 1,
-          gid = 1219,
+          gid = 1227,
           visible = true,
           properties = {}
         },
         {
-          id = 100,
+          id = 109,
           name = "fallingclimbarea",
           type = "",
           shape = "rectangle",
@@ -610,12 +616,12 @@ return {
           height = 40,
           rotation = 0,
           opacity = 1,
-          gid = 1219,
+          gid = 1227,
           visible = true,
           properties = {}
         },
         {
-          id = 101,
+          id = 110,
           name = "fallingclimbarea",
           type = "",
           shape = "rectangle",
@@ -625,12 +631,12 @@ return {
           height = 40,
           rotation = 0,
           opacity = 1,
-          gid = 1219,
+          gid = 1227,
           visible = true,
           properties = {}
         },
         {
-          id = 107,
+          id = 111,
           name = "fallingclimbarea",
           type = "",
           shape = "rectangle",
@@ -640,7 +646,7 @@ return {
           height = 40,
           rotation = 0,
           opacity = 1,
-          gid = 1219,
+          gid = 1227,
           visible = true,
           properties = {}
         }

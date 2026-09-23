@@ -2757,7 +2757,7 @@ return {
         },
         {
           id = 346,
-          name = "climbcoin",
+          name = "coinbowl",
           type = "",
           shape = "rectangle",
           x = 480,
@@ -2773,7 +2773,7 @@ return {
         },
         {
           id = 348,
-          name = "climbcoin",
+          name = "coinbowl",
           type = "",
           shape = "rectangle",
           x = 760,
@@ -2789,7 +2789,7 @@ return {
         },
         {
           id = 383,
-          name = "climbcoin",
+          name = "coinbowl",
           type = "",
           shape = "rectangle",
           x = 1200,
@@ -2805,7 +2805,7 @@ return {
         },
         {
           id = 349,
-          name = "climbcoin",
+          name = "coinbowl",
           type = "",
           shape = "rectangle",
           x = 760,
@@ -2821,7 +2821,7 @@ return {
         },
         {
           id = 351,
-          name = "climbcoin",
+          name = "coinbowl",
           type = "",
           shape = "rectangle",
           x = 700,
@@ -2837,7 +2837,7 @@ return {
         },
         {
           id = 352,
-          name = "climbcoin",
+          name = "coinbowl",
           type = "",
           shape = "rectangle",
           x = 1600,
@@ -2853,7 +2853,7 @@ return {
         },
         {
           id = 353,
-          name = "climbcoin",
+          name = "coinbowl",
           type = "",
           shape = "rectangle",
           x = 1600,
@@ -2869,7 +2869,7 @@ return {
         },
         {
           id = 355,
-          name = "climbcoin",
+          name = "coinbowl",
           type = "",
           shape = "rectangle",
           x = 1600,

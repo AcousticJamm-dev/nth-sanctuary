@@ -1,7 +1,7 @@
 ---@class Event.climbcoin : Event
-local ClimbCoin, super = Class(Event, "ClimbCoin")
+local ClimbCoin, super = Class(CoinBowl)
 
-function ClimbCoin:init(data)
+--[[function ClimbCoin:init(data)
     super.init(self, data)
     local properties = data and data.properties or {}
     self.value = properties["value"] or 5
@@ -95,6 +95,6 @@ function ClimbCoin:draw()
         Draw.draw(spr, 20, 20+math.sin(self.siner / 20) * 4, 0, 2, 2, xoff, yoff)
     end
     super.draw(self)
-end
+end]]
 
 return ClimbCoin

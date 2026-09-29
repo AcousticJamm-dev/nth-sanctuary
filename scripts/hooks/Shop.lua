@@ -35,9 +35,15 @@ function Shop:drawPartyBonusInfo(box_y, item, item_options)
             head_path = Assets.getTexture(party_member:getHeadIcons() .. "/head")
             if item.type == "armor" then
                 Draw.draw(self.stat_icons["defense_1"], offset_x + 470, offset_y + 127 + box_y)
-                Draw.draw(self.stat_icons["defense_2"], offset_x + 470, offset_y + 147 + box_y)
+				if party_member.id ~= "jamm" then -- Jamm only has one armor slot
+					Draw.draw(self.stat_icons["defense_2"], offset_x + 470, offset_y + 147 + box_y)
+				end
 
-                for j = 1, 2 do
+				local armor_slots = 2
+				if party_member.id == "jamm" then
+					armor_slots = 1
+				end
+                for j = 1, armor_slots do
                     self:drawBonuses(party_member, party_member:getArmor(j), item_options["bonuses"], "defense", offset_x + 470 + 20, offset_y + 127 + ((j - 1) * 20) + box_y)
                 end
 

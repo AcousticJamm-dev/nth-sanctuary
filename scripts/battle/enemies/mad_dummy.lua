@@ -70,12 +70,16 @@ end
 
 function MadDummy:getEncounterText()
     if self.dialogue_index == 2 then
-        return "[facec:ralsei/smile_b_battle][voice:ralsei]* (Hey, Kris!)[wait:5]\n* (It looks like the [color:yellow]MAGICAL[color:reset]\nbullets are damaging them!)"
-    elseif self.dialogue_index == 3 then
-        return "[facec:ralsei/wink_battle][voice:ralsei]* (Let's try to make them\nshoot [color:yellow]MAGICAL[color:reset] bullets at\nthemself,[wait:5] okay, Kris?)"
-    elseif self.dialogue_index == 4 then
+		if Game:hasPartyMember("ralsei") then
+			return "[facec:ralsei/smile_b_battle][voice:ralsei]* (Hey, Kris!)[wait:5]\n* (It looks like the [color:yellow]MAGICAL[color:reset]\nbullets are damaging them!)"
+		else
+			return "* Mad Dummy attacks![wait:5]\n* (Try using the [color:yellow]MAGICAL[color:reset] bullets to your advantage!)"
+		end
+    elseif self.dialogue_index == 3 and Game:hasPartyMember("ralsei") then
+		return "[facec:ralsei/wink_battle][voice:ralsei]* (Let's try to make them\nshoot [color:yellow]MAGICAL[color:reset] bullets at\nthemself,[wait:5] okay, Kris?)"
+    elseif self.dialogue_index == 4 and Game:hasPartyMember("susie") then
         return "[facec:susie/smile][voice:susie]* (Or you can just use my\nRUDE BUSTER, because it's\ncooler.)"
-    elseif self.dialogue_index == 5 then
+    elseif self.dialogue_index == 5 and Game:hasPartyMember("jamm") then
         return "[facec:jamm/sling_ready][voice:jamm]* (You could pair it with my\nDARKSLING in the same turn!)"
     elseif self.dialogue_index == 6 then
         return "* You tell Mad Dummy that there is no such thing as a \"barrier\" here."
@@ -125,6 +129,7 @@ end
 
 function MadDummy:triggerTrueBattle(cause, noact)
     if self.the_true_fight then return end
+	Mod.logger:todo("(Dialogue changes and other fixes for possible Kris alone battle with Mad Dummy)")
 
     self.the_true_fight = true
     self.trigger_cause = cause or "smile"
@@ -198,7 +203,11 @@ function MadDummy:triggerTrueBattle(cause, noact)
     self.tired_percentage = 0.25
     self.spare_points = 0
     self.disable_mercy = true
-    self.check = {"AT 15 DF YES\n* Its cotton burns with fury.\n* It rejects your ACTions.", "* Because they're a ghost,[wait:5]\nphysical attacks will fail.[wait:5]\n* Try using [color:yellow]MAGIC[color:reset] instead."}
+	if Game:hasPartyMember("susie") or Game:hasPartyMember("jamm") then
+		self.check = {"AT 15 DF YES\n* Its cotton burns with fury.\n* It rejects your ACTions.", "* Because they're a ghost,[wait:5]\nphysical attacks will fail.[wait:5]\n* Try using [color:yellow]MAGIC[color:reset] instead."}
+	else
+		self.check = {"AT 15 DF YES\n* Its cotton burns with fury.\n* It rejects your ACTions.", "* Because they're a ghost,[wait:5]\nphysical attacks will fail."}
+	end
     self.text = {"* The air crackles with rage.", "* The dummy trembles violently.", "* This is no longer pretend."}
 
     self:getAct("Check").description = "Consider\nstrategy"
@@ -304,7 +313,11 @@ end
 function MadDummy:onAct(battler, name)
     if self.the_true_fight then
         if name == "Check" then
-            return {"* MAD DUMMY - AT 30 DF YES\n* Its cotton burns with fury.\n* It rejects your ACTions.", "* Because they're a ghost,[wait:5]\nphysical attacks will fail.[wait:5]\n* Try using [color:yellow]MAGIC[color:reset] instead."}
+			if Game:hasPartyMember("susie") or Game:hasPartyMember("jamm") then
+				return {"* MAD DUMMY - AT 30 DF YES\n* Its cotton burns with fury.\n* It rejects your ACTions.", "* Because they're a ghost,[wait:5]\nphysical attacks will fail.[wait:5]\n* Try using [color:yellow]MAGIC[color:reset] instead."}
+			else
+				return {"* MAD DUMMY - AT 30 DF YES\n* Its cotton burns with fury.\n* It rejects your ACTions.", "* Because they're a ghost,[wait:5]\nphysical attacks will fail."}
+			end
         elseif name == "Smile" then
             return {
                 "* You smiled.\n* Mad Dummy laughed at your pity."

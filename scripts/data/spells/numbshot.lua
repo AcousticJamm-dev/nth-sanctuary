@@ -7,11 +7,11 @@ function spell:init()
     self.name = "Numbshot"
 
     -- Battle description
-    self.effect = "Sedative\nshot"
+    self.effect = "DMG+Spare\nTIRED foe"
     -- Menu description
-    self.description = "Shoots a sedative-laced shot at an enemy to induce SLEEP."
+    self.description = "Shoots a sedative-laced shot at an enemy to damage and induce SLEEP."
     -- Check description
-    self.check = "Shoots a sedative-laced shot at an enemy to induce SLEEP."
+    self.check = "Shoots a sedative-laced shot at an enemy to damage and induce SLEEP."
 
     -- TP cost
     self.cost = 16

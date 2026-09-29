@@ -1,5 +1,10 @@
 local Battle, super = HookSystem.hookScript(Battle)
 
+function Battle:init()
+    super.init(self)
+	self.state_extra_type = nil
+end
+
 function Battle:createUI()
 	super.createUI(self)
     self.battle_ui_above = self:addChild(BattleUIDrawAbove())
@@ -192,6 +197,73 @@ function Battle:nextTurn()
         if battler.chara:hasAssist() and (battler.chara:getAssistHealth() <= 0) and battler.chara:canAutoHeal() and self.encounter:isAutoHealingEnabled(battler) then
             battler:healAssist(battler.chara:autoHealAssistAmount(), nil, true)
         end
+    end
+end
+
+--- Changes the state of the battle and calls [onStateChange()](lua://Battle.onStateChange)
+---@param state  BattleState
+---@param reason string?
+function Battle:setState(state, reason, extra_type)
+    local old = self.state
+
+    local result = self.encounter:beforeStateChange(old, state, reason)
+    if result or self.state ~= old then
+        return
+    end
+
+    self.state = state
+    self.state_reason = reason
+	self.state_extra_type = extra_type or nil
+    self:onStateChange(old, self.state, reason)
+end
+
+--- An internal function responsible for adding spells to the battle menu.
+function Battle:addSpellMenuItems(battler)
+    for _, spell in ipairs(battler.chara:getSpells()) do
+        ---@type table|function
+        local color = spell.color or { 1, 1, 1, 1 }
+        if spell:hasTag("spare_tired") then
+            local has_tired = false
+            for _, enemy in ipairs(Game.battle:getActiveEnemies()) do
+                if enemy.tired then
+                    has_tired = true
+                    break
+                end
+            end
+            if has_tired then
+                color = { 0, 178 / 255, 1, 1 }
+                if Game:getConfig("pacifyGlow") then
+                    color = function()
+                        return ColorUtils.mergeColor({ 0, 0.7, 1, 1 }, COLORS.white, 0.5 + math.sin(Game.battle.pacify_glow_timer / 4) * 0.5)
+                    end
+                end
+            end
+        end
+
+        Game.battle:addMenuItem({
+            ["name"] = spell:getName(),
+            ["tp"] = spell:getTPCost(battler.chara),
+            ["unusable"] = not spell:isUsable(battler.chara),
+            ["description"] = spell:getBattleDescription(),
+            ["party"] = spell.party,
+            ["color"] = color,
+            ["data"] = spell,
+            ["callback"] = function(menu_item)
+                Game.battle.selected_spell = menu_item
+
+                if not spell:getTarget() or spell:getTarget() == "none" then
+                    Game.battle:pushAction("SPELL", nil, menu_item)
+                elseif spell:getTarget() == "ally" then
+                    Game.battle:setState("PARTYSELECT", "SPELL", spell.target_state_type or nil)
+                elseif spell:getTarget() == "enemy" then
+                    Game.battle:setState("ENEMYSELECT", "SPELL", spell.target_state_type or nil)
+                elseif spell:getTarget() == "party" then
+                    Game.battle:pushAction("SPELL", Game.battle.party, menu_item)
+                elseif spell:getTarget() == "enemies" then
+                    Game.battle:pushAction("SPELL", Game.battle:getActiveEnemies(), menu_item)
+                end
+            end
+        })
     end
 end
 

@@ -7,11 +7,11 @@ function spell:init()
     self.name = "Darksling"
 
     -- Battle description
-    self.effect = "Non-Boss\nspecial"
+    self.effect = "Non-Boss\n= best DMG"
     -- Menu description
-    self.description = "Deals massive damage to non-boss enemies."
+    self.description = "Shoots a shot of darkness at an enemy, dealing massive damage if they aren't a boss."
     -- Check description
-    self.check = "Deals massive damage to non-boss enemies."
+    self.check = "Shoots a shot of darkness at an enemy, dealing massive damage if they aren't a boss."
 
     -- TP cost
     self.cost = 55
@@ -21,6 +21,8 @@ function spell:init()
 
     -- Tags that apply to this spell
     self.tags = {"Damage"}
+	
+	self.target_state_type = "SHOWBOSS"
 end
 
 function spell:getCastMessage(user, target)

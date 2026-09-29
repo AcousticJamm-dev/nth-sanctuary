@@ -1,5 +1,10 @@
 local BattleUI, super = HookSystem.hookScript(BattleUI)
 
+function BattleUI:init()
+    super.init(self)
+    self.bossmark = Assets.getTexture("ui/battle/bossmark")
+end
+
 function BattleUI:draw()
     self:drawActionArena()
     self:drawActionStrip()
@@ -267,6 +272,9 @@ function BattleUI:drawState()
 
 				local spare_icon = false
 				local tired_icon = false
+				if Game.battle.state_extra_type == "SHOWBOSS" and enemy.boss then					
+					Draw.draw(self.bossmark, 80 + font:getWidth(enemy.name), 60 + y_off)
+				end
 				if enemy.tired and enemy:canSpare() then
 					Draw.draw(self.sparestar, 80 + font:getWidth(enemy.name) + 20, 60 + y_off)
 					Draw.draw(self.tiredmark, 80 + font:getWidth(enemy.name) + 40, 60 + y_off)
@@ -275,7 +283,7 @@ function BattleUI:drawState()
 				elseif enemy.tired then
 					Draw.draw(self.tiredmark, 80 + font:getWidth(enemy.name) + 40, 60 + y_off)
 					tired_icon = true
-				elseif enemy.mercy >= 100 then
+				elseif enemy:canSpare() then
 					Draw.draw(self.sparestar, 80 + font:getWidth(enemy.name) + 20, 60 + y_off)
 					spare_icon = true
 				end
@@ -308,6 +316,17 @@ function BattleUI:drawState()
 					end
 					love.graphics.setShader()
 				else
+                    local namewidth = font:getWidth(enemy.name)
+
+                    Draw.setColor(128 / 255, 128 / 255, 128 / 255, 1)
+
+
+                    if ((80 + namewidth + 60 + (font:getWidth(enemy.comment) / 2)) < 415) then
+                        love.graphics.print(enemy.comment, 80 + namewidth + 60, 50 + y_off)
+                    else
+                        love.graphics.print(enemy.comment, 80 + namewidth + 60, 50 + y_off, 0, 0.5, 1)
+                    end
+
 					local hp_percent = enemy.health / enemy.max_health
 
 					local hp_x = draw_mercy and 420 or 510

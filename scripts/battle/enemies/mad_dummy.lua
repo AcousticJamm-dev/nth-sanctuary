@@ -92,6 +92,37 @@ function MadDummy:onTurnEnd()
     self.radius = self.y_speed * 500
 end
 
+function MadDummy:hurt(amount, battler, on_defeat, color, show_status, attacked)
+    if amount == "INEFFECTIVE" then
+		if show_status ~= false then
+			self:statusMessage("damage", 0, color or (battler and { battler.chara:getDamageColor() }))
+		end
+        self.hurt_timer = 1
+        self:onIneffectiveHurt()
+        return
+    end
+    if amount == 0 or (amount < 0 and Game:getConfig("damageUnderflowFix")) then
+        if show_status ~= false then
+            self:statusMessage("msg", "miss", color or (battler and { battler.chara:getDamageColor() }))
+        end
+
+        self:onDodge(battler, attacked)
+        return
+    end
+
+    self.health = self.health - amount
+    if show_status ~= false then
+        self:statusMessage("damage", amount, color or (battler and { battler.chara:getDamageColor() }))
+    end
+
+    if amount > 0 then
+        self.hurt_timer = 1
+        self:onHurt(amount, battler)
+    end
+
+    self:checkHealth(on_defeat, amount, battler)
+end
+
 function MadDummy:triggerTrueBattle(cause, noact)
     if self.the_true_fight then return end
 
@@ -121,7 +152,6 @@ function MadDummy:triggerTrueBattle(cause, noact)
 
     self.name = "Mad Dummy"
     self.attack = 15
-    self.defense = 100
     self.waves = {"mad_dummy/aiming", "mad_dummy/basic", "mad_dummy/wall"}
     self.wave_override = "mad_dummy/aiming"
 
@@ -241,6 +271,10 @@ function MadDummy:onHurt(damage, battler)
     if self.health <= (self.max_health * self.tired_percentage) then
         self:setTired(true, self.tired_percentage <= 0)
     end
+end
+
+function MadDummy:onIneffectiveHurt()
+    self:getActiveSprite():shake(9, 0, 0.5, 2 / 30)
 end
 
 function MadDummy:onDefeat(damage, battler)

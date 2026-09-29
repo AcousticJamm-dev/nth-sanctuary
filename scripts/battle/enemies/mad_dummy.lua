@@ -152,6 +152,7 @@ function MadDummy:triggerTrueBattle(cause, noact)
 
     self.name = "Mad Dummy"
     self.attack = 15
+    self.defense = 100
     self.waves = {"mad_dummy/aiming", "mad_dummy/basic", "mad_dummy/wall"}
     self.wave_override = "mad_dummy/aiming"
 

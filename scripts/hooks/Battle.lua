@@ -539,4 +539,76 @@ function Battle:processAction(action)
     end
 end
 
+function Battle:hurt(amount, exact, target, swoon)
+	if self.powder_mist and (love.math.random() <= 0.3) then
+		target = target or "ANY"
+
+		if type(target) == "number" then
+			target = self.party[target]
+		end
+
+		if isClass(target) and target:includes(PartyBattler) then
+			if (not target) or (target.chara:getHealth() <= 0) then
+				target = self:randomTargetOld()
+			end
+		end
+
+		if target == "ANY" then
+			target = self:randomTargetOld()
+
+			if isClass(target) and target:includes(PartyBattler) then
+
+				local party_average_hp = 1
+
+				for _, battler in ipairs(self.party) do
+					if battler.chara:getHealth() ~= battler.chara:getStat("health") then
+						party_average_hp = 0
+						break
+					end
+				end
+
+				if target.chara:getHealth() / target.chara:getStat("health") < (party_average_hp / 2) then
+					target = self:randomTargetOld()
+				end
+				if target.chara:getHealth() / target.chara:getStat("health") < (party_average_hp / 2) then
+					target = self:randomTargetOld()
+				end
+
+				if (target == self.party[1]) and ((target.chara:getHealth() / target.chara:getStat("health")) < 0.35) then
+					target = self:randomTargetOld()
+				end
+
+				target.should_darken = false
+				target.targeted = true
+			end
+		end
+
+		-- Now it's time to actually damage them!
+		if isClass(target) and target:includes(PartyBattler) then
+			target:statusMessage("msg", "miss")
+			return { target }
+		end
+
+		if target == "ALL" then
+			Assets.playSound("hurt")
+			local alive_battlers = TableUtils.filter(self.party, function(battler) return not battler.is_down end)
+			for _, battler in ipairs(alive_battlers) do
+				battler:statusMessage("msg", "miss")
+			end
+			-- Return the battlers who aren't down, aka the ones we hit.
+			return alive_battlers
+		end
+		
+		return
+	end
+	
+	return super.hurt(self, amount, exact, target, swoon)
+end
+
+function Battle:nextTurn()
+	super.nextTurn(self)
+	
+	self.powder_mist = false
+end
+
 return Battle

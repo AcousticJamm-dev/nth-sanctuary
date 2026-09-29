@@ -61,6 +61,7 @@ function Dummy:init()
     -- Register party act with Ralsei called "Tell Story"
     -- (second argument is description, usually empty)
     self:registerAct("Tell Story", "", {"ralsei"})
+	self.boss = true
 end
 
 function Dummy:onAct(battler, name)

@@ -61,7 +61,7 @@ function Dummy:init()
     
     self:registerAct("ArmUp", "Throw\nhands", "jamm", 32)
     
-    
+	self.boss = true
     -- Register party act with Ralsei called "Tell Story"
     -- (second argument is description, usually empty
 end

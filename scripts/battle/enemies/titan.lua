@@ -54,6 +54,7 @@ function Dummy:init()
     self:registerAct("Tell Story", "", {"ralsei"})
 	self:getAct("Check").description = "Consider\nstrategy"
     self:registerAct("Unleash", "Reveal\nweakness", nil, 80)
+	self.boss = true
 end
 
 function Dummy:onAct(battler, name)

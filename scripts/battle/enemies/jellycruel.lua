@@ -60,6 +60,8 @@ function Jellycruel:init()
     -- self:registerAct("DebugSpareable", "funni", "all")
 	self.siner = 0
     self.atkup = false
+	
+	self.boss = true
 end
 
 function Jellycruel:update()

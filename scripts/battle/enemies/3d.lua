@@ -77,6 +77,7 @@ function ThreeDPrism:init()
 		end)
 	end
 	self.last_mercy = 0
+	self.boss = true
 end
 
 function ThreeDPrism:isXActionShort(battler)

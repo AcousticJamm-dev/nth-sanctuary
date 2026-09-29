@@ -7,7 +7,7 @@ function spell:init()
     self.name = "Darksling"
 
     -- Battle description
-    self.effect = "Non-Boss\nSpecial"
+    self.effect = "Non-Boss\nspecial"
     -- Menu description
     self.description = "Deals massive damage to non-boss enemies."
     -- Check description

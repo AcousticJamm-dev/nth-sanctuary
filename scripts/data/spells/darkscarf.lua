@@ -7,7 +7,7 @@ function spell:init()
     self.name = "DarkScarf"
 
     -- Battle description
-    self.effect = "Damage w/\nDarkness"
+    self.effect = "Dark\ndamage"
     -- Menu description
     self.description = "Charges the caster with darkness and deals heavy DARK damage."
     -- Check description

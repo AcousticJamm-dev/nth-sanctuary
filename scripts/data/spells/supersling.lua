@@ -7,7 +7,7 @@ function spell:init()
     self.name = "HealSling"
 
     -- Battle description
-    self.effect = "Healing\nService"
+    self.effect = "Healing\nservice"
     -- Menu description
     self.description = "Slingshot healing bullets to an enemy, making them more likely to spare us."
     -- Check description

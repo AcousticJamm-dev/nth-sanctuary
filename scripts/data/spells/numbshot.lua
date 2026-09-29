@@ -7,7 +7,7 @@ function spell:init()
     self.name = "Numbshot"
 
     -- Battle description
-    self.effect = "Sedative\nShot"
+    self.effect = "Sedative\nshot"
     -- Menu description
     self.description = "Shoots a sedative-laced shot at an enemy to induce SLEEP."
     -- Check description

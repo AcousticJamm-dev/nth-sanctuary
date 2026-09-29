@@ -50,7 +50,7 @@ function character:init()
     self.stronger_absent = {"kris","susie","ralsei"}
 
     -- Weapon icon in equip menu
-    self.weapon_icon = "ui/menu/equip/none"
+    self.weapon_icon = "ui/menu/equip/feather"
 
     -- Equipment (saved to the save file)
     self:setWeapon("empty_all")

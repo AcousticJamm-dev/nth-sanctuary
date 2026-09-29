@@ -129,7 +129,6 @@ end
 
 function MadDummy:triggerTrueBattle(cause, noact)
     if self.the_true_fight then return end
-	Mod.logger:todo("(Dialogue changes and other fixes for possible Kris alone battle with Mad Dummy)")
 
     self.the_true_fight = true
     self.trigger_cause = cause or "smile"

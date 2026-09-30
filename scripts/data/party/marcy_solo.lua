@@ -50,10 +50,9 @@ function character:init()
     self.highlight_color = ColorUtils.hexToRGB("#DB9F11FF")
 		-- highlight color B
     self.highlight_color_alt = ColorUtils.hexToRGB("#D6184DFF")
-	self.assist_color = {0, 1, 1}
 
     self.menu_icon = "battle/assist/marcy/head"
-    self.head_icons = "battle/assist/marcy/icon"
+    self.head_icons = "battle/assist/marcy/icons"
     self.name_sprite = "battle/assist/marcy/name"
 
     self.attack_sprite = "effects/attack/sling"
@@ -128,10 +127,10 @@ function character:getHealth()
 		if jamm then
 			return jamm:getAssistHealth()
 		else
-			return super.getHealth()
+			return super.getHealth(self)
 		end
 	else
-		return super.getHealth()
+		return super.getHealth(self)
 	end
 end
 

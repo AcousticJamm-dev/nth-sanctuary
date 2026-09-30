@@ -39,10 +39,7 @@ function character:init()
 
     self.weapon_icon = "ui/menu/equip/sling"
 	
-	self.equipped["ammo"] = nil
-
     self:setWeapon("empty_all")
-    self:setAmmo("rubber_pellet")
 
     self.color = {0, 1, 1}
     self.dmg_color = ColorUtils.hexToRGB("#FFB366")

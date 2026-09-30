@@ -101,7 +101,7 @@ function character:drawPowerStat(index, x, y, menu)
     end
 end
 
-function character:hasAssist() return Game:getFlag("marcy_joined") end
+function character:jammHasAssist() return Game:getFlag("marcy_joined") end
 
 function character:setHealth(health)
     if INVINCIBILITY and health < self:getHealth() then
@@ -112,7 +112,7 @@ function character:setHealth(health)
         self.lw_health = health
     else
         self.health = health
-		if self:hasAssist() then
+		if self:jammHasAssist() then
 			local jamm = Game:getPartyMember("jamm")
 			if jamm then
 				jamm:setAssistHealth(health)
@@ -122,7 +122,7 @@ function character:setHealth(health)
 end
 
 function character:getHealth()
-	if not Game:isLight() and self:hasAssist() then
+	if not Game:isLight() and self:jammHasAssist() then
 		local jamm = Game:getPartyMember("jamm")
 		if jamm then
 			return jamm:getAssistHealth()

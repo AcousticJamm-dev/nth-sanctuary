@@ -52,9 +52,9 @@ function character:init()
     self.highlight_color_alt = ColorUtils.hexToRGB("#D6184DFF")
 	self.assist_color = {0, 1, 1}
 
-    self.menu_icon = "party/marcy_solo/head"
-    self.head_icons = "party/marcy_solo/icon"
-    self.name_sprite = "party/marcy_solo/name"
+    self.menu_icon = "battle/assist/marcy/head"
+    self.head_icons = "battle/assist/marcy/icon"
+    self.name_sprite = "battle/assist/marcy/name"
 
     self.attack_sprite = "effects/attack/sling"
     self.attack_sound = "sling"

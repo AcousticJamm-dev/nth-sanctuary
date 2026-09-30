@@ -9,7 +9,7 @@ function character:init()
     self:setLightActor("marcy")
 
     self.level = 1
-    self.title = "Strategist\nAvoids the enemy\nwith careful stealth."
+    self.title = "Strategist\nSneaks past the\nenemy carefully."
 
     self.soul_priority = 1
     self.soul_color = {1, 106/255, 0}

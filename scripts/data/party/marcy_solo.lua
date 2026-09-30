@@ -20,7 +20,7 @@ function character:init()
     self.has_xact = true
     self.xact_name = "M-Action"
 	
-    self.lw_portrait = "face/jamm/neutral"
+    self.lw_portrait = "face/marcy/neutral"
 
     self.health = 50
     self.stats = {
@@ -74,19 +74,6 @@ function character:onTurnStart(battler)
 		Mod.logger:warnNotify("\"marcy_solo\" party member shouldn't be in battles!")
 	end
 	Game.battle:pushForcedAction(battler, "SKIP")
-end
-
-function character:onLevelUp(level)
-    self:increaseStat("health", 1)
-	if self:hasAssist() then
-		local jamm = Game:getPartyMember("jamm")
-		if jamm then
-			jamm:increaseStat("assist_health", 1)
-		end
-	end
-    if level % 10 == 0 then
-        self:increaseStat("attack", 1)
-    end
 end
 
 function character:drawPowerStat(index, x, y, menu)

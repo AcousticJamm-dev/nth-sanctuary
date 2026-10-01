@@ -11,7 +11,7 @@ function actor:init()
     self.height = 32
 
     -- Hitbox for this actor in the overworld (optional, uses width and height by default)
-    self.hitbox = {5, 27, 10, 5}
+    self.hitbox = {2, 18, 16, 14}
 
     -- Color for this actor used in outline areas (optional, defaults to red)
     self.color = {1, 0, 0}
@@ -38,7 +38,7 @@ function actor:init()
         -- Movement offsets
         ["walk/left"] = {0, 0},
         ["walk/right"] = {0, 0},
-        ["walk/up"] = {0, 0},
+        ["walk/up"] = {-1, 0},
         ["walk/down"] = {0, 0},
     }
 

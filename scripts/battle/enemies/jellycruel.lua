@@ -160,4 +160,17 @@ function Jellycruel:onTurnStart()
     end
 end
 
+function Jellycruel:isXActionShort(battler)
+    return true
+end
+
+function Jellycruel:onShortAct(battler, name)
+    if name == "Standard" then
+        self:addMercy(0.1)
+        return "* jellycruel."
+    end
+
+    return super.onShortAct(self, battler, name)
+end
+
 return Jellycruel
